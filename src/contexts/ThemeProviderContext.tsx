@@ -1,4 +1,4 @@
-import { ThemeProviderState } from "@/types";
+import { ThemeProviderState } from "@/types/types";
 import { createContext } from "react";
 
 const initialState: ThemeProviderState = {

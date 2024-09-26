@@ -12,6 +12,7 @@ const MainLayout = () => {
           <ModeToggle />
           <Input
             placeholder='Search'
+            
             className='w-56 bg-gray-700 text-white border-none focus:ring-2 focus:ring-blue-500'
           />
           <Button className='bg-blue-600 hover:bg-blue-700'>Join</Button>

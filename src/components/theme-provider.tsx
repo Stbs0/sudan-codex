@@ -1,9 +1,8 @@
 import ThemeProviderContext from "@/contexts/ThemeProviderContext";
-import { Theme, ThemeProviderProps } from "@/types";
+import { Theme, ThemeProviderProps } from "@/types/types";
 import { useEffect, useState } from "react";
 
-
- function ThemeProvider({
+function ThemeProvider({
   children,
   defaultTheme = "system",
   storageKey = "vite-ui-theme",
@@ -48,5 +47,4 @@ import { useEffect, useState } from "react";
   );
 }
 
-
-export default ThemeProvider
+export default ThemeProvider;
