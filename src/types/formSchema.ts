@@ -116,7 +116,7 @@ export enum DrugForms {
   OTHERS = "Others",
 }
 
-export type DosageForm =
+export type DosageFormUnion =
   | OralDosageForm
   | InjectableDosageForm
   | TopicalDosageForm
@@ -129,3 +129,19 @@ export type DosageForm =
   | UrethralDosageForm
   | TransdermalDosageForm
   | OtherDosageForm;
+
+// export interface Inputs {
+//   brand: string;
+//   generic: string;
+//   manufacturer: string;
+//   dosageForm: DrugForms;
+//   typeOfDosageForm: DosageFormUnion;
+//   strength: {
+//     number: 0;
+//     nominator: "";
+//     denominator?: "";
+//   };
+//   agency: string;
+//   packaging: string;
+//   price: number;
+// }

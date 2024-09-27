@@ -12,4 +12,13 @@ export type ThemeProviderState = {
 };
 
 
+export type Unit = {
+  value: string;
+  label: string;
+};
 
+
+export type UnitCategory = {
+  label: string;
+  units: Unit[];
+};

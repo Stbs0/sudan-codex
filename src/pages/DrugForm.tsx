@@ -1,36 +1,113 @@
-import { useForm, SubmitHandler } from "react-hook-form";
+import { SubmitHandler, useFormContext } from "react-hook-form";
+import { Button } from "@/components/ui/button";
 
-type Inputs = {
-  example: string;
-  exampleRequired: string;
-};
+import DrugField from "@/components/DrugInput";
+
+import { Input } from "@/components/ui/input";
+import { FormSchema } from "@/lib/formSchema";
+import Strength from "@/components/Strength";
 
 const DrugForm = () => {
   const {
-    register,
     handleSubmit,
-    watch,
+    register,
     formState: { errors },
-  } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  } = useFormContext<FormSchema>();
 
-  console.log(watch("example")); // watch input value by passing the name of it
+  const onSubmit: SubmitHandler<FormSchema> = (data) => console.log(data);
 
   return (
-    /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
-    <form onSubmit={handleSubmit(onSubmit)}>
-      {/* register your input into the hook by invoking the "register" function */}
-      <input
-        defaultValue='test'
-        {...register("example")}
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className='space-y-5 shadow-lg p-5 bg-white dark:bg-c_light_cyan-900 my-4 rounded-md dark:text-black w-100 md:w-[600px]'>
+      <DrugField
+        register={register}
+        label='Brand'
+        placeholder='Amocaln'
+        name='brand'
+        errors={errors}
       />
+      <div className='flex items-center'>
+        <DrugField
+          register={register}
+          errors={errors}
+          label='Generic name'
+          placeholder='Co-amoxaclav'
+          name='generic'
+        />
 
-      {/* include validation with required or other standard HTML validation rules */}
-      <input {...register("exampleRequired", { required: true })} />
-      {/* errors will return when field validation fails  */}
-      {errors.exampleRequired && <span>This field is required</span>}
-
-      <input type='submit' />
+        <div className='flex space-x-2 justify-start'>
+          <Input
+            className='w-16 min-w-[60px] max-w-fit px-2 mr-3'
+            placeholder='100'
+            {...register("strength.number")}
+          />
+          <Strength />
+        </div>
+      </div>
+      <DrugField
+        register={register}
+        errors={errors}
+        label='Manufacturer'
+        placeholder='Hikma'
+        name='manufacturer'
+      />
+      <div className=' '>
+        <div className='flex space-x-2 justify-start'>
+          <Input
+            className='w-16 min-w-[60px] max-w-fit px-2 mr-3'
+            placeholder='100'
+            {...register("strength.number")}
+          />
+          <Strength />
+        </div>
+      </div>
+      {/*
+        <DrugSelect
+          register={register}
+          errors={errors}
+          label='Dosage Form'
+          name='dosageForm'
+        />
+        <DrugSelect
+          register={register}
+          errors={errors}
+          label='Type of Dosage Form'
+          name='typeOfDosageForm'
+          second
+        />
+        <div className='flex '>
+          <DrugField
+            register={register}
+          errors={errors}
+            label='Strength'
+            placeholder='10'
+            name='strength'
+          />
+          <DrugSelect
+            register={register}
+          errors={errors}
+            label='Type of Dosage Form'
+            name='typeOfDosageForm'
+            second
+          />
+          <DrugSelect
+            register={register}
+          errors={errors}
+            label='Type of Dosage Form'
+            name='typeOfDosageForm'
+            second
+          />
+        </div>
+        <DrugField
+          register={register}
+          errors={errors}
+          label='Brand'
+          placeholder='exp: Amocaln'
+          name='packaging'
+        />
+            */}
+      <Button type='submit'>Submit</Button>
     </form>
   );
 };

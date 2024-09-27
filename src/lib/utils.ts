@@ -4,6 +4,14 @@ import {
   InjectableDosageForm,
   OralDosageForm,
   TopicalDosageForm,
+  OphthalmicDosageForm,
+  OticDosageForm,
+  RectalDosageForm,
+  VaginalDosageForm,
+  UrethralDosageForm,
+  TransdermalDosageForm,
+  OtherDosageForm,
+ 
 } from "@/types/formSchema";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -22,24 +30,21 @@ const getDosageForms = (drugForm: DrugForms) => {
       return TopicalDosageForm;
     case DrugForms.INHALATION:
       return InhalationDosageForm;
-
     case DrugForms.OPHTHALMIC:
-      return InhalationDosageForm;
-
+      return OphthalmicDosageForm;
     case DrugForms.OTIC:
-      return InhalationDosageForm;
+      return OticDosageForm;
     case DrugForms.RECTAL:
-      return InhalationDosageForm;
-    case DrugForms.OTHERS:
-      return InhalationDosageForm;
+      return RectalDosageForm;
     case DrugForms.TRANSDERMAL:
-      return InhalationDosageForm;
+      return TransdermalDosageForm;
     case DrugForms.URETHRAL:
-      return InhalationDosageForm;
+      return UrethralDosageForm;
     case DrugForms.VAGINAL:
-      return InhalationDosageForm;
-    default:
-      return null;
+      return VaginalDosageForm;
+    case DrugForms.OTHERS:
+      return OtherDosageForm;
+   
   }
 };
 export default getDosageForms;
