@@ -8,15 +8,18 @@ const RHFProviderContext = () => {
   const methods = useForm<FormSchema>({
     defaultValues: {
       brand: "",
-      generic: "",
+      generics: [{ generic: "" }],
       manufacturer: "",
       dosageForm: DrugForms.ORAL,
       typeOfDosageForm: OralDosageForm.TABLET,
-      strength: {
-        number: 0,
-        nominator: "",
-        denominator: "",
-      },
+      strength: [
+        {
+          nominator: 0,
+          denominator: 0,
+          nominatorUnit: "mg",
+          denominatorUnit: "ml",
+        },
+      ],
       agency: "",
       packaging: "",
       price: 0,

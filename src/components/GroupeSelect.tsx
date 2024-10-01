@@ -1,34 +1,33 @@
-import { UseFormRegister, UseFormReturn } from "react-hook-form";
-import { Inputs } from "@/types/formSchema";
+import { UseFormRegister, useFormContext } from "react-hook-form";
 import Select from "react-select";
 import { drugUnits } from "@/constants";
-import { Unit, UnitCategory } from "@/types/types";
+import { FormSchema } from "@/lib/formSchema";
 
 const drugOptions = drugUnits.map((unit) => ({
   label: unit.label,
   options: unit.units,
 }));
-const formatGroupLabel = (data: { label: string; options: Unit[] }) => (
-  <div>
-    <span>{data.label}</span>
-  </div>
-);
+// const formatGroupLabel = (data: { label: string; options: Unit[] }) => (
+//   <div>
+//     <span>{data.label}</span>
+//   </div>
+// );
+
+interface Props {
+  register: UseFormRegister<FormSchema>;
+  // label: string;
+  name: keyof FormSchema;
+  // values: string[];
+  // message?: string;
+  placeholder?: string;
+}
 
 const GroupSelect = ({
-  register,
-  label,
   name,
-  values,
-  message,
+
   placeholder,
-}: {
-  register: UseFormRegister<Inputs>;
-  label: string;
-  name: keyof Inputs;
-  values: string[];
-  message?: string;
-  placeholder?: string;
-}) => {
+}: Props) => {
+  const { register } = useFormContext<FormSchema>();
   return (
     <div>
       <Select

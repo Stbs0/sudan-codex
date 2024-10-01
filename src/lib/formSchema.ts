@@ -34,22 +34,17 @@ const DosageFormUnion = z.union([
 const formSchema = z.object({
   brand: z.string().min(2, minimumStringMsg).max(50, maximumStringMsg),
 
-  generic: z.string().min(2, minimumStringMsg).max(50, maximumStringMsg),
+  generics: z.array(
+    z.object({
+      generic: z.string().min(2, minimumStringMsg).max(50, maximumStringMsg),
+    }),
+  ),
 
   manufacturer: z.string().min(2, minimumStringMsg).max(50, maximumStringMsg),
 
   dosageForm: z.nativeEnum(DrugForms),
 
   typeOfDosageForm: DosageFormUnion,
-
-  strength: z.object({
-    number: z
-      .number()
-      .min(0, { message: "number must be greater than 0" })
-      .max(1000, { message: "number must be less than 1000" }),
-    nominator: z.string().min(3, minimumStringMsg).max(50, maximumStringMsg),
-    denominator: z.string().min(3, minimumStringMsg).max(50, maximumStringMsg),
-  }),
 
   packaging: z.string().min(2).max(50),
 
@@ -59,6 +54,21 @@ const formSchema = z.object({
     .number()
     .multipleOf(100, { message: "price must be multiple of 100" })
     .positive(),
+
+  strength: z.array(
+    z.object({
+      nominator: z.number(),
+      denominator: z.number(),
+      nominatorUnit: z
+        .string()
+        .min(2, minimumStringMsg)
+        .max(50, maximumStringMsg),
+      denominatorUnit: z
+        .string()
+        .min(2, minimumStringMsg)
+        .max(50, maximumStringMsg),
+    }),
+  ),
 });
 export type FormSchema = z.infer<typeof formSchema>;
 export default formSchema;
