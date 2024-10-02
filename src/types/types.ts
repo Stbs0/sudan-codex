@@ -1,3 +1,5 @@
+import { FormSchema } from "@/lib/formSchema";
+
 export type Theme = "dark" | "light" | "system";
 
 export type ThemeProviderProps = {
@@ -26,6 +28,8 @@ export interface DosageForm {
   label: string;
   value: string;
 }
+
+export type Generics = Pick<FormSchema, "generics">;
 
 // export interface DosageForm {
 //   aerosol: string;

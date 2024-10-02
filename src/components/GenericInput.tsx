@@ -1,43 +1,68 @@
-import Strength from "./Strength";
 import {
+  FieldArrayWithId,
   FieldValues,
   UseFieldArrayAppend,
   UseFieldArrayRemove,
+  useFormContext,
 } from "react-hook-form";
 import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Generics } from "@/types/types";
 
 interface Props {
-  fields: Record<"id", string>[];
-  append: UseFieldArrayAppend<FieldValues, "moreGenerics">;
-  prepend: UseFieldArrayAppend<FieldValues, "moreGenerics">;
-  remove: UseFieldArrayRemove;
+  genericsFieldsAppend: UseFieldArrayAppend<Generics, "generics">;
+  genericsFieldsRemove: UseFieldArrayRemove;
+  strengthFieldsAppend: UseFieldArrayAppend<FieldValues, "strength">;
+  strengthFieldsRemove: UseFieldArrayRemove;
+  genericsFields: FieldArrayWithId<Generics, "generics", "id">[];
 }
 
-const GenericInput = ({ fields, append,  remove }: Props) => {
-  console.log(fields);
+const GenericInput = ({
+  genericsFieldsAppend,
+  strengthFieldsAppend,
+  genericsFieldsRemove,
+  strengthFieldsRemove,
+  genericsFields,
+}: Props) => {
+  const { register } = useFormContext();
+
   return (
     <>
-      {fields.map((field, index) => (
+      {genericsFields.map((field, index) => (
         <div
-          className='flex items-center'
+          className=' px-2 my-2 '
           key={field.id}>
-          <div className='flex space-x-2 justify-start space-y-2'>
-            <Strength index={index} />
-            <Button
-              onClick={() =>
-                append({ number: 100, nominator: "", denominator: "" })
-              }
-              className='bg-blue-600 hover:bg-blue-700'>
-              Add active ingredient
-            </Button>
-
-            {index !== 0 && (
+          <div className='flex space-x-8 '>
+            <Input
+              placeholder='Amocaln'
+              className='border-slate-500 w-40 mr-8'
+              {...register(`generics.${index}.generic` as const)}
+            />
+            <div className='space-x-2'>
               <Button
-                variant={"destructive"}
-                onClick={() => remove(index)}>
-                Delete
+                className='max-w-fit bg-blue-600 hover:bg-blue-700'
+                onClick={() => {
+                  genericsFieldsAppend({ generic: "" });
+                  strengthFieldsAppend({
+                    nominator: 0,
+                    denominator: 0,
+                    nominatorUnit: "mg",
+                    denominatorUnit: "ml",
+                  });
+                }}>
+                Add active ingredient
               </Button>
-            )}
+              {index !== 0 && (
+                <Button
+                  variant={"destructive"}
+                  onClick={() => {
+                    genericsFieldsRemove(index);
+                    strengthFieldsRemove(index);
+                  }}>
+                  remove
+                </Button>
+              )}
+            </div>
           </div>
         </div>
       ))}

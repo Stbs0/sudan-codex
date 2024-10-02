@@ -1,6 +1,6 @@
 import formSchema, { FormSchema } from "@/lib/formSchema";
 import DrugForm from "@/pages/DrugForm";
-import { DrugForms, OralDosageForm } from "@/types/formSchema";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 
@@ -10,8 +10,7 @@ const RHFProviderContext = () => {
       brand: "",
       generics: [{ generic: "" }],
       manufacturer: "",
-      dosageForm: DrugForms.ORAL,
-      typeOfDosageForm: OralDosageForm.TABLET,
+      dosageForm: "",
       strength: [
         {
           nominator: 0,

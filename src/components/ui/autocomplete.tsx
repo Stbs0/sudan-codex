@@ -17,14 +17,21 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { DosageForm, Unit } from "@/types/types";
+import { useController } from "react-hook-form";
 
 interface Props {
   options: Unit[] | DosageForm[];
+  name: string;
 }
-const AutoComplete = ({ options }: Props) => {
+const AutoComplete = ({ options, name }: Props) => {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
 
+  const {
+    field: { onChange },
+  } = useController({
+    name,
+  });
   return (
     <Popover
       open={open}
@@ -34,6 +41,7 @@ const AutoComplete = ({ options }: Props) => {
           variant='outline'
           role='combobox'
           aria-expanded={open}
+
           className=' flex max-w-fit min-w-10  items-center '>
           {value
             ? options.find((framework) => framework.value === value)?.label
@@ -50,13 +58,15 @@ const AutoComplete = ({ options }: Props) => {
           <CommandInput placeholder='Search framework...' />
           <CommandList>
             <CommandEmpty>No framework found.</CommandEmpty>
-            <CommandGroup >
+            <CommandGroup>
               {options.map((framework) => (
-                <CommandItem className="border-t-[1px]"
+                <CommandItem 
+                  className='border-t-[1px]'
                   key={framework.value}
                   value={framework.value}
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? "" : currentValue);
+                    onChange(currentValue === value ? "" : currentValue);
                     setOpen(false);
                   }}>
                   <Check

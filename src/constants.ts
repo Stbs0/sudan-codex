@@ -1,7 +1,7 @@
 import { DosageForm, Unit } from "./types/types";
 
 export const drugConcentrationUnits: Unit[] = [
-  { value: "mg", v: "mg" },
+  { value: "mg", label: "mg" },
   { value: "g", label: "g" },
   { value: "mcg", label: "mcg" },
   { value: "ng", label: "ng" },
@@ -352,3 +352,7 @@ export const dosageForms: DosageForm[] = [
   { value: "water", label: "WATER" },
   { value: "wax", label: "WAX" },
 ];
+
+// const dosageFormValues = dosageForms.map((form) => form.value);
+
+// export { dosageFormValues as const };
