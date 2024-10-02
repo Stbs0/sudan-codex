@@ -12,9 +12,12 @@ import { DevTool } from "@hookform/devtools";
 import { FormSchema } from "@/lib/formSchema";
 import { Label } from "@/components/ui/label";
 import AutoComplete from "@/components/ui/autocomplete";
-import { dosageForms, drugConcentrationUnits } from "@/constants";
+import { drugConcentrationUnits } from "@/constants";
 import { Generics } from "@/types/types";
 import GenericInput from "@/components/GenericInput";
+import DosageFormInput from "@/components/DosageFormInput";
+import InputField from "@/components/InputField";
+import { Separator } from "@/components/ui/separator";
 
 const DrugForm = () => {
   const { handleSubmit, control } = useFormContext<FormSchema>();
@@ -29,8 +32,7 @@ const DrugForm = () => {
   });
 
   const {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    fields: strengthsFields,
+    // fields: strengthsFields,
     append: strengthFieldsAppend,
     remove: strengthFieldsRemove,
   } = useFieldArray({
@@ -40,21 +42,21 @@ const DrugForm = () => {
   const v = useWatch({ name: "generics" });
 
   const onSubmit: SubmitHandler<FormSchema> = (data) => console.log(data);
-  console.log(v);
+  console.log("ddd", v);
   return (
     <>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className='space-y-5 shadow-lg p-5 bg-white dark:bg-c_light_cyan-900 my-4 rounded-md dark:text-black w-100 md:w-[600px]'>
-        <div className='border-l-2 border-neutral-500 px-2'>
+        <InputField>
           <Label htmlFor='brand'>Brand</Label>
           <DrugField
             placeholder='Amocaln'
             name='brand'
           />
-        </div>
-
-        <div className='border-l-2 border-neutral-500 px-2 flex flex-col'>
+        </InputField>
+        <Separator className='w-[80%] mx-auto' />
+        <InputField>
           <Label htmlFor='generic'>Generic</Label>
           <GenericInput
             genericsFields={genericsFields}
@@ -63,41 +65,36 @@ const DrugForm = () => {
             strengthFieldsAppend={strengthFieldsAppend}
             strengthFieldsRemove={strengthFieldsRemove}
           />
-        </div>
-
-        <div className='border-l-2 border-neutral-500 px-2 '>
+        </InputField>
+        <Separator className='w-[80%] mx-auto' />
+        <InputField>
           <Label htmlFor='dosageForm'>Dosage Form</Label>
-
-          <div>
-            <AutoComplete
-              options={dosageForms}
-              name='dosageForm'
-            />
-            <p className='text-sm text-neutral-500'>Chose The Right Form</p>
-          </div>
-        </div>
-        <div className='border-l-2 border-neutral-500 px-2 '>
+          <DosageFormInput />
+        </InputField>
+        <Separator className='w-[80%] mx-auto' />
+        <InputField>
           <Label htmlFor='strength'>Strength</Label>
           {genericsFields.map((field, index) => (
             <div
               key={field.id}
-              className='flex space-x-2'>
-              <h1>{v[index].generic}</h1>
+              className='flex  px-2 my-2 '>
+              <h1>{v[index]?.generic}</h1>
               <AutoComplete
                 options={drugConcentrationUnits}
                 name={`strength.${index}.nominatorUnit`}
               />
             </div>
           ))}
-        </div>
+        </InputField>
+        <Separator className='w-[80%] mx-auto' />
 
-        <div className='border-l-2 border-neutral-500 px-2 '>
+        <InputField>
           <Label htmlFor='manufacturer'>Manufacturer</Label>
           <DrugField
             placeholder='Hikma'
             name='manufacturer'
           />
-        </div>
+        </InputField>
 
         <Button type='submit'>Submit</Button>
       </form>
