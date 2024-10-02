@@ -29,6 +29,7 @@ const DrugForm = () => {
   });
 
   const {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     fields: strengthsFields,
     append: strengthFieldsAppend,
     remove: strengthFieldsRemove,
