@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Check, ChevronsUpDown, ChevronDown, ChevronUp } from "lucide-react";
+import { Check,  ChevronDown, ChevronUp } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";

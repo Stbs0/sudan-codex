@@ -8,6 +8,7 @@ import {
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Generics } from "@/types/types";
+import { FormSchema } from "@/lib/formSchema";
 
 interface Props {
   genericsFieldsAppend: UseFieldArrayAppend<Generics, "generics">;
@@ -24,20 +25,30 @@ const GenericInput = ({
   strengthFieldsRemove,
   genericsFields,
 }: Props) => {
-  const { register } = useFormContext();
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext<FormSchema>();
 
   return (
     <>
       {genericsFields.map((field, index) => (
         <div
-          className=' px-2 my-2 '
+          className=' px-2  '
           key={field.id}>
-          <div className='flex space-x-8 '>
-            <Input
-              placeholder='Amocaln'
-              className='border-slate-500 w-40 mr-8'
-              {...register(`generics.${index}.generic` as const)}
-            />
+          <div className='flex space-x-8 space-y-2  '>
+            <div>
+              <Input
+                placeholder='Amocaln'
+                className='border-slate-500 w-40 mr-8'
+                {...register(`generics.${index}.generic` as const)}
+              />
+              {errors.generics?.[index]?.generic && (
+                <span className='text-sm text-red-600'>
+                  {errors.generics?.[index]?.generic?.message?.toString()}
+                </span>
+              )}
+            </div>
             <div className='space-x-2'>
               <Button
                 className='max-w-fit bg-blue-600 hover:bg-blue-700'
