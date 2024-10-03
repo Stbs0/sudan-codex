@@ -10,7 +10,7 @@ type Props = {
 
 const StrengthCheckBox = ({ setIsDenominator, IsDenominator }: Props) => {
   return (
-    <div className='flex space-x-2 items-center'>
+    <div className='flex space-x-2 items-center  '>
       <Checkbox
         onClick={() => setIsDenominator(!IsDenominator)}
         id='denominator'

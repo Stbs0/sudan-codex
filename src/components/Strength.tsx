@@ -23,8 +23,12 @@ const Strength = ({ genericsFields, watchGenerics }: StrengthProps) => {
           key={field.id}
           className='flex flex-col space-y-2 px-2 my-2 '>
           <div className='flex space-x-3 '>
-            <div className='min-w-10 flex justify-center items-center'>
+            <div className='min-w-10 flex flex-col justify-center '>
               <p className=''>{watchGenerics[index]?.generic}</p>
+              <StrengthCheckBox
+                setIsDenominator={setIsDenominator}
+                IsDenominator={isDenominator}
+              />
             </div>
             <div className='flex space-x-3'>
               <StrengthNumber
@@ -37,10 +41,6 @@ const Strength = ({ genericsFields, watchGenerics }: StrengthProps) => {
               />
             </div>
           </div>
-          <StrengthCheckBox
-            setIsDenominator={setIsDenominator}
-            IsDenominator={isDenominator}
-          />
         </div>
       ))}
     </>
