@@ -43,6 +43,7 @@ const DrugForm = () => {
 
   const onSubmit: SubmitHandler<FormSchema> = (data) => console.log(data);
   console.log("ddd", watchGenerics);
+  
   return (
     <>
       <form
@@ -84,10 +85,10 @@ const DrugForm = () => {
         {/* Strength input */}
         <InputField>
           <Label htmlFor='strength'>Strength</Label>
-          <Strength
+         { <Strength
             watchGenerics={watchGenerics}
             genericsFields={genericsFields}
-          />
+          />}
         </InputField>
 
         <Separator className='w-[80%] mx-auto' />

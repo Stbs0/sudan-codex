@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Check,  ChevronDown, ChevronUp } from "lucide-react";
+import { Check, ChevronDown, ChevronUp } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -22,8 +22,9 @@ import { useController } from "react-hook-form";
 interface Props {
   options: Unit[] | DosageForm[];
   name: string;
+  className?: string;
 }
-const AutoComplete = ({ options, name }: Props) => {
+const AutoComplete = ({ options, name, className }: Props) => {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
 
@@ -41,8 +42,7 @@ const AutoComplete = ({ options, name }: Props) => {
           variant='outline'
           role='combobox'
           aria-expanded={open}
-
-          className=' flex max-w-fit min-w-10  items-center '>
+          className={` flex   items-center ${className} `}>
           {value
             ? options.find((framework) => framework.value === value)?.label
             : options[0]?.label}
@@ -60,7 +60,7 @@ const AutoComplete = ({ options, name }: Props) => {
             <CommandEmpty>No framework found.</CommandEmpty>
             <CommandGroup>
               {options.map((framework) => (
-                <CommandItem 
+                <CommandItem
                   className='border-t-[1px]'
                   key={framework.value}
                   value={framework.value}
