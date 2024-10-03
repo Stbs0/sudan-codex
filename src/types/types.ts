@@ -30,6 +30,7 @@ export interface DosageForm {
 }
 
 export type Generics = Pick<FormSchema, "generics">;
+export type WatchGenerics = Generics["generics"]
 
 // export interface DosageForm {
 //   aerosol: string;

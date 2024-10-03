@@ -1,26 +1,34 @@
+import { FormSchema } from "@/lib/formSchema";
 import { Input } from "./ui/input";
-import { useFormContext } from "react-hook-form";
+import { FieldArrayWithId, useFormContext } from "react-hook-form";
+import AutoComplete from "./ui/autocomplete";
+import { drugConcentrationUnits } from "@/constants";
+import { Generics, WatchGenerics } from "@/types/types";
 
-const Strength = ({ index }: { index: number }) => {
-  const { register } = useFormContext();
+type StrengthProps = {
+  genericsFields: FieldArrayWithId<FormSchema, "generics", "id">[];
+  watchGenerics: WatchGenerics;
+};
+const Strength = ({ genericsFields, watchGenerics }: StrengthProps) => {
+  const {
+   
+    formState: { errors },
+  } = useFormContext<FormSchema>();
+
   return (
-    <div className='flex items-center'>
-      <Input
-        type='number'
-        className=' border-slate-500 w-16 min-w-[60px] max-w-fit px-2 mr-3 '
-        placeholder='100'
-        {...register(`moreGenerics.${index}.number`, {
-          valueAsNumber: true,
-        })}
-      />
-      {/* <GroupSelect /> */}
-      <span className='text-xl mx-2'>/</span>
-      <Input
-        className='w-16 min-w-[60px] max-w-fit border-slate-500  '
-        placeholder='ml'
-        {...register(`strength.${index}.denominator`)}
-      />
-    </div>
+    <>
+      {genericsFields.map((field, index) => (
+        <div
+          key={field.id}
+          className='flex  px-2 my-2 '>
+          <h1>{watchGenerics[index]?.generic}</h1>
+          <AutoComplete
+            options={drugConcentrationUnits}
+            name={`strength.${index}.nominatorUnit`}
+          />
+        </div>
+      ))}
+    </>
   );
 };
 
