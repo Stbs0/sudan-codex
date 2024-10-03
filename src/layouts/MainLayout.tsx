@@ -30,7 +30,9 @@ console.log(windowsWidth);
         </div>
       </header>
 
-      <Outlet />
+      <main className='w-full flex-1 p-4'>
+        <Outlet />
+      </main>
     </div>
   );
 };

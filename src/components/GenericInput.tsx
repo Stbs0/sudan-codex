@@ -36,7 +36,7 @@ const GenericInput = ({
         <div
           className=' px-2  '
           key={field.id}>
-          <div className='flex space-x-8 space-y-2  '>
+          <div className='flex justify-around  '>
             <div>
               <Input
                 placeholder='Amocaln'
@@ -61,7 +61,7 @@ const GenericInput = ({
                     denominatorUnit: "ml",
                   });
                 }}>
-                Add active ingredient
+                Add more
               </Button>
               {index !== 0 && (
                 <Button
