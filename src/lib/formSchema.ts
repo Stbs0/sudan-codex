@@ -43,7 +43,7 @@ const formSchema = z.object({
   strength: z.array(
     z.object({
       nominator: z.number(),
-      denominator: z.number(),
+      denominator: z.number().optional(),
       nominatorUnit: z
         .string()
         .min(2, minimumStringMsg)
@@ -51,7 +51,8 @@ const formSchema = z.object({
       denominatorUnit: z
         .string()
         .min(2, minimumStringMsg)
-        .max(50, maximumStringMsg),
+        .max(50, maximumStringMsg)
+        .optional(),
     }),
   ),
 });
