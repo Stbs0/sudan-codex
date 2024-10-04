@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/popover";
 import { DosageForm, Unit } from "@/types/types";
 import { useController } from "react-hook-form";
+import { on } from "events";
 
 interface Props {
   options: Unit[] | DosageForm[];
@@ -26,13 +27,18 @@ interface Props {
 }
 const AutoComplete = ({ options, name, className }: Props) => {
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
+  const [value, setValue] = React.useState(options[0].value);
 
   const {
     field: { onChange },
   } = useController({
     name,
   });
+
+  React.useEffect(() => {
+    onChange(value);
+  }, [value]);
+
   return (
     <Popover
       open={open}
@@ -43,9 +49,7 @@ const AutoComplete = ({ options, name, className }: Props) => {
           role='combobox'
           aria-expanded={open}
           className={` flex   items-center ${className} `}>
-          {value
-            ? options.find((framework) => framework.value === value)?.label
-            : options[0]?.label}
+          {options.find((framework) => framework.value === value)?.label}
           {open ? (
             <ChevronUp className='ml-2 h-4 w-4 shrink-0 opacity-50' />
           ) : (
@@ -55,27 +59,27 @@ const AutoComplete = ({ options, name, className }: Props) => {
       </PopoverTrigger>
       <PopoverContent className='w-[200px] p-0'>
         <Command>
-          <CommandInput placeholder='Search framework...' />
+          <CommandInput placeholder='Search item...' />
           <CommandList>
-            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandEmpty>No item found.</CommandEmpty>
             <CommandGroup>
-              {options.map((framework) => (
+              {options.map((item) => (
                 <CommandItem
                   className='border-t-[1px]'
-                  key={framework.value}
-                  value={framework.value}
+                  key={item.value}
+                  value={item.value}
                   onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue);
-                    onChange(currentValue === value ? "" : currentValue);
+                    setValue(currentValue);
+                    onChange(currentValue);
                     setOpen(false);
                   }}>
                   <Check
                     className={cn(
                       "mr-2 h-4 w-4",
-                      value === framework.value ? "opacity-100" : "opacity-0",
+                      value === item.value ? "opacity-100" : "opacity-0",
                     )}
                   />
-                  {framework.label}
+                  {item.label}
                 </CommandItem>
               ))}
             </CommandGroup>

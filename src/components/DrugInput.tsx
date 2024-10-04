@@ -6,22 +6,22 @@ interface Props {
   placeholder: string;
   name: keyof FormSchema;
 
-  props?: [string, number];
+  type?: string;
 }
-const DrugField = ({ placeholder, name, ...props }: Props) => {
+const DrugField = ({ placeholder, name, type }: Props) => {
   const {
     register,
     formState: { errors },
   } = useFormContext<FormSchema>();
-
+  const isNumber = type === "number";
   return (
     <div className='ml-2 '>
       <Input
         className='placeholder:italic'
         id={name}
         placeholder={placeholder}
-        {...register(name)}
-        {...props}
+        {...register(name, { valueAsNumber: isNumber })}
+        type={type}
       />
       {errors[name] && (
         <p className='text-sm text-red-600'>

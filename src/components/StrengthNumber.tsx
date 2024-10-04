@@ -18,7 +18,9 @@ const StrengthNumber = ({ index, isDenominator}: Props) => {
       <Input
         type='number'
         className=' [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none  min-w-6 max-w-20'
-        {...register(`strength.${index}.nominator`)}
+        {...register(`strength.${index}.nominator`, {
+          valueAsNumber: true,
+        })}
       />
       {isDenominator && (
         <>
@@ -26,14 +28,12 @@ const StrengthNumber = ({ index, isDenominator}: Props) => {
           <Input
             type='number'
             className=' [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none min-w-6 max-w-20'
-            {...register(`strength.${index}.denominator`)}
+            {...register(`strength.${index}.denominator`, {
+              valueAsNumber: true,
+            })}
           />
         </>
       )}
-      {/* <AutoComplete
-        options={drugConcentrationUnits}
-        name={`strength.${index}.${unit}`}
-      /> */}
     </div>
   );
 };

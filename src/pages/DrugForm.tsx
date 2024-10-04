@@ -18,9 +18,12 @@ import DosageFormInput from "@/components/DosageFormInput";
 import InputField from "@/components/InputField";
 import { Separator } from "@/components/ui/separator";
 import Strength from "@/components/Strength";
+import AutoComplete from "@/components/ui/autocomplete";
+import { DRUG_PACKAGE_TYPES } from "@/constants";
+import { createDrug } from "@/services/createDrug";
 
 const DrugForm = () => {
-  const { handleSubmit, control } = useFormContext<FormSchema>();
+  const { handleSubmit, control,formState: { errors } } = useFormContext<FormSchema>();
 
   const {
     fields: genericsFields,
@@ -30,7 +33,7 @@ const DrugForm = () => {
   } = useFieldArray<Generics>({
     name: "generics",
   });
-
+console.log([errors])
   const {
     // fields: strengthsFields,
     append: strengthFieldsAppend,
@@ -41,8 +44,10 @@ const DrugForm = () => {
 
   const watchGenerics = useWatch({ name: "generics" });
 
-  const onSubmit: SubmitHandler<FormSchema> = (data) => console.log(data);
-  console.log("ddd", watchGenerics);
+  const onSubmit: SubmitHandler<FormSchema> = async (data) => {
+    const newDrug = await createDrug(data);
+    console.log("ddd",newDrug);
+  }
 
   return (
     <>
@@ -93,12 +98,12 @@ const DrugForm = () => {
           <Label htmlFor='strength'>
             Strength<span className='text-red-500'>*</span>
           </Label>
-          {
+       
             <Strength
               watchGenerics={watchGenerics}
               genericsFields={genericsFields}
             />
-          }
+          
         </InputField>
 
         <Separator className='w-[80%] mx-auto' />
@@ -116,6 +121,15 @@ const DrugForm = () => {
 
         <Separator className='w-[80%] mx-auto' />
 
+
+        <InputField>
+          <Label htmlFor='packaging'>Packaging</Label>
+          <AutoComplete name="packaging" options={DRUG_PACKAGE_TYPES}/>
+          
+          </InputField>
+
+        <Separator className='w-[80%] mx-auto' />
+
         {/* Agency input */}
         <InputField>
           <Label htmlFor='agency'>Agency</Label>
@@ -129,7 +143,7 @@ const DrugForm = () => {
 
         <InputField>
           <Label>Price</Label>
-          <DrugField name="price"
+          <DrugField name="price" type="number"
           placeholder="5000" />
         </InputField>
 

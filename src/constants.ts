@@ -13,100 +13,9 @@ export const drugConcentrationUnits: Unit[] = [
   { value: "% w/w", label: "% w/w" },
   { value: "% w/v", label: "% w/v" },
   { value: "% v/v", label: "% v/v" },
+  { value: "%", label: "%" },
+  { value: "other", label: "Other" },
 ];
-
-// const doageForms = {
-//   solid: ["tablet", "capsule", "sachet"],
-//   liquid: ["Solution", "Suspension"],
-//   powder: ["capsule", "sachet"],
-// };
-
-// const liquidDosageForms = {
-//   oral: [
-//     { value: "solution", label: "Solution" },
-//     { value: "suspension", label: "Suspension" },
-//     { value: "emulsion", label: "Emulsion" },
-//     { value: "syrup", label: "Syrup" },
-//     { value: "elixir", label: "Elixir" },
-//     { value: "tincture", label: "Tincture" },
-//     { value: "oral_drops", label: "Oral Drops" },
-//     { value: "mouthwash", label: "Mouthwash / Gargle" },
-//   ],
-//   topical: [
-//     { value: "lotion", label: "Lotion" },
-//     { value: "liniment", label: "Liniment" },
-//     { value: "tincture_topical", label: "Tincture (Topical)" },
-//     { value: "spray", label: "Spray" },
-//     { value: "solution_topical", label: "Solution (Topical)" },
-//   ],
-//   injectable: [
-//     { value: "injection", label: "Injection" },
-//     { value: "infusion", label: "Infusion" },
-//     { value: "emulsion_injection", label: "Emulsion for Injection" },
-//   ],
-//   inhaled: [
-//     { value: "nebulizer_solution", label: "Nebulizer Solution" },
-//     { value: "aerosol", label: "Aerosol" },
-//   ],
-//   ophthalmic_otc_nasal: [
-//     { value: "eye_drops", label: "Eye Drops" },
-//     { value: "ear_drops", label: "Ear Drops" },
-//     { value: "nasal_drops_spray", label: "Nasal Drops / Spray" },
-//   ],
-//   rectal_vaginal: [
-//     { value: "enema", label: "Enema" },
-//     { value: "douche", label: "Douche" },
-//   ],
-// };
-
-// const solidDosageForms = {
-//   oral: [
-//     { value: "tablet", label: "Tablet" },
-//     { value: "capsule", label: "Capsule" },
-//     { value: "powder", label: "Powder" },
-//     { value: "granule", label: "Granule" },
-//     { value: "lozenge", label: "Lozenge" },
-//     { value: "chewable_tablet", label: "Chewable Tablet" },
-//     { value: "film", label: "Film" },
-//     { value: "sublingual_tablet", label: "Sublingual Tablet" },
-//     { value: "buccal_tablet", label: "Buccal Tablet" },
-//   ],
-//   topical: [
-//     { value: "cream", label: "Cream" },
-//     { value: "ointment", label: "Ointment" },
-//     { value: "gel", label: "Gel" },
-//     { value: "powder_topical", label: "Topical Powder" },
-//     { value: "paste", label: "Paste" },
-//   ],
-//   injectable: [{ value: "powder_injection", label: "Powder for Injection" }],
-//   inhaled: [],
-//   dental: [
-//     { value: "dental_cement", label: "Dental Cement" },
-//     { value: "lozenge_dental", label: "Dental Lozenge" },
-//   ],
-// };
-
-// const semiSolidDosageForms = {
-//   topical: [
-//     { value: "cream", label: "Cream" },
-//     { value: "ointment", label: "Ointment" },
-//     { value: "gel", label: "Gel" },
-//     { value: "paste", label: "Paste" },
-//     { value: "lotion", label: "Lotion" },
-//     { value: "suspension", label: "Suspension" },
-//     { value: "foam", label: "Foam" },
-//   ],
-//   vaginal: [
-//     { value: "cream_vaginal", label: "Vaginal Cream" },
-//     { value: "gel_vaginal", label: "Vaginal Gel" },
-//     { value: "suppository_vaginal", label: "Vaginal Suppository" },
-//     { value: "tablet_vaginal", label: "Vaginal Tablet" },
-//   ],
-//   rectal: [
-//     { value: "suppository_rectal", label: "Rectal Suppository" },
-//     { value: "cream_rectal", label: "Rectal Cream" },
-//   ],
-// };
 
 export const dosageForms: DosageForm[] = [
   { value: "aerosol", label: "AEROSOL" },
@@ -353,6 +262,19 @@ export const dosageForms: DosageForm[] = [
   { value: "wax", label: "WAX" },
 ];
 
-// const dosageFormValues = dosageForms.map((form) => form.value);
-
-// export { dosageFormValues as const };
+export const DRUG_PACKAGE_TYPES = [
+  { value: "blister_pack", label: "Blister Pack" },
+  { value: "bottle", label: "Bottle" },
+  { value: "can", label: "can" },
+  { value: "vial", label: "Vial" },
+  { value: "syringe", label: "Syringe" },
+  { value: "ampoule", label: "Ampoule" },
+  { value: "infusion_bag", label: "Infusion Bag" },
+  { value: "transdermal_patche", label: "Transdermal Patch" },
+  { value: "tube", label: "Tube" },
+  { value: "pack", label: "Pack (Box)" },
+  { value: "nasal_sprays_inhaler", label: "Nasal Spray and Inhaler" },
+  { value: "spray", label: "Spray" },
+  {value:"cartridge", label:"Cartridge"},
+  { value: "other", label: "Other" },
+];
