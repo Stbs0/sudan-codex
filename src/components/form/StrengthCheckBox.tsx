@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Checkbox } from "./ui/checkbox";
-import { Label } from "./ui/label";
+import { Checkbox } from "../ui/checkbox";
+import { Label } from "../ui/label";
 
 type Props = {
   setIsDenominator: React.Dispatch<React.SetStateAction<boolean>>;

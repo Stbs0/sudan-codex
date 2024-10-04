@@ -6,24 +6,23 @@ import {
 } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 
-import DrugField from "@/components/DrugInput";
-import { DevTool } from "@hookform/devtools";
+import DrugField from "@/components/form/DrugInput";
 
-import { FormSchema } from "@/lib/formSchema";
+import { FormSchema } from "@/lib/schemas/newDrugSchema";
 import { Label } from "@/components/ui/label";
 
 import { Generics } from "@/types/types";
-import GenericInput from "@/components/GenericInput";
-import DosageFormInput from "@/components/DosageFormInput";
-import InputField from "@/components/InputField";
+import GenericInput from "@/components/form/GenericInput";
+import DosageFormInput from "@/components/form/DosageFormInput";
+import InputField from "@/components/form/InputField";
 import { Separator } from "@/components/ui/separator";
-import Strength from "@/components/Strength";
+import Strength from "@/components/form/Strength";
 import AutoComplete from "@/components/ui/autocomplete";
 import { DRUG_PACKAGE_TYPES } from "@/constants";
 import { createDrug } from "@/services/createDrug";
 
 const DrugForm = () => {
-  const { handleSubmit, control,formState: { errors } } = useFormContext<FormSchema>();
+  const { handleSubmit } = useFormContext<FormSchema>();
 
   const {
     fields: genericsFields,
@@ -33,7 +32,6 @@ const DrugForm = () => {
   } = useFieldArray<Generics>({
     name: "generics",
   });
-console.log([errors])
   const {
     // fields: strengthsFields,
     append: strengthFieldsAppend,
@@ -45,9 +43,8 @@ console.log([errors])
   const watchGenerics = useWatch({ name: "generics" });
 
   const onSubmit: SubmitHandler<FormSchema> = async (data) => {
-    const newDrug = await createDrug(data);
-    console.log("ddd",newDrug);
-  }
+    await createDrug(data);
+  };
 
   return (
     <>
@@ -98,12 +95,11 @@ console.log([errors])
           <Label htmlFor='strength'>
             Strength<span className='text-red-500'>*</span>
           </Label>
-       
-            <Strength
-              watchGenerics={watchGenerics}
-              genericsFields={genericsFields}
-            />
-          
+
+          <Strength
+            watchGenerics={watchGenerics}
+            genericsFields={genericsFields}
+          />
         </InputField>
 
         <Separator className='w-[80%] mx-auto' />
@@ -121,12 +117,13 @@ console.log([errors])
 
         <Separator className='w-[80%] mx-auto' />
 
-
         <InputField>
           <Label htmlFor='packaging'>Packaging</Label>
-          <AutoComplete name="packaging" options={DRUG_PACKAGE_TYPES}/>
-          
-          </InputField>
+          <AutoComplete
+            name='packaging'
+            options={DRUG_PACKAGE_TYPES}
+          />
+        </InputField>
 
         <Separator className='w-[80%] mx-auto' />
 
@@ -143,14 +140,16 @@ console.log([errors])
 
         <InputField>
           <Label>Price</Label>
-          <DrugField name="price" type="number"
-          placeholder="5000" />
+          <DrugField
+            name='price'
+            type='number'
+            placeholder='5000'
+          />
         </InputField>
 
         {/* Submit button */}
         <Button type='submit'>Submit</Button>
       </form>
-      <DevTool control={control} />
     </>
   );
 };

@@ -1,4 +1,4 @@
-import { FormSchema } from "@/lib/formSchema";
+import { FormSchema } from "@/lib/schemas/newDrugSchema";
 
 export type Theme = "dark" | "light" | "system";
 
@@ -13,12 +13,10 @@ export type ThemeProviderState = {
   setTheme: (theme: Theme) => void;
 };
 
-
 export type Unit = {
   value: string;
   label: string;
 };
-
 
 export type UnitCategory = {
   label: string;
@@ -30,7 +28,7 @@ export interface DosageForm {
 }
 
 export type Generics = Pick<FormSchema, "generics">;
-export type WatchGenerics = Generics["generics"]
+export type WatchGenerics = Generics["generics"];
 
 // export interface DosageForm {
 //   aerosol: string;

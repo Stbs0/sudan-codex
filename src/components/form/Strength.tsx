@@ -1,11 +1,10 @@
-import { FormSchema } from "@/lib/formSchema";
+import { FormSchema } from "@/lib/schemas/newDrugSchema";
 import { FieldArrayWithId } from "react-hook-form";
 
 import { WatchGenerics } from "@/types/types";
 
 import { useState } from "react";
 import StrengthCheckBox from "./StrengthCheckBox";
-
 import StrengthNumber from "./StrengthNumber";
 import StrengthUnit from "./StrengthUnit";
 
@@ -14,7 +13,6 @@ type StrengthProps = {
   watchGenerics: WatchGenerics;
 };
 const Strength = ({ genericsFields, watchGenerics }: StrengthProps) => {
-
   const [isDenominator, setIsDenominator] = useState(true);
   return (
     <>

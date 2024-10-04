@@ -1,8 +1,6 @@
-import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Search } from "lucide-react";
-import { Input } from "./ui/input";
-
-
+import { Input } from "../ui/input";
 
 const PopoverSearch = () => {
   return (
@@ -20,4 +18,4 @@ const PopoverSearch = () => {
   );
 };
 
-export default PopoverSearch
+export default PopoverSearch;

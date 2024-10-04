@@ -1,7 +1,7 @@
 import { useFormContext } from "react-hook-form";
 
-import { Input } from "./ui/input";
-import { FormSchema } from "@/lib/formSchema";
+import { Input } from "../ui/input";
+import { FormSchema } from "@/lib/schemas/newDrugSchema";
 interface Props {
   placeholder: string;
   name: keyof FormSchema;

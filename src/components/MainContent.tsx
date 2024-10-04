@@ -11,7 +11,8 @@ const MainContent = ({ children }: Props) => {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);  return <main className=' flex-1 p-4'>{children}</main>;
+  }, []);
+  return <main className=' flex-1 p-4'>{children}</main>;
 };
 
 export default MainContent;

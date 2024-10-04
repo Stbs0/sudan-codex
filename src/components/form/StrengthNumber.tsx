@@ -1,17 +1,15 @@
-
-import { Input } from "./ui/input";
-import { Separator } from "./ui/separator";
+import { Input } from "../ui/input";
+import { Separator } from "../ui/separator";
 
 import { useFormContext } from "react-hook-form";
-import { FormSchema } from "@/lib/formSchema";
+import { FormSchema } from "@/lib/schemas/newDrugSchema";
 
 type Props = {
   index: number;
- isDenominator: boolean
-
+  isDenominator: boolean;
 };
 
-const StrengthNumber = ({ index, isDenominator}: Props) => {
+const StrengthNumber = ({ index, isDenominator }: Props) => {
   const { register } = useFormContext<FormSchema>();
   return (
     <div className='space-y-2 '>

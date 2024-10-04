@@ -1,5 +1,5 @@
 import { dosageForms } from "@/constants";
-import AutoComplete from "./ui/autocomplete";
+import AutoComplete from "../ui/autocomplete";
 
 const DosageFormInput = () => {
   return (

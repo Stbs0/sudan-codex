@@ -1,4 +1,4 @@
-import formSchema, { FormSchema } from "@/lib/formSchema";
+import formSchema, { FormSchema } from "@/lib/schemas/newDrugSchema";
 import DrugForm from "@/pages/DrugForm";
 
 import { zodResolver } from "@hookform/resolvers/zod";

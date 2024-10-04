@@ -5,10 +5,10 @@ import {
   UseFieldArrayRemove,
   useFormContext,
 } from "react-hook-form";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
 import { Generics } from "@/types/types";
-import { FormSchema } from "@/lib/formSchema";
+import { FormSchema } from "@/lib/schemas/newDrugSchema";
 
 interface Props {
   genericsFieldsAppend: UseFieldArrayAppend<Generics, "generics">;
