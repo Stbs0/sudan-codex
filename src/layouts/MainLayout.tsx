@@ -1,3 +1,4 @@
+import MainContent from "@/components/MainContent";
 import PopoverSearch from "@/components/PopoverSearch";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Button } from "@/components/ui/button";
@@ -30,9 +31,9 @@ console.log(windowsWidth);
         </div>
       </header>
 
-      <main className='w-full flex-1 p-4'>
+      <MainContent >
         <Outlet />
-      </main>
+      </MainContent>
     </div>
   );
 };
