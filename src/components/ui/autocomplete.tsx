@@ -18,7 +18,6 @@ import {
 } from "@/components/ui/popover";
 import { DosageForm, Unit } from "@/types/types";
 import { useController } from "react-hook-form";
-import { on } from "events";
 
 interface Props {
   options: Unit[] | DosageForm[];

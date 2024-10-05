@@ -3,6 +3,7 @@ import Header from "@/components/MainLayout/Header";
 
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
+import { Toaster } from "@/components/ui/toaster";
 
 const MainLayout = () => {
   const [windowsWidth, setWindowsWidth] = useState(0);
@@ -17,6 +18,7 @@ const MainLayout = () => {
       <MainContent>
         <Outlet />
       </MainContent>
+      <Toaster />
     </div>
   );
 };

@@ -8,8 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+
 import { auth, googleAuthProvider } from "@/config/firebase";
 import signUpSchema, { signUpSchemaType } from "@/lib/schemas/signUpSchema";
 import { zodResolver } from "@hookform/resolvers/zod";

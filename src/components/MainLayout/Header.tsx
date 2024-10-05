@@ -1,4 +1,3 @@
-import React from "react";
 import { ModeToggle } from "./mode-toggle";
 import { Input } from "../ui/input";
 import PopoverSearch from "../form/PopoverSearch";
