@@ -33,7 +33,7 @@ const DrugForm = () => {
     name: "generics",
   });
   const {
-    // fields: strengthsFields,
+    
     append: strengthFieldsAppend,
     remove: strengthFieldsRemove,
   } = useFieldArray({

@@ -1,4 +1,4 @@
-import MainContent from "@/components/MainContent";
+import MainContent from "@/components/MainLayout/MainContent";
 import Header from "@/components/MainLayout/Header";
 
 import { useEffect, useState } from "react";

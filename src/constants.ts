@@ -278,3 +278,5 @@ export const DRUG_PACKAGE_TYPES = [
   {value:"cartridge", label:"Cartridge"},
   { value: "other", label: "Other" },
 ];
+export const description =
+  "A sign up form with first name, last name, email and password inside a card. There's an option to sign up with GitHub and a link to login if you already have an account";

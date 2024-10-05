@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "@/layouts/MainLayout";
 import Home from "@/pages/Home";
-import RHFProviderContext from "@/contexts/RHFProviderContext";
+import RHFProviderContext from "@/contexts/RHFNewDrugProviderContext";
 import SignUp from "@/pages/SignUp";
 import Login from "@/pages/LogIn";
 
