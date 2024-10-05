@@ -13,26 +13,15 @@ import { auth, googleAuthProvider } from "@/config/firebase";
 import signUpSchema, { signUpSchemaType } from "@/lib/schemas/signUpSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { useForm } from "react-hook-form";
+import { useForm, useFormContext } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const {
-    register,
     handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm<signUpSchemaType>({
-    defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    },
-    resolver: zodResolver(signUpSchema),
-    mode: "all",
-  });
+    formState: { isSubmitting },
+  } = useFormContext<signUpSchemaType>();
 
   const navigate = useNavigate();
 
@@ -53,7 +42,6 @@ const SignUp = () => {
       console.log(error);
     }
   };
-  console.log({ errors });
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -69,47 +57,37 @@ const SignUp = () => {
               <div className='grid grid-cols-2 gap-4'>
                 <div className='grid gap-2'>
                   <FormFields
-                    register={register}
                     label='First name'
                     placeholder='Mark'
                     name='firstName'
-                    errors={errors}
                   />
                 </div>
                 <div className='grid gap-2'>
                   <FormFields
-                    register={register}
                     label='Last name'
                     placeholder='John'
                     name='lastName'
-                    errors={errors}
                   />
                 </div>
               </div>
               <div className='grid gap-2'>
                 <FormFields
-                  register={register}
                   label='Email'
                   placeholder='example@example.com'
                   name='email'
-                  errors={errors}
                 />
               </div>
               <div className='grid gap-2'>
                 <FormFields
-                  register={register}
                   label='Password'
                   name='password'
-                  errors={errors}
                   type='password'
                 />
               </div>
               <div className='grid gap-2'>
                 <FormFields
-                  register={register}
                   label='Conform Password'
                   name='confirmPassword'
-                  errors={errors}
                   type='password'
                 />
               </div>

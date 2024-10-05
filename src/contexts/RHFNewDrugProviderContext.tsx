@@ -4,7 +4,7 @@ import DrugForm from "@/pages/DrugForm";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 
-const RHFNewDrugProviderContext = () => {
+const RHFNewDrugProvider = () => {
   const methods = useForm<FormSchema>({
     defaultValues: {
       brand: "",
@@ -34,4 +34,4 @@ const RHFNewDrugProviderContext = () => {
   );
 };
 
-export default RHFNewDrugProviderContext;
+export default RHFNewDrugProvider;

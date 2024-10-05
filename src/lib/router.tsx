@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "@/layouts/MainLayout";
 import Home from "@/pages/Home";
-import RHFProviderContext from "@/contexts/RHFNewDrugProviderContext";
-import SignUp from "@/pages/SignUp";
+import RHFNewDrugProvider from "@/contexts/RHFNewDrugProviderContext";
 import Login from "@/pages/LogIn";
+import RHFSignUpProvider from "@/contexts/RHFSignUpProvider";
 
 const router = createBrowserRouter([
   {
@@ -15,9 +15,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/drug-form",
-        element: <RHFProviderContext />,
+        element: <RHFNewDrugProvider />,
       },
-      { path: "sign-up", element: <SignUp /> },
+      { path: "sign-up", element: <RHFSignUpProvider /> },
       { path: "log-in", element: <Login /> },
     ],
   },
