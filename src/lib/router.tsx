@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "@/layouts/MainLayout";
 import Home from "@/pages/Home";
-import RHFNewDrugProvider from "@/contexts/RHFNewDrugProviderContext";
-import Login from "@/pages/LogIn";
-import RHFSignUpProvider from "@/contexts/RHFSignUpProvider";
+import RHFNewDrugProvider from "@/providers/RHFNewDrugProviderContext";
+import RHFSignUpProvider from "@/providers/RHFSignUpProvider";
+import RHFLogInProvider from "@/providers/RHFLogInProvider";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         element: <RHFNewDrugProvider />,
       },
       { path: "sign-up", element: <RHFSignUpProvider /> },
-      { path: "log-in", element: <Login /> },
+      { path: "log-in", element: <RHFLogInProvider /> },
     ],
   },
 ]);

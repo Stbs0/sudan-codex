@@ -1,8 +1,8 @@
-import ThemeProviderContext from "@/contexts/ThemeProviderContext";
+import ThemeProviderContext from "@/providers/ThemeProviderContext";
 import { ThemeProviderState } from "@/types/types";
 import { useContext } from "react";
 
- const useTheme = () => {
+const useTheme = () => {
   const context = useContext<ThemeProviderState>(ThemeProviderContext);
 
   if (context === undefined)
@@ -10,4 +10,4 @@ import { useContext } from "react";
 
   return context;
 };
-export default useTheme
+export default useTheme;

@@ -1,3 +1,4 @@
+import FaceBookIcon from "@/assets/icons/FacebookIcon";
 import GoogleIcon from "@/assets/icons/GoogleIcon";
 import SpinnerIcon from "@/assets/icons/SpinnerIcon";
 import FormFields from "@/components/FormFields";
@@ -125,7 +126,7 @@ const SignUp = () => {
                 className='w-full flex items-center justify-center gap-2'
                 disabled={isSubmitting}
                 onClick={signInWithFaceBook}>
-                Sign up with Google <GoogleIcon />
+                Sign up with FaceBook <FaceBookIcon />
               </Button>
             </div>
             <div className='mt-4 text-center text-sm'>

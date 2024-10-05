@@ -8,8 +8,7 @@ import { FormProvider, useForm } from "react-hook-form";
 const RHFSignUpProvider = () => {
   const methods = useForm<signUpSchemaType>({
     defaultValues: {
-      firstName: "",
-      lastName: "",
+     
       email: "",
       password: "",
       confirmPassword: "",
