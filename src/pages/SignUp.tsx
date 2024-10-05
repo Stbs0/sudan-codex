@@ -1,3 +1,4 @@
+import GoogleIcon from "@/assets/icons/GoogleIcon";
 import SpinnerIcon from "@/assets/icons/SpinnerIcon";
 import FormFields from "@/components/FormFields";
 import { Button } from "@/components/ui/button";
@@ -9,11 +10,16 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import { auth, googleAuthProvider } from "@/config/firebase";
-import signUpSchema, { signUpSchemaType } from "@/lib/schemas/signUpSchema";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { useForm, useFormContext } from "react-hook-form";
+import { useToast } from "@/hooks/use-toast";
+import { signUpSchemaType } from "@/lib/schemas/signUpSchema";
+import {
+  FaceBookSignIn,
+  GoogleSignIn,
+  
+  register,
+} from "@/services/authServices";
+import { SyntheticEvent } from "react";
+import { useFormContext } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -22,23 +28,49 @@ const SignUp = () => {
     handleSubmit,
     formState: { isSubmitting },
   } = useFormContext<signUpSchemaType>();
-
+  const { toast } = useToast();
   const navigate = useNavigate();
 
-  const onSubmit = async (data: signUpSchemaType) => {
+  const onSubmit = async ({ email, password }: signUpSchemaType) => {
     try {
-      console.log(data);
-      await createUserWithEmailAndPassword(auth, data.email, data.password);
+      await register(email, password);
+
       navigate("/");
     } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Failed to sign up. Please try again.",
+      });
       console.log(error);
     }
   };
-  const signInWithGoogle = async (e: React.SyntheticEvent) => {
+
+  const signInWithGoogle = async (e: SyntheticEvent) => {
     e.preventDefault();
     try {
-      await signInWithPopup(auth, googleAuthProvider);
+      await GoogleSignIn();
+      navigate("/");
     } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Failed to sign in with Google. Please try again.",
+      });
+      console.log(error);
+    }
+  };
+  const signInWithFaceBook = async (e: SyntheticEvent) => {
+    e.preventDefault();
+    try {
+      await FaceBookSignIn();
+      navigate("/");
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Failed to sign in with Google. Please try again.",
+      });
       console.log(error);
     }
   };
@@ -54,22 +86,6 @@ const SignUp = () => {
           </CardHeader>
           <CardContent>
             <div className='grid gap-4'>
-              <div className='grid grid-cols-2 gap-4'>
-                <div className='grid gap-2'>
-                  <FormFields
-                    label='First name'
-                    placeholder='Mark'
-                    name='firstName'
-                  />
-                </div>
-                <div className='grid gap-2'>
-                  <FormFields
-                    label='Last name'
-                    placeholder='John'
-                    name='lastName'
-                  />
-                </div>
-              </div>
               <div className='grid gap-2'>
                 <FormFields
                   label='Email'
@@ -99,17 +115,24 @@ const SignUp = () => {
               </Button>
               <Button
                 variant='outline'
-                className='w-full'
+                className='w-full flex items-center justify-center gap-2'
                 disabled={isSubmitting}
                 onClick={signInWithGoogle}>
-                Sign up with Google
+                Sign up with Google <GoogleIcon />
+              </Button>
+              <Button
+                variant='outline'
+                className='w-full flex items-center justify-center gap-2'
+                disabled={isSubmitting}
+                onClick={signInWithFaceBook}>
+                Sign up with Google <GoogleIcon />
               </Button>
             </div>
             <div className='mt-4 text-center text-sm'>
               Already have an account?{" "}
               <Link
                 to='/log-in'
-                className='underline'>
+                className='underline underline-offset-2'>
                 Sign in
               </Link>
             </div>
