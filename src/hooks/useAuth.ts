@@ -1,24 +1,9 @@
-import { auth } from "@/config/firebase";
-import { User, onAuthStateChanged } from "firebase/auth";
-import { useEffect, useState } from "react";
+import { AuthContext } from "@/providers/AuthProvider";
+import { useContext } from "react";
 
 const useAuth = () => {
-  const [user, setUser] = useState<User | null>(null);
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
-  
-  useEffect(() => {
-    const unSub = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user);
-        setIsUserLoggedIn(true);
-      } else {
-        setUser(null);
-        setIsUserLoggedIn(false);
-      }
-    });
-    return () => unSub();
-  }, []);
+  const { user, loading } = useContext(AuthContext);
 
-  return { user, isUserLoggedIn,  };
+  return { user, loading };
 };
-export default useAuth
+export default useAuth;

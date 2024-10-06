@@ -12,11 +12,11 @@ import {
 } from "@/components/ui/card";
 
 import { useToast } from "@/hooks/use-toast";
+import useAuth from "@/hooks/useAuth";
 import { signUpSchemaType } from "@/lib/schemas/signUpSchema";
 import {
   FaceBookSignIn,
   GoogleSignIn,
-  
   register,
 } from "@/services/authServices";
 import { SyntheticEvent } from "react";
@@ -31,6 +31,15 @@ const SignUp = () => {
   } = useFormContext<signUpSchemaType>();
   const { toast } = useToast();
   const navigate = useNavigate();
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return <SpinnerIcon />;
+  }
+  if (user) {
+    navigate("/");
+  }
+
 
   const onSubmit = async ({ email, password }: signUpSchemaType) => {
     try {

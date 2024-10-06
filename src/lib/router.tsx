@@ -4,6 +4,7 @@ import Home from "@/pages/Home";
 import RHFNewDrugProvider from "@/providers/RHFNewDrugProviderContext";
 import RHFSignUpProvider from "@/providers/RHFSignUpProvider";
 import RHFLogInProvider from "@/providers/RHFLogInProvider";
+import PrivateRoute from "@/components/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/drug-form",
-        element: <RHFNewDrugProvider />,
+        element: (
+          <PrivateRoute>
+            <RHFNewDrugProvider />
+          </PrivateRoute>
+        ),
       },
       { path: "sign-up", element: <RHFSignUpProvider /> },
       { path: "log-in", element: <RHFLogInProvider /> },

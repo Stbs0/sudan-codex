@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import useAuth from "@/hooks/useAuth";
 import { LogInSchemaType } from "@/lib/schemas/LogInSchema";
 import { FaceBookSignIn, GoogleSignIn, signIn } from "@/services/authServices";
 import { SyntheticEvent } from "react";
@@ -21,11 +22,19 @@ import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
+
+  const { user, loading } = useAuth();
   const {
     handleSubmit,
     formState: { isSubmitting },
   } = useFormContext<LogInSchemaType>();
 
+  if (loading) {
+    return <SpinnerIcon />;
+  }
+  if (user) {
+    navigate("/");
+  }
   const onSubmit = async ({ email, password }: LogInSchemaType) => {
     try {
       await signIn(email, password);

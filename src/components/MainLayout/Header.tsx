@@ -4,9 +4,10 @@ import PopoverSearch from "../form/PopoverSearch";
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
 import { auth } from "@/config/firebase";
-import { User, onAuthStateChanged, signOut } from "firebase/auth";
-import { useEffect, useState } from "react";
+import { signOut } from "firebase/auth";
 import { useToast } from "@/hooks/use-toast";
+import useAuth from "@/hooks/useAuth";
+import SpinnerIcon from "@/assets/icons/SpinnerIcon";
 
 type Props = {
   windowsWidth: number;
@@ -14,31 +15,20 @@ type Props = {
 
 const Header = ({ windowsWidth }: Props) => {
   // Add a context  for the window width from MainContent
-  const [user, setUser] = useState<User | null>(null);
   const { toast } = useToast();
 
+  const { user, loading } = useAuth();
   const navigate = useNavigate();
-  useEffect(() => {
-    const unSub = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user);
-        toast({
-          title: "Welcome",
-          description: `Welcome ${user.displayName}`,
-        });
-      } else {
-        setUser(null);
-      }
-    });
 
-    return () => unSub();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-
-  return (
+  return loading ? (
+    <SpinnerIcon />
+  ) : (
     <header className='w-full flex justify-between items-center p-4 bg-gray-800'>
-      <div onClick={() => navigate("/")} className='text-2xl font-bold text-white cursor-pointer'>DrugWiki</div>
+      <div
+        onClick={() => navigate("/")}
+        className='text-2xl font-bold text-white cursor-pointer'>
+        DrugWiki
+      </div>
       <div className='flex items-center space-x-4'>
         <ModeToggle />
         {windowsWidth > 600 ? (
