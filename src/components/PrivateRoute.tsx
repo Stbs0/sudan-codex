@@ -8,16 +8,18 @@ const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
   const { loading, user } = useAuth();
   const { toast } = useToast();
   useEffect(() => {
-    if (!user && !loading) {
-      console.log("first");
-      toast({
-        title: "Please Log In",
-        description: "You need to be logged in to view this page.",
-        variant: "destructive",
-      });
-    }
-  }, [user, loading]);
-
+    return () => {
+      if (!user && !loading) {
+        toast({
+          title: "Please Log In",
+          description: "You need to be logged in to view this page.",
+          variant: "destructive",
+        });
+      }
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  console.log(loading);
   if (loading) {
     return <SpinnerIcon />;
   }
