@@ -2,7 +2,7 @@ const FaceBookIcon = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-	  className=" w-6 h-6"
+      className=' w-6 h-6'
       xmlSpace='preserve'
       viewBox='0 0 40 40'>
       <linearGradient
@@ -15,11 +15,11 @@ const FaceBookIcon = () => {
         gradientUnits='userSpaceOnUse'>
         <stop
           offset='0'
-          stop-color='#0062e0'
+          stopColor='#0062e0'
         />
         <stop
           offset='1'
-          stop-color='#19afff'
+          stopColor='#19afff'
         />
       </linearGradient>
       <path

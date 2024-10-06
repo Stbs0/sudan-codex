@@ -32,12 +32,13 @@ const Header = ({ windowsWidth }: Props) => {
     });
 
     return () => unSub();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
 
   return (
     <header className='w-full flex justify-between items-center p-4 bg-gray-800'>
-      <div className='text-2xl font-bold text-white'>DrugWiki</div>
+      <div onClick={() => navigate("/")} className='text-2xl font-bold text-white cursor-pointer'>DrugWiki</div>
       <div className='flex items-center space-x-4'>
         <ModeToggle />
         {windowsWidth > 600 ? (

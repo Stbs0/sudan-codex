@@ -16,12 +16,15 @@ import { LogInSchemaType } from "@/lib/schemas/LogInSchema";
 import { FaceBookSignIn, GoogleSignIn, signIn } from "@/services/authServices";
 import { SyntheticEvent } from "react";
 import { useFormContext } from "react-hook-form";
-import { Link,  useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
-  const { handleSubmit,  formState: { isSubmitting },} = useFormContext<LogInSchemaType>();
+  const {
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useFormContext<LogInSchemaType>();
 
   const onSubmit = async ({ email, password }: LogInSchemaType) => {
     try {
@@ -87,9 +90,10 @@ const Login = () => {
               <div className='grid gap-1 '>
                 <div className='flex items-center'>
                   <Label htmlFor='password'>Password</Label>
+                  {/* TODO: add this when making a password reset in the setting profile */}
                   <Link
                     to='#'
-                    className='ml-auto inline-block text-sm underline'>
+                    className='ml-auto inline-block text-sm underline '>
                     Forgot your password?
                   </Link>
                 </div>
