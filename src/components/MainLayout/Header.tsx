@@ -8,14 +8,12 @@ import { signOut } from "firebase/auth";
 import { useToast } from "@/hooks/use-toast";
 import useAuth from "@/hooks/useAuth";
 import SpinnerIcon from "@/assets/icons/SpinnerIcon";
-import useWidth from "@/hooks/useWidth";
-
-
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 const Header = () => {
   // Add a context  for the window width from MainContent
   const { toast } = useToast();
-const { isMobile } = useWidth();
+  const isDesktop = useMediaQuery("(min-width: 768px)");
   const { user, loading } = useAuth();
   const navigate = useNavigate();
   return loading ? (
@@ -29,13 +27,13 @@ const { isMobile } = useWidth();
       </div>
       <div className='flex items-center space-x-4'>
         <ModeToggle />
-        {isMobile ? (
-          <PopoverSearch />
-        ) : (
+        {isDesktop ? (
           <Input
             placeholder='Search'
-            className='w-20 bg-gray-700 text-white border-none focus:ring-2 focus:ring-blue-500'
+            className=' bg-gray-700 text-white border-none focus:ring-2 focus:ring-blue-500'
           />
+        ) : (
+          <PopoverSearch />
         )}
         {user ? (
           <Button
