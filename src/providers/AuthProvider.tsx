@@ -5,12 +5,11 @@ import { ReactNode, createContext, useEffect, useState } from "react";
 export const AuthContext = createContext<{
   user: User | null;
   loading: boolean;
-}>({ user: null, loading: false });
+}>({ user: auth.currentUser, loading: true });
 
 const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(false);
-
+  const [user, setUser] = useState<User | null>(auth.currentUser);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);

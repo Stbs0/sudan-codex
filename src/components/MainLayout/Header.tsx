@@ -4,11 +4,20 @@ import PopoverSearch from "../form/PopoverSearch";
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
 import { auth } from "@/config/firebase";
-import { signOut } from "firebase/auth";
+import { getAuth, signOut } from "firebase/auth";
 import { useToast } from "@/hooks/use-toast";
 import useAuth from "@/hooks/useAuth";
 import SpinnerIcon from "@/assets/icons/SpinnerIcon";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerTitle,
+  DrawerTrigger,
+} from "../ui/drawer";
+import { MenuIcon } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { getInitials } from "@/lib/utils";
 
 const Header = () => {
   // Add a context  for the window width from MainContent
@@ -16,9 +25,10 @@ const Header = () => {
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const { user, loading } = useAuth();
   const navigate = useNavigate();
-  return loading ? (
-    <SpinnerIcon />
-  ) : (
+  console.log(auth.currentUser);
+  // const auth1 = getAuth();
+  // console.log("sss", auth1.currentUser);
+  return (
     <header className='w-full flex justify-between items-center p-4 bg-gray-800'>
       <div
         onClick={() => navigate("/")}
@@ -35,39 +45,63 @@ const Header = () => {
         ) : (
           <PopoverSearch />
         )}
-        {user ? (
-          <Button
-            className=''
-            variant={"link"}
-            onClick={async () => {
-              toast({
-                title: "log out successfully",
-                description: ` Goodbye ${user.displayName}`,
-              });
-              await signOut(auth);
-            }}>
-            Sign Out
-          </Button>
-        ) : (
-          <>
-            {" "}
-            <Button
-              className='text-white hover:bg-blue-700 bg-blue-600'
-              variant={"link"}
-              onClick={() => {
-                navigate("/sign-up");
-              }}>
-              Join
-            </Button>
-            <Button
-              className='text-white hover:bg-blue-700 bg-blue-600 '
-              variant={"link"}
-              onClick={() => {
-                navigate("/log-in");
-              }}>
-              Sign In
-            </Button>
-          </>
+
+        {isDesktop &&
+          (!loading && user ? (
+            <>
+              {" "}
+              <Button
+                className=''
+                variant={"link"}
+                onClick={async () => {
+                  toast({
+                    title: "log out successfully",
+                    description: ` Goodbye ${user.displayName}`,
+                  });
+                  await signOut(auth);
+                }}>
+                Sign Out
+              </Button>
+              <Avatar>
+                <AvatarImage src={user?.photoURL || undefined} />
+                <AvatarFallback>
+                  {getInitials(user?.displayName || "")}
+                </AvatarFallback>
+              </Avatar>
+            </>
+          ) : (
+            !loading && (
+              <>
+                <Button
+                  className='text-white hover:bg-blue-700 bg-blue-600'
+                  variant={"link"}
+                  onClick={() => {
+                    navigate("/sign-up");
+                  }}>
+                  Join
+                </Button>
+                <Button
+                  className='text-white hover:bg-blue-700 bg-blue-600 '
+                  variant={"link"}
+                  onClick={() => {
+                    navigate("/log-in");
+                  }}>
+                  Sign In
+                </Button>
+              </>
+            )
+          ))}
+        {!isDesktop && (
+          <Drawer>
+            <DrawerTrigger>
+              <MenuIcon className='w-6 h-6 text-white' />
+            </DrawerTrigger>
+            <DrawerContent>
+              {/* TODO: add logo and and name of the project */}
+              <DrawerTitle>Menu</DrawerTitle>
+              {/* TODO add this menu after adding settings page and profile and the other pages */}
+            </DrawerContent>
+          </Drawer>
         )}
       </div>
     </header>

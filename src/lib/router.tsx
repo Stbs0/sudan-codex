@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import MainLayout from "@/layouts/MainLayout";
 import Home from "@/pages/Home";
 import RHFNewDrugProvider from "@/providers/RHFNewDrugProviderContext";
 import RHFSignUpProvider from "@/providers/RHFSignUpProvider";
 import RHFLogInProvider from "@/providers/RHFLogInProvider";
 import PrivateRoute from "@/components/PrivateRoute";
+import MainLayout from "@/layouts/MainLayout";
 
 const router = createBrowserRouter([
   {
