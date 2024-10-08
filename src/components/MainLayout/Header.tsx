@@ -15,9 +15,19 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "../ui/drawer";
-import { MenuIcon } from "lucide-react";
+import { MenuIcon, Settings, User } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { getInitials } from "@/lib/utils";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "../ui/sheet";
+import UnauthorizedUserBtns from "./UnauthorizedUserBtns";
+import ProfilePic from "./ProfilePic";
 
 const Header = () => {
   // Add a context  for the window width from MainContent
@@ -49,9 +59,8 @@ const Header = () => {
         {isDesktop &&
           (!loading && user ? (
             <>
-              {" "}
               <Button
-                className=''
+                className='text-white hover:bg-blue-700 bg-blue-600 '
                 variant={"link"}
                 onClick={async () => {
                   toast({
@@ -62,46 +71,37 @@ const Header = () => {
                 }}>
                 Sign Out
               </Button>
-              <Avatar>
-                <AvatarImage src={user?.photoURL || undefined} />
-                <AvatarFallback>
-                  {getInitials(user?.displayName || "")}
-                </AvatarFallback>
-              </Avatar>
+              <ProfilePic />
             </>
           ) : (
-            !loading && (
-              <>
-                <Button
-                  className='text-white hover:bg-blue-700 bg-blue-600'
-                  variant={"link"}
-                  onClick={() => {
-                    navigate("/sign-up");
-                  }}>
-                  Join
-                </Button>
-                <Button
-                  className='text-white hover:bg-blue-700 bg-blue-600 '
-                  variant={"link"}
-                  onClick={() => {
-                    navigate("/log-in");
-                  }}>
-                  Sign In
-                </Button>
-              </>
-            )
+            <UnauthorizedUserBtns />
           ))}
         {!isDesktop && (
-          <Drawer>
-            <DrawerTrigger>
+          <Sheet>
+            <SheetTrigger>
               <MenuIcon className='w-6 h-6 text-white' />
-            </DrawerTrigger>
-            <DrawerContent>
+            </SheetTrigger>
+            <SheetContent className=' w-[40%]'>
               {/* TODO: add logo and and name of the project */}
-              <DrawerTitle>Menu</DrawerTitle>
-              {/* TODO add this menu after adding settings page and profile and the other pages */}
-            </DrawerContent>
-          </Drawer>
+              <SheetHeader>
+                <SheetTitle>Menu</SheetTitle>
+              </SheetHeader>
+              <div className='flex flex-col gap-4  py-4 ml-4'>
+                <Button
+                  variant={"link"}
+                  onClick={() => navigate("/profile")}
+                  className='flex gap-3 '>
+                  <User /> <span>Profile</span>
+                </Button>
+                <Button
+                  variant={"link"}
+                  onClick={() => navigate("/settings")}
+                  className='flex gap-3 '>
+                  <Settings /> <span>Settings</span>
+                </Button>
+              </div>
+            </SheetContent>
+          </Sheet>
         )}
       </div>
     </header>
