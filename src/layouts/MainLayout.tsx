@@ -9,12 +9,11 @@ import SpinnerIcon from "@/assets/icons/SpinnerIcon";
 const MainLayout = () => {
   const { loading } = useAuth();
   return (
-    <div className='min-h-screen flex flex-col items-center bg-c_light_cyan-800 dark:bg-gray-900 dark:text-white'>
+    <div className='min-h-screen grid gap-4 bg-c_light_cyan-800 dark:bg-gray-900 dark:text-white'>
       {loading ? (
         <SpinnerIcon />
       ) : (
         <>
-          
           <Header />
           <MainContent>
             <Outlet />

@@ -18,10 +18,14 @@ import InputField from "@/components/form/InputField";
 import { Separator } from "@/components/ui/separator";
 import Strength from "@/components/form/Strength";
 import AutoComplete from "@/components/ui/autocomplete";
-import { DRUG_PACKAGE_TYPES } from "@/constants";
-import { createDrug } from "@/services/createDrug";
+import { DRUG_PACKAGE_TYPES, packagingTypes } from "@/constants";
+import { saveDrug } from "@/services/drugServices";
+import { useState } from "react";
+// import SpinnerIcon from "@/assets/icons/SpinnerIcon";
+// import Loading from "@/components/Loading";
 
 const DrugForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const { handleSubmit } = useFormContext<FormSchema>();
 
   const {
@@ -32,22 +36,27 @@ const DrugForm = () => {
   } = useFieldArray<Generics>({
     name: "generics",
   });
-  const {
-    
-    append: strengthFieldsAppend,
-    remove: strengthFieldsRemove,
-  } = useFieldArray({
-    name: "strength",
-  });
+  const { append: strengthFieldsAppend, remove: strengthFieldsRemove } =
+    useFieldArray({
+      name: "strength",
+    });
 
   const watchGenerics = useWatch({ name: "generics" });
 
   const onSubmit: SubmitHandler<FormSchema> = async (data) => {
-    await createDrug(data);
+    setIsLoading(true);
+    try {
+      await saveDrug(data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
   };
-
+console.log(isLoading)
   return (
     <>
+      {/* {<Loading />} */}
       <form
         onSubmit={handleSubmit(onSubmit)}
         className='space-y-5 shadow-lg p-5 bg-white dark:bg-c_light_cyan-900 my-4 rounded-md dark:text-black w-100 md:w-[600px]'>
@@ -121,7 +130,7 @@ const DrugForm = () => {
           <Label htmlFor='packaging'>Packaging</Label>
           <AutoComplete
             name='packaging'
-            options={DRUG_PACKAGE_TYPES}
+            options={packagingTypes}
           />
         </InputField>
 

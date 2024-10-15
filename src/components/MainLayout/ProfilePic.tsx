@@ -6,7 +6,7 @@ const ProfilePic = () => {
   const { user } = useAuth();
   return (
     <Avatar>
-      <AvatarImage src={user?.photoURL || undefined} />
+      <AvatarImage src={user?.photoURL ?? undefined} />
       <AvatarFallback>{getInitials(user?.displayName || "")}</AvatarFallback>
     </Avatar>
   );

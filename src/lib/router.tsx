@@ -5,6 +5,7 @@ import RHFSignUpProvider from "@/providers/RHFSignUpProvider";
 import RHFLogInProvider from "@/providers/RHFLogInProvider";
 import PrivateRoute from "@/components/PrivateRoute";
 import MainLayout from "@/layouts/MainLayout";
+// import DrugList from "@/pages/DrugList";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       },
       { path: "sign-up", element: <RHFSignUpProvider /> },
       { path: "log-in", element: <RHFLogInProvider /> },
+      // { path: "drug-list", element: <DrugList /> },
     ],
   },
 ]);

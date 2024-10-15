@@ -10,7 +10,7 @@ const App = () => {
       defaultTheme='dark'
       storageKey='vite-ui-theme'>
       <AuthProvider>
-        <RouterProvider router={router} />;
+        <RouterProvider router={router} />
       </AuthProvider>
     </ThemeProvider>
   );
