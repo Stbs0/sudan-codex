@@ -2,23 +2,26 @@ import MainContent from "@/components/MainLayout/MainContent";
 import Header from "@/components/MainLayout/Header";
 
 import { Outlet } from "react-router-dom";
-import { Toaster } from "@/components/ui/toaster";
 import useAuth from "@/hooks/useAuth";
-import SpinnerIcon from "@/assets/icons/SpinnerIcon";
-
+import Footer from "@/components/MainLayout/Footer";
+import SpinnerOverlay from "@/components/SpinnerOverlay";
+import { Toaster } from "sonner";
 const MainLayout = () => {
   const { loading } = useAuth();
+  
+
   return (
-    <div className='min-h-screen grid gap-4 bg-c_light_cyan-800 dark:bg-gray-900 dark:text-white'>
+    <div className='grid bg-c_light_cyan-800 dark:bg-gray-900 dark:text-white relative h-full'>
       {loading ? (
-        <SpinnerIcon />
+        <SpinnerOverlay />
       ) : (
         <>
           <Header />
           <MainContent>
             <Outlet />
           </MainContent>
-          <Toaster />
+          <Toaster richColors  expand={true} closeButton/>
+          <Footer />
         </>
       )}
     </div>

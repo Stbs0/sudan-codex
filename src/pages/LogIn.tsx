@@ -1,7 +1,7 @@
 import FaceBookIcon from "@/assets/icons/FacebookIcon";
 import GoogleIcon from "@/assets/icons/GoogleIcon";
-import SpinnerIcon from "@/assets/icons/SpinnerIcon";
 import FormFields from "@/components/FormFields";
+import SpinnerOverlay from "@/components/SpinnerOverlay";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,27 +11,24 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { useToast } from "@/hooks/use-toast";
 import useAuth from "@/hooks/useAuth";
 import { LogInSchemaType } from "@/lib/schemas/LogInSchema";
 import { FaceBookSignIn, GoogleSignIn, signIn } from "@/services/authServices";
 import { SyntheticEvent } from "react";
 import { useFormContext } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { toast } = useToast();
 
-  const { user, loading } = useAuth();
+  const { user} = useAuth();
   const {
     handleSubmit,
     formState: { isSubmitting },
   } = useFormContext<LogInSchemaType>();
 
-  if (loading) {
-    return <SpinnerIcon />;
-  }
+  
   if (user) {
     navigate("/");
   }
@@ -41,11 +38,6 @@ const Login = () => {
 
       navigate("/");
     } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: "Failed to sign up. Please try again.",
-      });
       console.log(error);
     }
   };
@@ -55,11 +47,7 @@ const Login = () => {
       await GoogleSignIn();
       navigate("/");
     } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: "Failed to sign in with Google. Please try again.",
-      });
+      toast.error("Failed to sign in with Google. Please try again.");
       console.log(error);
     }
   };
@@ -69,17 +57,13 @@ const Login = () => {
       await FaceBookSignIn();
       navigate("/");
     } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: "Failed to sign in with Google. Please try again.",
-      });
+      toast.error("Failed to sign in with FaceBook. Please try again.");
       console.log(error);
     }
   };
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className="grid">
         <Card className='mx-auto max-w-sm'>
           <CardHeader>
             <CardTitle className='text-2xl'>Login</CardTitle>
@@ -141,7 +125,7 @@ const Login = () => {
           </CardContent>
         </Card>
       </form>
-      {isSubmitting && <SpinnerIcon />}
+      {isSubmitting && <SpinnerOverlay />}
     </>
   );
 };

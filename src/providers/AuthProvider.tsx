@@ -1,6 +1,8 @@
 import { auth } from "@/config/firebase";
 import { User, onAuthStateChanged } from "firebase/auth";
 import { ReactNode, createContext, useEffect, useState } from "react";
+import { toast } from "sonner";
+
 
 export const AuthContext = createContext<{
   user: User | null;
@@ -11,8 +13,14 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(auth.currentUser);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
+    setLoading(true);
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
+      if (currentUser) {
+        setUser(currentUser);
+        toast.success(`Welcome back! ${currentUser.displayName}`, {
+          duration: 2000,
+        });
+      }
       setLoading(false);
     });
 

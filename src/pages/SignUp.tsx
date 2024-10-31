@@ -1,7 +1,7 @@
 import FaceBookIcon from "@/assets/icons/FacebookIcon";
 import GoogleIcon from "@/assets/icons/GoogleIcon";
-import SpinnerIcon from "@/assets/icons/SpinnerIcon";
 import FormFields from "@/components/FormFields";
+import SpinnerOverlay from "@/components/SpinnerOverlay";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -19,6 +19,7 @@ import {
   GoogleSignIn,
   register,
 } from "@/services/authServices";
+import { createUser } from "@/services/usersServices";
 import { SyntheticEvent } from "react";
 import { useFormContext } from "react-hook-form";
 import { Link } from "react-router-dom";
@@ -34,18 +35,17 @@ const SignUp = () => {
   const { user, loading } = useAuth();
 
   if (loading) {
-    return <SpinnerIcon />;
+    return <SpinnerOverlay />;
   }
   if (user) {
     navigate("/");
   }
 
-
   const onSubmit = async ({ email, password }: signUpSchemaType) => {
     try {
       await register(email, password);
-
-      navigate("/");
+      await createUser(email, password);
+      navigate("/profile");
     } catch (error) {
       toast({
         variant: "destructive",
@@ -149,7 +149,7 @@ const SignUp = () => {
           </CardContent>
         </Card>
       </form>
-      {isSubmitting && <SpinnerIcon />}
+      {isSubmitting && <SpinnerOverlay />}
     </>
   );
 };

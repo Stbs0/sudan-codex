@@ -303,7 +303,10 @@ export const packagingTypes = [
   { label: "CASE", value: "CASE" },
   { label: "CELLO PACK", value: "CELLO PACK" },
   { label: "CONTAINER", value: "CONTAINER" },
-  {label: "CONTAINER, FLEXIBLE INTERMEDIATE BULK", value: "CONTAINER, FLEXIBLE INTERMEDIATE BULK",},
+  {
+    label: "CONTAINER, FLEXIBLE INTERMEDIATE BULK",
+    value: "CONTAINER, FLEXIBLE INTERMEDIATE BULK",
+  },
   { label: "CUP", value: "CUP" },
   { label: "CUP, UNIT-DOSE", value: "CUP, UNIT-DOSE" },
   { label: "CYLINDER", value: "CYLINDER" },
@@ -316,12 +319,12 @@ export const packagingTypes = [
   { label: "JAR", value: "JAR" },
   { label: "JUG", value: "JUG" },
   { label: "KIT", value: "KIT" },
-  { label: "NOT APPLICABLE", value: "NOT APPLICABLE" },
   { label: "PACKAGE", value: "PACKAGE" },
   { label: "PACKAGE, COMBINATION", value: "PACKAGE, COMBINATION" },
   { label: "PACKET", value: "PACKET" },
   { label: "PAIL", value: "PAIL" },
   { label: "PATCH", value: "PATCH" },
+  { label: "PRE-FILLED SYRINGE", value: "pre-filled syringe" },
   { label: "POUCH", value: "POUCH" },
   { label: "SUPERSACK", value: "SUPERSACK" },
   { label: "SYRINGE", value: "SYRINGE" },
@@ -348,6 +351,7 @@ export const packagingTypes = [
   { label: "VIAL, PLASTIC", value: "VIAL, PLASTIC" },
   { label: "VIAL, SINGLE-DOSE", value: "VIAL, SINGLE-DOSE" },
   { label: "VIAL, SINGLE-USE", value: "VIAL, SINGLE-USE" },
+  { label: "NOT APPLICABLE", value: "NOT APPLICABLE" },
 ];
 
 console.log(packagingTypes);

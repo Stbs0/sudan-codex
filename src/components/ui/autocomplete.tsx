@@ -64,7 +64,9 @@ const AutoComplete = ({ options, name, className }: Props) => {
             <CommandGroup>
               {options.map((item) => (
                 <CommandItem
-                  className='border-t-[1px]'
+                  className={`border-t-[1px] ${
+                    value === item.value ? "bg-gray-300" : ""
+                  }`}
                   key={item.value}
                   value={item.value}
                   onSelect={(currentValue) => {
@@ -72,12 +74,6 @@ const AutoComplete = ({ options, name, className }: Props) => {
                     onChange(currentValue);
                     setOpen(false);
                   }}>
-                  <Check
-                    className={cn(
-                      "mr-2 h-4 w-4",
-                      value === item.value ? "opacity-100" : "opacity-0",
-                    )}
-                  />
                   {item.label}
                 </CommandItem>
               ))}
