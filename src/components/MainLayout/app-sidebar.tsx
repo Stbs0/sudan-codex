@@ -13,7 +13,6 @@ import { Link } from "react-router-dom";
 import { NAV_ITEMS } from "@/constants";
 
 export function AppSidebar() {
-  
   return (
     <Sidebar>
       <SidebarContent>

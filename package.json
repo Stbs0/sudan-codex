@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "test": "",
     "preview": "vite preview",
-    "tsc": "tsc --noEmit"
+    "tsc": "tsc -b src/**/*.{ts,tsx}"
   },
   "husky": {
     "hooks": {
@@ -17,9 +17,9 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
+    "src/**/*.{ts,tsx}": [
       "npm run lint",
-      "prettier . --write"
+      "prettier . --write","npm run tsc"
     ]
   },
   "dependencies": {
