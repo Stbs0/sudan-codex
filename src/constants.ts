@@ -1,5 +1,6 @@
+import { Home, Pill } from "lucide-react";
 import {  Unit } from "./types/types";
-export const drugConcentrationUnits: Unit[] = [
+export const DRUG_UNITS: Unit[] = [
   { value: "mg", label: "mg" },
   { value: "g", label: "g" },
   { value: "mcg", label: "mcg" },
@@ -16,7 +17,7 @@ export const drugConcentrationUnits: Unit[] = [
   { value: "other", label: "Other" },
 ];
 
-export const dosageForms = [
+export const DOSAGE_FORMS = [
   {
     label: "AEROSOL",
   },
@@ -511,24 +512,8 @@ export const dosageForms = [
   },
 ];
 
-// export const DRUG_PACKAGE_TYPES = [
-//   { value: "blister_packack" },
-//   { value: "bottle", label: "Bottle" },
-//   { value: "can", label: "can" },
-//   { value: "vial", label: "Vial" },
-//   { value: "syringe", label: "Syringe" },
-//   { value: "ampoule", label: "Ampoule" },
-//   { value: "infusion_bag", label: "Infusion Bag" },
-//   { value: "transdermal_patche", label: "Transdermal Patch" },
-//   { value: "tube", label: "Tube" },
-//   { value: "pack", label: "Pack (Box)" },
-//   { value: "nasal_sprays_inhaler", label: "Nasal Spray and Inhaler" },
-//   { value: "spray", label: "Spray" },
-//   { value: "cartridge", label: "Cartridge" },
-//   { value: "other", label: "Other" },
-// ];
 
-export const packagingTypes = [
+export const PACKAGING_TYPES = [
   {
     label: "AMPULE",
     value: "ampule",
@@ -780,5 +765,22 @@ export const packagingTypes = [
   {
     label: "VIAL, SINGLE-USE",
     value: "vial, single-use",
+  },
+];
+export const NAV_ITEMS = [
+  {
+    title: "Home",
+    url: "/",
+    icon: Home,
+  },
+  {
+    title: "Drug Form",
+    url: "/drug-form",
+    icon: Pill,
+  },
+  {
+    title: "Drug list",
+    url: "/drug-form",
+    icon: Pill,
   },
 ];

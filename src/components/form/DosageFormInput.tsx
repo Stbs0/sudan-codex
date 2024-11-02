@@ -1,4 +1,4 @@
-import { dosageForms } from "@/constants";
+import { DOSAGE_FORMS } from "@/constants";
 import AutoComplete from "../ui/autocomplete";
 import {
   FormControl,
@@ -20,7 +20,7 @@ const DosageFormInput = () => {
             <FormControl>
               <AutoComplete
                 name='dosageForm'
-                options={dosageForms}
+                options={DOSAGE_FORMS}
                 onChange={field.onChange}
               />
             </FormControl>

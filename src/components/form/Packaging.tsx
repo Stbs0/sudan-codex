@@ -1,6 +1,6 @@
 import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
 import AutoComplete from "../ui/autocomplete";
-import { packagingTypes } from "@/constants";
+import { PACKAGING_TYPES } from "@/constants";
 import { Input } from "../ui/input";
 export default function PackagingField() {
   return (
@@ -25,7 +25,7 @@ export default function PackagingField() {
               <FormControl>
                 <AutoComplete
                   name="packaging.packageForm"
-                  options={packagingTypes}
+                  options={PACKAGING_TYPES}
                   onChange={onChange}
                 />
               </FormControl>

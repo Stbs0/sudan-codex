@@ -1,4 +1,4 @@
-import { drugConcentrationUnits } from "@/constants";
+import { DRUG_UNITS } from "@/constants";
 import AutoComplete from "../ui/autocomplete";
 import { FormControl, FormField, FormItem } from "../ui/form";
 import { Input } from "../ui/input";
@@ -49,7 +49,7 @@ export function Concentration({
               <AutoComplete
                 name={unitName}
                 onChange={field.onChange}
-                options={drugConcentrationUnits}
+                options={DRUG_UNITS}
               />
             </FormControl>
           </FormItem>

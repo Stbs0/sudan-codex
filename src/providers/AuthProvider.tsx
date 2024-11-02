@@ -3,7 +3,6 @@ import { User, onAuthStateChanged } from "firebase/auth";
 import { ReactNode, createContext, useEffect, useState } from "react";
 import { toast } from "sonner";
 
-
 export const AuthContext = createContext<{
   user: User | null;
   loading: boolean;
@@ -11,19 +10,26 @@ export const AuthContext = createContext<{
 
 const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(auth.currentUser);
+
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     setLoading(true);
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      console.log('first')
       if (currentUser) {
         setUser(currentUser);
         toast.success(`Welcome back! ${currentUser.displayName}`, {
           duration: 2000,
         });
+      } else {
+        setUser(null);
+        toast.info(`Goodbye`, {
+          duration: 2000,
+        });
       }
       setLoading(false);
     });
-
     return () => {
       unsubscribe();
     };
@@ -31,7 +37,6 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const authValue = {
     user,
-
     loading,
   };
 

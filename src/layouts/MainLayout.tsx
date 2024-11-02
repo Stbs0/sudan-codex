@@ -1,4 +1,4 @@
-import MainContent from "@/components/MainLayout/MainContent";
+
 import Header from "@/components/MainLayout/Header";
 
 import { Outlet } from "react-router-dom";
@@ -9,7 +9,7 @@ import { Toaster } from "sonner";
 import {
   SidebarInset,
   SidebarProvider,
-  SidebarTrigger,
+  
 } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/MainLayout/app-sidebar";
 
