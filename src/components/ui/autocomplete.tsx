@@ -14,7 +14,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { DosageForm, Unit } from "@/types/types";
+import {  Unit } from "@/types/types";
 import { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 
