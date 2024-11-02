@@ -12,6 +12,7 @@ import UnauthorizedUserBtns from "./UnauthorizedUserBtns";
 import ProfilePic from "./ProfilePic";
 import MobileMenu from "./MobileMenu";
 import { toast } from "sonner";
+import {  SidebarTrigger } from "../ui/sidebar";
 
 const Header = () => {
   // Add a context  for the window width from MainContent
@@ -27,10 +28,11 @@ const Header = () => {
     }
   };
   return (
-    <header className='w-full flex justify-between items-center p-4 bg-gray-800'>
-      <HomeBtn />
-      <div className='flex items-center space-x-4'>
+    <header className='h-[80px] flex shrink-0 items-center justify-between p-4 bg-primary'>
+      <SidebarTrigger /> <HomeBtn />
+      <div className='flex items-center  space-x-4'>
         <ModeToggle />
+
         {isDesktop ? (
           <Input
             placeholder='Search'

@@ -4,7 +4,7 @@ import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 const Footer = () => {
   return (
-    <footer className='bg-[#333] text-[#fff] p-4  text-center flex justify-center items-center gap-5 '>
+    <footer className='bg-primary  text-[#fff] p-4  text-center flex justify-center items-center gap-5 '>
       <div>
         <p>
           Contact me at:{" "}

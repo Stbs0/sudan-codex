@@ -6,26 +6,33 @@ import useAuth from "@/hooks/useAuth";
 import Footer from "@/components/MainLayout/Footer";
 import SpinnerOverlay from "@/components/SpinnerOverlay";
 import { Toaster } from "sonner";
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/MainLayout/app-sidebar";
+
 const MainLayout = () => {
   const { loading } = useAuth();
-  
 
   return (
-    <div className='grid  bg-c_light_cyan-800 dark:bg-gray-900 dark:text-white relative h-full'>
-      {loading ? (
-        <SpinnerOverlay />
-      ) : (
-        <>
-          <Header />
-          <MainContent>
-            <Outlet />
-          </MainContent>
-          <Toaster richColors  expand={true} closeButton/>
-          
-          <Footer />
-        </>
-      )}
-    </div>
+    <SidebarProvider defaultOpen={false}>
+      {loading && <SpinnerOverlay />}
+      <AppSidebar />
+      <SidebarInset className='   dark:bg-gray-900 dark:text-white  '>
+        <Header />
+        <main className=' grid p-8 h-full '>
+          <Outlet />
+        </main>
+        <Toaster
+          richColors
+          expand={true}
+          closeButton
+        />
+        <Footer />
+      </SidebarInset>
+    </SidebarProvider>
   );
 };
 

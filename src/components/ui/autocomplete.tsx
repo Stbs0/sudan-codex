@@ -19,7 +19,11 @@ import { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 
 interface Props {
-  options: Unit[] | DosageForm[];
+  options:
+    | Unit[]
+    | {
+        label: string;
+      }[];
 
   className?: string;
   name: string;
@@ -64,7 +68,6 @@ const AutoComplete = ({ options, className, onChange, name }: Props) => {
                   }`}
                   key={item.label}
                   onSelect={(currentValue) => {
-                    
                     setValue1(currentValue);
                     onChange(currentValue);
                     setOpen(false);

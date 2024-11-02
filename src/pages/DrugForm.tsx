@@ -1,182 +1,127 @@
-import {
-  SubmitHandler,
-  useFieldArray,
-  useFormContext,
-  useWatch,
-} from "react-hook-form";
+import { SubmitHandler, useFormContext } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 
-import DrugField from "@/components/form/DrugInput";
-
 import { FormSchema } from "@/lib/schemas/newDrugSchema";
-import { Label } from "@/components/ui/label";
 
-import { Generics } from "@/types/types";
 import GenericInput from "@/components/form/GenericInput";
 import DosageFormInput from "@/components/form/DosageFormInput";
-import InputField from "@/components/form/InputField";
 import { Separator } from "@/components/ui/separator";
 import Strength from "@/components/form/Strength";
-import AutoComplete from "@/components/ui/autocomplete";
-import { packagingTypes } from "@/constants";
+
 import { saveDrug } from "@/services/drugServices";
-import { useState } from "react";
+
 import SpinnerOverlay from "@/components/SpinnerOverlay";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-// import SpinnerIcon from "@/assets/icons/SpinnerIcon";
-// import Loading from "@/components/Loading";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Form } from "@/components/ui/form";
+import SHADFormField from "@/components/form/SHADFormField";
+import Packaging from "@/components/form/Packaging";
+import { useEffect } from "react";
+import { toast } from "sonner";
 
 const DrugForm = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const {
-    handleSubmit,
-
-    reset,
-  } = useFormContext<FormSchema>();
-
-  const {
-    fields: genericsFields,
-    append: genericsFieldsAppend,
-
-    remove: genericsFieldsRemove,
-  } = useFieldArray<Generics>({
-    name: "generics",
-  });
-  const { append: strengthFieldsAppend, remove: strengthFieldsRemove } =
-    useFieldArray({
-      name: "strength",
-    });
-
-  const watchGenerics = useWatch({ name: "generics" });
-
+  const methods = useFormContext<FormSchema>();
+  useEffect(() => {
+    if (methods.formState.isSubmitSuccessful) {
+      methods.reset();
+      toast.success("Drug Submitted");
+    }
+  }, [methods.reset, methods.formState]);
   const onSubmit: SubmitHandler<FormSchema> = async (data) => {
-    setIsLoading(true);
-    console.log(JSON.stringify(data, null, 2));
     try {
       await saveDrug(data);
-      reset();
     } catch (error) {
       console.log(error);
-    } finally {
-      setIsLoading(false);
+      toast.error(`there was an error ${error} `);
     }
   };
+
+  // TODO: add a buttun and space after the label of Each one
+
   return (
-    <div className='grid'>
+    <div className='container mx-auto '>
+      {methods.formState.isSubmitting && <SpinnerOverlay />}
       <Card className=' mx-auto shadow-lg '>
-        {isLoading && <SpinnerOverlay />}
         <CardHeader>
           <CardTitle>Drug Form</CardTitle>
           <CardDescription>Add a new drug to the database.</CardDescription>
-        </CardHeader>{" "}
+        </CardHeader>
         <CardContent>
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className='space-y-5    bg-white dark:bg-c_light_cyan-900 pl-2 dark:text-black w-100 md:w-[600px]'>
-            {/* Brand input */}
-            <InputField>
-              <Label htmlFor='brand'>
-                Brand <span className='text-red-500'>*</span>
-              </Label>
-              <DrugField
-                placeholder='Amocaln'
+          <Form {...methods}>
+            <form
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                }
+              }}
+              onSubmit={methods.handleSubmit(onSubmit)}
+              className='space-y-4'>
+              {/* Brand input */}
+              <SHADFormField
                 name='brand'
+                label='Brand'
+                placeholder='Divido'
+                description='Add a brand (trade) name for the drug.'
               />
-            </InputField>
 
-            <Separator className='w-[80%] mx-auto' />
+              <Separator className='w-[80%] mx-auto' />
 
-            {/* Generic input */}
-            <InputField>
-              <Label htmlFor='generic'>
-                Generic<span className='text-red-500'>*</span>
-              </Label>
-              <GenericInput
-                genericsFields={genericsFields}
-                genericsFieldsAppend={genericsFieldsAppend}
-                genericsFieldsRemove={genericsFieldsRemove}
-                strengthFieldsAppend={strengthFieldsAppend}
-                strengthFieldsRemove={strengthFieldsRemove}
-              />
-            </InputField>
+              {/* Generic input */}
+              <GenericInput />
 
-            <Separator className='w-[80%] mx-auto' />
+              <Separator className='w-[80%] mx-auto' />
 
-            {/* Dosage form input */}
-            <InputField>
-              <Label htmlFor='dosageForm'>
-                Dosage Form<span className='text-red-500'>*</span>
-              </Label>
+              {/* Dosage form input */}
+
               <DosageFormInput />
-            </InputField>
 
-            <Separator className='w-[80%] mx-auto' />
+              <Separator className='w-[80%] mx-auto' />
 
-            {/* Strength input */}
-            {/* TODO: a problem here: when pressed on have one Unite all the other units are clipped */}
-            <InputField>
-              <Label htmlFor='strength'>
-                Strength<span className='text-red-500'>*</span>
-              </Label>
+              {/* Strength input */}
 
-              <Strength
-                watchGenerics={watchGenerics}
-                genericsFields={genericsFields}
-              />
-            </InputField>
+              <Strength />
 
-            <Separator className='w-[80%] mx-auto' />
+              <Separator className='w-[80%] mx-auto' />
 
-            <InputField>
-              <Label htmlFor='packaging'>Packaging</Label>
-              <div className='flex gap-4'>
-                <DrugField
-                  placeholder='30'
-                  // ddddd
-                  name='manufacturer'
-                />
-                <AutoComplete
-                  name='packaging'
-                  options={packagingTypes}
-                />
-              </div>
-            </InputField>
-            {/* Manufacturer input */}
-            <InputField>
-              <Label htmlFor='manufacturer'>
-                Manufacturer<span className='text-red-500'>*</span>
-              </Label>
-              <DrugField
-                placeholder='Hikma'
+              <Packaging />
+
+              {/* Manufacturer input */}
+              <SHADFormField
                 name='manufacturer'
+                label='manufacturer'
+                placeholder='Tabuk'
+                description='Add the manufacturer of the drug.'
               />
-            </InputField>
 
-            <Separator className='w-[80%] mx-auto' />
+              <Separator className='w-[80%] mx-auto' />
 
-            {/* Agency input */}
-            <InputField>
-              <Label htmlFor='agency'>Agency</Label>
-              <DrugField
-                placeholder='Hikma'
+              {/* Agency input */}
+              <SHADFormField
                 name='agency'
+                label='agency'
+                placeholder='???'
+                description='The agency can be the manufacturer, distributor, etc.'
               />
-            </InputField>
 
-            <Separator className='w-[80%] mx-auto' />
+              <Separator className='w-[80%] mx-auto' />
 
-            <InputField>
-              <Label>Price</Label>
-              <DrugField
-                name='price'
+              <SHADFormField
                 type='number'
-                placeholder='5000'
+                name='price'
+                label='Price'
+                placeholder='1000'
+                description='Write the price of the drug.'
               />
-            </InputField>
 
-            {/* Submit button */}
-            <Button type='submit'>Submit</Button>
-          </form>
+              {/* Submit button */}
+              <Button disabled={methods.formState.isSubmitting}>Submit</Button>
+            </form>
+          </Form>
         </CardContent>
       </Card>
     </div>

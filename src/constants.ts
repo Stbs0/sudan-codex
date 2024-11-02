@@ -1,4 +1,4 @@
-import { DosageForm, Unit } from "./types/types";
+import {  Unit } from "./types/types";
 export const drugConcentrationUnits: Unit[] = [
   { value: "mg", label: "mg" },
   { value: "g", label: "g" },
@@ -16,253 +16,503 @@ export const drugConcentrationUnits: Unit[] = [
   { value: "other", label: "Other" },
 ];
 
-export const dosageForms: DosageForm[] = [
-  { value: "aerosol", label: "AEROSOL" },
-  { value: "aerosolFoam", label: "AEROSOL, FOAM" },
-  { value: "aerosolMetered", label: "AEROSOL, METERED" },
-  { value: "aerosolPowder", label: "AEROSOL, POWDER" },
-  { value: "aerosolSpray", label: "AEROSOL, SPRAY" },
-  { value: "barChewable", label: "BAR, CHEWABLE" },
-  { value: "bead", label: "BEAD" },
-  { value: "capsule", label: "CAPSULE" },
-  { value: "capsuleCoated", label: "CAPSULE, COATED" },
-  { value: "capsuleCoatedPellets", label: "CAPSULE, COATED PELLETS" },
+export const dosageForms = [
   {
-    value: "capsuleCoatedExtendedRelease",
+    label: "AEROSOL",
+  },
+  {
+    label: "AEROSOL, FOAM",
+  },
+  {
+    label: "AEROSOL, METERED",
+  },
+  {
+    label: "AEROSOL, POWDER",
+  },
+  {
+    label: "AEROSOL, SPRAY",
+  },
+  {
+    label: "BAR, CHEWABLE",
+  },
+  {
+    label: "BEAD",
+  },
+  {
+    label: "CAPSULE",
+  },
+  {
+    label: "CAPSULE, COATED",
+  },
+  {
+    label: "CAPSULE, COATED PELLETS",
+  },
+  {
     label: "CAPSULE, COATED, EXTENDED RELEASE",
   },
-  { value: "capsuleDelayedRelease", label: "CAPSULE, DELAYED RELEASE" },
   {
-    value: "capsuleDelayedReleasePellets",
+    label: "CAPSULE, DELAYED RELEASE",
+  },
+  {
     label: "CAPSULE, DELAYED RELEASE PELLETS",
   },
-  { value: "capsuleExtendedRelease", label: "CAPSULE, EXTENDED RELEASE" },
   {
-    value: "capsuleFilmCoatedExtendedRelease",
+    label: "CAPSULE, EXTENDED RELEASE",
+  },
+  {
     label: "CAPSULE, FILM COATED, EXTENDED RELEASE",
   },
-  { value: "capsuleGelatinCoated", label: "CAPSULE, GELATIN COATED" },
-  { value: "capsuleLiquidFilled", label: "CAPSULE, LIQUID FILLED" },
-  { value: "cellularSheet", label: "CELLULAR SHEET" },
-  { value: "chewableGel", label: "CHEWABLE GEL" },
-  { value: "cloth", label: "CLOTH" },
-  { value: "concentrate", label: "CONCENTRATE" },
-  { value: "cream", label: "CREAM" },
-  { value: "creamAugmented", label: "CREAM, AUGMENTED" },
-  { value: "crystal", label: "CRYSTAL" },
-  { value: "disc", label: "DISC" },
-  { value: "douche", label: "DOUCHE" },
-  { value: "dressing", label: "DRESSING" },
-  { value: "drugElutingContactLens", label: "DRUG-ELUTING CONTACT LENS" },
-  { value: "elixir", label: "ELIXIR" },
-  { value: "emulsion", label: "EMULSION" },
-  { value: "enema", label: "ENEMA" },
-  { value: "extract", label: "EXTRACT" },
-  { value: "fiberExtendedRelease", label: "FIBER, EXTENDED RELEASE" },
-  { value: "film", label: "FILM" },
-  { value: "filmExtendedRelease", label: "FILM, EXTENDED RELEASE" },
-  { value: "filmSoluble", label: "FILM, SOLUBLE" },
-  { value: "forSolution", label: "FOR SOLUTION" },
-  { value: "forSuspension", label: "FOR SUSPENSION" },
   {
-    value: "forSuspensionExtendedRelease",
+    label: "CAPSULE, GELATIN COATED",
+  },
+  {
+    label: "CAPSULE, LIQUID FILLED",
+  },
+  {
+    label: "CELLULAR SHEET",
+  },
+  {
+    label: "CHEWABLE GEL",
+  },
+  {
+    label: "CLOTH",
+  },
+  {
+    label: "CONCENTRATE",
+  },
+  {
+    label: "CREAM",
+  },
+  {
+    label: "CREAM, AUGMENTED",
+  },
+  {
+    label: "CRYSTAL",
+  },
+  {
+    label: "DISC",
+  },
+  {
+    label: "DOUCHE",
+  },
+  {
+    label: "DRESSING",
+  },
+  {
+    label: "DRUG-ELUTING CONTACT LENS",
+  },
+  {
+    label: "ELIXIR",
+  },
+  {
+    label: "EMULSION",
+  },
+  {
+    label: "ENEMA",
+  },
+  {
+    label: "EXTRACT",
+  },
+  {
+    label: "FIBER, EXTENDED RELEASE",
+  },
+  {
+    label: "FILM",
+  },
+  {
+    label: "FILM, EXTENDED RELEASE",
+  },
+  {
+    label: "FILM, SOLUBLE",
+  },
+  {
+    label: "FOR SOLUTION",
+  },
+  {
+    label: "FOR SUSPENSION",
+  },
+  {
     label: "FOR SUSPENSION, EXTENDED RELEASE",
   },
-  { value: "gas", label: "GAS" },
-  { value: "gel", label: "GEL" },
-  { value: "gelDentifrice", label: "GEL, DENTIFRICE" },
-  { value: "gelMetered", label: "GEL, METERED" },
-  { value: "globule", label: "GLOBULE" },
-  { value: "granule", label: "GRANULE" },
-  { value: "granuleDelayedRelease", label: "GRANULE, DELAYED RELEASE" },
-  { value: "granuleEffervalueescent", label: "GRANULE, EFFERValueESCENT" },
-  { value: "granuleForSolution", label: "GRANULE, FOR SOLUTION" },
-  { value: "granuleForSuspension", label: "GRANULE, FOR SUSPENSION" },
   {
-    value: "granuleForSuspensionExtendedRelease",
+    label: "GAS",
+  },
+  {
+    label: "GEL",
+  },
+  {
+    label: "GEL, DENTIFRICE",
+  },
+  {
+    label: "GEL, METERED",
+  },
+  {
+    label: "GLOBULE",
+  },
+  {
+    label: "GRANULE",
+  },
+  {
+    label: "GRANULE, DELAYED RELEASE",
+  },
+  {
+    label: "GRANULE, EFFERValueESCENT",
+  },
+  {
+    label: "GRANULE, FOR SOLUTION",
+  },
+  {
+    label: "GRANULE, FOR SUSPENSION",
+  },
+  {
     label: "GRANULE, FOR SUSPENSION, EXTENDED RELEASE",
   },
-  { value: "gumChewing", label: "GUM, CHEWING" },
-  { value: "implant", label: "IMPLANT" },
-  { value: "inhalant", label: "INHALANT" },
-  { value: "injectableFoam", label: "INJECTABLE FOAM" },
-  { value: "injectableLiposomal", label: "INJECTABLE, LIPOSOMAL" },
-  { value: "injection", label: "INJECTION" },
-  { value: "injectionEmulsion", label: "INJECTION, EMULSION" },
-  { value: "injectionLipidComplex", label: "INJECTION, LIPID COMPLEX" },
   {
-    value: "injectionPowderForSolution",
+    label: "GUM, CHEWING",
+  },
+  {
+    label: "IMPLANT",
+  },
+  {
+    label: "INHALANT",
+  },
+  {
+    label: "INJECTABLE FOAM",
+  },
+  {
+    label: "INJECTABLE, LIPOSOMAL",
+  },
+  {
+    label: "INJECTION",
+  },
+  {
+    label: "INJECTION, EMULSION",
+  },
+  {
+    label: "INJECTION, LIPID COMPLEX",
+  },
+  {
     label: "INJECTION, POWDER, FOR SOLUTION",
   },
   {
-    value: "injectionPowderForSuspension",
     label: "INJECTION, POWDER, FOR SUSPENSION",
   },
   {
-    value: "injectionPowderForSuspensionExtendedRelease",
     label: "INJECTION, POWDER, FOR SUSPENSION, EXTENDED RELEASE",
   },
   {
-    value: "injectionPowderLyophilizedForLiposomalSuspension",
     label: "INJECTION, POWDER, LYOPHILIZED, FOR LIPOSOMAL SUSPENSION",
   },
   {
-    value: "injectionPowderLyophilizedForSolution",
     label: "INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
   },
   {
-    value: "injectionPowderLyophilizedForSuspension",
     label: "INJECTION, POWDER, LYOPHILIZED, FOR SUSPENSION",
   },
   {
-    value: "injectionPowderLyophilizedForSuspensionExtendedRelease",
     label: "INJECTION, POWDER, LYOPHILIZED, FOR SUSPENSION, EXTENDED RELEASE",
   },
-  { value: "injectionSolution", label: "INJECTION, SOLUTION" },
   {
-    value: "injectionSolutionConcentrate",
+    label: "INJECTION, SOLUTION",
+  },
+  {
     label: "INJECTION, SOLUTION, CONCENTRATE",
   },
-  { value: "injectionSuspension", label: "INJECTION, SUSPENSION" },
   {
-    value: "injectionSuspensionExtendedRelease",
+    label: "INJECTION, SUSPENSION",
+  },
+  {
     label: "INJECTION, SUSPENSION, EXTENDED RELEASE",
   },
   {
-    value: "injectionSuspensionLiposomal",
     label: "INJECTION, SUSPENSION, LIPOSOMAL",
   },
   {
-    value: "injectionSuspensionSonicated",
     label: "INJECTION, SUSPENSION, SONICATED",
   },
-  { value: "insert", label: "INSERT" },
-  { value: "insertExtendedRelease", label: "INSERT, EXTENDED RELEASE" },
-  { value: "intrauterineDevice", label: "INTRAUTERINE DEVICE" },
-  { value: "irrigant", label: "IRRIGANT" },
-  { value: "jelly", label: "JELLY" },
-  { value: "kit", label: "KIT" },
-  { value: "liniment", label: "LINIMENT" },
-  { value: "lipstick", label: "LIPSTICK" },
-  { value: "liquid", label: "LIQUID" },
-  { value: "liquidExtendedRelease", label: "LIQUID, EXTENDED RELEASE" },
-  { value: "lotion", label: "LOTION" },
-  { value: "lotionAugmented", label: "LOTION, AUGMENTED" },
-  { value: "lotionShampoo", label: "LOTION/SHAMPOO" },
-  { value: "lozenge", label: "LOZENGE" },
-  { value: "mouthwash", label: "MOUTHWASH" },
-  { value: "notApplicable", label: "NOT APPLICABLE" },
-  { value: "oil", label: "OIL" },
-  { value: "ointment", label: "OINTMENT" },
-  { value: "ointmentAugmented", label: "OINTMENT, AUGMENTED" },
-  { value: "paste", label: "PASTE" },
-  { value: "pasteDentifrice", label: "PASTE, DENTIFRICE" },
-  { value: "pastille", label: "PASTILLE" },
-  { value: "patch", label: "PATCH" },
-  { value: "patchExtendedRelease", label: "PATCH, EXTENDED RELEASE" },
   {
-    value: "patchExtendedReleaseElectricallyControlled",
+    label: "INSERT",
+  },
+  {
+    label: "INSERT, EXTENDED RELEASE",
+  },
+  {
+    label: "INTRAUTERINE DEVICE",
+  },
+  {
+    label: "IRRIGANT",
+  },
+  {
+    label: "JELLY",
+  },
+  {
+    label: "KIT",
+  },
+  {
+    label: "LINIMENT",
+  },
+  {
+    label: "LIPSTICK",
+  },
+  {
+    label: "LIQUID",
+  },
+  {
+    label: "LIQUID, EXTENDED RELEASE",
+  },
+  {
+    label: "LOTION",
+  },
+  {
+    label: "LOTION, AUGMENTED",
+  },
+  {
+    label: "LOTION/SHAMPOO",
+  },
+  {
+    label: "LOZENGE",
+  },
+  {
+    label: "MOUTHWASH",
+  },
+  {
+    label: "NOT APPLICABLE",
+  },
+  {
+    label: "OIL",
+  },
+  {
+    label: "OINTMENT",
+  },
+  {
+    label: "OINTMENT, AUGMENTED",
+  },
+  {
+    label: "PASTE",
+  },
+  {
+    label: "PASTE, DENTIFRICE",
+  },
+  {
+    label: "PASTILLE",
+  },
+  {
+    label: "PATCH",
+  },
+  {
+    label: "PATCH, EXTENDED RELEASE",
+  },
+  {
     label: "PATCH, EXTENDED RELEASE, ELECTRICALLY CONTROLLED",
   },
-  { value: "pellet", label: "PELLET" },
-  { value: "pelletImplantable", label: "PELLET, IMPLANTABLE" },
   {
-    value: "pelletsCoatedExtendedRelease",
+    label: "PELLET",
+  },
+  {
+    label: "PELLET, IMPLANTABLE",
+  },
+  {
     label: "PELLETS, COATED, EXTENDED RELEASE",
   },
-  { value: "pill", label: "PILL" },
-  { value: "plaster", label: "PLASTER" },
-  { value: "poultice", label: "POULTICE" },
-  { value: "powder", label: "POWDER" },
-  { value: "powderDentifrice", label: "POWDER, DENTIFRICE" },
-  { value: "powderForSolution", label: "POWDER, FOR SOLUTION" },
-  { value: "powderForSuspension", label: "POWDER, FOR SUSPENSION" },
-  { value: "powderMetered", label: "POWDER, METERED" },
-  { value: "ring", label: "RING" },
-  { value: "rinse", label: "RINSE" },
-  { value: "salve", label: "SALVE" },
-  { value: "shampoo", label: "SHAMPOO" },
-  { value: "shampooSuspension", label: "SHAMPOO, SUSPENSION" },
-  { value: "soap", label: "SOAP" },
-  { value: "solution", label: "SOLUTION" },
-  { value: "solutionConcentrate", label: "SOLUTION, CONCENTRATE" },
-  { value: "solutionForSlush", label: "SOLUTION, FOR SLUSH" },
-  { value: "solutionGelFormingDrops", label: "SOLUTION, GEL FORMING / DROPS" },
   {
-    value: "solutionGelFormingExtendedRelease",
+    label: "PILL",
+  },
+  {
+    label: "PLASTER",
+  },
+  {
+    label: "POULTICE",
+  },
+  {
+    label: "POWDER",
+  },
+  {
+    label: "POWDER, DENTIFRICE",
+  },
+  {
+    label: "POWDER, FOR SOLUTION",
+  },
+  {
+    label: "POWDER, FOR SUSPENSION",
+  },
+  {
+    label: "POWDER, METERED",
+  },
+  {
+    label: "RING",
+  },
+  {
+    label: "RINSE",
+  },
+  {
+    label: "SALVE",
+  },
+  {
+    label: "SHAMPOO",
+  },
+  {
+    label: "SHAMPOO, SUSPENSION",
+  },
+  {
+    label: "SOAP",
+  },
+  {
+    label: "SOLUTION",
+  },
+  {
+    label: "SOLUTION, CONCENTRATE",
+  },
+  {
+    label: "SOLUTION, FOR SLUSH",
+  },
+  {
+    label: "SOLUTION, GEL FORMING / DROPS",
+  },
+  {
     label: "SOLUTION, GEL FORMING, EXTENDED RELEASE",
   },
-  { value: "solutionDrops", label: "SOLUTION/ DROPS" },
-  { value: "sponge", label: "SPONGE" },
-  { value: "spray", label: "SPRAY" },
-  { value: "sprayMetered", label: "SPRAY, METERED" },
-  { value: "spraySuspension", label: "SPRAY, SUSPENSION" },
-  { value: "stick", label: "STICK" },
-  { value: "strip", label: "STRIP" },
-  { value: "suppository", label: "SUPPOSITORY" },
   {
-    value: "suppositoryExtendedRelease",
+    label: "SOLUTION/ DROPS",
+  },
+  {
+    label: "SPONGE",
+  },
+  {
+    label: "SPRAY",
+  },
+  {
+    label: "SPRAY, METERED",
+  },
+  {
+    label: "SPRAY, SUSPENSION",
+  },
+  {
+    label: "STICK",
+  },
+  {
+    label: "STRIP",
+  },
+  {
+    label: "SUPPOSITORY",
+  },
+  {
     label: "SUPPOSITORY, EXTENDED RELEASE",
   },
-  { value: "suspension", label: "SUSPENSION" },
-  { value: "suspensionExtendedRelease", label: "SUSPENSION, EXTENDED RELEASE" },
-  { value: "suspensionDrops", label: "SUSPENSION/ DROPS" },
-  { value: "swab", label: "SWAB" },
-  { value: "syrup", label: "SYRUP" },
-  { value: "system", label: "SYSTEM" },
-  { value: "tablet", label: "TABLET" },
-  { value: "tabletChewable", label: "TABLET, CHEWABLE" },
   {
-    value: "tabletChewableExtendedRelease",
+    label: "SUSPENSION",
+  },
+  {
+    label: "SUSPENSION, EXTENDED RELEASE",
+  },
+  {
+    label: "SUSPENSION/ DROPS",
+  },
+  {
+    label: "SWAB",
+  },
+  {
+    label: "SYRUP",
+  },
+  {
+    label: "SYSTEM",
+  },
+  {
+    label: "TABLET",
+  },
+  {
+    label: "TABLET, CHEWABLE",
+  },
+  {
     label: "TABLET, CHEWABLE, EXTENDED RELEASE",
   },
-  { value: "tabletCoated", label: "TABLET, COATED" },
-  { value: "tabletCoatedParticles", label: "TABLET, COATED PARTICLES" },
-  { value: "tabletDelayedRelease", label: "TABLET, DELAYED RELEASE" },
   {
-    value: "tabletDelayedReleaseParticles",
+    label: "TABLET, COATED",
+  },
+  {
+    label: "TABLET, COATED PARTICLES",
+  },
+  {
+    label: "TABLET, DELAYED RELEASE",
+  },
+  {
     label: "TABLET, DELAYED RELEASE PARTICLES",
   },
-  { value: "tabletEffervescent", label: "TABLET, EFFERVESCENT" },
-  { value: "tabletExtendedRelease", label: "TABLET, EXTENDED RELEASE" },
-  { value: "tabletFilmCoated", label: "TABLET, FILM COATED" },
   {
-    value: "tabletFilmCoatedExtendedRelease",
+    label: "TABLET, EFFERVESCENT",
+  },
+  {
+    label: "TABLET, EXTENDED RELEASE",
+  },
+  {
+    label: "TABLET, FILM COATED",
+  },
+  {
     label: "TABLET, FILM COATED, EXTENDED RELEASE",
   },
-  { value: "tabletForSolution", label: "TABLET, FOR SOLUTION" },
-  { value: "tabletForSuspension", label: "TABLET, FOR SUSPENSION" },
-  { value: "tabletMultilayer", label: "TABLET, MULTILAYER" },
   {
-    value: "tabletMultilayerExtendedRelease",
+    label: "TABLET, FOR SOLUTION",
+  },
+  {
+    label: "TABLET, FOR SUSPENSION",
+  },
+  {
+    label: "TABLET, MULTILAYER",
+  },
+  {
     label: "TABLET, MULTILAYER, EXTENDED RELEASE",
   },
   {
-    value: "tabletOrallyDisintegrating",
     label: "TABLET, ORALLY DISINTEGRATING",
   },
   {
-    value: "tabletOrallyDisintegratingDelayedRelease",
     label: "TABLET, ORALLY DISINTEGRATING, DELAYED RELEASE",
   },
-  { value: "tabletSoluble", label: "TABLET, SOLUBLE" },
-  { value: "tabletSugarCoated", label: "TABLET, SUGAR COATED" },
-  { value: "tabletWithSensor", label: "TABLET WITH SENSOR" },
-  { value: "tampon", label: "TAMPON" },
-  { value: "tape", label: "TAPE" },
-  { value: "tincture", label: "TINCTURE" },
-  { value: "troche", label: "TROCHE" },
-  { value: "tube", label: "TUBE" },
-  { value: "unitDose", label: "UNIT DOSE" },
-  { value: "vaginalInsert", label: "VAGINAL INSERT" },
-  { value: "vapor", label: "VAPOR" },
-  { value: "wafer", label: "WAFER" },
-  { value: "water", label: "WATER" },
-  { value: "wax", label: "WAX" },
+  {
+    label: "TABLET, SOLUBLE",
+  },
+  {
+    label: "TABLET, SUGAR COATED",
+  },
+  {
+    label: "TABLET WITH SENSOR",
+  },
+  {
+    label: "TAMPON",
+  },
+  {
+    label: "TAPE",
+  },
+  {
+    label: "TINCTURE",
+  },
+  {
+    label: "TROCHE",
+  },
+  {
+    label: "TUBE",
+  },
+  {
+    label: "UNIT DOSE",
+  },
+  {
+    label: "VAGINAL INSERT",
+  },
+  {
+    label: "VAPOR",
+  },
+  {
+    label: "WAFER",
+  },
+  {
+    label: "WATER",
+  },
+  {
+    label: "WAX",
+  },
 ];
 
 // export const DRUG_PACKAGE_TYPES = [
-//   { value: "blister_pack", label: "Blister Pack" },
+//   { value: "blister_packack" },
 //   { value: "bottle", label: "Bottle" },
 //   { value: "can", label: "can" },
 //   { value: "vial", label: "Vial" },
