@@ -8,7 +8,15 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "test": "",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "tsc": "tsc --noEmit"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "npm run tsc"
+    ]
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
