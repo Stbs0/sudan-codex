@@ -9,20 +9,17 @@
     "lint": "eslint .",
     "test": "",
     "preview": "vite preview",
-    "tsc": "tsc --noEmit",
-    "lint-staged": "husky"
+    "tsc": "tsc --noEmit"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
-  
   "lint-staged": {
     "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --write",
-      "npm run tsc"
+      "npm run lint",
+      "prettier . --write"
     ]
   },
   "dependencies": {
@@ -72,8 +69,10 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
+    "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "postcss": "^8.4.47",
+    "prettier": "3.3.3",
     "tailwindcss": "^3.4.13",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
