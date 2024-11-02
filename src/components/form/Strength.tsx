@@ -1,47 +1,68 @@
-import { FormSchema } from "@/lib/schemas/newDrugSchema";
-import { FieldArrayWithId } from "react-hook-form";
+import { Concentration } from "./Concentration";
 
-import { WatchGenerics } from "@/types/types";
+import { useWatch } from "react-hook-form";
 
+import { FormDescription, FormLabel } from "../ui/form";
 import { useState } from "react";
-import StrengthCheckBox from "./StrengthCheckBox";
-import StrengthNumber from "./StrengthNumber";
-import StrengthUnit from "./StrengthUnit";
+import { Checkbox } from "../ui/checkbox";
+import { Generics } from "@/types/types";
 
-type StrengthProps = {
-  genericsFields: FieldArrayWithId<FormSchema, "generics", "id">[];
-  watchGenerics: WatchGenerics;
-};
-const Strength = ({ genericsFields, watchGenerics }: StrengthProps) => {
-  const [isDenominator, setIsDenominator] = useState(true);
+const Strength = () => {
+  const [hasDenominator, setHasDenominator] = useState(false);
+
+  const generics = useWatch<Generics>({ name: "generics" });
+  const strengths = useWatch({ name: "strength" });
+
   return (
-    <>
-      {genericsFields.map((field, index) => (
-        <div
-          key={field.id}
-          className='flex flex-col space-y-2 px-2 my-2 '>
-          <div className='flex space-x-3 '>
-            <div className='min-w-10 flex flex-col justify-center '>
-              <p className=''>{watchGenerics[index]?.generic}</p>
-              <StrengthCheckBox
-                setIsDenominator={setIsDenominator}
-                IsDenominator={isDenominator}
-              />
+    <div className='border-l-2 border-neutral-500 px-2'>
+      <div className='flex justify-between'>
+        <FormLabel>Strength</FormLabel>
+        <span className='text-sm italic font-thin'>
+          <Checkbox
+            onCheckedChange={(checked) =>
+              setHasDenominator(checked ? true : false)
+            }
+          />
+          <span>Have a Denominator</span>
+        </span>
+      </div>
+      {Array.isArray(generics) &&
+        generics?.map((_item, index) => (
+          <div
+            key={index}
+            className='flex space-x-3'>
+            <div className='flex justify-center items-center'>
+              <FormLabel>
+                {generics[index]?.generic} {strengths?.[index]?.nominator}{" "}
+                {strengths?.[index]?.nominatorUnit}{" "}
+                {!hasDenominator && (
+                  <>
+                    / {strengths?.[index]?.denominator}{" "}
+                    {strengths?.[index]?.denominatorUnit}
+                  </>
+                )}
+              </FormLabel>
             </div>
-            <div className='flex space-x-3'>
-              <StrengthNumber
-                index={index}
-                isDenominator={isDenominator}
+
+            <div className='flex flex-col'>
+              <Concentration
+                placeholder='50'
+                name={`strength.${index}.nominator`}
+                unitName={`strength.${index}.nominatorUnit`}
               />
-              <StrengthUnit
-                index={index}
-                isDenominator={isDenominator}
-              />
+              {!hasDenominator && (
+                <Concentration
+                  denominator
+                  placeholder='5'
+                  name={`strength.${index}.denominator`}
+                  unitName={`strength.${index}.denominatorUnit`}
+                />
+              )}
             </div>
           </div>
-        </div>
-      ))}
-    </>
+        ))}
+      <FormDescription>Add the amount of drug</FormDescription>
+    </div>
   );
 };
 

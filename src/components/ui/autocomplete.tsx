@@ -1,7 +1,5 @@
-import * as React from "react";
-import { Check, ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -17,27 +15,24 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { DosageForm, Unit } from "@/types/types";
-import { useController } from "react-hook-form";
+import { useEffect, useState } from "react";
+import { useFormContext } from "react-hook-form";
 
 interface Props {
   options: Unit[] | DosageForm[];
-  name: string;
+
   className?: string;
+  name: string;
+  onChange: (...event: any[]) => void;
 }
-const AutoComplete = ({ options, name, className }: Props) => {
-  const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState(options[0].value);
 
-  const {
-    field: { onChange },
-  } = useController({
-    name,
-  });
-
-  React.useEffect(() => {
-    onChange(value);
-  }, [value]);
-
+const AutoComplete = ({ options, className, onChange, name }: Props) => {
+  const [open, setOpen] = useState(false);
+  const [value1, setValue1] = useState(options[0].label);
+  const { setValue } = useFormContext();
+  useEffect(() => {
+    setValue(name, value1);
+  }, [value1]);
   return (
     <Popover
       open={open}
@@ -48,7 +43,7 @@ const AutoComplete = ({ options, name, className }: Props) => {
           role='combobox'
           aria-expanded={open}
           className={` flex   items-center ${className} `}>
-          {options.find((framework) => framework.value === value)?.label}
+          {options.find((framework) => framework.label === value1)?.label}
           {open ? (
             <ChevronUp className='ml-2 h-4 w-4 shrink-0 opacity-50' />
           ) : (
@@ -65,12 +60,12 @@ const AutoComplete = ({ options, name, className }: Props) => {
               {options.map((item) => (
                 <CommandItem
                   className={`border-t-[1px] ${
-                    value === item.value ? "bg-gray-300" : ""
+                    value1 === item.label ? "bg-gray-300" : ""
                   }`}
-                  key={item.value}
-                  value={item.value}
+                  key={item.label}
                   onSelect={(currentValue) => {
-                    setValue(currentValue);
+                    
+                    setValue1(currentValue);
                     onChange(currentValue);
                     setOpen(false);
                   }}>

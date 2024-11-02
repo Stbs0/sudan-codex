@@ -1,83 +1,99 @@
-import {
-  FieldArrayWithId,
-  FieldValues,
-  UseFieldArrayAppend,
-  UseFieldArrayRemove,
-  useFormContext,
-} from "react-hook-form";
+import { useFieldArray } from "react-hook-form";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
-import { Generics } from "@/types/types";
-import { FormSchema } from "@/lib/schemas/newDrugSchema";
+import {
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "../ui/form";
 
-interface Props {
-  genericsFieldsAppend: UseFieldArrayAppend<Generics, "generics">;
-  genericsFieldsRemove: UseFieldArrayRemove;
-  strengthFieldsAppend: UseFieldArrayAppend<FieldValues, "strength">;
-  strengthFieldsRemove: UseFieldArrayRemove;
-  genericsFields: FieldArrayWithId<Generics, "generics", "id">[];
-}
-
-const GenericInput = ({
-  genericsFieldsAppend,
-  strengthFieldsAppend,
-  genericsFieldsRemove,
-  strengthFieldsRemove,
-  genericsFields,
-}: Props) => {
+const GenericInput = () => {
   const {
-    register,
-    formState: { errors },
-  } = useFormContext<FormSchema>();
-
+    fields: genericsFields,
+    append: genericsFieldsAppend,
+    remove: genericsFieldsRemove,
+  } = useFieldArray({
+    name: "generics",
+  });
+  const { append: strengthFieldsAppend, remove: strengthFieldsRemove } =
+    useFieldArray({
+      name: "strength",
+    });
+    
+    
   return (
-    <>
-      {genericsFields.map((field, index) => (
-        <div
-          className=' px-2  '
-          key={field.id}>
-          <div className='flex justify-around  '>
-            <div>
-              <Input
-                placeholder='Amocaln'
-                className='border-slate-500 w-40 mr-8'
-                {...register(`generics.${index}.generic` as const)}
-              />
-              {errors.generics?.[index]?.generic && (
-                <span className='text-sm text-red-600'>
-                  {errors.generics?.[index]?.generic?.message?.toString()}
-                </span>
-              )}
-            </div>
-            <div className='space-x-2'>
-              <Button
-                className='max-w-fit bg-blue-600 hover:bg-blue-700'
-                onClick={() => {
-                  genericsFieldsAppend({ generic: "" });
-                  strengthFieldsAppend({
-                    nominator: 0,
-                    denominator: 0,
-                    nominatorUnit: "mg",
-                    denominatorUnit: "ml",
-                  });
-                }}>
-                Add more
-              </Button>
-              {index !== 0 && (
-                <Button
-                  variant={"destructive"}
-                  onClick={() => {
-                    genericsFieldsRemove(index);
-                    strengthFieldsRemove(index);
-                  }}>
-                  remove
-                </Button>
-              )}
-            </div>
-          </div>
-        </div>
-      ))}
-    </>
+    <div className='border-l-2 border-neutral-500 px-2'>
+      <FormLabel>Generic Name</FormLabel>
+      {genericsFields.map((item, index) => {
+        return (
+          <FormField
+            key={item.id}
+            name={`generics.${index}.generic`}
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <div className='flex'>
+                    <Input
+                      placeholder='Amocaln'
+                      className='border-slate-500 w-40 mr-8'
+                      {...field}
+                    />
+                    <div className=''>
+                      {index === 0 ? (
+                        <Button
+                        type="button"
+                          className='w-24 bg-blue-600 hover:bg-blue-700'
+                          onClick={(e) => {
+                            e.preventDefault();
+                             strengthFieldsAppend(
+                               {
+                                 nominator: 0,
+                                 denominator: 0,
+                                 nominatorUnit: "mg",
+                                 denominatorUnit: "ml",
+                               },
+                               { shouldFocus: false },
+                             );
+                            genericsFieldsAppend(
+                              { generic: "" },
+                              { focusIndex: index },
+                            );
+                            
+                          }}>
+                          Add more
+                        </Button>
+                      ) : null}{" "}
+                      {index !== 0 && (
+                        <Button
+
+                          className='w-24'
+                          variant={"destructive"}
+                          onClick={(e) => {
+                            e.preventDefault()
+                            genericsFieldsRemove(index);
+                            strengthFieldsRemove(index);
+                          }}>
+                          remove
+                        </Button>
+                      )}
+                    </div>
+                  </div>
+                </FormControl>
+
+                <FormDescription />
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        );
+      })}
+
+     
+      <FormDescription>Add the Generic Name of the Drug</FormDescription>
+    </div>
   );
 };
 

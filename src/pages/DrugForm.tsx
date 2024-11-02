@@ -62,8 +62,8 @@ const DrugForm = () => {
     }
   };
   return (
-    <div className="grid">
-      <Card className=' mx-auto'>
+    <div className='grid'>
+      <Card className=' mx-auto shadow-lg '>
         {isLoading && <SpinnerOverlay />}
         <CardHeader>
           <CardTitle>Drug Form</CardTitle>
@@ -72,7 +72,7 @@ const DrugForm = () => {
         <CardContent>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className='space-y-5 shadow-lg p-5 bg-white dark:bg-c_light_cyan-900  rounded-md dark:text-black w-100 md:w-[600px]'>
+            className='space-y-5    bg-white dark:bg-c_light_cyan-900 pl-2 dark:text-black w-100 md:w-[600px]'>
             {/* Brand input */}
             <InputField>
               <Label htmlFor='brand'>
@@ -113,6 +113,7 @@ const DrugForm = () => {
             <Separator className='w-[80%] mx-auto' />
 
             {/* Strength input */}
+            {/* TODO: a problem here: when pressed on have one Unite all the other units are clipped */}
             <InputField>
               <Label htmlFor='strength'>
                 Strength<span className='text-red-500'>*</span>

@@ -1,10 +1,7 @@
-
 import { z } from "zod";
 
 const minimumStringMsg = { message: "minimum 2 characters" };
 const maximumStringMsg = { message: "maximum 50 characters" };
-
-
 
 const formSchema = z.object({
   brand: z.string().min(2, minimumStringMsg).max(50, maximumStringMsg),
@@ -14,12 +11,17 @@ const formSchema = z.object({
       generic: z.string().min(2, minimumStringMsg).max(50, maximumStringMsg),
     }),
   ),
-
   manufacturer: z.string().min(2, minimumStringMsg).max(50, maximumStringMsg),
 
   dosageForm: z.string().min(2, minimumStringMsg).max(50, maximumStringMsg),
 
-  packaging: z.string().min(2).max(50),
+  packaging: z.object({
+    packageForm: z.string().min(2).max(50),
+    number: z
+      .number()
+
+      .positive(),
+  }),
 
   agency: z.string().min(2).max(50),
 

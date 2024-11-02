@@ -11,7 +11,7 @@ const MainLayout = () => {
   
 
   return (
-    <div className='grid bg-c_light_cyan-800 dark:bg-gray-900 dark:text-white relative h-full'>
+    <div className='grid  bg-c_light_cyan-800 dark:bg-gray-900 dark:text-white relative h-full'>
       {loading ? (
         <SpinnerOverlay />
       ) : (
@@ -21,6 +21,7 @@ const MainLayout = () => {
             <Outlet />
           </MainContent>
           <Toaster richColors  expand={true} closeButton/>
+          
           <Footer />
         </>
       )}

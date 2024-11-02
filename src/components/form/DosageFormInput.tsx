@@ -1,18 +1,36 @@
 import { dosageForms } from "@/constants";
 import AutoComplete from "../ui/autocomplete";
+import {
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "../ui/form";
 
 const DosageFormInput = () => {
   return (
-    <>
-      {" "}
-      <div className='px-2 my-2 '>
-        <AutoComplete
-          options={dosageForms}
-          name='dosageForm'
-        />
-        <p className='text-xs text-neutral-500'>Chose The Right Form</p>
-      </div>
-    </>
+    <div className='border-l-2 border-neutral-500 px-2'>
+      <FormField
+        name='dosageForm'
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>Dosage Form</FormLabel>
+            <FormControl>
+              <AutoComplete
+                name='dosageForm'
+                options={dosageForms}
+                onChange={field.onChange}
+              />
+            </FormControl>
+
+            <FormDescription>Chose The Right Form</FormDescription>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+    </div>
   );
 };
 

@@ -1,26 +1,27 @@
 import formSchema, { FormSchema } from "@/lib/schemas/newDrugSchema";
-import DrugForm from "@/pages/DrugForm";
+import TestPageDrugForm from "@/pages/testPageDrugForm";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 
 const RHFNewDrugProvider = () => {
   const methods = useForm<FormSchema>({
+    shouldUnregister: true,
     defaultValues: {
       brand: "",
       generics: [{ generic: "" }],
       manufacturer: "",
-      dosageForm: "",
+      dosageForm: "aerosol",
       strength: [
         {
           nominator: 0,
           denominator: 0,
-          nominatorUnit: "mg",
+          nominatorUnit: "ml",
           denominatorUnit: "ml",
         },
       ],
       agency: "",
-      packaging: "",
+      packaging: { number: 0, packageForm: "AMPULE" },
       price: 0,
     },
     mode: "all",
@@ -29,7 +30,7 @@ const RHFNewDrugProvider = () => {
 
   return (
     <FormProvider {...methods}>
-      <DrugForm />
+      <TestPageDrugForm />
     </FormProvider>
   );
 };

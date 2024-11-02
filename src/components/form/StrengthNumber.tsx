@@ -1,8 +1,7 @@
 import { Input } from "../ui/input";
-import { Separator } from "../ui/separator";
 
-import { useFormContext } from "react-hook-form";
-import { FormSchema } from "@/lib/schemas/newDrugSchema";
+import { FormControl, FormField } from "../ui/form";
+import AutoComplete from "../ui/autocomplete";
 
 type Props = {
   index: number;
@@ -10,27 +9,37 @@ type Props = {
 };
 
 const StrengthNumber = ({ index, isDenominator }: Props) => {
-  const { register } = useFormContext<FormSchema>();
   return (
     <div className='space-y-2 '>
-      <Input
+      <FormField
+        name={`strength.${index}.nominator`}
+        render={({ field }) => (
+          <FormControl>
+            <Input
+              type='number'
+              {...field}
+            />
+            <AutoComplete onChange={} />
+          </FormControl>
+        )}
+      />
+      {/* <Input
         type='number'
         className=' [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none  min-w-6 max-w-20'
         {...register(`strength.${index}.nominator`, {
           valueAsNumber: true,
         })}
-      />
+      /> */}
       {isDenominator && (
-        <>
-          <Separator className='bg-neutral-600' />
-          <Input
-            type='number'
-            className=' [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none min-w-6 max-w-20'
-            {...register(`strength.${index}.denominator`, {
-              valueAsNumber: true,
-            })}
-          />
-        </>
+        <FormField
+          name={`strength.${index}.denominator`}
+          render={({ field }) => (
+            <Input
+              type='number'
+              {...field}
+            />
+          )}
+        />
       )}
     </div>
   );

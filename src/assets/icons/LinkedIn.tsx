@@ -1,7 +1,7 @@
 const LinkedIn = () => {
   return (
     <svg
-     className="w-6 h-6 "
+      className='w-6 h-6 '
       viewBox='0 0 24 24'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'>
@@ -18,8 +18,8 @@ const LinkedIn = () => {
         fill='#d2cdcd'
       />
       <path
-        fill-rule='evenodd'
-        clip-rule='evenodd'
+        fillRule='evenodd'
+        clipRule='evenodd'
         d='M20 1C21.6569 1 23 2.34315 23 4V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4C1 2.34315 2.34315 1 4 1H20ZM20 3C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20Z'
         fill='#d2cdcd'
       />

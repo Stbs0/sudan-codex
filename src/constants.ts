@@ -1,5 +1,4 @@
 import { DosageForm, Unit } from "./types/types";
-
 export const drugConcentrationUnits: Unit[] = [
   { value: "mg", label: "mg" },
   { value: "g", label: "g" },
@@ -262,96 +261,274 @@ export const dosageForms: DosageForm[] = [
   { value: "wax", label: "WAX" },
 ];
 
-export const DRUG_PACKAGE_TYPES = [
-  { value: "blister_pack", label: "Blister Pack" },
-  { value: "bottle", label: "Bottle" },
-  { value: "can", label: "can" },
-  { value: "vial", label: "Vial" },
-  { value: "syringe", label: "Syringe" },
-  { value: "ampoule", label: "Ampoule" },
-  { value: "infusion_bag", label: "Infusion Bag" },
-  { value: "transdermal_patche", label: "Transdermal Patch" },
-  { value: "tube", label: "Tube" },
-  { value: "pack", label: "Pack (Box)" },
-  { value: "nasal_sprays_inhaler", label: "Nasal Spray and Inhaler" },
-  { value: "spray", label: "Spray" },
-  { value: "cartridge", label: "Cartridge" },
-  { value: "other", label: "Other" },
-];
+// export const DRUG_PACKAGE_TYPES = [
+//   { value: "blister_pack", label: "Blister Pack" },
+//   { value: "bottle", label: "Bottle" },
+//   { value: "can", label: "can" },
+//   { value: "vial", label: "Vial" },
+//   { value: "syringe", label: "Syringe" },
+//   { value: "ampoule", label: "Ampoule" },
+//   { value: "infusion_bag", label: "Infusion Bag" },
+//   { value: "transdermal_patche", label: "Transdermal Patch" },
+//   { value: "tube", label: "Tube" },
+//   { value: "pack", label: "Pack (Box)" },
+//   { value: "nasal_sprays_inhaler", label: "Nasal Spray and Inhaler" },
+//   { value: "spray", label: "Spray" },
+//   { value: "cartridge", label: "Cartridge" },
+//   { value: "other", label: "Other" },
+// ];
 
 export const packagingTypes = [
-  { label: "AMPULE", value: "AMPULE" },
-  { label: "APPLICATOR", value: "APPLICATOR" },
-  { label: "BAG", value: "BAG" },
-  { label: "BLISTER PACK", value: "BLISTER PACK" },
-  { label: "BOTTLE", value: "BOTTLE" },
-  { label: "BOTTLE, DISPENSING", value: "BOTTLE, DISPENSING" },
-  { label: "BOTTLE, DROPPER", value: "BOTTLE, DROPPER" },
-  { label: "BOTTLE, GLASS", value: "BOTTLE, GLASS" },
-  { label: "BOTTLE, PLASTIC", value: "BOTTLE, PLASTIC" },
-  { label: "BOTTLE, PUMP", value: "BOTTLE, PUMP" },
-  { label: "BOTTLE, SPRAY", value: "BOTTLE, SPRAY" },
-  { label: "BOTTLE, UNIT-DOSE", value: "BOTTLE, UNIT-DOSE" },
-  { label: "BOTTLE, WITH APPLICATOR", value: "BOTTLE, WITH APPLICATOR" },
-  { label: "BOX", value: "BOX" },
-  { label: "BOX, UNIT-DOSE", value: "BOX, UNIT-DOSE" },
-  { label: "CAN", value: "CAN" },
-  { label: "CANISTER", value: "CANISTER" },
-  { label: "CAPSULE", value: "CAPSULE" },
-  { label: "CARTON", value: "CARTON" },
-  { label: "CARTRIDGE", value: "CARTRIDGE" },
-  { label: "CASE", value: "CASE" },
-  { label: "CELLO PACK", value: "CELLO PACK" },
-  { label: "CONTAINER", value: "CONTAINER" },
+  {
+    label: "AMPULE",
+    value: "ampule",
+  },
+  {
+    label: "APPLICATOR",
+    value: "applicator",
+  },
+  {
+    label: "BAG",
+    value: "bag",
+  },
+  {
+    label: "BLISTER PACK",
+    value: "blister pack",
+  },
+  {
+    label: "BOTTLE",
+    value: "bottle",
+  },
+  {
+    label: "BOTTLE, DISPENSING",
+    value: "bottle, dispensing",
+  },
+  {
+    label: "BOTTLE, DROPPER",
+    value: "bottle, dropper",
+  },
+  {
+    label: "BOTTLE, GLASS",
+    value: "bottle, glass",
+  },
+  {
+    label: "BOTTLE, PLASTIC",
+    value: "bottle, plastic",
+  },
+  {
+    label: "BOTTLE, PUMP",
+    value: "bottle, pump",
+  },
+  {
+    label: "BOTTLE, SPRAY",
+    value: "bottle, spray",
+  },
+  {
+    label: "BOTTLE, UNIT-DOSE",
+    value: "bottle, unit-dose",
+  },
+  {
+    label: "BOTTLE, WITH APPLICATOR",
+    value: "bottle, with applicator",
+  },
+  {
+    label: "BOX",
+    value: "box",
+  },
+  {
+    label: "BOX, UNIT-DOSE",
+    value: "box, unit-dose",
+  },
+  {
+    label: "CAN",
+    value: "can",
+  },
+  {
+    label: "CANISTER",
+    value: "canister",
+  },
+  {
+    label: "CAPSULE",
+    value: "capsule",
+  },
+  {
+    label: "CARTON",
+    value: "carton",
+  },
+  {
+    label: "CARTRIDGE",
+    value: "cartridge",
+  },
+  {
+    label: "CASE",
+    value: "case",
+  },
+  {
+    label: "CELLO PACK",
+    value: "cello pack",
+  },
+  {
+    label: "CONTAINER",
+    value: "container",
+  },
   {
     label: "CONTAINER, FLEXIBLE INTERMEDIATE BULK",
-    value: "CONTAINER, FLEXIBLE INTERMEDIATE BULK",
+    value: "container, flexible intermediate bulk",
   },
-  { label: "CUP", value: "CUP" },
-  { label: "CUP, UNIT-DOSE", value: "CUP, UNIT-DOSE" },
-  { label: "CYLINDER", value: "CYLINDER" },
-  { label: "DEWAR", value: "DEWAR" },
-  { label: "DIALPACK", value: "DIALPACK" },
-  { label: "DOSE PACK", value: "DOSE PACK" },
-  { label: "DRUM", value: "DRUM" },
-  { label: "INHALER", value: "INHALER" },
-  { label: "INHALER, REFILL", value: "INHALER, REFILL" },
-  { label: "JAR", value: "JAR" },
-  { label: "JUG", value: "JUG" },
-  { label: "KIT", value: "KIT" },
-  { label: "PACKAGE", value: "PACKAGE" },
-  { label: "PACKAGE, COMBINATION", value: "PACKAGE, COMBINATION" },
-  { label: "PACKET", value: "PACKET" },
-  { label: "PAIL", value: "PAIL" },
-  { label: "PATCH", value: "PATCH" },
-  { label: "PRE-FILLED SYRINGE", value: "pre-filled syringe" },
-  { label: "POUCH", value: "POUCH" },
-  { label: "SUPERSACK", value: "SUPERSACK" },
-  { label: "SYRINGE", value: "SYRINGE" },
-  { label: "SYRINGE, GLASS", value: "SYRINGE, GLASS" },
-  { label: "SYRINGE, PLASTIC", value: "SYRINGE, PLASTIC" },
-  { label: "TABMINDER", value: "TABMINDER" },
-  { label: "TANK", value: "TANK" },
-  { label: "TRAY", value: "TRAY" },
-  { label: "TUBE", value: "TUBE" },
-  { label: "TUBE, WITH APPLICATOR", value: "TUBE, WITH APPLICATOR" },
-  { label: "VIAL", value: "VIAL" },
-  { label: "VIAL, DISPENSING", value: "VIAL, DISPENSING" },
-  { label: "VIAL, GLASS", value: "VIAL, GLASS" },
-  { label: "VIAL, MULTI-DOSE", value: "VIAL, MULTI-DOSE" },
+  {
+    label: "CUP",
+    value: "cup",
+  },
+  {
+    label: "CUP, UNIT-DOSE",
+    value: "cup, unit-dose",
+  },
+  {
+    label: "CYLINDER",
+    value: "cylinder",
+  },
+  {
+    label: "DEWAR",
+    value: "dewar",
+  },
+  {
+    label: "DIALPACK",
+    value: "dialpack",
+  },
+  {
+    label: "DOSE PACK",
+    value: "dose pack",
+  },
+  {
+    label: "DRUM",
+    value: "drum",
+  },
+  {
+    label: "INHALER",
+    value: "inhaler",
+  },
+  {
+    label: "INHALER, REFILL",
+    value: "inhaler, refill",
+  },
+  {
+    label: "JAR",
+    value: "jar",
+  },
+  {
+    label: "JUG",
+    value: "jug",
+  },
+  {
+    label: "KIT",
+    value: "kit",
+  },
+  {
+    label: "NOT APPLICABLE",
+    value: "not applicable",
+  },
+  {
+    label: "PACKAGE",
+    value: "package",
+  },
+  {
+    label: "PACKAGE, COMBINATION",
+    value: "package, combination",
+  },
+  {
+    label: "PACKET",
+    value: "packet",
+  },
+  {
+    label: "PAIL",
+    value: "pail",
+  },
+  {
+    label: "PATCH",
+    value: "patch",
+  },
+  {
+    label: "POUCH",
+    value: "pouch",
+  },
+  {
+    label: "PRE-FILLED SYRINGE",
+    value: "pre-filled syringe",
+  },
+  {
+    label: "SUPERSACK",
+    value: "supersack",
+  },
+  {
+    label: "SYRINGE",
+    value: "syringe",
+  },
+  {
+    label: "SYRINGE, GLASS",
+    value: "syringe, glass",
+  },
+  {
+    label: "SYRINGE, PLASTIC",
+    value: "syringe, plastic",
+  },
+  {
+    label: "TABMINDER",
+    value: "tabminder",
+  },
+  {
+    label: "TANK",
+    value: "tank",
+  },
+  {
+    label: "TRAY",
+    value: "tray",
+  },
+  {
+    label: "TUBE",
+    value: "tube",
+  },
+  {
+    label: "TUBE, WITH APPLICATOR",
+    value: "tube, with applicator",
+  },
+  {
+    label: "VIAL",
+    value: "vial",
+  },
+  {
+    label: "VIAL, DISPENSING",
+    value: "vial, dispensing",
+  },
+  {
+    label: "VIAL, GLASS",
+    value: "vial, glass",
+  },
+  {
+    label: "VIAL, MULTI-DOSE",
+    value: "vial, multi-dose",
+  },
   {
     label: "VIAL, PATENT DELIVERY SYSTEM",
-    value: "VIAL, PATENT DELIVERY SYSTEM",
+    value: "vial, patent delivery system",
   },
   {
     label: "VIAL, PHARMACY BULK PACKAGE",
-    value: "VIAL, PHARMACY BULK PACKAGE",
+    value: "vial, pharmacy bulk package",
   },
-  { label: "VIAL, PIGGYBACK", value: "VIAL, PIGGYBACK" },
-  { label: "VIAL, PLASTIC", value: "VIAL, PLASTIC" },
-  { label: "VIAL, SINGLE-DOSE", value: "VIAL, SINGLE-DOSE" },
-  { label: "VIAL, SINGLE-USE", value: "VIAL, SINGLE-USE" },
-  { label: "NOT APPLICABLE", value: "NOT APPLICABLE" },
+  {
+    label: "VIAL, PIGGYBACK",
+    value: "vial, piggyback",
+  },
+  {
+    label: "VIAL, PLASTIC",
+    value: "vial, plastic",
+  },
+  {
+    label: "VIAL, SINGLE-DOSE",
+    value: "vial, single-dose",
+  },
+  {
+    label: "VIAL, SINGLE-USE",
+    value: "vial, single-use",
+  },
 ];
-
-console.log(packagingTypes);

@@ -14,7 +14,7 @@ const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(loading);
+  
   if (loading) {
     return <SpinnerOverlay />;
   }

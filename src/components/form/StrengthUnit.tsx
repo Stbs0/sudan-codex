@@ -12,7 +12,7 @@ const StrengthUnit = ({ index, isDenominator }: Props) => {
     <div className='space-y-2 w-20'>
       <AutoComplete
         options={drugConcentrationUnits}
-        name={`strength.${index}.nominatorUnit`}
+        
       />
       {isDenominator && (
         <>
