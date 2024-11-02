@@ -30,5 +30,3 @@ export interface DosageForm {
 export type Generics = Pick<FormSchema, "generics">;
 export type Strength = Pick<FormSchema, "strength">;
 export type WatchGenerics = Generics["generics"];
-
-

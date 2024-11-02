@@ -1,4 +1,9 @@
-import { auth, db, faceBookAuthProvider, googleAuthProvider } from "@/config/firebase";
+import {
+  auth,
+  db,
+  faceBookAuthProvider,
+  googleAuthProvider,
+} from "@/config/firebase";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
@@ -30,7 +35,6 @@ export const FaceBookSignIn = async () =>
   signInWithPopup(auth, faceBookAuthProvider);
 
 const usersRef = collection(db, "users");
-
 
 export const SaveUserInFIreStore = async (user: { email: string }) => {
   return addDoc(usersRef, user);

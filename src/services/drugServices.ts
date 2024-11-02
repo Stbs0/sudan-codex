@@ -5,7 +5,7 @@ import { drugsCollection } from "./collections";
 
 export const saveDrug = async (drug: FormSchema) => {
   try {
-    console.log(drug)
+    console.log(drug);
     const drugRef = drugsCollection();
     const newDrug = await addDoc(drugRef, {
       ...drug,

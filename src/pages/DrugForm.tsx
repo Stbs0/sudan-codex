@@ -31,7 +31,7 @@ const DrugForm = () => {
       methods.reset();
       toast.success("Drug Submitted");
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [methods.reset, methods.formState]);
   const onSubmit: SubmitHandler<FormSchema> = async (data) => {
     try {

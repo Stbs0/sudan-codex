@@ -33,7 +33,9 @@ export function Concentration({
                 type='number'
                 {...field}
                 onChange={(e) =>
-                  field.onChange(e.target.value === "" ? 0 : parseInt(e.target.value))
+                  field.onChange(
+                    e.target.value === "" ? 0 : parseInt(e.target.value),
+                  )
                 }
                 value={field.value === 0 ? "" : field.value}
               />

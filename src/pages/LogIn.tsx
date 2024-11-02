@@ -22,13 +22,12 @@ import { toast } from "sonner";
 const Login = () => {
   const navigate = useNavigate();
 
-  const { user} = useAuth();
+  const { user } = useAuth();
   const {
     handleSubmit,
     formState: { isSubmitting },
   } = useFormContext<LogInSchemaType>();
 
-  
   if (user) {
     navigate("/");
   }
@@ -63,7 +62,9 @@ const Login = () => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} className="grid">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className='grid'>
         <Card className='mx-auto max-w-sm'>
           <CardHeader>
             <CardTitle className='text-2xl'>Login</CardTitle>

@@ -22,8 +22,7 @@ const GenericInput = () => {
     useFieldArray({
       name: "strength",
     });
-    
-    
+
   return (
     <div className='border-l-2 border-neutral-500 px-2'>
       <FormLabel>Generic Name</FormLabel>
@@ -44,35 +43,33 @@ const GenericInput = () => {
                     <div className=''>
                       {index === 0 ? (
                         <Button
-                        type="button"
+                          type='button'
                           className='w-24 bg-blue-600 hover:bg-blue-700'
                           onClick={(e) => {
                             e.preventDefault();
-                             strengthFieldsAppend(
-                               {
-                                 nominator: 0,
-                                 denominator: 0,
-                                 nominatorUnit: "mg",
-                                 denominatorUnit: "ml",
-                               },
-                               { shouldFocus: false },
-                             );
+                            strengthFieldsAppend(
+                              {
+                                nominator: 0,
+                                denominator: 0,
+                                nominatorUnit: "mg",
+                                denominatorUnit: "ml",
+                              },
+                              { shouldFocus: false },
+                            );
                             genericsFieldsAppend(
                               { generic: "" },
                               { focusIndex: index },
                             );
-                            
                           }}>
                           Add more
                         </Button>
                       ) : null}{" "}
                       {index !== 0 && (
                         <Button
-
                           className='w-24'
                           variant={"destructive"}
                           onClick={(e) => {
-                            e.preventDefault()
+                            e.preventDefault();
                             genericsFieldsRemove(index);
                             strengthFieldsRemove(index);
                           }}>
@@ -91,7 +88,6 @@ const GenericInput = () => {
         );
       })}
 
-     
       <FormDescription>Add the Generic Name of the Drug</FormDescription>
     </div>
   );

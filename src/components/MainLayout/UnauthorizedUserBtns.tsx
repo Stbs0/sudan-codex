@@ -1,11 +1,8 @@
-import { Button } from '../ui/button';
-import { useNavigate } from 'react-router-dom';
-
-
+import { Button } from "../ui/button";
+import { useNavigate } from "react-router-dom";
 
 const UnauthorizedUserBtns = () => {
-
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <>
       <Button
@@ -26,6 +23,6 @@ const UnauthorizedUserBtns = () => {
       </Button>
     </>
   );
-}
+};
 
-export default UnauthorizedUserBtns
+export default UnauthorizedUserBtns;

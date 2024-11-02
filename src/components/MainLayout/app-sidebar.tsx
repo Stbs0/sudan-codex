@@ -1,11 +1,9 @@
-
 import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
-  
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -14,12 +12,10 @@ import {
 import { Link } from "react-router-dom";
 import { NAV_ITEMS } from "@/constants";
 
-
-
 export function AppSidebar() {
+  
   return (
-    <Sidebar  >
-      
+    <Sidebar>
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Application</SidebarGroupLabel>
@@ -39,7 +35,7 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarRail/>
+      <SidebarRail />
     </Sidebar>
   );
 }

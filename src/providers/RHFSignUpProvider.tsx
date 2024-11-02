@@ -1,4 +1,3 @@
-
 import signUpSchema, { signUpSchemaType } from "@/lib/schemas/signUpSchema";
 import SignUp from "@/pages/SignUp";
 
@@ -8,7 +7,6 @@ import { FormProvider, useForm } from "react-hook-form";
 const RHFSignUpProvider = () => {
   const methods = useForm<signUpSchemaType>({
     defaultValues: {
-     
       email: "",
       password: "",
       confirmPassword: "",

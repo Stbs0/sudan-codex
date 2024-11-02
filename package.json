@@ -9,14 +9,21 @@
     "lint": "eslint .",
     "test": "",
     "preview": "vite preview",
-    "tsc": "tsc --noEmit"
+    "tsc": "tsc -b",
+    "prepare": "husky"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --write",
+    "src/**/*.(ts|tsx|js|jsx)": [
+      "prettier . --write ",
+      "eslint . --fix",
       "npm run tsc"
     ]
+  },
+  
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -65,8 +72,10 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
+    "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "postcss": "^8.4.47",
+    "prettier": "3.3.3",
     "tailwindcss": "^3.4.13",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",

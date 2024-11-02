@@ -1,0 +1,8 @@
+{
+  "embeddedLanguageFormatting": "auto",
+  "bracketSameLine": true,
+
+  "singleAttributePerLine": true,
+  "trailingComma": "all",
+  "jsxSingleQuote": true
+}

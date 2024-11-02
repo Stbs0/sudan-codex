@@ -16,7 +16,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     setLoading(true);
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log('first')
+      console.log("first");
       if (currentUser) {
         setUser(currentUser);
         toast.success(`Welcome back! ${currentUser.displayName}`, {

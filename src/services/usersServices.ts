@@ -5,7 +5,6 @@ import { addDoc, collection } from "firebase/firestore";
 const usersCollection = collection(db, "users");
 
 const createUser = async (email: string, password: string) => {
-  
   const userCredential = await createUserWithEmailAndPassword(
     auth,
     email,
@@ -27,8 +26,6 @@ const createUser = async (email: string, password: string) => {
       showNotifications: true,
     },
   });
-
-
 };
 
 export { createUser };

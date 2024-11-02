@@ -22,13 +22,11 @@ const Footer = () => {
           className='flex justify-center items-center'>
           <GitHubLogoIcon className='w-6 h-6 inline-block mr-2' />
         </a>{" "}
-       
         <a
           href='https://twitter.com'
           className='flex justify-center items-center'>
           <XIcon />
         </a>{" "}
-       
         <a
           href='https://linkedin.com'
           className='flex justify-center items-center'>

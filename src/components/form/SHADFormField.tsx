@@ -24,14 +24,15 @@ const SHADFormField = ({
   placeholder: fieldPlaceholder,
   type: fieldType,
 }: Props) => {
-  const { control } = useFormContext<Omit<FormSchema, "generics" | "strength">>();
+  const { control } =
+    useFormContext<Omit<FormSchema, "generics" | "strength">>();
 
   return (
     <FormField
       control={control}
       name={fieldName}
       render={({ field: { onChange, value } }) => (
-        <FormItem className="border-l-2 border-neutral-500 px-2">
+        <FormItem className='border-l-2 border-neutral-500 px-2'>
           <FormLabel>{fieldLabel}</FormLabel>
           <FormControl>
             <Input

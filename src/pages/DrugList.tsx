@@ -23,6 +23,3 @@
 // };
 
 // export default DrugList;
-
-
-

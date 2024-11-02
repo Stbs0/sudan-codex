@@ -3,8 +3,6 @@ import Login from "@/pages/LogIn";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 
-
-
 const RHFLogInProvider = () => {
   const methods = useForm<LogInSchemaType>({
     defaultValues: {

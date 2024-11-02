@@ -30,7 +30,7 @@ const RHFNewDrugProvider = () => {
 
   return (
     <FormProvider {...methods}>
-      <DrugForm/>
+      <DrugForm />
     </FormProvider>
   );
 };
