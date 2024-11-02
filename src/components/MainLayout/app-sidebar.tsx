@@ -18,7 +18,7 @@ import { NAV_ITEMS } from "@/constants";
 
 export function AppSidebar() {
   return (
-    <Sidebar collapsible="icon" >
+    <Sidebar  >
       
       <SidebarContent>
         <SidebarGroup>

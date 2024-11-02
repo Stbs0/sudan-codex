@@ -8,10 +8,10 @@ const PopoverSearch = () => {
       <PopoverTrigger>
         <Search color='#d4c9c9' />
       </PopoverTrigger>
-      <PopoverContent>
+      <PopoverContent className='p-0  max-w-52 '>
         <Input
           placeholder='Search'
-          className='   border-none  '
+          className='  border-none '
         />
       </PopoverContent>
     </Popover>

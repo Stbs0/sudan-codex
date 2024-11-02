@@ -1,5 +1,6 @@
 import { Home, Pill } from "lucide-react";
-import {  Unit } from "./types/types";
+import { Unit } from "./types/types";
+
 export const DRUG_UNITS: Unit[] = [
   { value: "mg", label: "mg" },
   { value: "g", label: "g" },
@@ -512,261 +513,198 @@ export const DOSAGE_FORMS = [
   },
 ];
 
-
 export const PACKAGING_TYPES = [
   {
     label: "AMPULE",
-    value: "ampule",
   },
   {
     label: "APPLICATOR",
-    value: "applicator",
   },
   {
     label: "BAG",
-    value: "bag",
   },
   {
     label: "BLISTER PACK",
-    value: "blister pack",
   },
   {
     label: "BOTTLE",
-    value: "bottle",
   },
   {
     label: "BOTTLE, DISPENSING",
-    value: "bottle, dispensing",
   },
   {
     label: "BOTTLE, DROPPER",
-    value: "bottle, dropper",
   },
   {
     label: "BOTTLE, GLASS",
-    value: "bottle, glass",
   },
   {
     label: "BOTTLE, PLASTIC",
-    value: "bottle, plastic",
   },
   {
     label: "BOTTLE, PUMP",
-    value: "bottle, pump",
   },
   {
     label: "BOTTLE, SPRAY",
-    value: "bottle, spray",
   },
   {
     label: "BOTTLE, UNIT-DOSE",
-    value: "bottle, unit-dose",
   },
   {
     label: "BOTTLE, WITH APPLICATOR",
-    value: "bottle, with applicator",
   },
   {
     label: "BOX",
-    value: "box",
   },
   {
     label: "BOX, UNIT-DOSE",
-    value: "box, unit-dose",
   },
   {
     label: "CAN",
-    value: "can",
   },
   {
     label: "CANISTER",
-    value: "canister",
   },
   {
     label: "CAPSULE",
-    value: "capsule",
   },
   {
     label: "CARTON",
-    value: "carton",
   },
   {
     label: "CARTRIDGE",
-    value: "cartridge",
   },
   {
     label: "CASE",
-    value: "case",
   },
   {
     label: "CELLO PACK",
-    value: "cello pack",
   },
   {
     label: "CONTAINER",
-    value: "container",
   },
   {
     label: "CONTAINER, FLEXIBLE INTERMEDIATE BULK",
-    value: "container, flexible intermediate bulk",
   },
   {
     label: "CUP",
-    value: "cup",
   },
   {
     label: "CUP, UNIT-DOSE",
-    value: "cup, unit-dose",
   },
   {
     label: "CYLINDER",
-    value: "cylinder",
   },
   {
     label: "DEWAR",
-    value: "dewar",
   },
   {
     label: "DIALPACK",
-    value: "dialpack",
   },
   {
     label: "DOSE PACK",
-    value: "dose pack",
   },
   {
     label: "DRUM",
-    value: "drum",
   },
   {
     label: "INHALER",
-    value: "inhaler",
   },
   {
     label: "INHALER, REFILL",
-    value: "inhaler, refill",
   },
   {
     label: "JAR",
-    value: "jar",
   },
   {
     label: "JUG",
-    value: "jug",
   },
   {
     label: "KIT",
-    value: "kit",
   },
   {
     label: "NOT APPLICABLE",
-    value: "not applicable",
   },
   {
     label: "PACKAGE",
-    value: "package",
   },
   {
     label: "PACKAGE, COMBINATION",
-    value: "package, combination",
   },
   {
     label: "PACKET",
-    value: "packet",
   },
   {
     label: "PAIL",
-    value: "pail",
   },
   {
     label: "PATCH",
-    value: "patch",
   },
   {
     label: "POUCH",
-    value: "pouch",
   },
   {
     label: "PRE-FILLED SYRINGE",
-    value: "pre-filled syringe",
   },
   {
     label: "SUPERSACK",
-    value: "supersack",
   },
   {
     label: "SYRINGE",
-    value: "syringe",
   },
   {
     label: "SYRINGE, GLASS",
-    value: "syringe, glass",
   },
   {
     label: "SYRINGE, PLASTIC",
-    value: "syringe, plastic",
   },
   {
     label: "TABMINDER",
-    value: "tabminder",
   },
   {
     label: "TANK",
-    value: "tank",
   },
   {
     label: "TRAY",
-    value: "tray",
   },
   {
     label: "TUBE",
-    value: "tube",
   },
   {
     label: "TUBE, WITH APPLICATOR",
-    value: "tube, with applicator",
   },
   {
     label: "VIAL",
-    value: "vial",
   },
   {
     label: "VIAL, DISPENSING",
-    value: "vial, dispensing",
   },
   {
     label: "VIAL, GLASS",
-    value: "vial, glass",
   },
   {
     label: "VIAL, MULTI-DOSE",
-    value: "vial, multi-dose",
   },
   {
     label: "VIAL, PATENT DELIVERY SYSTEM",
-    value: "vial, patent delivery system",
   },
   {
     label: "VIAL, PHARMACY BULK PACKAGE",
-    value: "vial, pharmacy bulk package",
   },
   {
     label: "VIAL, PIGGYBACK",
-    value: "vial, piggyback",
   },
   {
     label: "VIAL, PLASTIC",
-    value: "vial, plastic",
   },
   {
     label: "VIAL, SINGLE-DOSE",
-    value: "vial, single-dose",
   },
   {
     label: "VIAL, SINGLE-USE",
-    value: "vial, single-use",
   },
 ];
+
 export const NAV_ITEMS = [
   {
     title: "Home",
