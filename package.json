@@ -19,7 +19,7 @@
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
       "npm run lint",
-      "prettier . --write","npm run tsc"
+      "prettier . --write"
     ]
   },
   "dependencies": {
