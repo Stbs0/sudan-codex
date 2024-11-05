@@ -15,7 +15,7 @@ const MainLayout = () => {
     <SidebarProvider defaultOpen={false}>
       {loading && <SpinnerOverlay />}
       <AppSidebar />
-      <SidebarInset className='   dark:bg-gray-900 dark:text-white  '>
+      <SidebarInset className='   dark:bg-gray-900 dark:text-white   '>
         <Header />
         <main className=' grid p-8 h-full '>
           <Outlet />

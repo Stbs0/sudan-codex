@@ -46,6 +46,7 @@ const Strength = () => {
 
             <div className='flex flex-col'>
               <Concentration
+                hasDenominator={hasDenominator}
                 placeholder='50'
                 name={`strength.${index}.nominator`}
                 unitName={`strength.${index}.nominatorUnit`}

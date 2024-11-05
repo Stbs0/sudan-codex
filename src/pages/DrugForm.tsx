@@ -35,19 +35,20 @@ const DrugForm = () => {
   }, [methods.reset, methods.formState]);
   const onSubmit: SubmitHandler<FormSchema> = async (data) => {
     try {
+      console.log(data);
       await saveDrug(data);
     } catch (error) {
       console.log(error);
       toast.error(`there was an error ${error} `);
     }
   };
-
+  console.log(methods.formState.errors);
   // TODO: add a buttun and space after the label of Each one
 
   return (
-    <div className='container mx-auto '>
+    <div className='container mx-auto  '>
       {methods.formState.isSubmitting && <SpinnerOverlay />}
-      <Card className=' mx-auto shadow-lg '>
+      <Card className=' mx-auto shadow-lg bg-accent/10'>
         <CardHeader>
           <CardTitle>Drug Form</CardTitle>
           <CardDescription>Add a new drug to the database.</CardDescription>
@@ -70,27 +71,27 @@ const DrugForm = () => {
                 description='Add a brand (trade) name for the drug.'
               />
 
-              <Separator className='w-[80%] mx-auto' />
+              <Separator className='w-[80%] mx-auto bg-primary' />
 
               {/* Generic input */}
               <GenericInput />
 
-              <Separator className='w-[80%] mx-auto' />
+              <Separator className='w-[80%] mx-auto bg-primary' />
 
               {/* Dosage form input */}
 
               <DosageFormInput />
 
-              <Separator className='w-[80%] mx-auto' />
+              <Separator className='w-[80%] mx-auto bg-primary' />
 
               {/* Strength input */}
 
               <Strength />
 
-              <Separator className='w-[80%] mx-auto' />
+              <Separator className='w-[80%] mx-auto bg-primary' />
 
               <Packaging />
-
+              <Separator className='w-[80%] mx-auto bg-primary' />
               {/* Manufacturer input */}
               <SHADFormField
                 name='manufacturer'
@@ -99,7 +100,7 @@ const DrugForm = () => {
                 description='Add the manufacturer of the drug.'
               />
 
-              <Separator className='w-[80%] mx-auto' />
+              <Separator className='w-[80%] mx-auto bg-primary' />
 
               {/* Agency input */}
               <SHADFormField
@@ -109,7 +110,7 @@ const DrugForm = () => {
                 description='The agency can be the manufacturer, distributor, etc.'
               />
 
-              <Separator className='w-[80%] mx-auto' />
+              <Separator className='w-[80%] mx-auto bg-primary' />
 
               <SHADFormField
                 type='number'
@@ -120,7 +121,11 @@ const DrugForm = () => {
               />
 
               {/* Submit button */}
-              <Button disabled={methods.formState.isSubmitting}>Submit</Button>
+              <Button
+                disabled={methods.formState.isSubmitting}
+                className='bg-primary'>
+                Submit
+              </Button>
             </form>
           </Form>
         </CardContent>

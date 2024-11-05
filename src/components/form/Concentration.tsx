@@ -9,12 +9,14 @@ type Props = {
   unitName: string;
   denominator?: boolean;
   placeholder: string;
+  hasDenominator?: boolean;
 };
 export function Concentration({
   name,
   unitName,
   denominator,
   placeholder,
+  hasDenominator,
 }: Props) {
   const {
     formState: { errors },
@@ -23,6 +25,7 @@ export function Concentration({
   return (
     <div className='flex'>
       <FormField
+        shouldUnregister={!hasDenominator}
         name={name}
         render={({ field }) => (
           <FormItem>

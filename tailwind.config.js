@@ -10,11 +10,16 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
-        primary: "#2A9D8F",
-        secondary: "#264653",
-        accent1: "#E9C46A",
-        accent2: "#F4A261",
-        accent3: "#E76F51",
+        primary: "#7400b8", // Primary color
+        accent: "#6930c3", // Accent color
+        info: "#5e60ce", // Info color
+        success: "#5390d9", // Success color
+        warning: "#4ea8de", // Warning color
+        danger: "#48bfe3", // Danger color
+        light: "#56cfe1", // Light color
+        muted: "#64dfdf", // Muted color
+        secondary: "#72efdd", // Secondary color
+        tertiary: "#80ffdb", // Tertiary color,
         c_federal_blue: {
           100: "#010113",
           200: "#010226",
