@@ -9,6 +9,7 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import UnauthorizedUserBtns from "./UnauthorizedUserBtns";
 import ProfilePic from "./ProfilePic";
 import { SidebarTrigger } from "../ui/sidebar";
+import { Skeleton } from "../ui/skeleton";
 
 const Header = () => {
   // Add a context  for the window width from MainContent
@@ -31,7 +32,13 @@ const Header = () => {
           <PopoverSearch />
         )}
 
-        {!loading && user ? <ProfilePic /> : <UnauthorizedUserBtns />}
+        {loading ? (
+          <Skeleton className='h-10 w-10 rounded-full' />
+        ) : user ? (
+          <ProfilePic />
+        ) : (
+          <UnauthorizedUserBtns />
+        )}
       </div>
     </header>
   );

@@ -4,6 +4,7 @@ import {
   faceBookAuthProvider,
   googleAuthProvider,
 } from "@/config/firebase";
+import { UserInDb } from "@/types/types";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
@@ -14,7 +15,7 @@ import {
 import { addDoc, collection } from "firebase/firestore";
 
 export const signIn = async (email: string, password: string) => {
-  return signInWithEmailAndPassword(auth, email, password);
+  return await signInWithEmailAndPassword(auth, email, password);
 };
 
 export const register = async (email: string, password: string) => {
@@ -22,20 +23,20 @@ export const register = async (email: string, password: string) => {
 };
 
 export const resetPassword = async (email: string) => {
-  return sendPasswordResetEmail(auth, email);
+  return await sendPasswordResetEmail(auth, email);
 };
 
 export const logout = async () => {
-  return signOut(auth);
+  return await signOut(auth);
 };
 
 export const GoogleSignIn = async () =>
-  signInWithPopup(auth, googleAuthProvider);
+  await signInWithPopup(auth, googleAuthProvider);
 export const FaceBookSignIn = async () =>
-  signInWithPopup(auth, faceBookAuthProvider);
+  await signInWithPopup(auth, faceBookAuthProvider);
 
 const usersRef = collection(db, "users");
 
-export const SaveUserInFIreStore = async (user: { email: string }) => {
-  return addDoc(usersRef, user);
+export const SaveUserInFIreStore = async (user: UserInDb) => {
+  return await addDoc(usersRef, user);
 };

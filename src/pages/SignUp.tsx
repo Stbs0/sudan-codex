@@ -30,6 +30,7 @@ const SignUp = () => {
     handleSubmit,
     formState: { isSubmitting },
   } = useFormContext<signUpSchemaType>();
+
   const { toast } = useToast();
   const navigate = useNavigate();
   const { user, loading } = useAuth();

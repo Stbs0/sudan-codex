@@ -11,52 +11,75 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import useAuth from "@/hooks/useAuth";
 import { LogInSchemaType } from "@/lib/schemas/LogInSchema";
-import { FaceBookSignIn, GoogleSignIn, signIn } from "@/services/authServices";
+import {
+  FaceBookSignIn,
+  GoogleSignIn,
+  SaveUserInFIreStore,
+  signIn,
+} from "@/services/authServices";
 import { SyntheticEvent } from "react";
 import { useFormContext } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { FirebaseError } from "@firebase/util";
 
 const Login = () => {
   const navigate = useNavigate();
 
-  const { user } = useAuth();
   const {
     handleSubmit,
     formState: { isSubmitting },
   } = useFormContext<LogInSchemaType>();
 
-  if (user) {
-    navigate("/");
-  }
   const onSubmit = async ({ email, password }: LogInSchemaType) => {
     try {
       await signIn(email, password);
 
       navigate("/");
     } catch (error) {
+      if (error instanceof FirebaseError) {
+        if (error.code === "auth/invalid-credential") {
+          toast.error("email or password is incorrect. Please try again.");
+          return;
+        }
+      }
       console.log(error);
     }
   };
   const signInWithGoogle = async (e: SyntheticEvent) => {
     e.preventDefault();
     try {
-      await GoogleSignIn();
-      navigate("/");
+      const results = await GoogleSignIn();
+      console.log(results);
+      await SaveUserInFIreStore(results.user);
     } catch (error) {
-      toast.error("Failed to sign in with Google. Please try again.");
+      if (error instanceof FirebaseError) {
+        if (error.code === "auth/account-exists-with-different-credential") {
+          toast.error(
+            "Account already exists with different credentials. Please try again.",
+          );
+          return;
+        }
+      }
       console.log(error);
     }
   };
   const signInWithFaceBook = async (e: SyntheticEvent) => {
     e.preventDefault();
     try {
-      await FaceBookSignIn();
-      navigate("/");
+      const results = await FaceBookSignIn();
+      console.log(results);
+      await SaveUserInFIreStore(results.user);
     } catch (error) {
-      toast.error("Failed to sign in with FaceBook. Please try again.");
+      if (error instanceof FirebaseError) {
+        if (error.code === "auth/account-exists-with-different-credential") {
+          toast.error(
+            "Account already exists with different credentials. Please try again.",
+          );
+          return;
+        }
+      }
       console.log(error);
     }
   };

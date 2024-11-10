@@ -1,4 +1,5 @@
 import { FormSchema } from "@/lib/schemas/newDrugSchema";
+import { User } from "firebase/auth";
 
 export type Theme = "dark" | "light" | "system";
 
@@ -30,3 +31,8 @@ export interface DosageForm {
 export type Generics = Pick<FormSchema, "generics">;
 export type Strength = Pick<FormSchema, "strength">;
 export type WatchGenerics = Generics["generics"];
+
+export type UserInDb = Pick<
+  User,
+  "displayName" | "email" | "uid" | "photoURL" | "phoneNumber"
+>;

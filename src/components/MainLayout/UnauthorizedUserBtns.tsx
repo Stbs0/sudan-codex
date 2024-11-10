@@ -11,7 +11,7 @@ const UnauthorizedUserBtns = () => {
         onClick={() => {
           navigate("/sign-up");
         }}>
-        Join
+        Sign Up
       </Button>
       <Button
         className='text-white hover:bg-blue-700 bg-blue-600 '
@@ -19,7 +19,7 @@ const UnauthorizedUserBtns = () => {
         onClick={() => {
           navigate("/log-in");
         }}>
-        Sign In
+        Log In
       </Button>
     </>
   );

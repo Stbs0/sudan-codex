@@ -718,7 +718,7 @@ export const NAV_ITEMS = [
   },
   {
     title: "Drug list",
-    url: "/drug-form",
+    url: "/drug-list",
     icon: Pill,
   },
 ];

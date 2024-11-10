@@ -1,25 +1,31 @@
-// import { Card, CardContent, CardTitle } from "@/components/ui/card";
-// import { useEffect, useState } from "react";
-// import axios from "axios";
+import { Card, CardContent } from "@/components/ui/card";
+import { getDrugs } from "@/services/drugServices";
+import { useEffect, useState } from "react";
 
-// const DrugList = () => {
-//   const [data, setdata] = useState([]);
-//   // useEffect(() => {
-//   //   const res = axios
-//   //     .get(
-//   //       'https://api.fda.gov/drug/label.json?search=openfda.generic_name:"ibuprofen"&limit=100',
-//   //     )
-//   //     .then((res) => {
-//   //       setdata(res.data.results);
-//   //     });
-//   // }, []);
-//   console.log(data);
-//   return (
-//     <Card className='w-full'>
-//       <CardTitle>Drugs List</CardTitle>
-//       <CardContent> </CardContent>
-//     </Card>
-//   );
-// };
+const DrugList = () => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      const drugsSnapshot = await getDrugs();
+      const arr = [];
+      drugsSnapshot.forEach((item) => {
+        arr.push(item.data());
+      });
+      setData(arr);
+    };
+    getData();
+  }, []);
+  console.log(data);
+  return (
+    <div className='w-full'>
+      <div>
+        <div>Drug List</div>
+        <Card>
+          <CardContent></CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+};
 
-// export default DrugList;
+export default DrugList;
