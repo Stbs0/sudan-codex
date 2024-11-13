@@ -23,8 +23,10 @@ import SHADFormField from "@/components/form/SHADFormField";
 import Packaging from "@/components/form/Packaging";
 import { useEffect } from "react";
 import { toast } from "sonner";
+import useAuth from "@/hooks/useAuth";
 
 const DrugForm = () => {
+  const { user } = useAuth();
   const methods = useFormContext<FormSchema>();
   useEffect(() => {
     if (methods.formState.isSubmitSuccessful) {
@@ -36,7 +38,8 @@ const DrugForm = () => {
   const onSubmit: SubmitHandler<FormSchema> = async (data) => {
     try {
       console.log(data);
-      await saveDrug(data);
+      if (!user) return toast.error("Must be signed in to submit a drug");
+      await saveDrug(data, user.uid);
     } catch (error) {
       console.log(error);
       toast.error(`there was an error ${error} `);

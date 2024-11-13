@@ -107,9 +107,9 @@ const Login = () => {
               <div className='grid gap-1 '>
                 <div className='flex items-center'>
                   <Label htmlFor='password'>Password</Label>
-                  {/* TODO: add this when making a password reset in the setting profile */}
+
                   <Link
-                    to='#'
+                    to='/reset-password'
                     className='ml-auto inline-block text-sm underline '>
                     Forgot your password?
                   </Link>

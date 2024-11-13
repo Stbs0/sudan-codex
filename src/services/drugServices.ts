@@ -1,27 +1,41 @@
-import { auth, db } from "@/config/firebase";
+import { db } from "@/config/firebase";
 import { FormSchema } from "@/lib/schemas/newDrugSchema";
-import { addDoc, Timestamp, getDocs, collection } from "firebase/firestore";
+import { FetchedDrugList } from "@/types/types";
+import {
+  Timestamp,
+  getDocs,
+  collection,
+  QuerySnapshot,
+  CollectionReference,
+  doc,
+  setDoc,
+} from "firebase/firestore";
+import { v7 as uuidv7 } from "uuid";
 
-const drugsCollection = collection(db, "drugs");
+const drugsCollection = collection(
+  db,
+  "drugs",
+) as CollectionReference<FetchedDrugList>;
 
-export const saveDrug = async (drug: FormSchema) => {
+export const saveDrug = async (drug: FormSchema, userId: string) => {
   try {
     console.log(drug);
-
-    const newDrug = await addDoc(drugsCollection, {
+    const drugRef = doc(db, "drugs", uuidv7());
+    await setDoc(drugRef, {
       ...drug,
       date: Timestamp.now(),
-      submittedBy: auth.currentUser?.uid,
+      submittedBy: userId,
+      id: drugRef.id,
     });
     console.log("Document written  ", drug);
-    return newDrug;
   } catch (e) {
     console.error("Error adding document: ", e);
   }
 };
 
 export const getDrugs = async () => {
-  const drugsSnapshot = await getDocs(drugsCollection);
+  const drugsSnapshot: QuerySnapshot<FetchedDrugList> =
+    await getDocs(drugsCollection);
 
   return drugsSnapshot;
 };

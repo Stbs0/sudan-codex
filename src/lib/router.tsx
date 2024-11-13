@@ -6,6 +6,7 @@ import RHFLogInProvider from "@/providers/RHFLogInProvider";
 import PrivateRoute from "@/components/PrivateRoute";
 import MainLayout from "@/layouts/MainLayout";
 import DrugList from "@/pages/DrugList";
+import ResetPassword from "@/pages/ResetPassword";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      { path: "reset-password", element: <ResetPassword /> },
     ],
   },
 ]);

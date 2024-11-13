@@ -1,5 +1,6 @@
 import { FormSchema } from "@/lib/schemas/newDrugSchema";
 import { User } from "firebase/auth";
+import { Timestamp } from "firebase/firestore";
 
 export type Theme = "dark" | "light" | "system";
 
@@ -36,3 +37,21 @@ export type UserInDb = Pick<
   User,
   "displayName" | "email" | "uid" | "photoURL" | "phoneNumber"
 >;
+
+export type FetchedDrugList = FormSchema & {
+  submittedBy: string;
+  date: Timestamp;
+  id: string;
+};
+
+export type Drug = {
+  no: string;
+  brandName: string;
+  genericName: string;
+  dosageFormName: string;
+  strength: string;
+  packSize: string;
+  companyName: string;
+  countryOfOrigin: string;
+  agentName: string;
+};
