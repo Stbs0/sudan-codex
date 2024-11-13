@@ -17,13 +17,14 @@ const DrugList = () => {
       <div className=''>
         <span className='text-2xl'>Drug List</span>
         <Input
-          placeholder='Search'
+          className='placeholder:text-xs rounded-3xl w-96 '
+          placeholder='generic, brand, company name'
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
       <InfiniteScroll
-        className='flex flex-col gap-4'
+        className='flex flex-col gap-4 max-w-xl'
         dataLength={drugList.length}
         next={loadMore}
         hasMore={hasMore}
