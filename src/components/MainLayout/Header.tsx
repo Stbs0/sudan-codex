@@ -1,7 +1,7 @@
 import HomeBtn from "./HomeBtn";
 import { ModeToggle } from "./mode-toggle";
 import { Input } from "../ui/input";
-import PopoverSearch from "../form/PopoverSearch";
+// import PopoverSearch from "../form/PopoverSearch";
 
 import useAuth from "@/hooks/useAuth";
 import useMediaQuery from "@/hooks/useMediaQuery";
@@ -29,9 +29,8 @@ const Header = () => {
             placeholder='Search'
             className=' bg-gray-700 text-white border-none focus:ring-2 focus:ring-blue-500'
           />
-        ) : (
-          <PopoverSearch />
-        )}
+        ) : // <PopoverSearch />
+        null}
 
         {loading ? (
           <Skeleton className='h-10 w-10 rounded-full' />
