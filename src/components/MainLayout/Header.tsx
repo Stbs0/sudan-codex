@@ -10,6 +10,7 @@ import UnauthorizedUserBtns from "./UnauthorizedUserBtns";
 import ProfilePic from "./ProfilePic";
 import { SidebarTrigger } from "../ui/sidebar";
 import { Skeleton } from "../ui/skeleton";
+import Logo from "./Logo";
 
 const Header = () => {
   // Add a context  for the window width from MainContent
@@ -17,9 +18,9 @@ const Header = () => {
   const { user, loading } = useAuth();
 
   return (
-    <header className='h-[50px] flex shrink-0 items-center justify-between p-4 bg-primary'>
+    <header className='h-[64px] flex shrink-0 items-center justify-between  bg-primary p-3'>
       <SidebarTrigger />
-      <HomeBtn />
+      <HomeBtn /> <Logo />
       <div className='flex items-center  space-x-4'>
         <ModeToggle />
 
