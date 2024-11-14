@@ -718,3 +718,6 @@ export const NAV_ITEMS = [
     icon: Pill,
   },
 ];
+
+export const OPENFDA_API_SEARCH = `https://api.fda.gov/drug/event.json?api_key=${import.meta.env.VITE_OPENFDA_APIKEY}search=`;
+console.log(OPENFDA_API_SEARCH);

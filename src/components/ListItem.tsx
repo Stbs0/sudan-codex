@@ -2,22 +2,25 @@ import { Card, CardContent, CardTitle } from "./ui/card";
 import { Drug } from "@/types/types";
 import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 type Props = {
   drug: Drug;
 };
 export const ListItem = ({ drug }: Props) => {
+  const navigate = useNavigate();
   return (
-    <Card className=' bg-purple-100/50  hover:bg-purple-100/90 dark:bg-purple-800/50 dark:hover:bg-purple-800/90 border-4 rounded-none border-transparent border-l-indigo-700  '>
-      <>
-        <CardTitle className='pt-4 py-2  pl-6 '>
-          <span className='font-bold '>{drug.brandName}</span>
-          <span className='ml-2 font-normal text-sm'>{drug.strength}</span>
+    <Card
+      className=' bg-purple-100/50  hover:bg-purple-100/90 dark:bg-purple-800/50 dark:hover:bg-purple-800/90 border-4 rounded-none border-transparent border-l-indigo-700  '
+      onClick={() => {
+        navigate(`/drug/${drug.no}`);
+      }}>
+      <CardTitle className='pt-4 py-2  pl-6 uppercase'>
+        <span className='font-bold '>{drug.brandName}</span>
+        <span className='ml-2 font-normal text-sm'>{drug.strength}</span>
 
-          <span className='ml-1 font-normal text-sm'>
-            {drug.dosageFormName}
-          </span>
-        </CardTitle>
-      </>
+        <span className='ml-1 font-normal text-sm'>{drug.dosageFormName}</span>
+      </CardTitle>
+
       <CardContent className=' pb-2  flex'>
         <div className='flex-1'>
           <div className='text-xs'>

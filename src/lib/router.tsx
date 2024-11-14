@@ -27,6 +27,14 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: "drug/:no",
+        element: (
+          <PrivateRoute>
+            <DrugList />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);

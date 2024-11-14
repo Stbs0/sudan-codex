@@ -24,7 +24,7 @@ const DrugList = () => {
         />
       </div>
       <InfiniteScroll
-        className='flex flex-col gap-4 max-w-xl'
+        className='flex flex-col gap-4 max-w-lg min-w-md'
         dataLength={drugList.length}
         next={loadMore}
         hasMore={hasMore}
