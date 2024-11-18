@@ -1,6 +1,6 @@
-import FaceBookIcon from "@/assets/icons/FacebookIcon";
-import GoogleIcon from "@/assets/icons/GoogleIcon";
+import FaceBookOAuth from "@/components/FaceBookOAuth";
 import FormFields from "@/components/FormFields";
+import GoogleOAuth from "@/components/GoogleOAuth";
 import SpinnerOverlay from "@/components/SpinnerOverlay";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,13 +14,10 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import useAuth from "@/hooks/useAuth";
 import { signUpSchemaType } from "@/lib/schemas/signUpSchema";
-import {
-  FaceBookSignIn,
-  GoogleSignIn,
-  register,
-} from "@/services/authServices";
-import { createUser } from "@/services/usersServices";
-import { SyntheticEvent } from "react";
+import { signUp } from "@/services/authServices";
+import { SaveUserInFIreStore } from "@/services/usersServices";
+import { getAdditionalUserInfo } from "firebase/auth";
+
 import { useFormContext } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -35,7 +32,7 @@ const SignUp = () => {
   const navigate = useNavigate();
   const { user, loading } = useAuth();
 
-  if (loading) {
+  if (loading || isSubmitting) {
     return <SpinnerOverlay />;
   }
   if (user) {
@@ -44,8 +41,12 @@ const SignUp = () => {
 
   const onSubmit = async ({ email, password }: signUpSchemaType) => {
     try {
-      await register(email, password);
-      await createUser(email, password);
+      const results = await signUp(email, password);
+      const isNewUser = getAdditionalUserInfo(results)?.isNewUser;
+
+      if (isNewUser) {
+        await SaveUserInFIreStore(results.user);
+      }
       navigate("/profile");
     } catch (error) {
       toast({
@@ -57,101 +58,64 @@ const SignUp = () => {
     }
   };
 
-  const signInWithGoogle = async (e: SyntheticEvent) => {
-    e.preventDefault();
-    try {
-      await GoogleSignIn();
-      navigate("/");
-    } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: "Failed to sign in with Google. Please try again.",
-      });
-      console.log(error);
-    }
-  };
-  const signInWithFaceBook = async (e: SyntheticEvent) => {
-    e.preventDefault();
-    try {
-      await FaceBookSignIn();
-      navigate("/");
-    } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: "Failed to sign in with Google. Please try again.",
-      });
-      console.log(error);
-    }
-  };
   return (
-    <>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Card className='mx-auto max-w-sm'>
-          <CardHeader>
-            <CardTitle className='text-xl'>Sign Up</CardTitle>
-            <CardDescription>
-              Enter your information to create an account
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className='grid gap-4'>
-              <div className='grid gap-2'>
-                <FormFields
-                  label='Email'
-                  placeholder='example@example.com'
-                  name='email'
-                />
-              </div>
-              <div className='grid gap-2'>
-                <FormFields
-                  label='Password'
-                  name='password'
-                  type='password'
-                />
-              </div>
-              <div className='grid gap-2'>
-                <FormFields
-                  label='Conform Password'
-                  name='confirmPassword'
-                  type='password'
-                />
-              </div>
-              <Button
-                disabled={isSubmitting}
-                type='submit'
-                className='w-full'>
-                Create an account
-              </Button>
-              <Button
-                variant='outline'
-                className='w-full flex items-center justify-center gap-2'
-                disabled={isSubmitting}
-                onClick={signInWithGoogle}>
-                Sign up with Google <GoogleIcon />
-              </Button>
-              <Button
-                variant='outline'
-                className='w-full flex items-center justify-center gap-2'
-                disabled={isSubmitting}
-                onClick={signInWithFaceBook}>
-                Sign up with FaceBook <FaceBookIcon />
-              </Button>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <Card className='mx-auto max-w-sm'>
+        <CardHeader>
+          <CardTitle className='text-xl'>Sign Up</CardTitle>
+          <CardDescription>
+            Enter your information to create an account
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className='grid gap-4'>
+            <div className='grid gap-2'>
+              <FormFields
+                label='Email'
+                placeholder='example@example.com'
+                name='email'
+              />
             </div>
-            <div className='mt-4 text-center text-sm'>
-              Already have an account?{" "}
-              <Link
-                to='/log-in'
-                className='underline underline-offset-2'>
-                Sign in
-              </Link>
+            <div className='grid gap-2'>
+              <FormFields
+                label='Password'
+                name='password'
+                type='password'
+              />
             </div>
-          </CardContent>
-        </Card>
-      </form>
-      {isSubmitting && <SpinnerOverlay />}
-    </>
+            <div className='grid gap-2'>
+              <FormFields
+                label='Conform Password'
+                name='confirmPassword'
+                type='password'
+              />
+            </div>
+            <Button
+              disabled={isSubmitting}
+              type='submit'
+              className='w-full'>
+              Create an account
+            </Button>
+            <GoogleOAuth
+              isSubmitting={isSubmitting}
+              logInOrSignUp='Sign up'
+            />
+            <FaceBookOAuth
+              isSubmitting={isSubmitting}
+              logInOrSignUp='Sign up'
+            />
+          </div>
+          <div className='mt-4 text-center text-sm'>
+            Already have an account?{" "}
+            <Link
+              to='/log-in'
+              className='underline underline-offset-2'>
+              Sign in
+            </Link>
+          </div>
+        </CardContent>
+      </Card>
+    </form>
   );
 };
 

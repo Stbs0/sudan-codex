@@ -18,11 +18,15 @@ export class AppDatabase extends Dexie {
   // Method to populate the database
   async populate(data: Drug[]) {
     const count = await this.items.count();
-    if (count === 0) {
-      await this.items.bulkAdd(data);
-      console.log("Database populated with initial data");
-    } else {
-      console.log("Database already contains data");
+    try {
+      if (count === 0) {
+        await this.items.bulkAdd(data);
+        console.log("Database populated with initial data");
+      } else {
+        console.log("Database already contains data");
+      }
+    } catch (error) {
+      console.log(error);
     }
   }
 }

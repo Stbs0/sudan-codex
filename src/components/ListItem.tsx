@@ -3,6 +3,7 @@ import { Drug } from "@/types/types";
 import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+
 type Props = {
   drug: Drug;
 };
@@ -12,7 +13,9 @@ export const ListItem = ({ drug }: Props) => {
     <Card
       className=' bg-purple-100/50  hover:bg-purple-100/90 dark:bg-purple-800/50 dark:hover:bg-purple-800/90 border-4 rounded-none border-transparent border-l-indigo-700  '
       onClick={() => {
-        navigate(`/drug/${drug.no}`);
+        navigate(`/drug/${drug.no}`, {
+          state: drug,
+        });
       }}>
       <CardTitle className='pt-4 py-2  pl-6 uppercase'>
         <span className='font-bold '>{drug.brandName}</span>

@@ -1,5 +1,3 @@
-import FaceBookIcon from "@/assets/icons/FacebookIcon";
-import GoogleIcon from "@/assets/icons/GoogleIcon";
 import FormFields from "@/components/FormFields";
 import SpinnerOverlay from "@/components/SpinnerOverlay";
 import { Button } from "@/components/ui/button";
@@ -12,19 +10,18 @@ import {
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { LogInSchemaType } from "@/lib/schemas/LogInSchema";
-import {
-  FaceBookSignIn,
-  GoogleSignIn,
-  SaveUserInFIreStore,
-  signIn,
-} from "@/services/authServices";
-import { SyntheticEvent } from "react";
+import { signIn } from "@/services/authServices";
 import { useFormContext } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { FirebaseError } from "@firebase/util";
+import useAuth from "@/hooks/useAuth";
+import { SaveUserInFIreStore } from "@/services/usersServices";
+import GoogleOAuth from "@/components/GoogleOAuth";
+import FaceBookOAuth from "@/components/FaceBookOAuth";
 
 const Login = () => {
+  const { user } = useAuth();
   const navigate = useNavigate();
 
   const {
@@ -32,10 +29,16 @@ const Login = () => {
     formState: { isSubmitting },
   } = useFormContext<LogInSchemaType>();
 
+  if (user) {
+    navigate("/");
+  }
+  if (isSubmitting) return <SpinnerOverlay />;
   const onSubmit = async ({ email, password }: LogInSchemaType) => {
     try {
-      await signIn(email, password);
+      const results = await signIn(email, password);
+      const userCredential = results.user;
 
+      await SaveUserInFIreStore(userCredential);
       navigate("/");
     } catch (error) {
       if (error instanceof FirebaseError) {
@@ -47,110 +50,69 @@ const Login = () => {
       console.log(error);
     }
   };
-  const signInWithGoogle = async (e: SyntheticEvent) => {
-    e.preventDefault();
-    try {
-      const results = await GoogleSignIn();
-      console.log(results);
-      await SaveUserInFIreStore(results.user);
-    } catch (error) {
-      if (error instanceof FirebaseError) {
-        if (error.code === "auth/account-exists-with-different-credential") {
-          toast.error(
-            "Account already exists with different credentials. Please try again.",
-          );
-          return;
-        }
-      }
-      console.log(error);
-    }
-  };
-  const signInWithFaceBook = async (e: SyntheticEvent) => {
-    e.preventDefault();
-    try {
-      const results = await FaceBookSignIn();
-      console.log(results);
-      await SaveUserInFIreStore(results.user);
-    } catch (error) {
-      if (error instanceof FirebaseError) {
-        if (error.code === "auth/account-exists-with-different-credential") {
-          toast.error(
-            "Account already exists with different credentials. Please try again.",
-          );
-          return;
-        }
-      }
-      console.log(error);
-    }
-  };
-  return (
-    <>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className='grid'>
-        <Card className='mx-auto max-w-sm'>
-          <CardHeader>
-            <CardTitle className='text-2xl'>Login</CardTitle>
-            <CardDescription>
-              Enter your email below to login to your account
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className='grid gap-4'>
-              <div className='grid gap-2'>
-                <FormFields
-                  label='Email'
-                  placeholder='example@example.com'
-                  name='email'
-                />
-              </div>
-              <div className='grid gap-1 '>
-                <div className='flex items-center'>
-                  <Label htmlFor='password'>Password</Label>
 
-                  <Link
-                    to='/reset-password'
-                    className='ml-auto inline-block text-sm underline '>
-                    Forgot your password?
-                  </Link>
-                </div>
-                <FormFields
-                  label=''
-                  name='password'
-                  type='password'
-                />
+  return (
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className='grid'>
+      <Card className='mx-auto max-w-sm'>
+        <CardHeader>
+          <CardTitle className='text-2xl'>Login</CardTitle>
+          <CardDescription>
+            Enter your email below to login to your account
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className='grid gap-4'>
+            <div className='grid gap-2'>
+              <FormFields
+                label='Email'
+                placeholder='example@example.com'
+                name='email'
+              />
+            </div>
+            <div className='grid gap-1 '>
+              <div className='flex items-center'>
+                <Label htmlFor='password'>Password</Label>
+
+                <Link
+                  to='/reset-password'
+                  className='ml-auto inline-block text-sm underline '>
+                  Forgot your password?
+                </Link>
               </div>
-              <Button
-                type='submit'
-                className='w-full'>
-                Login
-              </Button>
-              <Button
-                onClick={signInWithGoogle}
-                variant='outline'
-                className='w-full flex items-center justify-center gap-2 '>
-                Login with Google <GoogleIcon />
-              </Button>
-              <Button
-                onClick={signInWithFaceBook}
-                variant='outline'
-                className='w-full flex items-center justify-center gap-2  '>
-                Login with FaceBook <FaceBookIcon />
-              </Button>
+              <FormFields
+                label=''
+                name='password'
+                type='password'
+              />
             </div>
-            <div className='mt-4 text-center text-sm'>
-              Don&apos;t have an account?{" "}
-              <Link
-                to='/sign-up'
-                className='underline underline-offset-1'>
-                Sign up
-              </Link>
-            </div>
-          </CardContent>
-        </Card>
-      </form>
-      {isSubmitting && <SpinnerOverlay />}
-    </>
+            <Button
+              disabled={isSubmitting}
+              type='submit'
+              className='w-full'>
+              Login
+            </Button>
+            <GoogleOAuth
+              logInOrSignUp='Login'
+              isSubmitting={isSubmitting}
+            />
+            <FaceBookOAuth
+              logInOrSignUp='Login'
+              isSubmitting={isSubmitting}
+            />
+          </div>
+          <div className='mt-4 text-center text-sm'>
+            Don&apos;t have an account?{" "}
+            <Link
+              to='/sign-up'
+              className='underline underline-offset-1'>
+              Sign up
+            </Link>
+          </div>
+        </CardContent>
+      </Card>
+    </form>
   );
 };
 export default Login;

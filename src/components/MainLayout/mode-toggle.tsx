@@ -14,7 +14,9 @@ export function ModeToggle() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger
+        asChild
+        className='shrink-0'>
         <Button
           className='size-7'
           variant='outline'

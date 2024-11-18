@@ -6,6 +6,7 @@ import RHFLogInProvider from "@/providers/RHFLogInProvider";
 import PrivateRoute from "@/components/PrivateRoute";
 import MainLayout from "@/layouts/MainLayout";
 import DrugList from "@/pages/DrugList";
+import DrugInfo from "@/pages/DrugInfo";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
         path: "drug/:no",
         element: (
           <PrivateRoute>
-            <DrugList />
+            <DrugInfo />
           </PrivateRoute>
         ),
       },

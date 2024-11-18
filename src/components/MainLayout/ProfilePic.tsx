@@ -7,26 +7,38 @@ import { Link, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "@/config/firebase";
 import { Separator } from "../ui/separator";
+import * as PopoverPrimitive from "@radix-ui/react-popover";
+import { useState } from "react";
+import { ChevronUp } from "lucide-react";
 
 const ProfilePic = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
+  const [open, setOpen] = useState(false);
 
   if (!user) {
     return null;
   }
 
   return (
-    <Popover>
-      <PopoverTrigger>
+    <Popover
+      onOpenChange={() => {
+        setOpen(!open);
+      }}>
+      <PopoverTrigger className='flex items-center'>
         <Avatar>
           <AvatarImage src={user?.photoURL ?? undefined} />
           <AvatarFallback>
             {getInitials(user?.displayName || "")}
           </AvatarFallback>
         </Avatar>
+        <ChevronUp
+          className={`w-4 h-4 shrink-0 opacity-50  ${!open ? "rotate-180" : ""}`}
+        />
       </PopoverTrigger>
-      <PopoverContent className='w-28 p-0 '>
+      <PopoverContent
+        className='w-28 p-0 '
+        onOpenAutoFocus={(e) => e.preventDefault()}>
         <div className='grid '>
           <Button
             variant={"link"}
@@ -48,6 +60,7 @@ const ProfilePic = () => {
             Sign Out
           </Button>
         </div>
+        <PopoverPrimitive.Arrow />
       </PopoverContent>
     </Popover>
   );

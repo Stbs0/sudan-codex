@@ -12,13 +12,13 @@ import {
   signOut,
   signInWithPopup,
 } from "firebase/auth";
-import { addDoc, collection } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 
 export const signIn = async (email: string, password: string) => {
   return await signInWithEmailAndPassword(auth, email, password);
 };
 
-export const register = async (email: string, password: string) => {
+export const signUp = async (email: string, password: string) => {
   return await createUserWithEmailAndPassword(auth, email, password);
 };
 
@@ -35,8 +35,7 @@ export const GoogleSignIn = async () =>
 export const FaceBookSignIn = async () =>
   await signInWithPopup(auth, faceBookAuthProvider);
 
-const usersRef = collection(db, "users");
-
 export const SaveUserInFIreStore = async (user: UserInDb) => {
-  return await addDoc(usersRef, user);
+  const docRef = doc(db, "users", user.uid);
+  return await setDoc(docRef, user);
 };

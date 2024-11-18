@@ -20,7 +20,8 @@ const Header = () => {
   return (
     <header className='h-[64px] flex shrink-0 items-center justify-between  bg-primary p-3'>
       <SidebarTrigger />
-      <HomeBtn /> <Logo />
+      <HomeBtn />
+      <Logo />
       <div className='flex items-center  space-x-4'>
         <ModeToggle />
 
