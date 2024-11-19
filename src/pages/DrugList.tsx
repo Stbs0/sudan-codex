@@ -1,4 +1,4 @@
-import { ListItem } from "@/components/ListItem";
+import { ListItem } from "@/components/drugList/ListItem";
 import { Input } from "@/components/ui/input";
 import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
 import { useState } from "react";

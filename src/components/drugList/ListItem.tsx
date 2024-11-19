@@ -1,6 +1,6 @@
-import { Card, CardContent, CardTitle } from "./ui/card";
+import { Card, CardContent, CardTitle } from "../ui/card";
 import { Drug } from "@/types/types";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 

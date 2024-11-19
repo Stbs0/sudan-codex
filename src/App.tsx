@@ -7,6 +7,9 @@ import { AuthProvider } from "./providers/AuthProvider";
 import { useEffect } from "react";
 import DBIndexed from "./config/indexedDB";
 import drugJson from "./Drugdata ilove.json";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+const queryClient = new QueryClient();
+
 const App = () => {
   useEffect(() => {
     const fn = async () => {
@@ -14,16 +17,19 @@ const App = () => {
     };
     fn();
   }, []);
+
   return (
-    <SidebarProvider defaultOpen={false}>
-      <AuthProvider>
-        <ThemeProvider
-          defaultTheme='dark'
-          storageKey='vite-ui-theme'>
-          <RouterProvider router={router} />
-        </ThemeProvider>
-      </AuthProvider>
-    </SidebarProvider>
+    <QueryClientProvider client={queryClient}>
+      <SidebarProvider defaultOpen={false}>
+        <AuthProvider>
+          <ThemeProvider
+            defaultTheme='dark'
+            storageKey='vite-ui-theme'>
+            <RouterProvider router={router} />
+          </ThemeProvider>
+        </AuthProvider>
+      </SidebarProvider>
+    </QueryClientProvider>
   );
 };
 

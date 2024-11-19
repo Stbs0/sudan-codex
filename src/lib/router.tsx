@@ -7,6 +7,9 @@ import PrivateRoute from "@/components/PrivateRoute";
 import MainLayout from "@/layouts/MainLayout";
 import DrugList from "@/pages/DrugList";
 import DrugInfo from "@/pages/DrugInfo";
+import Profile from "@/pages/Profile";
+import RHFTellUsMore from "@/providers/RHFTellUsMore";
+import IsProfileComplete from "@/components/IsProfileComplete";
 
 const router = createBrowserRouter([
   {
@@ -20,21 +23,33 @@ const router = createBrowserRouter([
 
       { path: "sign-up", element: <RHFSignUpProvider /> },
       { path: "log-in", element: <RHFLogInProvider /> },
+
       {
-        path: "drug-list",
-        element: (
-          <PrivateRoute>
-            <DrugList />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "drug/:no",
-        element: (
-          <PrivateRoute>
-            <DrugInfo />
-          </PrivateRoute>
-        ),
+        element: <PrivateRoute />,
+        children: [
+          {
+            element: <IsProfileComplete />,
+            children: [
+              {
+                path: "profile",
+                element: <Profile />,
+              },
+
+              {
+                path: "drug/:no",
+                element: <DrugInfo />,
+              },
+              {
+                path: "drug-list",
+                element: <DrugList />,
+              },
+            ],
+          },
+          {
+            path: "user-info",
+            element: <RHFTellUsMore />,
+          },
+        ],
       },
     ],
   },

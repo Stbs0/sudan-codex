@@ -1,22 +1,20 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import useAuth from "@/hooks/useAuth";
+import SpinnerOverlay from "@/components/SpinnerOverlay";
 
-import SpinnerOverlay from "./SpinnerOverlay";
-
-const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
+const PrivateRoute = () => {
   const { loading, user } = useAuth();
 
   if (loading) {
     return <SpinnerOverlay />;
   }
-  if (user) {
-    return children;
-  }
 
-  return (
+  return user ? (
+    <Outlet />
+  ) : (
     <Navigate
-      replace
       to='/log-in'
+      replace
     />
   );
 };

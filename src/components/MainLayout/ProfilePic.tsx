@@ -55,7 +55,13 @@ const ProfilePic = () => {
             className='text-red-500 '
             onClick={async () => {
               await signOut(auth);
-              navigate("/log-in");
+              navigate("/log-in", {
+                replace: true,
+                state: {
+                  type: "success",
+                  message: `Goodbye ${user.displayName}`,
+                },
+              });
             }}>
             Sign Out
           </Button>

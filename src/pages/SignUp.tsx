@@ -36,7 +36,7 @@ const SignUp = () => {
     return <SpinnerOverlay />;
   }
   if (user) {
-    navigate("/");
+    return navigate("/");
   }
 
   const onSubmit = async ({ email, password }: signUpSchemaType) => {
@@ -45,7 +45,7 @@ const SignUp = () => {
       const isNewUser = getAdditionalUserInfo(results)?.isNewUser;
 
       if (isNewUser) {
-        await SaveUserInFIreStore(results.user);
+        await SaveUserInFIreStore(results.user, results.providerId ?? "");
       }
       navigate("/profile");
     } catch (error) {

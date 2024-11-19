@@ -12,34 +12,52 @@ import { Label } from "@/components/ui/label";
 import { LogInSchemaType } from "@/lib/schemas/LogInSchema";
 import { signIn } from "@/services/authServices";
 import { useFormContext } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { FirebaseError } from "@firebase/util";
-import useAuth from "@/hooks/useAuth";
 import { SaveUserInFIreStore } from "@/services/usersServices";
 import GoogleOAuth from "@/components/GoogleOAuth";
 import FaceBookOAuth from "@/components/FaceBookOAuth";
+import useAuth from "@/hooks/useAuth";
+import { getAdditionalUserInfo } from "firebase/auth";
 
 const Login = () => {
-  const { user } = useAuth();
   const navigate = useNavigate();
-
+  const { user } = useAuth();
   const {
     handleSubmit,
     formState: { isSubmitting },
   } = useFormContext<LogInSchemaType>();
 
   if (user) {
-    navigate("/");
+    return (
+      <Navigate
+        to='/'
+        replace
+        state={{ type: "warning", message: "You are already logged in" }}
+      />
+    );
   }
   if (isSubmitting) return <SpinnerOverlay />;
   const onSubmit = async ({ email, password }: LogInSchemaType) => {
     try {
       const results = await signIn(email, password);
-      const userCredential = results.user;
+      console.log(results);
+      const isNewUser = getAdditionalUserInfo(results)?.isNewUser;
+      if (isNewUser) {
+        console.log(results);
 
-      await SaveUserInFIreStore(userCredential);
-      navigate("/");
+        await SaveUserInFIreStore(results.user, results.providerId ?? "");
+        navigate("/user-info", {
+          replace: true,
+          state: { type: "success", message: "Login successful" },
+        });
+      } else {
+        navigate("/", {
+          replace: true,
+          state: { type: "success", message: "Login successful" },
+        });
+      }
     } catch (error) {
       if (error instanceof FirebaseError) {
         if (error.code === "auth/invalid-credential") {

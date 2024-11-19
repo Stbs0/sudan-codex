@@ -5,20 +5,35 @@ import { toast } from "sonner";
 import { GoogleSignIn } from "@/services/authServices";
 import { getAdditionalUserInfo } from "firebase/auth";
 import { SaveUserInFIreStore } from "@/services/usersServices";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   isSubmitting: boolean;
   logInOrSignUp?: string;
 };
 const GoogleOAuth = ({ isSubmitting, logInOrSignUp }: Props) => {
+  const navigate = useNavigate();
+
   const signInWithGoogle = async (e: SyntheticEvent) => {
     e.preventDefault();
     try {
       const results = await GoogleSignIn();
       const isNewUser = getAdditionalUserInfo(results)?.isNewUser;
 
+      console.log(results);
       if (isNewUser) {
-        await SaveUserInFIreStore(results.user);
+        console.log(results);
+
+        await SaveUserInFIreStore(results.user, results.providerId ?? "");
+        navigate("/user-info", {
+          replace: true,
+          state: { type: "success", message: "Login successful" },
+        });
+      } else {
+        navigate("/", {
+          replace: true,
+          state: { type: "success", message: "Login successful" },
+        });
       }
     } catch (error) {
       toast.error("Failed to sign in with Google. Please try again.");
