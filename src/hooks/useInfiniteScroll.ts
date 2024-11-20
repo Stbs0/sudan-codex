@@ -23,7 +23,7 @@ export const useInfiniteScroll = (search?: string) => {
         .limit(limit)
         .toArray()
         .then((data) =>
-          data.sort((a, b) => a.brandName.localeCompare(b.brandName)),
+          data.sort((a, b) => a.brandName.localeCompare(b.brandName))
         );
     }
 
@@ -31,7 +31,7 @@ export const useInfiniteScroll = (search?: string) => {
       .limit(limit)
       .toArray()
       .then((data) =>
-        data.sort((a, b) => a.brandName.localeCompare(b.brandName)),
+        data.sort((a, b) => a.brandName.localeCompare(b.brandName))
       );
   }, [search, page]);
 

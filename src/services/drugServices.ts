@@ -14,7 +14,7 @@ import { v7 as uuidv7 } from "uuid";
 
 const drugsCollection = collection(
   db,
-  "drugs",
+  "drugs"
 ) as CollectionReference<FetchedDrugList>;
 
 export const saveDrug = async (drug: FormSchema, userId: string) => {

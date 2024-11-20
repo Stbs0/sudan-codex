@@ -9,7 +9,7 @@ const formSchema = z.object({
   generics: z.array(
     z.object({
       generic: z.string().min(2, minimumStringMsg).max(50, maximumStringMsg),
-    }),
+    })
   ),
   manufacturer: z.string().min(2, minimumStringMsg).max(50, maximumStringMsg),
 
@@ -43,7 +43,7 @@ const formSchema = z.object({
         .min(2, minimumStringMsg)
         .max(50, maximumStringMsg)
         .optional(),
-    }),
+    })
   ),
 });
 export type FormSchema = z.infer<typeof formSchema>;

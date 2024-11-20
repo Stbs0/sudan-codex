@@ -23,7 +23,7 @@ export const SaveUserInFIreStore = async (user: User, providerId: string) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${idToken}`,
       },
-    },
+    }
   );
 };
 
@@ -43,7 +43,7 @@ export const getUser = async (idToken: string) => {
 
 export const updateUser = async (
   idToken: string,
-  data: tellUsMoreSchemaType & { profileComplete: boolean },
+  data: tellUsMoreSchemaType & { profileComplete: boolean }
 ) => {
   return await axios.post(`${BASE_API}/user/complete-profile`, data, {
     headers: {

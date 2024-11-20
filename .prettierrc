@@ -3,6 +3,14 @@
   "bracketSameLine": true,
 
   "singleAttributePerLine": true,
-  "trailingComma": "all",
-  "jsxSingleQuote": true
+  "jsxSingleQuote": true,
+  "arrowParens": "always",
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "endOfLine": "crlf",
+  "proseWrap": "preserve",
+  "semi": true,
+  "tabWidth": 2,
+
+  "quoteProps": "as-needed"
 }

@@ -171,7 +171,7 @@ const data = {
 
 export function Sidebar_01() {
   const [selectedVersion, setSelectedVersion] = React.useState(
-    data.versions[0],
+    data.versions[0]
   );
 
   return (
