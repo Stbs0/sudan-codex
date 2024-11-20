@@ -18,7 +18,7 @@ const Header = () => {
   const { user, loading } = useAuth();
 
   return (
-    <header className='h-[64px] flex shrink-0 items-center justify-between  bg-primary p-3'>
+    <header className='h-[64px] flex shrink-0 items-center justify-between  border-b dark:border-neutral-800 shadow-lg shadow-purple-200 p-3 dark:shadow-neutral-900 '>
       <SidebarTrigger />
       <HomeBtn />
       <Logo />

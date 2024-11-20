@@ -5,7 +5,7 @@ import useAuth from "./useAuth";
 
 const useGetUser = () => {
   const { user } = useAuth();
-  const { isPending, isError, data, error } = useQuery({
+  const { isLoading, isError, data, error } = useQuery({
     queryKey: ["user"],
     queryFn: async () => {
       const idToken = await user!.getIdToken();
@@ -13,8 +13,9 @@ const useGetUser = () => {
     },
     enabled: !!user,
   });
-
-  return { isPending, isError, data, error };
+  console.log(data);
+  console.log(isLoading);
+  return { isLoading, isError, data, error };
 };
 
 export default useGetUser;

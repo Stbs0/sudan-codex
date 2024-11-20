@@ -44,7 +44,12 @@ const UserPersonalInfo: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <h1>Tell Us More About Yourself</h1>
+      <div className='space-y-1 mb-2'>
+        <h1 className='text-3xl font-bold text-center'>
+          Complete Your Profile
+        </h1>
+        <p className='text-lg text-center'>Tell Us More About Yourself</p>
+      </div>
       <Card>
         <CardContent>
           <FormField

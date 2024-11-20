@@ -5,12 +5,12 @@ const Logo = () => {
   const navigate = useNavigate();
   return (
     <Button
-      className='h-full hover:bg-transparent  '
+      className='h-full hover:bg-transparent p-0  '
       variant={"ghost"}
       onClick={() => navigate("/")}>
       <img
         className='h-full w-full object-contain'
-        src='src/assets/logo/whiteLogo.png'
+        src='src/assets/logo/purpleLogo.png'
         alt=''
       />
     </Button>

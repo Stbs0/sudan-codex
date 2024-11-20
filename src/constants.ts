@@ -719,4 +719,4 @@ export const NAV_ITEMS = [
   },
 ];
 
-export const BASE_API = "http://localhost:1574/v1";
+export const BASE_API = "http://localhost:1574/api/v1";

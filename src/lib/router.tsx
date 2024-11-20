@@ -9,7 +9,6 @@ import DrugList from "@/pages/DrugList";
 import DrugInfo from "@/pages/DrugInfo";
 import Profile from "@/pages/Profile";
 import RHFTellUsMore from "@/providers/RHFTellUsMore";
-import IsProfileComplete from "@/components/IsProfileComplete";
 
 const router = createBrowserRouter([
   {
@@ -28,23 +27,19 @@ const router = createBrowserRouter([
         element: <PrivateRoute />,
         children: [
           {
-            element: <IsProfileComplete />,
-            children: [
-              {
-                path: "profile",
-                element: <Profile />,
-              },
-
-              {
-                path: "drug/:no",
-                element: <DrugInfo />,
-              },
-              {
-                path: "drug-list",
-                element: <DrugList />,
-              },
-            ],
+            path: "profile",
+            element: <Profile />,
           },
+
+          {
+            path: "drug/:no",
+            element: <DrugInfo />,
+          },
+          {
+            path: "drug-list",
+            element: <DrugList />,
+          },
+
           {
             path: "user-info",
             element: <RHFTellUsMore />,

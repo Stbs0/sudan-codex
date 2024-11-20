@@ -6,7 +6,7 @@ const UnauthorizedUserBtns = () => {
   return (
     <>
       <Button
-        className='text-white hover:bg-blue-700 bg-blue-600'
+        className='text-white hover:bg-purple-700 bg-purple-600'
         variant={"link"}
         onClick={() => {
           navigate("/sign-up");
@@ -14,7 +14,7 @@ const UnauthorizedUserBtns = () => {
         Sign Up
       </Button>
       <Button
-        className='text-white hover:bg-blue-700 bg-blue-600 '
+        className='text-white hover:bg-purple-700 bg-purple-600 '
         variant={"link"}
         onClick={() => {
           navigate("/log-in");

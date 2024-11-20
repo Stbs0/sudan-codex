@@ -8,7 +8,7 @@ import { tellUsMoreSchemaType } from "@/lib/schemas/tellUsMoreSchema";
 export const SaveUserInFIreStore = async (user: User, providerId: string) => {
   const idToken = await user.getIdToken();
   await axios.post(
-    `${BASE_API}/user`,
+    `${BASE_API}/user/create`,
     {
       uid: user.uid,
       email: user.email,
@@ -32,7 +32,7 @@ export const getTokenId = async () => {
 };
 
 export const getUser = async (idToken: string) => {
-  const { data } = await axios.get<SaveUserReturnTypes>(`${BASE_API}/user`, {
+  const { data } = await axios.get<SaveUserReturnTypes>(`${BASE_API}/user/`, {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${idToken}`,
@@ -45,7 +45,7 @@ export const updateUser = async (
   idToken: string,
   data: tellUsMoreSchemaType & { profileComplete: boolean },
 ) => {
-  return await axios.post(`${BASE_API}/user`, data, {
+  return await axios.post(`${BASE_API}/user/complete-profile`, data, {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${idToken}`,

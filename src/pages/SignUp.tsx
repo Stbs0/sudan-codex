@@ -19,7 +19,7 @@ import { SaveUserInFIreStore } from "@/services/usersServices";
 import { getAdditionalUserInfo } from "firebase/auth";
 
 import { useFormContext } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
@@ -36,7 +36,12 @@ const SignUp = () => {
     return <SpinnerOverlay />;
   }
   if (user) {
-    return navigate("/");
+    return (
+      <Navigate
+        to='/'
+        replace
+      />
+    );
   }
 
   const onSubmit = async ({ email, password }: signUpSchemaType) => {
