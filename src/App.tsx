@@ -6,14 +6,17 @@ import { SidebarProvider } from "./components/ui/sidebar";
 import { AuthProvider } from "./providers/AuthProvider";
 import { useEffect } from "react";
 import DBIndexed from "./config/indexedDB";
-import drugJson from "./Drugdata ilove.json";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 const queryClient = new QueryClient();
 
 const App = () => {
   useEffect(() => {
     const fn = async () => {
-      await DBIndexed.populate(drugJson);
+      if ((await DBIndexed.isExists()) === false) {
+        console.log(await DBIndexed.isExists());
+        console.log("dd");
+        await DBIndexed.populate();
+      }
     };
     fn();
   }, []);
