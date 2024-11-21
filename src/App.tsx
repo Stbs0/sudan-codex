@@ -5,20 +5,24 @@ import ThemeProvider from "./components/MainLayout/theme-provider";
 import { SidebarProvider } from "./components/ui/sidebar";
 import { AuthProvider } from "./providers/AuthProvider";
 import { useEffect } from "react";
-import DBIndexed from "./config/indexedDB";
+import drugDB from "./config/indexedDB";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 const queryClient = new QueryClient();
 
 const App = () => {
   useEffect(() => {
+    let ignore = false;
     const fn = async () => {
-      if ((await DBIndexed.isExists()) === false) {
-        console.log(await DBIndexed.isExists());
-        console.log("dd");
-        await DBIndexed.populate();
+      if (ignore) return;
+      const isExists = await drugDB.isExists();
+      if (isExists === false) {
+        await drugDB.populate();
+        ignore = true;
       }
     };
-    fn();
+    console.log("dindt");
+
+    fn().catch((err) => console.log(err));
   }, []);
 
   return (

@@ -1,4 +1,4 @@
-import DBIndexed from "@/config/indexedDB";
+import drugDB from "@/config/indexedDB";
 import { useState } from "react";
 
 import { useLiveQuery } from "dexie-react-hooks";
@@ -9,7 +9,7 @@ export const useInfiniteScroll = (search?: string) => {
   const [page, setPage] = useState(1);
 
   const drugList = useLiveQuery(async () => {
-    const query = DBIndexed.items;
+    const query = drugDB.drugList;
     const limit = page * PAGE_SIZE;
 
     if (search) {

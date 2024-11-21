@@ -1,40 +1,33 @@
 import { Drug } from "@/types/types";
 import Dexie, { Table } from "dexie";
 
-export class AppDatabase extends Dexie {
-  items!: Table<Drug>;
+export class DrugIndex extends Dexie {
+  drugList!: Table<Drug>;
 
   constructor() {
-    super("AppDatabase");
+    super("DrugIndex");
     this.version(1).stores({
-      items:
+      drugList:
         "no, brandName, genericName, dosageFormName, strength, packSize, companyName, countryOfOrigin, agentName",
     });
   }
   async isExists() {
-    try {
-      const count = await this.items.count();
-      if (count > 0) {
-        console.log("Database already exists");
-        return true;
-      }
-      console.log("Database does not exist");
-      return false;
-    } catch (error) {
-      console.log(error);
+    const count = await this.drugList.count();
+    if (count > 0) {
+      console.log("Database already exists");
+      return true;
     }
+    console.log("Database does not exist");
+    return false;
   }
   // Method to populate the database
   async populate() {
-    try {
-      const { default: data } = await import("@/assets/drugData.json");
-      await this.items.bulkAdd(data);
-      console.log("Database populated with initial data");
-    } catch (error) {
-      console.log(error);
-    }
+    const { default: data } = await import("@/assets/data/drugData.json");
+    console.log(data);
+    await this.drugList.bulkAdd(data);
+    console.log("Database populated with initial data");
   }
 }
 
-const DBIndexed = new AppDatabase();
-export default DBIndexed;
+const drugDB = new DrugIndex();
+export default drugDB;
