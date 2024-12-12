@@ -1,11 +1,11 @@
 import { Form } from "@/components/ui/form";
 import { tellUsMoreSchema } from "@/lib/schemas/tellUsMoreSchema";
-import UserPersonalInfo from "@/pages/UserPersonalInfo";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { FormProvider, useForm } from "react-hook-form";
 
-const RHFTellUsMore = () => {
+const RHFTellUsMore = ({ children }: { children: React.ReactNode }) => {
   const methods = useForm({
     defaultValues: {
       age: "",
@@ -18,9 +18,7 @@ const RHFTellUsMore = () => {
   });
   return (
     <FormProvider {...methods}>
-      <Form {...methods}>
-        <UserPersonalInfo />
-      </Form>
+      <Form {...methods}>{children}</Form>
     </FormProvider>
   );
 };

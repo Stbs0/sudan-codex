@@ -9,6 +9,9 @@ import DrugList from "@/pages/DrugList";
 import DrugInfo from "@/pages/DrugInfo";
 import Profile from "@/pages/Profile";
 import RHFTellUsMore from "@/providers/RHFTellUsMore";
+import SignUp from "@/pages/SignUp";
+import Login from "@/pages/LogIn";
+import UserPersonalInfo from "@/pages/UserPersonalInfo";
 
 const router = createBrowserRouter([
   {
@@ -20,8 +23,22 @@ const router = createBrowserRouter([
         element: <Home />,
       },
 
-      { path: "sign-up", element: <RHFSignUpProvider /> },
-      { path: "log-in", element: <RHFLogInProvider /> },
+      {
+        path: "sign-up",
+        element: (
+          <RHFSignUpProvider>
+            <SignUp />
+          </RHFSignUpProvider>
+        ),
+      },
+      {
+        path: "log-in",
+        element: (
+          <RHFLogInProvider>
+            <Login />
+          </RHFLogInProvider>
+        ),
+      },
 
       {
         element: <PrivateRoute />,
@@ -42,7 +59,11 @@ const router = createBrowserRouter([
 
           {
             path: "user-info",
-            element: <RHFTellUsMore />,
+            element: (
+              <RHFTellUsMore>
+                <UserPersonalInfo />
+              </RHFTellUsMore>
+            ),
           },
         ],
       },

@@ -1,10 +1,9 @@
 import formSchema, { FormSchema } from "@/lib/schemas/newDrugSchema";
-import DrugForm from "@/pages/DrugForm";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 
-const RHFNewDrugProvider = () => {
+const RHFNewDrugProvider = ({ children }: { children: React.ReactNode }) => {
   const methods = useForm<FormSchema>({
     shouldUnregister: true,
     defaultValues: {
@@ -28,11 +27,7 @@ const RHFNewDrugProvider = () => {
     resolver: zodResolver(formSchema),
   });
 
-  return (
-    <FormProvider {...methods}>
-      <DrugForm />
-    </FormProvider>
-  );
+  return <FormProvider {...methods}>{children}</FormProvider>;
 };
 
 export default RHFNewDrugProvider;

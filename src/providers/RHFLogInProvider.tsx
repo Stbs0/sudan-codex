@@ -1,9 +1,8 @@
 import logInSchema, { LogInSchemaType } from "@/lib/schemas/LogInSchema";
-import Login from "@/pages/LogIn";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 
-const RHFLogInProvider = () => {
+const RHFLogInProvider = ({ children }: { children: React.ReactNode }) => {
   const methods = useForm<LogInSchemaType>({
     defaultValues: {
       email: "",
@@ -13,11 +12,7 @@ const RHFLogInProvider = () => {
     resolver: zodResolver(logInSchema),
   });
 
-  return (
-    <FormProvider {...methods}>
-      <Login />
-    </FormProvider>
-  );
+  return <FormProvider {...methods}>{children}</FormProvider>;
 };
 
 export default RHFLogInProvider;

@@ -1,10 +1,9 @@
 import signUpSchema, { signUpSchemaType } from "@/lib/schemas/signUpSchema";
-import SignUp from "@/pages/SignUp";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 
-const RHFSignUpProvider = () => {
+const RHFSignUpProvider = ({ children }: { children: React.ReactNode }) => {
   const methods = useForm<signUpSchemaType>({
     defaultValues: {
       email: "",
@@ -15,11 +14,7 @@ const RHFSignUpProvider = () => {
     resolver: zodResolver(signUpSchema),
   });
 
-  return (
-    <FormProvider {...methods}>
-      <SignUp />
-    </FormProvider>
-  );
+  return <FormProvider {...methods}>{children}</FormProvider>;
 };
 
 export default RHFSignUpProvider;
