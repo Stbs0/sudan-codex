@@ -2,14 +2,14 @@ import z from "zod";
 
 const createEnv = () => {
   const EnvSchema = z.object({
-    VITE_APIKEY: z.string(),
-    VITE_AUTHDOMAIN: z.string(),
-    VITE_PROJECTID: z.string(),
-    VITE_STOREGEBUCKET: z.string(),
-    VITE_MESSEGESENDER: z.string(),
-    VITE_APPID: z.string(),
-    VITE_MESURMENTID: z.string(),
-    VITE_OPENFDA_APIKEY: z.string(),
+    API_KEY: z.string(),
+    AUTH_DOMAIN: z.string(),
+    PROJECT_ID: z.string(),
+    STORAGE_BUCKET: z.string(),
+    MESSAGE_SENDER: z.string(),
+    APP_ID: z.string(),
+    MEASUREMENT_ID: z.string(),
+    OPENFDA_API_KEY: z.string(),
 
     APP_URL: z.string().optional().default("http://localhost:1574/v1/"),
   });
@@ -18,14 +18,14 @@ const createEnv = () => {
     Record<string, string>
   >((acc, curr) => {
     const [key, value] = curr;
-    if (key.startsWith("VITE_APP_")) {
-      acc[key.replace("VITE_APP_", "")] = value;
+    if (key.startsWith("VITE_")) {
+      acc[key.replace("VITE_", "")] = value;
     }
     return acc;
   }, {});
 
   const parsedEnv = EnvSchema.safeParse(envVars);
-
+  console.log(import.meta.env);
   if (!parsedEnv.success) {
     throw new Error(
       `Invalid env provided.
