@@ -11,7 +11,7 @@ const createEnv = () => {
     MEASUREMENT_ID: z.string(),
     OPENFDA_API_KEY: z.string(),
 
-    APP_URL: z.string().optional().default("http://localhost:1574/v1/"),
+    APP_URL: z.string().optional().default("http://localhost:1574/api/v1"),
   });
 
   const envVars = Object.entries(import.meta.env).reduce<
