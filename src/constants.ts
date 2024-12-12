@@ -718,5 +718,3 @@ export const NAV_ITEMS = [
     icon: Pill,
   },
 ];
-
-export const BASE_API = "http://localhost:1574/api/v1";

@@ -1,14 +1,13 @@
-import axios from "axios";
-import { BASE_API } from "@/constants";
 import { User } from "firebase/auth";
 import { SaveUserReturnTypes } from "@/types/types";
 import { auth } from "@/config/firebase";
 import { tellUsMoreSchemaType } from "@/lib/schemas/tellUsMoreSchema";
+import api from "@/lib/api";
 
 export const SaveUserInFIreStore = async (user: User, providerId: string) => {
   const idToken = await user.getIdToken();
-  await axios.post(
-    `${BASE_API}/user/create`,
+  await api.post(
+    `user/create`,
     {
       uid: user.uid,
       email: user.email,
@@ -20,7 +19,6 @@ export const SaveUserInFIreStore = async (user: User, providerId: string) => {
     },
     {
       headers: {
-        "Content-Type": "application/json",
         Authorization: `Bearer ${idToken}`,
       },
     }
@@ -32,9 +30,8 @@ export const getTokenId = async () => {
 };
 
 export const getUser = async (idToken: string) => {
-  const { data } = await axios.get<SaveUserReturnTypes>(`${BASE_API}/user/`, {
+  const { data } = await api.get<SaveUserReturnTypes>(`user/`, {
     headers: {
-      "Content-Type": "application/json",
       Authorization: `Bearer ${idToken}`,
     },
   });
@@ -45,9 +42,8 @@ export const updateUser = async (
   idToken: string,
   data: tellUsMoreSchemaType & { profileComplete: boolean }
 ) => {
-  return await axios.post(`${BASE_API}/user/complete-profile`, data, {
+  return await api.post(`user/complete-profile`, data, {
     headers: {
-      "Content-Type": "application/json",
       Authorization: `Bearer ${idToken}`,
     },
   });
