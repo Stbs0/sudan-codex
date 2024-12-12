@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "test": "vitest run",
+    "test": "vitest",
     "preview": "vite preview",
     "tsc": "tsc -b src/**/*.{ts,tsx}"
   },
@@ -67,7 +67,8 @@
     "@hookform/devtools": "^4.3.1",
     "@tanstack/eslint-plugin-query": "^5.60.1",
     "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.0.1",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
     "@types/node": "^22.5.5",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
@@ -89,6 +90,6 @@
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1",
     "vite-plugin-checker": "^0.8.0",
-    "vitest": "^2.1.4"
+    "vitest": "^2.1.8"
   }
 }

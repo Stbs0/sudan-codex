@@ -25,7 +25,6 @@ const createEnv = () => {
   }, {});
 
   const parsedEnv = EnvSchema.safeParse(envVars);
-  console.log(import.meta.env);
   if (!parsedEnv.success) {
     throw new Error(
       `Invalid env provided.
