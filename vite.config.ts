@@ -10,6 +10,7 @@ export default defineConfig({
     globals: true,
     setupFiles: "./tests/vitest-setup.ts",
   },
+  envDir: "./envDir",
   plugins: [
     react(),
     checker({
@@ -17,6 +18,7 @@ export default defineConfig({
       typescript: true,
     }),
   ],
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
