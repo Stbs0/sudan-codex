@@ -7,7 +7,7 @@ import vitestGlobals from "eslint-plugin-vitest-globals";
 import query from "@tanstack/eslint-plugin-query";
 
 export default tseslint.config(
-  { ignores: ["dist", "src/components/ui/*"] },
+  { ignores: ["dist", "src/components/ui/*", "tailwind.config.js"] },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ["**/*.{ts,tsx}"],
