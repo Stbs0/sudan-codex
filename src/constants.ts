@@ -718,3 +718,5 @@ export const NAV_ITEMS = [
     icon: Pill,
   },
 ];
+
+export const OPENFDA_SEARCH_URL = "https://api.fda.gov/drug/label.json?search=";

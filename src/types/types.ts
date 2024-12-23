@@ -71,3 +71,21 @@ export type PrivateOutletTypes = {
   data: SaveUserReturnTypes;
   error: unknown;
 };
+
+// interface DrugResult {
+//   indications_and_usage: string[];
+//   dosage_and_administration: string[];
+//   dosage_and_administration_table: string[];
+//   dosage_forms_and_strengths: string[];
+//   contraindications: string[];
+//   warnings_and_cautions: string[];
+//   adverse_reactions: string[];
+//   adverse_reactions_table: string[];
+//   drug_interactions: string[];
+//   use_in_specific_populations: string[];
+//   use_in_specific_populations_table: string[];
+// }
+
+export type FetchedDrugInfo = {
+  results: Array<Record<string, string[]>>;
+};

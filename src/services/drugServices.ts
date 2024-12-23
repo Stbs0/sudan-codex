@@ -1,41 +1,22 @@
-import { db } from "@/config/firebase";
-import { FormSchema } from "@/lib/schemas/newDrugSchema";
-import { FetchedDrugList } from "@/types/types";
-import {
-  Timestamp,
-  getDocs,
-  collection,
-  QuerySnapshot,
-  CollectionReference,
-  doc,
-  setDoc,
-} from "firebase/firestore";
-import { v7 as uuidv7 } from "uuid";
+import api from "@/lib/api";
+import { getOpenFdaSearchUrl } from "@/lib/utils";
+import { FetchedDrugInfo } from "@/types/types";
+import { AxiosError } from "axios";
 
-const drugsCollection = collection(
-  db,
-  "drugs"
-) as CollectionReference<FetchedDrugList>;
-
-export const saveDrug = async (drug: FormSchema, userId: string) => {
+export const getDrugInfo = async (
+  genericName: string,
+  dosageForm: string,
+  strength: string
+) => {
   try {
-    console.log(drug);
-    const drugRef = doc(db, "drugs", uuidv7());
-    await setDoc(drugRef, {
-      ...drug,
-      date: Timestamp.now(),
-      submittedBy: userId,
-      id: drugRef.id,
-    });
-    console.log("Document written  ", drug);
-  } catch (e) {
-    console.error("Error adding document: ", e);
+    const url = getOpenFdaSearchUrl(genericName, dosageForm, strength);
+    const { data } = await api.get<FetchedDrugInfo>(url);
+    console.log(data.results);
+    return data.results[0];
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      console.log(error.status);
+    }
+    throw error;
   }
-};
-
-export const getDrugs = async () => {
-  const drugsSnapshot: QuerySnapshot<FetchedDrugList> =
-    await getDocs(drugsCollection);
-
-  return drugsSnapshot;
 };
