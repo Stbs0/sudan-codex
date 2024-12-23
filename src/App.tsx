@@ -20,7 +20,6 @@ const App = () => {
         ignore = true;
       }
     };
-    console.log("dindt");
 
     fn().catch((err) => console.log(err));
   }, []);

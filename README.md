@@ -1,4 +1,3 @@
-
 # Sudan Codex
 
 ![Logo](./src/assets/logo/purpleLogo.png)

@@ -20,7 +20,6 @@ const GoogleOAuth = ({ isSubmitting, logInOrSignUp }: Props) => {
       const results = await GoogleSignIn();
       const isNewUser = getAdditionalUserInfo(results)?.isNewUser;
 
-      console.log(results);
       if (isNewUser) {
         console.log(results);
 

@@ -8,7 +8,6 @@ const DrugList = () => {
   const [search, setSearch] = useState("");
   const { loadMore, hasMore, drugList } = useInfiniteScroll(search);
 
-  console.log(drugList);
   if (!drugList) {
     return <div>Loading...</div>;
   }
