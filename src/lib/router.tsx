@@ -49,12 +49,14 @@ const router = createBrowserRouter([
           },
 
           {
-            path: "drug/:no",
-            element: <DrugInfo />,
-          },
-          {
             path: "drug-list",
             element: <DrugList />,
+            children: [
+              {
+                path: "/drug-list/:no",
+                element: <DrugInfo />,
+              },
+            ],
           },
 
           {

@@ -16,7 +16,7 @@ export const ListItem = ({ drug }: Props) => {
       // TODO waiting to get an api for drug information
 
       onClick={() => {
-        navigate(`/drug/${drug.no}`, {
+        navigate(`/drug-list/${drug.no}`, {
           state: drug,
         });
       }}>
