@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
 import { useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { Outlet, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const DrugList = () => {
   const [search, setSearch] = useState("");
@@ -13,9 +13,6 @@ const DrugList = () => {
 
   if (!drugList) {
     return <div>Loading...</div>;
-  }
-  if (param?.no) {
-    return <Outlet />;
   }
   return (
     <div className='w-full flex flex-col items-center '>

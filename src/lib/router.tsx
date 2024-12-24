@@ -44,6 +44,10 @@ const router = createBrowserRouter([
         element: <PrivateRoute />,
         children: [
           {
+            path: "/drug-list/:no",
+            element: <DrugInfo />,
+          },
+          {
             path: "profile",
             element: <Profile />,
           },
@@ -51,12 +55,6 @@ const router = createBrowserRouter([
           {
             path: "drug-list",
             element: <DrugList />,
-            children: [
-              {
-                path: "/drug-list/:no",
-                element: <DrugInfo />,
-              },
-            ],
           },
 
           {

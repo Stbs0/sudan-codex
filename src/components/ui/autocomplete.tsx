@@ -1,5 +1,9 @@
-import { ChevronDown, ChevronUp } from "lucide-react";
+"use client";
 
+import * as React from "react";
+import { Check, ChevronsUpDown } from "lucide-react";
+
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -14,29 +18,17 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Unit } from "@/types/types";
-import { useEffect, useState } from "react";
-import { useFormContext } from "react-hook-form";
 
-interface Props {
-  options:
-    | Unit[]
-    | {
-        label: string;
-      }[];
-
-  className?: string;
+export function AutoComplete({
+  options,
+  name,
+}: {
+  options: string[];
   name: string;
-  onChange: (...event: any[]) => void;
-}
+}) {
+  const [open, setOpen] = React.useState(false);
+  const [value, setValue] = React.useState("");
 
-const AutoComplete = ({ options, className, onChange, name }: Props) => {
-  const [open, setOpen] = useState(false);
-  const [value1, setValue1] = useState(options[0].label);
-  const { setValue } = useFormContext();
-  useEffect(() => {
-    setValue(name, value1);
-  }, [value1]);
   return (
     <Popover
       open={open}
@@ -46,33 +38,37 @@ const AutoComplete = ({ options, className, onChange, name }: Props) => {
           variant='outline'
           role='combobox'
           aria-expanded={open}
-          className={` flex   items-center ${className} `}>
-          {options.find((framework) => framework.label === value1)?.label}
-          {open ? (
-            <ChevronUp className='ml-2 h-4 w-4 shrink-0 opacity-50' />
-          ) : (
-            <ChevronDown className='ml-2 h-4 w-4 shrink-0 opacity-50 border-l-2' />
-          )}
+          className='w-[200px] justify-between'>
+          {value
+            ? options.find((option) => option === value)
+            : "Select select route..."}
+          <ChevronsUpDown className='ml-2 h-4 w-4 shrink-0 opacity-50' />
         </Button>
       </PopoverTrigger>
       <PopoverContent className='w-[200px] p-0'>
         <Command>
-          <CommandInput placeholder='Search item...' />
+          <CommandInput
+            placeholder='Search framework...'
+            name={name}
+          />
           <CommandList>
-            <CommandEmpty>No item found.</CommandEmpty>
+            <CommandEmpty>No framework found.</CommandEmpty>
             <CommandGroup>
-              {options.map((item) => (
+              {options.map((option) => (
                 <CommandItem
-                  className={`border-t-[1px] ${
-                    value1 === item.label ? "bg-gray-300" : ""
-                  }`}
-                  key={item.label}
+                  key={option}
+                  value={option}
                   onSelect={(currentValue) => {
-                    setValue1(currentValue);
-                    onChange(currentValue);
+                    setValue(currentValue === value ? "" : currentValue);
                     setOpen(false);
                   }}>
-                  {item.label}
+                  <Check
+                    className={cn(
+                      "mr-2 h-4 w-4",
+                      value === option ? "opacity-100" : "opacity-0"
+                    )}
+                  />
+                  {option}
                 </CommandItem>
               ))}
             </CommandGroup>
@@ -81,5 +77,4 @@ const AutoComplete = ({ options, className, onChange, name }: Props) => {
       </PopoverContent>
     </Popover>
   );
-};
-export default AutoComplete;
+}

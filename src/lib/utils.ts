@@ -14,38 +14,35 @@ export const getInitials = (name: string) => {
     .toUpperCase();
 };
 
-export const getOpenFdaSearchUrl = (
-  genericName?: string,
-  dosageForm?: string,
-  strength?: string,
-  _brandName?: string,
-  _refetch?: boolean
-) => {
-  const encodedDosageForm = dosageForm;
-  const encodedGenericName = genericName;
-  const encodedStrength = strength;
-
-  const genericNameQuery = genericName
-    ? `(openfda.generic_name:"${encodedGenericName}")`
-    : "";
-  // const brandNameQuery = brandName
-  //   ? `(openfda.brand_name:"${encodedBrandName}")`
-  //   : "";
-  const dosageFormQuery = dosageForm
-    ? `(dosage_forms_and_strengths:"${encodedDosageForm + "%20" + encodedStrength}")`
-    : "";
-
-  const strengthQuery = strength
-    ? `(openfda.strength:"${encodedStrength}")`
-    : "";
-  console.log(genericNameQuery);
-  console.log(dosageFormQuery);
-  console.log(strengthQuery);
-  console.log(
-    `${OPENFDA_SEARCH_URL}${genericNameQuery}+AND+${dosageFormQuery}+AND+${strengthQuery}&limit=5`
-  );
-
-  return encodeURI(
-    `${OPENFDA_SEARCH_URL}${genericNameQuery}+AND+${dosageFormQuery}&limit=5`
-  );
+export const parseQuery = (str: string) => {
+  return str.replace(/[\d+%()]/g, "").replace(/\s+/g, "*+AND+*");
 };
+
+export const getOpenFdaSearchUrl = (parsedGenericName: string) => {
+  const genericNameQuery = `(spl_product_data_elements:(*${parsedGenericName}*))`;
+
+  const fullQuery = `${OPENFDA_SEARCH_URL}?search=${genericNameQuery}&limit=5`;
+
+  console.log(fullQuery);
+
+  return fullQuery;
+};
+
+// const encodedDosageForm = dosageForm?.replace(/ /g, "*");
+
+// const encodedStrength = strength?.replace(/ /g, "*");
+
+// const genericNameQuery = genericName
+//   ? `(spl_product_data_elements:"*${encodedGenericName}*")`
+//   : "";
+// const brandNameQuery = brandName
+//    `(openfda.brand_name:"${encodedBrandName}")`
+//   : "";
+
+// const strengthQuery = strength
+//    `(openfda.strength:"*${encodedStrength}*")`
+//   : "";
+
+// console.log(genericNameQuery);
+// console.log(dosageFormQuery);
+// console.log(strengthQuery);

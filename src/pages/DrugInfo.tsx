@@ -3,19 +3,21 @@ import SearchDrugInfo from "@/components/drugList/SearchDrugInfo";
 import { queryClient } from "@/lib/queryQlient";
 
 import { getDrugInfo } from "@/services/drugServices";
+import { Drug } from "@/types/types";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 
 const DrugInfo = () => {
-  const { state: drug } = useLocation();
-
+  const { passingDrug: drug } = useOutletContext<{ passingDrug: Drug }>();
+  console.log(drug);
   const [searchInputs, setSearchInputs] = useState({
     generic: drug.genericName,
     dosage: drug.dosageFormName,
     strength: drug.strength,
     brandName: drug.brandName,
     refetch: false,
+    route: "",
   });
 
   console.log(searchInputs);
@@ -23,18 +25,17 @@ const DrugInfo = () => {
   const { data, isLoading } = useQuery({
     queryKey: ["drugInfo", drug.no],
 
-    queryFn: async () => {
-      return await getDrugInfo(
+    queryFn: () => {
+      return getDrugInfo(
         searchInputs.generic,
-        searchInputs.dosage,
-        searchInputs.strength,
-        searchInputs.brandName,
+
+        searchInputs.route,
         searchInputs.refetch
       );
     },
   });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>, route: string) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
     console.log(formData);
@@ -42,15 +43,16 @@ const DrugInfo = () => {
     const dosageFormName = formData.get("dosageFormName") as string;
     const strength = formData.get("strength") as string;
     const brandName = formData.get("brandName") as string;
+
     const submittedData = {
       generic: genericName,
       dosage: dosageFormName,
       strength,
       brandName,
       refetch: true,
+      route,
     };
     setSearchInputs(submittedData);
-    // refetch();
     queryClient.removeQueries({ queryKey: ["drugInfo", drug.no] });
   };
 

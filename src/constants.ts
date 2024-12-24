@@ -719,7 +719,7 @@ export const NAV_ITEMS = [
   },
 ];
 
-export const OPENFDA_SEARCH_URL = "https://api.fda.gov/drug/label.json?search=";
+export const OPENFDA_SEARCH_URL = "https://api.fda.gov/drug/label.json";
 
 export const DRUG_ROUTES = [
   "AURICULAR (OTIC)",
