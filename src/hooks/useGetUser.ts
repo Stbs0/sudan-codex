@@ -13,8 +13,7 @@ const useGetUser = () => {
     },
     enabled: !!user,
   });
-  console.log(data);
-  console.log(isLoading);
+
   return { isLoading, isError, data, error };
 };
 

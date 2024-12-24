@@ -6,8 +6,8 @@ import { SidebarProvider } from "./components/ui/sidebar";
 import { AuthProvider } from "./providers/AuthProvider";
 import { useEffect } from "react";
 import drugDB from "./config/indexedDB";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-const queryClient = new QueryClient();
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "./lib/queryQlient";
 
 const App = () => {
   useEffect(() => {

@@ -1,5 +1,7 @@
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import AutoComplete from "../ui/autocomplete";
+import { DRUG_ROUTES } from "@/constants";
 
 const SearchDrugInfo = ({
   handleSubmit,
@@ -15,13 +17,14 @@ const SearchDrugInfo = ({
           type='text'
           name='genericName'
         />
-        <Input
-          type='text'
-          name='dosageFormName'
-        />
+        <AutoComplete options={DRUG_ROUTES} />
         <Input
           type='text'
           name='strength'
+        />
+        <Input
+          type='text'
+          name='brandName'
         />
         <Button type='submit'>Search</Button>
       </form>

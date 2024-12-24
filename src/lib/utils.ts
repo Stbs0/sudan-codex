@@ -17,24 +17,35 @@ export const getInitials = (name: string) => {
 export const getOpenFdaSearchUrl = (
   genericName?: string,
   dosageForm?: string,
-  strength?: string
+  strength?: string,
+  _brandName?: string,
+  _refetch?: boolean
 ) => {
-  const encodedDosageForm = dosageForm ? encodeURIComponent(dosageForm) : "";
-  const encodedGenericName = genericName ? encodeURIComponent(genericName) : "";
-  const encodedStrength = strength ? encodeURIComponent(strength) : "";
+  const encodedDosageForm = dosageForm;
+  const encodedGenericName = genericName;
+  const encodedStrength = strength;
 
   const genericNameQuery = genericName
     ? `(openfda.generic_name:"${encodedGenericName}")`
     : "";
+  // const brandNameQuery = brandName
+  //   ? `(openfda.brand_name:"${encodedBrandName}")`
+  //   : "";
   const dosageFormQuery = dosageForm
-    ? `(dosage_forms_and_strengths:"${encodedDosageForm}")`
+    ? `(dosage_forms_and_strengths:"${encodedDosageForm + "%20" + encodedStrength}")`
     : "";
 
   const strengthQuery = strength
     ? `(openfda.strength:"${encodedStrength}")`
     : "";
+  console.log(genericNameQuery);
+  console.log(dosageFormQuery);
+  console.log(strengthQuery);
   console.log(
-    `${OPENFDA_SEARCH_URL}${genericNameQuery}+${dosageFormQuery}+${strengthQuery}&limit=5`
+    `${OPENFDA_SEARCH_URL}${genericNameQuery}+AND+${dosageFormQuery}+AND+${strengthQuery}&limit=5`
   );
-  return `${OPENFDA_SEARCH_URL}${genericNameQuery}+${dosageFormQuery}+${strengthQuery}&limit=5`;
+
+  return encodeURI(
+    `${OPENFDA_SEARCH_URL}${genericNameQuery}+AND+${dosageFormQuery}&limit=5`
+  );
 };
