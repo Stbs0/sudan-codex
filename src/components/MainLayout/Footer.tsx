@@ -23,12 +23,12 @@ const Footer = () => {
           <GitHubLogoIcon className='w-6 h-6 inline-block mr-2' />
         </a>{" "}
         <a
-          href='https://twitter.com'
+          href='https://twitter.com/stbs66'
           className='flex justify-center items-center'>
           <XIcon />
         </a>{" "}
         <a
-          href='https://linkedin.com'
+          href='https://www.linkedin.com/in/mohammed-ibrahim-mahmoud/'
           className='flex justify-center items-center'>
           <LinkedIn />
         </a>
