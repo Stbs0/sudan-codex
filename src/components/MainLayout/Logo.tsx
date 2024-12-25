@@ -10,7 +10,7 @@ const Logo = ({ className }: { className?: string }) => {
       onClick={() => navigate("/")}>
       <img
         className='h-full w-full object-contain'
-        src='src/assets/logo/purpleLogo.png'
+        src='/src/assets/logo/purpleLogo.png'
         alt=''
       />
     </Button>
