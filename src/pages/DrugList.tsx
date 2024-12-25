@@ -3,13 +3,10 @@ import { Input } from "@/components/ui/input";
 import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
 import { useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { useParams } from "react-router-dom";
 
 const DrugList = () => {
   const [search, setSearch] = useState("");
   const { loadMore, hasMore, drugList } = useInfiniteScroll(search);
-  const param = useParams();
-  console.log(param);
 
   if (!drugList) {
     return <div>Loading...</div>;

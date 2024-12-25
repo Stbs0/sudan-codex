@@ -1,28 +1,30 @@
+import { DrugCard } from "@/components/drugCard";
 import DrugInfoAccordion from "@/components/drugList/DrugInfoAccordion";
 import SearchDrugInfo from "@/components/drugList/SearchDrugInfo";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Card, CardContent } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 import { queryClient } from "@/lib/queryQlient";
 
 import { getDrugInfo } from "@/services/drugServices";
 import { Drug } from "@/types/types";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 const DrugInfo = () => {
-  const { passingDrug: drug } = useOutletContext<{ passingDrug: Drug }>();
+  const drug = useLoaderData() as Drug;
   console.log(drug);
   const [searchInputs, setSearchInputs] = useState({
     generic: drug.genericName,
-    dosage: drug.dosageFormName,
-    strength: drug.strength,
-    brandName: drug.brandName,
+
     refetch: false,
     route: "",
   });
 
   console.log(searchInputs);
 
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, isError } = useQuery({
     queryKey: ["drugInfo", drug.no],
 
     queryFn: () => {
@@ -33,6 +35,10 @@ const DrugInfo = () => {
         searchInputs.refetch
       );
     },
+    select: (values) => {
+      delete values.openfda;
+      return values;
+    },
   });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>, route: string) => {
@@ -40,15 +46,10 @@ const DrugInfo = () => {
     const formData = new FormData(e.target as HTMLFormElement);
     console.log(formData);
     const genericName = formData.get("genericName") as string;
-    const dosageFormName = formData.get("dosageFormName") as string;
-    const strength = formData.get("strength") as string;
-    const brandName = formData.get("brandName") as string;
 
     const submittedData = {
-      generic: genericName,
-      dosage: dosageFormName,
-      strength,
-      brandName,
+      generic: genericName.trim(),
+
       refetch: true,
       route,
     };
@@ -58,28 +59,52 @@ const DrugInfo = () => {
 
   console.log(data);
   return (
-    <div className='p-6 max-w-4xl mx-auto font-sans dark:invert'>
-      <h1 className='text-2xl font-bold text-gray-800 mb-8'>
-        Drug Information
-      </h1>
-      <div className='flex flex-col gap-4'>
-        <SearchDrugInfo handleSubmit={handleSubmit} />
-        <h2 className='text-xl font-bold text-gray-800 mb-8'>
-          {drug.brandName} / {drug.genericName}/ {drug.dosageFormName}
-        </h2>
-      </div>
-      {isLoading
-        ? "Loading..."
-        : data
-          ? Object.keys(data).map((key) => (
+    <Card className='p-6 max-w-5xl mx-auto  items-center dark:invert'>
+      <DrugCard drug={drug} />
+
+      <CardContent className='flex flex-col gap-4'>
+        {isError && (
+          <Alert className='border-yellow-300 bg-yellow-50'>
+            <AlertTitle>Attention</AlertTitle>
+            <AlertDescription>
+              If the page didn't find the drug you are looking for, please try
+              again with a different route and a correct generic name.
+            </AlertDescription>
+          </Alert>
+        )}
+        <div className='flex flex-col gap-4'>
+          <SearchDrugInfo
+            generic={drug.genericName}
+            handleSubmit={handleSubmit}
+          />
+        </div>
+        <div className='flex flex-col gap-4'>
+          {isLoading ? (
+            [...Array(4)].map((_, index) => (
+              <Skeleton
+                key={index}
+                className='h-24 mb-4 w-full'
+              />
+            ))
+          ) : data ? (
+            Object.keys(data).map((key) => (
               <DrugInfoAccordion
                 key={key}
                 title={key.replace(/_/g, " ")}
                 content={data[key]}
               />
             ))
-          : "No data found. Please search."}
-    </div>
+          ) : (
+            <Alert className='border-red-300 bg-red-50'>
+              <AlertTitle>No data found</AlertTitle>
+              <AlertDescription>
+                Try again with a different route and a correct generic name.
+              </AlertDescription>
+            </Alert>
+          )}
+        </div>
+      </CardContent>
+    </Card>
   );
 };
 

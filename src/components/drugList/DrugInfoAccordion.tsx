@@ -12,13 +12,13 @@ const DrugInfoAccordion = ({
   title: string;
   content: string[];
 }) => {
+  if (typeof content === "string") return null;
+
   return (
-    <Accordion
-      type='single'
-      collapsible>
+    <Accordion type='multiple'>
       <AccordionItem value='item-1'>
         <AccordionTrigger>{title}</AccordionTrigger>
-        <AccordionContent>{content}</AccordionContent>
+        <AccordionContent className='max-w-l'>{content}</AccordionContent>
       </AccordionItem>
     </Accordion>
   );

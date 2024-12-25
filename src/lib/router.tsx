@@ -12,6 +12,7 @@ import RHFTellUsMore from "@/providers/RHFTellUsMore";
 import SignUp from "@/pages/SignUp";
 import Login from "@/pages/LogIn";
 import UserPersonalInfo from "@/pages/UserPersonalInfo";
+import drugDB from "@/config/indexedDB";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,15 @@ const router = createBrowserRouter([
           {
             path: "/drug-list/:no",
             element: <DrugInfo />,
+            loader: async ({ params }) => {
+              console.log(params);
+              const [data] = await drugDB.drugList
+                .where("no")
+                .equals(params.no || "")
+                .toArray();
+              console.log(data);
+              return data;
+            },
           },
           {
             path: "profile",
