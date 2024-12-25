@@ -12,18 +12,18 @@ const DrugList = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div className='w-full flex flex-col items-center '>
-      <div className=''>
-        <span className='text-2xl'>Drug List</span>
+    <div className=' grid justify-center gap-4 items-center  '>
+      <div className='grid gap-2 py-2'>
+        <p className='text-2xl'>Search a Drug</p>
         <Input
-          className='placeholder:text-xs rounded-3xl w-96 '
+          className='placeholder:text-xs shadow-sm shadow-purple-300 rounded-3xl  '
           placeholder='generic, brand, company name'
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
       <InfiniteScroll
-        className='flex flex-col gap-4 max-w-lg min-w-md'
+        className='flex  flex-col gap-4 max-w-lg min-w-md'
         dataLength={drugList.length}
         next={loadMore}
         hasMore={hasMore}
