@@ -13,8 +13,6 @@ export const ListItem = ({ drug }: Props) => {
   return (
     <Card
       className=' bg-purple-100/50  hover:bg-purple-100/90 dark:bg-purple-800/50 dark:hover:bg-purple-800/90 border-4 rounded-none border-transparent border-l-indigo-700  '
-      // TODO waiting to get an api for drug information
-
       onClick={() => {
         navigate(`/drug-list/${drug.no}`, {
           state: drug,
@@ -31,15 +29,22 @@ export const ListItem = ({ drug }: Props) => {
         <div className='flex-1'>
           <div className='text-xs'>
             <span className='font-semibold '>Generic: </span>
-            <span className='text-gray-600'> {drug.genericName}</span>
+            <span className='text-gray-600 dark:text-gray-300 '>
+              {" "}
+              {drug.genericName}
+            </span>
           </div>
           <div className='text-xs'>
             <span className='font-semibold'>Company: </span>
-            <span className='text-gray-600'>{drug.companyName}</span>
+            <span className='text-gray-600 dark:text-gray-300'>
+              {drug.companyName}
+            </span>
           </div>
           <div className='text-xs'>
             <span className='font-semibold'>Agency: </span>
-            <span className='text-gray-600'>{drug.agentName}</span>
+            <span className='text-gray-600 dark:text-gray-300'>
+              {drug.agentName}
+            </span>
           </div>
         </div>
         <div className='flex items-center'>

@@ -10,7 +10,7 @@ export function Hero() {
         <h1 className='text-5xl font-bold mb-4 text-gray-900'>
           Welcome to Sudan Codex
         </h1>
-        <p className='text-xl mb-8 text-gray-600'>
+        <p className='text-xl mb-8 text-gray-600 dark:text-gray-400'>
           Search through Sudan drug index
         </p>
         <Link to={"/drug-list"}>

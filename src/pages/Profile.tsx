@@ -12,8 +12,8 @@ export default function Profile() {
   const { data } = useOutletContext<PrivateOutletTypes>();
 
   return (
-    <div>
-      <div className='px-4 space-y-6 sm:px-6'>
+    <>
+      <div className='px-4 space-y-6 sm:px-6 '>
         <div className='space-y-2'>
           <div className='flex items-center space-x-3'>
             <Avatar className='h-16 w-16'>
@@ -25,19 +25,17 @@ export default function Profile() {
 
             <div className='space-y-1'>
               <h1 className='text-2xl font-bold'>{data?.displayName}</h1>
-              <Button size='sm'>Change photo</Button>
             </div>
           </div>
         </div>
         <div className='space-y-8'>
-          <Card>
-            <CardContent className='space-y-6'>
+          <Card className='p-3'>
+            <CardContent className='flex flex-col gap-4 '>
               <div className='space-y-2'>
                 <Label htmlFor='name'>Name</Label>
                 <Input
                   id='name'
                   placeholder='E.g. Jane Doe'
-                  defaultValue='Meadow Richardson'
                 />
               </div>
               <div className='space-y-2'>
@@ -59,7 +57,7 @@ export default function Profile() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className='p-3'>
             <CardHeader>
               <div>Change Password</div>
               <div>
@@ -96,6 +94,6 @@ export default function Profile() {
           <Button>Save</Button>
         </div>
       </div>
-    </div>
+    </>
   );
 }
