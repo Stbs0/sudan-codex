@@ -40,15 +40,15 @@ const ProfilePic = () => {
         className='w-28 p-0 '
         onOpenAutoFocus={(e) => e.preventDefault()}>
         <div className='grid '>
-          <Button
-            variant={"link"}
-            className='w-full outline-none'>
-            <Link to={"/profile"}>Profile</Link>
-          </Button>
+          <Link to={"/profile"}>
+            <Button
+              variant={"link"}
+              className='w-full outline-none'>
+              Profile
+            </Button>
+          </Link>
           <Separator />
-          <Button variant={"link"}>
-            <Link to={"/settings"}>Settings</Link>
-          </Button>
+
           <Separator />
           <Button
             variant={"link"}

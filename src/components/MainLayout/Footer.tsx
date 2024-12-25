@@ -1,19 +1,17 @@
 import LinkedIn from "@/assets/icons/LinkedIn";
 import XIcon from "@/assets/icons/XIcon";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import { Button } from "../ui/button";
 
 const Footer = () => {
   return (
     <footer className='bg-primary  text-[#fff] p-4  text-center flex justify-center items-center gap-5 '>
       <div>
-        <p>
-          Contact me at:{" "}
-          <a
-            href='mailto:mohammedjrt@gmail.com'
-            className='     '>
-            Mohammedjrt@gmail.com
-          </a>
-        </p>
+        <a
+          href='mailto:mohammedjrt@gmail.com'
+          className=''>
+          <Button>Contact me </Button>
+        </a>
       </div>
 
       <div className=' flex justify-center space-x-4'>
@@ -34,13 +32,7 @@ const Footer = () => {
         </a>
       </div>
 
-      <div className=''>
-        <a
-          href='/about'
-          className=''>
-          About The Project
-        </a>{" "}
-      </div>
+      <div className=''></div>
     </footer>
   );
 };
