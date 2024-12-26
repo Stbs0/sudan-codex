@@ -53,12 +53,10 @@ const router = createBrowserRouter([
             path: "/drug-list/:no",
             element: <DrugInfo />,
             loader: async ({ params }) => {
-              console.log(params);
               const [data] = await drugDB.drugList
                 .where("no")
                 .equals(params.no || "")
                 .toArray();
-              console.log(data);
               return data;
             },
           },

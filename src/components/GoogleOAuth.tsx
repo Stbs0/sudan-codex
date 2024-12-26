@@ -21,8 +21,6 @@ const GoogleOAuth = ({ isSubmitting, logInOrSignUp }: Props) => {
       const isNewUser = getAdditionalUserInfo(results)?.isNewUser;
 
       if (isNewUser) {
-        console.log(results);
-
         await SaveUserInFIreStore(results.user, results.providerId ?? "");
         navigate("/user-info", {
           replace: true,

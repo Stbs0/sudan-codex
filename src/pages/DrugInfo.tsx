@@ -14,15 +14,13 @@ import { useLoaderData } from "react-router-dom";
 
 const DrugInfo = () => {
   const drug = useLoaderData() as Drug;
-  console.log(drug);
+
   const [searchInputs, setSearchInputs] = useState({
     generic: drug.genericName,
 
     refetch: false,
     route: "",
   });
-
-  console.log(searchInputs);
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ["drugInfo", drug.no],
@@ -44,7 +42,7 @@ const DrugInfo = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>, route: string) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
-    console.log(formData);
+
     const genericName = formData.get("genericName") as string;
 
     const submittedData = {
@@ -57,7 +55,6 @@ const DrugInfo = () => {
     queryClient.removeQueries({ queryKey: ["drugInfo", drug.no] });
   };
 
-  console.log(data);
   return (
     <Card className='p-6 max-w-5xl mx-auto  items-center dark:invert'>
       <DrugCard drug={drug} />

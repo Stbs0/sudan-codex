@@ -23,26 +23,5 @@ export const getOpenFdaSearchUrl = (parsedGenericName: string) => {
 
   const fullQuery = `${OPENFDA_SEARCH_URL}?search=${genericNameQuery}&limit=5`;
 
-  console.log(fullQuery);
-
   return fullQuery;
 };
-
-// const encodedDosageForm = dosageForm?.replace(/ /g, "*");
-
-// const encodedStrength = strength?.replace(/ /g, "*");
-
-// const genericNameQuery = genericName
-//   ? `(spl_product_data_elements:"*${encodedGenericName}*")`
-//   : "";
-// const brandNameQuery = brandName
-//    `(openfda.brand_name:"${encodedBrandName}")`
-//   : "";
-
-// const strengthQuery = strength
-//    `(openfda.strength:"*${encodedStrength}*")`
-//   : "";
-
-// console.log(genericNameQuery);
-// console.log(dosageFormQuery);
-// console.log(strengthQuery);

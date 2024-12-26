@@ -42,11 +42,8 @@ const Login = () => {
   const onSubmit = async ({ email, password }: LogInSchemaType) => {
     try {
       const results = await signIn(email, password);
-      console.log(results);
       const isNewUser = getAdditionalUserInfo(results)?.isNewUser;
       if (isNewUser) {
-        console.log(results);
-
         await SaveUserInFIreStore(results.user, results.providerId ?? "");
         navigate("/user-info", {
           replace: true,
