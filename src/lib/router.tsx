@@ -13,6 +13,7 @@ import SignUp from "@/pages/SignUp";
 import Login from "@/pages/LogIn";
 import UserPersonalInfo from "@/pages/UserPersonalInfo";
 import drugDB from "@/config/indexedDB";
+import Policy from "@/pages/Policy";
 
 const router = createBrowserRouter([
   {
@@ -20,10 +21,14 @@ const router = createBrowserRouter([
 
     children: [
       {
+        index: true,
         path: "/",
         element: <Home />,
       },
-
+      {
+        path: "/policy",
+        element: <Policy />,
+      },
       {
         path: "sign-up",
         element: (
