@@ -9,9 +9,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { LogInSchemaType } from "@/lib/schemas/LogInSchema";
+import logInSchema, { LogInSchemaType } from "@/lib/schemas/LogInSchema";
 import { signIn } from "@/services/authServices";
-import { useFormContext } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { FirebaseError } from "@firebase/util";
@@ -20,14 +20,19 @@ import GoogleOAuth from "@/components/GoogleOAuth";
 import FaceBookOAuth from "@/components/FaceBookOAuth";
 import useAuth from "@/hooks/useAuth";
 import { getAdditionalUserInfo } from "firebase/auth";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const Login = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const {
-    handleSubmit,
-    formState: { isSubmitting },
-  } = useFormContext<LogInSchemaType>();
+  const methods = useForm<LogInSchemaType>({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+    mode: "all",
+    resolver: zodResolver(logInSchema),
+  });
 
   if (user) {
     return (
@@ -38,6 +43,11 @@ const Login = () => {
       />
     );
   }
+  const {
+    handleSubmit,
+    formState: { isSubmitting },
+  } = methods;
+
   if (isSubmitting) return <SpinnerOverlay />;
   const onSubmit = async ({ email, password }: LogInSchemaType) => {
     try {
@@ -67,67 +77,69 @@ const Login = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className='grid'>
-      <Card className='mx-auto max-w-sm'>
-        <CardHeader>
-          <CardTitle className='text-2xl'>Login</CardTitle>
-          <CardDescription>
-            Enter your email below to login to your account
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className='grid gap-4'>
-            <div className='grid gap-2'>
-              <FormFields
-                label='Email'
-                placeholder='example@example.com'
-                name='email'
-              />
-            </div>
-            <div className='grid gap-1 '>
-              <div className='flex items-center'>
-                <Label htmlFor='password'>Password</Label>
-
-                <Link
-                  to='/reset-password'
-                  className='ml-auto inline-block text-sm underline '>
-                  Forgot your password?
-                </Link>
+    <FormProvider {...methods}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className='grid'>
+        <Card className='mx-auto max-w-sm'>
+          <CardHeader>
+            <CardTitle className='text-2xl'>Login</CardTitle>
+            <CardDescription>
+              Enter your email below to login to your account
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className='grid gap-4'>
+              <div className='grid gap-2'>
+                <FormFields
+                  label='Email'
+                  placeholder='example@example.com'
+                  name='email'
+                />
               </div>
-              <FormFields
-                label=''
-                name='password'
-                type='password'
+              <div className='grid gap-1 '>
+                <div className='flex items-center'>
+                  <Label htmlFor='password'>Password</Label>
+
+                  <Link
+                    to='/reset-password'
+                    className='ml-auto inline-block text-sm underline '>
+                    Forgot your password?
+                  </Link>
+                </div>
+                <FormFields
+                  label=''
+                  name='password'
+                  type='password'
+                />
+              </div>
+              <Button
+                disabled={isSubmitting}
+                type='submit'
+                className='w-full'>
+                Login
+              </Button>
+              <GoogleOAuth
+                logInOrSignUp='Login'
+                isSubmitting={isSubmitting}
+              />
+              <FaceBookOAuth
+                logInOrSignUp='Login'
+                isSubmitting={isSubmitting}
               />
             </div>
-            <Button
-              disabled={isSubmitting}
-              type='submit'
-              className='w-full'>
-              Login
-            </Button>
-            <GoogleOAuth
-              logInOrSignUp='Login'
-              isSubmitting={isSubmitting}
-            />
-            <FaceBookOAuth
-              logInOrSignUp='Login'
-              isSubmitting={isSubmitting}
-            />
-          </div>
-          <div className='mt-4 text-center text-sm'>
-            Don&apos;t have an account?{" "}
-            <Link
-              to='/sign-up'
-              className='underline underline-offset-1'>
-              Sign up
-            </Link>
-          </div>
-        </CardContent>
-      </Card>
-    </form>
+            <div className='mt-4 text-center text-sm'>
+              Don&apos;t have an account?{" "}
+              <Link
+                to='/sign-up'
+                className='underline underline-offset-1'>
+                Sign up
+              </Link>
+            </div>
+          </CardContent>
+        </Card>
+      </form>
+    </FormProvider>
   );
 };
 export default Login;

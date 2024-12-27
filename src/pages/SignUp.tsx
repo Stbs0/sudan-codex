@@ -13,12 +13,13 @@ import {
 
 import { useToast } from "@/hooks/use-toast";
 import useAuth from "@/hooks/useAuth";
-import { signUpSchemaType } from "@/lib/schemas/signUpSchema";
+import signUpSchema, { signUpSchemaType } from "@/lib/schemas/signUpSchema";
 import { signUp } from "@/services/authServices";
 import { SaveUserInFIreStore } from "@/services/usersServices";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { getAdditionalUserInfo } from "firebase/auth";
 
-import { useFormContext } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Link, Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -26,7 +27,15 @@ const SignUp = () => {
   const {
     handleSubmit,
     formState: { isSubmitting },
-  } = useFormContext<signUpSchemaType>();
+  } = useForm<signUpSchemaType>({
+    defaultValues: {
+      email: "",
+      password: "",
+      confirmPassword: "",
+    },
+    mode: "all",
+    resolver: zodResolver(signUpSchema),
+  });
 
   const { toast } = useToast();
   const navigate = useNavigate();
