@@ -16,8 +16,8 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { FirebaseError } from "@firebase/util";
 import { SaveUserInFIreStore } from "@/services/usersServices";
-import GoogleOAuth from "@/components/GoogleOAuth";
-import FaceBookOAuth from "@/components/FaceBookOAuth";
+import GoogleOAuth from "@/components/auth/GoogleOAuth";
+import FaceBookOAuth from "@/components/auth/FaceBookOAuth";
 import useAuth from "@/hooks/useAuth";
 import { getAdditionalUserInfo } from "firebase/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -55,16 +55,13 @@ const Login = () => {
       const isNewUser = getAdditionalUserInfo(results)?.isNewUser;
       if (isNewUser) {
         await SaveUserInFIreStore(results.user, results.providerId ?? "");
-        navigate("/user-info", {
-          replace: true,
-          state: { type: "success", message: "Login successful" },
-        });
+        navigate("/user-info");
       } else {
-        navigate("/", {
-          replace: true,
-          state: { type: "success", message: "Login successful" },
-        });
+        navigate("/");
       }
+      toast.success("Login successful", {
+        description: "Welcome Back" + results.user.displayName,
+      });
     } catch (error) {
       if (error instanceof FirebaseError) {
         if (error.code === "auth/invalid-credential") {
@@ -97,13 +94,13 @@ const Login = () => {
                   name='email'
                 />
               </div>
-              <div className='grid gap-1 '>
+              <div className='grid gap-1'>
                 <div className='flex items-center'>
                   <Label htmlFor='password'>Password</Label>
 
                   <Link
                     to='/reset-password'
-                    className='ml-auto inline-block text-sm underline '>
+                    className='ml-auto inline-block text-sm underline'>
                     Forgot your password?
                   </Link>
                 </div>

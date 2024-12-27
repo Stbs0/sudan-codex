@@ -61,11 +61,11 @@ const UserPersonalInfo: React.FC = () => {
     <FormProvider {...methods}>
       <Form {...methods}>
         <form onSubmit={methods.handleSubmit(onSubmit)}>
-          <div className='space-y-1 mb-2'>
-            <h1 className='text-3xl font-bold text-center'>
+          <div className='mb-2 space-y-1'>
+            <h1 className='text-center text-3xl font-bold'>
               Complete Your Profile
             </h1>
-            <p className='text-lg text-center'>Tell Us More About Yourself</p>
+            <p className='text-center text-lg'>Tell Us More About Yourself</p>
           </div>
           <Card>
             <CardContent>

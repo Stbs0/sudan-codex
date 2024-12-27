@@ -1,6 +1,6 @@
 import { User } from "firebase/auth";
 import { SaveUserReturnTypes } from "@/types/types";
-import { auth } from "@/config/firebase";
+import { auth } from "@/lib/firebase";
 import { tellUsMoreSchemaType } from "@/lib/schemas/tellUsMoreSchema";
 import api from "@/lib/api";
 

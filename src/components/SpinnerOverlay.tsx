@@ -1,9 +1,12 @@
-import SpinnerIcon from "@/assets/icons/SpinnerIcon";
+import spinner from "../assets/icons/SpinnerIcon.svg";
 
 const SpinnerOverlay = () => {
   return (
-    <div className='absolute top-0 left-0 h-full w-full z-50 flex justify-center items-center bg-gray-800/80'>
-      <SpinnerIcon />
+    <div className='absolute left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-gray-800/80'>
+      <img
+        src={spinner}
+        className='w-20 animate-spin'
+      />
     </div>
   );
 };

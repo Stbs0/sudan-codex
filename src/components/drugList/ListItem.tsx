@@ -12,24 +12,22 @@ export const ListItem = ({ drug }: Props) => {
   const navigate = useNavigate();
   return (
     <Card
-      className=' bg-purple-100/50  hover:bg-purple-100/90 dark:bg-purple-800/50 dark:hover:bg-purple-800/90 border-4 rounded-none border-transparent border-l-indigo-700  '
+      className='rounded-none border-4 border-transparent border-l-indigo-700 bg-purple-100/50 hover:bg-purple-100/90 dark:bg-purple-800/50 dark:hover:bg-purple-800/90'
       onClick={() => {
-        navigate(`/drug-list/${drug.no}`, {
-          state: drug,
-        });
+        navigate(`/drug-list/${drug.no}`);
       }}>
-      <CardTitle className='pt-4 py-2  pl-6 uppercase'>
-        <span className='font-bold '>{drug.brandName}</span>
-        <span className='ml-2 font-normal text-sm'>{drug.strength}</span>
+      <CardTitle className='py-2 pl-6 pt-4 uppercase'>
+        <span className='font-bold'>{drug.brandName}</span>
+        <span className='ml-2 text-sm font-normal'>{drug.strength}</span>
 
-        <span className='ml-1 font-normal text-sm'>{drug.dosageFormName}</span>
+        <span className='ml-1 text-sm font-normal'>{drug.dosageFormName}</span>
       </CardTitle>
 
-      <CardContent className=' pb-2  flex'>
+      <CardContent className='flex pb-2'>
         <div className='flex-1'>
           <div className='text-xs'>
-            <span className='font-semibold '>Generic: </span>
-            <span className='text-gray-600 dark:text-gray-300 '>
+            <span className='font-semibold'>Generic: </span>
+            <span className='text-gray-600 dark:text-gray-300'>
               {" "}
               {drug.genericName}
             </span>

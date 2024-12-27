@@ -1,27 +1,36 @@
-import LinkedIn from "@/assets/icons/LinkedIn";
-import XIcon from "@/assets/icons/XIcon";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
+import linkedin from "../../assets/icons/linkedIn.svg";
+import x from "../../assets/icons/x.svg";
+import github from "../../assets/icons/github.svg";
 
 const Footer = () => {
   return (
-    <footer className='bg-primary  text-[#fff] p-2 text-center flex  justify-center items-center gap-5 '>
-      <div className=' flex justify-center gap-4'>
+    <footer className='flex h-10 items-center justify-center gap-5 bg-primary text-center text-[#fff]'>
+      <div className='flex justify-center gap-4'>
         <a
           href='https://github.com/Stbs0'
-          className='flex justify-center items-center'>
-          <GitHubLogoIcon className='w-6 h-6 ' />
+          className='flex items-center justify-center'>
+          <img
+            src={github}
+            className='h-6 w-6'
+          />
         </a>
         <a
           href='https://twitter.com/stbs66'
-          className='flex justify-center items-center'>
-          <XIcon />
+          className='flex items-center justify-center'>
+          <img
+            src={x}
+            className='h-6 w-6'
+          />
         </a>
         <a
           href='https://www.linkedin.com/in/mohammed-ibrahim-mahmoud/'
-          className='flex justify-center items-center'>
-          <LinkedIn />
+          className='flex items-center justify-center'>
+          <img
+            src={linkedin}
+            className='h-6 w-6'
+          />
         </a>
       </div>
       <div>

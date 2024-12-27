@@ -1,6 +1,6 @@
 const GlobalError = () => {
   return (
-    <div className='w-full h-screen flex justify-center items-center'>
+    <div className='flex h-screen w-full items-center justify-center'>
       <p>Something went wrong!</p>
     </div>
   );

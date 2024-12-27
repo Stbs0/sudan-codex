@@ -4,7 +4,7 @@ import { useState } from "react";
 import { DRUG_ROUTES } from "@/constants";
 import { Label } from "../ui/label";
 
-import { SelectScrollable } from "./SelectRoute";
+import { SelectScrollable } from "../drugList/SelectRoute";
 
 const SearchDrugInfo = ({
   handleSubmit,
@@ -15,12 +15,12 @@ const SearchDrugInfo = ({
 }) => {
   const [route, setRoute] = useState("");
   return (
-    <div className='grid  gap-4'>
+    <div className='grid gap-4'>
       <form
         method='get'
-        className='flex gap-4 items-center md:flex-row flex-col'
+        className='flex flex-col items-center gap-4 md:flex-row'
         onSubmit={(e) => handleSubmit(e, route)}>
-        <div className='flex  flex-col gap-2'>
+        <div className='flex flex-col gap-2'>
           <Label htmlFor='genericName'>Search By Generic Name</Label>
           <Input
             type='text'

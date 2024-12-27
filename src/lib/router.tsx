@@ -2,9 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 
 import PrivateRoute from "@/components/PrivateRoute";
 import MainLayout from "@/layouts/MainLayout";
-import drugDB from "@/config/indexedDB";
+import drugDB from "@/lib/indexedDB";
 import GlobalError from "@/pages/GlobalError";
-import ErrorElement from "@/pages/ErrorElement";
+import ErrorElement from "@/components/ErrorElement";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
       {
         path: "*",
         lazy: async () => {
-          const { default: NotFound } = await import("@/pages/NotFound");
+          const { default: NotFound } = await import("@/components/NotFound");
           return { Component: NotFound };
         },
       },

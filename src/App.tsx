@@ -1,11 +1,11 @@
 import { RouterProvider } from "react-router-dom";
 
 import router from "./lib/router";
-import ThemeProvider from "./components/MainLayout/theme-provider";
+import ThemeProvider from "./providers/theme-provider";
 import { SidebarProvider } from "./components/ui/sidebar";
 import { AuthProvider } from "./providers/AuthProvider";
 import { useEffect } from "react";
-import drugDB from "./config/indexedDB";
+import drugDB from "./lib/indexedDB";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryQlient";
 

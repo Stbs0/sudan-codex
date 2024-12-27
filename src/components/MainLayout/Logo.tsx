@@ -5,7 +5,7 @@ const Logo = ({ className }: { className?: string }) => {
   const navigate = useNavigate();
   return (
     <Button
-      className={`h-full hover:bg-transparent p-0  ${className}`}
+      className={`h-full p-0 hover:bg-transparent ${className}`}
       variant={"ghost"}
       onClick={() => navigate("/")}>
       <img

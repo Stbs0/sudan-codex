@@ -23,9 +23,9 @@ export function AppSidebar() {
           <Link
             to='/'
             className='flex items-center'>
-            <Logo className=' h-8 ' />
+            <Logo className='h-8' />
           </Link>
-          <SidebarTrigger className='ml-auto ' />
+          <SidebarTrigger className='ml-auto' />
         </SidebarHeader>
         <SidebarGroup>
           <SidebarGroupLabel>Application</SidebarGroupLabel>

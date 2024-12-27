@@ -1,4 +1,4 @@
-const SpinnerIcon = () => (
+
   <svg
     aria-hidden='true'
     className='  text-gray-200 animate-spin dark:text-blue-600 dark:fill-white fill-blue-600 size-14'
@@ -14,5 +14,4 @@ const SpinnerIcon = () => (
       fill='currentFill'
     />
   </svg>
-);
-export default SpinnerIcon;
+

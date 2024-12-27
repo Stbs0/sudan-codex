@@ -1,4 +1,4 @@
-import drugDB from "@/config/indexedDB";
+import drugDB from "@/lib/indexedDB";
 import { useState } from "react";
 
 import { useLiveQuery } from "dexie-react-hooks";

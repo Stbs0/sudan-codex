@@ -13,7 +13,7 @@ export default function Profile() {
 
   return (
     <>
-      <div className='px-4 space-y-6 sm:px-6 '>
+      <div className='space-y-6 px-4 sm:px-6'>
         <div className='space-y-2'>
           <div className='flex items-center space-x-3'>
             <Avatar className='h-16 w-16'>
@@ -30,7 +30,7 @@ export default function Profile() {
         </div>
         <div className='space-y-8'>
           <Card className='p-3'>
-            <CardContent className='flex flex-col gap-4 '>
+            <CardContent className='flex flex-col gap-4'>
               <div className='space-y-2'>
                 <Label htmlFor='name'>Name</Label>
                 <Input

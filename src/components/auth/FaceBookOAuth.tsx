@@ -1,11 +1,12 @@
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { SyntheticEvent } from "react";
 import { toast } from "sonner";
 import { FaceBookSignIn } from "@/services/authServices";
-import FaceBookIcon from "@/assets/icons/FacebookIcon";
+
 import { getAdditionalUserInfo } from "firebase/auth";
 import { SaveUserInFIreStore } from "@/services/usersServices";
 import { useNavigate } from "react-router-dom";
+import facebook from "../../assets/icons/facebook.svg";
 
 type Props = {
   isSubmitting: boolean;
@@ -21,16 +22,13 @@ const FaceBookOAuth = ({ isSubmitting, logInOrSignUp }: Props) => {
 
       if (isNewUser) {
         await SaveUserInFIreStore(results.user, results.providerId ?? "");
-        navigate("/user-info", {
-          replace: true,
-          state: { type: "success", message: "Login successful" },
-        });
+        navigate("/user-info");
       } else {
-        navigate("/", {
-          replace: true,
-          state: { type: "success", message: "Login successful" },
-        });
+        navigate("/");
       }
+      toast.success("Login successful", {
+        description: "Welcome Back" + results.user.displayName,
+      });
     } catch (error) {
       toast.error("Failed to sign in with FaceBook. Please try again.");
       console.log(error);
@@ -39,10 +37,14 @@ const FaceBookOAuth = ({ isSubmitting, logInOrSignUp }: Props) => {
   return (
     <Button
       variant='outline'
-      className='w-full flex items-center justify-center gap-2'
+      className='flex w-full items-center justify-center gap-2'
       disabled={isSubmitting}
-      onClick={async (e) => await signInWithFaceBook(e)}>
-      {logInOrSignUp} with FaceBook <FaceBookIcon />
+      onClick={signInWithFaceBook}>
+      {logInOrSignUp} with FaceBook
+      <img
+        src={facebook}
+        className='w-7'
+      />
     </Button>
   );
 };

@@ -5,17 +5,23 @@ import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Button } from "../ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
-import { auth } from "@/config/firebase";
+import { auth } from "@/lib/firebase";
 import { Separator } from "../ui/separator";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 import { useState } from "react";
 import { ChevronUp } from "lucide-react";
+import { toast } from "sonner";
 
 const ProfilePic = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const [open, setOpen] = useState(false);
 
+  const handleSignOut = async () => {
+    await signOut(auth);
+    navigate("/log-in");
+    toast.success("Good Bye" + user?.displayName);
+  };
   if (!user) {
     return null;
   }
@@ -36,13 +42,13 @@ const ProfilePic = () => {
           </AvatarFallback>
         </Avatar>
         <ChevronUp
-          className={`w-4 h-4 shrink-0 opacity-50  ${!open ? "rotate-180" : ""}`}
+          className={`h-4 w-4 shrink-0 opacity-50 ${!open ? "rotate-180" : ""}`}
         />
       </PopoverTrigger>
       <PopoverContent
-        className='w-28 p-0 '
+        className='w-28 p-0'
         onOpenAutoFocus={(e) => e.preventDefault()}>
-        <div className='grid '>
+        <div className='grid'>
           <Link to={"/profile"}>
             <Button
               variant={"link"}
@@ -55,17 +61,8 @@ const ProfilePic = () => {
           <Separator />
           <Button
             variant={"link"}
-            className='text-red-500 '
-            onClick={async () => {
-              await signOut(auth);
-              navigate("/log-in", {
-                replace: true,
-                state: {
-                  type: "success",
-                  message: `Goodbye ${user.displayName}`,
-                },
-              });
-            }}>
+            className='text-red-500'
+            onClick={handleSignOut}>
             Sign Out
           </Button>
         </div>

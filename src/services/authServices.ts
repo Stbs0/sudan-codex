@@ -3,7 +3,7 @@ import {
   db,
   faceBookAuthProvider,
   googleAuthProvider,
-} from "@/config/firebase";
+} from "@/lib/firebase";
 import { UserInDb } from "@/types/types";
 import {
   signInWithEmailAndPassword,

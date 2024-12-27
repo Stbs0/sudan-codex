@@ -1,6 +1,15 @@
-import ThemeProviderContext from "@/providers/ThemeProviderContext";
 import { Theme, ThemeProviderProps } from "@/types/types";
 import { useEffect, useState } from "react";
+import { ThemeProviderState } from "@/types/types";
+import { createContext } from "react";
+
+const initialState: ThemeProviderState = {
+  theme: "system",
+  setTheme: () => null,
+};
+
+export const ThemeProviderContext =
+  createContext<ThemeProviderState>(initialState);
 
 function ThemeProvider({
   children,

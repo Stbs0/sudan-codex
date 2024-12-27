@@ -1,6 +1,13 @@
-import AuthContext from "@/contexts/authContext";
+import { User } from "firebase/auth";
+import { createContext, useContext } from "react";
+export interface AuthContextType {
+  user: User | null;
+  loading: boolean;
+}
 
-import { useContext } from "react";
+export const AuthContext = createContext<AuthContextType | undefined>(
+  undefined
+);
 
 export const useAuth = () => {
   const context = useContext(AuthContext);

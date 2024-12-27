@@ -1,6 +1,6 @@
-import { DrugCard } from "@/components/drugCard";
-import DrugInfoAccordion from "@/components/drugList/DrugInfoAccordion";
-import SearchDrugInfo from "@/components/drugList/SearchDrugInfo";
+import { DrugCard } from "@/components/drugInfo/drugCard";
+import DrugInfoAccordion from "@/components/drugInfo/DrugInfoAccordion";
+import SearchDrugInfo from "@/components/drugInfo/SearchDrugInfo";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -56,7 +56,7 @@ const DrugInfo = () => {
   };
 
   return (
-    <Card className='p-6 max-w-5xl mx-auto  items-center dark:invert'>
+    <Card className='mx-auto max-w-5xl items-center p-6 dark:invert'>
       <DrugCard drug={drug} />
 
       <CardContent className='flex flex-col gap-4'>
@@ -80,7 +80,7 @@ const DrugInfo = () => {
             [...Array(4)].map((_, index) => (
               <Skeleton
                 key={index}
-                className='h-24 mb-4 w-full'
+                className='mb-4 h-24 w-full'
               />
             ))
           ) : data ? (

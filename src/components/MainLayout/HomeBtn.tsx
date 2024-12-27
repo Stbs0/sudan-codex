@@ -5,7 +5,7 @@ export default function HomeBtn() {
   return (
     <div
       onClick={() => navigate("/")}
-      className='text-2xl font-bold text-white cursor-pointer'>
+      className='cursor-pointer text-2xl font-bold text-white'>
       {/* <TransparentLogo className='size-96' /> */}
     </div>
   );

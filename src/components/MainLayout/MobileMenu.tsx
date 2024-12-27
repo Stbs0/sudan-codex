@@ -9,38 +9,38 @@ import {
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
-import { auth } from "@/config/firebase";
+import { auth } from "@/lib/firebase";
 
 function MobileMenu() {
   const navigate = useNavigate();
   return (
     <Sheet>
       <SheetTrigger>
-        <MenuIcon className='w-6 h-6 text-white' />
+        <MenuIcon className='h-6 w-6 text-white' />
       </SheetTrigger>
-      <SheetContent className=' w-[40%] bg-white/70 dark:bg-neutral-950/60  backdrop-blur-sm'>
+      <SheetContent className='w-[40%] bg-white/70 backdrop-blur-sm dark:bg-neutral-950/60'>
         {/* TODO: add logo and and name of the project */}
         <SheetHeader>
           <SheetTitle>Menu</SheetTitle>
         </SheetHeader>
-        <div className='grid  gap-4  py-4 '>
+        <div className='grid gap-4 py-4'>
           <Button
             variant={"link"}
             onClick={() => navigate("/drug-form")}
-            className='flex gap-3 justify-start '>
-            <Pill className='w-6 h-6' /> <span>Add Drug</span>
+            className='flex justify-start gap-3'>
+            <Pill className='h-6 w-6' /> <span>Add Drug</span>
           </Button>
           <Button
             variant={"link"}
             onClick={() => navigate("/profile")}
-            className='flex gap-3 justify-start'>
-            <User className='w-6 h-6' /> <span>Profile</span>
+            className='flex justify-start gap-3'>
+            <User className='h-6 w-6' /> <span>Profile</span>
           </Button>
           <Button
             variant={"link"}
             onClick={() => navigate("/settings")}
-            className='flex gap-3 justify-start'>
-            <Settings className='w-6 h-6' /> <span>Settings</span>
+            className='flex justify-start gap-3'>
+            <Settings className='h-6 w-6' /> <span>Settings</span>
           </Button>
         </div>
         <div className='grid gap-4 py-4'>

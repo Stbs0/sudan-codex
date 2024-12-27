@@ -1,12 +1,11 @@
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { SyntheticEvent } from "react";
-import GoogleIcon from "@/assets/icons/GoogleIcon";
 import { toast } from "sonner";
 import { GoogleSignIn } from "@/services/authServices";
 import { getAdditionalUserInfo } from "firebase/auth";
 import { SaveUserInFIreStore } from "@/services/usersServices";
 import { useNavigate } from "react-router-dom";
-
+import googleIcon from "../../assets/icons/google.svg";
 type Props = {
   isSubmitting: boolean;
   logInOrSignUp?: string;
@@ -22,16 +21,13 @@ const GoogleOAuth = ({ isSubmitting, logInOrSignUp }: Props) => {
 
       if (isNewUser) {
         await SaveUserInFIreStore(results.user, results.providerId ?? "");
-        navigate("/user-info", {
-          replace: true,
-          state: { type: "success", message: "Login successful" },
-        });
+        navigate("/user-info");
       } else {
-        navigate("/", {
-          replace: true,
-          state: { type: "success", message: "Login successful" },
-        });
+        navigate("/");
       }
+      toast.success("Login successful", {
+        description: "Welcome Back" + results.user.displayName,
+      });
     } catch (error) {
       toast.error("Failed to sign in with Google. Please try again.");
       console.log(error);
@@ -40,10 +36,14 @@ const GoogleOAuth = ({ isSubmitting, logInOrSignUp }: Props) => {
   return (
     <Button
       variant='outline'
-      className='w-full flex items-center justify-center gap-2'
+      className='flex w-full items-center justify-center gap-2'
       disabled={isSubmitting}
-      onClick={async (e) => await signInWithGoogle(e)}>
-      {logInOrSignUp} with Google <GoogleIcon />
+      onClick={signInWithGoogle}>
+      {logInOrSignUp} with Google
+      <img
+        className='w-7'
+        src={googleIcon}
+      />
     </Button>
   );
 };
