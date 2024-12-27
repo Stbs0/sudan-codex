@@ -25,11 +25,14 @@ const ProfilePic = () => {
       onOpenChange={() => {
         setOpen(!open);
       }}>
-      <PopoverTrigger className='flex items-center'>
+      <PopoverTrigger className='flex min-w-14 items-center'>
         <Avatar>
-          <AvatarImage src={user?.photoURL ?? undefined} />
+          <AvatarImage
+            src={user?.photoURL ?? undefined}
+            alt='profile picture'
+          />
           <AvatarFallback>
-            {getInitials(user?.displayName || "")}
+            {getInitials(user?.displayName || "  ")}
           </AvatarFallback>
         </Avatar>
         <ChevronUp

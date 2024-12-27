@@ -11,7 +11,7 @@ const Logo = ({ className }: { className?: string }) => {
       <img
         className='h-full w-full object-contain'
         src='/src/assets/logo/purpleLogo.png'
-        alt=''
+        alt='logo'
       />
     </Button>
   );
