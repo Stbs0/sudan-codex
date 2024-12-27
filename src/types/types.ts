@@ -1,4 +1,4 @@
-import { FormSchema } from "@/lib/schemas/newDrugSchema";
+import { FormSchema } from "@/lib/schemas";
 import { User } from "firebase/auth";
 import { Timestamp } from "firebase/firestore";
 

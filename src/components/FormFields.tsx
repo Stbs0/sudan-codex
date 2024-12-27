@@ -1,8 +1,7 @@
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { useFormContext } from "react-hook-form";
-import { signUpSchemaType } from "@/lib/schemas/signUpSchema";
-import { tellUsMoreSchemaType } from "@/lib/schemas/tellUsMoreSchema";
+import { signUpSchemaType, tellUsMoreSchemaType } from "@/lib/schemas";
 
 type Props = {
   label: string;

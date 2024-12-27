@@ -1,8 +1,8 @@
 import { User } from "firebase/auth";
 import { SaveUserReturnTypes } from "@/types/types";
 import { auth } from "@/lib/firebase";
-import { tellUsMoreSchemaType } from "@/lib/schemas/tellUsMoreSchema";
 import api from "@/lib/api";
+import { tellUsMoreSchemaType } from "@/lib/schemas";
 
 export const SaveUserInFIreStore = async (user: User, providerId: string) => {
   const idToken = await user.getIdToken();
