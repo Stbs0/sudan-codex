@@ -13,10 +13,8 @@ import {
 import { Input } from "@/components/ui/input";
 
 import { Separator } from "@/components/ui/separator";
-import {
-  tellUsMoreSchema,
-  tellUsMoreSchemaType,
-} from "@/lib/schemas/tellUsMoreSchema";
+import { tellUsMoreSchema, tellUsMoreSchemaType } from "@/lib/schemas";
+
 import { getTokenId, updateUser } from "@/services/usersServices";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";

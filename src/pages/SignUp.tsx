@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/card";
 
 import useAuth from "@/hooks/useAuth";
-import signUpSchema, { signUpSchemaType } from "@/lib/schemas/signUpSchema";
 import { signUp } from "@/services/authServices";
 import { SaveUserInFIreStore } from "@/services/usersServices";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -22,6 +21,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { Link, Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { signUpSchema, signUpSchemaType } from "@/lib/schemas";
 
 const SignUp = () => {
   const methods = useForm<signUpSchemaType>({
