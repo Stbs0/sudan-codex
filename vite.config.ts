@@ -11,7 +11,6 @@ export default defineConfig({
     globals: true,
     setupFiles: "./tests/vitest-setup.ts",
   },
-  assetsInclude: ["**/*.svg", "**/*.png"],
   envDir: "./envDir",
   plugins: [
     react(),

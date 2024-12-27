@@ -9,7 +9,7 @@
     "lint": "eslint . --fix",
     "test": "vitest",
     "preview": "vite preview",
-    "deploy": "npm rub build && firebase deploy --only hosting "
+    "deploy": "npm run build && firebase deploy --only hosting "
   },
   "husky": {
     "hooks": {
