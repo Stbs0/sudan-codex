@@ -1,19 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "@/pages/Home";
 
-import RHFSignUpProvider from "@/providers/RHFSignUpProvider";
-import RHFLogInProvider from "@/providers/RHFLogInProvider";
 import PrivateRoute from "@/components/PrivateRoute";
 import MainLayout from "@/layouts/MainLayout";
-import DrugList from "@/pages/DrugList";
-import DrugInfo from "@/pages/DrugInfo";
-import Profile from "@/pages/Profile";
-import RHFTellUsMore from "@/providers/RHFTellUsMore";
-import SignUp from "@/pages/SignUp";
-import Login from "@/pages/LogIn";
-import UserPersonalInfo from "@/pages/UserPersonalInfo";
 import drugDB from "@/config/indexedDB";
-import Policy from "@/pages/Policy";
 
 const router = createBrowserRouter([
   {
@@ -23,27 +12,32 @@ const router = createBrowserRouter([
       {
         index: true,
         path: "/",
-        element: <Home />,
+        lazy: async () => {
+          const { default: Home } = await import("@/pages/Home");
+          return { Component: Home };
+        },
       },
       {
         path: "/policy",
-        element: <Policy />,
+
+        lazy: async () => {
+          const { default: Policy } = await import("@/pages/Policy");
+          return { Component: Policy };
+        },
       },
       {
         path: "sign-up",
-        element: (
-          <RHFSignUpProvider>
-            <SignUp />
-          </RHFSignUpProvider>
-        ),
+        lazy: async () => {
+          const { default: SignUp } = await import("@/pages/SignUp");
+          return { Component: SignUp };
+        },
       },
       {
         path: "log-in",
-        element: (
-          <RHFLogInProvider>
-            <Login />
-          </RHFLogInProvider>
-        ),
+        lazy: async () => {
+          const { default: LogIn } = await import("@/pages/LogIn");
+          return { Component: LogIn };
+        },
       },
 
       {
@@ -51,7 +45,10 @@ const router = createBrowserRouter([
         children: [
           {
             path: "/drug-list/:no",
-            element: <DrugInfo />,
+            lazy: async () => {
+              const { default: DrugInfo } = await import("@/pages/DrugInfo");
+              return { Component: DrugInfo };
+            },
             loader: async ({ params }) => {
               const [data] = await drugDB.drugList
                 .where("no")
@@ -62,21 +59,28 @@ const router = createBrowserRouter([
           },
           {
             path: "profile",
-            element: <Profile />,
+            lazy: async () => {
+              const { default: Profile } = await import("@/pages/Profile");
+              return { Component: Profile };
+            },
           },
 
           {
             path: "drug-list",
-            element: <DrugList />,
+            lazy: async () => {
+              const { default: DrugList } = await import("@/pages/DrugList");
+              return { Component: DrugList };
+            },
           },
 
           {
             path: "user-info",
-            element: (
-              <RHFTellUsMore>
-                <UserPersonalInfo />
-              </RHFTellUsMore>
-            ),
+            lazy: async () => {
+              const { default: UserPersonalInfo } = await import(
+                "@/pages/UserPersonalInfo"
+              );
+              return { Component: UserPersonalInfo };
+            },
           },
         ],
       },
