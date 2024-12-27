@@ -1,8 +1,8 @@
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
-import Linkedin from "../../assets/icons/linkedIn.svg";
-import X from "../../assets/icons/x.svg";
-import Github from "../../assets/icons/github.svg";
+// import Linkedin from "../../assets/icons/linkedIn.svg";
+// import X from "../../assets/icons/x.svg";
+// import Github from "../../assets/icons/github.svg";
 
 const Footer = () => {
   return (
@@ -13,7 +13,7 @@ const Footer = () => {
           className='flex items-center justify-center'>
           <img
             className='h-6 w-6 dark:invert'
-            src={Github}
+            src='../../assets/icons/github.svg'
           />
         </a>
         <a
@@ -21,7 +21,7 @@ const Footer = () => {
           className='flex items-center justify-center'>
           <img
             className='h-6 w-6 dark:invert'
-            src={X}
+            src='../../assets/icons/x.svg'
           />
         </a>
         <a
@@ -29,7 +29,7 @@ const Footer = () => {
           className='flex items-center justify-center'>
           <img
             className='h-6 w-6 dark:invert'
-            src={Linkedin}
+            src='../../assets/icons/linkedIn.svg'
           />
         </a>
       </div>
