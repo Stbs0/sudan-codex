@@ -1,39 +1,27 @@
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
-import linkedin from "@/assets/icons/linkedIn.svg";
-import x from "@/assets/icons/x.svg";
-import github from "@/assets/icons/github.svg";
+import Linkedin from "@/assets/icons/linkedIn.svg?react";
+import X from "@/assets/icons/x.svg?react";
+import Github from "@/assets/icons/github.svg?react";
 
 const Footer = () => {
   return (
-    <footer className='flex h-10 items-center justify-center gap-5 bg-primary text-center text-[#fff]'>
+    <footer className='flex items-center justify-center gap-5 bg-primary p-2 text-center text-[#fff] dark:bg-purple-900'>
       <div className='flex justify-center gap-4'>
         <a
           href='https://github.com/Stbs0'
           className='flex items-center justify-center'>
-          <img
-            src={github}
-            className='h-6 w-6'
-            alt='github'
-          />
+          <Github className='h-6 w-6 dark:invert' />
         </a>
         <a
           href='https://twitter.com/stbs66'
           className='flex items-center justify-center'>
-          <img
-            src={x}
-            className='h-6 w-6'
-            alt='x'
-          />
+          <X className='h-6 w-6 dark:invert' />
         </a>
         <a
           href='https://www.linkedin.com/in/mohammed-ibrahim-mahmoud/'
           className='flex items-center justify-center'>
-          <img
-            src={linkedin}
-            className='h-6 w-6'
-            alt='linkedIn'
-          />
+          <Linkedin className='h-6 w-6 dark:invert' />
         </a>
       </div>
       <div>

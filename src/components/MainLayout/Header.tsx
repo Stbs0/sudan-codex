@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <header className='flex h-[64px] shrink-0 items-center justify-between border-b p-3 shadow-lg shadow-purple-200 dark:border-neutral-800 dark:shadow-neutral-900'>
-      <SidebarTrigger />
+      <SidebarTrigger className='dark:invert' />
       <HomeBtn />
       <Logo />
       <div className='flex items-center space-x-4'>
