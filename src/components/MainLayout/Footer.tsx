@@ -1,8 +1,8 @@
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
-import linkedin from "../../assets/icons/linkedIn.svg";
-import x from "../../assets/icons/x.svg";
-import github from "../../assets/icons/github.svg";
+import linkedin from "@/assets/icons/linkedIn.svg";
+import x from "@/assets/icons/x.svg";
+import github from "@/assets/icons/github.svg";
 
 const Footer = () => {
   return (
@@ -14,6 +14,7 @@ const Footer = () => {
           <img
             src={github}
             className='h-6 w-6'
+            alt='github'
           />
         </a>
         <a
@@ -22,6 +23,7 @@ const Footer = () => {
           <img
             src={x}
             className='h-6 w-6'
+            alt='x'
           />
         </a>
         <a
@@ -30,6 +32,7 @@ const Footer = () => {
           <img
             src={linkedin}
             className='h-6 w-6'
+            alt='linkedIn'
           />
         </a>
       </div>
