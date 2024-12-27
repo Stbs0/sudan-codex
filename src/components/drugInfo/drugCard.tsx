@@ -1,4 +1,3 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Drug } from "@/types/types";
 
 interface DrugCardProps {
@@ -7,11 +6,11 @@ interface DrugCardProps {
 
 export function DrugCard({ drug }: DrugCardProps) {
   return (
-    <Card className='w-full border-none shadow-none'>
-      <CardHeader>
-        <CardTitle className='text-xl font-bold'>{drug.brandName}</CardTitle>
-      </CardHeader>
-      <CardContent>
+    <div className='w-full border-none shadow-none'>
+      <div>
+        <div className='p-2 text-xl font-bold'>{drug.brandName}</div>
+      </div>
+      <div className='px-2 pt-2'>
         <dl className='grid grid-cols-1 gap-2 sm:grid-cols-2'>
           <div className='border-l-2 border-blue-400 p-2'>
             <dt className='font-medium text-gray-500'>Generic Name</dt>
@@ -42,7 +41,7 @@ export function DrugCard({ drug }: DrugCardProps) {
             <dd>{drug.agentName}</dd>
           </div>
         </dl>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 }

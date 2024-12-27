@@ -17,7 +17,7 @@ const DrugInfoAccordion = ({
   return (
     <Accordion type='multiple'>
       <AccordionItem value='item-1'>
-        <AccordionTrigger>{title}</AccordionTrigger>
+        <AccordionTrigger>{title.toUpperCase()}</AccordionTrigger>
         <AccordionContent className='max-w-l'>{content}</AccordionContent>
       </AccordionItem>
     </Accordion>

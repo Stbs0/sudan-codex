@@ -2,7 +2,7 @@ import { DrugCard } from "@/components/drugInfo/drugCard";
 import DrugInfoAccordion from "@/components/drugInfo/DrugInfoAccordion";
 import SearchDrugInfo from "@/components/drugInfo/SearchDrugInfo";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { queryClient } from "@/lib/queryQlient";
 
@@ -56,9 +56,16 @@ const DrugInfo = () => {
   };
 
   return (
-    <Card className='mx-auto max-w-5xl items-center p-6 dark:invert'>
-      <DrugCard drug={drug} />
-
+    <Card className='mx-auto max-w-5xl items-center p-6'>
+      <CardTitle className='flex flex-col gap-4'>
+        <DrugCard drug={drug} />
+        <div className='flex flex-col gap-4'>
+          <SearchDrugInfo
+            generic={drug.genericName}
+            handleSubmit={handleSubmit}
+          />
+        </div>
+      </CardTitle>
       <CardContent className='flex flex-col gap-4'>
         {isError && (
           <Alert className='border-yellow-300 bg-yellow-50'>
@@ -69,12 +76,7 @@ const DrugInfo = () => {
             </AlertDescription>
           </Alert>
         )}
-        <div className='flex flex-col gap-4'>
-          <SearchDrugInfo
-            generic={drug.genericName}
-            handleSubmit={handleSubmit}
-          />
-        </div>
+
         <div className='flex flex-col gap-4'>
           {isLoading ? (
             [...Array(4)].map((_, index) => (
