@@ -4,12 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"vite\" \"tsc --watch --noEmit\"",
     "build": "tsc -b && vite build",
     "lint": "eslint . --fix",
     "test": "vitest",
-    "preview": "vite preview",
-    "tsc": "tsc -b src/**/*.{ts,tsx}"
+    "preview": "vite preview"
+   
   },
   "husky": {
     "hooks": {
@@ -44,6 +44,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
+    "concurrently": "^9.1.0",
     "dexie": "^4.0.9",
     "dexie-react-hooks": "^1.1.7",
     "dotenv": "^16.4.7",
