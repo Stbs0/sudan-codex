@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
-
+import LogoPic from "../../assets/logo/purpleLogo.png";
 const Logo = ({ className }: { className?: string }) => {
   const navigate = useNavigate();
   return (
@@ -10,7 +10,7 @@ const Logo = ({ className }: { className?: string }) => {
       onClick={() => navigate("/")}>
       <img
         className='h-full w-full object-contain'
-        src='src/assets/logo/purpleLogo.png'
+        src={LogoPic}
         alt='logo'
       />
     </Button>

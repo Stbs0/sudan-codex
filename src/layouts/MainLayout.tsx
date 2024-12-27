@@ -14,7 +14,7 @@ const MainLayout = () => {
       <div className='grid w-full content-between dark:bg-slate-800'>
         <Header />
 
-        <main className='container mx-auto'>
+        <main className='container mx-auto py-8'>
           <Outlet />
         </main>
 

@@ -5,7 +5,7 @@ import { GoogleSignIn } from "@/services/authServices";
 import { getAdditionalUserInfo } from "firebase/auth";
 import { SaveUserInFIreStore } from "@/services/usersServices";
 import { useNavigate } from "react-router-dom";
-import googleIcon from "../../assets/icons/google.svg";
+import Google from "../../assets/icons/google.svg?react";
 type Props = {
   isSubmitting: boolean;
   logInOrSignUp?: string;
@@ -40,10 +40,7 @@ const GoogleOAuth = ({ isSubmitting, logInOrSignUp }: Props) => {
       disabled={isSubmitting}
       onClick={signInWithGoogle}>
       {logInOrSignUp} with Google
-      <img
-        className='w-7'
-        src={googleIcon}
-      />
+      <Google className='w-7' />
     </Button>
   );
 };

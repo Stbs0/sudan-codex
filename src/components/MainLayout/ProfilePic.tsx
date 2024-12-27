@@ -31,7 +31,7 @@ const ProfilePic = () => {
       onOpenChange={() => {
         setOpen(!open);
       }}>
-      <PopoverTrigger className='flex min-w-14 items-center'>
+      <PopoverTrigger className='flex items-center'>
         <Avatar>
           <AvatarImage
             src={user?.photoURL ?? undefined}

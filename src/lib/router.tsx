@@ -52,7 +52,7 @@ const router = createBrowserRouter([
 
       {
         element: <PrivateRoute />,
-        errorElement: <ErrorElement />,
+        ErrorBoundary: ErrorElement,
         children: [
           {
             path: "/drug-list/:no",

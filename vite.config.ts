@@ -4,6 +4,7 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import checker from "vite-plugin-checker";
 import { visualizer } from "rollup-plugin-visualizer";
+import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
   test: {
@@ -14,6 +15,7 @@ export default defineConfig({
   assetsInclude: ["**/*.svg", "**/*.png"],
   envDir: "./envDir",
   plugins: [
+    svgr(),
     react(),
     checker({
       typescript: true,
