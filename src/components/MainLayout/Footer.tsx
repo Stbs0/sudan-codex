@@ -1,8 +1,8 @@
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
-import Linkedin from "@/assets/icons/linkedIn.svg?react";
-import X from "@/assets/icons/x.svg?react";
-import Github from "@/assets/icons/github.svg?react";
+import Linkedin from "../../assets/icons/linkedIn.svg";
+import X from "../../assets/icons/x.svg";
+import Github from "../../assets/icons/github.svg";
 
 const Footer = () => {
   return (
@@ -11,17 +11,26 @@ const Footer = () => {
         <a
           href='https://github.com/Stbs0'
           className='flex items-center justify-center'>
-          <Github className='h-6 w-6 dark:invert' />
+          <img
+            className='h-6 w-6 dark:invert'
+            src={Github}
+          />
         </a>
         <a
           href='https://twitter.com/stbs66'
           className='flex items-center justify-center'>
-          <X className='h-6 w-6 dark:invert' />
+          <img
+            className='h-6 w-6 dark:invert'
+            src={X}
+          />
         </a>
         <a
           href='https://www.linkedin.com/in/mohammed-ibrahim-mahmoud/'
           className='flex items-center justify-center'>
-          <Linkedin className='h-6 w-6 dark:invert' />
+          <img
+            className='h-6 w-6 dark:invert'
+            src={Linkedin}
+          />
         </a>
       </div>
       <div>

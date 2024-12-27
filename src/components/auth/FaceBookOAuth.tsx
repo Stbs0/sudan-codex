@@ -6,7 +6,7 @@ import { FaceBookSignIn } from "@/services/authServices";
 import { getAdditionalUserInfo } from "firebase/auth";
 import { SaveUserInFIreStore } from "@/services/usersServices";
 import { useNavigate } from "react-router-dom";
-import Facebook from "../../assets/icons/facebook.svg?react";
+import Facebook from "../../assets/icons/facebook.svg";
 
 type Props = {
   isSubmitting: boolean;
@@ -41,7 +41,10 @@ const FaceBookOAuth = ({ isSubmitting, logInOrSignUp }: Props) => {
       disabled={isSubmitting}
       onClick={signInWithFaceBook}>
       {logInOrSignUp} with FaceBook
-      <Facebook className='w-7' />
+      <img
+        className='w-7'
+        src={Facebook}
+      />
     </Button>
   );
 };

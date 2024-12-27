@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint . --fix",
     "test": "vitest",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm rub build && firebase deploy --only hosting "
   },
   "husky": {
     "hooks": {
