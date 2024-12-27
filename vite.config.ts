@@ -16,8 +16,8 @@ export default defineConfig({
   plugins: [
     react(),
     checker({
-      // e.g. use TypeScript check
       typescript: true,
+      overlay: true,
     }),
     visualizer({ open: true, filename: "bundle-visualization.html" }),
   ],
