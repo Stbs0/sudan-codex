@@ -7,7 +7,7 @@ import { User } from "firebase/auth";
 export const SaveUserInFIreStore = async (user: User, providerId: string) => {
   const idToken = await user.getIdToken();
   await api.post(
-    `user/create`,
+    `/user/create`,
     {
       uid: user.uid,
       email: user.email,
@@ -42,7 +42,7 @@ export const completeProfile = async (
   idToken: string,
   data: tellUsMoreSchemaType & { profileComplete: boolean }
 ) => {
-  return await api.post(`user/complete-profile`, data, {
+  return await api.post(`/user/complete-profile`, data, {
     headers: {
       Authorization: `Bearer ${idToken}`,
     },
@@ -52,7 +52,7 @@ export const updateUser = async (
   idToken: string,
   data: UpdateUserSchemaType
 ) => {
-  return await api.post(`user/update`, data, {
+  return await api.post(`/user/update`, data, {
     headers: {
       Authorization: `Bearer ${idToken}`,
     },

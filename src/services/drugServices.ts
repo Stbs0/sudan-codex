@@ -1,7 +1,7 @@
 import { OPENFDA_SEARCH_URL } from "@/constants";
-import api from "@/lib/api";
 import { getOpenFdaSearchUrl, parseQuery } from "@/lib/utils";
 import { FetchedDrugInfo } from "@/types/types";
+import axios from "axios";
 
 export const getDrugInfo = async (
   genericName: string,
@@ -19,7 +19,7 @@ export const getDrugInfo = async (
         )
       : getOpenFdaSearchUrl(parsedGenericName);
 
-    const { data } = await api.get<FetchedDrugInfo>(url);
+    const { data } = await axios.get<FetchedDrugInfo>(url);
 
     return data.results[0];
   } catch (error) {
