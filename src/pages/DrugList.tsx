@@ -12,7 +12,7 @@ const DrugList = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div className='grid items-center justify-center gap-4'>
+    <div className='grid items-center justify-center gap-4 dark:text-gray-100'>
       <div className='grid gap-2 py-2'>
         <p className='text-2xl'>Search a Drug</p>
         <Input

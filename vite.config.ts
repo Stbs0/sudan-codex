@@ -15,7 +15,6 @@ export default defineConfig({
     react(),
     checker({
       typescript: true,
-      overlay: true,
     }),
   ],
   build: {

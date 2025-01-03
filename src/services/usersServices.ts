@@ -1,8 +1,8 @@
-import { User } from "firebase/auth";
-import { SaveUserReturnTypes } from "@/types/types";
-import { auth } from "@/lib/firebase";
 import api from "@/lib/api";
-import { tellUsMoreSchemaType } from "@/lib/schemas";
+import { auth } from "@/lib/firebase";
+import { UpdateUserSchemaType, tellUsMoreSchemaType } from "@/lib/schemas";
+import { SaveUserReturnTypes } from "@/types/types";
+import { User } from "firebase/auth";
 
 export const SaveUserInFIreStore = async (user: User, providerId: string) => {
   const idToken = await user.getIdToken();
@@ -38,11 +38,21 @@ export const getUser = async (idToken: string) => {
   return data;
 };
 
-export const updateUser = async (
+export const completeProfile = async (
   idToken: string,
   data: tellUsMoreSchemaType & { profileComplete: boolean }
 ) => {
   return await api.post(`user/complete-profile`, data, {
+    headers: {
+      Authorization: `Bearer ${idToken}`,
+    },
+  });
+};
+export const updateUser = async (
+  idToken: string,
+  data: UpdateUserSchemaType
+) => {
+  return await api.post(`user/update`, data, {
     headers: {
       Authorization: `Bearer ${idToken}`,
     },

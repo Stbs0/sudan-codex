@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { tellUsMoreSchema, tellUsMoreSchemaType } from "@/lib/schemas";
 
-import { getTokenId, updateUser } from "@/services/usersServices";
+import { getTokenId, completeProfile } from "@/services/usersServices";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 
@@ -39,7 +39,7 @@ const UserPersonalInfo: React.FC = () => {
   const mutation = useMutation({
     mutationFn: async (data: tellUsMoreSchemaType) => {
       const token = await getTokenId();
-      return await updateUser(token!, { ...data, profileComplete: true });
+      return await completeProfile(token!, { ...data, profileComplete: true });
     },
     onSuccess: () => {
       navigate("/");

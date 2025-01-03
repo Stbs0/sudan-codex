@@ -67,4 +67,29 @@ export const logInSchema = z.object({
   password: z.string().min(6, { message: "minimum 6 characters" }),
 });
 
+export const updateUserSchema = z
+  .object({
+    name: z
+      .string()
+      .min(2, { message: "minimum 2 characters" })
+      .or(z.string().optional()),
+    email: z
+      .string()
+      .email({ message: "invalid email" })
+      .or(z.string().optional()),
+    currentPassword: z
+      .string()
+      .min(6, { message: "minimum 6 characters" })
+      .or(z.string().optional()),
+    password: z
+      .string()
+      .min(6, { message: "minimum 6 characters" })
+      .or(z.string().optional()),
+    confirmPassword: z.string().optional().or(z.string().optional()),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords don't match",
+    path: ["confirmPassword"],
+  });
+export type UpdateUserSchemaType = z.infer<typeof updateUserSchema>;
 export type LogInSchemaType = z.infer<typeof logInSchema>;

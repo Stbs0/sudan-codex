@@ -11,6 +11,7 @@ const PrivateRoute = () => {
   const { loading, user } = useAuth();
   const location = useLocation();
   const { data, error, isError, isLoading } = useGetUser();
+  // console.log(data)
 
   // Show a loading spinner while user data or profile data is being fetched
   if (loading || isLoading) {
