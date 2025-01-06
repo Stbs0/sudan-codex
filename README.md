@@ -1,8 +1,27 @@
 # Sudan Codex
 
-![Logo](./src/assets/logo/purpleLogo.png)
-This project is to give referance and clinical pharmacological information about regestered drugs in Sudan.
+![Website Deploy](https://deploy-badge.vercel.app/?url=https%3A%2F%2Fsudan-codex.web.app&name=website)
 
-The project used react-ts, firestore, firebase auth.
+## Intro
 
-Due to the qualty of the data provided Sudan [National Medicine and Posion](https://nmpb.gov.sd/index.php#), the clinical drug information is exteremly defficult to collect free or legally.
+A website that provide FDA drug labeling information for heath care providers in Sudan.
+
+## Tech
+
+- Vite
+- React
+- Tanstack/react-query
+- firebase
+- Tailwindcss
+- Typescript
+- Zod
+- React-hook-form
+- Dexie
+
+## URL
+
+[https://sudan-codex.web.app/](https://sudan-codex.web.app/)
+
+## Author
+
+    **Mohammed Ibrahim Mahmoud**
