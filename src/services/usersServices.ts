@@ -30,7 +30,7 @@ export const getTokenId = async () => {
 };
 
 export const getUser = async (idToken: string) => {
-  const { data } = await api.get<SaveUserReturnTypes>(`/user/me`, {
+  const data: SaveUserReturnTypes = await api.get(`/user/me`, {
     headers: {
       Authorization: `Bearer ${idToken}`,
     },
