@@ -4,11 +4,11 @@ import { ModeToggle } from "./mode-toggle";
 
 import useAuth from "@/hooks/useAuth";
 
-import UnauthorizedUserBtns from "./UnauthorizedUserBtns";
-import ProfilePic from "./ProfilePic";
 import { SidebarTrigger } from "../ui/sidebar";
 import { Skeleton } from "../ui/skeleton";
 import Logo from "./Logo";
+import ProfilePic from "./ProfilePic";
+import UnauthorizedUserBtns from "./UnauthorizedUserBtns";
 // import { useIsMobile } from "@/hooks/use-mobile";
 
 const Header = () => {
@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header className='flex h-[64px] items-center justify-between border-b p-3 shadow-lg shadow-purple-200 dark:border-neutral-800 dark:shadow-neutral-900'>
-      <SidebarTrigger className='dark:invert' />
+      {user && <SidebarTrigger className='dark:invert' />}
       <Logo />
       <div className='flex items-center space-x-4'>
         <ModeToggle />
