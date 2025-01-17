@@ -17,7 +17,7 @@ const Header = () => {
   const { user, loading } = useAuth();
 
   return (
-    <header className='flex h-[64px] items-center justify-between border-b p-3 shadow-lg shadow-purple-200 dark:border-neutral-800 dark:shadow-neutral-900'>
+    <header className='sticky inset-x-0 top-0 z-50 flex h-[64px] items-center justify-between border-b bg-white p-3 shadow-lg shadow-purple-200 dark:border-neutral-800 dark:bg-slate-800 dark:shadow-neutral-900'>
       {user && <SidebarTrigger className='dark:invert' />}
       <Logo />
       <div className='flex items-center space-x-4'>
