@@ -1,4 +1,4 @@
-import { getTokenId, updateUser } from "@/services/usersServices";
+import { updateUser } from "@/services/usersServices";
 import { QueryClient, useMutation } from "@tanstack/react-query";
 import { UpdateUserSchemaType } from "./schemas";
 
@@ -8,8 +8,7 @@ export const useUpdateUser = () => {
   const { mutate } = useMutation({
     mutationKey: ["updateUser"],
     mutationFn: async (data: UpdateUserSchemaType) => {
-      const idToken = await getTokenId();
-      return await updateUser(idToken!, data);
+      return await updateUser(data);
     },
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["user"] }),
   });

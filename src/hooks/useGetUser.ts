@@ -8,8 +8,7 @@ const useGetUser = () => {
   const { isLoading, isError, data, error } = useQuery({
     queryKey: ["user"],
     queryFn: async () => {
-      const idToken = await user!.getIdToken();
-      return await getUser(idToken);
+      return await getUser();
     },
     enabled: !!user,
   });

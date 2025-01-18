@@ -5,7 +5,8 @@ import { SaveUserReturnTypes } from "@/types/types";
 import { User } from "firebase/auth";
 
 export const SaveUserInFIreStore = async (user: User, providerId: string) => {
-  const idToken = await user.getIdToken();
+  const token = await getTokenId();
+
   await api.post(
     `/user/create`,
     {
@@ -19,7 +20,7 @@ export const SaveUserInFIreStore = async (user: User, providerId: string) => {
     },
     {
       headers: {
-        Authorization: `Bearer ${idToken}`,
+        Authorization: `Bearer ${token}`,
       },
     }
   );
@@ -29,32 +30,34 @@ export const getTokenId = async () => {
   return await auth.currentUser?.getIdToken();
 };
 
-export const getUser = async (idToken: string) => {
+export const getUser = async () => {
+  const token = await getTokenId();
+  console.log("token", token);
   const data: SaveUserReturnTypes = await api.get(`/user/me`, {
     headers: {
-      Authorization: `Bearer ${idToken}`,
+      Authorization: `Bearer ${token}`,
     },
   });
   return data;
 };
 
 export const completeProfile = async (
-  idToken: string,
   data: tellUsMoreSchemaType & { profileComplete: boolean }
 ) => {
+  const token = await getTokenId();
+
   return await api.post(`/user/complete-profile`, data, {
     headers: {
-      Authorization: `Bearer ${idToken}`,
+      Authorization: `Bearer ${token}`,
     },
   });
 };
-export const updateUser = async (
-  idToken: string,
-  data: UpdateUserSchemaType
-) => {
+export const updateUser = async (data: UpdateUserSchemaType) => {
+  const token = await getTokenId();
+
   return await api.post(`/user/update`, data, {
     headers: {
-      Authorization: `Bearer ${idToken}`,
+      Authorization: `Bearer ${token}`,
     },
   });
 };

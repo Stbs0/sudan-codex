@@ -1,13 +1,8 @@
 import Axios, { InternalAxiosRequestConfig } from "axios";
-import { auth } from "./firebase";
 
 async function authRequestInterceptor(config: InternalAxiosRequestConfig) {
   if (config.headers) {
     config.headers.Accept = "application/json";
-    const token = auth.currentUser && (await auth.currentUser.getIdToken());
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
   }
 
   return config;
