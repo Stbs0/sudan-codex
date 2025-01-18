@@ -7,6 +7,7 @@ import { Toaster } from "sonner";
 
 import { AppSidebar } from "@/components/MainLayout/app-sidebar";
 import useAuth from "@/hooks/useAuth";
+import DevAlert from "@/components/DevAlert";
 
 const MainLayout = () => {
   const { user } = useAuth();
@@ -25,7 +26,7 @@ const MainLayout = () => {
           expand={true}
           closeButton
         />
-
+        <DevAlert />
         <Footer />
       </div>
     </>
