@@ -6,7 +6,9 @@ import { User } from "firebase/auth";
 
 export const SaveUserInFIreStore = async (user: User, providerId: string) => {
   const token = await getTokenId();
-
+  if (!token) {
+    return null;
+  }
   await api.post(
     `/user/create`,
     {
@@ -27,12 +29,14 @@ export const SaveUserInFIreStore = async (user: User, providerId: string) => {
 };
 
 export const getTokenId = async () => {
-  return await auth.currentUser?.getIdToken();
+  return auth.currentUser && (await auth.currentUser?.getIdToken());
 };
 
 export const getUser = async () => {
   const token = await getTokenId();
-  console.log("token", token);
+  if (!token) {
+    return null;
+  }
   const data: SaveUserReturnTypes = await api.get(`/user/me`, {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -45,7 +49,9 @@ export const completeProfile = async (
   data: tellUsMoreSchemaType & { profileComplete: boolean }
 ) => {
   const token = await getTokenId();
-
+  if (!token) {
+    return null;
+  }
   return await api.post(`/user/complete-profile`, data, {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -54,7 +60,9 @@ export const completeProfile = async (
 };
 export const updateUser = async (data: UpdateUserSchemaType) => {
   const token = await getTokenId();
-
+  if (!token) {
+    return null;
+  }
   return await api.post(`/user/update`, data, {
     headers: {
       Authorization: `Bearer ${token}`,

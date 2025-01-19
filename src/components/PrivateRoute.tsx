@@ -1,22 +1,21 @@
-import { Navigate, Outlet, useLocation } from "react-router-dom";
-import useAuth from "@/hooks/useAuth";
-import SpinnerOverlay from "@/components/SpinnerOverlay";
-import useGetUser from "@/hooks/useGetUser";
+import { Navigate, Outlet, useLoaderData, useLocation } from "react-router-dom";
+
+import { SaveUserReturnTypes } from "@/types/types";
 
 /**
  * PrivateRoute component that protects routes based on user authentication
  * and profile completion status.
  */
 const PrivateRoute = () => {
-  const { loading, user } = useAuth();
+  const user = useLoaderData() as SaveUserReturnTypes;
   const location = useLocation();
-  const { data, error, isError, isLoading } = useGetUser();
+  // const { data, error, isError, isLoading } = useGetUser();
   // console.log(data)
 
   // Show a loading spinner while user data or profile data is being fetched
-  if (loading || isLoading) {
-    return <SpinnerOverlay />;
-  }
+  // if (loading) {
+  //   return <SpinnerOverlay />;
+  // }
 
   // Redirect to login if the user is not authenticated
   if (!user) {
@@ -29,7 +28,7 @@ const PrivateRoute = () => {
   }
 
   // Redirect to profile if user-info path is accessed and profile is complete
-  if (location.pathname === "/user-info" && data?.profileComplete === true) {
+  if (location.pathname === "/user-info" && user?.profileComplete === true) {
     return (
       <Navigate
         to='/profile'
@@ -39,7 +38,7 @@ const PrivateRoute = () => {
   }
 
   // Redirect to user-info if accessing any other path and profile is incomplete
-  if (location.pathname !== "/user-info" && data?.profileComplete === false) {
+  if (location.pathname !== "/user-info" && user?.profileComplete === false) {
     return (
       <Navigate
         to='/user-info'
@@ -49,7 +48,7 @@ const PrivateRoute = () => {
   }
 
   // Render child components with user profile context
-  return <Outlet context={{ data, error, isError, isLoading }} />;
+  return <Outlet context={{ user }} />;
 };
 
 export default PrivateRoute;

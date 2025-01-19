@@ -15,8 +15,8 @@ const item = {
   visible: { opacity: 1, translateY: 0 },
 };
 export function Hero() {
-  const MotionButton = motion(Button);
-  const MotionPill = motion(Pill);
+  const MotionButton = motion.create(Button);
+  const MotionPill = motion.create(Pill);
   return (
     <motion.section
       className='py-20 text-center'

@@ -6,7 +6,7 @@ import useAuth from "./useAuth";
 const useGetUser = () => {
   const { user } = useAuth();
   const { isLoading, isError, data, error } = useQuery({
-    queryKey: ["user"],
+    queryKey: ["user", user?.uid],
     queryFn: async () => {
       return await getUser();
     },

@@ -1,10 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 
+import ErrorElement from "@/components/ErrorElement";
 import PrivateRoute from "@/components/PrivateRoute";
 import MainLayout from "@/layouts/MainLayout";
 import drugDB from "@/lib/indexedDB";
 import GlobalError from "@/pages/GlobalError";
-import ErrorElement from "@/components/ErrorElement";
+import { getUser } from "@/services/usersServices";
+import { queryClient } from "./queryQlient";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +15,6 @@ const router = createBrowserRouter([
 
     children: [
       {
-        path: "*",
         lazy: async () => {
           const { default: NotFound } = await import("@/components/NotFound");
           return { Component: NotFound };
@@ -53,6 +54,14 @@ const router = createBrowserRouter([
       {
         element: <PrivateRoute />,
         ErrorBoundary: ErrorElement,
+        loader: async () => {
+          const user = await queryClient.fetchQuery({
+            queryKey: ["user"],
+
+            queryFn: async () => await getUser(),
+          });
+          return user;
+        },
         children: [
           {
             path: "/drug-list/:no",

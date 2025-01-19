@@ -9,6 +9,8 @@ import { AppSidebar } from "@/components/MainLayout/app-sidebar";
 import useAuth from "@/hooks/useAuth";
 import DevAlert from "@/components/DevAlert";
 import { AnimatePresence, motion } from "motion/react";
+import { Suspense } from "react";
+import SpinnerOverlay from "@/components/SpinnerOverlay";
 
 const MainLayout = () => {
   const location = useLocation();
@@ -29,7 +31,9 @@ const MainLayout = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}>
-            <Outlet />
+            <Suspense fallback={<SpinnerOverlay />}>
+              <Outlet />
+            </Suspense>
           </motion.main>
         </AnimatePresence>
         <Toaster
