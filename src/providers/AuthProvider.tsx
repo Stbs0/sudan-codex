@@ -10,11 +10,16 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [user, setUser] = useState<User | null>(auth.currentUser);
   const [loading, setLoading] = useState(true);
-
+  // console.log("App render: AuthProvider initialized");
   useEffect(() => {
     setLoading(true);
+    // console.log("Loading", loading);
+
     const unsubscribe = onAuthStateChanged(auth, (user) => {
+      // console.log("onAuthStateChanged triggered:", user);
+
       setUser(user);
+      // console.log("Loading",loading)
       setLoading(false);
       if (user) {
         queryClient.prefetchQuery({
@@ -27,7 +32,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     });
 
     return unsubscribe;
-  }, []);
+  }, [auth]);
 
   return (
     <AuthContext.Provider value={{ user, loading }}>

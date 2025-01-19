@@ -10,7 +10,6 @@ const useGetUser = () => {
     queryFn: async () => {
       return await getUser();
     },
-    enabled: !!user,
   });
 
   return { isLoading, isError, data, error };
