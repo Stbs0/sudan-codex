@@ -13,9 +13,9 @@ const listItems = {
 type Props = {
   drug: Drug;
 };
+const CardMotion = motion.create(Card);
 export const ListItem = memo(({ drug }: Props) => {
   const navigate = useNavigate();
-  const CardMotion = motion.create(Card);
   const MemoizedChevronRight = useMemo(() => <ChevronRight />, []);
   console.count();
   return (
@@ -25,7 +25,7 @@ export const ListItem = memo(({ drug }: Props) => {
       onClick={() => {
         navigate(`/drug-list/${drug.no}`);
       }}>
-      <CardTitle className='py-2 pl-6 pt-4 uppercase'>
+      <CardTitle className='py-2 pt-4 pl-6 uppercase'>
         <span className='font-bold'>{drug.brandName}</span>
         <span className='ml-2 text-sm font-normal'>{drug.strength}</span>
 

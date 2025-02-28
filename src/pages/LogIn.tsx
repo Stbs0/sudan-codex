@@ -13,7 +13,6 @@ import { signIn } from "@/services/authServices";
 import { FormProvider, useForm } from "react-hook-form";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import { FirebaseError } from "@firebase/util";
 import { SaveUserInFIreStore } from "@/services/usersServices";
 import GoogleOAuth from "@/components/auth/GoogleOAuth";
 import FaceBookOAuth from "@/components/auth/FaceBookOAuth";
@@ -21,6 +20,7 @@ import useAuth from "@/hooks/useAuth";
 import { getAdditionalUserInfo } from "firebase/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { logInSchema, LogInSchemaType } from "@/lib/schemas";
+import { FirebaseError } from "firebase/app";
 
 const Login = () => {
   const navigate = useNavigate();
