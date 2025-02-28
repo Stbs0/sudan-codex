@@ -1,6 +1,6 @@
 const Policy = () => {
   return (
-    <main className='container prose prose-lg mx-auto max-w-4xl px-4 py-8 dark:prose-invert'>
+    <main className='prose prose-lg dark:prose-invert container mx-auto max-w-4xl px-4 py-8'>
       <h1 className='mb-4 text-3xl font-bold'>Privacy Policy</h1>
       <p className='mb-8 text-sm text-gray-600 dark:text-gray-400'>
         Last updated: December 26, 2024
@@ -23,7 +23,7 @@ const Policy = () => {
         </a>
         .
       </p>
-      <h2 className='mb-4 mt-8 text-2xl font-semibold'>
+      <h2 className='mt-8 mb-4 text-2xl font-semibold'>
         Interpretation and Definitions
       </h2>
       <h3>Interpretation</h3>
@@ -142,7 +142,7 @@ const Policy = () => {
           </p>
         </li>
       </ul>
-      <h2 className='mb-4 mt-8 text-2xl font-semibold'>
+      <h2 className='mt-8 mb-4 text-2xl font-semibold'>
         Collecting and Using Your Personal Data
       </h2>
       <h3>Types of Data Collected</h3>
@@ -543,7 +543,7 @@ const Policy = () => {
         means to protect Your Personal Data, We cannot guarantee its absolute
         security.
       </p>
-      <h2 className='mb-4 mt-8 text-2xl font-semibold'>Children's Privacy</h2>
+      <h2 className='mt-8 mb-4 text-2xl font-semibold'>Children's Privacy</h2>
       <p className='mb-8 text-sm text-gray-600 dark:text-gray-400'>
         Our Service does not address anyone under the age of 13. We do not
         knowingly collect personally identifiable information from anyone under
@@ -559,7 +559,7 @@ const Policy = () => {
         require Your parent's consent before We collect and use that
         information.
       </p>
-      <h2 className='mb-4 mt-8 text-2xl font-semibold'>
+      <h2 className='mt-8 mb-4 text-2xl font-semibold'>
         Links to Other Websites
       </h2>
       <p className='mb-8 text-sm text-gray-600 dark:text-gray-400'>
@@ -572,7 +572,7 @@ const Policy = () => {
         We have no control over and assume no responsibility for the content,
         privacy policies or practices of any third party sites or services.
       </p>
-      <h2 className='mb-4 mt-8 text-2xl font-semibold'>
+      <h2 className='mt-8 mb-4 text-2xl font-semibold'>
         Changes to this Privacy Policy
       </h2>
       <p className='mb-8 text-sm text-gray-600 dark:text-gray-400'>
@@ -589,7 +589,7 @@ const Policy = () => {
         changes. Changes to this Privacy Policy are effective when they are
         posted on this page.
       </p>
-      <h2 className='mb-4 mt-8 text-2xl font-semibold'>Contact Us</h2>
+      <h2 className='mt-8 mb-4 text-2xl font-semibold'>Contact Us</h2>
       <p className='mb-8 text-sm text-gray-600 dark:text-gray-400'>
         If you have any questions about this Privacy Policy, You can contact us:
       </p>

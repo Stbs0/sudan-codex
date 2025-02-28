@@ -7,7 +7,7 @@ import Github from "../../assets/icons/github.svg";
 const Footer = () => {
   console.log("first");
   return (
-    <footer className='flex items-center justify-center gap-5 bg-primary p-2 text-center text-[#fff] dark:bg-purple-900'>
+    <footer className='bg-primary flex items-center justify-center gap-5 p-2 text-center text-[#fff] dark:bg-purple-900'>
       <div className='flex justify-center gap-4'>
         <a
           href='https://github.com/Stbs0'

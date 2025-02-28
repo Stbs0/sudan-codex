@@ -2,7 +2,6 @@ import { ListItem } from "@/components/drugList/ListItem";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
-import { debounce } from "lodash";
 import { useCallback, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 
@@ -15,12 +14,9 @@ const DrugList = () => {
   const [search, setSearch] = useState("");
   const { loadMore, hasMore, drugList } = useInfiniteScroll(search);
 
-  const handleSearchChange = useCallback(
-    debounce((e: React.ChangeEvent<HTMLInputElement>) => {
-      setSearch(e.target.value);
-    }, 300),
-    []
-  );
+  const handleSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  };
 
   const memoizedLoadMore = useCallback(() => {
     loadMore();
@@ -36,7 +32,7 @@ const DrugList = () => {
           className='rounded-3xl shadow-xs shadow-purple-300 placeholder:text-xs'
           placeholder='generic, brand, company name'
           value={search}
-          onChange={handleSearchChange}
+          onChange={handleSearchInput}
         />
       </div>
 

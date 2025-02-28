@@ -10,7 +10,7 @@ const DevAlert = () => {
     <AnimatePresence>
       {show && (
         <motion.div
-          className='fixed bottom-4 right-4 z-50 w-80'
+          className='fixed right-4 bottom-4 z-50 w-80'
           initial={{
             opacity: 0,
             translateX: 200,

@@ -10,7 +10,7 @@ export default defineConfig({
     setupFiles: "./tests/vitest-setup.ts",
   },
   envDir: "./envDir",
-  plugins: [react(),],
+  plugins: [react()],
   build: {
     chunkSizeWarningLimit: 1600,
   },
