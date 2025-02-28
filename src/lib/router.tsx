@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import ErrorElement from "@/components/ErrorElement";
 import PrivateRoute from "@/components/PrivateRoute";
 import MainLayout from "@/layouts/MainLayout";
 import drugDB from "@/lib/indexedDB";
@@ -51,7 +50,7 @@ const router = createBrowserRouter([
 
       {
         element: <PrivateRoute />,
-        ErrorBoundary: ErrorElement,
+        // ErrorBoundary: ErrorElement,
 
         children: [
           {

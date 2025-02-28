@@ -13,7 +13,7 @@ export const useInfiniteScroll = (search?: string) => {
     const limit = page * PAGE_SIZE;
 
     if (search) {
-      return await query
+      const data = await query
         .where("genericName")
         .startsWithIgnoreCase(search)
         .or("brandName")
@@ -25,6 +25,7 @@ export const useInfiniteScroll = (search?: string) => {
         .then((data) =>
           data.sort((a, b) => a.brandName.localeCompare(b.brandName))
         );
+      return data.sort((a, b) => a.brandName.localeCompare(b.brandName));
     }
 
     return await query

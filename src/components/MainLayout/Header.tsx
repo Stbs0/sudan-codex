@@ -4,6 +4,7 @@ import { ModeToggle } from "./mode-toggle";
 
 import useAuth from "@/hooks/useAuth";
 
+import { memo } from "react";
 import { SidebarTrigger } from "../ui/sidebar";
 import { Skeleton } from "../ui/skeleton";
 import Logo from "./Logo";
@@ -11,7 +12,7 @@ import ProfilePic from "./ProfilePic";
 import UnauthorizedUserBtns from "./UnauthorizedUserBtns";
 // import { useIsMobile } from "@/hooks/use-mobile";
 
-const Header = () => {
+const Header = memo(() => {
   // Add a context  for the window width from MainContent
   // const isMobile = useIsMobile();
   const { user, loading } = useAuth();
@@ -40,6 +41,6 @@ const Header = () => {
       </div>
     </header>
   );
-};
+});
 
 export default Header;

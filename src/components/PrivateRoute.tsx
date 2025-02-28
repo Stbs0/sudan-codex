@@ -17,7 +17,6 @@ const PrivateRoute = () => {
   if (loading) {
     return <SpinnerOverlay />;
   }
-  console.log("PrivateRoute", user);
   // Redirect to login if the user is not authenticated
   if (!user) {
     return (

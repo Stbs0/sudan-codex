@@ -5,6 +5,7 @@ import X from "../../assets/icons/x.svg";
 import Github from "../../assets/icons/github.svg";
 
 const Footer = () => {
+  console.log("first");
   return (
     <footer className='flex items-center justify-center gap-5 bg-primary p-2 text-center text-[#fff] dark:bg-purple-900'>
       <div className='flex justify-center gap-4'>

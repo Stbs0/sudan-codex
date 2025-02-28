@@ -1,17 +1,26 @@
-import { Card, CardContent, CardTitle } from "../ui/card";
 import { Drug } from "@/types/types";
-import { Button } from "../ui/button";
 import { ChevronRight } from "lucide-react";
+import { motion } from "motion/react";
+import { memo, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
+import { Button } from "../ui/button";
+import { Card, CardContent, CardTitle } from "../ui/card";
 // import { useNavigate } from "react-router-dom";
-
+const listItems = {
+  hidden: { opacity: 0, x: -20 },
+  visible: { opacity: 1, x: 0 },
+};
 type Props = {
   drug: Drug;
 };
-export const ListItem = ({ drug }: Props) => {
+export const ListItem = memo(({ drug }: Props) => {
   const navigate = useNavigate();
+  const CardMotion = motion.create(Card);
+  const MemoizedChevronRight = useMemo(() => <ChevronRight />, []);
+  console.count();
   return (
-    <Card
+    <CardMotion
+      variants={listItems}
       className='rounded-none border-4 border-transparent border-l-indigo-700 bg-purple-100/50 hover:bg-purple-100/90 dark:bg-purple-800/50 dark:hover:bg-purple-800/90'
       onClick={() => {
         navigate(`/drug-list/${drug.no}`);
@@ -46,11 +55,9 @@ export const ListItem = ({ drug }: Props) => {
           </div>
         </div>
         <div className='flex items-center'>
-          <Button>
-            <ChevronRight />
-          </Button>
+          <Button>{MemoizedChevronRight}</Button>
         </div>
       </CardContent>
-    </Card>
+    </CardMotion>
   );
-};
+});
