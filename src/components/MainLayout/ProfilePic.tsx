@@ -52,7 +52,7 @@ const ProfilePic = () => {
           <Link to={"/profile"}>
             <Button
               variant={"link"}
-              className='w-full outline-none'>
+              className='w-full outline-hidden'>
               Profile
             </Button>
           </Link>

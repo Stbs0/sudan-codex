@@ -1,6 +1,129 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin 'tailwindcss-animate';
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --color-primary: #7400b8;
+  --color-accent: #6930c3;
+  --color-info: #5e60ce;
+  --color-success: #5390d9;
+  --color-warning: #4ea8de;
+  --color-danger: #48bfe3;
+  --color-light: #56cfe1;
+  --color-muted: #64dfdf;
+  --color-secondary: #72efdd;
+  --color-tertiary: #80ffdb;
+
+  --color-c_federal_blue-100: #010113;
+  --color-c_federal_blue-200: #010226;
+  --color-c_federal_blue-300: #020338;
+  --color-c_federal_blue-400: #02044b;
+  --color-c_federal_blue-500: #03045e;
+  --color-c_federal_blue-600: #0508ae;
+  --color-c_federal_blue-700: #0f12f8;
+  --color-c_federal_blue-800: #5f61fa;
+  --color-c_federal_blue-900: #afb0fd;
+  --color-c_federal_blue: #03045e;
+
+  --color-c_honolulu_blue-100: #001825;
+  --color-c_honolulu_blue-200: #003049;
+  --color-c_honolulu_blue-300: #00486e;
+  --color-c_honolulu_blue-400: #005f93;
+  --color-c_honolulu_blue-500: #0077b6;
+  --color-c_honolulu_blue-600: #00a2f9;
+  --color-c_honolulu_blue-700: #3bbaff;
+  --color-c_honolulu_blue-800: #7cd1ff;
+  --color-c_honolulu_blue-900: #bee8ff;
+  --color-c_honolulu_blue: #0077b6;
+
+  --color-c_pacific_cyan-100: #00242b;
+  --color-c_pacific_cyan-200: #004756;
+  --color-c_pacific_cyan-300: #006b81;
+  --color-c_pacific_cyan-400: #008fab;
+  --color-c_pacific_cyan-500: #00b4d8;
+  --color-c_pacific_cyan-600: #12d8ff;
+  --color-c_pacific_cyan-700: #4ee1ff;
+  --color-c_pacific_cyan-800: #89ebff;
+  --color-c_pacific_cyan-900: #c4f5ff;
+  --color-c_pacific_cyan: #00b4d8;
+
+  --color-c_non_photo_blue-100: #0a3a43;
+  --color-c_non_photo_blue-200: #137586;
+  --color-c_non_photo_blue-300: #1dafc9;
+  --color-c_non_photo_blue-400: #4ccfe6;
+  --color-c_non_photo_blue-500: #90e0ef;
+  --color-c_non_photo_blue-600: #a6e7f2;
+  --color-c_non_photo_blue-700: #bcedf5;
+  --color-c_non_photo_blue-800: #d2f3f9;
+  --color-c_non_photo_blue-900: #e9f9fc;
+  --color-c_non_photo_blue: #90e0ef;
+
+  --color-c_light_cyan-100: #0a444f;
+  --color-c_light_cyan-200: #15889f;
+  --color-c_light_cyan-300: #2ac4e3;
+  --color-c_light_cyan-400: #79daee;
+  --color-c_light_cyan-500: #caf0f8;
+  --color-c_light_cyan-600: #d4f3f9;
+  --color-c_light_cyan-700: #dff6fb;
+  --color-c_light_cyan-800: #e9f9fc;
+  --color-c_light_cyan-900: #f4fcfe;
+  --color-c_light_cyan: #caf0f8;
+
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
 @layer base {
   :root {
     --radius: 0.5rem;

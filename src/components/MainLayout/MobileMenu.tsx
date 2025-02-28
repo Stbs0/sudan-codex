@@ -18,7 +18,7 @@ function MobileMenu() {
       <SheetTrigger>
         <MenuIcon className='h-6 w-6 text-white' />
       </SheetTrigger>
-      <SheetContent className='w-[40%] bg-white/70 backdrop-blur-sm dark:bg-neutral-950/60'>
+      <SheetContent className='w-[40%] bg-white/70 backdrop-blur-xs dark:bg-neutral-950/60'>
         {/* TODO: add logo and and name of the project */}
         <SheetHeader>
           <SheetTitle>Menu</SheetTitle>

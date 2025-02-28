@@ -3,21 +3,13 @@ import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
 import { debounce } from "lodash";
-import { motion } from "motion/react";
 import { useCallback, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-
-const variants = {
-  visible: {
-    transition: { staggerChildren: 1 },
-  },
-};
 
 // const itemVariants = {
 //   hidden: { opacity: 0, y: 20 },
 //   visible: { opacity: 1, y: 0 },
 // };
-const MotionListItem = motion.create(InfiniteScroll);
 
 const DrugList = () => {
   const [search, setSearch] = useState("");
@@ -41,16 +33,16 @@ const DrugList = () => {
       <div className='grid gap-2 py-2'>
         <p className='text-2xl'>Search a Drug</p>
         <Input
-          className='rounded-3xl shadow-sm shadow-purple-300 placeholder:text-xs'
+          className='rounded-3xl shadow-xs shadow-purple-300 placeholder:text-xs'
           placeholder='generic, brand, company name'
           value={search}
           onChange={handleSearchChange}
         />
       </div>
 
-      <MotionListItem
-        variants={variants}
-        className='min-w-md flex max-w-lg flex-col gap-4'
+      <InfiniteScroll
+        // variants={variants}
+        className='flex max-w-lg min-w-md flex-col gap-4'
         dataLength={drugList ? drugList.length : 0}
         next={memoizedLoadMore}
         hasMore={hasMore}
@@ -68,7 +60,7 @@ const DrugList = () => {
                 className='h-24 w-full'
               />
             ))}
-      </MotionListItem>
+      </InfiniteScroll>
     </div>
   );
 };
