@@ -21,8 +21,8 @@ export class DrugIndex extends Dexie {
     return false;
   }
   // Method to populate the database
-  async populate() {
-    const { default: data } = await import("@/assets/data/drugData.json");
+  async populate(data: Drug[]) {
+    console.log("drugs", data);
     await this.drugList.bulkAdd(data);
     console.log("Database populated with initial data");
   }

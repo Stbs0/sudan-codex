@@ -36,7 +36,12 @@ const DrugList = () => {
         hasMore={hasMore}
         loader={<h4>Loading...</h4>}>
         {drugList
-          ? drugList.map((drug) => <ListItem drug={drug} />)
+          ? drugList.map((drug) => (
+              <ListItem
+                key={drug.no}
+                drug={drug}
+              />
+            ))
           : [...Array(10)].map((_, index) => (
               <Skeleton
                 key={index}

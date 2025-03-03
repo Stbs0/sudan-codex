@@ -1,6 +1,7 @@
 import { OPENFDA_SEARCH_URL } from "@/constants";
+import api from "@/lib/api";
 import { getOpenFdaSearchUrl, parseQuery } from "@/lib/utils";
-import { FetchedDrugInfo } from "@/types/types";
+import { Drug, FetchedDrugInfo } from "@/types/types";
 import axios from "axios";
 
 export const getDrugInfo = async (
@@ -26,4 +27,9 @@ export const getDrugInfo = async (
     console.log(error);
     throw error;
   }
+};
+
+export const fetchDrugList = async () => {
+  const drugList: Drug[] = await api.get("/drug-list");
+  return drugList;
 };

@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import drugDB from "./lib/indexedDB";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryQlient";
+import { fetchDrugList } from "./services/drugServices";
 
 const App = () => {
   useEffect(() => {
@@ -16,7 +17,8 @@ const App = () => {
       if (ignore) return;
       const isExists = await drugDB.isExists();
       if (isExists === false) {
-        await drugDB.populate();
+        const drugList = await fetchDrugList();
+        await drugDB.populate(drugList);
         ignore = true;
       }
     };

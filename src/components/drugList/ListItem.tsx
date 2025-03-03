@@ -10,9 +10,8 @@ type Props = {
   drug: Drug;
 };
 export const ListItem = memo(({ drug }: Props) => {
-  const navigate = useNavigate();
   const MemoizedChevronRight = useMemo(() => <ChevronRight />, []);
-  console.count();
+  const navigate = useNavigate();
   return (
     <Card
       className='rounded-none border-4 border-transparent border-l-indigo-700 bg-purple-100/50 hover:bg-purple-100/90 dark:bg-purple-800/50 dark:hover:bg-purple-800/90'
