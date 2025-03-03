@@ -1,63 +1,53 @@
 import { Drug } from "@/types/types";
 import { ChevronRight } from "lucide-react";
-import { motion } from "motion/react";
 import { memo, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
-import { Card, CardContent, CardTitle } from "../ui/card";
-// import { useNavigate } from "react-router-dom";
-const listItems = {
-  hidden: { opacity: 0, x: -20 },
-  visible: { opacity: 1, x: 0 },
-};
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import ListDescription from "./ListDescription";
+
 type Props = {
   drug: Drug;
 };
-const CardMotion = motion.create(Card);
 export const ListItem = memo(({ drug }: Props) => {
   const navigate = useNavigate();
   const MemoizedChevronRight = useMemo(() => <ChevronRight />, []);
   console.count();
   return (
-    <CardMotion
-      variants={listItems}
+    <Card
       className='rounded-none border-4 border-transparent border-l-indigo-700 bg-purple-100/50 hover:bg-purple-100/90 dark:bg-purple-800/50 dark:hover:bg-purple-800/90'
       onClick={() => {
         navigate(`/drug-list/${drug.no}`);
       }}>
-      <CardTitle className='py-2 pt-4 pl-6 uppercase'>
-        <span className='font-bold'>{drug.brandName}</span>
-        <span className='ml-2 text-sm font-normal'>{drug.strength}</span>
+      <CardHeader>
+        <CardTitle className='uppercase'>
+          <span className='font-bold'>{drug.brandName}</span>
+          <span className='ml-2 text-sm font-normal'>{drug.strength}</span>
+          <span className='ml-1 text-sm font-normal'>
+            {drug.dosageFormName}
+          </span>
+        </CardTitle>
+      </CardHeader>
 
-        <span className='ml-1 text-sm font-normal'>{drug.dosageFormName}</span>
-      </CardTitle>
-
-      <CardContent className='flex pb-2'>
+      <CardContent className='flex'>
         <div className='flex-1'>
-          <div className='text-xs'>
-            <span className='font-semibold'>Generic: </span>
-            <span className='text-gray-600 dark:text-gray-300'>
-              {" "}
-              {drug.genericName}
-            </span>
-          </div>
-          <div className='text-xs'>
-            <span className='font-semibold'>Company: </span>
-            <span className='text-gray-600 dark:text-gray-300'>
-              {drug.companyName}
-            </span>
-          </div>
-          <div className='text-xs'>
-            <span className='font-semibold'>Agency: </span>
-            <span className='text-gray-600 dark:text-gray-300'>
-              {drug.agentName}
-            </span>
-          </div>
+          <ListDescription
+            title='Generic'
+            text={drug.genericName}
+          />
+          <ListDescription
+            title='Agency'
+            text={drug.agentName}
+          />
+          <ListDescription
+            title='Company'
+            text={drug.companyName}
+          />
         </div>
         <div className='flex items-center'>
           <Button>{MemoizedChevronRight}</Button>
         </div>
       </CardContent>
-    </CardMotion>
+    </Card>
   );
 });

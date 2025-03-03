@@ -1,43 +1,25 @@
 import drugDB from "@/lib/indexedDB";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
+
 import { useLiveQuery } from "dexie-react-hooks";
 
 const PAGE_SIZE = 20;
-const DEBOUNCE_DELAY = 300; // Adjust the delay as needed
 
 export const useInfiniteScroll = (search?: string) => {
   const [page, setPage] = useState(1);
-  const [debouncedSearch, setDebouncedSearch] = useState(search);
-  const debounceTimeout = useRef<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    if (debounceTimeout.current) {
-      clearTimeout(debounceTimeout.current);
-    }
-
-    debounceTimeout.current = setTimeout(() => {
-      setDebouncedSearch(search);
-    }, DEBOUNCE_DELAY);
-
-    return () => {
-      if (debounceTimeout.current) {
-        clearTimeout(debounceTimeout.current);
-      }
-    };
-  }, [search]);
 
   const drugList = useLiveQuery(async () => {
     const query = drugDB.drugList;
     const limit = page * PAGE_SIZE;
 
-    if (debouncedSearch) {
+    if (search) {
       const data = await query
         .where("genericName")
-        .startsWithIgnoreCase(debouncedSearch)
+        .startsWithIgnoreCase(search)
         .or("brandName")
-        .startsWithIgnoreCase(debouncedSearch)
+        .startsWithIgnoreCase(search)
         .or("companyName")
-        .startsWithIgnoreCase(debouncedSearch)
+        .startsWithIgnoreCase(search)
         .limit(limit)
         .toArray()
         .then((data) =>
@@ -52,7 +34,7 @@ export const useInfiniteScroll = (search?: string) => {
       .then((data) =>
         data.sort((a, b) => a.brandName.localeCompare(b.brandName))
       );
-  }, [debouncedSearch, page]);
+  }, [search, page]);
 
   const hasMore = !!drugList && drugList.length >= page * PAGE_SIZE;
 

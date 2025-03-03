@@ -5,11 +5,6 @@ import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
 import { useCallback, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-// const itemVariants = {
-//   hidden: { opacity: 0, y: 20 },
-//   visible: { opacity: 1, y: 0 },
-// };
-
 const DrugList = () => {
   const [search, setSearch] = useState("");
   const { loadMore, hasMore, drugList } = useInfiniteScroll(search);
@@ -22,10 +17,8 @@ const DrugList = () => {
     loadMore();
   }, [loadMore]);
 
-  // const MemoListItem = useMemo(() => <ListItem />, []);
-
   return (
-    <div className='grid items-center justify-center gap-4 dark:text-gray-100'>
+    <div className='mx-auto grid max-w-2xl items-center gap-4 px-3 dark:text-gray-100'>
       <div className='grid gap-2 py-2'>
         <p className='text-2xl'>Search a Drug</p>
         <Input
@@ -37,23 +30,17 @@ const DrugList = () => {
       </div>
 
       <InfiniteScroll
-        // variants={variants}
-        className='flex max-w-lg min-w-md flex-col gap-4'
+        className='flex w-full flex-col gap-4'
         dataLength={drugList ? drugList.length : 0}
         next={memoizedLoadMore}
         hasMore={hasMore}
         loader={<h4>Loading...</h4>}>
         {drugList
-          ? drugList.map((drug) => (
-              <ListItem
-                drug={drug}
-                key={drug.no}
-              />
-            ))
+          ? drugList.map((drug) => <ListItem drug={drug} />)
           : [...Array(10)].map((_, index) => (
               <Skeleton
                 key={index}
-                className='h-24 w-full'
+                className='h-full w-full'
               />
             ))}
       </InfiniteScroll>
