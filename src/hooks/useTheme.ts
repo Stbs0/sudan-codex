@@ -1,4 +1,4 @@
-import { ThemeProviderContext } from "@/providers/theme-provider";
+import { ThemeProviderContext } from "@/contexts";
 import { ThemeProviderState } from "@/types/types";
 import { useContext } from "react";
 
