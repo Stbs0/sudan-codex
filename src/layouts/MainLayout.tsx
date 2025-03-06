@@ -19,7 +19,10 @@ const MainLayout = () => {
     const showDev = sessionStorage.getItem("showDev");
     if (!showDev) {
       toast.info(
-        "This website is still in development; some features may not work as expected."
+        "This website is still in development; some features may not work as expected.",
+        {
+          duration: 10000,
+        }
       );
       sessionStorage.setItem("showDev", "true");
     }
