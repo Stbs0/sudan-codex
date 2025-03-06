@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+// import { motion } from "motion/react";
 import { JSX, useEffect, useRef } from "react";
 
 /**
@@ -16,12 +16,12 @@ interface InfiniteScrollProps<T> {
   renderItem: (item: T, index: number) => React.ReactNode;
 }
 
-const variants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: { transition: { staggerChildren: 1 }, opacity: 1 },
-};
+// const variants = {
+//   hidden: {
+//     opacity: 0,
+//   },
+//   visible: { transition: { staggerChildren: 1 }, opacity: 1 },
+// };
 
 /**
  * InfiniteScroll component to handle infinite scrolling of data. needs refactoring
@@ -55,17 +55,7 @@ export function InfiniteScroll<T>({
 
   return (
     <div className='flex flex-col gap-4'>
-      {data?.map((item, index) => (
-        <motion.div
-          key={index}
-          variants={variants}
-          animate={{ transition: { staggerChildren: 1 }, opacity: 1 }}
-          initial={{
-            opacity: 0,
-          }}>
-          {renderItem(item, index)}
-        </motion.div>
-      ))}
+      {data?.map((item, index) => <div>{renderItem(item, index)}</div>)}
       {hasMore && (
         <div
           ref={observerRef}

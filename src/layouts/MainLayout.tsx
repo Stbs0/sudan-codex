@@ -7,10 +7,10 @@ import { Toaster } from "sonner";
 
 import { AppSidebar } from "@/components/MainLayout/app-sidebar";
 import useAuth from "@/hooks/useAuth";
-import DevAlert from "@/components/DevAlert";
-import { AnimatePresence, motion } from "motion/react";
-import { Suspense } from "react";
+// import DevAlert from "@/components/DevAlert";
+// import { AnimatePresence, motion } from "motion/react";
 import SpinnerOverlay from "@/components/SpinnerOverlay";
+import { Suspense } from "react";
 
 const MainLayout = () => {
   const location = useLocation();
@@ -24,25 +24,20 @@ const MainLayout = () => {
         {/* <main className='container mx-auto py-8'> */}
         {/* <Outlet /> */}
         {/* </main> */}
-        <AnimatePresence mode='wait'>
-          <motion.main
-            className='container mx-auto py-8'
-            key={location.pathname}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            // exit={{ opacity: 0, y:  }}
-            transition={{ duration: 0.3 }}>
-            <Suspense fallback={<SpinnerOverlay />}>
-              <Outlet />
-            </Suspense>
-          </motion.main>
-        </AnimatePresence>
+
+        <main
+          className='container mx-auto py-8'
+          key={location.pathname}>
+          <Suspense fallback={<SpinnerOverlay />}>
+            <Outlet />
+          </Suspense>
+        </main>
+
         <Toaster
           richColors
           expand={true}
           closeButton
         />
-        <DevAlert />
         <Footer />
       </div>
     </>
