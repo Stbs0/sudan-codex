@@ -1,13 +1,13 @@
 import { RouterProvider } from "react-router-dom";
 
-import router from "./lib/router";
-import ThemeProvider from "./providers/theme-provider";
-import { SidebarProvider } from "./components/ui/sidebar";
-import { AuthProvider } from "./providers/AuthProvider";
-import { useEffect } from "react";
-import drugDB from "./lib/indexedDB";
 import { QueryClientProvider } from "@tanstack/react-query";
+import { useEffect } from "react";
+import { SidebarProvider } from "./components/ui/sidebar";
+import drugDB from "./lib/indexedDB";
 import { queryClient } from "./lib/queryQlient";
+import router from "./lib/router";
+import { AuthProvider } from "./providers/AuthProvider";
+import ThemeProvider from "./providers/theme-provider";
 import { fetchDrugList } from "./services/drugServices";
 
 const App = () => {

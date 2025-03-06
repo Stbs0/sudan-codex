@@ -3,18 +3,27 @@ import Header from "@/components/MainLayout/Header";
 import Footer from "@/components/MainLayout/Footer";
 import { Outlet, useLocation } from "react-router-dom";
 
-import { Toaster } from "sonner";
+import { toast, Toaster } from "sonner";
 
 import { AppSidebar } from "@/components/MainLayout/app-sidebar";
 import useAuth from "@/hooks/useAuth";
 // import DevAlert from "@/components/DevAlert";
 // import { AnimatePresence, motion } from "motion/react";
 import SpinnerOverlay from "@/components/SpinnerOverlay";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 
 const MainLayout = () => {
   const location = useLocation();
   const { user } = useAuth();
+  useEffect(() => {
+    const showDev = sessionStorage.getItem("showDev");
+    if (!showDev) {
+      toast.info(
+        "This website is still in development; some features may not work as expected."
+      );
+      sessionStorage.setItem("showDev", "true");
+    }
+  }, []);
   return (
     <>
       {user && <AppSidebar />}

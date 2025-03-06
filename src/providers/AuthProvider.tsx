@@ -16,19 +16,20 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     // console.log("Loading", loading);
 
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      // console.log("onAuthStateChanged triggered:", user);
-
-      setUser(user);
-      // console.log("Loading",loading)
-      setLoading(false);
       if (user) {
+        setUser(user);
+
         queryClient.prefetchQuery({
           queryKey: ["user", user.uid],
           queryFn: async () => {
             return await getUser();
           },
         });
+      } else {
+        setUser(null);
       }
+
+      setLoading(false);
     });
 
     return unsubscribe;

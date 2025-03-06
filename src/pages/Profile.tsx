@@ -35,7 +35,6 @@ export default function Profile() {
     }
     mutate(touchedFields);
   };
-  console.log(errors);
 
   return (
     <main>
