@@ -19,13 +19,14 @@ import {
 
 export function AutoComplete({
   options,
-  name,
+  setRoute,
+  route,
 }: {
   options: string[];
-  name: string;
+  setRoute: React.Dispatch<React.SetStateAction<string>>;
+  route: string;
 }) {
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
 
   return (
     <Popover
@@ -36,34 +37,31 @@ export function AutoComplete({
           variant='outline'
           role='combobox'
           aria-expanded={open}
-          className='w-[200px] justify-between'>
-          {value
-            ? options.find((option) => option === value)
+          className='w-xs justify-between'>
+          {route
+            ? options.find((option) => option === route)
             : "Select select route..."}
           <ChevronsUpDown className='ml-2 h-4 w-4 shrink-0 opacity-50' />
         </Button>
       </PopoverTrigger>
       <PopoverContent className='w-[200px] p-0'>
         <Command>
-          <CommandInput
-            placeholder='Search framework...'
-            name={name}
-          />
+          <CommandInput placeholder='Search route...' />
           <CommandList>
-            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandEmpty>No route found.</CommandEmpty>
             <CommandGroup>
               {options.map((option) => (
                 <CommandItem
                   key={option}
                   value={option}
                   onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue);
+                    setRoute(currentValue === route ? "" : currentValue);
                     setOpen(false);
                   }}>
                   <Check
                     className={cn(
                       "mr-2 h-4 w-4",
-                      value === option ? "opacity-100" : "opacity-0"
+                      route === option ? "opacity-100" : "opacity-0"
                     )}
                   />
                   {option}

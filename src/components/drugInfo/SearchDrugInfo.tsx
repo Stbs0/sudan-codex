@@ -1,10 +1,10 @@
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
-import { useState } from "react";
 import { DRUG_ROUTES } from "@/constants";
+import { useState } from "react";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 
-import { SelectScrollable } from "../drugList/SelectRoute";
+import { AutoComplete } from "../ui/autocomplete";
 
 const SearchDrugInfo = ({
   handleSubmit,
@@ -15,11 +15,10 @@ const SearchDrugInfo = ({
 }) => {
   const [route, setRoute] = useState("");
   return (
-    <div className='grid gap-4'>
-      <form
-        method='get'
-        className='flex flex-col items-center gap-4 md:flex-row'
-        onSubmit={(e) => handleSubmit(e, route)}>
+    <form
+      className='flex flex-col gap-4'
+      onSubmit={(e) => handleSubmit(e, route)}>
+      <div className='flex justify-center gap-2 max-md:flex-col'>
         <div className='flex flex-col gap-2'>
           <Label htmlFor='genericName'>Search By Generic Name</Label>
           <Input
@@ -28,20 +27,25 @@ const SearchDrugInfo = ({
             placeholder='Enter generic name'
             id='genericName'
             defaultValue={generic}
-          />{" "}
+            className='w-xs'
+          />
           <p className='text-xs text-gray-500'>
             Hint: try deleting the salt name from the generic name
           </p>
+        </div>
+        <div className='flex flex-col gap-2'>
           <Label htmlFor='route'> Search By Route</Label>
-          <SelectScrollable
-            options={DRUG_ROUTES}
+          <AutoComplete
             setRoute={setRoute}
+            options={DRUG_ROUTES}
+            route={route}
           />
         </div>
-
-        <Button type='submit'>Search</Button>
-      </form>
-    </div>
+      </div>
+      <div className='flex justify-center'>
+        <Button>Search</Button>
+      </div>
+    </form>
   );
 };
 
