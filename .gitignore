@@ -12,9 +12,10 @@ dist
 dist-ssr
 *.local
 .env
-
+tsconfig.node.tsbuildinfo
+tsconfig.app.tsbuildinfo
 .env.*
-
+.firebase/*
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
