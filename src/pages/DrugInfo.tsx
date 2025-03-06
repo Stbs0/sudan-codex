@@ -3,6 +3,7 @@ import DrugInfoAccordion from "@/components/drugInfo/DrugInfoAccordion";
 import SearchDrugInfo from "@/components/drugInfo/SearchDrugInfo";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 import { queryClient } from "@/lib/queryQlient";
 
@@ -17,7 +18,6 @@ const DrugInfo = () => {
 
   const [searchInputs, setSearchInputs] = useState({
     generic: drug.genericName,
-
     refetch: false,
     route: "",
   });
@@ -56,17 +56,20 @@ const DrugInfo = () => {
   };
 
   return (
-    <Card className='mx-auto max-w-5xl items-center p-6'>
+    <Card className='flex max-w-5xl flex-col items-center gap-6 p-5 max-md:mx-2 max-md:p-3'>
       <CardTitle className='flex flex-col gap-4'>
         <DrugCard drug={drug} />
-        <div className='flex flex-col gap-4'>
-          <SearchDrugInfo
-            generic={drug.genericName}
-            handleSubmit={handleSubmit}
-          />
-        </div>
       </CardTitle>
-      <CardContent className='flex flex-col gap-4'>
+      <Separator className='w-lg' />
+      <div className='flex flex-col gap-4'>
+        <SearchDrugInfo
+          generic={drug.genericName}
+          handleSubmit={handleSubmit}
+        />
+      </div>
+      <Separator className='w-lg' />
+
+      <CardContent className='flex w-full flex-col gap-4'>
         {isError && (
           <Alert className='border-yellow-300 bg-yellow-50'>
             <AlertTitle>Attention</AlertTitle>
@@ -86,13 +89,7 @@ const DrugInfo = () => {
               />
             ))
           ) : data ? (
-            Object.keys(data).map((key) => (
-              <DrugInfoAccordion
-                key={key}
-                title={key.replace(/_/g, " ")}
-                content={data[key]}
-              />
-            ))
+            <DrugInfoAccordion data={data} />
           ) : (
             <Alert className='border-red-300 bg-red-50'>
               <AlertTitle>No data found</AlertTitle>
