@@ -1,15 +1,15 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Params } from "react-router-dom";
 
 import PrivateRoute from "@/components/PrivateRoute";
 import MainLayout from "@/layouts/MainLayout";
 import drugDB from "@/lib/indexedDB";
 import GlobalError from "@/pages/GlobalError";
-
-const router = createBrowserRouter([
+import { HydrateFallback } from "@/components/HydrateFallBack";
+const routes = [
   {
     element: <MainLayout />,
     ErrorBoundary: GlobalError,
-
+    HydrateFallback: HydrateFallback,
     children: [
       {
         lazy: async () => {
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
               const { default: DrugInfo } = await import("@/pages/DrugInfo");
               return { Component: DrugInfo };
             },
-            loader: async ({ params }) => {
+            loader: async ({ params }: { params: Params<"no"> }) => {
               const [data] = await drugDB.drugList
                 .where("no")
                 .equals(params.no || "")
@@ -96,5 +96,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+];
+const router = createBrowserRouter(routes);
 export default router;
