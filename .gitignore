@@ -15,7 +15,7 @@ dist-ssr
 tsconfig.node.tsbuildinfo
 tsconfig.app.tsbuildinfo
 .env.*
-.firebase/*
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -33,3 +33,5 @@ tsconfig.app.tsbuildinfo
 
 # Million Lint
 .million
+
+.firebase/*
