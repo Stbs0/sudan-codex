@@ -19,11 +19,10 @@ import { completeProfile } from "@/services/usersServices";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 
-import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
-const UserPersonalInfo: React.FC = () => {
+const UserPersonalInfo = () => {
   const methods = useForm({
     defaultValues: {
       age: "",
