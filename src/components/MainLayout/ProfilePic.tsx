@@ -1,27 +1,33 @@
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { getInitials } from "@/lib/utils";
-import useAuth from "@/hooks/useAuth";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { Button } from "../ui/button";
-import { Link, useNavigate } from "react-router-dom";
-import { signOut } from "firebase/auth";
+import { useAuth } from "@/hooks/useAuth";
 import { auth } from "@/lib/firebase";
-import { Separator } from "../ui/separator";
+import { getInitials } from "@/lib/utils";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
-import { useState } from "react";
+import { useQueryClient } from "@tanstack/react-query";
+import { signOut } from "firebase/auth";
 import { ChevronUp } from "lucide-react";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { Button } from "../ui/button";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { Separator } from "../ui/separator";
 
 const ProfilePic = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const [open, setOpen] = useState(false);
-
+  const queryClient = useQueryClient();
   const handleSignOut = async () => {
     await signOut(auth);
     navigate("/log-in");
-    toast.success("Good Bye" + user?.displayName);
+    toast.success(`Good Bye ${user?.displayName}`);
+    await queryClient.invalidateQueries({
+      queryKey: ["user", user?.uid],
+      refetchType: "none",
+    });
   };
+
   if (!user) {
     return null;
   }

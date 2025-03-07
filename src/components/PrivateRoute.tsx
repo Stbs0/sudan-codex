@@ -1,7 +1,6 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 
-import useAuth from "@/hooks/useAuth";
-import useGetUser from "@/hooks/useGetUser";
+import { useAuth } from "@/hooks/useAuth";
 import SpinnerOverlay from "./SpinnerOverlay";
 
 /**
@@ -9,12 +8,11 @@ import SpinnerOverlay from "./SpinnerOverlay";
  * and profile completion status.
  */
 const PrivateRoute = () => {
-  const { user, loading } = useAuth();
+  const { user, userLoading, data } = useAuth();
   const location = useLocation();
-  const { data } = useGetUser();
 
   // Show a loading spinner while user data or profile data is being fetched
-  if (loading) {
+  if (userLoading) {
     return <SpinnerOverlay />;
   }
   // Redirect to login if the user is not authenticated

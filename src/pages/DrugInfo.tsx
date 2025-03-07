@@ -5,17 +5,16 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
-import { queryClient } from "@/lib/queryQlient";
 
 import { getDrugInfo } from "@/services/drugServices";
 import { Drug } from "@/types/types";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 
 const DrugInfo = () => {
   const drug = useLoaderData() as Drug;
-
+  const queryClient = useQueryClient();
   const [searchInputs, setSearchInputs] = useState({
     generic: drug.genericName,
     refetch: false,

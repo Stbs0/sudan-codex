@@ -16,7 +16,7 @@ import { toast } from "sonner";
 import { SaveUserInFIreStore } from "@/services/usersServices";
 import GoogleOAuth from "@/components/auth/GoogleOAuth";
 import FaceBookOAuth from "@/components/auth/FaceBookOAuth";
-import useAuth from "@/hooks/useAuth";
+import { useAuth } from "@/hooks/useAuth";
 import { getAdditionalUserInfo } from "firebase/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { logInSchema, LogInSchemaType } from "@/lib/schemas";
@@ -60,7 +60,7 @@ const Login = () => {
         navigate("/");
       }
       toast.success("Login successful", {
-        description: "Welcome Back" + results.user.displayName,
+        description: `Welcome Back ${results.user.displayName}`,
       });
     } catch (error) {
       if (error instanceof FirebaseError) {

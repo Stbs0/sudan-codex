@@ -1,14 +1,16 @@
 import { RouterProvider } from "react-router-dom";
 
-import { QueryClientProvider } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { SidebarProvider } from "./components/ui/sidebar";
 import drugDB from "./lib/indexedDB";
-import { queryClient } from "./lib/queryQlient";
 import router from "./lib/router";
-import { AuthProvider } from "./providers/AuthProvider";
 import ThemeProvider from "./providers/theme-provider";
 import { fetchDrugList } from "./services/drugServices";
+import { AuthProvider } from "./hooks/useAuth";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
+const queryClient = new QueryClient();
 
 const App = () => {
   useEffect(() => {
@@ -28,6 +30,8 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={false} />
+
       <SidebarProvider defaultOpen={false}>
         <AuthProvider>
           <ThemeProvider

@@ -11,7 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import useAuth from "@/hooks/useAuth";
+import { useAuth } from "@/hooks/useAuth";
 import { signUp } from "@/services/authServices";
 import { SaveUserInFIreStore } from "@/services/usersServices";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -35,9 +35,9 @@ const SignUp = () => {
   });
 
   const navigate = useNavigate();
-  const { user, loading } = useAuth();
+  const { user, userLoading } = useAuth();
   const isSubmitting = methods.formState.isSubmitting;
-  if (loading || isSubmitting) {
+  if (userLoading || isSubmitting) {
     return <SpinnerOverlay />;
   }
   if (user) {

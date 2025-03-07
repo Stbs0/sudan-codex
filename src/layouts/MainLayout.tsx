@@ -6,7 +6,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { toast, Toaster } from "sonner";
 
 import { AppSidebar } from "@/components/MainLayout/app-sidebar";
-import useAuth from "@/hooks/useAuth";
+import { useAuth } from "@/hooks/useAuth";
 // import DevAlert from "@/components/DevAlert";
 // import { AnimatePresence, motion } from "motion/react";
 import SpinnerOverlay from "@/components/SpinnerOverlay";

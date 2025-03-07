@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import useGetUser from "@/hooks/useGetUser";
+import { useAuth } from "@/hooks/useAuth";
 import { useUpdateUser } from "@/lib/queryQlient";
 import { UpdateUserSchemaType, updateUserSchema } from "@/lib/schemas";
 import { getInitials } from "@/lib/utils";
@@ -11,7 +11,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
 export default function Profile() {
-  const { data: user } = useGetUser();
+  const { data: user } = useAuth();
   const mutate = useUpdateUser();
   const {
     register,

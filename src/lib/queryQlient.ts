@@ -1,10 +1,9 @@
 import { updateUser } from "@/services/usersServices";
-import { QueryClient, useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { UpdateUserSchemaType } from "./schemas";
 
-export const queryClient = new QueryClient();
-
 export const useUpdateUser = () => {
+  const queryClient = useQueryClient();
   const { mutate } = useMutation({
     mutationKey: ["updateUser"],
     mutationFn: async (data: UpdateUserSchemaType) => {
