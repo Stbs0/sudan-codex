@@ -55,7 +55,7 @@ const DrugInfo = () => {
   };
 
   return (
-    <Card className='flex max-w-5xl flex-col items-center gap-6 p-5 max-md:mx-2 max-md:p-3'>
+    <Card className='mx-auto flex max-w-5xl flex-col items-center gap-6 p-5 max-md:mx-2 max-md:p-3'>
       <CardTitle className='flex flex-col gap-4'>
         <DrugCard drug={drug} />
       </CardTitle>
