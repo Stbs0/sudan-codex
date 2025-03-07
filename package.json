@@ -19,12 +19,12 @@
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
-      "npm run lint",
+      "pnpm lint",
       "prettier . --write"
     ]
   },
   "dependencies": {
-    "@hookform/resolvers": "^4.1.2",
+    "@hookform/resolvers": "^4.1.3",
     "@radix-ui/react-accordion": "^1.2.3",
     "@radix-ui/react-avatar": "^1.1.3",
     "@radix-ui/react-checkbox": "^1.1.4",
@@ -44,7 +44,7 @@
     "@tailwindcss/vite": "^4.0.11",
     "@tanstack/react-query": "^5.67.1",
     "@tanstack/react-query-devtools": "^5.67.1",
-    "axios": "^1.8.1",
+    "axios": "^1.8.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
