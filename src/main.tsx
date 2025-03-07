@@ -6,7 +6,7 @@ import App from "./App.tsx";
 import "./index.css";
 
 scan({
-  enabled: process.env.NODE_ENV === "development" ? true : false,
+  enabled: import.meta.env.DEV ? true : false,
 });
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
