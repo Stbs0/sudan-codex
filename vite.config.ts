@@ -1,5 +1,6 @@
 /// <reference types="vitest/config" />
 import path from "path";
+import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
@@ -10,7 +11,7 @@ export default defineConfig({
     setupFiles: "./tests/vitest-setup.ts",
   },
   envDir: "./envDir",
-  plugins: [react()],
+  plugins: [react(), tailwindcss()],
   build: {
     chunkSizeWarningLimit: 1600,
   },
