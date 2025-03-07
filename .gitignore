@@ -34,4 +34,4 @@ tsconfig.app.tsbuildinfo
 # Million Lint
 .million
 
-.firebase/*
+.firebase
