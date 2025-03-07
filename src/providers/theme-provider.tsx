@@ -1,8 +1,8 @@
-import { ThemeProviderContext } from "@/contexts";
-import { Theme, ThemeProviderProps } from "@/types/types";
+import { Theme, ThemeProviderContext } from "@/hooks/useTheme";
+import { ThemeProviderProps } from "@/types/types";
 import { useEffect, useState } from "react";
 
-function ThemeProvider({
+export function ThemeProvider({
   children,
   defaultTheme = "system",
   storageKey = "vite-ui-theme",
@@ -22,11 +22,11 @@ function ThemeProvider({
         .matches
         ? "dark"
         : "light";
-
+      console.log(systemTheme);
       root.classList.add(systemTheme);
       return;
     }
-
+    console.log(theme);
     root.classList.add(theme);
   }, [theme]);
 
@@ -39,12 +39,10 @@ function ThemeProvider({
   };
 
   return (
-    <ThemeProviderContext.Provider
+    <ThemeProviderContext
       {...props}
       value={value}>
       {children}
-    </ThemeProviderContext.Provider>
+    </ThemeProviderContext>
   );
 }
-
-export default ThemeProvider;
