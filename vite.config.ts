@@ -18,6 +18,9 @@ export default defineConfig({
   build: {
     chunkSizeWarningLimit: 1600,
   },
+  preview: {
+    port: +(process.env.VITE_PREVIEW_PORT || 4173),
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
