@@ -6,7 +6,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { signOut } from "firebase/auth";
 import { ChevronUp } from "lucide-react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
@@ -55,13 +55,6 @@ const ProfilePic = () => {
         className='w-28 p-0'
         onOpenAutoFocus={(e) => e.preventDefault()}>
         <div className='grid'>
-          <Link to={"/profile"}>
-            <Button
-              variant={"link"}
-              className='w-full outline-hidden'>
-              Profile
-            </Button>
-          </Link>
           <Separator />
 
           <Separator />

@@ -22,11 +22,9 @@ export function ThemeProvider({
         .matches
         ? "dark"
         : "light";
-      console.log(systemTheme);
       root.classList.add(systemTheme);
       return;
     }
-    console.log(theme);
     root.classList.add(theme);
   }, [theme]);
 

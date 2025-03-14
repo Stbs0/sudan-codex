@@ -1,5 +1,10 @@
 {
   "projects": {
-    "default": "sudan-codex"
-  }
+    "default": "drug-app-dev",
+    "production": "sudan-codex",
+    "dev": "drug-app-dev",
+    "prod": "sudan-codex"
+  },
+  "targets": {},
+  "etags": {}
 }
