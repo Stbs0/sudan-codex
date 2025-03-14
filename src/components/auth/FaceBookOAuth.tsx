@@ -7,13 +7,14 @@ import { getAdditionalUserInfo } from "firebase/auth";
 import { SaveUserInFIreStore } from "@/services/usersServices";
 import { useNavigate } from "react-router-dom";
 import Facebook from "../../assets/icons/facebook.svg";
+import { useQueryClient } from "@tanstack/react-query";
 
 type Props = {
-  isSubmitting: boolean;
   logInOrSignUp?: string;
 };
-const FaceBookOAuth = ({ isSubmitting, logInOrSignUp }: Props) => {
+const FaceBookOAuth = ({ logInOrSignUp }: Props) => {
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
   const signInWithFaceBook = async (e: SyntheticEvent) => {
     e.preventDefault();
     try {
@@ -21,7 +22,21 @@ const FaceBookOAuth = ({ isSubmitting, logInOrSignUp }: Props) => {
       const isNewUser = getAdditionalUserInfo(results)?.isNewUser;
 
       if (isNewUser) {
-        await SaveUserInFIreStore(results.user, results.providerId ?? "");
+        const userData = {
+          displayName: results.user.displayName,
+          email: results.user.email,
+          photoURL: results.user.photoURL,
+          phoneNumber: results.user.phoneNumber,
+          providerId: results.providerId || "email",
+          profileComplete: false,
+        };
+        const userUid = results.user.uid;
+        queryClient.setQueryData(["user", userUid], userData);
+
+        await SaveUserInFIreStore(userData, userUid).catch((err) => {
+          queryClient.invalidateQueries({ queryKey: ["user", userUid] });
+          throw err;
+        });
         navigate("/user-info");
       } else {
         navigate("/");
@@ -38,7 +53,6 @@ const FaceBookOAuth = ({ isSubmitting, logInOrSignUp }: Props) => {
     <Button
       variant='outline'
       className='flex w-full items-center justify-center gap-2'
-      disabled={isSubmitting}
       onClick={signInWithFaceBook}>
       {logInOrSignUp} with FaceBook
       <img

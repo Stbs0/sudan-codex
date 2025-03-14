@@ -1,7 +1,7 @@
 import { auth } from "@/lib/firebase";
 import { getUser } from "@/services/usersServices";
 import { SaveUserReturnTypes } from "@/types/types";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { onAuthStateChanged, User } from "firebase/auth";
 import {
   createContext,
@@ -36,14 +36,12 @@ interface AuthProviderProps {
 }
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  const [user, setUser] = useState<User | null>(auth.currentUser);
   const [userLoading, setUserLoading] = useState(true);
-  const queryClient = useQueryClient();
+  const [user, setUser] = useState(auth.currentUser);
   const { isLoading, isError, data, error } = useQuery({
     queryKey: ["user", user?.uid],
-    queryFn: async () => {
-      return await getUser();
-    },
+    queryFn: async () => await getUser(user!.uid),
+
     enabled: !!user,
   });
   useEffect(() => {
@@ -52,13 +50,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     const unsubscribe = onAuthStateChanged(auth, async (fireBaseUser) => {
       if (fireBaseUser) {
         setUser(fireBaseUser);
-
-        await queryClient.prefetchQuery({
-          queryKey: ["user", fireBaseUser.uid],
-          queryFn: async () => {
-            return await getUser();
-          },
-        });
       } else {
         setUser(null);
       }

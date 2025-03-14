@@ -13,16 +13,18 @@ import {
 import { Input } from "@/components/ui/input";
 
 import { Separator } from "@/components/ui/separator";
+import { useAuth } from "@/hooks/useAuth";
 import { tellUsMoreSchema, tellUsMoreSchemaType } from "@/lib/schemas";
 
 import { completeProfile } from "@/services/usersServices";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { FormProvider, useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const UserPersonalInfo = () => {
+  const { user } = useAuth();
   const methods = useForm({
     defaultValues: {
       age: "",
@@ -33,14 +35,16 @@ const UserPersonalInfo = () => {
     mode: "all",
     resolver: zodResolver(tellUsMoreSchema),
   });
-
+  const queryClient = useQueryClient();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const navigate = useNavigate();
   const mutation = useMutation({
-    mutationFn: async (data: tellUsMoreSchemaType) => {
-      return await completeProfile({ ...data, profileComplete: true });
-    },
+    mutationFn: async (data: tellUsMoreSchemaType) =>
+      await completeProfile({ ...data, profileComplete: true }),
     onSuccess: () => {
-      navigate("/");
+      queryClient.invalidateQueries({ queryKey: ["user", user?.uid] });
+      navigate(from, { replace: true });
     },
   });
 

@@ -30,6 +30,5 @@ export const getDrugInfo = async (
 
 export const fetchDrugList = async () => {
   const { default: drugList } = await import("../assets/data/drugData.json");
-  console.log(drugList);
   return drugList;
 };

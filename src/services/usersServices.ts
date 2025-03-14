@@ -1,71 +1,52 @@
-import api from "@/lib/api";
-import { auth } from "@/lib/firebase";
-import { UpdateUserSchemaType, tellUsMoreSchemaType } from "@/lib/schemas";
+// import api from "@/lib/api";
+import { auth, db } from "@/lib/firebase";
+import { tellUsMoreSchemaType } from "@/lib/schemas";
 import { SaveUserReturnTypes } from "@/types/types";
-import { User } from "firebase/auth";
+import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 
-export const SaveUserInFIreStore = async (user: User, providerId: string) => {
-  const token = await getTokenId();
-  if (!token) {
-    return null;
-  }
-  await api.post(
-    `/user/create`,
-    {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      profileComplete: false,
-      providerId,
-      phoneNumber: user.phoneNumber,
-    },
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+const docRef = (uid: string) => doc(db, "users", uid);
+type UserData = {
+  displayName: string | null;
+  email: string | null;
+  photoURL: string | null;
+  phoneNumber: string | null;
+  providerId: string;
+  profileComplete: boolean;
+};
+export const SaveUserInFIreStore = async (userData: UserData, uid: string) => {
+  const userRef = doc(db, "users", uid); // 🔥 Fix: Ensure Firestore is used correctly
+
+  await setDoc(userRef, {
+    displayName: userData.displayName,
+    email: userData.email,
+    photoURL: userData.photoURL,
+    phoneNumber: userData.phoneNumber,
+    providerId: userData.providerId,
+    profileComplete: userData.profileComplete,
+  });
 };
 
 export const getTokenId = async () => {
   return auth.currentUser && (await auth.currentUser?.getIdToken());
 };
 
-export const getUser = async () => {
-  const token = await getTokenId();
-  if (!token) {
+export const getUser = async (uid: string) => {
+  const userRef = docRef(uid);
+
+  const docSnap = await getDoc(userRef);
+  if (!docSnap.exists()) {
     return null;
   }
-  const data: SaveUserReturnTypes = await api.get(`/user/me`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  return data;
+
+  return docSnap.data() as SaveUserReturnTypes;
 };
 
 export const completeProfile = async (
   data: tellUsMoreSchemaType & { profileComplete: boolean }
 ) => {
-  const token = await getTokenId();
-  if (!token) {
+  if (!auth.currentUser) {
     return null;
   }
-  return await api.post(`/user/complete-profile`, data, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-};
-export const updateUser = async (data: UpdateUserSchemaType) => {
-  const token = await getTokenId();
-  if (!token) {
-    return null;
-  }
-  return await api.post(`/user/update`, data, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  const userRef = docRef(auth.currentUser.uid);
+  await updateDoc(userRef, data);
 };

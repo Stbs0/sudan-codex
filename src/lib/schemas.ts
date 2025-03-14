@@ -1,4 +1,6 @@
+import { validatePassword } from "firebase/auth";
 import { z } from "zod";
+import { auth } from "./firebase";
 
 export const tellUsMoreSchema = z.object({
   age: z.string(),
@@ -87,9 +89,21 @@ export const updateUserSchema = z
       .or(z.string().optional()),
     confirmPassword: z.string().optional().or(z.string().optional()),
   })
-  .refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords don't match",
-    path: ["confirmPassword"],
-  });
+  .refine(
+    async (data) => {
+      if (data.confirmPassword) {
+        const status = await validatePassword(auth, data.confirmPassword);
+        return status.isValid && data.password === data.confirmPassword
+          ? true
+          : false;
+      }
+
+      return data.password === data.confirmPassword;
+    },
+    {
+      message: "Passwords don't match",
+      path: ["confirmPassword"],
+    }
+  );
 export type UpdateUserSchemaType = z.infer<typeof updateUserSchema>;
 export type LogInSchemaType = z.infer<typeof logInSchema>;

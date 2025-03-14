@@ -1,10 +1,10 @@
 import { createBrowserRouter, Params } from "react-router-dom";
 
+import { HydrateFallback } from "@/components/HydrateFallBack";
 import PrivateRoute from "@/components/PrivateRoute";
 import MainLayout from "@/layouts/MainLayout";
 import drugDB from "@/lib/indexedDB";
 import GlobalError from "@/pages/GlobalError";
-import { HydrateFallback } from "@/components/HydrateFallBack";
 const routes = [
   {
     element: <MainLayout />,
@@ -20,6 +20,7 @@ const routes = [
       {
         index: true,
         path: "/",
+
         lazy: async () => {
           const { default: Home } = await import("@/pages/Home");
           return { Component: Home };
@@ -65,13 +66,6 @@ const routes = [
                 .equals(params.no || "")
                 .toArray();
               return data;
-            },
-          },
-          {
-            path: "profile",
-            lazy: async () => {
-              const { default: Profile } = await import("@/pages/Profile");
-              return { Component: Profile };
             },
           },
 

@@ -22,9 +22,7 @@ export class DrugIndex extends Dexie {
   }
   // Method to populate the database
   async populate(data: Drug[]) {
-    console.log("drugs", data);
     await this.drugList.bulkAdd(data);
-    console.log("Database populated with initial data");
   }
 }
 

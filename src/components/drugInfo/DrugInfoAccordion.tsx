@@ -12,17 +12,14 @@ const propToDelete = [
 ];
 
 const DrugInfoAccordion = ({ data }: { data: Record<string, string[]> }) => {
-  console.log(data);
   const keys = Object.keys(data).filter(
     (key) => Array.isArray(data[key]) && !propToDelete.includes(key)
-  ); // Get only array properties
-  console.log(keys);
+  );
   return (
     <Accordion
       type='multiple'
       className='w-full'>
       {keys.map((key, index) => {
-        console.log(key);
         return (
           <AccordionItem
             key={index}

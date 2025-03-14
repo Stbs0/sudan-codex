@@ -26,20 +26,21 @@ const PrivateRoute = () => {
   }
 
   // Redirect to profile if user-info path is accessed and profile is complete
-  if (location.pathname === "/user-info" && data?.profileComplete === true) {
-    return (
-      <Navigate
-        to='/profile'
-        replace
-      />
-    );
-  }
+  // if (location.pathname === "/user-info" && data?.profileComplete === true) {
+  //   return (
+  //     <Navigate
+  //       to='/profile'
+  //       replace
+  //     />
+  //   );
+  // }
 
   // Redirect to user-info if accessing any other path and profile is incomplete
   if (location.pathname !== "/user-info" && data?.profileComplete === false) {
     return (
       <Navigate
         to='/user-info'
+        state={{ from: location }}
         replace
       />
     );
