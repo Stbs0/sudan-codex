@@ -7,8 +7,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   test: {
     environment: "jsdom",
-    globals: true,
-    setupFiles: "./tests/vitest-setup.ts",
+    setupFiles: "./__tests__/vitest-setup.ts",
   },
   optimizeDeps: {
     exclude: ["react-scan"],

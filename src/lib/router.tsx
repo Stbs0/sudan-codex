@@ -1,11 +1,12 @@
-import { createBrowserRouter, Params } from "react-router-dom";
+import { createBrowserRouter, Params, RouteObject } from "react-router-dom";
 
 import { HydrateFallback } from "@/components/HydrateFallBack";
 import PrivateRoute from "@/components/PrivateRoute";
 import MainLayout from "@/layouts/MainLayout";
 import drugDB from "@/lib/indexedDB";
 import GlobalError from "@/pages/GlobalError";
-const routes = [
+import ErrorElement from "@/components/ErrorElement";
+const routes: RouteObject[] = [
   {
     element: <MainLayout />,
     ErrorBoundary: GlobalError,
@@ -51,7 +52,7 @@ const routes = [
 
       {
         element: <PrivateRoute />,
-        // ErrorBoundary: ErrorElement,
+        ErrorBoundary: ErrorElement,
 
         children: [
           {
