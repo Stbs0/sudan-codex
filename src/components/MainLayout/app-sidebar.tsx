@@ -14,8 +14,9 @@ import {
 import { Link } from "react-router-dom";
 import { NAV_ITEMS } from "@/constants";
 import Logo from "./Logo";
+import { memo } from "react";
 
-export function AppSidebar() {
+export const AppSidebar = memo(() => {
   return (
     <Sidebar>
       <SidebarContent>
@@ -48,4 +49,4 @@ export function AppSidebar() {
       <SidebarRail />
     </Sidebar>
   );
-}
+});

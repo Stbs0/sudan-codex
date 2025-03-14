@@ -11,6 +11,7 @@ import { useAuth } from "@/hooks/useAuth";
 // import { AnimatePresence, motion } from "motion/react";
 import SpinnerOverlay from "@/components/SpinnerOverlay";
 import { Suspense, useEffect } from "react";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 const MainLayout = () => {
   const location = useLocation();
@@ -28,7 +29,7 @@ const MainLayout = () => {
     }
   }, []);
   return (
-    <>
+    <SidebarProvider>
       {user && <AppSidebar />}
       <div className='grid w-full content-between dark:bg-slate-800'>
         <Header />
@@ -52,7 +53,7 @@ const MainLayout = () => {
         />
         <Footer />
       </div>
-    </>
+    </SidebarProvider>
   );
 };
 

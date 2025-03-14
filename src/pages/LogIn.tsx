@@ -4,11 +4,14 @@ import GoogleOAuth from "@/components/auth/GoogleOAuth";
 import FaceBookOAuth from "@/components/auth/FaceBookOAuth";
 import { useAuth } from "@/hooks/useAuth";
 import { ComponentType } from "react";
+import SpinnerOverlay from "@/components/SpinnerOverlay";
 
 const CheckIfUserLoggedIn = <P extends object>(Component: ComponentType<P>) => {
   return function ProtectedRoute(props: P) {
-    const { user } = useAuth();
-
+    const { user, userLoading, isLoading } = useAuth();
+    if (userLoading || isLoading) {
+      return <SpinnerOverlay />;
+    }
     if (user) {
       return (
         <Navigate

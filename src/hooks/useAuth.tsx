@@ -1,8 +1,13 @@
 import { auth } from "@/lib/firebase";
 import { getUser } from "@/services/usersServices";
 import { SaveUserReturnTypes } from "@/types/types";
-import { useQuery } from "@tanstack/react-query";
-import { onAuthStateChanged, User } from "firebase/auth";
+import {
+  QueryObserverResult,
+  RefetchOptions,
+  useQuery,
+  useQueryClient,
+} from "@tanstack/react-query";
+import { onAuthStateChanged } from "firebase/auth";
 import {
   createContext,
   ReactNode,
@@ -12,12 +17,14 @@ import {
 } from "react";
 
 interface AuthContextType {
-  user: User | null;
+  user: SaveUserReturnTypes | undefined;
   userLoading: boolean;
   isLoading: boolean;
   isError: boolean;
-  data: SaveUserReturnTypes | null | undefined;
   error: null | Error;
+  refetch: (
+    options?: RefetchOptions
+  ) => Promise<QueryObserverResult<SaveUserReturnTypes | undefined, Error>>;
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -37,21 +44,34 @@ interface AuthProviderProps {
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [userLoading, setUserLoading] = useState(true);
-  const [user, setUser] = useState(auth.currentUser);
-  const { isLoading, isError, data, error } = useQuery({
-    queryKey: ["user", user?.uid],
-    queryFn: async () => await getUser(user!.uid),
+  const [useruid, setUseruid] = useState<undefined | string>(undefined);
+  const queryClient = useQueryClient();
+  const {
+    isLoading,
+    isError,
+    data: user,
+    error,
+    refetch,
+  } = useQuery({
+    queryKey: ["user", useruid],
+    queryFn: async () => await getUser(useruid!),
 
-    enabled: !!user,
+    enabled: !!useruid,
   });
+  console.log(useruid);
   useEffect(() => {
     setUserLoading(true);
 
     const unsubscribe = onAuthStateChanged(auth, async (fireBaseUser) => {
       if (fireBaseUser) {
-        setUser(fireBaseUser);
+        queryClient.prefetchQuery({
+          queryKey: ["user", fireBaseUser.uid],
+          queryFn: async () => await getUser(fireBaseUser.uid),
+        });
+
+        setUseruid(fireBaseUser.uid);
       } else {
-        setUser(null);
+        setUseruid(undefined);
       }
 
       setUserLoading(false);
@@ -61,7 +81,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   }, []);
 
   return (
-    <AuthContext value={{ user, userLoading, isLoading, isError, data, error }}>
+    <AuthContext
+      value={{ user, userLoading, isLoading, isError, error, refetch }}>
       {children}
     </AuthContext>
   );

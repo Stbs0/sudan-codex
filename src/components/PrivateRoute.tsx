@@ -8,11 +8,13 @@ import SpinnerOverlay from "./SpinnerOverlay";
  * and profile completion status.
  */
 const PrivateRoute = () => {
-  const { user, userLoading, data } = useAuth();
+  const { user, userLoading, isLoading } = useAuth();
   const location = useLocation();
 
   // Show a loading spinner while user data or profile data is being fetched
-  if (userLoading) {
+  console.log("loading", userLoading, isLoading);
+  console.log("user", user);
+  if (userLoading || isLoading) {
     return <SpinnerOverlay />;
   }
   // Redirect to login if the user is not authenticated
@@ -24,7 +26,7 @@ const PrivateRoute = () => {
       />
     );
   }
-
+  console.log("first", user);
   // Redirect to profile if user-info path is accessed and profile is complete
   // if (location.pathname === "/user-info" && data?.profileComplete === true) {
   //   return (
@@ -36,7 +38,7 @@ const PrivateRoute = () => {
   // }
 
   // Redirect to user-info if accessing any other path and profile is incomplete
-  if (location.pathname !== "/user-info" && data?.profileComplete === false) {
+  if (location.pathname !== "/user-info" && user?.profileComplete === false) {
     return (
       <Navigate
         to='/user-info'

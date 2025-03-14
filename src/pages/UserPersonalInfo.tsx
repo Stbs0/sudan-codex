@@ -24,7 +24,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const UserPersonalInfo = () => {
-  const { user } = useAuth();
+  const { user, refetch } = useAuth();
   const methods = useForm({
     defaultValues: {
       age: "",
@@ -40,10 +40,12 @@ const UserPersonalInfo = () => {
   const from = location.state?.from?.pathname || "/";
   const navigate = useNavigate();
   const mutation = useMutation({
-    mutationFn: async (data: tellUsMoreSchemaType) =>
-      await completeProfile({ ...data, profileComplete: true }),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["user", user?.uid] });
+    mutationFn: async (data: tellUsMoreSchemaType) => {
+      await completeProfile({ ...data, profileComplete: true });
+    },
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({ queryKey: ["user", user?.uid] });
+      refetch();
       navigate(from, { replace: true });
     },
   });
@@ -51,7 +53,6 @@ const UserPersonalInfo = () => {
   const onSubmit = async (data: tellUsMoreSchemaType) => {
     try {
       mutation.mutate(data);
-      navigate("/");
     } catch (error) {
       console.error("Error saving user info:", error);
     }

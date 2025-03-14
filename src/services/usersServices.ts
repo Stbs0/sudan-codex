@@ -17,6 +17,7 @@ export const SaveUserInFIreStore = async (userData: UserData, uid: string) => {
   const userRef = doc(db, "users", uid); // 🔥 Fix: Ensure Firestore is used correctly
 
   await setDoc(userRef, {
+    uid,
     displayName: userData.displayName,
     email: userData.email,
     photoURL: userData.photoURL,
@@ -26,16 +27,12 @@ export const SaveUserInFIreStore = async (userData: UserData, uid: string) => {
   });
 };
 
-export const getTokenId = async () => {
-  return auth.currentUser && (await auth.currentUser?.getIdToken());
-};
-
 export const getUser = async (uid: string) => {
   const userRef = docRef(uid);
 
   const docSnap = await getDoc(userRef);
   if (!docSnap.exists()) {
-    return null;
+    return undefined;
   }
 
   return docSnap.data() as SaveUserReturnTypes;
@@ -48,5 +45,6 @@ export const completeProfile = async (
     return null;
   }
   const userRef = docRef(auth.currentUser.uid);
+
   await updateDoc(userRef, data);
 };
