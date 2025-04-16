@@ -10,31 +10,39 @@ import {
   SidebarMenuItem,
   SidebarRail,
   SidebarTrigger,
+  useSidebar,
 } from "@/components/ui/sidebar";
 import { Link } from "react-router-dom";
 import { NAV_ITEMS } from "@/constants";
 import Logo from "./Logo";
-import { memo } from "react";
+import MobileAuthBtns from "./MobileAuthBtns";
 
-export const AppSidebar = memo(() => {
+export const AppSidebar = () => {
+  const { setOpenMobile } = useSidebar();
   return (
     <Sidebar>
-      <SidebarContent>
-        <SidebarHeader className='flex flex-row items-center justify-between p-4'>
+      <SidebarHeader className='flex items-center'>
+        <div className='flex w-full items-center justify-between space-x-2 p-2'>
           <Link
+            onClick={() => setOpenMobile(false)}
             to='/'
             className='flex items-center'>
             <Logo className='h-8' />
           </Link>
           <SidebarTrigger className='ml-auto' />
-        </SidebarHeader>
+        </div>
+        <MobileAuthBtns />
+      </SidebarHeader>
+      <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Application</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {NAV_ITEMS.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
+                  <SidebarMenuButton
+                    onClick={() => setOpenMobile(false)}
+                    asChild>
                     <Link to={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
@@ -49,4 +57,4 @@ export const AppSidebar = memo(() => {
       <SidebarRail />
     </Sidebar>
   );
-});
+};

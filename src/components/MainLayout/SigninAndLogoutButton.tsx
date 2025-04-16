@@ -1,8 +1,10 @@
-import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
+import { Button } from "../ui/button";
+import { useSidebar } from "../ui/sidebar";
 
-const UnauthorizedUserBtns = () => {
+const SigninAndLogoutButton = () => {
   const navigate = useNavigate();
+  const { setOpenMobile } = useSidebar();
   return (
     <>
       <Button
@@ -10,6 +12,7 @@ const UnauthorizedUserBtns = () => {
         variant={"link"}
         onClick={() => {
           navigate("/sign-up");
+          setOpenMobile(false);
         }}>
         Sign Up
       </Button>
@@ -18,6 +21,7 @@ const UnauthorizedUserBtns = () => {
         variant={"link"}
         onClick={() => {
           navigate("/log-in");
+          setOpenMobile(false);
         }}>
         Log In
       </Button>
@@ -25,4 +29,4 @@ const UnauthorizedUserBtns = () => {
   );
 };
 
-export default UnauthorizedUserBtns;
+export default SigninAndLogoutButton;

@@ -6,16 +6,14 @@ import { Outlet, useLocation } from "react-router-dom";
 import { toast, Toaster } from "sonner";
 
 import { AppSidebar } from "@/components/MainLayout/app-sidebar";
-import { useAuth } from "@/hooks/useAuth";
 // import DevAlert from "@/components/DevAlert";
 // import { AnimatePresence, motion } from "motion/react";
 import SpinnerOverlay from "@/components/SpinnerOverlay";
-import { Suspense, useEffect } from "react";
 import { SidebarProvider } from "@/components/ui/sidebar";
+import { Suspense, useEffect } from "react";
 
 const MainLayout = () => {
   const location = useLocation();
-  const { user } = useAuth();
   useEffect(() => {
     const showDev = sessionStorage.getItem("showDev");
     if (!showDev) {
@@ -30,7 +28,7 @@ const MainLayout = () => {
   }, []);
   return (
     <SidebarProvider>
-      {user && <AppSidebar />}
+      <AppSidebar />
       <div className='grid w-full content-between dark:bg-slate-800'>
         <Header />
 
