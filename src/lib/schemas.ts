@@ -2,16 +2,20 @@ import { validatePassword } from "firebase/auth";
 import { z } from "zod";
 import { auth } from "./firebase";
 
+export const occupationEnum = z.enum([
+  "Student",
+  "Administrator",
+  "Pharmacist",
+  "Other",
+]);
 export const tellUsMoreSchema = z.object({
-  age: z.string().nonempty({ message: "age is required" }),
-  phoneNumber: z.string().nonempty({ message: "phone number is required" }),
+  age: z.string().nonempty({ message: "Age is required" }),
+  phoneNumber: z.string().nonempty({ message: "Phone number is required" }),
 
   university: z.string().nonempty({
-    message: "university is required",
+    message: "University is required",
   }),
-  occupation: z.string().nonempty({
-    message: "occupation is required",
-  }),
+  occupation: occupationEnum,
 });
 export type tellUsMoreSchemaType = z.infer<typeof tellUsMoreSchema>;
 

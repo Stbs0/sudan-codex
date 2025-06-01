@@ -6,7 +6,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
@@ -14,7 +13,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import React, { useState } from "react";
+import { occupationEnum } from "@/lib/schemas";
+import React from "react";
 import { useFormContext } from "react-hook-form";
 
 interface SelectWithOtherProps {
@@ -22,7 +22,6 @@ interface SelectWithOtherProps {
   label: string;
   placeholder: string;
   description?: string;
-  options: { value: string; label: string }[];
 }
 
 const SelectWithOther: React.FC<SelectWithOtherProps> = ({
@@ -30,9 +29,7 @@ const SelectWithOther: React.FC<SelectWithOtherProps> = ({
   label,
   placeholder,
   description,
-  options,
 }) => {
-  const [otherSelected, setOtherSelected] = useState(false);
   const { control } = useFormContext();
   return (
     <FormField
@@ -43,38 +40,27 @@ const SelectWithOther: React.FC<SelectWithOtherProps> = ({
           <FormLabel>{label}</FormLabel>
           <div className='space-y-2'>
             <Select
-              onValueChange={(value) => {
-                setOtherSelected(value === "other");
-                field.onChange(value === "other" ? "" : value);
-              }}
-              defaultValue={field.value}>
+              {...field}
+              value={field.value || ""}
+              onValueChange={field.onChange}>
               <FormControl>
                 <SelectTrigger>
                   <SelectValue placeholder={placeholder} />
                 </SelectTrigger>
               </FormControl>
               <SelectContent>
-                {options.map((option) => (
+                {occupationEnum.options.map((occupation) => (
                   <SelectItem
-                    key={option.value}
-                    value={option.value}>
-                    {option.label}
+                    key={occupation}
+                    value={occupation}>
+                    {occupation}
                   </SelectItem>
                 ))}
-                <SelectItem value='other'>Other</SelectItem>
               </SelectContent>
             </Select>
-
-            {otherSelected && (
-              <Input
-                placeholder='Specify your occupation'
-                value={field.value}
-                onChange={(e) => field.onChange(e.target.value)}
-              />
-            )}
           </div>
-          {description && <FormDescription>{description}</FormDescription>}
           <FormMessage />
+          {description && <FormDescription>{description}</FormDescription>}
         </FormItem>
       )}
     />

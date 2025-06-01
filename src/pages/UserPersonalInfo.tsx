@@ -15,6 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { useAuth } from "@/hooks/useAuth";
 import { tellUsMoreSchema, tellUsMoreSchemaType } from "@/lib/schemas";
+import { DevTool } from "@hookform/devtools";
 
 import { completeProfile } from "@/services/usersServices";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -29,7 +30,7 @@ const UserPersonalInfo = () => {
     defaultValues: {
       age: "",
       university: "",
-      occupation: "",
+      occupation: undefined,
       phoneNumber: "",
     },
     mode: "all",
@@ -59,102 +60,91 @@ const UserPersonalInfo = () => {
   };
 
   return (
-    <FormProvider {...methods}>
-      <Form {...methods}>
-        <form onSubmit={methods.handleSubmit(onSubmit)}>
-          <div className='mb-2 space-y-1'>
-            <h1 className='text-center text-3xl font-bold'>
-              Complete Your Profile
-            </h1>
-            <p className='text-center text-lg'>Tell Us More About Yourself</p>
-          </div>
-          <Card>
-            <CardContent>
-              <FormField
-                control={methods.control}
-                name='age'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Age</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder='eg 20'
-                        type='number'
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormDescription>Write your age</FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Separator className='my-4' />
-              <FormField
-                control={methods.control}
-                name='phoneNumber'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Phone Number</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder='eg. +249123456789'
-                        type='tel'
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormDescription>Write your phone number</FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />{" "}
-              <Separator className='my-4' />
-              <FormField
-                control={methods.control}
-                name='university'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>University</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder='eg. University of Gezira'
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormDescription>Your university</FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />{" "}
-              <Separator className='my-4' />
-              <SelectWithOther
-                name='occupation'
-                label='Occupation'
-                placeholder='Select your occupation'
-                options={[
-                  {
-                    value: "student",
-                    label: "Student",
-                  },
-                  {
-                    value: "pharmacist",
-                    label: "Pharmacist",
-                  },
-                  {
-                    value: "administrator",
-                    label: "Administrator",
-                  },
-                ]}
-              />
-              <Button
-                className='mt-4'
-                type='submit'>
-                Save
-              </Button>
-            </CardContent>
-          </Card>
-        </form>
-      </Form>
-    </FormProvider>
+    <>
+      <FormProvider {...methods}>
+        <Form {...methods}>
+          <form onSubmit={methods.handleSubmit(onSubmit)}>
+            <div className='mb-2 space-y-1'>
+              <h1 className='text-center text-3xl font-bold'>
+                Complete Your Profile
+              </h1>
+              <p className='text-center text-lg'>Tell Us More About Yourself</p>
+            </div>
+            <Card>
+              <CardContent>
+                <FormField
+                  control={methods.control}
+                  name='age'
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Age</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder='eg 20'
+                          type='number'
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                      <FormDescription>Write your age</FormDescription>
+                    </FormItem>
+                  )}
+                />
+                <Separator className='my-4' />
+                <FormField
+                  control={methods.control}
+                  name='phoneNumber'
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Phone Number</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder='eg. +249123456789'
+                          type='tel'
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                      <FormDescription>Write your phone number</FormDescription>
+                    </FormItem>
+                  )}
+                />{" "}
+                <Separator className='my-4' />
+                <FormField
+                  control={methods.control}
+                  name='university'
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>University</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder='eg. University of Gezira'
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                      <FormDescription>Your university</FormDescription>
+                    </FormItem>
+                  )}
+                />{" "}
+                <Separator className='my-4' />
+                <SelectWithOther
+                  name='occupation'
+                  label='Occupation'
+                  placeholder='Select your occupation'
+                />
+                <Button
+                  className='mt-4'
+                  type='submit'>
+                  Save
+                </Button>
+              </CardContent>
+            </Card>
+          </form>
+        </Form>
+      </FormProvider>
+      <DevTool control={methods.control} />
+    </>
   );
 };
 
