@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import {
   FormControl,
   FormDescription,
@@ -7,6 +6,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
@@ -14,7 +14,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
+import React, { useState } from "react";
+import { useFormContext } from "react-hook-form";
 
 interface SelectWithOtherProps {
   name: string;
@@ -32,9 +33,10 @@ const SelectWithOther: React.FC<SelectWithOtherProps> = ({
   options,
 }) => {
   const [otherSelected, setOtherSelected] = useState(false);
-
+  const { control } = useFormContext();
   return (
     <FormField
+      control={control}
       name={name}
       render={({ field }) => (
         <FormItem>

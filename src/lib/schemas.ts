@@ -3,10 +3,15 @@ import { z } from "zod";
 import { auth } from "./firebase";
 
 export const tellUsMoreSchema = z.object({
-  age: z.string(),
-  phoneNumber: z.string(),
-  university: z.string(),
-  occupation: z.string(),
+  age: z.string().nonempty({ message: "age is required" }),
+  phoneNumber: z.string().nonempty({ message: "phone number is required" }),
+
+  university: z.string().nonempty({
+    message: "university is required",
+  }),
+  occupation: z.string().nonempty({
+    message: "occupation is required",
+  }),
 });
 export type tellUsMoreSchemaType = z.infer<typeof tellUsMoreSchema>;
 

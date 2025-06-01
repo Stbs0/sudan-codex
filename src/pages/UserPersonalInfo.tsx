@@ -71,6 +71,7 @@ const UserPersonalInfo = () => {
           <Card>
             <CardContent>
               <FormField
+                control={methods.control}
                 name='age'
                 render={({ field }) => (
                   <FormItem>
@@ -78,6 +79,7 @@ const UserPersonalInfo = () => {
                     <FormControl>
                       <Input
                         placeholder='eg 20'
+                        type='number'
                         {...field}
                       />
                     </FormControl>
@@ -88,6 +90,7 @@ const UserPersonalInfo = () => {
               />
               <Separator className='my-4' />
               <FormField
+                control={methods.control}
                 name='phoneNumber'
                 render={({ field }) => (
                   <FormItem>
@@ -106,6 +109,7 @@ const UserPersonalInfo = () => {
               />{" "}
               <Separator className='my-4' />
               <FormField
+                control={methods.control}
                 name='university'
                 render={({ field }) => (
                   <FormItem>
