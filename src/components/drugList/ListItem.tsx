@@ -1,8 +1,6 @@
 import { Drug } from "@/types/types";
-import { ChevronRight } from "lucide-react";
-import { memo, useMemo } from "react";
+import { memo } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button } from "../ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import ListDescription from "./ListDescription";
 
@@ -10,11 +8,10 @@ type Props = {
   drug: Drug;
 };
 export const ListItem = memo(({ drug }: Props) => {
-  const MemoizedChevronRight = useMemo(() => <ChevronRight />, []);
   const navigate = useNavigate();
   return (
     <Card
-      className='rounded-none border-4 border-transparent border-l-indigo-700 bg-purple-100/50 hover:bg-purple-100/90 dark:bg-purple-800/50 dark:hover:bg-purple-800/90'
+      className='rounded-none border-4 border-transparent border-l-indigo-700 bg-purple-100/50 p-2 hover:bg-purple-100/90 dark:bg-purple-800/50 dark:hover:bg-purple-800/90'
       onClick={() => {
         navigate(`/drug-list/${drug.no}`);
       }}>
@@ -22,14 +19,14 @@ export const ListItem = memo(({ drug }: Props) => {
         <CardTitle className='uppercase'>
           <span className='font-bold'>{drug.brandName}</span>
           <span className='ml-2 text-sm font-normal'>{drug.strength}</span>
-          <span className='ml-1 text-sm font-normal'>
+          <span className='ml-1 text-sm font-extralight text-gray-600 dark:text-gray-400'>
             {drug.dosageFormName}
           </span>
         </CardTitle>
       </CardHeader>
 
-      <CardContent className='flex'>
-        <div className='flex-1'>
+      <CardContent className='flex gap-4'>
+        <div className='flex flex-col'>
           <ListDescription
             title='Generic'
             text={drug.genericName}
@@ -43,8 +40,15 @@ export const ListItem = memo(({ drug }: Props) => {
             text={drug.companyName}
           />
         </div>
-        <div className='flex items-center'>
-          <Button>{MemoizedChevronRight}</Button>
+        <div className='flex flex-col'>
+          <ListDescription
+            title='Pack size'
+            text={drug.packSize}
+          />
+          <ListDescription
+            title='Country'
+            text={drug.countryOfOrigin}
+          />
         </div>
       </CardContent>
     </Card>
