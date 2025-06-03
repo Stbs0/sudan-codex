@@ -58,7 +58,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
     enabled: !!useruid,
   });
-  console.log(useruid);
   useEffect(() => {
     setUserLoading(true);
 

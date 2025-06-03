@@ -20,10 +20,10 @@ const DrugList = () => {
   return (
     <div className='mx-auto grid max-w-2xl items-center gap-4 px-3 dark:text-gray-100'>
       <div className='grid gap-2 py-2'>
-        <p className='text-2xl'>Search a Drug</p>
+        <p className='text-center text-2xl'>Search Drug</p>
         <Input
           className='rounded-3xl shadow-xs shadow-purple-300 placeholder:text-xs'
-          placeholder='generic, brand, company name'
+          placeholder='Search Generic, Brand, or Company Name'
           value={search}
           onChange={handleSearchInput}
         />

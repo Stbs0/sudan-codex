@@ -10,10 +10,7 @@ import SpinnerOverlay from "./SpinnerOverlay";
 const PrivateRoute = () => {
   const { user, userLoading, isLoading } = useAuth();
   const location = useLocation();
-
   // Show a loading spinner while user data or profile data is being fetched
-  console.log("loading", userLoading, isLoading);
-  console.log("user", user);
   if (userLoading || isLoading) {
     return <SpinnerOverlay />;
   }
@@ -26,7 +23,6 @@ const PrivateRoute = () => {
       />
     );
   }
-  console.log("first", user);
   // Redirect to profile if user-info path is accessed and profile is complete
   // if (location.pathname === "/user-info" && data?.profileComplete === true) {
   //   return (

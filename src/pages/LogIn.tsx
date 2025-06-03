@@ -1,25 +1,26 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Link, Navigate } from "react-router-dom";
-import GoogleOAuth from "@/components/auth/GoogleOAuth";
 import FaceBookOAuth from "@/components/auth/FaceBookOAuth";
+import GoogleOAuth from "@/components/auth/GoogleOAuth";
+import SpinnerOverlay from "@/components/SpinnerOverlay";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useAuth } from "@/hooks/useAuth";
 import { ComponentType } from "react";
-import SpinnerOverlay from "@/components/SpinnerOverlay";
+import { Link, useNavigate } from "react-router-dom";
 
 const CheckIfUserLoggedIn = <P extends object>(Component: ComponentType<P>) => {
   return function ProtectedRoute(props: P) {
+    const navigate = useNavigate();
     const { user, userLoading, isLoading } = useAuth();
     if (userLoading || isLoading) {
       return <SpinnerOverlay />;
     }
+
     if (user) {
-      return (
-        <Navigate
-          to='/'
-          replace
-          state={{ type: "warning", message: "You are already logged in" }}
-        />
-      );
+      if (user.profileComplete === false) {
+        navigate("/user-info");
+        return;
+      }
+      navigate(-1);
+      return;
     }
     return <Component {...props} />;
   };
