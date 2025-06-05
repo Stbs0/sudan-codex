@@ -18,38 +18,45 @@ const DrugList = () => {
   }, [loadMore]);
 
   return (
-    <div className='mx-auto grid max-w-2xl items-center gap-4 px-3 dark:text-gray-100'>
-      <div className='grid gap-2 py-2'>
-        <p className='text-center text-2xl'>Search Drug</p>
-        <Input
-          className='rounded-3xl shadow-xs shadow-purple-300 placeholder:text-xs'
-          placeholder='Search Generic, Brand, or Company Name'
-          value={search}
-          onChange={handleSearchInput}
-        />
-      </div>
+    <>
+      <title>Drug List | Sudan Codex</title>
+      <meta
+        name='description'
+        content='Search for drugs by generic, brand, or company name in the Sudan Codex database.'
+      />
+      <div className='mx-auto grid max-w-2xl items-center gap-4 px-3 dark:text-gray-100'>
+        <div className='grid gap-2 py-2'>
+          <p className='text-center text-2xl'>Search Drug</p>
+          <Input
+            className='rounded-3xl shadow-xs shadow-purple-300 placeholder:text-xs'
+            placeholder='Search Generic, Brand, or Company Name'
+            value={search}
+            onChange={handleSearchInput}
+          />
+        </div>
 
-      <InfiniteScroll
-        className='flex w-full flex-col gap-4'
-        dataLength={drugList ? drugList.length : 0}
-        next={memoizedLoadMore}
-        hasMore={hasMore}
-        loader={<h4>Loading...</h4>}>
-        {drugList
-          ? drugList.map((drug) => (
-              <ListItem
-                key={drug.no}
-                drug={drug}
-              />
-            ))
-          : [...Array(10)].map((_, index) => (
-              <Skeleton
-                key={index}
-                className='h-full w-full'
-              />
-            ))}
-      </InfiniteScroll>
-    </div>
+        <InfiniteScroll
+          className='flex w-full flex-col gap-4'
+          dataLength={drugList ? drugList.length : 0}
+          next={memoizedLoadMore}
+          hasMore={hasMore}
+          loader={<h4>Loading...</h4>}>
+          {drugList
+            ? drugList.map((drug) => (
+                <ListItem
+                  key={drug.no}
+                  drug={drug}
+                />
+              ))
+            : [...Array(10)].map((_, index) => (
+                <Skeleton
+                  key={index}
+                  className='h-full w-full'
+                />
+              ))}
+        </InfiniteScroll>
+      </div>
+    </>
   );
 };
 

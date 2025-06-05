@@ -17,10 +17,10 @@ const CheckIfUserLoggedIn = <P extends object>(Component: ComponentType<P>) => {
     if (user) {
       if (user.profileComplete === false) {
         navigate("/user-info");
-        return;
+        return null;
       }
       navigate(-1);
-      return;
+      return null;
     }
     return <Component {...props} />;
   };
@@ -28,25 +28,32 @@ const CheckIfUserLoggedIn = <P extends object>(Component: ComponentType<P>) => {
 
 const Login = () => {
   return (
-    <Card className='mx-auto max-w-sm'>
-      <CardHeader>
-        <CardTitle className='text-2xl'>Login</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className='grid gap-4'>
-          <GoogleOAuth logInOrSignUp='Login' />
-          <FaceBookOAuth logInOrSignUp='Login' />
-        </div>
-        <div className='mt-4 text-center text-sm'>
-          Don&apos;t have an account?{" "}
-          <Link
-            to='/sign-up'
-            className='underline underline-offset-1'>
-            Sign up
-          </Link>
-        </div>
-      </CardContent>
-    </Card>
+    <>
+      <title>Login | Sudan Codex</title>
+      <meta
+        name='description'
+        content='Login to your Sudan Codex account to sudan drug index'
+      />
+      <Card className='mx-auto max-w-sm'>
+        <CardHeader>
+          <CardTitle className='text-2xl'>Login</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className='grid gap-4'>
+            <GoogleOAuth logInOrSignUp='Login' />
+            <FaceBookOAuth logInOrSignUp='Login' />
+          </div>
+          <div className='mt-4 text-center text-sm'>
+            Don&apos;t have an account?{" "}
+            <Link
+              to='/sign-up'
+              className='underline underline-offset-1'>
+              Sign up
+            </Link>
+          </div>
+        </CardContent>
+      </Card>
+    </>
   );
 };
 const ImprovedLogIn = CheckIfUserLoggedIn(Login);
