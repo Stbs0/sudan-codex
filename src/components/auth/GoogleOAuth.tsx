@@ -41,7 +41,7 @@ const GoogleOAuth = ({ logInOrSignUp }: Props) => {
         navigate("/");
       }
       toast.success("Login successful", {
-        description: "Welcome Back" + results.user.displayName,
+        description: `Welcome Back ${results.user.displayName}`,
       });
     } catch (error) {
       toast.error("Failed to sign in with Google. Please try again.");

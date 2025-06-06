@@ -27,7 +27,7 @@ const MainLayout = () => {
     }
   }, []);
   return (
-    <SidebarProvider>
+    <SidebarProvider defaultOpen={false}>
       <AppSidebar />
       <div className='grid w-full content-between dark:bg-slate-800'>
         <Header />

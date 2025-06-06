@@ -1,30 +1,27 @@
 import FaceBookOAuth from "@/components/auth/FaceBookOAuth";
 import GoogleOAuth from "@/components/auth/GoogleOAuth";
-import SpinnerOverlay from "@/components/SpinnerOverlay";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useAuth } from "@/hooks/useAuth";
-import { ComponentType } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const CheckIfUserLoggedIn = <P extends object>(Component: ComponentType<P>) => {
-  return function ProtectedRoute(props: P) {
-    const navigate = useNavigate();
-    const { user, userLoading, isLoading } = useAuth();
-    if (userLoading || isLoading) {
-      return <SpinnerOverlay />;
-    }
+// const CheckIfUserLoggedIn = <P extends object>(Component: ComponentType<P>) => {
+//   return function ProtectedRoute(props: P) {
+//     const navigate = useNavigate();
+//     const { user, userLoading, isLoading } = useAuth();
+//     if (userLoading || isLoading) {
+//       return <SpinnerOverlay />;
+//     }
 
-    if (user) {
-      if (user.profileComplete === false) {
-        navigate("/user-info");
-        return null;
-      }
-      navigate(-1);
-      return null;
-    }
-    return <Component {...props} />;
-  };
-};
+//     if (user) {
+//       if (user.profileComplete === false) {
+//         navigate("/user-info");
+//         return null;
+//       }
+//       navigate(-1);
+//       return null;
+//     }
+//     return <Component {...props} />;
+//   };
+// };
 
 const Login = () => {
   return (
@@ -56,5 +53,5 @@ const Login = () => {
     </>
   );
 };
-const ImprovedLogIn = CheckIfUserLoggedIn(Login);
-export default ImprovedLogIn;
+// const ImprovedLogIn = CheckIfUserLoggedIn(Login);
+export default Login;

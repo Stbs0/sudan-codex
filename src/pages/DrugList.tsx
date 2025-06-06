@@ -1,13 +1,123 @@
 import { ListItem } from "@/components/drugList/ListItem";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
-import { useCallback, useState } from "react";
+import { driver } from "driver.js";
+import "driver.js/dist/driver.css";
+import { useCallback, useEffect, useRef, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-
 const DrugList = () => {
   const [search, setSearch] = useState("");
   const { loadMore, hasMore, drugList } = useInfiniteScroll(search);
+
+  const firstCardRef = useRef(null); // Ref for the first card
+  // const [isTourActive, setIsTourActive] = useState(false);
+
+  const startTour = useCallback(() => {
+    const driverObj = driver({
+      showProgress: true,
+      allowClose: false,
+      disableActiveInteraction: true,
+      steps: [
+        {
+          element: "#drugInfo-card", // Use the ID selector
+          popover: {
+            title: "This is a Drug Card",
+            description: "Press on it to see more information about the drug.",
+            side: "top",
+            align: "center",
+          },
+        },
+        {
+          element: "#drugInfo-card #drugInfo-card-brandName",
+          popover: {
+            title: "Brand Name",
+            description: "This is the brand name of the drug.",
+            side: "top",
+            align: "center",
+          },
+        },
+        {
+          element: "#drugInfo-card #drugInfo-card-strength",
+          popover: {
+            title: "Strength",
+            description: "This is the strength of the drug.",
+            side: "top",
+            align: "center",
+          },
+        },
+        {
+          element: "#drugInfo-card #drugInfo-card-dosageFormName",
+          popover: {
+            title: "Dosage Form",
+            description: "This is the dosage form of the drug.",
+            side: "top",
+            align: "center",
+          },
+        },
+        {
+          element: "#drugInfo-card #drugInfo-card-genericName",
+          popover: {
+            title: "Generic Name",
+            description: "This is the generic name of the drug.",
+            side: "top",
+            align: "center",
+          },
+        },
+        {
+          element: "#drugInfo-card #drugInfo-card-packSize",
+          popover: {
+            title: "Pack Size",
+            description: "This is the pack size of the drug.",
+            side: "top",
+            align: "center",
+          },
+        },
+        {
+          element: "#drugInfo-card #drugInfo-card-agentName",
+          popover: {
+            title: "Agent Name",
+            description:
+              "This is the agent name of the drug. it refers to the compony that pack the drug, not the manufacturing of the API.",
+            side: "top",
+            align: "center",
+          },
+        },
+        {
+          element: "#drugInfo-card #drugInfo-card-companyName",
+          popover: {
+            title: "Company Name",
+            description: "This is the company name of the drug.",
+            side: "top",
+            align: "center",
+          },
+        },
+        {
+          element: "#drugInfo-card #drugInfo-card-countryOfOrigin",
+          popover: {
+            title: "Country of Origin",
+            description:
+              "This is the country of origin of the drug. It is based on the company that manufacture the API.",
+            side: "top",
+            align: "center",
+          },
+        },
+      ],
+    });
+    driverObj.drive();
+    return () => {
+      driverObj.destroy();
+    };
+  }, []);
+
+  useEffect(() => {
+    const hasVisited = localStorage.getItem("hasVisited");
+    if (!hasVisited && firstCardRef.current) {
+      startTour();
+      localStorage.setItem("hasVisited", "true");
+    }
+  }, [drugList, startTour]);
 
   const handleSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
@@ -26,7 +136,15 @@ const DrugList = () => {
       />
       <div className='mx-auto grid max-w-2xl items-center gap-4 px-3 dark:text-gray-100'>
         <div className='grid gap-2 py-2'>
-          <p className='text-center text-2xl'>Search Drug</p>
+          <div className='flex justify-between gap-2'>
+            <p className='text-center text-2xl'>Search Drug</p>
+            <Button
+              variant={"outline"}
+              onClick={startTour}
+              className='w-fit'>
+              Guide me
+            </Button>
+          </div>
           <Input
             className='rounded-3xl shadow-xs shadow-purple-300 placeholder:text-xs'
             placeholder='Search Generic, Brand, or Company Name'
@@ -42,10 +160,11 @@ const DrugList = () => {
           hasMore={hasMore}
           loader={<h4>Loading...</h4>}>
           {drugList
-            ? drugList.map((drug) => (
+            ? drugList.map((drug, index) => (
                 <ListItem
                   key={drug.no}
                   drug={drug}
+                  ref={index === 0 ? firstCardRef : null}
                 />
               ))
             : [...Array(10)].map((_, index) => (

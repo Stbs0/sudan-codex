@@ -18,6 +18,8 @@ export const useInfiniteScroll = (search?: string) => {
         .startsWithIgnoreCase(search)
         .or("brandName")
         .startsWithIgnoreCase(search)
+        .or("agentName")
+        .startsWithIgnoreCase(search)
         .or("companyName")
         .startsWithIgnoreCase(search)
         .limit(limit)

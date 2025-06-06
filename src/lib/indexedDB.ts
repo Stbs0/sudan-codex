@@ -8,7 +8,7 @@ export class DrugIndex extends Dexie {
     super("DrugIndex");
     this.version(1).stores({
       drugList:
-        "no, brandName, genericName, dosageFormName, strength, packSize, companyName, countryOfOrigin, agentName",
+        "no, brandName, genericName, dosageFormName, strength, packSize, companyName, countryOfOrigin, agentName" as const,
     });
   }
   async isExists() {

@@ -1,7 +1,7 @@
 [
   {
     "no": "1",
-    "brandName": "0.5% w/v Metronidazole Injection",
+    "brandName": "Metronidazole Injection",
     "genericName": "Metronidazole",
     "dosageFormName": "Solution for intravenous infusion",
     "strength": "500 mg/ 100 ml",
@@ -100,7 +100,7 @@
   },
   {
     "no": "10",
-    "brandName": "1% w/v Paracetamol Injection",
+    "brandName": "Paracetamol Injection",
     "genericName": "Paracetamol",
     "dosageFormName": "Infusion",
     "strength": "Paracetamol 1% w/v",

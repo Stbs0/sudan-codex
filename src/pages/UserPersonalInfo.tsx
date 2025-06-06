@@ -60,7 +60,7 @@ const UserPersonalInfo = () => {
   };
 
   return (
-    <>
+    <div className='mx-auto grid max-w-2xl items-center gap-4 px-3 dark:text-gray-100'>
       <FormProvider {...methods}>
         <Form {...methods}>
           <form onSubmit={methods.handleSubmit(onSubmit)}>
@@ -144,7 +144,7 @@ const UserPersonalInfo = () => {
         </Form>
       </FormProvider>
       <DevTool control={methods.control} />
-    </>
+    </div>
   );
 };
 

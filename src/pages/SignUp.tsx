@@ -1,26 +1,24 @@
 import FaceBookOAuth from "@/components/auth/FaceBookOAuth";
 import GoogleOAuth from "@/components/auth/GoogleOAuth";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useAuth } from "@/hooks/useAuth";
-import { ComponentType } from "react";
 
-import { Link, Navigate } from "react-router-dom";
-const CheckIfUserLoggedIn = <P extends object>(Component: ComponentType<P>) => {
-  return function ProtectedRoute(props: P) {
-    const { user } = useAuth();
+import { Link } from "react-router-dom";
+// const CheckIfUserLoggedIn = <P extends object>(Component: ComponentType<P>) => {
+//   return function ProtectedRoute(props: P) {
+//     const { user } = useAuth();
 
-    if (user) {
-      return (
-        <Navigate
-          to='/'
-          replace
-          state={{ type: "warning", message: "You are already logged in" }}
-        />
-      );
-    }
-    return <Component {...props} />;
-  };
-};
+//     if (user) {
+//       return (
+//         <Navigate
+//           to='/'
+//           replace
+//           state={{ type: "warning", message: "You are already logged in" }}
+//         />
+//       );
+//     }
+//     return <Component {...props} />;
+//   };
+// };
 const SignUp = () => {
   return (
     <>
@@ -51,5 +49,5 @@ const SignUp = () => {
     </>
   );
 };
-const ProtectedSignUp = CheckIfUserLoggedIn(SignUp);
-export default ProtectedSignUp;
+// const ProtectedSignUp = CheckIfUserLoggedIn(SignUp);
+export default SignUp;

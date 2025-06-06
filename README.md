@@ -6,6 +6,12 @@
 
 A website that provide FDA drug labeling information for heath care providers in Sudan.
 
+## Todo
+
+- [ ] Add metadata to each page
+- [ ] Find better drug information source
+-
+
 ## Tech
 
 - Vite
