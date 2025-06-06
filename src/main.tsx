@@ -1,14 +1,23 @@
 import { scan } from "react-scan"; // must be imported before React and React DOM
 
+import { PostHogProvider } from "posthog-js/react";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
+import { StrictMode } from "react";
 
+const options = {
+  api_host: process.env.VITE_POSTHOG_HOST,
+};
 scan({
   enabled: import.meta.env.DEV ? true : false,
 });
 createRoot(document.getElementById("root")!).render(
-  <>
-    <App />
-  </>
+  <StrictMode>
+    <PostHogProvider
+      apiKey={process.env.REACT_APP_PUBLIC_POSTHOG_KEY}
+      options={options}>
+      <App />
+    </PostHogProvider>
+  </StrictMode>
 );
