@@ -120,7 +120,7 @@ const DrugList = () => {
   }, [drugList, startTour]);
 
   const handleSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
+    setSearch(e.target.value.trim());
   };
 
   const memoizedLoadMore = useCallback(() => {
