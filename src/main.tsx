@@ -7,7 +7,7 @@ import "./index.css";
 import { StrictMode } from "react";
 
 const options = {
-  api_host: process.env.VITE_POSTHOG_HOST,
+  api_host: import.meta.env.VITE_POSTHOG_HOST,
 };
 scan({
   enabled: import.meta.env.DEV ? true : false,
@@ -15,7 +15,7 @@ scan({
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <PostHogProvider
-      apiKey={process.env.REACT_APP_PUBLIC_POSTHOG_KEY}
+      apiKey={import.meta.env.REACT_APP_PUBLIC_POSTHOG_KEY!}
       options={options}>
       <App />
     </PostHogProvider>
