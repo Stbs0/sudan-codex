@@ -55,6 +55,7 @@ export type Drug = {
   countryOfOrigin: string;
   agentName: string;
 };
+export type DrugProperty = Drug[keyof Drug];
 
 export type SaveUserReturnTypes = {
   uid: string;

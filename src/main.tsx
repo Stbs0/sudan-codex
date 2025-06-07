@@ -1,4 +1,4 @@
-import { scan } from "react-scan"; // must be imported before React and React DOM
+import { Options, scan } from "react-scan"; // must be imported before React and React DOM
 
 import { PostHogConfig } from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
@@ -14,9 +14,10 @@ const options: Partial<PostHogConfig> = {
   capture_heatmaps: true,
   capture_pageview: true,
 };
-scan({
+const reactScanOptions: Options = {
   enabled: import.meta.env.DEV ? true : false,
-});
+};
+scan(reactScanOptions);
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <PostHogProvider

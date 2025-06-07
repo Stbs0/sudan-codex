@@ -9,15 +9,15 @@ type Props = {
 };
 export const ListItem = memo(({ drug, ref }: Props) => {
   const navigate = useNavigate();
-
+  const handleCardClick = () => {
+    navigate(`/drug-list/${drug.no}`);
+  };
   return (
     <Card
       ref={ref}
       id='drugInfo-card'
       className='gap-2 rounded-none border-4 border-transparent border-l-indigo-700 bg-purple-100/50 py-2 hover:bg-purple-100/90 dark:bg-purple-800/50 dark:hover:bg-purple-800/90'
-      onClick={() => {
-        navigate(`/drug-list/${drug.no}`);
-      }}>
+      onClick={handleCardClick}>
       <CardHeader>
         <CardTitle className='flex gap-1 text-sm uppercase'>
           <span

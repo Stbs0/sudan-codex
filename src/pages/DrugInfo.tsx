@@ -2,7 +2,7 @@ import { DrugCard } from "@/components/drugInfo/drugCard";
 import DrugInfoAccordion from "@/components/drugInfo/DrugInfoAccordion";
 import SearchDrugInfo from "@/components/drugInfo/SearchDrugInfo";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -70,16 +70,13 @@ const DrugInfo = () => {
         content={`Information about the drug ${drug.brandName} (${drug.genericName})`}
       />
       <Card className='mx-auto flex max-w-5xl flex-col items-center gap-6 p-5 max-md:mx-2 max-md:p-3'>
-        <CardTitle className='flex flex-col gap-4'>
-          <DrugCard drug={drug} />
-        </CardTitle>
+        <DrugCard drug={drug} />
         <Separator className='w-lg' />
-        <div className='flex flex-col gap-4'>
-          <SearchDrugInfo
-            generic={drug.genericName}
-            handleSubmit={handleSubmit}
-          />
-        </div>
+
+        <SearchDrugInfo
+          generic={drug.genericName}
+          handleSubmit={handleSubmit}
+        />
         <Separator className='w-lg' />
 
         <CardContent className='flex w-full flex-col gap-4'>

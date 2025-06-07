@@ -9,7 +9,6 @@ import { AppSidebar } from "@/components/MainLayout/app-sidebar";
 // import DevAlert from "@/components/DevAlert";
 // import { AnimatePresence, motion } from "motion/react";
 import SpinnerOverlay from "@/components/SpinnerOverlay";
-import { SidebarProvider } from "@/components/ui/sidebar";
 import { Suspense, useEffect } from "react";
 
 const MainLayout = () => {
@@ -27,14 +26,10 @@ const MainLayout = () => {
     }
   }, []);
   return (
-    <SidebarProvider defaultOpen={false}>
+    <>
       <AppSidebar />
       <div className='grid w-full content-between dark:bg-slate-800'>
         <Header />
-
-        {/* <main className='container mx-auto py-8'> */}
-        {/* <Outlet /> */}
-        {/* </main> */}
 
         <main
           className='container mx-auto py-8'
@@ -51,7 +46,7 @@ const MainLayout = () => {
         />
         <Footer />
       </div>
-    </SidebarProvider>
+    </>
   );
 };
 

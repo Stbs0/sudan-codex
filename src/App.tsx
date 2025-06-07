@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { logEvent } from "firebase/analytics";
 import { useEffect } from "react";
+import { SidebarProvider } from "./components/ui/sidebar";
 import { AuthProvider } from "./hooks/useAuth";
 import { analytics } from "./lib/firebase";
 import drugDB from "./lib/indexedDB";
@@ -32,12 +33,13 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
-
       <ThemeProvider
         defaultTheme='dark'
         storageKey='vite-ui-theme'>
         <AuthProvider>
-          <RouterProvider router={router} />
+          <SidebarProvider defaultOpen={false}>
+            <RouterProvider router={router} />
+          </SidebarProvider>
         </AuthProvider>
       </ThemeProvider>
     </QueryClientProvider>
