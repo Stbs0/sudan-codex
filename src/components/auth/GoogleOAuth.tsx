@@ -7,10 +7,12 @@ import { toast } from "sonner";
 import Google from "../../assets/icons/google.svg";
 import { Button } from "../ui/button";
 import { useQueryClient } from "@tanstack/react-query";
+import { usePostHog } from "posthog-js/react";
 type Props = {
   logInOrSignUp?: string;
 };
 const GoogleOAuth = ({ logInOrSignUp }: Props) => {
+  const posthog = usePostHog();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const signInWithGoogle = async (e: SyntheticEvent) => {
@@ -46,6 +48,9 @@ const GoogleOAuth = ({ logInOrSignUp }: Props) => {
     } catch (error) {
       toast.error("Failed to sign in with Google. Please try again.");
       console.log(error);
+      posthog.capture("Google OAuth Error", {
+        error: error instanceof Error ? error.message : "Unknown error",
+      });
     }
   };
   return (
