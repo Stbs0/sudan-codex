@@ -12,9 +12,10 @@ const propToDelete = [
 ];
 
 const DrugInfoAccordion = ({ data }: { data: Record<string, string[]> }) => {
-  const keys = Object.keys(data).filter(
-    (key) => Array.isArray(data[key]) && !propToDelete.includes(key)
-  );
+  const keys = Object.keys(data)
+    .filter((key) => Array.isArray(data[key]) && !propToDelete.includes(key))
+    .sort((a, b) => a.localeCompare(b));
+
   return (
     <Accordion
       type='multiple'

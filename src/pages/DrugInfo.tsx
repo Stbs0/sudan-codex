@@ -95,7 +95,7 @@ const DrugInfo = () => {
               [...Array(4)].map((_, index) => (
                 <Skeleton
                   key={index}
-                  className='mb-4 h-24 w-full'
+                  className='mb-4 h-12 w-full'
                 />
               ))
             ) : data ? (
