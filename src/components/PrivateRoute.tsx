@@ -19,6 +19,7 @@ const PrivateRoute = () => {
     return (
       <Navigate
         to='/log-in'
+        state={{ userDesiredPage: location }}
         replace
       />
     );
@@ -38,7 +39,7 @@ const PrivateRoute = () => {
     return (
       <Navigate
         to='/user-info'
-        state={{ from: location }}
+        state={{ userDesiredPage: location }}
         replace
       />
     );

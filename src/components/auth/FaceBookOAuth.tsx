@@ -1,19 +1,21 @@
-import { Button } from "../ui/button";
+import { FaceBookSignIn } from "@/services/authServices";
 import { SyntheticEvent } from "react";
 import { toast } from "sonner";
-import { FaceBookSignIn } from "@/services/authServices";
+import { Button } from "../ui/button";
 
-import { getAdditionalUserInfo } from "firebase/auth";
 import { SaveUserInFIreStore } from "@/services/usersServices";
-import { useNavigate } from "react-router-dom";
-import Facebook from "../../assets/icons/facebook.svg";
 import { useQueryClient } from "@tanstack/react-query";
+import { getAdditionalUserInfo } from "firebase/auth";
+import { useLocation, useNavigate } from "react-router-dom";
+import Facebook from "../../assets/icons/facebook.svg";
 
 type Props = {
   logInOrSignUp?: string;
 };
 const FaceBookOAuth = ({ logInOrSignUp }: Props) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const userDesiredPage = location.state?.userDesiredPage?.pathname || "/";
   const queryClient = useQueryClient();
   const signInWithFaceBook = async (e: SyntheticEvent) => {
     e.preventDefault();
@@ -37,15 +39,18 @@ const FaceBookOAuth = ({ logInOrSignUp }: Props) => {
           queryClient.invalidateQueries({ queryKey: ["user", userUid] });
           throw err;
         });
-        navigate("/user-info");
+        navigate("/user-info", { replace: true });
+        toast.success("Login successful", {
+          description: `Welcome ${results.user.displayName}`,
+        });
       } else {
-        navigate("/");
+        navigate(userDesiredPage, { replace: true });
+        toast.success("Login successful", {
+          description: `Welcome Back ${results.user.displayName}`,
+        });
       }
-      toast.success("Login successful", {
-        description: "Welcome Back" + results.user.displayName,
-      });
     } catch (error) {
-      toast.error("Failed to sign in with FaceBook. Please try again.");
+      toast.error("Failed to sign in with Google. Please try again.");
       console.log(error);
     }
   };

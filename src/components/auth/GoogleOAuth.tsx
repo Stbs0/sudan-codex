@@ -3,7 +3,7 @@ import { SaveUserInFIreStore } from "@/services/usersServices";
 import { useQueryClient } from "@tanstack/react-query";
 import { getAdditionalUserInfo } from "firebase/auth";
 import { SyntheticEvent } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import Google from "../../assets/icons/google.svg";
 import { Button } from "../ui/button";
@@ -12,7 +12,11 @@ type Props = {
 };
 const GoogleOAuth = ({ logInOrSignUp }: Props) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const userDesiredPage = location.state?.userDesiredPage?.pathname || "/";
+
   const queryClient = useQueryClient();
+
   const signInWithGoogle = async (e: SyntheticEvent) => {
     e.preventDefault();
     try {
@@ -36,12 +40,12 @@ const GoogleOAuth = ({ logInOrSignUp }: Props) => {
           throw err;
         });
 
-        navigate("/user-info");
+        navigate("/user-info", { replace: true, state: { userDesiredPage } });
         toast.success("Login successful", {
           description: `Welcome ${results.user.displayName}`,
         });
       } else {
-        navigate(-1);
+        navigate(userDesiredPage, { replace: true });
         toast.success("Login successful", {
           description: `Welcome Back ${results.user.displayName}`,
         });
@@ -51,6 +55,7 @@ const GoogleOAuth = ({ logInOrSignUp }: Props) => {
       console.log(error);
     }
   };
+
   return (
     <Button
       variant='outline'

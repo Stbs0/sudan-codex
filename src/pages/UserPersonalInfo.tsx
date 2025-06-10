@@ -23,6 +23,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { FormProvider, useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 const UserPersonalInfo = () => {
   const { user, refetch } = useAuth();
@@ -38,8 +39,10 @@ const UserPersonalInfo = () => {
   });
   const queryClient = useQueryClient();
   const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
+  const userDesiredPage = location.state?.userDesiredPage || "/";
+
   const navigate = useNavigate();
+
   const mutation = useMutation({
     mutationFn: async (data: tellUsMoreSchemaType) => {
       await completeProfile({ ...data, profileComplete: true });
@@ -47,7 +50,14 @@ const UserPersonalInfo = () => {
     onSuccess: async () => {
       await queryClient.invalidateQueries({ queryKey: ["user", user?.uid] });
       refetch();
-      navigate(from, { replace: true });
+      navigate(userDesiredPage, { replace: true });
+      toast.success("Profile completed successfully!", {
+        description: "Your profile has been updated.",
+      });
+    },
+    onError: (error) => {
+      toast.error("Error completing profile. Please try again.");
+      console.error("Error completing profile:", error);
     },
   });
 
