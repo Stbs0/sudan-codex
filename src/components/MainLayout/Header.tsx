@@ -18,7 +18,7 @@ const Header = memo(() => {
   const { user, userLoading } = useAuth();
 
   return (
-    <header className='sticky inset-x-0 top-0 z-50 flex h-[64px] items-center justify-between border-b bg-white p-3 shadow-lg shadow-purple-200 dark:border-neutral-800 dark:bg-slate-800 dark:shadow-neutral-900'>
+    <header className='sticky inset-x-0 top-0 z-50 flex h-[64px] items-center justify-between border-b bg-white p-3 shadow-lg dark:border-neutral-800 dark:bg-slate-800'>
       {(isMobile || user) && <SidebarTrigger className='dark:invert' />}
 
       <Logo />

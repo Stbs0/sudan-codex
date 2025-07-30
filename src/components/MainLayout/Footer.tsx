@@ -1,12 +1,12 @@
-import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
+import Github from "../../assets/icons/github.svg";
 import Linkedin from "../../assets/icons/linkedIn.svg";
 import X from "../../assets/icons/x.svg";
-import Github from "../../assets/icons/github.svg";
+import { Button } from "../ui/button";
 
 const Footer = () => {
   return (
-    <footer className='bg-primary flex items-center justify-center gap-5 p-2 text-center text-[#fff] dark:bg-purple-900'>
+    <footer className='bg-footer-background dark:bg-footer-background flex items-center justify-center gap-5 p-2 text-center text-[#fff]'>
       <div className='flex justify-center gap-4'>
         <a
           href='https://github.com/Stbs0'

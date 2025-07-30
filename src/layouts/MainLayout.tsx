@@ -28,12 +28,10 @@ const MainLayout = () => {
   return (
     <>
       <AppSidebar />
-      <div className='grid w-full content-between dark:bg-slate-800'>
+      <div className='grid min-h-screen w-full grid-rows-[auto_1fr_auto] dark:bg-slate-800'>
         <Header />
 
-        <main
-          className='container mx-auto py-8'
-          key={location.pathname}>
+        <main key={location.pathname}>
           <Suspense fallback={<SpinnerOverlay />}>
             <Outlet />
           </Suspense>
