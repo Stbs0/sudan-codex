@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "deploy": " pnpm run build && firebase deploy --only hosting ",
     "clean": "rm -rf dist",
-    "prepend":"husky"
+    "prepare": "husky"
   },
   "husky": {
     "hooks": {
@@ -20,8 +20,8 @@
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
-      "pnpm lint",
-      "prettier . --write"
+      "eslint --fix",
+      "prettier  --write"
     ]
   },
   "dependencies": {
