@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export function Hero() {
   return (
-    <section className='relative flex h-full min-h-[60vh] items-center justify-center bg-[url("drugsBackground.jpg")] bg-cover bg-center py-20 text-center'>
+    <section className='relative flex h-full min-h-[60vh] items-center justify-center bg-[url("/drugsBackground.jpg")] bg-cover bg-center py-20 text-center'>
       {/* Overlay */}
       <div className='pointer-events-none absolute inset-0 z-0 bg-black/60'></div>
 
