@@ -28,7 +28,7 @@ const MainLayout = () => {
   return (
     <>
       <AppSidebar />
-      <div className='grid min-h-screen w-full grid-rows-[auto_1fr_auto] dark:bg-slate-800'>
+      <div className='grid min-h-screen w-full grid-rows-[auto_1fr_auto] bg-gray-100 dark:bg-slate-800'>
         <Header />
 
         <main key={location.pathname}>
