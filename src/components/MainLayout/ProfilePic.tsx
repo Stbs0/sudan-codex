@@ -4,7 +4,6 @@ import { getInitials } from "@/lib/utils";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 import { useQueryClient } from "@tanstack/react-query";
 import { signOut } from "firebase/auth";
-import { ChevronUp } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
@@ -47,9 +46,6 @@ const ProfilePic = () => {
             {getInitials(user?.displayName || "  ")}
           </AvatarFallback>
         </Avatar>
-        <ChevronUp
-          className={`h-4 w-4 shrink-0 opacity-50 ${!open ? "rotate-180" : ""}`}
-        />
       </PopoverTrigger>
       <PopoverContent
         className='w-28 p-0'
