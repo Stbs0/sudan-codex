@@ -31,25 +31,28 @@ const Login = () => {
         name='description'
         content='Login to your Sudan Codex account to sudan drug index'
       />
-      <Card className='mx-auto max-w-sm'>
-        <CardHeader>
-          <CardTitle className='text-2xl'>Login</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className='grid gap-4'>
-            <GoogleOAuth logInOrSignUp='Login' />
-            <FaceBookOAuth logInOrSignUp='Login' />
-          </div>
-          <div className='mt-4 text-center text-sm'>
-            Don&apos;t have an account?{" "}
-            <Link
-              to='/sign-up'
-              className='underline underline-offset-1'>
-              Sign up
-            </Link>
-          </div>
-        </CardContent>
-      </Card>
+
+      <div className='flex h-full items-center justify-center'>
+        <Card className='min-h-40'>
+          <CardHeader>
+            <CardTitle className='text-2xl'>Login</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className='grid gap-4'>
+              <GoogleOAuth logInOrSignUp='Login' />
+              <FaceBookOAuth logInOrSignUp='Login' />
+            </div>
+            <div className='mt-4 text-center text-sm'>
+              Don&apos;t have an account?{" "}
+              <Link
+                to='/sign-up'
+                className='underline underline-offset-1'>
+                Sign up
+              </Link>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </>
   );
 };
