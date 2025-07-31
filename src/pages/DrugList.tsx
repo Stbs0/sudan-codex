@@ -3,10 +3,101 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
-import { driver } from "driver.js";
+import { Config, driver } from "driver.js";
 import "driver.js/dist/driver.css";
 import { useCallback, useEffect, useRef, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
+
+const driverConfig: Config = {
+  showProgress: true,
+  allowClose: false,
+  disableActiveInteraction: true,
+  steps: [
+    {
+      element: "#drugInfo-card", // Use the ID selector
+      popover: {
+        title: "This is a Drug Card",
+        description: "Press on it to see more information about the drug.",
+        side: "top",
+        align: "center",
+      },
+    },
+    {
+      element: "#drugInfo-card #drugInfo-card-brandName",
+      popover: {
+        title: "Brand Name",
+        description: "This is the brand name of the drug.",
+        side: "top",
+        align: "center",
+      },
+    },
+    {
+      element: "#drugInfo-card #drugInfo-card-strength",
+      popover: {
+        title: "Strength",
+        description: "This is the strength of the drug.",
+        side: "top",
+        align: "center",
+      },
+    },
+    {
+      element: "#drugInfo-card #drugInfo-card-dosageFormName",
+      popover: {
+        title: "Dosage Form",
+        description: "This is the dosage form of the drug.",
+        side: "top",
+        align: "center",
+      },
+    },
+    {
+      element: "#drugInfo-card #drugInfo-card-genericName",
+      popover: {
+        title: "Generic Name",
+        description: "This is the generic name of the drug.",
+        side: "top",
+        align: "center",
+      },
+    },
+    {
+      element: "#drugInfo-card #drugInfo-card-packSize",
+      popover: {
+        title: "Pack Size",
+        description: "This is the pack size of the drug.",
+        side: "top",
+        align: "center",
+      },
+    },
+    {
+      element: "#drugInfo-card #drugInfo-card-agentName",
+      popover: {
+        title: "Agent Name",
+        description:
+          "This is the agent name of the drug. it refers to the compony that pack the drug, not the manufacturing of the API.",
+        side: "top",
+        align: "center",
+      },
+    },
+    {
+      element: "#drugInfo-card #drugInfo-card-companyName",
+      popover: {
+        title: "Company Name",
+        description: "This is the company name of the drug.",
+        side: "top",
+        align: "center",
+      },
+    },
+    {
+      element: "#drugInfo-card #drugInfo-card-countryOfOrigin",
+      popover: {
+        title: "Country of Origin",
+        description:
+          "This is the country of origin of the drug. It is based on the company that manufacture the API.",
+        side: "top",
+        align: "center",
+      },
+    },
+  ],
+};
 const DrugList = () => {
   const [search, setSearch] = useState("");
   const { loadMore, hasMore, drugList } = useInfiniteScroll(search);
@@ -15,96 +106,7 @@ const DrugList = () => {
   // const [isTourActive, setIsTourActive] = useState(false);
 
   const startTour = useCallback(() => {
-    const driverObj = driver({
-      showProgress: true,
-      allowClose: false,
-      disableActiveInteraction: true,
-      steps: [
-        {
-          element: "#drugInfo-card", // Use the ID selector
-          popover: {
-            title: "This is a Drug Card",
-            description: "Press on it to see more information about the drug.",
-            side: "top",
-            align: "center",
-          },
-        },
-        {
-          element: "#drugInfo-card #drugInfo-card-brandName",
-          popover: {
-            title: "Brand Name",
-            description: "This is the brand name of the drug.",
-            side: "top",
-            align: "center",
-          },
-        },
-        {
-          element: "#drugInfo-card #drugInfo-card-strength",
-          popover: {
-            title: "Strength",
-            description: "This is the strength of the drug.",
-            side: "top",
-            align: "center",
-          },
-        },
-        {
-          element: "#drugInfo-card #drugInfo-card-dosageFormName",
-          popover: {
-            title: "Dosage Form",
-            description: "This is the dosage form of the drug.",
-            side: "top",
-            align: "center",
-          },
-        },
-        {
-          element: "#drugInfo-card #drugInfo-card-genericName",
-          popover: {
-            title: "Generic Name",
-            description: "This is the generic name of the drug.",
-            side: "top",
-            align: "center",
-          },
-        },
-        {
-          element: "#drugInfo-card #drugInfo-card-packSize",
-          popover: {
-            title: "Pack Size",
-            description: "This is the pack size of the drug.",
-            side: "top",
-            align: "center",
-          },
-        },
-        {
-          element: "#drugInfo-card #drugInfo-card-agentName",
-          popover: {
-            title: "Agent Name",
-            description:
-              "This is the agent name of the drug. it refers to the compony that pack the drug, not the manufacturing of the API.",
-            side: "top",
-            align: "center",
-          },
-        },
-        {
-          element: "#drugInfo-card #drugInfo-card-companyName",
-          popover: {
-            title: "Company Name",
-            description: "This is the company name of the drug.",
-            side: "top",
-            align: "center",
-          },
-        },
-        {
-          element: "#drugInfo-card #drugInfo-card-countryOfOrigin",
-          popover: {
-            title: "Country of Origin",
-            description:
-              "This is the country of origin of the drug. It is based on the company that manufacture the API.",
-            side: "top",
-            align: "center",
-          },
-        },
-      ],
-    });
+    const driverObj = driver(driverConfig);
     driverObj.drive();
     return () => {
       driverObj.destroy();
@@ -114,8 +116,11 @@ const DrugList = () => {
   useEffect(() => {
     const hasVisited = localStorage.getItem("hasVisited");
     if (!hasVisited && firstCardRef.current) {
-      startTour();
+      const driverDestroy = startTour();
       localStorage.setItem("hasVisited", "true");
+      return () => {
+        driverDestroy();
+      };
     }
   }, [drugList, startTour]);
 
@@ -154,7 +159,7 @@ const DrugList = () => {
         </div>
 
         <InfiniteScroll
-          className='flex w-full flex-col gap-4'
+          className='flex  flex-col  gap-4'
           dataLength={drugList ? drugList.length : 0}
           next={memoizedLoadMore}
           hasMore={hasMore}

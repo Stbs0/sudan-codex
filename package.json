@@ -10,7 +10,8 @@
     "test": "vitest",
     "preview": "vite preview",
     "deploy": " pnpm run build && firebase deploy --only hosting ",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "prepend":"husky"
   },
   "husky": {
     "hooks": {
