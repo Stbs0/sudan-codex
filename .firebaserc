@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "drug-app-dev",
+    "default": "sudan-codex",
     "production": "sudan-codex",
     "dev": "drug-app-dev",
     "prod": "sudan-codex"
