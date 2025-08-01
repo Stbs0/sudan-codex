@@ -126,7 +126,7 @@
 
 :root {
   --radius: 0.5rem;
-  --sidebar-background: hsl(0 0% 98%);
+  --sidebar-background: hsl(0, 0%, 94%);
   --sidebar-foreground: hsl(240 5.3% 26.1%);
   --sidebar-primary: hsl(240 5.9% 10%);
   --sidebar-primary-foreground: hsl(0 0% 98%);
