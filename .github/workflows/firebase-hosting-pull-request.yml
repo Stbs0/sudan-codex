@@ -13,15 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v4
         with:
-          version: 10.13.1
-      - run: pnpm install
+         version: 10.13.1
+      - name: Install pnpm
+        run: pnpm install
+      - name: pnpm approve-builds
+        run: pnpm approve-builds
       - name: Build Project
-        run: pnpm run build
+        run: pnpm run build && pnpm approve-builds
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SUDAN_CODEX }}
           projectId: sudan-codex
+
