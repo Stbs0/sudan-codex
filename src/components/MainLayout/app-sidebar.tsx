@@ -8,28 +8,28 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarRail,
-  SidebarTrigger,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { Link } from "react-router-dom";
 import { NAV_ITEMS } from "@/constants";
+import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import MobileAuthBtns from "./MobileAuthBtns";
 
-export const AppSidebar = () => {
+export const AppSidebar = ({
+  ...props
+}: React.ComponentProps<typeof Sidebar>) => {
   const { setOpenMobile } = useSidebar();
   return (
-    <Sidebar>
+    <Sidebar
+      {...props}
+      collapsible='offcanvas'>
       <SidebarHeader className='flex items-center'>
-        <div className='flex w-full items-center justify-between space-x-2 p-2'>
+        <div className='flex justify-center p-2'>
           <Link
             onClick={() => setOpenMobile(false)}
-            to='/'
-            className='flex items-center'>
-            <Logo className='h-8' />
+            to='/'>
+            <Logo />
           </Link>
-          <SidebarTrigger className='ml-auto' />
         </div>
         <MobileAuthBtns />
       </SidebarHeader>
@@ -54,7 +54,6 @@ export const AppSidebar = () => {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarRail />
     </Sidebar>
   );
 };

@@ -25,7 +25,7 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 if (import.meta.env.DEV) {
   connectFirestoreEmulator(db, "127.0.0.1", 8080);
-  connectAuthEmulator(auth, "http://127.0.0.1:9099");
+  connectAuthEmulator(auth, "http://127.0.0.1:9099", { disableWarnings: true });
 }
 export const googleAuthProvider = new GoogleAuthProvider();
 export const faceBookAuthProvider = new FacebookAuthProvider();

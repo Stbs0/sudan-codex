@@ -1,6 +1,7 @@
 import { Drug } from "@/types/types";
 import { memo } from "react";
 import { useNavigate } from "react-router-dom";
+import { Badge } from "../ui/badge";
 import { Card, CardContent } from "../ui/card";
 
 type Props = {
@@ -16,43 +17,44 @@ export const ListItem = memo(({ drug, ref }: Props) => {
     <Card
       ref={ref}
       id='drugInfo-card'
-      className=' w-full gap-2 rounded-none border-4 border-transparent border-l-indigo-700 bg-purple-100/50 py-2 *:hyphens-auto hover:bg-purple-100/90 md:mx-auto md:max-w-[600px] dark:bg-purple-800/50 dark:hover:bg-purple-800/90'
+      className='rounded-none border-4 border-transparent border-l-indigo-700 py-2 shadow-md hover:bg-purple-100/90 dark:bg-purple-800/50 dark:hover:bg-purple-800/90'
       onClick={handleCardClick}>
-      <CardContent className='flex flex-col gap-2 text-sm sm:text-base'>
-        <div className='flex gap-2'>
+      <CardContent className='flex flex-col justify-center gap-2 px-3 text-sm sm:text-base'>
+        <div className='flex items-end gap-2'>
           <p
             id='drugInfo-card-brandName'
-            className='font-bold text-gray-800 dark:text-gray-200'
+            className='max-w-52 truncate text-lg font-bold text-gray-800 sm:max-w-72 dark:text-gray-200'
             title={drug.brandName || "No Brand Name"}>
             {drug.brandName || "No Brand Name"}
           </p>
-          <p
-            title={drug.strength}
+          <Badge
             id='drugInfo-card-strength'
-            className='text-sm font-normal text-gray-700 dark:text-gray-300'>
+            title={drug.strength}
+            className='block max-w-[100px] justify-start truncate sm:max-w-72'>
             {drug.strength || "No Strength"}
-          </p>
-          <p
-            title={drug.dosageFormName}
+          </Badge>
+        </div>
+        <div className='flex gap-2'>
+          <Badge
             id='drugInfo-card-dosageFormName'
-            className='text-sm font-extralight text-gray-600 dark:text-gray-400'>
+            title={drug.dosageFormName}
+            className='block max-w-36 justify-start truncate bg-blue-500 sm:max-w-72'>
             {drug.dosageFormName || "No Dosage Form"}
-          </p>
-        </div>
-        <div className='flex justify-between'>
-          <p
-            title={drug.genericName}
-            id='drugInfo-card-genericName'
-            className='font-bold text-green-600 dark:text-green-400'>
-            {drug.genericName}
-          </p>
-          <p
-            title={drug.packSize}
+          </Badge>
+          <Badge
             id='drugInfo-card-packSize'
-            className='font-bold text-red-600 dark:text-red-400'>
+            title={drug.packSize}
+            className='block max-w-36 justify-start truncate text-left sm:max-w-72'
+            variant={"destructive"}>
             {drug.packSize}
-          </p>
+          </Badge>
         </div>
+        <p
+          title={drug.genericName}
+          id='drugInfo-card-genericName'
+          className='max-w-60 truncate font-bold text-green-600 dark:text-green-400'>
+          {drug.genericName}
+        </p>
         <p
           title={drug.agentName}
           id='drugInfo-card-agentName'

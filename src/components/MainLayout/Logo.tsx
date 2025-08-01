@@ -1,6 +1,6 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import LogoPic from "../../assets/logo/pLogo.webp";
 import { Button } from "../ui/button";
-import LogoPic from "../../assets/logo/purpleLogo.png";
 
 const Logo = ({ className }: { className?: string }) => {
   const navigate = useNavigate();
@@ -14,11 +14,12 @@ const Logo = ({ className }: { className?: string }) => {
 
   return (
     <Button
-      className={`h-full p-0 hover:bg-transparent ${className}`}
+      asChild
+      className={`p-0 hover:bg-transparent ${className}`}
       variant={"ghost"}
       onClick={handleClick}>
       <img
-        className='h-full w-full object-contain'
+        className='object-contain'
         src={LogoPic}
         alt='logo'
       />

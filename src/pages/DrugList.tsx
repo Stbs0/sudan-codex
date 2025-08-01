@@ -11,6 +11,8 @@ import InfiniteScroll from "react-infinite-scroll-component";
 const driverConfig: Config = {
   showProgress: true,
   allowClose: false,
+
+  allowKeyboardControl: true,
   disableActiveInteraction: true,
   steps: [
     {
@@ -50,19 +52,19 @@ const driverConfig: Config = {
       },
     },
     {
-      element: "#drugInfo-card #drugInfo-card-genericName",
+      element: "#drugInfo-card #drugInfo-card-packSize",
       popover: {
-        title: "Generic Name",
-        description: "This is the generic name of the drug.",
+        title: "Pack Size",
+        description: "This is the pack size of the drug.",
         side: "top",
         align: "center",
       },
     },
     {
-      element: "#drugInfo-card #drugInfo-card-packSize",
+      element: "#drugInfo-card #drugInfo-card-genericName",
       popover: {
-        title: "Pack Size",
-        description: "This is the pack size of the drug.",
+        title: "Generic Name",
+        description: "This is the generic name of the drug.",
         side: "top",
         align: "center",
       },
@@ -139,7 +141,7 @@ const DrugList = () => {
         name='description'
         content='Search for drugs by generic, brand, or company name in the Sudan Codex database.'
       />
-      <div className='mx-auto grid max-w-2xl items-center gap-4 px-3 dark:text-gray-100'>
+      <div className='mx-auto grid gap-4 px-3 md:max-w-2xl dark:text-gray-100'>
         <div className='grid gap-2 py-2'>
           <div className='flex justify-between gap-2'>
             <p className='text-center text-2xl'>Search Drug</p>
@@ -151,7 +153,7 @@ const DrugList = () => {
             </Button>
           </div>
           <Input
-            className='rounded-3xl shadow-xs shadow-purple-300 placeholder:text-xs'
+            className='bg- rounded-3xl shadow-md placeholder:text-xs'
             placeholder='Search Generic, Brand, or Company Name'
             value={search}
             onChange={handleSearchInput}
@@ -159,7 +161,7 @@ const DrugList = () => {
         </div>
 
         <InfiniteScroll
-          className='flex  flex-col  gap-4'
+          className='grid gap-4'
           dataLength={drugList ? drugList.length : 0}
           next={memoizedLoadMore}
           hasMore={hasMore}

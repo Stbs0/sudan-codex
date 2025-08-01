@@ -14,11 +14,11 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9.15.3
-      - name: Install dependencies
-        run: pnpm install
+          version: 10.13.1
+      - name: install deps
+        run: pnpm install --dangerously-allow-all-builds
       - name: Build Project
-        run: pnpm run build
+        run: pnpm build
         env:
           VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
           VITE_AUTH_DOMAIN: ${{ secrets.VITE_AUTH_DOMAIN }}
@@ -30,10 +30,10 @@ jobs:
           VITE_BASE_URL: ${{ secrets.VITE_BASE_URL }}
           VITE_PUBLIC_POSTHOG_HOST: ${{ secrets.VITE_PUBLIC_POSTHOG_HOST }}
           VITE_PUBLIC_POSTHOG_KEY: ${{ secrets.VITE_PUBLIC_POSTHOG_KEY }}
-
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SUDAN_CODEX }}
           channelId: live
           projectId: sudan-codex
+
