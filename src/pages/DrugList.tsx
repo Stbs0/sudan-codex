@@ -1,3 +1,4 @@
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { ListItem } from "@/components/drugList/ListItem";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -159,7 +160,7 @@ const DrugList = () => {
             onChange={handleSearchInput}
           />
         </div>
-
+        <ScrollToTopButton />
         <InfiniteScroll
           className='grid gap-4'
           dataLength={drugList ? drugList.length : 0}

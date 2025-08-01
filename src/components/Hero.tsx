@@ -14,7 +14,7 @@ export function Hero() {
       />
       <div className='pointer-events-none absolute inset-0 z-0 bg-black/60'></div>{" "}
       <div className='relative z-10 container mx-auto flex flex-col items-center px-4'>
-        <Pill className='mx-auto mb-6 h-16 w-16 text-purple-600 drop-shadow-lg' />
+        <Pill className='mx-auto mb-6 size-20 text-purple-600 drop-shadow-lg' />
         <h1 className='mb-4 text-5xl font-bold text-white drop-shadow-lg'>
           Welcome to Sudan Codex
         </h1>
