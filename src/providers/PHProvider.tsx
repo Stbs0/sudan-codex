@@ -9,7 +9,7 @@ const options: Partial<PostHogConfig> = {
   capture_pageview: true,
 };
 export function PHProvider({ children }: { children: React.ReactNode }) {
-  if (import.meta.env.NODE_ENV !== "production") return children;
+  if (import.meta.env.DEV) return children;
   return (
     <PostHogProvider
       apiKey={import.meta.env.VITE_PUBLIC_POSTHOG_KEY!}
@@ -18,4 +18,3 @@ export function PHProvider({ children }: { children: React.ReactNode }) {
     </PostHogProvider>
   );
 }
-
