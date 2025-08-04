@@ -95,9 +95,6 @@ importers:
       firebase:
         specifier: ^11.9.0
         version: 11.9.0
-      firebase-tools:
-        specifier: 14.11.2
-        version: 14.11.2(@types/node@22.15.30)(encoding@0.1.13)
       lucide-react:
         specifier: ^0.477.0
         version: 0.477.0(react@19.1.0)
@@ -201,6 +198,9 @@ importers:
       eslint-plugin-vitest-globals:
         specifier: ^1.5.0
         version: 1.5.0
+      firebase-tools:
+        specifier: 14.11.2
+        version: 14.11.2(@types/node@22.15.30)(encoding@0.1.13)
       globals:
         specifier: ^16.2.0
         version: 16.2.0
