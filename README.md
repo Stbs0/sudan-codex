@@ -1,6 +1,7 @@
 # Sudan Codex
 
-![Website Deploy](https://deploy-badge.vercel.app/?url=https%3A%2F%2Fsudan-codex.web.app&name=website)
+[![Firebase](https://img.shields.io/badge/Firebase-hosted-brightgreen?logo=firebase)](https://sudancodex.app)
+![CI](https://github.com/stbs0/sudan-codex/actions/workflows/firebase-hosting-merge.yml/badge.svg)
 
 ## Overview
 
@@ -13,7 +14,6 @@ Sudan Codex is a web application designed to provide FDA drug labeling informati
 - ♾️ Infinite scroll for browsing drug list
 - 🌓 Dark/Light theme support
 - 🔐 User authentication with multiple providers
-- 📱 Progressive Web App (PWA) support
 - 💾 Offline data access using IndexedDB
 
 ## Tech Stack
@@ -80,12 +80,12 @@ Visit the live application at [https://sudancodex.app/](https://sudancodex.app/)
 
 - [ ] Add metadata to each page for better SEO
 - [ ] Find additional drug information sources
-- [ ] Implement offline-first architecture
+- [ ] Implement offline-first architecture (PWA)
 - [ ] Add multi-language support
 
 ## Author
 
-**Mohammed Ibrahim Mahmoud**
+### Mohammed Ibrahim Mahmoud
 
 ## License
 
