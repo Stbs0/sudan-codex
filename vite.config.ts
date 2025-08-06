@@ -32,7 +32,7 @@ export default defineConfig({
         theme_color: "#ffffff",
         background_color: "#ffffff",
         start_url: "/",
-        scope: "/",
+       
         icons: [
           {
             src: "logo192.png",

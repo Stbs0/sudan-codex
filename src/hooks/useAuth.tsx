@@ -62,6 +62,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     setUserLoading(true);
 
     const unsubscribe = onAuthStateChanged(auth, async (fireBaseUser) => {
+      console.log("firebase user", fireBaseUser);
       if (fireBaseUser) {
         queryClient.prefetchQuery({
           queryKey: ["user", fireBaseUser.uid],
