@@ -50,8 +50,8 @@ const FaceBookOAuth = ({ logInOrSignUp }: Props) => {
         });
       }
     } catch (error) {
-      toast.error("Failed to sign in with Google. Please try again.");
-      console.log(error);
+      toast.error("Failed to sign in with Facebook. Please try again.");
+      console.error(error);
     }
   };
   return (
