@@ -72,7 +72,6 @@
     "zod": "^3.25.55"
   },
   "devDependencies": {
-    "firebase-tools": "14.11.2",
     "@eslint/js": "^9.28.0",
     "@hookform/devtools": "^4.4.0",
     "@playwright/test": "^1.52.0",
@@ -91,6 +90,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "eslint-plugin-vitest-globals": "^1.5.0",
+    "firebase-tools": "14.11.2",
     "globals": "^16.2.0",
     "husky": "^9.1.7",
     "jsdom": "^26.1.0",
@@ -104,6 +104,7 @@
     "typescript-eslint": "^8.33.1",
     "vite": "^6.3.5",
     "vite-plugin-checker": "^0.9.3",
+    "vite-plugin-pwa": "^1.0.2",
     "vite-plugin-svgr": "^4.3.0",
     "vitest": "^3.2.2"
   }
