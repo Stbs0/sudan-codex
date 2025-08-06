@@ -22,23 +22,29 @@ export default defineConfig({
       devOptions: {
         enabled: true,
       },
-      includeAssets: ["favicon.icon", "logo192.png", "logo512.png"],
+      includeAssets: ["favicon.ico", "logo192.png", "logo512.png"],
       manifest: {
         name: "Sudan Codex",
         short_name: "SudanCodex",
         description:
           "Sudan Codex allows you to effortlessly search through Sudan's comprehensive drug index. Find drug information, generic names, and manufacturers quickly and accurately.",
         display: "standalone",
+        theme_color: "#ffffff",
+        background_color: "#ffffff",
+        start_url: "/",
+        scope: "/",
         icons: [
           {
             src: "logo192.png",
             sizes: "192x192",
             type: "image/png",
+            purpose: "any",
           },
           {
             src: "logo512.png",
             sizes: "512x512",
             type: "image/png",
+            purpose: "any",
           },
         ],
       },

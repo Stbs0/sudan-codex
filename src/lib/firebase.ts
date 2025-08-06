@@ -1,9 +1,11 @@
 import { initializeApp } from "firebase/app";
 import {
+  browserLocalPersistence,
   connectAuthEmulator,
   FacebookAuthProvider,
   getAuth,
   GoogleAuthProvider,
+  setPersistence,
 } from "firebase/auth";
 import { connectFirestoreEmulator, getFirestore } from "firebase/firestore";
 
@@ -21,7 +23,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
-
+setPersistence(auth, browserLocalPersistence).catch((error) => {
+  console.error("Failed to set persistence", error);
+});
 export const db = getFirestore(app);
 if (import.meta.env.DEV) {
   connectFirestoreEmulator(db, "127.0.0.1", 8080);
