@@ -16,6 +16,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
     chunkSizeWarningLimit: 1600,
+    sourcemap: "inline",
   },
   preview: {
     port: +(process.env.VITE_PREVIEW_PORT || 4173),
