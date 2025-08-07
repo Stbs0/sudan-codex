@@ -7,7 +7,12 @@ import {
   indexedDBLocalPersistence,
   setPersistence,
 } from "firebase/auth";
-import { connectFirestoreEmulator, getFirestore } from "firebase/firestore";
+import {
+  connectFirestoreEmulator,
+  initializeFirestore,
+  persistentLocalCache,
+  persistentMultipleTabManager,
+} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
@@ -22,11 +27,17 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+export const db = initializeFirestore(app, {
+  localCache: persistentLocalCache(
+    /*settings*/ { tabManager: persistentMultipleTabManager() }
+  ),
+});
+
 export const auth = getAuth(app);
 setPersistence(auth, indexedDBLocalPersistence).catch((error) => {
   console.error("Failed to set persistence", error);
 });
-export const db = getFirestore(app);
+
 if (import.meta.env.DEV) {
   connectFirestoreEmulator(db, "127.0.0.1", 8080);
   connectAuthEmulator(auth, "http://127.0.0.1:9099", { disableWarnings: true });
