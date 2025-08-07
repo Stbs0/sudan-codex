@@ -3,13 +3,13 @@ import Header from "@/components/MainLayout/Header";
 import Footer from "@/components/MainLayout/Footer";
 import { Outlet, useLocation } from "react-router-dom";
 
-import { toast, Toaster } from "sonner";
+import { toast } from "sonner";
 
 import { AppSidebar } from "@/components/MainLayout/app-sidebar";
 // import DevAlert from "@/components/DevAlert";
 // import { AnimatePresence, motion } from "motion/react";
+import FixedUI from "@/components/MainLayout/FixedUI";
 import SpinnerOverlay from "@/components/SpinnerOverlay";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import { Suspense, useEffect } from "react";
 
 const MainLayout = () => {
@@ -36,12 +36,7 @@ const MainLayout = () => {
             <Outlet />
           </Suspense>
         </main>
-        <Toaster
-          richColors
-          expand={true}
-          closeButton
-        />
-        <WhatsAppButton />
+        <FixedUI />
         <Footer />
       </div>
     </>

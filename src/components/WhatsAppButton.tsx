@@ -1,10 +1,11 @@
 import whatsAppIcon from "@/assets/icons/whatsApp.webp";
 import posthog from "posthog-js";
 const WhatsAppButton = () => {
-  const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER; // Your phone number in international format (e.g., +9665xxxx)
+  const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
+
   const message = encodeURIComponent(
     "explain the problem and, if possible, add a screenshot"
-  ); // Customize the message
+  );
 
   const handleClick = () => {
     const url = `https://wa.me/${phoneNumber}?text=${message}`;
