@@ -68,6 +68,10 @@ Sudan Codex is a web application designed to provide FDA drug labeling informati
 - `pnpm test` - Run tests
 - `pnpm test:e2e` - Run end-to-end tests
 
+## Envoirments
+
+- create `.env`, `.env.development`,`.env.productions`
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.

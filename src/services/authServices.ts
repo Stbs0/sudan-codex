@@ -1,4 +1,8 @@
-import { auth, faceBookAuthProvider, googleAuthProvider } from "@/lib/firebase";
+import {
+  auth,
+  faceBookAuthProvider,
+  googleAuthProvider,
+} from "@/lib/firebaseAuth";
 import { FirebaseError } from "firebase/app";
 import {
   createUserWithEmailAndPassword,
