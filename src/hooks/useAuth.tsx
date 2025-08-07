@@ -67,12 +67,14 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         queryClient.prefetchQuery({
           queryKey: ["user", fireBaseUser.uid],
           queryFn: async () => await getUser(fireBaseUser.uid),
+          retry: false,
         });
-
+        console.log("inside query", fireBaseUser.uid);
         setUseruid(fireBaseUser.uid);
       } else {
         setUseruid(undefined);
       }
+      console.log("loading");
 
       setUserLoading(false);
     });
