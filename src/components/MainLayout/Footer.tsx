@@ -13,7 +13,7 @@ const Footer = () => {
           <a href='mailto:mohammedjrt@gmail.com'>Contact me via email</a>
         </Button>
         <Button asChild>
-          <Link to='/policy'>Policy & Terms</Link>
+          <Link to='/privacy-policy'>Policy & Terms</Link>
         </Button>
       </div>
       {/* Social Icons */}

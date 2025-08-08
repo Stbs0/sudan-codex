@@ -28,7 +28,7 @@ const routes: RouteObject[] = [
         },
       },
       {
-        path: "/policy",
+        path: "/privacy-policy",
 
         lazy: async () => {
           const { default: Policy } = await import("@/pages/Policy");
