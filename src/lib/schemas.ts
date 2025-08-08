@@ -1,6 +1,6 @@
 import { validatePassword } from "firebase/auth";
 import { z } from "zod";
-import { auth } from "./firebase";
+import { auth } from "./firebaseAuth";
 
 export const occupationEnum = z.enum([
   "Student",

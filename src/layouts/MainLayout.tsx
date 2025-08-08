@@ -11,6 +11,7 @@ import { AppSidebar } from "@/components/MainLayout/app-sidebar";
 import FixedUI from "@/components/MainLayout/FixedUI";
 import SpinnerOverlay from "@/components/SpinnerOverlay";
 import { Suspense, useEffect } from "react";
+import ConsentSheet from "@/components/MainLayout/ConsentSheet";
 
 const MainLayout = () => {
   const location = useLocation();
@@ -37,6 +38,7 @@ const MainLayout = () => {
           </Suspense>
         </main>
         <FixedUI />
+        <ConsentSheet />
         <Footer />
       </div>
     </>
