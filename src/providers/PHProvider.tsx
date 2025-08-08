@@ -1,20 +1,13 @@
-import { PostHogConfig } from "posthog-js";
+import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
 
-const options: Partial<PostHogConfig> = {
-  api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
+posthog.init(import.meta.env.VITE_PUBLIC_POSTHOG_KEY, {
+  api_host: process.env.REACT_APP_PUBLIC_POSTHOG_HOST,
   defaults: "2025-05-24",
-  capture_pageleave: true,
-  capture_heatmaps: true,
-  capture_pageview: true,
-};
+  opt_out_capturing_by_default: true,
+});
 export function PHProvider({ children }: { children: React.ReactNode }) {
   if (import.meta.env.DEV) return children;
-  return (
-    <PostHogProvider
-      apiKey={import.meta.env.VITE_PUBLIC_POSTHOG_KEY!}
-      options={options}>
-      {children}
-    </PostHogProvider>
-  );
+
+  return <PostHogProvider client={posthog}></PostHogProvider>;
 }
