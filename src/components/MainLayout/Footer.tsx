@@ -6,42 +6,54 @@ import { Button } from "../ui/button";
 
 const Footer = () => {
   return (
-    <footer className='bg-footer-background dark:bg-footer-background flex items-center justify-center gap-5 p-2 text-center text-[#fff]'>
+    <footer className='flex flex-col gap-4 py-6 text-black shadow-[0_-4px_12px_rgba(0,0,0,0.1)] sm:flex-row sm:justify-center dark:border-neutral-800 dark:text-white'>
+      {/* Contact & Policy */}
+      <div className='flex justify-center gap-3'>
+        <Button asChild>
+          <a href='mailto:mohammedjrt@gmail.com'>Contact me via email</a>
+        </Button>
+        <Button asChild>
+          <Link to='/privacy-policy'>Policy & Terms</Link>
+        </Button>
+      </div>
+      {/* Social Icons */}
       <div className='flex justify-center gap-4'>
         <a
-          href='https://github.com/Stbs0'
-          className='flex items-center justify-center'>
+          href='https://github.com/Stbs0/sudan-codex'
+          target='_blank'
+          rel='noopener noreferrer'
+          aria-label='GitHub'>
           <img
-            className='h-6 w-6 dark:invert'
             src={Github}
+            alt='GitHub'
+            className='h-6 w-6 dark:invert'
           />
         </a>
         <a
           href='https://twitter.com/stbs66'
-          className='flex items-center justify-center'>
+          target='_blank'
+          rel='noopener noreferrer'
+          aria-label='Twitter/X'>
           <img
-            className='h-6 w-6 dark:invert'
             src={X}
+            alt='X/Twitter'
+            className='h-6 w-6 dark:invert'
           />
         </a>
         <a
           href='https://www.linkedin.com/in/mohammed-ibrahim-mahmoud/'
-          className='flex items-center justify-center'>
+          target='_blank'
+          rel='noopener noreferrer'
+          aria-label='LinkedIn'>
           <img
-            className='h-6 w-6 dark:invert'
             src={Linkedin}
+            alt='LinkedIn'
+            className='h-6 w-6 dark:invert'
           />
         </a>
       </div>
-      <div>
-        <a
-          href='mailto:mohammedjrt@gmail.com'
-          className=''>
-          <Button>Contact me </Button>
-        </a>
-      </div>
-      <Link to={"/policy"}> Policy and Terms</Link>
     </footer>
   );
 };
+
 export default Footer;
