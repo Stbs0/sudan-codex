@@ -10,6 +10,7 @@ import { AppSidebar } from "@/components/MainLayout/app-sidebar";
 // import { AnimatePresence, motion } from "motion/react";
 import SpinnerOverlay from "@/components/SpinnerOverlay";
 import { Suspense, useEffect } from "react";
+import ConsentSheet from "@/components/MainLayout/ConsentSheet";
 
 const MainLayout = () => {
   const location = useLocation();
@@ -42,6 +43,7 @@ const MainLayout = () => {
           expand={true}
           closeButton
         />
+        <ConsentSheet />
         <Footer />
       </div>
     </>
