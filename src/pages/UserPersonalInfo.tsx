@@ -153,7 +153,7 @@ const UserPersonalInfo = () => {
           </form>
         </Form>
       </FormProvider>
-      <DevTool control={methods.control} />
+      {import.meta.env.DEV && <DevTool control={methods.control} />}
     </div>
   );
 };

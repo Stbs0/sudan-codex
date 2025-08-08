@@ -1,6 +1,6 @@
-import { FormSchema } from "@/lib/schemas";
+// import { FormSchema } from "@/lib/schemas";
 import { User } from "firebase/auth";
-import { Timestamp } from "firebase/firestore";
+// import { Timestamp } from "firebase/firestore";
 
 export type Theme = "dark" | "light" | "system";
 
@@ -15,34 +15,34 @@ export type ThemeProviderState = {
   setTheme: (theme: Theme) => void;
 };
 
-export type Unit = {
-  value: string;
-  label: string;
-};
+// export type Unit = {
+//   value: string;
+//   label: string;
+// };
 
-export type UnitCategory = {
-  label: string;
-  units: Unit[];
-};
-export interface DosageForm {
-  label: string;
-  value: string;
-}
+// export type UnitCategory = {
+//   label: string;
+//   units: Unit[];
+// };
+// export interface DosageForm {
+//   label: string;
+//   value: string;
+// }
 
-export type Generics = Pick<FormSchema, "generics">;
-export type Strength = Pick<FormSchema, "strength">;
-export type WatchGenerics = Generics["generics"];
+// export type Generics = Pick<FormSchema, "generics">;
+// export type Strength = Pick<FormSchema, "strength">;
+// export type WatchGenerics = Generics["generics"];
 
 export type UserInDb = Pick<
   User,
   "displayName" | "email" | "uid" | "photoURL" | "phoneNumber"
 >;
 
-export type FetchedDrugList = FormSchema & {
-  submittedBy: string;
-  date: Timestamp;
-  id: string;
-};
+// export type FetchedDrugList = FormSchema & {
+//   submittedBy: string;
+//   date: Timestamp;
+//   id: string;
+// };
 
 export type Drug = {
   no: string;
