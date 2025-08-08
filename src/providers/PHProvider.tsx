@@ -1,13 +1,19 @@
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
 
-posthog.init(import.meta.env.VITE_PUBLIC_POSTHOG_KEY, {
-  api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
-  defaults: "2025-05-24",
-  opt_out_capturing_by_default: true,
-});
+if (
+  import.meta.env.PROD &&
+  import.meta.env.VITE_PUBLIC_POSTHOG_KEY &&
+  import.meta.env.VITE_PUBLIC_POSTHOG_HOST
+) {
+  posthog.init(import.meta.env.VITE_PUBLIC_POSTHOG_KEY, {
+    api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
+    opt_out_capturing_by_default: true,
+  });
+} else {
+  // Ensure nothing is sent if not configured or not in production
+  posthog.opt_out_capturing();
+}
 export function PHProvider({ children }: { children: React.ReactNode }) {
-  if (import.meta.env.DEV) return children;
-
   return <PostHogProvider client={posthog}>{children}</PostHogProvider>;
 }

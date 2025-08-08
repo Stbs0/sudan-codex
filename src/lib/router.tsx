@@ -1,11 +1,16 @@
-import { createBrowserRouter, Params, RouteObject } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  Params,
+  RouteObject,
+} from "react-router-dom";
 
+import ErrorElement from "@/components/ErrorElement";
 import { HydrateFallback } from "@/components/HydrateFallBack";
 import PrivateRoute from "@/components/PrivateRoute";
 import MainLayout from "@/layouts/MainLayout";
 import drugDB from "@/lib/indexedDB";
 import GlobalError from "@/pages/GlobalError";
-import ErrorElement from "@/components/ErrorElement";
 const routes: RouteObject[] = [
   {
     element: <MainLayout />,
@@ -34,6 +39,15 @@ const routes: RouteObject[] = [
           const { default: Policy } = await import("@/pages/Policy");
           return { Component: Policy };
         },
+      },
+      {
+        path: "/policy",
+        element: (
+          <Navigate
+            to='/privacy-policy'
+            replace
+          />
+        ),
       },
       {
         path: "sign-up",

@@ -13,29 +13,23 @@ const ConsentSheet = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const consent = sessionStorage.getItem("posthog-consent");
+    const consent = localStorage.getItem("posthog-consent");
     if (consent === null) {
       setOpen(true);
     } else {
       setOpen(false);
     }
-    // const isOptOut = posthog.has_opted_out_capturing();
-    // console.log("out", isOptOut);
-    // console.log("in", posthog.has_opted_in_capturing());
-    // if (isOptOut) {
-    //   setOpen(true);
-    // }
   }, []);
 
   const handleConsent = (agree: boolean) => {
     if (agree) {
       posthog.opt_in_capturing();
       posthog.capture("consent_given");
-      sessionStorage.setItem("posthog-consent", "granted");
+      localStorage.setItem("posthog-consent", "granted");
     } else {
-      posthog.capture("consent_declined");
-      sessionStorage.setItem("posthog-consent", "declined");
+      localStorage.setItem("posthog-consent", "declined");
       posthog.opt_out_capturing();
+      posthog.reset();
     }
     setOpen(false);
   };
