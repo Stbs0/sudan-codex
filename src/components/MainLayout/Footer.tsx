@@ -6,7 +6,7 @@ import { Button } from "../ui/button";
 
 const Footer = () => {
   return (
-    <footer className='flex flex-col gap-4 py-6 text-black sm:flex-row sm:justify-center dark:text-white'>
+    <footer className='flex flex-col gap-4 py-6 text-black shadow-[0_-4px_12px_rgba(0,0,0,0.1)] sm:flex-row sm:justify-center dark:border-neutral-800 dark:text-white'>
       {/* Contact & Policy */}
       <div className='flex justify-center gap-3'>
         <Button asChild>
