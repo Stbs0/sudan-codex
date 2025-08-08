@@ -1,9 +1,8 @@
 import { useAuth } from "@/hooks/useAuth";
-import { auth } from "@/lib/firebase";
 import { getInitials } from "@/lib/utils";
+import { logout } from "@/services/authServices";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 import { useQueryClient } from "@tanstack/react-query";
-import { signOut } from "firebase/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
@@ -18,7 +17,7 @@ const ProfilePic = () => {
   const [open, setOpen] = useState(false);
   const queryClient = useQueryClient();
   const handleSignOut = async () => {
-    await signOut(auth);
+    await logout();
     navigate("/log-in");
     toast.success(`Good Bye ${user?.displayName}`);
     await queryClient.invalidateQueries({

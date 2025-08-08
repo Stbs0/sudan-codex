@@ -1,4 +1,4 @@
-import { auth } from "@/lib/firebase";
+import { auth } from "@/lib/firebaseAuth";
 import { getUser } from "@/services/usersServices";
 import { SaveUserReturnTypes } from "@/types/types";
 import {
