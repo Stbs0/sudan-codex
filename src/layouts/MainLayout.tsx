@@ -6,12 +6,11 @@ import { Outlet, useLocation } from "react-router-dom";
 import { toast } from "sonner";
 
 import { AppSidebar } from "@/components/MainLayout/app-sidebar";
-// import DevAlert from "@/components/DevAlert";
-// import { AnimatePresence, motion } from "motion/react";
+
+import ConsentSheet from "@/components/MainLayout/ConsentSheet";
 import FixedUI from "@/components/MainLayout/FixedUI";
 import SpinnerOverlay from "@/components/SpinnerOverlay";
 import { Suspense, useEffect } from "react";
-import ConsentSheet from "@/components/MainLayout/ConsentSheet";
 
 const MainLayout = () => {
   const location = useLocation();
@@ -32,7 +31,9 @@ const MainLayout = () => {
       <AppSidebar />
       <div className='grid min-h-full w-full grid-rows-[auto_1fr_auto] bg-slate-100 dark:bg-slate-800'>
         <Header />
-        <main key={location.pathname}>
+        <main
+          key={location.pathname}
+          className=''>
           <Suspense fallback={<SpinnerOverlay />}>
             <Outlet />
           </Suspense>

@@ -125,7 +125,7 @@ const DrugList = () => {
         driverDestroy();
       };
     }
-  }, [drugList, startTour]);
+  }, []);
 
   const handleSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value.trim());
@@ -142,8 +142,8 @@ const DrugList = () => {
         name='description'
         content='Search for drugs by generic, brand, or company name in the Sudan Codex database.'
       />
-      <div className='mx-auto grid gap-4 px-3 md:max-w-2xl dark:text-gray-100'>
-        <div className='grid gap-2 py-2'>
+      <div className='mx-auto grid w-full gap-4 px-3 md:max-w-2xl dark:text-gray-100'>
+        <div className='flex flex-col gap-2 py-2'>
           <div className='flex justify-between gap-2'>
             <p className='text-center text-2xl'>Search Drug</p>
             <Button
