@@ -1,4 +1,7 @@
+import { logout } from "@/services/authServices";
 import { MenuIcon, Pill, Settings, User } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "../ui/button";
 import {
   Sheet,
   SheetContent,
@@ -6,13 +9,10 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "../ui/sheet";
-import { Button } from "../ui/button";
-import { useNavigate } from "react-router-dom";
-import { signOut } from "firebase/auth";
-import { auth } from "@/lib/firebase";
 
 function MobileMenu() {
   const navigate = useNavigate();
+  const handleLogOut = async () => await logout();
   return (
     <Sheet>
       <SheetTrigger>
@@ -46,7 +46,7 @@ function MobileMenu() {
         <div className='grid gap-4 py-4'>
           <Button
             variant={"destructive"}
-            onClick={() => signOut(auth)}>
+            onClick={handleLogOut}>
             Sign out
           </Button>
         </div>

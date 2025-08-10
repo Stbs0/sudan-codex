@@ -2,6 +2,7 @@ import { GoogleSignIn } from "@/services/authServices";
 import { SaveUserInFIreStore } from "@/services/usersServices";
 import { useQueryClient } from "@tanstack/react-query";
 import { getAdditionalUserInfo } from "firebase/auth";
+import posthog from "posthog-js";
 import { SyntheticEvent } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
@@ -52,7 +53,8 @@ const GoogleOAuth = ({ logInOrSignUp }: Props) => {
       }
     } catch (error) {
       toast.error("Failed to sign in with Google. Please try again.");
-      console.log(error);
+      console.error(error);
+      posthog.captureException(error, { place: "google signin" });
     }
   };
 

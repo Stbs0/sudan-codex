@@ -6,6 +6,7 @@ import { Button } from "../ui/button";
 import { SaveUserInFIreStore } from "@/services/usersServices";
 import { useQueryClient } from "@tanstack/react-query";
 import { getAdditionalUserInfo } from "firebase/auth";
+import posthog from "posthog-js";
 import { useLocation, useNavigate } from "react-router-dom";
 import Facebook from "../../assets/icons/facebook.svg";
 
@@ -52,6 +53,7 @@ const FaceBookOAuth = ({ logInOrSignUp }: Props) => {
     } catch (error) {
       toast.error("Failed to sign in with Facebook. Please try again.");
       console.error(error);
+      posthog.captureException(error, { place: "facebook signin" });
     }
   };
   return (

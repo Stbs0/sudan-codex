@@ -9,6 +9,7 @@ import drugDB from "./lib/indexedDB";
 import router from "./lib/router";
 import { ThemeProvider } from "./providers/theme-provider";
 import { fetchDrugList } from "./services/drugServices";
+import posthog from "posthog-js";
 
 const queryClient = new QueryClient();
 
@@ -24,7 +25,12 @@ const App = () => {
         ignore = true;
       }
     };
-    fn().catch((err) => console.log(err));
+    fn().catch((err) => {
+      console.log(err);
+      posthog.captureException(err, {
+        place: "initialize db",
+      });
+    });
   }, []);
 
   return (

@@ -35,5 +35,6 @@ tsconfig.app.tsbuildinfo
 .million
 
 .firebase
+stats.html
 
 dev-dist/
