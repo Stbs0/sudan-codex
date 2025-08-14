@@ -1,4 +1,4 @@
-import { Toaster } from "sonner";
+import { Toaster } from "../ui/sonner";
 
 const FixedUI = () => {
   return (
@@ -6,6 +6,7 @@ const FixedUI = () => {
       {/* Toast Notifications */}
       <Toaster
         richColors
+        position='top-center'
         expand={true}
         closeButton
       />
