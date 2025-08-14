@@ -1,7 +1,11 @@
 import { Theme, ThemeProviderContext } from "@/hooks/useTheme";
-import { ThemeProviderProps } from "@/types/types";
 import { useEffect, useState } from "react";
 
+type ThemeProviderProps = {
+  children: React.ReactNode;
+  defaultTheme?: Theme;
+  storageKey?: string;
+};
 export function ThemeProvider({
   children,
   defaultTheme = "system",
@@ -22,9 +26,11 @@ export function ThemeProvider({
         .matches
         ? "dark"
         : "light";
+
       root.classList.add(systemTheme);
       return;
     }
+
     root.classList.add(theme);
   }, [theme]);
 
@@ -37,10 +43,10 @@ export function ThemeProvider({
   };
 
   return (
-    <ThemeProviderContext
+    <ThemeProviderContext.Provider
       {...props}
       value={value}>
       {children}
-    </ThemeProviderContext>
+    </ThemeProviderContext.Provider>
   );
 }
