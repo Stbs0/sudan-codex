@@ -1,7 +1,7 @@
 import Header from "@/components/MainLayout/Header";
 
 import Footer from "@/components/MainLayout/Footer";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 import { toast } from "sonner";
 
@@ -13,7 +13,6 @@ import SpinnerOverlay from "@/components/SpinnerOverlay";
 import { Suspense, useEffect } from "react";
 
 const MainLayout = () => {
-  const location = useLocation();
   useEffect(() => {
     const showDev = sessionStorage.getItem("showDev");
     if (!showDev) {
@@ -31,7 +30,7 @@ const MainLayout = () => {
       <AppSidebar />
       <div className='grid min-h-full w-full grid-rows-[auto_1fr_auto] bg-slate-100 dark:bg-slate-800'>
         <Header />
-        <main key={location.pathname}>
+        <main>
           <Suspense fallback={<SpinnerOverlay />}>
             <Outlet />
           </Suspense>
