@@ -22,11 +22,10 @@ const ScrollToTopButton = () => {
 
   return (
     <Button
-      asChild
       onClick={scrollToTop}
       className='fixed right-6 bottom-6 z-50 size-10 rounded-full bg-gray-700 p-2 shadow-md transition hover:bg-gray-300 dark:bg-gray-200 dark:hover:bg-gray-600'
       aria-label='Scroll to top'>
-      <ArrowBigUp className='text-white dark:text-gray-800' />
+      <ArrowBigUp className='size-8 text-white dark:text-gray-800' />
     </Button>
   );
 };

@@ -22,12 +22,12 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes("node_modules")) {
-            if (id.includes("firebase/auth")) return "firebase/auth";
+            if (id.includes("firebase/auth")) return "firebase-auth";
             if (id.includes("react-router")) return "react-router";
             if (id.includes("posthog")) return "posthog";
             if (id.includes("react-dom-client")) return "react-dom-client";
             if (id.includes("dexie")) return "dexie";
-            if (id.includes("firebase/firestore")) return "firebase/firestore";
+            if (id.includes("firebase/firestore")) return "firebase-firestore";
             if (id.includes("firebase")) return "firebase";
             if (id.includes("@tanstack")) return "tanstack";
             if (id.includes("zod")) return "zod";

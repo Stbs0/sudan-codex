@@ -72,12 +72,12 @@ const DrugInfo = () => {
       <div className='container mx-auto flex justify-center py-4'>
         <Card className='flex max-w-5xl flex-col items-center gap-6 p-5 max-md:mx-2 max-md:p-3'>
           <DrugCard drug={drug} />
-          <Separator className='w-lg' />
+          <Separator className='w-full' />
           <SearchDrugInfo
             generic={drug.genericName}
             handleSubmit={handleSubmit}
           />
-          <Separator className='w-lg' />
+          <Separator className='w-full' />
           <CardContent className='flex w-full flex-col gap-4'>
             {isError && (
               <Alert className='border-yellow-300 bg-yellow-50'>
