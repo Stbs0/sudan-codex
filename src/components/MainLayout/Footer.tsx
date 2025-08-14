@@ -1,4 +1,3 @@
-import posthog from "posthog-js";
 import { Link } from "react-router-dom";
 import Github from "../../assets/icons/github.svg";
 import Linkedin from "../../assets/icons/linkedIn.svg";
@@ -13,25 +12,34 @@ const Footer = () => {
     .اذا في اي مشكلة ارفق معاه سكرينشوت`
   );
 
-  const handleClick = () => {
-    const url = `https://wa.me/${phoneNumber}?text=${message}`;
-    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
-    if (!newWindow) {
-      posthog.capture("whatsapp");
-      console.warn("Failed to open WhatsApp - popup may be blocked");
-    }
-  };
+  const url = `https://wa.me/${phoneNumber}?text=${message}`;
+
   return (
     <footer className='flex flex-col gap-3 py-3 text-black shadow-[0_-4px_12px_rgba(0,0,0,0.1)] sm:flex-row sm:justify-center sm:py-6 dark:border-neutral-800 dark:text-white'>
       {/* Contact & Policy */}
       <div className='flex justify-center gap-3'>
-        <Button onClick={handleClick}>Contact me via WhatsApp</Button>
+        <Button
+          asChild
+          className='bg-green-400 dark:bg-green-400 dark:text-white'>
+          <a
+            aria-label='Chat on WhatsApp'
+            target='_blank'
+            rel='noopener noreferrer'
+            href={url}>
+            <img
+              className='w-6'
+              alt='Chat on WhatsApp'
+              src='/Digital_Glyph_White.svg'
+            />
+            Problem or Feedback
+          </a>
+        </Button>
         <Button asChild>
           <Link to='/privacy-policy'>Policy & Terms</Link>
         </Button>
       </div>
       {/* Social Icons */}
-      <div className='flex justify-center gap-4'>
+      <div className='flex items-center justify-center gap-4'>
         <a
           href='https://github.com/Stbs0/sudan-codex'
           target='_blank'
