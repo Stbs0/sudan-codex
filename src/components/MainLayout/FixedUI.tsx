@@ -6,6 +6,7 @@ const FixedUI = () => {
       {/* Toast Notifications */}
       <Toaster
         richColors
+        position='top-center'
         expand={true}
         closeButton
       />

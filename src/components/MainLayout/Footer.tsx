@@ -26,12 +26,12 @@ const Footer = () => {
             target='_blank'
             rel='noopener noreferrer'
             href={url}>
-            Problem or Feedback
             <img
               className='w-6'
               alt='Chat on WhatsApp'
               src='/Digital_Glyph_White.svg'
             />
+            Problem or Feedback
           </a>
         </Button>
         <Button asChild>
@@ -39,7 +39,7 @@ const Footer = () => {
         </Button>
       </div>
       {/* Social Icons */}
-      <div className='flex justify-center gap-4'>
+      <div className='flex items-center justify-center gap-4'>
         <a
           href='https://github.com/Stbs0/sudan-codex'
           target='_blank'

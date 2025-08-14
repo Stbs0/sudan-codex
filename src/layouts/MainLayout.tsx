@@ -31,9 +31,7 @@ const MainLayout = () => {
       <AppSidebar />
       <div className='grid min-h-full w-full grid-rows-[auto_1fr_auto] bg-slate-100 dark:bg-slate-800'>
         <Header />
-        <main
-          key={location.pathname}
-          className=''>
+        <main key={location.pathname}>
           <Suspense fallback={<SpinnerOverlay />}>
             <Outlet />
           </Suspense>

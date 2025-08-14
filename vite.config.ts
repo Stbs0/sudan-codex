@@ -3,7 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import { visualizer } from "rollup-plugin-visualizer";
-import { defineConfig } from "vite";
+import { defineConfig, PluginOption } from "vite";
 
 export default defineConfig({
   test: {
@@ -11,12 +11,18 @@ export default defineConfig({
     setupFiles: "./__tests__/vitest-setup.ts",
   },
   envDir: "./envDir",
-  plugins: [react(), tailwindcss(), visualizer({ sourcemap: true })],
+  plugins: [
+    react(),
+    tailwindcss(),
+    visualizer({ sourcemap: true}) as PluginOption,
+  ],
   build: {
     rollupOptions: {
       output: {
         manualChunks(id) {
           if (id.includes("node_modules")) {
+            if (id.includes("firebase/auth")) return "firebase/auth";
+            if (id.includes("firebase/firestore")) return "firebase/firestore";
             if (id.includes("firebase")) return "firebase";
             if (id.includes("react")) return "react";
             if (id.includes("@tanstack")) return "tanstack";
