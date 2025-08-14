@@ -69,48 +69,47 @@ const DrugInfo = () => {
         property='og:description'
         content={`Information about the drug ${drug.brandName} (${drug.genericName})`}
       />
-      <Card className='mx-auto flex max-w-5xl flex-col items-center gap-6 p-5 max-md:mx-2 max-md:p-3'>
-        <DrugCard drug={drug} />
-        <Separator className='w-lg' />
-
-        <SearchDrugInfo
-          generic={drug.genericName}
-          handleSubmit={handleSubmit}
-        />
-        <Separator className='w-lg' />
-
-        <CardContent className='flex w-full flex-col gap-4'>
-          {isError && (
-            <Alert className='border-yellow-300 bg-yellow-50'>
-              <AlertTitle>Attention</AlertTitle>
-              <AlertDescription>
-                If the page didn't find the drug you are looking for, please try
-                again with a different route and a correct generic name.
-              </AlertDescription>
-            </Alert>
-          )}
-
-          <div className='flex flex-col gap-4'>
-            {isLoading ? (
-              [...Array(4)].map((_, index) => (
-                <Skeleton
-                  key={index}
-                  className='mb-4 h-12 w-full'
-                />
-              ))
-            ) : data ? (
-              <DrugInfoAccordion data={data} />
-            ) : (
-              <Alert className='border-red-300 bg-red-50'>
-                <AlertTitle>No data found</AlertTitle>
+      <div className='container mx-auto flex justify-center py-4'>
+        <Card className='flex max-w-5xl flex-col items-center gap-6 p-5 max-md:mx-2 max-md:p-3'>
+          <DrugCard drug={drug} />
+          <Separator className='w-lg' />
+          <SearchDrugInfo
+            generic={drug.genericName}
+            handleSubmit={handleSubmit}
+          />
+          <Separator className='w-lg' />
+          <CardContent className='flex w-full flex-col gap-4'>
+            {isError && (
+              <Alert className='border-yellow-300 bg-yellow-50'>
+                <AlertTitle>Attention</AlertTitle>
                 <AlertDescription>
-                  Try again with a different route and a correct generic name.
+                  If the page didn't find the drug you are looking for, please
+                  try again with a different route and a correct generic name.
                 </AlertDescription>
               </Alert>
             )}
-          </div>
-        </CardContent>
-      </Card>
+            <div className='flex flex-col gap-4'>
+              {isLoading ? (
+                [...Array(4)].map((_, index) => (
+                  <Skeleton
+                    key={index}
+                    className='mb-4 h-12 w-full'
+                  />
+                ))
+              ) : data ? (
+                <DrugInfoAccordion data={data} />
+              ) : (
+                <Alert className='border-red-300 bg-red-50'>
+                  <AlertTitle>No data found</AlertTitle>
+                  <AlertDescription>
+                    Try again with a different route and a correct generic name.
+                  </AlertDescription>
+                </Alert>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </>
   );
 };
