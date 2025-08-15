@@ -43,17 +43,15 @@ jobs:
           VITE_PUBLIC_POSTHOG_KEY: ${{ secrets.VITE_PUBLIC_POSTHOG_KEY }}
           VITE_WHATSAPP_NUMBER: ${{ secrets.VITE_WHATSAPP_NUMBER }}
 
-      - name: 🔑 Login to PostHog CLI
-        run: posthog-cli login
+
+      - name: 🧩 Inject and upload source maps
+        run: |
+           pnpm i -g  --dangerously-allow-all-builds @posthog/cli
+           posthog-cli --host https://eu.posthog.com sourcemap inject --directory ./dist/assets
+           posthog-cli --host https://eu.posthog.com sourcemap upload --delete-after  --directory ./dist/assets
         env:
           POSTHOG_CLI_ENV_ID: ${{ secrets.POSTHOG_CLI_ENV_ID }}
           POSTHOG_CLI_TOKEN: ${{ secrets.POSTHOG_CLI_TOKEN }}
-
-      - name: 🧩 Inject source maps
-        run: posthog-cli --host https://eu.posthog.com sourcemap inject --directory ./dist/assets
-
-      - name: ⬆️ Upload source maps
-        run: posthog-cli --host https://eu.posthog.com sourcemap upload --delete-after  --directory ./dist/assets
 
       - name: 🚀 Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
