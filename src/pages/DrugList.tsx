@@ -154,7 +154,7 @@ const DrugList = () => {
             </Button>
           </div>
           <Input
-            className='bg- rounded-3xl shadow-md placeholder:text-xs'
+            className='rounded-3xl shadow-md placeholder:text-xs'
             placeholder='Search Generic, Brand, or Company Name'
             value={search}
             onChange={handleSearchInput}

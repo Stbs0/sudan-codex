@@ -36,3 +36,5 @@ tsconfig.app.tsbuildinfo
 
 .firebase
 stats.html
+
+dev-dist/
