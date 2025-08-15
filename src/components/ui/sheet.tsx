@@ -90,7 +90,7 @@ function SheetContent({
         {...props}>
         {children}
         <SheetPrimitive.Close className='absolute top-4 right-4 rounded-xs opacity-70 ring-offset-white transition-opacity hover:opacity-100 focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none data-[state=open]:bg-neutral-100 dark:ring-offset-neutral-950 dark:focus:ring-neutral-300 dark:data-[state=open]:bg-neutral-800'>
-          <XIcon className='size-4' />
+          <XIcon className='size-4 dark:invert' />
           <span className='sr-only'>Close</span>
         </SheetPrimitive.Close>
       </SheetPrimitive.Content>
