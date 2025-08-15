@@ -10,6 +10,7 @@ import router from "./lib/router";
 import { ThemeProvider } from "./providers/theme-provider";
 import { fetchDrugList } from "./services/drugServices";
 import posthog from "posthog-js";
+import { PHProvider } from "./providers/PHProvider";
 
 const queryClient = new QueryClient();
 
@@ -34,18 +35,20 @@ const App = () => {
   }, []);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      {import.meta.env.DEV && <ReactQueryDevtools initialIsOpen={false} />}
-      <ThemeProvider
-        defaultTheme='dark'
-        storageKey='vite-ui-theme'>
-        <AuthProvider>
-          <SidebarProvider defaultOpen={false}>
-            <RouterProvider router={router} />
-          </SidebarProvider>
-        </AuthProvider>
-      </ThemeProvider>
-    </QueryClientProvider>
+    <PHProvider>
+      <QueryClientProvider client={queryClient}>
+        {import.meta.env.DEV && <ReactQueryDevtools initialIsOpen={false} />}
+        <ThemeProvider
+          defaultTheme='dark'
+          storageKey='vite-ui-theme'>
+          <AuthProvider>
+            <SidebarProvider defaultOpen={false}>
+              <RouterProvider router={router} />
+            </SidebarProvider>
+          </AuthProvider>
+        </ThemeProvider>
+      </QueryClientProvider>
+    </PHProvider>
   );
 };
 

@@ -7,10 +7,10 @@ import { toast } from "sonner";
 
 import { AppSidebar } from "@/components/MainLayout/app-sidebar";
 
-import ConsentSheet from "@/components/MainLayout/ConsentSheet";
 import FixedUI from "@/components/MainLayout/FixedUI";
 import SpinnerOverlay from "@/components/SpinnerOverlay";
 import { Suspense, useEffect } from "react";
+import NoticeSheet from "@/components/MainLayout/NoticeSheet";
 
 const MainLayout = () => {
   useEffect(() => {
@@ -36,7 +36,7 @@ const MainLayout = () => {
           </Suspense>
         </main>
         <FixedUI />
-        <ConsentSheet />
+        <NoticeSheet />
         <Footer />
       </div>
     </>
