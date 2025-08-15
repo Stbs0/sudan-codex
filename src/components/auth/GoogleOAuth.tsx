@@ -38,15 +38,24 @@ const GoogleOAuth = ({ logInOrSignUp }: Props) => {
 
         await SaveUserInFIreStore(userData, userUid).catch((err) => {
           queryClient.invalidateQueries({ queryKey: ["user", userUid] });
+          posthog.captureException(err, {
+            reason: "failed to save user in db",
+            via: "google",
+          });
           throw err;
         });
-
+        posthog.capture("user_sign_up", {
+          via: "google",
+        });
         navigate("/user-info", { replace: true, state: { userDesiredPage } });
         toast.success("Login successful", {
           description: `Welcome ${results.user.displayName}`,
         });
       } else {
         navigate(userDesiredPage, { replace: true });
+        posthog.capture("user_log_in", {
+          via: "google",
+        });
         toast.success("Login successful", {
           description: `Welcome Back ${results.user.displayName}`,
         });

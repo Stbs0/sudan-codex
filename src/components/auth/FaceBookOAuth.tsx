@@ -38,7 +38,14 @@ const FaceBookOAuth = ({ logInOrSignUp }: Props) => {
 
         await SaveUserInFIreStore(userData, userUid).catch((err) => {
           queryClient.invalidateQueries({ queryKey: ["user", userUid] });
+          posthog.captureException(err, {
+            reason: "failed to save user in db",
+            via: "facebook",
+          });
           throw err;
+        });
+        posthog.capture("user_sign_up", {
+          via: "facebook",
         });
         navigate("/user-info", { replace: true });
         toast.success("Login successful", {
@@ -46,6 +53,9 @@ const FaceBookOAuth = ({ logInOrSignUp }: Props) => {
         });
       } else {
         navigate(userDesiredPage, { replace: true });
+        posthog.capture("user_log_in", {
+          via: "facebook",
+        });
         toast.success("Login successful", {
           description: `Welcome Back ${results.user.displayName}`,
         });
