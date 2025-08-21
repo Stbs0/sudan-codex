@@ -6,33 +6,62 @@ import { visualizer } from "rollup-plugin-visualizer";
 import { defineConfig, PluginOption } from "vite";
 
 export default defineConfig({
-  test: {
-    environment: "jsdom",
-    setupFiles: "./__tests__/vitest-setup.ts",
-  },
+  // test: {
+  //   environment: "jsdom",
+  //   setupFiles: "./__tests__/vitest-setup.ts",
+  // },
+  
   envDir: "./envDir",
   plugins: [
     react(),
     tailwindcss(),
+
     process.env.analyze === "true" &&
-      (visualizer({ sourcemap: true, open: true }) as PluginOption),
+      (visualizer({
+        // sourcemap: true,
+        open: true,
+        gzipSize: true,
+        brotliSize: true,
+      }) as PluginOption),
   ].filter(Boolean),
   build: {
     rollupOptions: {
       output: {
-        manualChunks(id) {
-          if (id.includes("node_modules")) {
-            if (id.includes("firebase/auth")) return "firebase-auth";
-            if (id.includes("react-router")) return "react-router";
-            if (id.includes("posthog")) return "posthog";
-            if (id.includes("react-dom-client")) return "react-dom-client";
-            if (id.includes("dexie")) return "dexie";
-            if (id.includes("firebase/firestore")) return "firebase-firestore";
-            if (id.includes("firebase")) return "firebase";
-            if (id.includes("@tanstack")) return "tanstack";
-            if (id.includes("zod")) return "zod";
-            return "vendor";
-          }
+        advancedChunks: {
+          groups: [
+            {
+              name: "react",
+              // Matches React core
+              test: /node_modules\/react\//,
+            },
+            {
+              name: "react-dom",
+              // Matches ReactDOM + client/runtime
+              test: /node_modules\/react-dom\//,
+            },
+            {
+              name: "scheduler",
+              test: /node_modules\/scheduler\//,
+            },
+            { name: "firebase-auth", test: /node_modules\/firebase\/auth/ },
+            {
+              name: "firebase-firestore",
+              test: /node_modules\/firebase\/firestore/,
+            },
+            {
+              name: "firebase",
+              test: /node_modules\/firebase(?!\/auth|\/firestore)/,
+            },
+
+            { name: "react-router", test: /node_modules\/react-router/ },
+            { name: "dexie", test: /node_modules\/dexie/ },
+            { name: "posthog", test: /node_modules\/posthog/ },
+            { name: "tanstack", test: /node_modules\/@tanstack/ },
+            { name: "zod", test: /node_modules\/zod/ },
+            { name: "axios", test: /node_modules\/axios/ },
+
+            { name: "vendor", test: /node_modules/ }, // catch-all for other node_modules
+          ],
         },
       },
     },
