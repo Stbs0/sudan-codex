@@ -7,12 +7,9 @@ import { SidebarProvider } from "./components/ui/sidebar";
 import { AuthProvider } from "./hooks/useAuth";
 import drugDB from "./lib/indexedDB";
 import router from "./lib/router";
+import { PHProvider } from "./providers/PHProvider";
 import { ThemeProvider } from "./providers/theme-provider";
 import { fetchDrugList } from "./services/drugServices";
-import posthog from "posthog-js";
-import { PHProvider } from "./providers/PHProvider";
-
-const queryClient = new QueryClient();
 
 const App = () => {
   useEffect(() => {
@@ -28,12 +25,9 @@ const App = () => {
     };
     fn().catch((err) => {
       console.log(err);
-      posthog.captureException(err, {
-        place: "initialize db",
-      });
     });
   }, []);
-
+  const queryClient = new QueryClient();
   return (
     <PHProvider>
       <QueryClientProvider client={queryClient}>
