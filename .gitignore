@@ -12,9 +12,8 @@ dist
 dist-ssr
 *.local
 .env
-tsconfig.node.tsbuildinfo
-tsconfig.app.tsbuildinfo
-.env.*
+*.tsbuildinfo
+*.env.*
 .firebaserc
 # Editor directories and files
 .vscode/*
@@ -36,3 +35,4 @@ tsconfig.app.tsbuildinfo
 
 .firebase
 stats.html
+*Zone.Identifier
