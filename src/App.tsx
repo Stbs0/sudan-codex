@@ -1,8 +1,7 @@
 import { RouterProvider } from "react-router-dom";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { useEffect } from "react";
+import { lazy, useEffect } from "react";
 import { SidebarProvider } from "./components/ui/sidebar";
 import { AuthProvider } from "./hooks/useAuth";
 import drugDB from "./lib/indexedDB";
@@ -10,6 +9,14 @@ import router from "./lib/router";
 import { PHProvider } from "./providers/PHProvider";
 import { ThemeProvider } from "./providers/theme-provider";
 import { fetchDrugList } from "./services/drugServices";
+
+const ReactQueryDevtools = import.meta.env.DEV
+  ? lazy(() =>
+      import("@tanstack/react-query-devtools").then((m) => ({
+        default: m.ReactQueryDevtools,
+      }))
+    )
+  : () => null;
 
 const App = () => {
   useEffect(() => {
