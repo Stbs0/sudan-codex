@@ -10,7 +10,6 @@ export default defineConfig({
   //   environment: "jsdom",
   //   setupFiles: "./__tests__/vitest-setup.ts",
   // },
-  
   envDir: "./envDir",
   plugins: [
     react(),
@@ -57,6 +56,7 @@ export default defineConfig({
             { name: "dexie", test: /node_modules\/dexie/ },
             { name: "posthog", test: /node_modules\/posthog/ },
             { name: "tanstack", test: /node_modules\/@tanstack/ },
+            { name: "driver", test: /node_modules\/driver/ },
             { name: "zod", test: /node_modules\/zod/ },
             { name: "axios", test: /node_modules\/axios/ },
 
