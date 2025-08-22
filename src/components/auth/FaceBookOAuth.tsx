@@ -6,14 +6,15 @@ import { Button } from "../ui/button";
 import { SaveUserInFIreStore } from "@/services/usersServices";
 import { useQueryClient } from "@tanstack/react-query";
 import { getAdditionalUserInfo } from "firebase/auth";
-import posthog from "posthog-js";
 import { useLocation, useNavigate } from "react-router-dom";
 import Facebook from "../../assets/icons/facebook.svg";
+import { usePostHog } from "posthog-js/react";
 
 type Props = {
   logInOrSignUp?: string;
 };
 const FaceBookOAuth = ({ logInOrSignUp }: Props) => {
+  const posthog = usePostHog();
   const navigate = useNavigate();
   const location = useLocation();
   const userDesiredPage = location.state?.userDesiredPage?.pathname || "/";
