@@ -164,11 +164,12 @@ const UserPersonalInfo = () => {
           </form>
         </Form>
       </FormProvider>
+
       {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      }{" "}
-      {/* @ts-expect-error */}
-      {import.meta.env.DEV && DevTool && <DevTool control={control} />}
+        /* @ts-expect-error */
+        import.meta.env.DEV && DevTool && <DevTool control={control} />
+      }
     </div>
   );
 };
