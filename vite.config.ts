@@ -5,19 +5,40 @@ import path from "path";
 import { visualizer } from "rollup-plugin-visualizer";
 import { defineConfig, PluginOption } from "vite";
 
+const InjectCssAfterIndex = () => {
+  return {
+    name: "move-css-link",
+    transformIndexHtml(html: string) {
+      const cssRegex =
+        /<link rel="stylesheet" crossorigin href="\/assets\/index-.*?\.css">/;
+      const cssMatch = html.match(cssRegex);
+
+      if (!cssMatch) return html;
+      const cssTag = cssMatch[0];
+
+      let newHtml = html.replace(cssTag, "");
+
+      newHtml = newHtml.replace(
+        /(src="\/assets\/index-.*?\.js"><\/script>)/,
+        `$1\n    ${cssTag}`
+      );
+
+      return newHtml;
+    },
+  };
+};
+
 export default defineConfig({
-  // test: {
-  //   environment: "jsdom",
-  //   setupFiles: "./__tests__/vitest-setup.ts",
-  // },
   envDir: "./envDir",
   plugins: [
     react(),
     tailwindcss(),
+  InjectCssAfterIndex(),
 
     process.env.analyze === "true" &&
       (visualizer({
         // sourcemap: true,
+        template: "network",
         open: true,
         gzipSize: true,
         brotliSize: true,
@@ -26,42 +47,26 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        advancedChunks: {
-          groups: [
-            {
-              name: "react",
-              // Matches React core
-              test: /node_modules\/react\//,
-            },
-            {
-              name: "react-dom",
-              // Matches ReactDOM + client/runtime
-              test: /node_modules\/react-dom\//,
-            },
-            {
-              name: "scheduler",
-              test: /node_modules\/scheduler\//,
-            },
-            { name: "firebase-auth", test: /node_modules\/firebase\/auth/ },
-            {
-              name: "firebase-firestore",
-              test: /node_modules\/firebase\/firestore/,
-            },
-            {
-              name: "firebase",
-              test: /node_modules\/firebase(?!\/auth|\/firestore)/,
-            },
+        manualChunks(id) {
+          {
+            if (id.includes("node_modules")) {
+              if (id.includes("firebase/auth")) return "firebase-auth";
+              if (id.includes("firebase/util")) return "firebase-util";
 
-            { name: "react-router", test: /node_modules\/react-router/ },
-            { name: "dexie", test: /node_modules\/dexie/ },
-            { name: "posthog", test: /node_modules\/posthog/ },
-            { name: "tanstack", test: /node_modules\/@tanstack/ },
-            { name: "driver", test: /node_modules\/driver/ },
-            { name: "zod", test: /node_modules\/zod/ },
-            { name: "axios", test: /node_modules\/axios/ },
+              if (id.includes("react-router")) return "react-router";
+              if (id.includes("posthog")) return "posthog";
+              if (id.includes("axios")) return "axios";
+              if (id.includes("sonner")) return "sonner";
+              if (id.includes("tailwind-merge")) return "tailwind-merge";
+              if (id.includes("react-dom-client")) return "react-dom-client";
+              if (id.includes("dexie")) return "dexie";
+              if (id.includes("firebase/firestore"))
+                return "firebase-firestore";
 
-            { name: "vendor", test: /node_modules/ }, // catch-all for other node_modules
-          ],
+              if (id.includes("firebase")) return "firebase";
+              if (id.includes("@tanstack")) return "tanstack";
+            }
+          }
         },
       },
     },
