@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import LogoPic from "../../assets/logo/pLogo.webp";
+import LogoPic from "../../assets/logo/pLogo-small.webp";
 import { Button } from "../ui/button";
 
 const Logo = ({ className }: { className?: string }) => {
