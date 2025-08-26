@@ -1,6 +1,6 @@
 const Policy = () => {
   return (
-    <div className='prose prose-lg dark:prose-invert container mx-auto max-w-4xl px-4 py-8'>
+    <div className='container mx-auto max-w-4xl px-4 py-8'>
       <h1 className='mb-4 text-3xl font-bold'>Privacy Policy</h1>
       <p>Last updated: August 08, 2025</p>
       <p>

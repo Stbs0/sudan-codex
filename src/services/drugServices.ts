@@ -21,7 +21,7 @@ export const getDrugInfo = async (
 
     const { data } = await axios.get<FetchedDrugInfo>(url);
 
-    return data.results[0];
+    return data.results?.[0];
   } catch (error) {
     console.log(error);
 
