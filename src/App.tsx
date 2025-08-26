@@ -1,7 +1,7 @@
 import { RouterProvider } from "react-router-dom";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { lazy, useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { SidebarProvider } from "./components/ui/sidebar";
 import { AuthProvider } from "./hooks/useAuth";
 import drugDB from "./lib/indexedDB";
@@ -17,6 +17,8 @@ const ReactQueryDevtools = import.meta.env.DEV
       }))
     )
   : () => null;
+
+const queryClient = new QueryClient();
 
 const App = () => {
   useEffect(() => {
@@ -34,11 +36,14 @@ const App = () => {
       console.log(err);
     });
   }, []);
-  const queryClient = new QueryClient();
   return (
     <PHProvider>
       <QueryClientProvider client={queryClient}>
-        {import.meta.env.DEV && <ReactQueryDevtools initialIsOpen={false} />}
+        {import.meta.env.DEV && (
+          <Suspense fallback={null}>
+            <ReactQueryDevtools initialIsOpen={false} />
+          </Suspense>
+        )}
         <ThemeProvider
           defaultTheme='dark'
           storageKey='vite-ui-theme'>
