@@ -26,10 +26,10 @@ jobs:
           cache: 'pnpm'
 
       - name: 📥 Install dependencies
-        run: pnpm install --frozen-lockfile --dangerously-allow-all-builds
+        run: pnpm --filter web install --frozen-lockfile --dangerously-allow-all-builds
 
       - name: 🛠️ Build project
-        run: pnpm build
+        run: pnpm --filter web build
         env:
           VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
           VITE_AUTH_DOMAIN: ${{ secrets.VITE_AUTH_DOMAIN }}
