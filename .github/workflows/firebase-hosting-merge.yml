@@ -47,8 +47,8 @@ jobs:
       - name: 🧩 Inject and upload source maps
         run: |
            pnpm i -g  --dangerously-allow-all-builds @posthog/cli
-           posthog-cli --host https://eu.posthog.com sourcemap inject --directory ./dist/assets
-           posthog-cli --host https://eu.posthog.com sourcemap upload --delete-after  --directory ./dist/assets
+           posthog-cli --host https://eu.posthog.com sourcemap inject --directory ./apps/web/dist/assets
+           posthog-cli --host https://eu.posthog.com sourcemap upload --delete-after  --directory ./apps/web/apps/web/dist/assets
         env:
           POSTHOG_CLI_ENV_ID: ${{ secrets.POSTHOG_CLI_ENV_ID }}
           POSTHOG_CLI_TOKEN: ${{ secrets.POSTHOG_CLI_TOKEN }}
