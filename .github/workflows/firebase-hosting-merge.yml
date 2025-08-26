@@ -60,3 +60,4 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SUDAN_CODEX }}
           channelId: live
           projectId: sudan-codex
+          entryPoint: ./apps/web
