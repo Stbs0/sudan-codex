@@ -92,5 +92,11 @@
     "vite-plugin-checker": "^0.9.3",
     "vite-plugin-svgr": "^4.3.0",
     "vitest": "^3.2.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }

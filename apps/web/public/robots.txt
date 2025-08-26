@@ -1,0 +1,12 @@
+
+User-agent: *
+Allow: /
+
+# Disallow crawling of sensitive or irrelevant directories
+Disallow: /admin/
+Disallow: /log-in/
+Disallow: /sign-up/
+Disallow: /drug-list/
+
+
+Sitemap: https://www.sudancodex.com/sitemap.xml
