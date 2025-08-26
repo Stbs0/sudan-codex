@@ -1,14 +1,14 @@
 import {
+  browserLocalPersistence,
   connectAuthEmulator,
-  FacebookAuthProvider,
-  getAuth,
-  GoogleAuthProvider,
+  indexedDBLocalPersistence,
+  initializeAuth,
 } from "firebase/auth";
 import { app } from "./firebase";
 
-export const auth = getAuth(app);
+export const auth = initializeAuth(app, {
+  persistence: [indexedDBLocalPersistence, browserLocalPersistence],
+});
 if (import.meta.env.DEV) {
   connectAuthEmulator(auth, "http://127.0.0.1:9099", { disableWarnings: true });
 }
-export const googleAuthProvider = new GoogleAuthProvider();
-export const faceBookAuthProvider = new FacebookAuthProvider();

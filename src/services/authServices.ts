@@ -1,11 +1,10 @@
-import {
-  auth,
-  faceBookAuthProvider,
-  googleAuthProvider,
-} from "@/lib/firebaseAuth";
+import { auth } from "@/lib/firebaseAuth";
 import { FirebaseError } from "firebase/app";
 import {
+  browserPopupRedirectResolver,
   createUserWithEmailAndPassword,
+  FacebookAuthProvider,
+  GoogleAuthProvider,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -30,17 +29,33 @@ export const logout = async () => {
 };
 
 export const GoogleSignIn = async () =>
-  await signInWithPopup(auth, googleAuthProvider).catch(async (err) => {
+  await signInWithPopup(
+    auth,
+    new GoogleAuthProvider(),
+    browserPopupRedirectResolver
+  ).catch(async (err) => {
     if ((err as FirebaseError).code === "auth/popup-blocked") {
-      return await signInWithRedirect(auth, googleAuthProvider);
+      return await signInWithRedirect(
+        auth,
+        new GoogleAuthProvider(),
+        browserPopupRedirectResolver
+      );
     }
     throw err;
   });
 
 export const FaceBookSignIn = async () =>
-  await signInWithPopup(auth, faceBookAuthProvider).catch(async (err) => {
+  await signInWithPopup(
+    auth,
+    new FacebookAuthProvider(),
+    browserPopupRedirectResolver
+  ).catch(async (err) => {
     if ((err as FirebaseError).code === "auth/popup-blocked") {
-      return await signInWithRedirect(auth, faceBookAuthProvider);
+      return await signInWithRedirect(
+        auth,
+        new FacebookAuthProvider(),
+        browserPopupRedirectResolver
+      );
     }
     throw err;
   });

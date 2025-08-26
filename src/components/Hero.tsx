@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 
 export function Hero() {
   return (
-    <section className='relative flex h-full min-h-[60vh] items-center justify-center bg-cover bg-center py-20 text-center'>
+    <section className='relative flex h-full min-h-[60vh] items-center justify-center bg-[url("/hero.webp")] bg-cover bg-center py-20 text-center'>
       {/* Overlay */}
-      <img
+      {/* <img
         src='/hero.webp'
         alt='Hero Background'
         className='absolute inset-0 h-full w-full object-cover'
         fetchPriority='high'
-      />
+      /> */}
       <div className='pointer-events-none absolute inset-0 z-0 bg-black/60'></div>{" "}
       <div className='relative z-10 container mx-auto flex flex-col items-center px-4'>
         <Pill className='mx-auto mb-6 size-20 text-purple-600 drop-shadow-lg' />

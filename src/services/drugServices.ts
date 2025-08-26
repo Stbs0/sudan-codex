@@ -2,7 +2,6 @@ import { OPENFDA_SEARCH_URL } from "@/constants";
 import { getOpenFdaSearchUrl, parseQuery } from "@/lib/utils";
 import { FetchedDrugInfo } from "@/types/types";
 import axios from "axios";
-import posthog from "posthog-js";
 
 export const getDrugInfo = async (
   genericName: string,
@@ -22,12 +21,10 @@ export const getDrugInfo = async (
 
     const { data } = await axios.get<FetchedDrugInfo>(url);
 
-    return data.results[0];
+    return data.results?.[0];
   } catch (error) {
     console.log(error);
-    posthog.captureException(error, {
-      place: "getDrugInfo",
-    });
+
     throw error;
   }
 };
