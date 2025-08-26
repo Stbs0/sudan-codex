@@ -1,21 +1,21 @@
-import { useAuth } from "@/hooks/useAuth";
 import { getInitials } from "@/lib/utils";
 import { logout } from "@/services/authServices";
+import { type SaveUserReturnTypes } from "@/types/types";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 import { useQueryClient } from "@tanstack/react-query";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Separator } from "../ui/separator";
-
-const ProfilePic = () => {
+type ProfilePicProps = {
+  user: SaveUserReturnTypes;
+};
+const ProfilePic = ({ user }: ProfilePicProps) => {
   const navigate = useNavigate();
-  const { user } = useAuth();
-  const [open, setOpen] = useState(false);
   const queryClient = useQueryClient();
+
   const handleSignOut = async () => {
     await logout();
     navigate("/log-in");
@@ -26,23 +26,16 @@ const ProfilePic = () => {
     });
   };
 
-  if (!user) {
-    return null;
-  }
-
   return (
-    <Popover
-      onOpenChange={() => {
-        setOpen(!open);
-      }}>
-      <PopoverTrigger className='flex items-center'>
+    <Popover>
+      <PopoverTrigger className='flex items-center rounded-full'>
         <Avatar>
           <AvatarImage
-            src={user?.photoURL ?? undefined}
+            src={user.photoURL}
             alt='profile picture'
           />
           <AvatarFallback>
-            {getInitials(user?.displayName || "  ")}
+            {getInitials(user?.displayName || "User")}
           </AvatarFallback>
         </Avatar>
       </PopoverTrigger>

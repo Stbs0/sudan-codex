@@ -15,19 +15,25 @@ import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { useAuth } from "@/hooks/useAuth";
 import { tellUsMoreSchema, tellUsMoreSchemaType } from "@/lib/schemas";
-import { DevTool } from "@hookform/devtools";
 
 import { completeProfile } from "@/services/usersServices";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
+import { lazy } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
+const DevTool = import.meta.env.DEV
+  ? lazy(() =>
+      import("@hookform/devtools").then((m) => ({ default: m.DevTool }))
+    )
+  : () => null;
+
 const UserPersonalInfo = () => {
   const { user, refetch } = useAuth();
-  const methods = useForm({
+  const { control, ...methods } = useForm({
     defaultValues: {
       age: "",
       university: "",
@@ -71,8 +77,12 @@ const UserPersonalInfo = () => {
 
   return (
     <div className='mx-auto grid max-w-2xl items-center gap-4 px-3 py-4 dark:text-gray-100'>
-      <FormProvider {...methods}>
-        <Form {...methods}>
+      <FormProvider
+        control={control}
+        {...methods}>
+        <Form
+          control={control}
+          {...methods}>
           <form onSubmit={methods.handleSubmit(onSubmit)}>
             <div className='mb-2 space-y-1'>
               <h1 className='text-center text-3xl font-bold'>
@@ -83,7 +93,7 @@ const UserPersonalInfo = () => {
             <Card>
               <CardContent>
                 <FormField
-                  control={methods.control}
+                  control={control}
                   name='age'
                   render={({ field }) => (
                     <FormItem>
@@ -102,7 +112,7 @@ const UserPersonalInfo = () => {
                 />
                 <Separator className='my-4' />
                 <FormField
-                  control={methods.control}
+                  control={control}
                   name='phoneNumber'
                   render={({ field }) => (
                     <FormItem>
@@ -122,7 +132,7 @@ const UserPersonalInfo = () => {
                 />{" "}
                 <Separator className='my-4' />
                 <FormField
-                  control={methods.control}
+                  control={control}
                   name='university'
                   render={({ field }) => (
                     <FormItem>
@@ -154,7 +164,12 @@ const UserPersonalInfo = () => {
           </form>
         </Form>
       </FormProvider>
-      <DevTool control={methods.control} />
+
+      {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        /* @ts-expect-error */
+        import.meta.env.DEV && DevTool && <DevTool control={control} />
+      }
     </div>
   );
 };
