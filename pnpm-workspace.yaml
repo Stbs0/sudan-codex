@@ -1,8 +1,17 @@
 packages:
-  - "apps/*"
-  - "packages/*"
+  - apps/*
+  - packages/*
+
+
+onlyBuiltDependencies:
+  - '@firebase/util'
+  - '@tailwindcss/oxide'
+  - core-js
+  - esbuild
+  - protobufjs
+  - re2
+  - unrs-resolver
 
 supportedArchitectures:
-  os: ["current"]
+  os: [current]
 
-node-linker: "hoisted"
