@@ -1,8 +1,8 @@
 import {
   createBrowserRouter,
   Navigate,
-  Params,
-  RouteObject,
+  type Params,
+  type RouteObject,
 } from "react-router-dom";
 
 import ErrorElement from "@/components/ErrorElement";

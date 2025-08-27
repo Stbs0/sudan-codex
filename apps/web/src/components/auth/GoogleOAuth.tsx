@@ -3,7 +3,7 @@ import { SaveUserInFIreStore } from "@/services/usersServices";
 import { useQueryClient } from "@tanstack/react-query";
 import { getAdditionalUserInfo } from "firebase/auth";
 import { usePostHog } from "posthog-js/react";
-import { SyntheticEvent } from "react";
+import type { SyntheticEvent } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import Google from "../../assets/icons/google.svg";

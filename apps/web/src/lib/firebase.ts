@@ -1,4 +1,4 @@
-import { FirebaseOptions, initializeApp } from "firebase/app";
+import { type FirebaseOptions, initializeApp } from "firebase/app";
 
 const firebaseConfig: FirebaseOptions = {
   apiKey: import.meta.env.VITE_API_KEY,

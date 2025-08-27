@@ -3,7 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import { visualizer } from "rollup-plugin-visualizer";
-import { defineConfig, PluginOption } from "vite";
+import { defineConfig, type PluginOption } from "vite";
 
 const InjectCssAfterIndex = () => {
   return {

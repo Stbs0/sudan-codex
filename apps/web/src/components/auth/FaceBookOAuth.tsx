@@ -1,5 +1,5 @@
 import { FaceBookSignIn } from "@/services/authServices";
-import { SyntheticEvent } from "react";
+import type { SyntheticEvent } from "react";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
 

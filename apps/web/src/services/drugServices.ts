@@ -1,6 +1,6 @@
 import { OPENFDA_SEARCH_URL } from "@/constants";
 import { getOpenFdaSearchUrl, parseQuery } from "@/lib/utils";
-import { FetchedDrugInfo } from "@/types/types";
+import { type FetchedDrugInfo } from "@/types/types";
 import axios from "axios";
 
 export const getDrugInfo = async (

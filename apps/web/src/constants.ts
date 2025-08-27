@@ -1,5 +1,5 @@
 import { Home, Pill } from "lucide-react";
-import { Unit } from "./types/types";
+import { type Unit } from "./types/types";
 
 export const DRUG_UNITS: Unit[] = [
   { value: "mg", label: "mg" },

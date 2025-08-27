@@ -1,4 +1,4 @@
-import { DrugProperty } from "@/types/types";
+import type { DrugProperty } from "@/types/types";
 
 type Props = { title: string; property: DrugProperty };
 

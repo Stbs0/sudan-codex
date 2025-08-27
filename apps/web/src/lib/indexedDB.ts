@@ -1,5 +1,5 @@
-import { Drug } from "@/types/types";
-import Dexie, { Table } from "dexie";
+import { type Drug } from "@/types/types";
+import Dexie, { type Table } from "dexie";
 
 export class DrugIndex extends Dexie {
   drugList!: Table<Drug>;

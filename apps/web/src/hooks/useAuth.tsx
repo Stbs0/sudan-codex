@@ -1,16 +1,16 @@
 import { auth } from "@/lib/firebaseAuth";
 import { getUser } from "@/services/usersServices";
-import { SaveUserReturnTypes } from "@/types/types";
+import { type SaveUserReturnTypes } from "@/types/types";
 import {
-  QueryObserverResult,
-  RefetchOptions,
+  type QueryObserverResult,
+  type RefetchOptions,
   useQuery,
   useQueryClient,
 } from "@tanstack/react-query";
 import { onAuthStateChanged } from "firebase/auth";
 import {
   createContext,
-  ReactNode,
+  type ReactNode,
   useContext,
   useEffect,
   useState,

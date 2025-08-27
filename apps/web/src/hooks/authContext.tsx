@@ -1,5 +1,8 @@
-import { SaveUserReturnTypes } from "@/types/types";
-import { QueryObserverResult, RefetchOptions } from "@tanstack/react-query";
+import { type SaveUserReturnTypes } from "@/types/types";
+import type {
+  QueryObserverResult,
+  RefetchOptions,
+} from "@tanstack/react-query";
 import { createContext } from "react";
 
 export interface AuthContextType {

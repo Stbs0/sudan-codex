@@ -1,5 +1,5 @@
 // import { motion } from "motion/react";
-import { JSX, useEffect, useRef } from "react";
+import { type JSX, useEffect, useRef } from "react";
 
 /**
  * Props for the InfiniteScroll component.
@@ -55,7 +55,9 @@ export function InfiniteScroll<T>({
 
   return (
     <div className='flex flex-col gap-4'>
-      {data?.map((item, index) => <div>{renderItem(item, index)}</div>)}
+      {data?.map((item, index) => (
+        <div>{renderItem(item, index)}</div>
+      ))}
       {hasMore && (
         <div
           ref={observerRef}

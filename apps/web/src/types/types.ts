@@ -1,5 +1,5 @@
-import { FormSchema } from "@/lib/schemas";
-import { User } from "firebase/auth";
+import { type FormSchema } from "@/lib/schemas";
+import { type User } from "firebase/auth";
 import { Timestamp } from "firebase/firestore";
 
 export type Theme = "dark" | "light" | "system";

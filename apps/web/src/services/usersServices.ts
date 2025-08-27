@@ -1,8 +1,8 @@
 // import api from "@/lib/api";
 import { auth } from "@/lib/firebaseAuth";
 import { db } from "@/lib/firestore";
-import { tellUsMoreSchemaType } from "@/lib/schemas";
-import { SaveUserReturnTypes } from "@/types/types";
+import { type tellUsMoreSchemaType } from "@/lib/schemas";
+import { type SaveUserReturnTypes } from "@/types/types";
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 
 const docRef = (uid: string) => doc(db, "users", uid);

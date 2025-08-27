@@ -14,7 +14,7 @@ import { Input } from "@/components/ui/input";
 
 import { Separator } from "@/components/ui/separator";
 import { useAuth } from "@/hooks/useAuth";
-import { tellUsMoreSchema, tellUsMoreSchemaType } from "@/lib/schemas";
+import { tellUsMoreSchema, type tellUsMoreSchemaType } from "@/lib/schemas";
 
 import { completeProfile } from "@/services/usersServices";
 import { zodResolver } from "@hookform/resolvers/zod";
