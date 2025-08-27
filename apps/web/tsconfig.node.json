@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "target": "ES2022",
-    "lib": ["ES2023"],
+    "lib": ["ES2022"],
     "module": "ESNext",
     "skipLibCheck": true,
 
     /* Bundler mode */
+    "verbatimModuleSyntax": true,
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
@@ -13,6 +15,8 @@
     "noEmit": true,
 
     /* Linting */
+    "erasableSyntaxOnly": true,
+    "noUncheckedSideEffectImports": true,
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,

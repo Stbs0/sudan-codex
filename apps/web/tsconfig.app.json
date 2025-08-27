@@ -1,15 +1,17 @@
 {
   "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "target": "ES2020",
     "useDefineForClassFields": true,
 
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["ES2023", "DOM"],
     "module": "ESNext",
     "skipLibCheck": true,
     "types": ["vitest/globals", "@testing-library/jest-dom"],
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
@@ -17,6 +19,8 @@
 
     /* Linting */
     "strict": true,
+    "erasableSyntaxOnly": true,
+    "noUncheckedSideEffectImports": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
@@ -29,8 +33,6 @@
   "include": [
     "src",
     "tests/vitest-setup.ts",
-    "form",
     "tests",
-    "src/assets/logo"
   ]
 }
