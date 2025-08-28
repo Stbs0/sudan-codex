@@ -1,0 +1,18 @@
+packages:
+  - apps/*
+  - packages/*
+
+
+onlyBuiltDependencies:
+  - '@firebase/util'
+  - '@tailwindcss/oxide'
+  - core-js
+  - esbuild
+  - protobufjs
+  - re2
+  - unrs-resolver
+  - '@posthog/cli'
+
+supportedArchitectures:
+  os: [current]
+

@@ -26,10 +26,10 @@ jobs:
           cache: 'pnpm'
 
       - name: 📥 Install dependencies
-        run: pnpm install --frozen-lockfile --dangerously-allow-all-builds
+        run: pnpm --filter web install --frozen-lockfile
 
       - name: 🛠️ Build project
-        run: pnpm build
+        run: pnpm --filter web build
         env:
           VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
           VITE_AUTH_DOMAIN: ${{ secrets.VITE_AUTH_DOMAIN }}
@@ -46,9 +46,9 @@ jobs:
 
       - name: 🧩 Inject and upload source maps
         run: |
-           pnpm i -g  --dangerously-allow-all-builds @posthog/cli
-           posthog-cli --host https://eu.posthog.com sourcemap inject --directory ./dist/assets
-           posthog-cli --host https://eu.posthog.com sourcemap upload --delete-after  --directory ./dist/assets
+           pnpm i -g  @posthog/cli
+           posthog-cli --host https://eu.posthog.com sourcemap inject --directory ./apps/web/dist/assets
+           posthog-cli --host https://eu.posthog.com sourcemap upload --delete-after  --directory ./apps/web/apps/web/dist/assets
         env:
           POSTHOG_CLI_ENV_ID: ${{ secrets.POSTHOG_CLI_ENV_ID }}
           POSTHOG_CLI_TOKEN: ${{ secrets.POSTHOG_CLI_TOKEN }}
@@ -60,3 +60,4 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SUDAN_CODEX }}
           channelId: live
           projectId: sudan-codex
+          entryPoint: ./apps/web
