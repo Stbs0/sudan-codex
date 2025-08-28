@@ -27,7 +27,7 @@ jobs:
           cache: "pnpm"
 
       - name: 📥 Install dependencies
-        run: pnpm --filter web install --frozen-lockfile --dangerously-allow-all-builds
+        run: pnpm --filter web install --frozen-lockfile
 
       - name: 🛠️ Build project
         run: pnpm --filter web build
@@ -46,7 +46,7 @@ jobs:
 
       - name: 🧩 Inject and upload source maps
         run: |
-           pnpm i -g  --dangerously-allow-all-builds @posthog/cli
+           pnpm i -g  @posthog/cli
            posthog-cli --host https://eu.posthog.com sourcemap inject --directory ./apps/web/dist/assets
            posthog-cli --host https://eu.posthog.com sourcemap upload --delete-after  --directory ./apps/web/dist/assets
         env:
