@@ -7,8 +7,7 @@
     "prepare": "husky"
   },
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "apps/*"
   ],
   "devDependencies": {
     "husky": "^9.1.7"
