@@ -22,6 +22,8 @@
       "@/*": ["./*"]
     }
   },
+  "extends": ["../../tsconfig.base.json"],
+"tsconfigRootDir":"../../",
   "include": [
     "next-env.d.ts",
     "**/*.ts",
