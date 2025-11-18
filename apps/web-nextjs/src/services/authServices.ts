@@ -34,6 +34,7 @@ export const GoogleSignIn = async () =>
     new GoogleAuthProvider(),
     browserPopupRedirectResolver
   ).catch(async (err) => {
+    console.log("error goooooogl");
     if ((err as FirebaseError).code === "auth/popup-blocked") {
       return await signInWithRedirect(
         auth,

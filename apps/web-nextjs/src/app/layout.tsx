@@ -5,21 +5,22 @@ import { SidebarInset, SidebarProvider } from "@/src/components/ui/sidebar";
 import { AuthProvider } from "@/src/hooks/useAuth";
 import { PHProvider } from "@/src/providers/PHProvider";
 import TanstackQueryProvider from "@/src/providers/query-client";
+import { ThemeProvider } from "@/src/providers/theme-provider";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
-import { ThemeProvider } from "@/src/providers/theme-provider";
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import DrugInitializer from "../components/initDexieDb";
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -35,10 +36,11 @@ export default function RootLayout({
       lang='en'
       suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <PHProvider>
           <TanstackQueryProvider>
-            {process.env.DEV && (
+            {process.env.NODE_ENV && (
               <Suspense fallback={null}>
                 <ReactQueryDevtools initialIsOpen={false} />
               </Suspense>
@@ -53,11 +55,11 @@ export default function RootLayout({
                   <AppSidebar />
                   <SidebarInset>
                     <Header />
-
                     <div className='flex min-h-screen flex-col'>
                       <main className='flex-1'>{children}</main>
                       <Footer />
                     </div>
+                    <DrugInitializer />
                   </SidebarInset>
                 </SidebarProvider>
               </AuthProvider>

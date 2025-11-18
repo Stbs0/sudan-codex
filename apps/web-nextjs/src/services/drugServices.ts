@@ -1,7 +1,6 @@
 import { OPENFDA_SEARCH_URL } from "@/constants";
 import { getOpenFdaSearchUrl, parseQuery } from "@/src/lib/utils";
-import { type FetchedDrugInfo } from "@/types/types";
-import axios from "axios";
+import { Drug, FetchedDrugInfo } from "../lib/types";
 
 export const getDrugInfo = async (
   genericName: string,
@@ -18,8 +17,8 @@ export const getDrugInfo = async (
           `${OPENFDA_SEARCH_URL}?search=(spl_product_data_elements:(*${parsedGenericName}*)${routeQuery})`
         )
       : getOpenFdaSearchUrl(parsedGenericName);
-
-    const { data } = await axios.get<FetchedDrugInfo>(url);
+    const res = await fetch(url);
+    const data = (await res.json()) as FetchedDrugInfo;
 
     return data.results?.[0];
   } catch (error) {
@@ -30,6 +29,7 @@ export const getDrugInfo = async (
 };
 
 export const fetchDrugList = async () => {
-  const { default: drugList } = await import("../assets/data/drugData.json");
-  return drugList;
+  const res = await fetch("/data/drugData.json");
+
+  return (await res.json()) as Drug[];
 };
