@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+
+  },
+  "exclude": [  "node_modules",
+    "apps/legacy-vite-web",
+    "apps/*/.next",
+    "apps/*/dist",
+    "packages/*/dist"]
+}

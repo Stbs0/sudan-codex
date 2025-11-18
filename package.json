@@ -7,9 +7,12 @@
     "prepare": "husky"
   },
   "workspaces": [
-    "apps/*"
+    "apps/web-nextjs"
   ],
   "devDependencies": {
     "husky": "^9.1.7"
+  },
+  "dependencies": {
+
   }
 }
