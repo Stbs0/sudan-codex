@@ -1,15 +1,16 @@
+import Footer from "@/components/layout/Footer";
+import { AppSidebar } from "@/components/layout/app-sidebar";
 import Header from "@/components/layout/header";
-import { SidebarProvider } from "@/components/ui/sidebar";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { AuthProvider } from "@/hooks/useAuth";
 import { PHProvider } from "@/providers/PHProvider";
 import TanstackQueryProvider from "@/providers/query-client";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import type { Metadata } from "next";
-import { ThemeProvider } from "next-themes";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
-import Footer from "@/components/layout/Footer";
+import { ThemeProvider } from "@/providers/theme-provider";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -30,7 +31,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html
+      lang='en'
+      suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <PHProvider>
@@ -40,19 +43,25 @@ export default function RootLayout({
                 <ReactQueryDevtools initialIsOpen={false} />
               </Suspense>
             )}
-            <SidebarProvider
-              className='flex-col'
-              defaultOpen={false}>
-              <ThemeProvider
-                defaultTheme='dark'
-                storageKey='vite-ui-theme'>
-                <AuthProvider>
-                  <Header />
-                  {children}
-                  <Footer />
-                </AuthProvider>
-              </ThemeProvider>
-            </SidebarProvider>
+            <ThemeProvider
+              attribute='class'
+              defaultTheme='system'
+              enableSystem
+              disableTransitionOnChange>
+              <AuthProvider>
+                <SidebarProvider defaultOpen={false}>
+                  <AppSidebar />
+                  <SidebarInset>
+                    <Header />
+
+                    <div className='flex min-h-screen flex-col'>
+                      <main className='flex-1'>{children}</main>
+                      <Footer />
+                    </div>
+                  </SidebarInset>
+                </SidebarProvider>
+              </AuthProvider>
+            </ThemeProvider>
           </TanstackQueryProvider>
         </PHProvider>
       </body>
