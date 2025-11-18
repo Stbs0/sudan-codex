@@ -55,7 +55,7 @@ const DrugInfo = () => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
 
-    const genericName = formData.get("genericName") as string;
+    const genericName = (formData.get("genericName") as string | null) ?? "";
 
     const submittedData = {
       generic: genericName.trim(),

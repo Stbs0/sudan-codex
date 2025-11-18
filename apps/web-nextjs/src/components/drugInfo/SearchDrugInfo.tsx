@@ -1,9 +1,9 @@
-import { DRUG_ROUTES } from "@/constants";
+import { DRUG_ROUTES } from "@/src/constants";
 import { useState } from "react";
+import { AutoComplete } from "../ui/autocomplete";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
-import { AutoComplete } from "../ui/autocomplete";
 
 const SearchDrugInfo = ({
   handleSubmit,

@@ -1,4 +1,4 @@
-// import { motion } from "motion/react";
+"use client";
 import { type JSX, useEffect, useRef } from "react";
 
 /**

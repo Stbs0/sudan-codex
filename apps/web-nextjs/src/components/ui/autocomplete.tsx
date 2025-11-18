@@ -40,7 +40,7 @@ export function AutoComplete({
           className='w-xs justify-between'>
           {route
             ? options.find((option) => option === route)
-            : "Select select route..."}
+            : "Select route..."}
           <ChevronsUpDown className='ml-2 h-4 w-4 shrink-0 opacity-50' />
         </Button>
       </PopoverTrigger>

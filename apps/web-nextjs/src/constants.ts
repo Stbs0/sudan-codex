@@ -1,5 +1,5 @@
 import { Home, Pill } from "lucide-react";
-import { Unit } from "./src/lib/types";
+import { Unit } from "./lib/types";
 
 export const DRUG_UNITS: Unit[] = [
   { value: "mg", label: "mg" },
@@ -158,7 +158,7 @@ export const DOSAGE_FORMS = [
     label: "GRANULE, DELAYED RELEASE",
   },
   {
-    label: "GRANULE, EFFERValueESCENT",
+    label: "GRANULE, EFFERVESCENT",
   },
   {
     label: "GRANULE, FOR SOLUTION",

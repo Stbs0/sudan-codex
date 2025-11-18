@@ -40,7 +40,7 @@ export default function RootLayout({
       >
         <PHProvider>
           <TanstackQueryProvider>
-            {process.env.NODE_ENV && (
+            {process.env.NODE_ENV === "development" && (
               <Suspense fallback={null}>
                 <ReactQueryDevtools initialIsOpen={false} />
               </Suspense>

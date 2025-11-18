@@ -1,4 +1,4 @@
-import { OPENFDA_SEARCH_URL } from "@/constants";
+import { OPENFDA_SEARCH_URL } from "@/src/constants";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -8,9 +8,9 @@ export function cn(...inputs: ClassValue[]) {
 export const getInitials = (name: string) => {
   return name
     .split(" ")
-    .map((n) => n[0])
-    .join("")
-    .toUpperCase();
+    .filter(Boolean)
+    .map((part) => part[0]!.toUpperCase())
+    .join("");
 };
 export const parseQuery = (str: string) => {
   return str.replace(/[\d+%()]/g, "").replace(/\s+/g, "*+AND+*");

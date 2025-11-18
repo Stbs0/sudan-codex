@@ -1,4 +1,4 @@
-import { OPENFDA_SEARCH_URL } from "@/constants";
+import { OPENFDA_SEARCH_URL } from "@/src/constants";
 import { getOpenFdaSearchUrl, parseQuery } from "@/src/lib/utils";
 import { Drug, FetchedDrugInfo } from "../lib/types";
 
