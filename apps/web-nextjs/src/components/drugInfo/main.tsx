@@ -1,21 +1,24 @@
 "use client";
-
-import { Skeleton } from "@/src/components/ui/skeleton";
-
-import DrugInfoContent from "@/src/components/drugInfo/drug-info-content";
-import { DrugCard } from "@/src/components/drugInfo/drugCard";
-import DrugContentErrorBoundary from "@/src/components/drugInfo/error-boundary";
-import SearchDrugInfo from "@/src/components/drugInfo/SearchDrugInfo";
-import { Card, CardContent } from "@/src/components/ui/card";
 import { useAuth } from "@/src/hooks/useAuth";
 import drugDB from "@/src/lib/indexedDB";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import {
+  useQuery,
+  useQueryClient,
+  useSuspenseQuery,
+} from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 import { Suspense, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import { Separator } from "@/src/components/ui/separator";
+import { Card, CardContent } from "../ui/card";
+import { Separator } from "../ui/separator";
+import { Skeleton } from "../ui/skeleton";
+import DrugInfoContent from "./drug-info-content";
+import { DrugCard } from "./drugCard";
+import DrugContentErrorBoundary from "./error-boundary";
+import SearchDrugInfo from "./SearchDrugInfo";
+import dynamic from "next/dynamic";
 
-const DrugInfo = () => {
+export function D() {
   const { no } = useParams();
   const queryClient = useQueryClient();
   const { user, isLoading: isLoadingAuth } = useAuth();
@@ -54,7 +57,6 @@ const DrugInfo = () => {
     setSearchInputs(submittedData);
     queryClient.refetchQueries({ queryKey: ["drugInfo", drug?.no] });
   };
-  // TODO: add skeletons
   if (!drug) return null;
   return (
     <div className='container mx-auto flex justify-center py-4'>
@@ -81,6 +83,5 @@ const DrugInfo = () => {
       </Card>
     </div>
   );
-};
-
-export default DrugInfo;
+}
+export default dynamic(() => Promise.resolve(D), { ssr: false });

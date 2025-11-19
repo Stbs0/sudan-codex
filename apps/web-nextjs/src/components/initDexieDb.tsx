@@ -1,6 +1,6 @@
-// components/DrugInitializer.js
-"use client"; // This directive is essential
+"use client";
 
+import Dexie from "dexie";
 import { useEffect, useRef } from "react";
 import { toast } from "sonner";
 import drugDB from "../lib/indexedDB";
@@ -16,13 +16,13 @@ const DrugInitializer = () => {
       if (initializedRef.current) return;
       initializedRef.current = true;
       try {
-        const isExists = await drugDB.isExists();
-
-        if (!isExists) {
+        if (!(await Dexie.exists("DrugIndex"))) {
           const drugList = await fetchDrugList();
-          await drugDB.populate(drugList);
-          ignore = true;
+          await drugDB.drugList.bulkAdd(drugList);
+          return;
         }
+
+        ignore = true;
 
         // TODO: add a retry mechanism
       } catch (error) {
