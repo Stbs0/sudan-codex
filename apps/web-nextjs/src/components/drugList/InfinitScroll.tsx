@@ -8,12 +8,14 @@ import { type JSX, useEffect, useRef } from "react";
  * @property {() => void} loadMore - Function to load more data.
  * @property {boolean} hasMore - Flag indicating if there is more data to load.
  * @property {(item: T, index: number) => React.ReactNode} renderItem - Function to render each item.
+
  */
 interface InfiniteScrollProps<T> {
   data: T[] | undefined;
   loadMore: () => void;
   hasMore: boolean;
   renderItem: (item: T, index: number) => React.ReactNode;
+  getItemKey: (item: T, index: number) => string | number;
 }
 
 // const variants = {
@@ -34,6 +36,7 @@ export function InfiniteScroll<T>({
   loadMore,
   hasMore,
   renderItem,
+  getItemKey,
 }: InfiniteScrollProps<T>): JSX.Element {
   const observerRef = useRef<HTMLDivElement | null>(null);
 
@@ -56,7 +59,7 @@ export function InfiniteScroll<T>({
   return (
     <div className='flex flex-col gap-4'>
       {data?.map((item, index) => (
-        <div key={index}>{renderItem(item, index)}</div>
+        <div key={getItemKey(item, index)}>{renderItem(item, index)}</div>
       ))}
       {hasMore && (
         <div

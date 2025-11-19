@@ -31,7 +31,7 @@ export const useInfiniteScroll = (search?: string) => {
         .then((data) =>
           data.sort((a, b) => a.brandName.localeCompare(b.brandName))
         );
-      return data.sort((a, b) => a.brandName.localeCompare(b.brandName));
+      return data;
     }
 
     return await query
