@@ -4,7 +4,7 @@ import { Skeleton } from "@/src/components/ui/skeleton";
 
 import DrugInfoContent from "@/src/components/drugInfo/drug-info-content";
 import { DrugCard } from "@/src/components/drugInfo/drugCard";
-import DrugContentErrorBoundary from "@/src/components/drugInfo/error-boundary";
+import DrugContentErrorFallback from "@/src/components/drugInfo/error-boundary";
 import SearchDrugInfo from "@/src/components/drugInfo/SearchDrugInfo";
 import { Card, CardContent } from "@/src/components/ui/card";
 import { useAuth } from "@/src/hooks/useAuth";
@@ -61,21 +61,27 @@ const DrugInfo = () => {
       <Card className='flex max-w-5xl flex-col items-center gap-6 p-5 max-md:mx-2 max-md:p-3'>
         <DrugCard drug={drug} />
         <Separator className='w-full' />
-        <SearchDrugInfo
-          generic={drug?.genericName}
-          handleSubmit={handleSubmit}
-        />
         <CardContent className='flex w-full flex-col gap-4'>
-          <Separator className='w-full' />
-          {!isLoadingAuth && user && (
-            <ErrorBoundary fallback={<DrugContentErrorBoundary />}>
-              <Suspense fallback={<Skeleton className='mb-4 h-12 w-full' />}>
-                <DrugInfoContent
-                  no={drug.no}
-                  searchInputs={searchInputs}
-                />
-              </Suspense>
-            </ErrorBoundary>
+          {!isLoadingAuth && user ? (
+            <>
+              <SearchDrugInfo
+                generic={drug?.genericName}
+                handleSubmit={handleSubmit}
+              />
+              <Separator className='w-full' />
+              <ErrorBoundary fallback={<DrugContentErrorFallback />}>
+                <Suspense fallback={<Skeleton className='mb-4 h-12 w-full' />}>
+                  <DrugInfoContent
+                    no={drug.no}
+                    searchInputs={searchInputs}
+                  />
+                </Suspense>
+              </ErrorBoundary>
+            </>
+          ) : (
+            <div className='text-center'>
+              Please log in to view drug information.
+            </div>
           )}
         </CardContent>
       </Card>

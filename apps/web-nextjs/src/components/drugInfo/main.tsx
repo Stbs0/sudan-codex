@@ -14,7 +14,7 @@ import { Separator } from "../ui/separator";
 import { Skeleton } from "../ui/skeleton";
 import DrugInfoContent from "./drug-info-content";
 import { DrugCard } from "./drugCard";
-import DrugContentErrorBoundary from "./error-boundary";
+import DrugContentErrorFallback from "./error-boundary";
 import SearchDrugInfo from "./SearchDrugInfo";
 import dynamic from "next/dynamic";
 
@@ -26,12 +26,10 @@ export function D() {
   const { data: drug } = useQuery({
     queryKey: ["drug", no],
     queryFn: async () => {
-      return (
-        (await drugDB.drugList
-          .where("no")
-          .equals(no as string)
-          .toArray()) || []
-      );
+      return await drugDB.drugList
+        .where("no")
+        .equals(no as string)
+        .toArray();
     },
     select: (data) => data[0],
   });
@@ -48,7 +46,7 @@ export function D() {
     const genericName = (formData.get("genericName") as string | null) ?? "";
 
     const submittedData = {
-      generic: genericName.trim(),
+      generic: "",
       refetch: true,
       route,
     };
@@ -70,7 +68,7 @@ export function D() {
         <CardContent className='flex w-full flex-col gap-4'>
           <Separator className='w-full' />
           {!isLoadingAuth && user && (
-            <ErrorBoundary fallback={<DrugContentErrorBoundary />}>
+            <ErrorBoundary fallback={<DrugContentErrorFallback />}>
               <Suspense fallback={<Skeleton className='mb-4 h-12 w-full' />}>
                 <DrugInfoContent
                   no={drug.no}

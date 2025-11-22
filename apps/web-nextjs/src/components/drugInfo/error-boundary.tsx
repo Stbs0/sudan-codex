@@ -1,7 +1,7 @@
 "use client";
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 
-function DrugContentErrorBoundary() {
+function DrugContentErrorFallback() {
   return (
     <Alert variant={"destructive"}>
       <AlertTitle>Try Again</AlertTitle>
@@ -13,4 +13,4 @@ function DrugContentErrorBoundary() {
   );
 }
 
-export default DrugContentErrorBoundary;
+export default DrugContentErrorFallback;

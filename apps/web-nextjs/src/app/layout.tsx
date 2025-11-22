@@ -8,10 +8,9 @@ import TanstackQueryProvider from "@/src/providers/query-client";
 import { ThemeProvider } from "@/src/providers/theme-provider";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { Suspense } from "react";
-import "./globals.css";
 import DrugInitializer from "../components/initDexieDb";
+import "./globals.css";
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -55,10 +54,8 @@ export default function RootLayout({
                   <AppSidebar />
                   <SidebarInset>
                     <Header />
-                    <div className='flex min-h-screen flex-col'>
-                      <main className='flex-1'>{children}</main>
-                      <Footer />
-                    </div>
+                    <main className='flex-1'>{children}</main>
+                    <Footer />
                     <DrugInitializer />
                   </SidebarInset>
                 </SidebarProvider>

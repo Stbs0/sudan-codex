@@ -2,7 +2,7 @@ import { Drug } from "@/src/lib/types";
 import { getDrugInfo } from "@/src/services/drugServices";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import DrugInfoAccordion from "./DrugInfoAccordion";
-import DrugContentErrorBoundary from "./error-boundary";
+import DrugContentErrorFallback from "./error-boundary";
 
 export default function DrugInfoContent({
   searchInputs,
@@ -23,8 +23,9 @@ export default function DrugInfoContent({
     },
     select: (values) => {
       if (!values) return;
-      delete values.openfda;
-      return values;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { openfda, ...rest } = values;
+      return rest;
     },
   });
 
@@ -34,7 +35,7 @@ export default function DrugInfoContent({
         {data ? (
           <DrugInfoAccordion data={data} />
         ) : (
-          <DrugContentErrorBoundary />
+          <DrugContentErrorFallback />
         )}
       </div>
     </>
