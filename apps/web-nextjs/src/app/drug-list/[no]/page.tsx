@@ -1,19 +1,19 @@
 "use client";
 
-import { Skeleton } from "@/src/components/ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 
-import DrugInfoContent from "@/src/components/drugInfo/drug-info-content";
-import { DrugCard } from "@/src/components/drugInfo/drugCard";
-import DrugContentErrorFallback from "@/src/components/drugInfo/error-boundary";
-import SearchDrugInfo from "@/src/components/drugInfo/SearchDrugInfo";
-import { Card, CardContent } from "@/src/components/ui/card";
-import { useAuth } from "@/src/hooks/useAuth";
-import drugDB from "@/src/lib/indexedDB";
+import DrugInfoContent from "@/components/drugInfo/drug-info-content";
+import { DrugCard } from "@/components/drugInfo/drugCard";
+import DrugContentErrorFallback from "@/components/drugInfo/error-boundary";
+import SearchDrugInfo from "@/components/drugInfo/SearchDrugInfo";
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { useAuth } from "@/hooks/useAuth";
+import drugDB from "@/lib/indexedDB";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 import { Suspense, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import { Separator } from "@/src/components/ui/separator";
 
 const DrugInfo = () => {
   const { no } = useParams();

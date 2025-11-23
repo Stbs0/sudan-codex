@@ -1,15 +1,15 @@
 "use client";
-import { logout } from "@/src/services/authServices";
+import { logout } from "@/services/authServices";
 import { MenuIcon, Pill, Settings, User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "../ui/sheet";
+} from "../../ui/sheet";
 
 function MobileMenu() {
   const navigate = useNavigate();

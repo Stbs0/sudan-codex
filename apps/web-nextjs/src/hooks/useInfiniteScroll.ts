@@ -1,6 +1,6 @@
 "use client";
 
-import drugDB from "@/src/lib/indexedDB";
+import drugDB from "@/lib/indexedDB";
 import { useState } from "react";
 
 import { useLiveQuery } from "dexie-react-hooks";

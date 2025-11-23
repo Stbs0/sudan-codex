@@ -1,12 +1,12 @@
 "use client";
 import { ModeToggle } from "./mode-toggle";
 
-import { useIsMobile } from "@/src/hooks/use-mobile";
-import { useAuth } from "@/src/hooks/useAuth";
-import { SidebarTrigger } from "../ui/sidebar";
-import Logo from "./Logo";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { useAuth } from "@/hooks/useAuth";
+import { SidebarTrigger } from "../../ui/sidebar";
 import ProfilePic from "./ProfilePic";
 import SigninAndLogoutButton from "./SigninAndLogoutButton";
+import Logo from "./Logo";
 // import { useIsMobile } from "@/hooks/use-mobile";
 
 const Header = () => {

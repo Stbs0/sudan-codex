@@ -1,10 +1,10 @@
 "use client";
-import { ListItem } from "@/src/components/drugList/ListItem";
-import ScrollToTopButton from "@/src/components/ScrollToTopButton";
-import { Button } from "@/src/components/ui/button";
-import { Input } from "@/src/components/ui/input";
-import { Skeleton } from "@/src/components/ui/skeleton";
-import { useInfiniteScroll } from "@/src/hooks/useInfiniteScroll";
+import { ListItem } from "@/components/drugList/ListItem";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Skeleton } from "@/components/ui/skeleton";
+import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
 import { type Config, driver } from "driver.js";
 import "driver.js/dist/driver.css";
 import { useCallback, useEffect, useRef, useState } from "react";

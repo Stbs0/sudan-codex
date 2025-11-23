@@ -1,7 +1,7 @@
 "use client";
-import SelectWithOther from "@/src/components/SelectWithOther";
-import { Button } from "@/src/components/ui/button";
-import { Card, CardContent } from "@/src/components/ui/card";
+import SelectWithOther from "@/components/SelectWithOther";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Form,
   FormControl,
@@ -10,11 +10,11 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/src/components/ui/form";
-import { Input } from "@/src/components/ui/input";
-import { useAuth } from "@/src/hooks/useAuth";
-import { tellUsMoreSchema, tellUsMoreSchemaType } from "@/src/lib/schemas";
-import { completeProfile } from "@/src/services/usersServices";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { useAuth } from "@/hooks/useAuth";
+import { tellUsMoreSchema, tellUsMoreSchemaType } from "@/lib/schemas";
+import { completeProfile } from "@/services/usersServices";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Separator } from "@radix-ui/react-separator";
 import { useMutation, useQueryClient } from "@tanstack/react-query";

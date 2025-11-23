@@ -1,6 +1,6 @@
 "use client";
-import { useAuth } from "@/src/hooks/useAuth";
-import { useSidebar } from "../ui/sidebar";
+import { useAuth } from "@/hooks/useAuth";
+import { useSidebar } from "../../ui/sidebar";
 import SigninAndLogoutButton from "./SigninAndLogoutButton";
 
 const MobileAuthBtns = () => {

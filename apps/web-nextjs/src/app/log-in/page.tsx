@@ -1,10 +1,5 @@
-import GoogleOAuth from "@/src/components/auth/GoogleOAuth";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/src/components/ui/card";
+import GoogleOAuth from "@/components/auth/GoogleOAuth";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 
 const Login = () => {

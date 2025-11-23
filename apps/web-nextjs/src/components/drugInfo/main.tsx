@@ -1,11 +1,8 @@
 "use client";
-import { useAuth } from "@/src/hooks/useAuth";
-import drugDB from "@/src/lib/indexedDB";
-import {
-  useQuery,
-  useQueryClient,
-  useSuspenseQuery,
-} from "@tanstack/react-query";
+import { useAuth } from "@/hooks/useAuth";
+import drugDB from "@/lib/indexedDB";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import dynamic from "next/dynamic";
 import { useParams } from "next/navigation";
 import { Suspense, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
@@ -16,7 +13,6 @@ import DrugInfoContent from "./drug-info-content";
 import { DrugCard } from "./drugCard";
 import DrugContentErrorFallback from "./error-boundary";
 import SearchDrugInfo from "./SearchDrugInfo";
-import dynamic from "next/dynamic";
 
 export function D() {
   const { no } = useParams();

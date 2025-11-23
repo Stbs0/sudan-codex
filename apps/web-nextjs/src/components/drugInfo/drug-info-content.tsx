@@ -1,5 +1,5 @@
-import { Drug } from "@/src/lib/types";
-import { getDrugInfo } from "@/src/services/drugServices";
+import { Drug } from "@/lib/types";
+import { getDrugInfo } from "@/services/drugServices";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import DrugInfoAccordion from "./DrugInfoAccordion";
 import DrugContentErrorFallback from "./error-boundary";

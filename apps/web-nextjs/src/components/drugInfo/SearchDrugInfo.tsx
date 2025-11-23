@@ -1,4 +1,4 @@
-import { DRUG_ROUTES } from "@/src/constants";
+import { DRUG_ROUTES } from "@/constants";
 import { useState } from "react";
 import { AutoComplete } from "../ui/autocomplete";
 import { Button } from "../ui/button";

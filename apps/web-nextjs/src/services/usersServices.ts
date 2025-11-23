@@ -1,7 +1,7 @@
 // import api from "@/lib/api";
-import { auth } from "@/src/lib/firebaseAuth";
-import { db } from "@/src/lib/firestore";
-import { type tellUsMoreSchemaType } from "@/src/lib/schemas";
+import { auth } from "@/lib/firebaseAuth";
+import { db } from "@/lib/firestore";
+import { type tellUsMoreSchemaType } from "@/lib/schemas";
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import { SaveUserReturnTypes } from "../lib/types";
 

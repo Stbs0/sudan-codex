@@ -1,15 +1,15 @@
 "use client";
-import { getInitials } from "@/src/lib/utils";
-import { logout } from "@/src/services/authServices";
+import { SaveUserReturnTypes } from "@/lib/types";
+import { getInitials } from "@/lib/utils";
+import { logout } from "@/services/authServices";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 import { useQueryClient } from "@tanstack/react-query";
-import { toast } from "sonner";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { Button } from "../ui/button";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { Separator } from "../ui/separator";
-import { SaveUserReturnTypes } from "@/src/lib/types";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
+import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar";
+import { Button } from "../../ui/button";
+import { Popover, PopoverContent, PopoverTrigger } from "../../ui/popover";
+import { Separator } from "../../ui/separator";
 type ProfilePicProps = {
   user: SaveUserReturnTypes;
 };

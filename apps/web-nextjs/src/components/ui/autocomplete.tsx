@@ -1,8 +1,7 @@
-import * as React from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
+import * as React from "react";
 
-import { cn } from "@/src/lib/utils";
-import { Button } from "@/src/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -10,12 +9,13 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/src/components/ui/command";
+} from "@/components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/src/components/ui/popover";
+} from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
 
 export function AutoComplete({
   options,

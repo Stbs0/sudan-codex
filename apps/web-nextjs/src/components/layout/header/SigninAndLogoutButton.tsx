@@ -1,8 +1,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Button } from "../ui/button";
-import { useSidebar } from "../ui/sidebar";
+import { Button } from "../../ui/button";
+import { useSidebar } from "../../ui/sidebar";
 
 const SigninAndLogoutButton = () => {
   const router = useRouter();

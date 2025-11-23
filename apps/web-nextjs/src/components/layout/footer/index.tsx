@@ -1,5 +1,5 @@
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Button } from "../ui/button";
 
 const Footer = () => {
   const phoneNumber = process.env.VITE_WHATSAPP_NUMBER;

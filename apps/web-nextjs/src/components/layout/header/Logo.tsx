@@ -1,6 +1,6 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 
 const Logo = ({ className }: { className?: string }) => {
   const router = useRouter();

@@ -5,7 +5,7 @@ import {
   SheetDescription,
   SheetHeader,
   SheetTitle,
-} from "@/src/components/ui/sheet";
+} from "@/components/ui/sheet";
 import { useEffect, useState } from "react";
 
 const NoticeSheet = () => {

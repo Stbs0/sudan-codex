@@ -1,6 +1,6 @@
 "use client";
 
-import { SaveUserReturnTypes } from "@/src/lib/types";
+import { SaveUserReturnTypes } from "@/lib/types";
 import type {
   QueryObserverResult,
   RefetchOptions,

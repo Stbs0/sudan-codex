@@ -1,4 +1,4 @@
-import type { Drug } from "@/src/lib/types";
+import type { Drug } from "@/lib/types";
 import { useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { Badge } from "../ui/badge";

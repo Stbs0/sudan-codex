@@ -1,7 +1,7 @@
 "use client";
-import { auth } from "@/src/lib/firebaseAuth";
-import { SaveUserReturnTypes } from "@/src/lib/types";
-import { getUser } from "@/src/services/usersServices";
+import { auth } from "@/lib/firebaseAuth";
+import { SaveUserReturnTypes } from "@/lib/types";
+import { getUser } from "@/services/usersServices";
 import {
   type QueryObserverResult,
   type RefetchOptions,

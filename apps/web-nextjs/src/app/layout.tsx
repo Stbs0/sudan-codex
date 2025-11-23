@@ -1,16 +1,16 @@
-import Footer from "@/src/components/layout/Footer";
-import { AppSidebar } from "@/src/components/layout/app-sidebar";
-import Header from "@/src/components/layout/header";
-import { SidebarInset, SidebarProvider } from "@/src/components/ui/sidebar";
-import { AuthProvider } from "@/src/hooks/useAuth";
-import { PHProvider } from "@/src/providers/PHProvider";
-import TanstackQueryProvider from "@/src/providers/query-client";
-import { ThemeProvider } from "@/src/providers/theme-provider";
+import Header from "@/components/layout/header";
+import { AppSidebar } from "@/components/layout/side-bar/app-sidebar";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { AuthProvider } from "@/hooks/useAuth";
+import { PHProvider } from "@/providers/PHProvider";
+import TanstackQueryProvider from "@/providers/query-client";
+import { ThemeProvider } from "@/providers/theme-provider";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import DrugInitializer from "../components/initDexieDb";
 import "./globals.css";
+import Footer from "@/components/layout/footer";
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],

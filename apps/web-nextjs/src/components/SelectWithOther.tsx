@@ -5,15 +5,15 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/src/components/ui/form";
+} from "@/components/ui/form";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/src/components/ui/select";
-import { occupationEnum } from "@/src/lib/schemas";
+} from "@/components/ui/select";
+import { occupationEnum } from "@/lib/schemas";
 import React from "react";
 import { useFormContext } from "react-hook-form";
 
