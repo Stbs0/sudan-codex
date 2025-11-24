@@ -9,8 +9,6 @@ const firebaseConfig: FirebaseOptions = {
   appId: process.env.NEXT_PUBLIC_APP_ID,
   measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
 };
-console.log(firebaseConfig);
-console.log("ENV CHECK:", Object.keys(process.env));
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);

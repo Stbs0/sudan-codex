@@ -1,69 +1,72 @@
-"use client";
-import { type JSX, useEffect, useRef } from "react";
+// "use client";
+// import { type JSX, useEffect, useRef } from "react";
 
-/**
- * Props for the InfiniteScroll component.
- * @template T
- * @property {T[] | undefined} data - The data to be displayed.
- * @property {() => void} loadMore - Function to load more data.
- * @property {boolean} hasMore - Flag indicating if there is more data to load.
- * @property {(item: T, index: number) => React.ReactNode} renderItem - Function to render each item.
- */
-interface InfiniteScrollProps<T> {
-  data: T[] | undefined;
-  loadMore: () => void;
-  hasMore: boolean;
-  renderItem: (item: T, index: number) => React.ReactNode;
-}
+// /**
+//  * Props for the InfiniteScroll component.
+//  * @template T
+//  * @property {T[] | undefined} data - The data to be displayed.
+//  * @property {() => void} loadMore - Function to load more data.
+//  * @property {boolean} hasMore - Flag indicating if there is more data to load.
+//  * @property {(item: T, index: number) => React.ReactNode} renderItem - Function to render each item.
 
-// const variants = {
-//   hidden: {
-//     opacity: 0,
-//   },
-//   visible: { transition: { staggerChildren: 1 }, opacity: 1 },
-// };
+//  */
+// interface InfiniteScrollProps<T> {
+//   data: T[] | undefined;
+//   loadMore: () => void;
+//   hasMore: boolean;
+//   renderItem: (item: T, index: number) => React.ReactNode;
+//   getItemKey: (item: T, index: number) => string | number;
+// }
 
-/**
- * InfiniteScroll component to handle infinite scrolling of data. needs refactoring
- * @template T
- * @param {InfiniteScrollProps<T>} props - The props for the component.
- * @returns {JSX.Element} The rendered component.
- */
-export function InfiniteScroll<T>({
-  data,
-  loadMore,
-  hasMore,
-  renderItem,
-}: InfiniteScrollProps<T>): JSX.Element {
-  const observerRef = useRef<HTMLDivElement | null>(null);
+// // const variants = {
+// //   hidden: {
+// //     opacity: 0,
+// //   },
+// //   visible: { transition: { staggerChildren: 1 }, opacity: 1 },
+// // };
 
-  useEffect(() => {
-    if (!observerRef.current || !hasMore) return;
+// /**
+//  * InfiniteScroll component to handle infinite scrolling of data. needs refactoring
+//  * @template T
+//  * @param {InfiniteScrollProps<T>} props - The props for the component.
+//  * @returns {JSX.Element} The rendered component.
+//  */
+// export function InfiniteScroll<T>({
+//   data,
+//   loadMore,
+//   hasMore,
+//   renderItem,
+//   getItemKey,
+// }: InfiniteScrollProps<T>): JSX.Element {
+//   const observerRef = useRef<HTMLDivElement | null>(null);
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          loadMore();
-        }
-      },
-      { threshold: 1 }
-    );
+//   useEffect(() => {
+//     if (!observerRef.current || !hasMore) return;
 
-    observer.observe(observerRef.current);
-    return () => observer.disconnect();
-  }, [hasMore, loadMore]);
+//     const observer = new IntersectionObserver(
+//       ([entry]) => {
+//         if (entry.isIntersecting) {
+//           loadMore();
+//         }
+//       },
+//       { threshold: 1 }
+//     );
 
-  return (
-    <div className='flex flex-col gap-4'>
-      {data?.map((item, index) => (
-        <div key={index}>{renderItem(item, index)}</div>
-      ))}
-      {hasMore && (
-        <div
-          ref={observerRef}
-          className='h-10'
-        />
-      )}
-    </div>
-  );
-}
+//     observer.observe(observerRef.current);
+//     return () => observer.disconnect();
+//   }, [hasMore, loadMore]);
+
+//   return (
+//     <div className='flex flex-col gap-4'>
+//       {data?.map((item, index) => (
+//         <div key={getItemKey(item, index)}>{renderItem(item, index)}</div>
+//       ))}
+//       {hasMore && (
+//         <div
+//           ref={observerRef}
+//           className='h-10'
+//         />
+//       )}
+//     </div>
+//   );
+// }

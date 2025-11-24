@@ -8,12 +8,12 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/src/components/ui/sidebar";
+} from "@/components/ui/sidebar";
 
-import { NAV_ITEMS } from "@/src/constants";
+import { NAV_ITEMS } from "@/constants";
 import Link from "next/link";
-import Logo from "./Logo";
-import MobileAuthBtns from "./MobileAuthBtns";
+import Logo from "../header/Logo";
+import MobileAuthBtns from "../header/MobileAuthBtns";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (

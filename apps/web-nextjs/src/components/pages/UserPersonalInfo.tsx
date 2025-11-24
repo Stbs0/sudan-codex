@@ -1,12 +1,15 @@
-import { useAuth } from "@/src/hooks/useAuth";
-import { tellUsMoreSchema, tellUsMoreSchemaType } from "@/src/lib/schemas";
-import { completeProfile } from "@/src/services/usersServices";
+import { useAuth } from "@/hooks/useAuth";
+import { tellUsMoreSchema, tellUsMoreSchemaType } from "@/lib/schemas";
+import { completeProfile } from "@/services/usersServices";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { lazy } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { toast } from "sonner";
+import SelectWithOther from "../SelectWithOther";
+import { Button } from "../ui/button";
+import { Card, CardContent } from "../ui/card";
 import {
   Form,
   FormControl,
@@ -16,11 +19,8 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui/form";
-import { Card, CardContent } from "../ui/card";
-import { Separator } from "../ui/separator";
 import { Input } from "../ui/input";
-import { Button } from "../ui/button";
-import SelectWithOther from "../SelectWithOther";
+import { Separator } from "../ui/separator";
 
 const DevTool =
   process.env.NODE_ENV === "development"

@@ -3,7 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/src/components/ui/accordion";
+} from "@/components/ui/accordion";
 const propToDelete = [
   "spl_patient_package_insert",
   "spl_patient_package_insert_table",

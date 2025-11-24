@@ -1,6 +1,6 @@
 "use client";
 
-import drugDB from "@/src/lib/indexedDB";
+import drugDB from "@/lib/indexedDB";
 import { useState } from "react";
 
 import { useLiveQuery } from "dexie-react-hooks";
@@ -31,7 +31,7 @@ export const useInfiniteScroll = (search?: string) => {
         .then((data) =>
           data.sort((a, b) => a.brandName.localeCompare(b.brandName))
         );
-      return data.sort((a, b) => a.brandName.localeCompare(b.brandName));
+      return data;
     }
 
     return await query

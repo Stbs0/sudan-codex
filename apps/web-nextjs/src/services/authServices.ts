@@ -1,4 +1,4 @@
-import { auth } from "@/src/lib/firebaseAuth";
+import { auth } from "@/lib/firebaseAuth";
 import { FirebaseError } from "firebase/app";
 import {
   browserPopupRedirectResolver,

@@ -1,13 +1,13 @@
 "use client";
+import { GoogleSignIn } from "@/services/authServices";
+import { SaveUserInFIreStore } from "@/services/usersServices";
 import { useQueryClient } from "@tanstack/react-query";
 import { getAdditionalUserInfo } from "firebase/auth";
+import { useRouter } from "next/navigation";
 import { usePostHog } from "posthog-js/react";
 import type { SyntheticEvent } from "react";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
-import { GoogleSignIn } from "@/src/services/authServices";
-import { useRouter } from "next/navigation";
-import { SaveUserInFIreStore } from "@/src/services/usersServices";
 type Props = {
   logInOrSignUp?: string;
 };
@@ -49,7 +49,6 @@ const GoogleOAuth = ({ logInOrSignUp }: Props) => {
         // posthog.capture("user_sign_up", {
         //   via: "google",
         // });
-        console.log("router");
         router.push(
           "/user-info"
           // { replace: true, state: { userDesiredPage } }
