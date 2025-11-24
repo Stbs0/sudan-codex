@@ -1,4 +1,4 @@
-import type { Drug } from "@/types/types";
+import { Drug } from "@/lib/types";
 import { CardTitle } from "../ui/card";
 import DrugPropertyDescription from "./DrugPropertyDescription";
 

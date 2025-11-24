@@ -1,4 +1,5 @@
 "use client";
+import type { Metadata } from "next";
 
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -15,6 +16,13 @@ import { useParams } from "next/navigation";
 import { Suspense, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
+export const generateMetadata = ({
+  params,
+}: {
+  params: { no: string };
+}): Metadata => {
+  return { no: params.no };
+};
 const DrugInfo = () => {
   const { no } = useParams();
   const queryClient = useQueryClient();
@@ -62,7 +70,9 @@ const DrugInfo = () => {
         <DrugCard drug={drug} />
         <Separator className='w-full' />
         <CardContent className='flex w-full flex-col gap-4'>
-          {!isLoadingAuth && user ? (
+          {isLoadingAuth ? (
+            <div className='text-center'>Checking your session...</div>
+          ) : user ? (
             <>
               <SearchDrugInfo
                 generic={drug?.genericName}

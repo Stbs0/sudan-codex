@@ -6,6 +6,13 @@ import {
   CardHeader,
   CardTitle,
 } from "../../components/ui/card";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sign Up | Sudan Codex",
+  description:
+    "Create an account on Sudan Codex to access Sudan's comprehensive drug index and pharmaceutical information.",
+};
 
 const SignUp = () => {
   return (

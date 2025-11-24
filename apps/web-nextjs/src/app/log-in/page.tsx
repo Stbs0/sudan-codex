@@ -1,6 +1,13 @@
 import GoogleOAuth from "@/components/auth/GoogleOAuth";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Log In | Sudan Codex",
+  description:
+    "Log in to Sudan Codex to access Sudan's comprehensive drug index and pharmaceutical information.",
+};
 
 const Login = () => {
   return (

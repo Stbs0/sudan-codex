@@ -42,7 +42,7 @@ export function D() {
     const genericName = (formData.get("genericName") as string | null) ?? "";
 
     const submittedData = {
-      generic: "",
+      generic: genericName.trim(),
       refetch: true,
       route,
     };
@@ -63,7 +63,9 @@ export function D() {
         />
         <CardContent className='flex w-full flex-col gap-4'>
           <Separator className='w-full' />
-          {!isLoadingAuth && user && (
+          {isLoadingAuth ? (
+            <div className='text-center'>Checking your session...</div>
+          ) : user ? (
             <ErrorBoundary fallback={<DrugContentErrorFallback />}>
               <Suspense fallback={<Skeleton className='mb-4 h-12 w-full' />}>
                 <DrugInfoContent
@@ -72,6 +74,10 @@ export function D() {
                 />
               </Suspense>
             </ErrorBoundary>
+          ) : (
+            <div className='text-center'>
+              Please log in to view drug information.
+            </div>
           )}
         </CardContent>
       </Card>

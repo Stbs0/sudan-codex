@@ -1,3 +1,9 @@
+export const metadata: Metadata = {
+  title: "Privacy Policy | Sudan Codex",
+  description:
+    "Read the Privacy Policy of Sudan Codex to understand how we collect, use, and protect your personal information while you access Sudan's comprehensive drug index.",
+};
+
 const Policy = () => {
   return (
     <div className='container mx-auto max-w-4xl px-4 py-8'>

@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
-  const phoneNumber = process.env.VITE_WHATSAPP_NUMBER;
+  const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
 
   const message = encodeURIComponent(
     `explain the problem and, if possible, add a screenshot.
@@ -12,64 +13,64 @@ const Footer = () => {
   const url = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (
-    <footer className='flex flex-col gap-3 py-3 text-black shadow-[0_-4px_12px_rgba(0,0,0,0.1)] sm:flex-row sm:justify-center sm:py-6 dark:border-neutral-800 dark:text-white'>
-      {/* Contact & Policy */}
-      <div className='flex justify-center gap-3'>
-        <Button
-          asChild
-          className='bg-green-400 dark:bg-green-400 dark:text-white'>
+    <footer className='bg-background border-t'>
+      <div className='container mx-auto flex flex-col items-center justify-between gap-6 px-4 py-4 sm:flex-row'>
+        {/* Left Side: Links */}
+        <div className='text-muted-foreground flex flex-col items-center gap-4 text-sm sm:flex-row'>
+          <p>
+            &copy; {new Date().getFullYear()} Sudan Codex. All rights reserved.
+          </p>
+          <Link
+            href={"/privacy-policy"}
+            className='hover:text-primary underline-offset-4 hover:underline'>
+            Privacy Policy
+          </Link>
+          <Button
+            asChild
+            variant='outline'
+            size='default'
+            className='bg-green-400'>
+            <a
+              aria-label='Chat on WhatsApp'
+              target='_blank'
+              rel='noopener noreferrer'
+              href={url}>
+              <img
+                className='size-8'
+                src='/icons/whats-app-icon.svg'
+              />
+              Feedback or a Problem
+            </a>
+          </Button>
+        </div>
+
+        {/* Right Side: Social Icons */}
+        <div className='flex items-center gap-4'>
           <a
-            aria-label='Chat on WhatsApp'
+            href='https://github.com/Stbs0/sudan-codex'
             target='_blank'
             rel='noopener noreferrer'
-            href={url}>
-            <img
-              className='w-6'
-              alt='Chat on WhatsApp'
-              src='/Digital_Glyph_White.svg'
-            />
-            Problem or Feedback
+            aria-label='GitHub'
+            className='text-muted-foreground hover:text-primary'>
+            <Github className='size-5' />
           </a>
-        </Button>
-        <Button asChild>
-          <Link href={"/privacy-policy"}>Policy & Terms</Link>
-        </Button>
-      </div>
-      {/* Social Icons */}
-      <div className='flex items-center justify-center gap-4'>
-        <a
-          href='https://github.com/Stbs0/sudan-codex'
-          target='_blank'
-          rel='noopener noreferrer'
-          aria-label='GitHub'>
-          <img
-            src={"/icons/github.svg"}
-            alt='GitHub'
-            className='h-6 w-6 dark:invert'
-          />
-        </a>
-        <a
-          href='https://twitter.com/stbs66'
-          target='_blank'
-          rel='noopener noreferrer'
-          aria-label='Twitter/X'>
-          <img
-            src={"/icons/x.svg"}
-            alt='X/Twitter'
-            className='h-6 w-6 dark:invert'
-          />
-        </a>
-        <a
-          href='https://www.linkedin.com/in/mohammed-ibrahim-mahmoud/'
-          target='_blank'
-          rel='noopener noreferrer'
-          aria-label='LinkedIn'>
-          <img
-            src={"/icons/linkedIn.svg"}
-            alt='LinkedIn'
-            className='h-6 w-6 dark:invert'
-          />
-        </a>
+          <a
+            href='https://twitter.com/stbs66'
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='Twitter/X'
+            className='text-muted-foreground hover:text-primary'>
+            <Twitter className='size-5' />
+          </a>
+          <a
+            href='https://www.linkedin.com/in/mohammed-ibrahim-mahmoud/'
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='LinkedIn'
+            className='text-muted-foreground hover:text-primary'>
+            <Linkedin className='size-5' />
+          </a>
+        </div>
       </div>
     </footer>
   );

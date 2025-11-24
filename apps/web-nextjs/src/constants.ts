@@ -717,7 +717,7 @@ export const NAV_ITEMS = [
     url: "/drug-list",
     icon: Pill,
   },
-];
+] as const;
 
 export const OPENFDA_SEARCH_URL = "https://api.fda.gov/drug/label.json";
 
