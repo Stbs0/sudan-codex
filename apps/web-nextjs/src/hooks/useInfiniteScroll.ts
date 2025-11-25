@@ -1,52 +1,29 @@
 "use client";
+import { useSearchDrug } from "@/hooks/store/useSearch";
+import { Drug } from "@/lib/types";
+import { useSuspenseInfiniteQuery } from "@tanstack/react-query";
 
-import drugDB from "@/lib/indexedDB";
-import { useState } from "react";
-
-import { useLiveQuery } from "dexie-react-hooks";
-
-const PAGE_SIZE = 20;
-
-export const useInfiniteScroll = (search?: string) => {
-  const [page, setPage] = useState(1);
-
-  const drugList = useLiveQuery(async () => {
-    const query = drugDB.drugList;
-    const limit = page * PAGE_SIZE;
-
-    if (search) {
-      const data = await query
-        .where("genericName")
-        .startsWithIgnoreCase(search)
-        .or("companyName")
-        .startsWithIgnoreCase(search)
-        .or("brandName")
-        .startsWithIgnoreCase(search)
-        .or("agentName")
-        .startsWithIgnoreCase(search)
-        .or("countryOfOrigin")
-        .startsWithIgnoreCase(search)
-        .limit(limit)
-        .toArray()
-        .then((data) =>
-          data.sort((a, b) => a.brandName.localeCompare(b.brandName))
-        );
-      return data;
-    }
-
-    return await query
-      .limit(limit)
-      .toArray()
-      .then((data) =>
-        data.sort((a, b) => a.brandName.localeCompare(b.brandName))
+export function useInfiniteServerScroll() {
+  const search = useSearchDrug((state) => state.search);
+  const {
+    data,
+    fetchNextPage: loadMore,
+    hasNextPage: hasMore,
+  } = useSuspenseInfiniteQuery<{
+    data: Drug[];
+    nextCursor: number | null;
+  }>({
+    queryKey: ["drugs", search],
+    queryFn: async ({ pageParam = 1 }) => {
+      const res = await fetch(
+        process.env.NEXT_PUBLIC_API_URL +
+          `/api/drugs?page=${pageParam}${search && "&q=" + encodeURIComponent(search)}`
       );
-  }, [search, page]);
+      return res.json();
+    },
+    getNextPageParam: (lastPage) => lastPage.nextCursor,
+    initialPageParam: 1,
+  });
 
-  const hasMore = !!drugList && drugList.length >= page * PAGE_SIZE;
-
-  const loadMore = () => {
-    setPage((prevPage) => prevPage + 1);
-  };
-
-  return { drugList, loadMore, hasMore };
-};
+  return { data, hasMore, loadMore };
+}

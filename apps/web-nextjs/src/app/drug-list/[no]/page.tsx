@@ -16,13 +16,6 @@ import { useParams } from "next/navigation";
 import { Suspense, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
-export const generateMetadata = ({
-  params,
-}: {
-  params: { no: string };
-}): Metadata => {
-  return { no: params.no };
-};
 const DrugInfo = () => {
   const { no } = useParams();
   const queryClient = useQueryClient();
