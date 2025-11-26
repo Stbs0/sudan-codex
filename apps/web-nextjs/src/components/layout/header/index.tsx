@@ -1,31 +1,22 @@
-"use client";
-import { ModeToggle } from "./mode-toggle";
-
-import { useIsMobile } from "@/hooks/use-mobile";
-import { useAuth } from "@/hooks/useAuth";
-import { SidebarTrigger } from "../../ui/sidebar";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 import Logo from "./Logo";
-import ProfilePic from "./ProfilePic";
-import SigninAndLogoutButton from "./SigninAndLogoutButton";
-// import { useIsMobile } from "@/hooks/use-mobile";
+import { ModeToggle } from "./mode-toggle";
+import { SigninAndLogoutButtonOrProfilePic } from "./signin-and-logout-btn-or-profile-pic";
 
 const Header = () => {
-  // Add a context  for the window width from MainContent
-  const isMobile = useIsMobile();
-  const { user } = useAuth();
-
   return (
-    <header className='bg-background flex h-16 items-center justify-between border-b p-3 shadow-sm'>
-      <SidebarTrigger />
-      <Logo />
-      <div className='flex items-center space-x-4'>
-        <ModeToggle />
+    <header className='bg-background relative flex h-16 items-center justify-between border-b p-3 shadow-sm'>
+      <div className='z-10 flex items-center space-x-3'>
+        <SidebarTrigger />
+      </div>
 
-        {user ? (
-          <ProfilePic user={user} />
-        ) : isMobile ? null : (
-          <SigninAndLogoutButton />
-        )}
+      <div className='absolute left-1/2 -translate-x-1/2'>
+        <Logo />
+      </div>
+
+      <div className='z-10 flex items-center space-x-3'>
+        <ModeToggle />
+        <SigninAndLogoutButtonOrProfilePic />
       </div>
     </header>
   );

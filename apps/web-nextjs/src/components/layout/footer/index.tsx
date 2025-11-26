@@ -14,7 +14,7 @@ const Footer = () => {
 
   return (
     <footer className='bg-background border-t'>
-      <div className='container mx-auto flex flex-col items-center justify-between gap-6 px-4 py-4 sm:flex-row'>
+      <div className='container mx-auto flex flex-col items-center justify-between gap-6 px-4 py-2 sm:flex-row'>
         {/* Left Side: Links */}
         <div className='text-muted-foreground flex flex-col items-center gap-4 text-sm sm:flex-row'>
           <p>
@@ -29,15 +29,17 @@ const Footer = () => {
             asChild
             variant='outline'
             size='default'
-            className='bg-green-400'>
+            className='bg-green-400 py-0 dark:bg-green-600 dark:text-white'>
             <a
+              className='text-black'
               aria-label='Chat on WhatsApp'
               target='_blank'
               rel='noopener noreferrer'
               href={url}>
               <img
-                className='size-8'
+                className='size-6'
                 src='/icons/whats-app-icon.svg'
+                alt='Chat on WhatsApp'
               />
               Feedback or a Problem
             </a>

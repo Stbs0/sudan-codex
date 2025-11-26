@@ -22,9 +22,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       {...props}>
       <SidebarHeader className='flex items-center'>
         <div className='flex justify-center p-2'>
-          <Link
-            // onClick={() => setOpenMobile(false)}
-            href='/'>
+          <Link href='/'>
             <Logo />
           </Link>
         </div>

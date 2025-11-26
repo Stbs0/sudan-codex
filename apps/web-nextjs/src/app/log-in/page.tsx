@@ -1,5 +1,11 @@
 import GoogleOAuth from "@/components/auth/GoogleOAuth";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -12,14 +18,16 @@ export const metadata: Metadata = {
 const Login = () => {
   return (
     <div className='flex h-full items-center justify-center'>
-      <Card className='min-h-40'>
-        <CardHeader>
+      <Card className='w-full max-w-sm'>
+        <CardHeader className='space-y-1'>
           <CardTitle className='text-2xl'>Login</CardTitle>
+          <CardDescription>
+            Log in to access Sudan&apos;s comprehensive drug index and
+            pharmaceutical information.
+          </CardDescription>
         </CardHeader>
-        <CardContent>
-          <div className='grid gap-4'>
-            <GoogleOAuth logInOrSignUp='Login' />
-          </div>
+        <CardContent className='grid gap-4'>
+          <GoogleOAuth logInOrSignUp='Login' />
           <div className='mt-4 text-center text-sm'>
             Don&apos;t have an account?{" "}
             <Link
@@ -33,5 +41,4 @@ const Login = () => {
     </div>
   );
 };
-// const ImprovedLogIn = CheckIfUserLoggedIn(Login);
 export default Login;

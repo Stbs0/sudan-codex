@@ -11,6 +11,7 @@ import { Suspense } from "react";
 import DrugInitializer from "../components/initDexieDb";
 import "./globals.css";
 import Footer from "@/components/layout/footer";
+import { Toaster } from "@/components/ui/sonner";
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -59,6 +60,7 @@ export default function RootLayout({
                   <SidebarInset>
                     <Header />
                     <main className='flex-1'>{children}</main>
+                    <Toaster />
                     <Footer />
                     <DrugInitializer />
                   </SidebarInset>

@@ -6,7 +6,6 @@ import { useSidebar } from "../../ui/sidebar";
 
 const SigninAndLogoutButton = () => {
   const router = useRouter();
-  const { setOpenMobile } = useSidebar();
   return (
     <>
       <Button
@@ -14,7 +13,6 @@ const SigninAndLogoutButton = () => {
         variant={"link"}
         onClick={() => {
           router.push("/sign-up");
-          setOpenMobile(false);
         }}>
         Sign Up
       </Button>
@@ -23,7 +21,6 @@ const SigninAndLogoutButton = () => {
         variant={"link"}
         onClick={() => {
           router.push("/log-in");
-          setOpenMobile(false);
         }}>
         Log In
       </Button>

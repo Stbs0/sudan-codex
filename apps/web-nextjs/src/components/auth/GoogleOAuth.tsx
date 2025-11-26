@@ -83,6 +83,9 @@ const GoogleOAuth = ({ logInOrSignUp }: Props) => {
       <img
         className='w-7'
         src={"/icons/google.svg"}
+        alt='Google Logo'
+        loading='eager'
+        title='Google logo'
       />
     </Button>
   );
