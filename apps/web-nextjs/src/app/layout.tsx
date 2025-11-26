@@ -12,6 +12,9 @@ import DrugInitializer from "../components/initDexieDb";
 import "./globals.css";
 import Footer from "@/components/layout/footer";
 import { Toaster } from "@/components/ui/sonner";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
+
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -28,7 +31,36 @@ export const metadata: Metadata = {
     "Sudan Codex allows you to effortlessly search through Sudan's comprehensive drug index. Find drug information, generic names, and manufacturers quickly and accurately.",
   keywords:
     "Sudan Codex, Sudan drug index, drug search, pharmacy, generic names, drug manufacturers, pharmaceutical registry, sudan, sudan pharmacy",
-  // TODO: add opengrapgh
+  alternates: {
+    canonical: "https://www.sudancodex.app",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+
+  openGraph: {
+    title: "Sudan Codex | Search Through Sudan Drug Index",
+    description:
+      "Sudan Codex allows you to effortlessly search through Sudan's comprehensive drug index. Find drug information, generic names, and manufacturers quickly and accurately.",
+    url: "https://www.sudancodex.app",
+    siteName: "Sudan Codex",
+    images: [
+      {
+        url: "https://www.sudancodex.app/opengraph-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
 };
 export default function RootLayout({
   children,
@@ -69,6 +101,8 @@ export default function RootLayout({
             </ThemeProvider>
           </TanstackQueryProvider>
         </PHProvider>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
