@@ -10,9 +10,6 @@ export function DrugDescriptions({ drug }: DrugCardProps) {
   return (
     <CardTitle className='flex w-full flex-col gap-4'>
       <div className='w-full border-none shadow-none'>
-        <div>
-          <h1 className='p-2 text-xl font-bold'>{drug.brandName}</h1>
-        </div>
         <div className='px-2 pt-2'>
           <dl className='grid grid-cols-1 gap-2 sm:grid-cols-2'>
             <DrugPropertyDescription

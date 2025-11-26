@@ -2,6 +2,7 @@ import { DrugDescriptions } from "@/components/drugInfo/drug-descriptions";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
+import BackBtn from "@/components/drugInfo/back-btn";
 import DrugInfoC from "@/components/drugInfo/drug-info";
 import drugs from "@/data/drugData.json";
 import { Metadata } from "next";
@@ -62,11 +63,18 @@ export default async function DrugInfoPage({
   // TODO: add redirect to 404 page
   if (!drug) notFound();
   return (
-    <div className='container mx-auto flex justify-center py-4'>
-      <Card className='flex max-w-5xl flex-col items-center gap-6 p-5 max-md:mx-2 max-md:p-3'>
+    <div className='container mx-auto max-w-5xl px-4 py-6'>
+      <div className='mb-6 flex items-center gap-3'>
+        <BackBtn />
+        <h1 className='text-xl font-semibold tracking-tight'>
+          {drug.brandName}
+        </h1>
+      </div>
+
+      <Card className='flex flex-col gap-6 p-6'>
         <DrugDescriptions drug={drug} />
-        <Separator className='w-full' />
-        <CardContent className='flex w-full flex-col gap-4'>
+        <Separator />
+        <CardContent className='flex w-full flex-col gap-4 p-0'>
           <DrugInfoC />
         </CardContent>
       </Card>
