@@ -1,43 +1,30 @@
-import { Drug } from "@/lib/types";
+"use client";
+import { useDrugInfoSearch } from "@/hooks/store/useDrugInfoSearch";
 import { getDrugInfo } from "@/services/drugServices";
 import { useSuspenseQuery } from "@tanstack/react-query";
+import { useParams } from "next/navigation";
 import DrugInfoAccordion from "./DrugInfoAccordion";
-import DrugContentErrorFallback from "./error-boundary";
 
-export default function DrugInfoContent({
-  searchInputs,
-  no,
-}: {
-  searchInputs: { generic: string; refetch: boolean; route: string };
-  no: Drug["no"];
-}) {
+export default function DrugInfoContent() {
+  const { no } = useParams();
+  const { generic, refetch, route } = useDrugInfoSearch();
   const { data } = useSuspenseQuery({
     queryKey: ["drugInfo", no],
     queryFn: async () => {
       return await getDrugInfo(
-        searchInputs.generic,
+        generic,
 
-        searchInputs.route,
-        searchInputs.refetch
+        route,
+        refetch
       );
     },
-    select: (values) => {
-      if (!values) return;
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { openfda, ...rest } = values;
-      return rest;
-    },
   });
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { openfda, ...rest } = data;
 
   return (
-    <>
-      <div className='flex flex-col gap-4'>
-        {data ? (
-          <DrugInfoAccordion data={data} />
-        ) : (
-          <DrugContentErrorFallback />
-        )}
-      </div>
-    </>
+    <div className='flex flex-col gap-4'>
+      <DrugInfoAccordion data={rest} />
+    </div>
   );
 }

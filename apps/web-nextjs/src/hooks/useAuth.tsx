@@ -19,8 +19,7 @@ import {
 
 interface AuthContextType {
   user: SaveUserReturnTypes | undefined;
-  userLoading: boolean;
-  isLoading: boolean;
+  authLoading: boolean;
   isError: boolean;
   error: null | Error;
   refetch: (
@@ -45,7 +44,7 @@ interface AuthProviderProps {
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [userLoading, setUserLoading] = useState(true);
-  const [useruid, setUseruid] = useState<undefined | string>(undefined);
+  const [userUid, setUserUid] = useState<undefined | string>(undefined);
   const queryClient = useQueryClient();
   const {
     isLoading,
@@ -54,10 +53,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     error,
     refetch,
   } = useQuery({
-    queryKey: ["user", useruid],
-    queryFn: async () => await getUser(useruid!),
+    queryKey: ["user", userUid],
+    queryFn: async () => await getUser(userUid!),
 
-    enabled: !!useruid,
+    enabled: !!userUid,
   });
   useEffect(() => {
     // setUserLoading(true);
@@ -69,9 +68,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
           queryFn: async () => await getUser(fireBaseUser.uid),
         });
 
-        setUseruid(fireBaseUser.uid);
+        setUserUid(fireBaseUser.uid);
       } else {
-        setUseruid(undefined);
+        setUserUid(undefined);
       }
 
       setUserLoading(false);
@@ -79,10 +78,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
     return unsubscribe;
   }, []);
-
+  const authLoading = userLoading || isLoading;
   return (
-    <AuthContext
-      value={{ user, userLoading, isLoading, isError, error, refetch }}>
+    <AuthContext value={{ user, authLoading, isError, error, refetch }}>
       {children}
     </AuthContext>
   );

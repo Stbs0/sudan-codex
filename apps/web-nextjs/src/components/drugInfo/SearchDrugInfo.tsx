@@ -1,23 +1,35 @@
+"use client";
 import { DRUG_ROUTES } from "@/constants";
-import { useState } from "react";
+import { useDrugInfoSearch } from "@/hooks/store/useDrugInfoSearch";
+import { useQueryClient } from "@tanstack/react-query";
+import { useParams } from "next/navigation";
 import { AutoComplete } from "../ui/autocomplete";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 
-const SearchDrugInfo = ({
-  handleSubmit,
-  generic,
-}: {
-  handleSubmit: (e: React.FormEvent<HTMLFormElement>, route: string) => void;
-  generic: string;
-}) => {
-  const [route, setRoute] = useState("");
+const SearchDrugInfo = () => {
+  const { route, setRoute, setRefetch, setGeneric, generic } =
+    useDrugInfoSearch();
+  const { no } = useParams();
+  const queryClient = useQueryClient();
+  const onDrugInfoSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+
+    const genericName = (formData.get("genericName") as string | null) ?? "";
+
+    queryClient.cancelQueries({ queryKey: ["drugInfo", no] });
+    queryClient.invalidateQueries({ queryKey: ["drugInfo", no] });
+    setGeneric(genericName.trim());
+    setRefetch(true);
+    setRoute(route);
+  };
   return (
     <div className='flex flex-col gap-4'>
       <form
         className='flex flex-col gap-4'
-        onSubmit={(e) => handleSubmit(e, route)}>
+        onSubmit={onDrugInfoSearch}>
         <div className='flex justify-center gap-2 max-md:flex-col'>
           <div className='flex flex-col gap-2'>
             <Label htmlFor='genericName'>Search By Generic Name</Label>

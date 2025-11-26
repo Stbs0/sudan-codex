@@ -16,7 +16,6 @@ const Header = () => {
 
   return (
     <header className='bg-background flex h-16 items-center justify-between border-b p-3 shadow-sm'>
-      {(isMobile || user) && null}
       <SidebarTrigger />
       <Logo />
       <div className='flex items-center space-x-4'>

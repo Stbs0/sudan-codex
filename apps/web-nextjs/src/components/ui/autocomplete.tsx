@@ -23,7 +23,7 @@ export function AutoComplete({
   route,
 }: {
   options: string[];
-  setRoute: React.Dispatch<React.SetStateAction<string>>;
+  setRoute: (route: string) => void;
   route: string;
 }) {
   const [open, setOpen] = React.useState(false);

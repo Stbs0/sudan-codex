@@ -1,95 +1,74 @@
-"use client";
-import type { Metadata } from "next";
-
-import { Skeleton } from "@/components/ui/skeleton";
-
-import DrugInfoContent from "@/components/drugInfo/drug-info-content";
-import { DrugCard } from "@/components/drugInfo/drugCard";
-import DrugContentErrorFallback from "@/components/drugInfo/error-boundary";
-import SearchDrugInfo from "@/components/drugInfo/SearchDrugInfo";
+import { DrugDescriptions } from "@/components/drugInfo/drug-descriptions";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { useAuth } from "@/hooks/useAuth";
-import drugDB from "@/lib/indexedDB";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { useParams } from "next/navigation";
-import { Suspense, useState } from "react";
-import { ErrorBoundary } from "react-error-boundary";
 
-const DrugInfo = () => {
-  const { no } = useParams();
-  const queryClient = useQueryClient();
-  const { user, isLoading: isLoadingAuth } = useAuth();
+import DrugInfoC from "@/components/drugInfo/drug-info";
+import drugs from "@/data/drugData.json";
+import { Metadata } from "next";
 
-  const { data: drug } = useQuery({
-    queryKey: ["drug", no],
-    queryFn: async () => {
-      return (
-        (await drugDB.drugList
-          .where("no")
-          .equals(no as string)
-          .toArray()) || []
-      );
-    },
-    select: (data) => data[0],
-  });
-  const [searchInputs, setSearchInputs] = useState({
-    generic: drug?.genericName || "",
-    refetch: false,
-    route: "",
-  });
+export async function generateStaticParams() {
+  return drugs.map((drug) => ({
+    no: drug.no,
+  }));
+}
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>, route: string) => {
-    e.preventDefault();
-    const formData = new FormData(e.target as HTMLFormElement);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ no: string }>;
+}): Promise<Metadata> {
+  const { no } = await params;
 
-    const genericName = (formData.get("genericName") as string | null) ?? "";
+  const drug = drugs.find((d) => d.no === no);
 
-    const submittedData = {
-      generic: genericName.trim(),
-      refetch: true,
-      route,
+  if (!drug) {
+    return {
+      title: "Drug Not Found | Drug Directory",
+      description: "The requested drug could not be found in our database.",
+      robots: "noindex",
     };
-    queryClient.cancelQueries({ queryKey: ["drugInfo", drug?.no] });
-    queryClient.removeQueries({ queryKey: ["drugInfo", drug?.no] });
-    setSearchInputs(submittedData);
-    queryClient.refetchQueries({ queryKey: ["drugInfo", drug?.no] });
+  }
+
+  const { brandName, genericName, agentName, companyName, countryOfOrigin } =
+    drug;
+
+  return {
+    title: `${brandName} – Full Drug Information & Details`,
+    description: `${brandName} (${genericName}) from ${companyName}. Imported by ${agentName}. Origin: ${countryOfOrigin}. View full drug details, strengths, and indications.`,
+    alternates: {
+      canonical: `/drug/${no}`,
+    },
+    openGraph: {
+      title: `${brandName} – Drug Details`,
+      description: `${brandName} (${genericName}) complete information including company, agent, and origin.`,
+      type: "article",
+    },
+    twitter: {
+      card: "summary",
+      title: `${brandName} – Drug Details`,
+      description: `${brandName} (${genericName}) full drug information.`,
+    },
   };
-  // TODO: add skeletons
+}
+export default async function DrugInfoPage({
+  params,
+}: {
+  params: Promise<{ no: string }>;
+}) {
+  const { no } = await params;
+  const drug = drugs.find((d) => d.no === no);
+
+  // TODO: add redirect to 404 page
   if (!drug) return null;
   return (
     <div className='container mx-auto flex justify-center py-4'>
       <Card className='flex max-w-5xl flex-col items-center gap-6 p-5 max-md:mx-2 max-md:p-3'>
-        <DrugCard drug={drug} />
+        <DrugDescriptions drug={drug} />
         <Separator className='w-full' />
         <CardContent className='flex w-full flex-col gap-4'>
-          {isLoadingAuth ? (
-            <div className='text-center'>Checking your session...</div>
-          ) : user ? (
-            <>
-              <SearchDrugInfo
-                generic={drug?.genericName}
-                handleSubmit={handleSubmit}
-              />
-              <Separator className='w-full' />
-              <ErrorBoundary fallback={<DrugContentErrorFallback />}>
-                <Suspense fallback={<Skeleton className='mb-4 h-12 w-full' />}>
-                  <DrugInfoContent
-                    no={drug.no}
-                    searchInputs={searchInputs}
-                  />
-                </Suspense>
-              </ErrorBoundary>
-            </>
-          ) : (
-            <div className='text-center'>
-              Please log in to view drug information.
-            </div>
-          )}
+          <DrugInfoC />
         </CardContent>
       </Card>
     </div>
   );
-};
-
-export default DrugInfo;
+}
