@@ -22,6 +22,8 @@ const Logo = ({ className }: { className?: string }) => {
         className='object-contain'
         src={"/logo/pLogo-small.webp"}
         alt='logo'
+        title='logo'
+        loading='eager'
       />
     </Button>
   );
