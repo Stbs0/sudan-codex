@@ -8,6 +8,7 @@
 const buildEslintCommand = (filenames) =>
   `eslint --fix ${filenames.map((f) => `"${f}"`).join(" ")}`;
 
-module.exports = {
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
   "*.{js,jsx,ts,tsx}": [buildEslintCommand, "prettier --write"],
 };
