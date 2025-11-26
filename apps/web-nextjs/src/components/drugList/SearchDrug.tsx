@@ -1,7 +1,6 @@
 "use client";
 import { useSearchDrug } from "@/hooks/store/useSearch";
 import { Input } from "../ui/input";
-import { useTransition } from "react";
 
 function SearchDrug() {
   const search = useSearchDrug((state) => state.search);
