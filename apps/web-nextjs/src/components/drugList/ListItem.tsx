@@ -6,9 +6,8 @@ import { Card, CardContent } from "../ui/card";
 
 type Props = {
   drug: Drug;
-  ref: React.Ref<HTMLDivElement> | null;
 };
-export const ListItem = ({ drug, ref }: Props) => {
+export const ListItem = ({ drug }: Props) => {
   const router = useRouter();
   const queryClient = useQueryClient();
   const handleCardClick = () => {
@@ -17,7 +16,6 @@ export const ListItem = ({ drug, ref }: Props) => {
   };
   return (
     <Card
-      ref={ref}
       id='drugInfo-card'
       className='rounded-none border-4 border-transparent border-l-indigo-700 py-2 shadow-md hover:bg-purple-100/90 dark:bg-purple-800/50 dark:hover:bg-purple-800/90'
       onClick={handleCardClick}>
