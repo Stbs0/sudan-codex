@@ -1,13 +1,14 @@
 "use client";
 import { useSearchDrug } from "@/hooks/store/useSearch";
 import { Input } from "../ui/input";
+import { useTransition } from "react";
 
 function SearchDrug() {
   const search = useSearchDrug((state) => state.search);
   const setSearch = useSearchDrug((state) => state.setSearch);
 
   const handleSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value.trim());
+    setSearch(e.target.value);
   };
 
   return (

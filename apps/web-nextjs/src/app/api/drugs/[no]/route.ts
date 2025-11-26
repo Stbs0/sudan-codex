@@ -6,7 +6,7 @@ export async function GET(
   const { no } = await params;
   const drug = drugs.find((d) => d.no === no);
   if (!drug) {
-    return new Response("Drug not found", { status: 404 });
+    return Response.json({ error: "Drug not found" }, { status: 404 });
   }
   return Response.json(drug);
 }

@@ -4,17 +4,17 @@ import drugs from "@/data/drugData.json";
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
 
-  const page = Number(searchParams.get("page") || 1);
-  const limit = 20;
-  const q = searchParams.get("q")?.toLowerCase() || "";
+ const page = Math.max(1, Number(searchParams.get("page") || 1));
+  const limit = Math.min(Number(searchParams.get("limit") || 20), 100);
+  const q = decodeURIComponent(searchParams.get("q")?.toLowerCase() || "");
 
   // search filtering
   const filtered = q
     ? drugs.filter(
         (d) =>
-          d.brandName.toLowerCase().includes(q) ||
-          d.genericName.toLowerCase().includes(q) ||
-          d.companyName.toLowerCase().includes(q)
+          d.brandName?.toLowerCase().includes(q) ||
+          d.genericName?.toLowerCase().includes(q) ||
+          d.companyName?.toLowerCase().includes(q)
       )
     : drugs;
 
@@ -27,6 +27,5 @@ export async function GET(req: Request) {
 
     nextCursor: end < filtered.length ? page + 1 : null,
   };
-  console.log("res", res);
   return Response.json(res);
 }

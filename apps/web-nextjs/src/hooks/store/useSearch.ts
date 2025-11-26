@@ -1,4 +1,4 @@
-// stores/useDrugFilter.ts
+"use client";
 import { create } from "zustand";
 
 interface DrugFilterState {
