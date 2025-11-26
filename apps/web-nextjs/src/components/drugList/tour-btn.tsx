@@ -2,7 +2,6 @@
 import { Button } from "../ui/button";
 import { Config, driver } from "driver.js";
 
-
 function TourBtn() {
   // TODO: fix driver.js later
   // const driverConfig: Config = {
@@ -117,15 +116,12 @@ function TourBtn() {
   //     return destroy;
   //   }, [drugList?.pages.length, startTour]);
   return (
-    <div className='flex justify-between gap-2'>
-      <p className='text-center text-2xl'>Search Drug</p>
-      <Button
-        variant={"outline"}
-        onClick={onStartTour}
-        className='w-fit'>
-        Guide me
-      </Button>
-    </div>
+    <Button
+      variant={"outline"}
+      onClick={onStartTour}
+      className='w-fit'>
+      Guide me
+    </Button>
   );
 }
 
