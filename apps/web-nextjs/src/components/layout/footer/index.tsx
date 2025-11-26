@@ -31,6 +31,7 @@ const Footer = () => {
             size='default'
             className='bg-green-400 py-0 dark:bg-green-600 dark:text-white'>
             <a
+              className='text-black'
               aria-label='Chat on WhatsApp'
               target='_blank'
               rel='noopener noreferrer'
