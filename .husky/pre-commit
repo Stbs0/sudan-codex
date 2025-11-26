@@ -1,1 +1,1 @@
-bunx lint-staged --debug
+bunx lint-staged 
