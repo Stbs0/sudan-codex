@@ -9,7 +9,7 @@ export default function DrugInfoContent() {
   const { no } = useParams();
   const { generic, refetch, route } = useDrugInfoSearch();
   const { data } = useSuspenseQuery({
-    queryKey: ["drugInfo", no],
+    queryKey: ["drugInfo", no, generic, route, refetch],
     queryFn: async () => {
       return await getDrugInfo(
         generic,
@@ -20,11 +20,11 @@ export default function DrugInfoContent() {
     },
   });
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { openfda, ...rest } = data;
+  const { openfda, ...rest } = data ?? {};
 
   return (
     <div className='flex flex-col gap-4'>
-      <DrugInfoAccordion data={rest} />
+      {data && <DrugInfoAccordion data={rest} />}
     </div>
   );
 }

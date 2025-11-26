@@ -23,7 +23,6 @@ const SearchDrugInfo = () => {
     queryClient.invalidateQueries({ queryKey: ["drugInfo", no] });
     setGeneric(genericName.trim());
     setRefetch(true);
-    setRoute(route);
   };
   return (
     <div className='flex flex-col gap-4'>

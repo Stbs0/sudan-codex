@@ -5,6 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import DrugInfoC from "@/components/drugInfo/drug-info";
 import drugs from "@/data/drugData.json";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   return drugs.map((drug) => ({
@@ -36,7 +37,7 @@ export async function generateMetadata({
     title: `${brandName} – Full Drug Information & Details`,
     description: `${brandName} (${genericName}) from ${companyName}. Imported by ${agentName}. Origin: ${countryOfOrigin}. View full drug details, strengths, and indications.`,
     alternates: {
-      canonical: `/drug/${no}`,
+      canonical: `/drug-list/${no}`,
     },
     openGraph: {
       title: `${brandName} – Drug Details`,
@@ -59,7 +60,7 @@ export default async function DrugInfoPage({
   const drug = drugs.find((d) => d.no === no);
 
   // TODO: add redirect to 404 page
-  if (!drug) return null;
+  if (!drug) notFound();
   return (
     <div className='container mx-auto flex justify-center py-4'>
       <Card className='flex max-w-5xl flex-col items-center gap-6 p-5 max-md:mx-2 max-md:p-3'>

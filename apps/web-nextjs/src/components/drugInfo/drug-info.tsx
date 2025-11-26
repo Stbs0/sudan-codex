@@ -1,12 +1,12 @@
 "use client";
 import { useAuth } from "@/hooks/useAuth";
-import { Separator } from "@radix-ui/react-dropdown-menu";
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { Skeleton } from "../ui/skeleton";
 import DrugInfoContent from "./drug-info-content";
 import DrugContentErrorFallback from "./error-boundary";
 import SearchDrugInfo from "./SearchDrugInfo";
+import { Separator } from "../ui/separator";
 
 export default function DrugInfo() {
   const { user, authLoading } = useAuth();

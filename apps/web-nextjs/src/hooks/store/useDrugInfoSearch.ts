@@ -15,7 +15,7 @@ export const useDrugInfoSearch = create<DrugInfoStore>((set) => ({
   generic: "",
   refetch: false,
   route: "",
-  setRoute: (route) => set({ route: route }),
-  setRefetch: (refetch) => set({ refetch: refetch }),
-  setGeneric: (generic) => set({ generic: generic }),
+  setRoute: (route) => set({ route }),
+  setRefetch: (refetch) => set({ refetch }),
+  setGeneric: (generic) => set({ generic }),
 }));
