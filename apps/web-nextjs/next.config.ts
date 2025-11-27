@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
     const beforeFiles = [
       {
         source: "/__/auth/:path*",
-        destination: "https://sudan-codex.web.app/__/auth/",
+        destination: "https://sudan-codex.firebaseapp.com/__/auth/:path*",
       },
     ];
     return { beforeFiles };
