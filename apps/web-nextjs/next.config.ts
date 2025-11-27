@@ -7,6 +7,15 @@ const nextConfig: NextConfig = {
   experimental: {
     typedEnv: true,
   },
+  async rewrites() {
+    const beforeFiles = [
+      {
+        source: "/__/auth/:path*",
+        destination: "https://sudan-codex.web.app/__/auth/",
+      },
+    ];
+    return { beforeFiles };
+  },
 };
 
 export default nextConfig;
