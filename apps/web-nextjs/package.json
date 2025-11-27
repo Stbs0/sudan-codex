@@ -63,6 +63,7 @@
     "react-infinite-scroll-component": "^6.1.0",
     "react-resizable-panels": "^3.0.6",
     "recharts": "2.15.4",
+    "schema-dts": "^1.1.5",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.4.0",
     "vaul": "^1.1.2",
