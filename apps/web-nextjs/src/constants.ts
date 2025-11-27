@@ -1,7 +1,7 @@
 import { Home, Pill } from "lucide-react";
 import { Unit } from "./lib/types";
 
-export const DRUG_UNITS: Unit[] = [
+const DRUG_UNITS: Unit[] = [
   { value: "mg", label: "mg" },
   { value: "g", label: "g" },
   { value: "mcg", label: "mcg" },
@@ -18,7 +18,7 @@ export const DRUG_UNITS: Unit[] = [
   { value: "other", label: "Other" },
 ];
 
-export const DOSAGE_FORMS = [
+const DOSAGE_FORMS = [
   {
     label: "AEROSOL",
   },
@@ -513,7 +513,7 @@ export const DOSAGE_FORMS = [
   },
 ];
 
-export const PACKAGING_TYPES = [
+const PACKAGING_TYPES = [
   {
     label: "AMPULE",
   },

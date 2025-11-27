@@ -12,7 +12,6 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import DrugInitializer from "../components/initDexieDb";
 import "./globals.css";
 
 // const geistSans = Geist({
@@ -95,7 +94,6 @@ export default function RootLayout({
                     <main className='flex-1'>{children}</main>
                     <Toaster />
                     <Footer />
-                    <DrugInitializer />
                   </SidebarInset>
                 </SidebarProvider>
               </AuthProvider>
