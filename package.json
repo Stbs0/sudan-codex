@@ -7,10 +7,16 @@
     "prepare": "husky"
   },
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "apps/web-nextjs"
   ],
   "devDependencies": {
     "husky": "^9.1.7"
-  }
+  },
+  "dependencies": {},
+  "trustedDependencies": [
+    "@firebase/util",
+    "core-js",
+    "protobufjs",
+    "unrs-resolver"
+  ]
 }
