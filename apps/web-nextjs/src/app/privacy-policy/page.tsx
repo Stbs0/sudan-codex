@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Sudan Codex",
   description:
     "Read the Privacy Policy of Sudan Codex to understand how we collect, use, and protect your personal information while you access Sudan's comprehensive drug index.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
 };
 
 const Policy = () => {

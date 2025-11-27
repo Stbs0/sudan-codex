@@ -27,13 +27,14 @@ import "./globals.css";
 // });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.sudancodex.app"),
   title: "Sudan Codex | Search Through Sudan Drug Index",
   description:
     "Sudan Codex allows you to effortlessly search through Sudan's comprehensive drug index. Find drug information, generic names, and manufacturers quickly and accurately.",
   keywords:
     "Sudan Codex, Sudan drug index, drug search, pharmacy, generic names, drug manufacturers, pharmaceutical registry, sudan, sudan pharmacy",
   alternates: {
-    canonical: "https://www.sudancodex.app",
+    canonical: "/",
   },
   robots: {
     index: true,
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "Sudan Codex",
     images: [
       {
-        url: "https://www.sudancodex.app/opengraph-image.jpg",
+        url: "/opengraph-image.jpg",
         width: 1200,
         height: 630,
       },

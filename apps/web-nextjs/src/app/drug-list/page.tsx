@@ -5,22 +5,24 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { drugListJsonLd } from "@/lib/json-ld";
 import { getDrugs } from "@/services/server/getInitialInfiniteDrugs";
 import { Metadata } from "next";
-
+import drugs from "@/data/drugData.json";
 export const metadata: Metadata = {
   title: "Drug List | Sudan Codex",
   description:
     "Explore Sudan Codex's extensive drug list, featuring detailed information on various medications available in Sudan. Search by generic names, brand names, manufacturers, and more.",
+  alternates: {
+    canonical: "/drug-list",
+  },
 };
 
 export default async function DrugListPage() {
   const initialDrugs = await getDrugs(1);
-  const drugs = initialDrugs.data;
   return (
     <div className='mx-auto grid w-full gap-4 px-3 md:max-w-2xl dark:text-gray-100'>
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(drugListJsonLd(initialDrugs)).replace(
+          __html: JSON.stringify(drugListJsonLd(drugs)).replace(
             /</g,
             "\\u003c"
           ),

@@ -6,11 +6,8 @@ import { ListItem } from "./ListItem";
 import { Drug } from "@/lib/types";
 import { FetchedDrugs } from "@/services/server/getInitialInfiniteDrugs";
 
-function InfiniteScrollComponent({
-  initialDrugs,
-}: {
-  initialDrugs: FetchedDrugs;
-}) {
+type Props = { initialDrugs: FetchedDrugs };
+function InfiniteScrollComponent({ initialDrugs }: Props) {
   const {
     loadMore,
     hasMore,

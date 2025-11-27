@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Log In | Sudan Codex",
   description:
     "Log in to Sudan Codex to access Sudan's comprehensive drug index and pharmaceutical information.",
+  alternates: {
+    canonical: "/log-in",
+  },
 };
 
 const Login = () => {

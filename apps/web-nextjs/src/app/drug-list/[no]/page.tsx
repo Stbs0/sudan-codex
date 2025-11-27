@@ -28,7 +28,9 @@ export async function generateMetadata({
     return {
       title: "Drug Not Found | Drug Directory",
       description: "The requested drug could not be found in our database.",
-      robots: "noindex",
+      alternates: {
+        canonical: `/drug-list/${no}`,
+      },
     };
   }
 
