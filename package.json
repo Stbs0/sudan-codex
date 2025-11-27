@@ -1,22 +1,21 @@
 {
   "name": "sudan-codex",
-  "private": true,
   "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "prepare": "husky"
-  },
-  "workspaces": [
-    "apps/web-nextjs"
-  ],
   "devDependencies": {
     "husky": "^9.1.7"
   },
-  "dependencies": {},
+  "private": true,
+  "scripts": {
+    "prepare": "husky"
+  },
   "trustedDependencies": [
     "@firebase/util",
     "core-js",
     "protobufjs",
     "unrs-resolver"
+  ],
+  "type": "module",
+  "workspaces": [
+    "apps/web-nextjs"
   ]
 }
