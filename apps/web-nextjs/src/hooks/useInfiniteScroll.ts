@@ -1,9 +1,11 @@
 "use client";
 import { useSearchDrug } from "@/hooks/store/useSearch";
 import { Drug } from "@/lib/types";
-import { useInfiniteQuery, useSuspenseInfiniteQuery } from "@tanstack/react-query";
+import { FetchedDrugs } from "@/services/server/getInitialInfiniteDrugs";
+import { useInfiniteQuery } from "@tanstack/react-query";
 
-export function useInfiniteServerScroll() {
+export function useInfiniteServerScroll(initialDrugs: FetchedDrugs) {
+  // TODO: add initial data from server props
   const search = useSearchDrug((state) => state.search);
   const {
     data,
@@ -13,7 +15,8 @@ export function useInfiniteServerScroll() {
     data: Drug[];
     nextCursor: number | null;
   }>({
-    queryKey: ["drugs", search],
+    initialData: { pages: [initialDrugs], pageParams: [1] },
+    queryKey: ["drugs", search || ""],
     queryFn: async ({ pageParam = 1 }) => {
       const res = await fetch(
         `/api/drugs?page=${pageParam}${search && "&q=" + encodeURIComponent(search)}`

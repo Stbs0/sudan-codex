@@ -1,17 +1,20 @@
+import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import { AppSidebar } from "@/components/layout/side-bar/app-sidebar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { Toaster } from "@/components/ui/sonner";
 import { AuthProvider } from "@/hooks/useAuth";
 import { PHProvider } from "@/providers/PHProvider";
 import TanstackQueryProvider from "@/providers/query-client";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import DrugInitializer from "../components/initDexieDb";
 import "./globals.css";
-import Footer from "@/components/layout/footer";
-import { Toaster } from "@/components/ui/sonner";
+
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -23,12 +26,42 @@ import { Toaster } from "@/components/ui/sonner";
 // });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.sudancodex.app"),
   title: "Sudan Codex | Search Through Sudan Drug Index",
   description:
     "Sudan Codex allows you to effortlessly search through Sudan's comprehensive drug index. Find drug information, generic names, and manufacturers quickly and accurately.",
   keywords:
     "Sudan Codex, Sudan drug index, drug search, pharmacy, generic names, drug manufacturers, pharmaceutical registry, sudan, sudan pharmacy",
-  // TODO: add opengrapgh
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+
+  openGraph: {
+    title: "Sudan Codex | Search Through Sudan Drug Index",
+    description:
+      "Sudan Codex allows you to effortlessly search through Sudan's comprehensive drug index. Find drug information, generic names, and manufacturers quickly and accurately.",
+    url: "https://www.sudancodex.app",
+    siteName: "Sudan Codex",
+    images: [
+      {
+        url: "/opengraph-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
 };
 export default function RootLayout({
   children,
@@ -69,6 +102,8 @@ export default function RootLayout({
             </ThemeProvider>
           </TanstackQueryProvider>
         </PHProvider>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
