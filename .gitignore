@@ -36,3 +36,4 @@ dist-ssr
 .firebase
 stats.html
 *Zone.Identifier
+.vercel
