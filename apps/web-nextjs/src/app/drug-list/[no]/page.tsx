@@ -31,6 +31,7 @@ export async function generateMetadata({
       alternates: {
         canonical: `/drug-list/${no}`,
       },
+      robots: "noindex",
     };
   }
 

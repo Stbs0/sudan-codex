@@ -91,7 +91,7 @@ export const drugListJsonLd = (
     itemListOrder: "Ascending",
     itemListElement: drugs.map((drug, index) => ({
       "@type": "ListItem",
-      position: drug.no,
+      position: index + 1,
       url: SITE_URL + `/drug-list/${drug.no}`,
       name: `${drug.brandName || "Unknown Brand"} (${drug.genericName || "Unknown Generic Name"})`,
     })),

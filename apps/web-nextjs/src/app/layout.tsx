@@ -4,7 +4,6 @@ import { AppSidebar } from "@/components/layout/side-bar/app-sidebar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { Toaster } from "@/components/ui/sonner";
 import { AuthProvider } from "@/hooks/useAuth";
-import { layoutJsonLd } from "@/lib/json-ld";
 import { PHProvider } from "@/providers/PHProvider";
 import TanstackQueryProvider from "@/providers/query-client";
 import { ThemeProvider } from "@/providers/theme-provider";
