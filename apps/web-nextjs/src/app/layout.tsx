@@ -1,19 +1,20 @@
+import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import { AppSidebar } from "@/components/layout/side-bar/app-sidebar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { Toaster } from "@/components/ui/sonner";
 import { AuthProvider } from "@/hooks/useAuth";
+import { layoutJsonLd } from "@/lib/json-ld";
 import { PHProvider } from "@/providers/PHProvider";
 import TanstackQueryProvider from "@/providers/query-client";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import DrugInitializer from "../components/initDexieDb";
 import "./globals.css";
-import Footer from "@/components/layout/footer";
-import { Toaster } from "@/components/ui/sonner";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",

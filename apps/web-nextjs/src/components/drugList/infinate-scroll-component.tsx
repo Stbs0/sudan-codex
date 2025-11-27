@@ -3,9 +3,19 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { useInfiniteServerScroll } from "../../hooks/useInfiniteScroll";
 import { Skeleton } from "../ui/skeleton";
 import { ListItem } from "./ListItem";
+import { Drug } from "@/lib/types";
+import { FetchedDrugs } from "@/services/server/getInitialInfiniteDrugs";
 
-function InfiniteScrollComponent() {
-  const { loadMore, hasMore, data: drugList } = useInfiniteServerScroll();
+function InfiniteScrollComponent({
+  initialDrugs,
+}: {
+  initialDrugs: FetchedDrugs;
+}) {
+  const {
+    loadMore,
+    hasMore,
+    data: drugList,
+  } = useInfiniteServerScroll(initialDrugs);
 
   return (
     <>

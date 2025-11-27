@@ -7,6 +7,7 @@ import DrugInfoC from "@/components/drugInfo/drug-info";
 import drugs from "@/data/drugData.json";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { generateDrugJsonLd } from "@/lib/json-ld";
 
 export async function generateStaticParams() {
   return drugs.map((drug) => ({
@@ -62,8 +63,17 @@ export default async function DrugInfoPage({
 
   // TODO: add redirect to 404 page
   if (!drug) notFound();
+
+  const jsonLd = generateDrugJsonLd(drug);
+
   return (
     <div className='container mx-auto max-w-5xl px-4 py-6'>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <div className='mb-6 flex items-center gap-3'>
         <BackBtn />
         <h1 className='text-xl font-semibold tracking-tight'>
