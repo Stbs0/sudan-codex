@@ -1,6 +1,6 @@
 import { OPENFDA_SEARCH_URL } from "@/constants";
 import { getOpenFdaSearchUrl, parseQuery } from "@/lib/utils";
-import { Drug, FetchedDrugInfo } from "../lib/types";
+import { FetchedDrugInfo } from "../lib/types";
 
 export const getDrugInfo = async (
   genericName: string,
@@ -22,10 +22,4 @@ export const getDrugInfo = async (
   }
   const data = (await res.json()) as FetchedDrugInfo;
   return data.results?.[0] || null;
-};
-
-export const fetchDrugList = async () => {
-  const res = await fetch("/data/drugData.json");
-
-  return (await res.json()) as Drug[];
 };
