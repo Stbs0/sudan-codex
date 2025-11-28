@@ -1,0 +1,5572 @@
+[
+  {
+    "name": "Diclofenac Sodium",
+    "slug": "diclofenac-sodium",
+    "numberOfDrugs": 73
+  },
+  {
+    "name": "Co-amoxiclav",
+    "slug": "co-amoxiclav",
+    "numberOfDrugs": 71
+  },
+  {
+    "name": "Ceftriaxone Sodium",
+    "slug": "ceftriaxone-sodium",
+    "numberOfDrugs": 71
+  },
+  {
+    "name": "Pregabalin",
+    "slug": "pregabalin",
+    "numberOfDrugs": 56
+  },
+  {
+    "name": "Paracetamol",
+    "slug": "paracetamol",
+    "numberOfDrugs": 53
+  },
+  {
+    "name": "Rosuvastatin Calcium",
+    "slug": "rosuvastatin-calcium",
+    "numberOfDrugs": 45
+  },
+  {
+    "name": "Glimepiride",
+    "slug": "glimepiride",
+    "numberOfDrugs": 35
+  },
+  {
+    "name": "Levofloxacin Hemihydrate",
+    "slug": "levofloxacin-hemihydrate",
+    "numberOfDrugs": 34
+  },
+  {
+    "name": "Levetiracetam",
+    "slug": "levetiracetam",
+    "numberOfDrugs": 32
+  },
+  {
+    "name": "Clarithromycin",
+    "slug": "clarithromycin",
+    "numberOfDrugs": 31
+  },
+  {
+    "name": "Cefuroxime Axetil",
+    "slug": "cefuroxime-axetil",
+    "numberOfDrugs": 30
+  },
+  {
+    "name": "Cefotaxime Sodium",
+    "slug": "cefotaxime-sodium",
+    "numberOfDrugs": 30
+  },
+  {
+    "name": "Metronidazole",
+    "slug": "metronidazole",
+    "numberOfDrugs": 29
+  },
+  {
+    "name": "Montelukast Sodium",
+    "slug": "montelukast-sodium",
+    "numberOfDrugs": 29
+  },
+  {
+    "name": "Ciprofloxacin",
+    "slug": "ciprofloxacin",
+    "numberOfDrugs": 29
+  },
+  {
+    "name": "Ibuprofen",
+    "slug": "ibuprofen",
+    "numberOfDrugs": 27
+  },
+  {
+    "name": "Cefuroxime Sodium",
+    "slug": "cefuroxime-sodium",
+    "numberOfDrugs": 27
+  },
+  {
+    "name": "Metformin Hydrochloride",
+    "slug": "metformin-hydrochloride",
+    "numberOfDrugs": 27
+  },
+  {
+    "name": "Clotrimazole",
+    "slug": "clotrimazole",
+    "numberOfDrugs": 27
+  },
+  {
+    "name": "Miconazole Nitrate",
+    "slug": "miconazole-nitrate",
+    "numberOfDrugs": 27
+  },
+  {
+    "name": "Aciclovir",
+    "slug": "aciclovir",
+    "numberOfDrugs": 25
+  },
+  {
+    "name": "Artemether + Lumefantrine",
+    "slug": "artemether-lumefantrine",
+    "numberOfDrugs": 25
+  },
+  {
+    "name": "Ceftazidime Pentahydrate",
+    "slug": "ceftazidime-pentahydrate",
+    "numberOfDrugs": 25
+  },
+  {
+    "name": "Amoxicillin Trihydrate",
+    "slug": "amoxicillin-trihydrate",
+    "numberOfDrugs": 25
+  },
+  {
+    "name": "Pantoprazole Sodium",
+    "slug": "pantoprazole-sodium",
+    "numberOfDrugs": 25
+  },
+  {
+    "name": "Sodium Chloride",
+    "slug": "sodium-chloride",
+    "numberOfDrugs": 24
+  },
+  {
+    "name": "Amlodipine Besilate",
+    "slug": "amlodipine-besilate",
+    "numberOfDrugs": 24
+  },
+  {
+    "name": "Gabapentin",
+    "slug": "gabapentin",
+    "numberOfDrugs": 23
+  },
+  {
+    "name": "Ranitidine Hydrochloride",
+    "slug": "ranitidine-hydrochloride",
+    "numberOfDrugs": 22
+  },
+  {
+    "name": "Meropenem Trihydrate",
+    "slug": "meropenem-trihydrate",
+    "numberOfDrugs": 22
+  },
+  {
+    "name": "Fluconazole",
+    "slug": "fluconazole",
+    "numberOfDrugs": 22
+  },
+  {
+    "name": "Azithromycin",
+    "slug": "azithromycin",
+    "numberOfDrugs": 21
+  },
+  {
+    "name": "Cefpodoxime Proxetil",
+    "slug": "cefpodoxime-proxetil",
+    "numberOfDrugs": 21
+  },
+  {
+    "name": "Gentamicin Sulfate",
+    "slug": "gentamicin-sulfate",
+    "numberOfDrugs": 20
+  },
+  {
+    "name": "Atorvastatin Calcium",
+    "slug": "atorvastatin-calcium",
+    "numberOfDrugs": 20
+  },
+  {
+    "name": "Paclitaxel",
+    "slug": "paclitaxel",
+    "numberOfDrugs": 19
+  },
+  {
+    "name": "Meloxicam",
+    "slug": "meloxicam",
+    "numberOfDrugs": 19
+  },
+  {
+    "name": "Risperidone",
+    "slug": "risperidone",
+    "numberOfDrugs": 19
+  },
+  {
+    "name": "Glucose",
+    "slug": "glucose",
+    "numberOfDrugs": 18
+  },
+  {
+    "name": "Quetiapine Fumarate",
+    "slug": "quetiapine-fumarate",
+    "numberOfDrugs": 18
+  },
+  {
+    "name": "Azithromycin Dihydrate",
+    "slug": "azithromycin-dihydrate",
+    "numberOfDrugs": 18
+  },
+  {
+    "name": "Vancomycin Hydrochloride",
+    "slug": "vancomycin-hydrochloride",
+    "numberOfDrugs": 18
+  },
+  {
+    "name": "Moxifloxacin Hydrochloride",
+    "slug": "moxifloxacin-hydrochloride",
+    "numberOfDrugs": 17
+  },
+  {
+    "name": "Budesonide",
+    "slug": "budesonide",
+    "numberOfDrugs": 17
+  },
+  {
+    "name": "Cefixime Trihydrate",
+    "slug": "cefixime-trihydrate",
+    "numberOfDrugs": 17
+  },
+  {
+    "name": "Xylometazoline Hydrochloride",
+    "slug": "xylometazoline-hydrochloride",
+    "numberOfDrugs": 17
+  },
+  {
+    "name": "Domperidone",
+    "slug": "domperidone",
+    "numberOfDrugs": 17
+  },
+  {
+    "name": "Ondansetron Hydrochloride Dihydrate",
+    "slug": "ondansetron-hydrochloride-dihydrate",
+    "numberOfDrugs": 17
+  },
+  {
+    "name": "Olanzapine",
+    "slug": "olanzapine",
+    "numberOfDrugs": 17
+  },
+  {
+    "name": "Etoricoxib",
+    "slug": "etoricoxib",
+    "numberOfDrugs": 16
+  },
+  {
+    "name": "Losartan Potassium",
+    "slug": "losartan-potassium",
+    "numberOfDrugs": 16
+  },
+  {
+    "name": "Omeprazole",
+    "slug": "omeprazole",
+    "numberOfDrugs": 16
+  },
+  {
+    "name": "Mebeverine Hydrochloride",
+    "slug": "mebeverine-hydrochloride",
+    "numberOfDrugs": 16
+  },
+  {
+    "name": "Carbamazepine",
+    "slug": "carbamazepine",
+    "numberOfDrugs": 16
+  },
+  {
+    "name": "Pantoprazole Sodium Sesquihydrate",
+    "slug": "pantoprazole-sodium-sesquihydrate",
+    "numberOfDrugs": 16
+  },
+  {
+    "name": "Mometasone Furoate",
+    "slug": "mometasone-furoate",
+    "numberOfDrugs": 15
+  },
+  {
+    "name": "Telmisartan",
+    "slug": "telmisartan",
+    "numberOfDrugs": 15
+  },
+  {
+    "name": "Atorvastatin",
+    "slug": "atorvastatin",
+    "numberOfDrugs": 15
+  },
+  {
+    "name": "Lisinopril",
+    "slug": "lisinopril",
+    "numberOfDrugs": 15
+  },
+  {
+    "name": "Metoclopramide Hydrochloride",
+    "slug": "metoclopramide-hydrochloride",
+    "numberOfDrugs": 15
+  },
+  {
+    "name": "Vildagliptin + Metformin Hydrochloride",
+    "slug": "vildagliptin-metformin-hydrochloride",
+    "numberOfDrugs": 15
+  },
+  {
+    "name": "Tramadol Hydrochloride",
+    "slug": "tramadol-hydrochloride",
+    "numberOfDrugs": 14
+  },
+  {
+    "name": "Doxazosin Mesylate",
+    "slug": "doxazosin-mesylate",
+    "numberOfDrugs": 14
+  },
+  {
+    "name": "Loratadine",
+    "slug": "loratadine",
+    "numberOfDrugs": 14
+  },
+  {
+    "name": "Cefepime Hydrochloride",
+    "slug": "cefepime-hydrochloride",
+    "numberOfDrugs": 14
+  },
+  {
+    "name": "Carvedilol",
+    "slug": "carvedilol",
+    "numberOfDrugs": 14
+  },
+  {
+    "name": "Ketoconazole",
+    "slug": "ketoconazole",
+    "numberOfDrugs": 14
+  },
+  {
+    "name": "Gemcitabine Hydrochloride",
+    "slug": "gemcitabine-hydrochloride",
+    "numberOfDrugs": 13
+  },
+  {
+    "name": "Fentanyl Citrate",
+    "slug": "fentanyl-citrate",
+    "numberOfDrugs": 13
+  },
+  {
+    "name": "Diclofenac Potassium",
+    "slug": "diclofenac-potassium",
+    "numberOfDrugs": 13
+  },
+  {
+    "name": "Tacrolimus Monohydrate",
+    "slug": "tacrolimus-monohydrate",
+    "numberOfDrugs": 13
+  },
+  {
+    "name": "Dapoxetine Hydrochloride",
+    "slug": "dapoxetine-hydrochloride",
+    "numberOfDrugs": 13
+  },
+  {
+    "name": "Clopidogrel Bisulfate",
+    "slug": "clopidogrel-bisulfate",
+    "numberOfDrugs": 13
+  },
+  {
+    "name": "Hyoscine -N-Butylbromide",
+    "slug": "hyoscine-n-butylbromide",
+    "numberOfDrugs": 13
+  },
+  {
+    "name": "Cefalexin",
+    "slug": "cefalexin",
+    "numberOfDrugs": 13
+  },
+  {
+    "name": "Oxaliplatin",
+    "slug": "oxaliplatin",
+    "numberOfDrugs": 13
+  },
+  {
+    "name": "Epirubicin Hydrochloride",
+    "slug": "epirubicin-hydrochloride",
+    "numberOfDrugs": 12
+  },
+  {
+    "name": "Salbutamol Sulfate",
+    "slug": "salbutamol-sulfate",
+    "numberOfDrugs": 12
+  },
+  {
+    "name": "Alfacalcidol",
+    "slug": "alfacalcidol",
+    "numberOfDrugs": 12
+  },
+  {
+    "name": "Ofloxacin",
+    "slug": "ofloxacin",
+    "numberOfDrugs": 12
+  },
+  {
+    "name": "Simvastatin",
+    "slug": "simvastatin",
+    "numberOfDrugs": 12
+  },
+  {
+    "name": "Beclometasone Dipropionate",
+    "slug": "beclometasone-dipropionate",
+    "numberOfDrugs": 12
+  },
+  {
+    "name": "Cefaclor Monohydrate",
+    "slug": "cefaclor-monohydrate",
+    "numberOfDrugs": 12
+  },
+  {
+    "name": "Cisplatin",
+    "slug": "cisplatin",
+    "numberOfDrugs": 12
+  },
+  {
+    "name": "Desloratadine",
+    "slug": "desloratadine",
+    "numberOfDrugs": 12
+  },
+  {
+    "name": "Pioglitazone Hydrochloride",
+    "slug": "pioglitazone-hydrochloride",
+    "numberOfDrugs": 12
+  },
+  {
+    "name": "Piroxicam",
+    "slug": "piroxicam",
+    "numberOfDrugs": 12
+  },
+  {
+    "name": "Fusidic Acid",
+    "slug": "fusidic-acid",
+    "numberOfDrugs": 12
+  },
+  {
+    "name": "Glucose Anhydrous + Sodium Chloride",
+    "slug": "glucose-anhydrous-sodium-chloride",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Captopril",
+    "slug": "captopril",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Prednisolone",
+    "slug": "prednisolone",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Febuxostat",
+    "slug": "febuxostat",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Ketotifen",
+    "slug": "ketotifen",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Cetirizine Hydrochloride",
+    "slug": "cetirizine-hydrochloride",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Ambroxol Hydrochloride",
+    "slug": "ambroxol-hydrochloride",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Amikacin Sulfate",
+    "slug": "amikacin-sulfate",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Mebendazole",
+    "slug": "mebendazole",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Valsartan + Hydrochlorothiazide",
+    "slug": "valsartan-hydrochlorothiazide",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Salbutamol",
+    "slug": "salbutamol",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Cefadroxil Monohydrate",
+    "slug": "cefadroxil-monohydrate",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Cefotaxime",
+    "slug": "cefotaxime",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Piracetam",
+    "slug": "piracetam",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Clobetasol Propionate",
+    "slug": "clobetasol-propionate",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Tobramycin + Dexamethasone",
+    "slug": "tobramycin-dexamethasone",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Mecobalamine",
+    "slug": "mecobalamine",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Iohexol",
+    "slug": "iohexol",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Esomeprazole",
+    "slug": "esomeprazole",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Fexofenadine Hydrochloride",
+    "slug": "fexofenadine-hydrochloride",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Vildagliptin",
+    "slug": "vildagliptin",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Terbinafine Hydrochloride",
+    "slug": "terbinafine-hydrochloride",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Tadalafil",
+    "slug": "tadalafil",
+    "numberOfDrugs": 10
+  },
+  {
+    "name": "Sildenafil Citrate",
+    "slug": "sildenafil-citrate",
+    "numberOfDrugs": 10
+  },
+  {
+    "name": "Candesartan Cilexetil",
+    "slug": "candesartan-cilexetil",
+    "numberOfDrugs": 10
+  },
+  {
+    "name": "Ketoprofen",
+    "slug": "ketoprofen",
+    "numberOfDrugs": 10
+  },
+  {
+    "name": "Mefenamic Acid",
+    "slug": "mefenamic-acid",
+    "numberOfDrugs": 10
+  },
+  {
+    "name": "Timolol Maleate",
+    "slug": "timolol-maleate",
+    "numberOfDrugs": 10
+  },
+  {
+    "name": "Clonazepam",
+    "slug": "clonazepam",
+    "numberOfDrugs": 10
+  },
+  {
+    "name": "Betamethasone Valerate",
+    "slug": "betamethasone-valerate",
+    "numberOfDrugs": 10
+  },
+  {
+    "name": "Gliclazide",
+    "slug": "gliclazide",
+    "numberOfDrugs": 10
+  },
+  {
+    "name": "Levothyroxine Sodium",
+    "slug": "levothyroxine-sodium",
+    "numberOfDrugs": 10
+  },
+  {
+    "name": "Furosemide",
+    "slug": "furosemide",
+    "numberOfDrugs": 10
+  },
+  {
+    "name": "Sertraline Hydrochloride",
+    "slug": "sertraline-hydrochloride",
+    "numberOfDrugs": 10
+  },
+  {
+    "name": "Dextrose Monohydrate",
+    "slug": "dextrose-monohydrate",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Nifedipine",
+    "slug": "nifedipine",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Doxorubicin Hydrochloride",
+    "slug": "doxorubicin-hydrochloride",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Cetirizine Dihydrochloride",
+    "slug": "cetirizine-dihydrochloride",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Cefepime Hydrochloride + L- Arginine",
+    "slug": "cefepime-hydrochloride-l-arginine",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Losartan Potassium + Hydrochlorothiazide",
+    "slug": "losartan-potassium-hydrochlorothiazide",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Dorzolamide Hydrochloride + Timolol Maleate",
+    "slug": "dorzolamide-hydrochloride-timolol-maleate",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Irbesartan",
+    "slug": "irbesartan",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Aripiprazole",
+    "slug": "aripiprazole",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Rabeprazole Sodium",
+    "slug": "rabeprazole-sodium",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Betamethasone",
+    "slug": "betamethasone",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Bisacodyl",
+    "slug": "bisacodyl",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Atenolol",
+    "slug": "atenolol",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Clopidogrel Hydrogen Sulfate",
+    "slug": "clopidogrel-hydrogen-sulfate",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Clomifene Citrate",
+    "slug": "clomifene-citrate",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Cyclosporine",
+    "slug": "cyclosporine",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Lactulose",
+    "slug": "lactulose",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Famotidine",
+    "slug": "famotidine",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Griseofulvin",
+    "slug": "griseofulvin",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Topiramate",
+    "slug": "topiramate",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Alprazolam",
+    "slug": "alprazolam",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Ramipril",
+    "slug": "ramipril",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Celecoxib",
+    "slug": "celecoxib",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Chlorphenamine Maleate",
+    "slug": "chlorphenamine-maleate",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Amiodarone Hydrochloride",
+    "slug": "amiodarone-hydrochloride",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Amlodipine Besilate + Valsartan",
+    "slug": "amlodipine-besilate-valsartan",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Bromazepam",
+    "slug": "bromazepam",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Dexamethasone Sodium Phosphate",
+    "slug": "dexamethasone-sodium-phosphate",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Ciprofloxacin Hydrochloride",
+    "slug": "ciprofloxacin-hydrochloride",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Minoxidil",
+    "slug": "minoxidil",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Bupivacaine Hydrochloride",
+    "slug": "bupivacaine-hydrochloride",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Cefazolin Sodium",
+    "slug": "cefazolin-sodium",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Enoxaparin Sodium",
+    "slug": "enoxaparin-sodium",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Irbesartan + Hydrochlorothiazide",
+    "slug": "irbesartan-hydrochlorothiazide",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Esomeprazole Sodium",
+    "slug": "esomeprazole-sodium",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Cefixime",
+    "slug": "cefixime",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Nystatin",
+    "slug": "nystatin",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Lamotrigine",
+    "slug": "lamotrigine",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Latanoprost",
+    "slug": "latanoprost",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Lidocaine Hydrochloride",
+    "slug": "lidocaine-hydrochloride",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Human Coagulation Factor IX",
+    "slug": "human-coagulation-factor-ix",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Water For Injections",
+    "slug": "water-for-injections",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Thiamine Hydrochloride (Vitamin B1) + Pyridoxine Hydrochloride (Vitamin B6) + Cyanocobalamin",
+    "slug": "thiamine-hydrochloride-vitamin-b1-pyridoxine-hydrochloride-vitamin-b6-cyanocobalamin",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Pseudoephedrine Hydrochloride + Triprolidine Hydrochloride",
+    "slug": "pseudoephedrine-hydrochloride-triprolidine-hydrochloride",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Everolimus",
+    "slug": "everolimus",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Hydrocortisone",
+    "slug": "hydrocortisone",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Allopurinol",
+    "slug": "allopurinol",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Diltiazem Hydrochloride",
+    "slug": "diltiazem-hydrochloride",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Escitalopram Oxalate",
+    "slug": "escitalopram-oxalate",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Pilocarpine Hydrochloride",
+    "slug": "pilocarpine-hydrochloride",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Benzylpenicillin Sodium",
+    "slug": "benzylpenicillin-sodium",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Dihydroartemisinin + Piperaquine Phosphate",
+    "slug": "dihydroartemisinin-piperaquine-phosphate",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Aluminium Hydroxide +Magnesium Hydroxide",
+    "slug": "aluminium-hydroxide-magnesium-hydroxide",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Imatinib Mesylate",
+    "slug": "imatinib-mesylate",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Povidone Iodine",
+    "slug": "povidone-iodine",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Budesonide + Formoterol Fumarate",
+    "slug": "budesonide-formoterol-fumarate",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Itraconazole",
+    "slug": "itraconazole",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Miconazole",
+    "slug": "miconazole",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Clindamycin Phosphate",
+    "slug": "clindamycin-phosphate",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Hydrocortisone Sodium Succinate",
+    "slug": "hydrocortisone-sodium-succinate",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Daclatasvir Dihydrochloride",
+    "slug": "daclatasvir-dihydrochloride",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Dexamethasone",
+    "slug": "dexamethasone",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Docetaxel Anhydrous",
+    "slug": "docetaxel-anhydrous",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Letrozole",
+    "slug": "letrozole",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Tamsulosin Hydrochloride",
+    "slug": "tamsulosin-hydrochloride",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Sitagliptin Phosphate Monohydrate",
+    "slug": "sitagliptin-phosphate-monohydrate",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Promethazine Hydrochloride",
+    "slug": "promethazine-hydrochloride",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Diazepam",
+    "slug": "diazepam",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Fluocinolone Acetonide",
+    "slug": "fluocinolone-acetonide",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Tranexamic Acid",
+    "slug": "tranexamic-acid",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Zinc Sulfate Monohydrate",
+    "slug": "zinc-sulfate-monohydrate",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Venlafaxine Hydrochloride",
+    "slug": "venlafaxine-hydrochloride",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Sofosbuvir",
+    "slug": "sofosbuvir",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Aceclofenac",
+    "slug": "aceclofenac",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Tretinoin",
+    "slug": "tretinoin",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Olopatadine",
+    "slug": "olopatadine",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Artesunate",
+    "slug": "artesunate",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Ampicillin Sodium",
+    "slug": "ampicillin-sodium",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Enalapril Maleate",
+    "slug": "enalapril-maleate",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Telmisartan + Hydrochlorothiazide",
+    "slug": "telmisartan-hydrochlorothiazide",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Diclofenac Diethylamine",
+    "slug": "diclofenac-diethylamine",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Ebastine",
+    "slug": "ebastine",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Citalopram Hydrobromide",
+    "slug": "citalopram-hydrobromide",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Progesterone",
+    "slug": "progesterone",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Bisoprolol Fumarate",
+    "slug": "bisoprolol-fumarate",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Carboplatin",
+    "slug": "carboplatin",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Cefalexin Monohydrate",
+    "slug": "cefalexin-monohydrate",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Mycophenolate Mofetil",
+    "slug": "mycophenolate-mofetil",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Chloramphenicol Sodium Succinate",
+    "slug": "chloramphenicol-sodium-succinate",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Human Chorionic Gonadotrophin (HCG)",
+    "slug": "human-chorionic-gonadotrophin-hcg",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Cinnarizine",
+    "slug": "cinnarizine",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Cefaclor Anhydrous",
+    "slug": "cefaclor-anhydrous",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Doxycycline",
+    "slug": "doxycycline",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Sodium Valproate",
+    "slug": "sodium-valproate",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Etoposide",
+    "slug": "etoposide",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Sitagliptin Phosphate Monohydrate + Metformin Hydrochloride",
+    "slug": "sitagliptin-phosphate-monohydrate-metformin-hydrochloride",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Irinotecan Hydrochloride",
+    "slug": "irinotecan-hydrochloride",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Lansoprazole",
+    "slug": "lansoprazole",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Lornoxicam",
+    "slug": "lornoxicam",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Methotrexate",
+    "slug": "methotrexate",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Propofol",
+    "slug": "propofol",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Ranolazine",
+    "slug": "ranolazine",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Oxcarbazepine",
+    "slug": "oxcarbazepine",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Tobramycin",
+    "slug": "tobramycin",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Fluorouracil",
+    "slug": "fluorouracil",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Phytomenadione (Vitamin K1)",
+    "slug": "phytomenadione-vitamin-k1",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Acetylsalicylic Acid",
+    "slug": "acetylsalicylic-acid",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Docetaxel Trihydrate",
+    "slug": "docetaxel-trihydrate",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Ipratropium Bromide",
+    "slug": "ipratropium-bromide",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Human Albumin Solution",
+    "slug": "human-albumin-solution",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Amitriptyline Hydrochloride",
+    "slug": "amitriptyline-hydrochloride",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Betahistine Dihydrochloride",
+    "slug": "betahistine-dihydrochloride",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Valsartan",
+    "slug": "valsartan",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Norfloxacin",
+    "slug": "norfloxacin",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Atropine Sulfate",
+    "slug": "atropine-sulfate",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Granisetron Hydrochloride",
+    "slug": "granisetron-hydrochloride",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Benzathine Benzylpenicillin",
+    "slug": "benzathine-benzylpenicillin",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Glibenclamide",
+    "slug": "glibenclamide",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Bicalutamide",
+    "slug": "bicalutamide",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Bisoprolol Fumarate + Hydrochlorothiazide",
+    "slug": "bisoprolol-fumarate-hydrochlorothiazide",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Human Normal Immunoglobulin",
+    "slug": "human-normal-immunoglobulin",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Clindamycin Hydrochloride",
+    "slug": "clindamycin-hydrochloride",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Fluticasone Propionate",
+    "slug": "fluticasone-propionate",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Simeticone",
+    "slug": "simeticone",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Sodium Fusidate",
+    "slug": "sodium-fusidate",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Econazole Nitrate",
+    "slug": "econazole-nitrate",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Esomeprazole Magnesium Trihydrate",
+    "slug": "esomeprazole-magnesium-trihydrate",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Rivastigmine Hydrogen Tartrate",
+    "slug": "rivastigmine-hydrogen-tartrate",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Iron (III) Hydroxide Polymaltose Complex",
+    "slug": "iron-iii-hydroxide-polymaltose-complex",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Finasteride",
+    "slug": "finasteride",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Salmeterol + Fluticasone Propionate Micronised",
+    "slug": "salmeterol-fluticasone-propionate-micronised",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Indapamide",
+    "slug": "indapamide",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Colecalciferol (Vitamin D3)",
+    "slug": "colecalciferol-vitamin-d3",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Bemiparin Sodium",
+    "slug": "bemiparin-sodium",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Iron Sucrose",
+    "slug": "iron-sucrose",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Tinzaparin",
+    "slug": "tinzaparin",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Leflunomide",
+    "slug": "leflunomide",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Lidocaine",
+    "slug": "lidocaine",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Tamoxifen Citrate",
+    "slug": "tamoxifen-citrate",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Chloramphenicol",
+    "slug": "chloramphenicol",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Pramipexole Dihydrochloride",
+    "slug": "pramipexole-dihydrochloride",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Mesalazine",
+    "slug": "mesalazine",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Spironolactone",
+    "slug": "spironolactone",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Spiramycin",
+    "slug": "spiramycin",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Glucose Monohydrate + Sodium Chloride",
+    "slug": "glucose-monohydrate-sodium-chloride",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Compound Sodium Lactate",
+    "slug": "compound-sodium-lactate",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Isotretinoin",
+    "slug": "isotretinoin",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Insulin Human (as Insulin Soluble Human)",
+    "slug": "insulin-human-as-insulin-soluble-human",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Pizotifen Malate",
+    "slug": "pizotifen-malate",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Terbutaline Sulfate",
+    "slug": "terbutaline-sulfate",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Pancuronium Bromide",
+    "slug": "pancuronium-bromide",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Fluoxetine Hydrochloride",
+    "slug": "fluoxetine-hydrochloride",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Memantine Hydrochloride",
+    "slug": "memantine-hydrochloride",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Imipenem Monohydrate + Cilastatin Sodium",
+    "slug": "imipenem-monohydrate-cilastatin-sodium",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Clomipramine Hydrochloride",
+    "slug": "clomipramine-hydrochloride",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Flutamide",
+    "slug": "flutamide",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Dorzolamide Hydrochloride",
+    "slug": "dorzolamide-hydrochloride",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Retinol (Vitamin A)",
+    "slug": "retinol-vitamin-a",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Cytarabine",
+    "slug": "cytarabine",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Cefprozil Monohydrate",
+    "slug": "cefprozil-monohydrate",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Hydroxocobalamin Acetate",
+    "slug": "hydroxocobalamin-acetate",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Multivitamin",
+    "slug": "multivitamin",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Betamethasone Dipropionate + Salicylic Acid",
+    "slug": "betamethasone-dipropionate-salicylic-acid",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Metoprolol Succinate",
+    "slug": "metoprolol-succinate",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Torasemide",
+    "slug": "torasemide",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Ceftizoxime Sodium",
+    "slug": "ceftizoxime-sodium",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Multivitamin + Minerals",
+    "slug": "multivitamin-minerals",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Rosuvastatin",
+    "slug": "rosuvastatin",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Drospirenone + Ethinylestradiol",
+    "slug": "drospirenone-ethinylestradiol",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Methylprednisolone",
+    "slug": "methylprednisolone",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Midazolam",
+    "slug": "midazolam",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Sodium Valproate + Valproic Acid",
+    "slug": "sodium-valproate-valproic-acid",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Cyclophosphamide anhydrous",
+    "slug": "cyclophosphamide-anhydrous",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Amlodipine +Valsartan",
+    "slug": "amlodipine-valsartan",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Amlodipine +Valsartan + Hydrochlorothiazide",
+    "slug": "amlodipine-valsartan-hydrochlorothiazide",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Fusidic Acid + Betamethasone Valerate",
+    "slug": "fusidic-acid-betamethasone-valerate",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Tinidazole",
+    "slug": "tinidazole",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Iron Hydroxide",
+    "slug": "iron-hydroxide",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Levocetirizine Dihydrochloride",
+    "slug": "levocetirizine-dihydrochloride",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Fluticasone",
+    "slug": "fluticasone",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Fluorometholone",
+    "slug": "fluorometholone",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Procaine Benzylpenicillin",
+    "slug": "procaine-benzylpenicillin",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Haloperidol",
+    "slug": "haloperidol",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Insulin Human (as Insulin Soluble Human) + Insulin Human (as Insulin Isophane Human)",
+    "slug": "insulin-human-as-insulin-soluble-human-insulin-human-as-insulin-isophane-human",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Hyoscine Butylbromide",
+    "slug": "hyoscine-butylbromide",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Indomethacin",
+    "slug": "indomethacin",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Amlodipine Besilate + Atorvastatin Calcium",
+    "slug": "amlodipine-besilate-atorvastatin-calcium",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Menotrophin (Human Menopausal Gonadotropin (HMG))",
+    "slug": "menotrophin-human-menopausal-gonadotropin-hmg",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Oxymetazoline Hydrochloride",
+    "slug": "oxymetazoline-hydrochloride",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Nebivolol",
+    "slug": "nebivolol",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Norethisterone",
+    "slug": "norethisterone",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Oxycodone Hydrochloride",
+    "slug": "oxycodone-hydrochloride",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Iopamidol",
+    "slug": "iopamidol",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Paroxetine Hydrochloride",
+    "slug": "paroxetine-hydrochloride",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Sertindole",
+    "slug": "sertindole",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Lenalidomide",
+    "slug": "lenalidomide",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Anti-tetanus Immunoglobulin",
+    "slug": "anti-tetanus-immunoglobulin",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Paliperidone",
+    "slug": "paliperidone",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Rivaroxaban",
+    "slug": "rivaroxaban",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Dextrose Monohydrate + Sodium Chloride",
+    "slug": "dextrose-monohydrate-sodium-chloride",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Ketorolac Tromethamine",
+    "slug": "ketorolac-tromethamine",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Isoflurane",
+    "slug": "isoflurane",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Trihexyphenidyl",
+    "slug": "trihexyphenidyl",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Ampicillin + Dicloxacillin",
+    "slug": "ampicillin-dicloxacillin",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Dipyridamole",
+    "slug": "dipyridamole",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Amlodipine Besilate + Valsartan + Hydrochlorothiazide",
+    "slug": "amlodipine-besilate-valsartan-hydrochlorothiazide",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Herbal Medicine",
+    "slug": "herbal-medicine",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Carbimazole",
+    "slug": "carbimazole",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Sodium Cromoglycate",
+    "slug": "sodium-cromoglycate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Antazoline Hydrochloride + Tetrahydrozoline Hydrochloride",
+    "slug": "antazoline-hydrochloride-tetrahydrozoline-hydrochloride",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Betaxolol Hydrochloride",
+    "slug": "betaxolol-hydrochloride",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Anastrozole",
+    "slug": "anastrozole",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "D-Penicillamine",
+    "slug": "d-penicillamine",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Tenoxicam",
+    "slug": "tenoxicam",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Articaine Hydrochloride + Adrenaline",
+    "slug": "articaine-hydrochloride-adrenaline",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Atracurium Besilate",
+    "slug": "atracurium-besilate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Atorvastatin Calcium + Ezetimibe",
+    "slug": "atorvastatin-calcium-ezetimibe",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Piperacillin Sodium + Tazobactam Sodium",
+    "slug": "piperacillin-sodium-tazobactam-sodium",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Escitalopram",
+    "slug": "escitalopram",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Azathioprine",
+    "slug": "azathioprine",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Mupirocin",
+    "slug": "mupirocin",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "B-Complex",
+    "slug": "b-complex",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Albendazole",
+    "slug": "albendazole",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Human Coagulation Factor VIII",
+    "slug": "human-coagulation-factor-viii",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Rabies Immunoglobulin",
+    "slug": "rabies-immunoglobulin",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Calcipotriol Monohydrate + Betamethasone Dipropionate",
+    "slug": "calcipotriol-monohydrate-betamethasone-dipropionate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Salmeterol Xinafoate + Fluticasone Propionate",
+    "slug": "salmeterol-xinafoate-fluticasone-propionate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Sodium Alendronate",
+    "slug": "sodium-alendronate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Tetracycline",
+    "slug": "tetracycline",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Bortezomib",
+    "slug": "bortezomib",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Chlordiazepoxide + Clidinium Bromide",
+    "slug": "chlordiazepoxide-clidinium-bromide",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Vortioxetine Hydrobromide",
+    "slug": "vortioxetine-hydrobromide",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Miconazole Nitrate + Hydrocortisone",
+    "slug": "miconazole-nitrate-hydrocortisone",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Capecitabine",
+    "slug": "capecitabine",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Eplerenone",
+    "slug": "eplerenone",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Verapamil Hydrochloride",
+    "slug": "verapamil-hydrochloride",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Cefradine",
+    "slug": "cefradine",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Chlorpromazine Hydrochloride",
+    "slug": "chlorpromazine-hydrochloride",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Zuclopenthixol Decanoate",
+    "slug": "zuclopenthixol-decanoate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Piperazine Citrate + Hexamine + Khellin",
+    "slug": "piperazine-citrate-hexamine-khellin",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Medroxyprogesterone Acetate",
+    "slug": "medroxyprogesterone-acetate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Secukinumab",
+    "slug": "secukinumab",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Hydroxycarbamide (Hydroxyurea)",
+    "slug": "hydroxycarbamide-hydroxyurea",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Duloxetine Hydrochloride",
+    "slug": "duloxetine-hydrochloride",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Valaciclovir Hydrochloride",
+    "slug": "valaciclovir-hydrochloride",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Deflazacort",
+    "slug": "deflazacort",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Adapalene",
+    "slug": "adapalene",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Desmopressin",
+    "slug": "desmopressin",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Metformin Hydrochloride + Glibenclamide",
+    "slug": "metformin-hydrochloride-glibenclamide",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Diphenhydramine Hydrochloride + Ammonium Chloride",
+    "slug": "diphenhydramine-hydrochloride-ammonium-chloride",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Hydroxychloroquine Sulfate",
+    "slug": "hydroxychloroquine-sulfate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Donepezil Hydrochloride",
+    "slug": "donepezil-hydrochloride",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Loperamide Hydrochloride",
+    "slug": "loperamide-hydrochloride",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Levonorgestrel",
+    "slug": "levonorgestrel",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Propranolol Hydrochloride",
+    "slug": "propranolol-hydrochloride",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Ceftriaxone Disodium Hemiheptahydrate",
+    "slug": "ceftriaxone-disodium-hemiheptahydrate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Co-trimoxazole",
+    "slug": "co-trimoxazole",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Epoetin Alfa",
+    "slug": "epoetin-alfa",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Amlodipine + Valsartan",
+    "slug": "amlodipine-valsartan",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Lynestrenol",
+    "slug": "lynestrenol",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Felodipine",
+    "slug": "felodipine",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Estradiol + Dydrogesterone",
+    "slug": "estradiol-dydrogesterone",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Folic Acid",
+    "slug": "folic-acid",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Formoterol Fumarate Dihydrate + Fluticasone Propionate",
+    "slug": "formoterol-fumarate-dihydrate-fluticasone-propionate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Gadodiamide",
+    "slug": "gadodiamide",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Sodium Bicarbonate + Sodium Alginate + Calcium Carbonate",
+    "slug": "sodium-bicarbonate-sodium-alginate-calcium-carbonate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Gemfibrozil",
+    "slug": "gemfibrozil",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Glycerin",
+    "slug": "glycerin",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Tribenoside + Lidocaine Hydrochloride",
+    "slug": "tribenoside-lidocaine-hydrochloride",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Plasma Drive Factor VIII + Von Willebrand Factor (VWF)",
+    "slug": "plasma-drive-factor-viii-von-willebrand-factor-vwf",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Ribavirin",
+    "slug": "ribavirin",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Ifosfamide",
+    "slug": "ifosfamide",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Sodium Hyaluronate",
+    "slug": "sodium-hyaluronate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Calcium Carbonate + Colecalciferol (Vitamin D3)",
+    "slug": "calcium-carbonate-colecalciferol-vitamin-d3",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Imipramine Hydrochloride",
+    "slug": "imipramine-hydrochloride",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Paliperidone Palmitate",
+    "slug": "paliperidone-palmitate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Isosorbide Dinitrate",
+    "slug": "isosorbide-dinitrate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Ketamine Hydrochloride",
+    "slug": "ketamine-hydrochloride",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Guaiphensine + Dextromethorphan Hydrobromide + Chlorpheniramine Maleate + Pseudoephedrine Hydrochloride",
+    "slug": "guaiphensine-dextromethorphan-hydrobromide-chlorpheniramine-maleate-pseudoephedrine-hydrochloride",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Lamivudine",
+    "slug": "lamivudine",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Digoxin",
+    "slug": "digoxin",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Insulin Glargine",
+    "slug": "insulin-glargine",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Timolol maleate + Latanoprost",
+    "slug": "timolol-maleate-latanoprost",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Lincomycin Hydrochloride",
+    "slug": "lincomycin-hydrochloride",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Simvastatin + Ezetimibe",
+    "slug": "simvastatin-ezetimibe",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Lorazepam",
+    "slug": "lorazepam",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Dexamethasone + Polymyxin B + Neomycin Sulfate",
+    "slug": "dexamethasone-polymyxin-b-neomycin-sulfate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Mirtazapine",
+    "slug": "mirtazapine",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Methylergometrine Hydrogen Maleate",
+    "slug": "methylergometrine-hydrogen-maleate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Salmeterol",
+    "slug": "salmeterol",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Amiloride Hydrochloride + Hydrochlorothiazide",
+    "slug": "amiloride-hydrochloride-hydrochlorothiazide",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Theophylline",
+    "slug": "theophylline",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Isosorbide Mononitrate",
+    "slug": "isosorbide-mononitrate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Naproxen",
+    "slug": "naproxen",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Methoxsalen",
+    "slug": "methoxsalen",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Thiamine Hydrochloride (Vitamin B1) + Pyridoxine Hydrochloride (Vitamin B6) + Vitamin B12",
+    "slug": "thiamine-hydrochloride-vitamin-b1-pyridoxine-hydrochloride-vitamin-b6-vitamin-b12",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Silver Sulfadiazine",
+    "slug": "silver-sulfadiazine",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Octreotide Acetate",
+    "slug": "octreotide-acetate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Olmesartan Medoxomil",
+    "slug": "olmesartan-medoxomil",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Vinorelbine Tartrate",
+    "slug": "vinorelbine-tartrate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Phenytoin Sodium",
+    "slug": "phenytoin-sodium",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Chlorhexidine + Cetrimide",
+    "slug": "chlorhexidine-cetrimide",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Sterilised Water For Injection",
+    "slug": "sterilised-water-for-injection",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Travoprost",
+    "slug": "travoprost",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Ursodeoxycholic Acid",
+    "slug": "ursodeoxycholic-acid",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Sacubitril + Valsartan",
+    "slug": "sacubitril-valsartan",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Voriconazole",
+    "slug": "voriconazole",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Ascorbic Acid (Vitamin C)",
+    "slug": "ascorbic-acid-vitamin-c",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Zoledronic Acid Monohydrate",
+    "slug": "zoledronic-acid-monohydrate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Lisinopril Dihydrate",
+    "slug": "lisinopril-dihydrate",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Zolmitriptan",
+    "slug": "zolmitriptan",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Potassium Chloride",
+    "slug": "potassium-chloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Mannitol",
+    "slug": "mannitol",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Sodium Chloride + Glucose",
+    "slug": "sodium-chloride-glucose",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Acetazolamide",
+    "slug": "acetazolamide",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Tazarotene",
+    "slug": "tazarotene",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Insulin human (as Insulin soluble human)",
+    "slug": "insulin-human-as-insulin-soluble-human",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Policresulen",
+    "slug": "policresulen",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Methyldopa",
+    "slug": "methyldopa",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Alendronate Sodium Trihydrate",
+    "slug": "alendronate-sodium-trihydrate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Almagate (Hydrated Aluminium-Magnesium Hydroxycarbonate)",
+    "slug": "almagate-hydrated-aluminium-magnesium-hydroxycarbonate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Brimonidine Tartrate",
+    "slug": "brimonidine-tartrate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Amino Acids",
+    "slug": "amino-acids",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Amphotericin B",
+    "slug": "amphotericin-b",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Tetanus Antitoxin",
+    "slug": "tetanus-antitoxin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Hydrocortisone Acetate + Lidocaine",
+    "slug": "hydrocortisone-acetate-lidocaine",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Nitazoxanide",
+    "slug": "nitazoxanide",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Phenylephrine Hydrochloride",
+    "slug": "phenylephrine-hydrochloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Fondaparinux Sodium",
+    "slug": "fondaparinux-sodium",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Deferasirox",
+    "slug": "deferasirox",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Candesartan Cilexetil + Hydrochlrothiazide",
+    "slug": "candesartan-cilexetil-hydrochlrothiazide",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Mitomycin",
+    "slug": "mitomycin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Bevacizumab",
+    "slug": "bevacizumab",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Lignocaine Hydrochloride (Lidocaine)",
+    "slug": "lignocaine-hydrochloride-lidocaine",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Nizatidine",
+    "slug": "nizatidine",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Guava Leaf Extract + Thyme Leaf Extract + Tilia Flower Extract + Fennel Oil",
+    "slug": "guava-leaf-extract-thyme-leaf-extract-tilia-flower-extract-fennel-oil",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Bacitracin + Neomycin",
+    "slug": "bacitracin-neomycin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Methyl Salicylate + Menthol",
+    "slug": "methyl-salicylate-menthol",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Bleomycin Sulfate",
+    "slug": "bleomycin-sulfate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Betamethasone Valerate + Neomycin Sulfate",
+    "slug": "betamethasone-valerate-neomycin-sulfate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Mecobalamin",
+    "slug": "mecobalamin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Phospholipids 27mg/ml and 176 – 500 μg of Surfactant- associated proteins SP-B and SP-C With 0.10 M Sodium Chloride and 0.0015 M Calcium Chloride",
+    "slug": "phospholipids-27mgml-and-176-500-g-of-surfactant-associated-proteins-sp-b-and-sp-c-with-010-m-sodium-chloride-and-00015-m-calcium-chloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Beta Sitosterol (as Phytosterol)",
+    "slug": "beta-sitosterol-as-phytosterol",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Minocycline Hydrochloride",
+    "slug": "minocycline-hydrochloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Bromhexine",
+    "slug": "bromhexine",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Butorphanol Tartrate",
+    "slug": "butorphanol-tartrate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Calcium Gluconate",
+    "slug": "calcium-gluconate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Cefprozil",
+    "slug": "cefprozil",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Ceftazidime Sodium",
+    "slug": "ceftazidime-sodium",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Desogestrel",
+    "slug": "desogestrel",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Acetylcysteine",
+    "slug": "acetylcysteine",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Cimetidine",
+    "slug": "cimetidine",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Citicoline Sodium",
+    "slug": "citicoline-sodium",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Clozapine",
+    "slug": "clozapine",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Colistimethate Sodium",
+    "slug": "colistimethate-sodium",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Sodium Lactate + Sodium Chloride + Patassium Chloride + Calcium Chloride Dihydrate",
+    "slug": "sodium-lactate-sodium-chloride-patassium-chloride-calcium-chloride-dihydrate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Atenolol + Chlorthalidone",
+    "slug": "atenolol-chlorthalidone",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Perindopril Arginine",
+    "slug": "perindopril-arginine",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Fluticasone Propionate Micronised",
+    "slug": "fluticasone-propionate-micronised",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Vinblastine Sulfate",
+    "slug": "vinblastine-sulfate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Danazol",
+    "slug": "danazol",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Triptorelin Acetate",
+    "slug": "triptorelin-acetate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Racemic Menthol",
+    "slug": "racemic-menthol",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Desogestrel + Ethinylestradiol",
+    "slug": "desogestrel-ethinylestradiol",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Human Anti-D Immunoglobulin",
+    "slug": "human-anti-d-immunoglobulin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Diacerein",
+    "slug": "diacerein",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Diphenoxylate Hydrochloride + Atropine Sulfate",
+    "slug": "diphenoxylate-hydrochloride-atropine-sulfate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Pinaverium Bromide",
+    "slug": "pinaverium-bromide",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Amlodipine Besilate +Valsartan",
+    "slug": "amlodipine-besilate-valsartan",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Dydrogesterone",
+    "slug": "dydrogesterone",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Diazepam + Clidinium Bromide",
+    "slug": "diazepam-clidinium-bromide",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Docetaxel",
+    "slug": "docetaxel",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Dopamine",
+    "slug": "dopamine",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Human Coagulation Factor VIII, Dried + Von Willebrand Factor",
+    "slug": "human-coagulation-factor-viii-dried-von-willebrand-factor",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Oxybutynin Hydrochloride",
+    "slug": "oxybutynin-hydrochloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Pimecrolimus",
+    "slug": "pimecrolimus",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Etanercept",
+    "slug": "etanercept",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Sacubitril/Valsartan",
+    "slug": "sacubitrilvalsartan",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Ampicillin Trihydrate",
+    "slug": "ampicillin-trihydrate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Recombinant Human Erythropoietin",
+    "slug": "recombinant-human-erythropoietin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Erythromycin Stearate",
+    "slug": "erythromycin-stearate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Erythromycin Ethyl Succinate",
+    "slug": "erythromycin-ethyl-succinate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Hydrochlorothiazide",
+    "slug": "hydrochlorothiazide",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Esomeprazole Magnesium",
+    "slug": "esomeprazole-magnesium",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Tocopherol (Vitamin E)",
+    "slug": "tocopherol-vitamin-e",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Sennae Folium + Extractum Rhei + Aetherol,Menthae + Aetherol,Foeniculi + Sulfur Depuratum + Carbo Ligni (vegetable charcoal)",
+    "slug": "sennae-folium-extractum-rhei-aetherolmenthae-aetherolfoeniculi-sulfur-depuratum-carbo-ligni-vegetable-charcoal",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Naftifine Hydrochloride",
+    "slug": "naftifine-hydrochloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Peritoneal Dialysis",
+    "slug": "peritoneal-dialysis",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Ivy Leaves Dry Extract + Thyme Dry Extract",
+    "slug": "ivy-leaves-dry-extract-thyme-dry-extract",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Fluvoxamine Maleate",
+    "slug": "fluvoxamine-maleate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Sodium Bicarbonate + Citric Acid Anhydrous + Tartaric Acid Anhydrous",
+    "slug": "sodium-bicarbonate-citric-acid-anhydrous-tartaric-acid-anhydrous",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Ferrous Sulfate + Folic Acid",
+    "slug": "ferrous-sulfate-folic-acid",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Dimethindene",
+    "slug": "dimethindene",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Iron (III) Hydroxide Saccharate Complex",
+    "slug": "iron-iii-hydroxide-saccharate-complex",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Fingolimod Hydrochloride",
+    "slug": "fingolimod-hydrochloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Degarelix",
+    "slug": "degarelix",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Flupentixol Dihydrochloride",
+    "slug": "flupentixol-dihydrochloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Flucloxacillin Sodium + Amoxicillin Trihydrate",
+    "slug": "flucloxacillin-sodium-amoxicillin-trihydrate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Fluticasone propionate + Salmeterol",
+    "slug": "fluticasone-propionate-salmeterol",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Follitropin Alfa",
+    "slug": "follitropin-alfa",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Dapagliflozin",
+    "slug": "dapagliflozin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Urofollitropin",
+    "slug": "urofollitropin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Fusidic Acid + Hydrocortisone acetate",
+    "slug": "fusidic-acid-hydrocortisone-acetate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Sucralfate",
+    "slug": "sucralfate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Gemcitabine",
+    "slug": "gemcitabine",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Tenofovir Disoproxil Fumarate",
+    "slug": "tenofovir-disoproxil-fumarate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Glucosamine Sulfate",
+    "slug": "glucosamine-sulfate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Glyburide + Metformin Hydrochloride",
+    "slug": "glyburide-metformin-hydrochloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Trastuzumab",
+    "slug": "trastuzumab",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Midazolam Hydrochloride",
+    "slug": "midazolam-hydrochloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Isophane Insulin",
+    "slug": "isophane-insulin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Calfactant",
+    "slug": "calfactant",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Zolpidem Tartrate",
+    "slug": "zolpidem-tartrate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Irinotecan Hydrochloride Trihydrate",
+    "slug": "irinotecan-hydrochloride-trihydrate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Hypromellose (Hydroxypropylmethylcellulo se) + Dextran",
+    "slug": "hypromellose-hydroxypropylmethylcellulo-se-dextran",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Menotrophin",
+    "slug": "menotrophin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Cilazapril Monohydrate",
+    "slug": "cilazapril-monohydrate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Triamcinolone Acetonide + Neomycin Sulfate + Nystatin Micronized +Gramicidin",
+    "slug": "triamcinolone-acetonide-neomycin-sulfate-nystatin-micronized-gramicidin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Triamcinolone Acetonide",
+    "slug": "triamcinolone-acetonide",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Dexketoprofen Trometamol",
+    "slug": "dexketoprofen-trometamol",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Oxytetracycline",
+    "slug": "oxytetracycline",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Sodium Picosulfate",
+    "slug": "sodium-picosulfate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Flumetasone Pivalate + Clioquinol",
+    "slug": "flumetasone-pivalate-clioquinol",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Ranibizumab",
+    "slug": "ranibizumab",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Rituximab",
+    "slug": "rituximab",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Warfarin Sodium",
+    "slug": "warfarin-sodium",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Ketotifen Fumarate",
+    "slug": "ketotifen-fumarate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Lomefloxacin Hydrochloride",
+    "slug": "lomefloxacin-hydrochloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Mepivacaine Hydrochloride",
+    "slug": "mepivacaine-hydrochloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Chlordiazepoxide + Propantheline",
+    "slug": "chlordiazepoxide-propantheline",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Ginkgo Biloba Extract",
+    "slug": "ginkgo-biloba-extract",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Methylprednisolone Sodium Succinate",
+    "slug": "methylprednisolone-sodium-succinate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Sodium Lauryl Sulfate + Sodium Citrate + Glycerin",
+    "slug": "sodium-lauryl-sulfate-sodium-citrate-glycerin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Miglitol",
+    "slug": "miglitol",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Telmisartan + Amlodipine",
+    "slug": "telmisartan-amlodipine",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Biphasic Isophane Insulin",
+    "slug": "biphasic-isophane-insulin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Fluphenazine Decanoate",
+    "slug": "fluphenazine-decanoate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Erdosteine",
+    "slug": "erdosteine",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Bromhexine Hydrochloride",
+    "slug": "bromhexine-hydrochloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Carbocisteine",
+    "slug": "carbocisteine",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Polymyxin B + Neomycin + Bacitracin",
+    "slug": "polymyxin-b-neomycin-bacitracin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Orphenadrine Citrate + Paracetamol",
+    "slug": "orphenadrine-citrate-paracetamol",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Mycophenolic Acid",
+    "slug": "mycophenolic-acid",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Pyridoxine Hydrochloride (Vitamin B6) + Meclizine Hydrochloride",
+    "slug": "pyridoxine-hydrochloride-vitamin-b6-meclizine-hydrochloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Nebivolol Hydrochloride",
+    "slug": "nebivolol-hydrochloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Nebivolol Hydrochloride + Hydrochlorothiazide",
+    "slug": "nebivolol-hydrochloride-hydrochlorothiazide",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Polymyxin B + Neomycin + Gramicidin",
+    "slug": "polymyxin-b-neomycin-gramicidin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Nepafenac",
+    "slug": "nepafenac",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Diflucortolone Valerate",
+    "slug": "diflucortolone-valerate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Rifaximin",
+    "slug": "rifaximin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Nitroglycerin",
+    "slug": "nitroglycerin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Noradrenaline (Norepinephrine) Bitartrate",
+    "slug": "noradrenaline-norepinephrine-bitartrate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Naphazoline Hydrochloride +Chlorpheniramine Maleate",
+    "slug": "naphazoline-hydrochloride-chlorpheniramine-maleate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Tropisetron Hydrochloride",
+    "slug": "tropisetron-hydrochloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Hydrocortisone Acetate",
+    "slug": "hydrocortisone-acetate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Turoctocog Alfa",
+    "slug": "turoctocog-alfa",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Repaglinide",
+    "slug": "repaglinide",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Eptacog Alfa (activated)",
+    "slug": "eptacog-alfa-activated",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Indacaterol Maleate",
+    "slug": "indacaterol-maleate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Betamethasone Sodium Phosphate",
+    "slug": "betamethasone-sodium-phosphate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Phenoxymethylpenicillin",
+    "slug": "phenoxymethylpenicillin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Oxytocin",
+    "slug": "oxytocin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Oxytocin Acetate",
+    "slug": "oxytocin-acetate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Triamcinolone Acetonide + Neomycin Sulfate + Nystatin Micronized + Gramicidin",
+    "slug": "triamcinolone-acetonide-neomycin-sulfate-nystatin-micronized-gramicidin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Paracetamol (Acetaminophen)",
+    "slug": "paracetamol-acetaminophen",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Peginterferon Alfa-2a",
+    "slug": "peginterferon-alfa-2a",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Pentoxifylline",
+    "slug": "pentoxifylline",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Perindopril Erbumine",
+    "slug": "perindopril-erbumine",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Fluocinolone Acetonide + Neomycin",
+    "slug": "fluocinolone-acetonide-neomycin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Dinoprostone",
+    "slug": "dinoprostone",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Fluocinolne Acetonide",
+    "slug": "fluocinolne-acetonide",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Mesterolone",
+    "slug": "mesterolone",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Naproxen Sodium",
+    "slug": "naproxen-sodium",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Bosentan Monohydrate",
+    "slug": "bosentan-monohydrate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Follitropin Beta (FSH)",
+    "slug": "follitropin-beta-fsh",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Aliskiren",
+    "slug": "aliskiren",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Epoetin Beta",
+    "slug": "epoetin-beta",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Prucalopride",
+    "slug": "prucalopride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Prifinium Bromide",
+    "slug": "prifinium-bromide",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Tirofiban Hydrochloride Monohydrate",
+    "slug": "tirofiban-hydrochloride-monohydrate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Rocuronium Bromide",
+    "slug": "rocuronium-bromide",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Cefepime Dihydrochloride Monohydrate",
+    "slug": "cefepime-dihydrochloride-monohydrate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Sulfasalazine",
+    "slug": "sulfasalazine",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Secnidazole",
+    "slug": "secnidazole",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Golimumab",
+    "slug": "golimumab",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Tizanidine Hydrochloride",
+    "slug": "tizanidine-hydrochloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Ivabradine Hydrochloride",
+    "slug": "ivabradine-hydrochloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Glucose + Amino Acid Solution + Electrolytes + Lipid Emulsion",
+    "slug": "glucose-amino-acid-solution-electrolytes-lipid-emulsion",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Soya Oil + Triglycerides + Olive Oil + Fish Oil",
+    "slug": "soya-oil-triglycerides-olive-oil-fish-oil",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Protein Free Haemodialysate of Calves’ Blood Chemically and Biologically standardized",
+    "slug": "protein-free-haemodialysate-of-calves-blood-chemically-and-biologically-standardized",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Trimetazidine Dihydrochloride",
+    "slug": "trimetazidine-dihydrochloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Spectinomycin Dihydrochloride",
+    "slug": "spectinomycin-dihydrochloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Penicillin G (Benzylpenicillin sodium) Benzathine",
+    "slug": "penicillin-g-benzylpenicillin-sodium-benzathine",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Water for Injections",
+    "slug": "water-for-injections",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Streptomycin",
+    "slug": "streptomycin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Sulbactam Sodium + Ampicillin Sodium",
+    "slug": "sulbactam-sodium-ampicillin-sodium",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Naphasoline HCl+Chlorpheniramine Maleate",
+    "slug": "naphasoline-hclchlorpheniramine-maleate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Cinchocaine Hydrochloride + Betamethasone Valerate",
+    "slug": "cinchocaine-hydrochloride-betamethasone-valerate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Testosterone Enantate",
+    "slug": "testosterone-enantate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Nilotinib Hydrochloride Monohydrate",
+    "slug": "nilotinib-hydrochloride-monohydrate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Temozolomide",
+    "slug": "temozolomide",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Terazosin",
+    "slug": "terazosin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Tolterodine Tartrate",
+    "slug": "tolterodine-tartrate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Tizanidine",
+    "slug": "tizanidine",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Triprolidine Hydrochloride + Pseudoephedrine Hydrochloride + Guaiphenesin",
+    "slug": "triprolidine-hydrochloride-pseudoephedrine-hydrochloride-guaiphenesin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Ramipril + Hydrochlorothiazide",
+    "slug": "ramipril-hydrochlorothiazide",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Natural Micronized Progesterone",
+    "slug": "natural-micronized-progesterone",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Aciclovir Sodium",
+    "slug": "aciclovir-sodium",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Rivastigmine Tartrate",
+    "slug": "rivastigmine-tartrate",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Meclizine dihydrochloride + Pyrodoxine Hydrochloride",
+    "slug": "meclizine-dihydrochloride-pyrodoxine-hydrochloride",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Goserelin",
+    "slug": "goserelin",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Magnesium Sulfate",
+    "slug": "magnesium-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ringer's + Dextrose",
+    "slug": "ringers-dextrose",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Abacavir Sulfate",
+    "slug": "abacavir-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Magaldrate + Simethicone",
+    "slug": "magaldrate-simethicone",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Erythromycin + Zinc Acetate",
+    "slug": "erythromycin-zinc-acetate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Adrenaline Acid Tartrate",
+    "slug": "adrenaline-acid-tartrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Adrenaline Tartrate",
+    "slug": "adrenaline-tartrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ipratropium Bromide Monohydrate + Salbutamol Sulfate",
+    "slug": "ipratropium-bromide-monohydrate-salbutamol-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Alendronic Acid",
+    "slug": "alendronic-acid",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Diethylamine Salicylate + Salicylic Acid",
+    "slug": "diethylamine-salicylate-salicylic-acid",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Diethylamine Salicylate + Salicylic Acid + Myrtacaine",
+    "slug": "diethylamine-salicylate-salicylic-acid-myrtacaine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Chlorphenoxamine Hydrochloride",
+    "slug": "chlorphenoxamine-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Palonosetron Hydrochloride",
+    "slug": "palonosetron-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Retapamulin",
+    "slug": "retapamulin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Glimepiride + Metformin Hydrochloride",
+    "slug": "glimepiride-metformin-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Aminophylline",
+    "slug": "aminophylline",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Diloxanide",
+    "slug": "diloxanide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Metronidazole (Benzoyl Metronidazole)",
+    "slug": "metronidazole-benzoyl-metronidazole",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Testosterone Undecanoate",
+    "slug": "testosterone-undecanoate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Hydrochlorothiazide + Losartan Potassium",
+    "slug": "hydrochlorothiazide-losartan-potassium",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Magnesium Trisilicate + Magnesium Carbonate + Sodium Bicarbonate",
+    "slug": "magnesium-trisilicate-magnesium-carbonate-sodium-bicarbonate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Anti-Scorpion Serum",
+    "slug": "anti-scorpion-serum",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Insulin Glulisine",
+    "slug": "insulin-glulisine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Zinc Sulfate +Phenylephrine Hydrochloride",
+    "slug": "zinc-sulfate-phenylephrine-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sumatriptan",
+    "slug": "sumatriptan",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sulfacetamide",
+    "slug": "sulfacetamide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Hydralazine Hydrochloride",
+    "slug": "hydralazine-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Hydrocortisone 17-Butyrate",
+    "slug": "hydrocortisone-17-butyrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Aluminium Hydroxide +Magnesium Hydroxide +Simeticone",
+    "slug": "aluminium-hydroxide-magnesium-hydroxide-simeticone",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Atorvastatin Calcium Trihydrate",
+    "slug": "atorvastatin-calcium-trihydrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ipratropium Bromide + Fenoterol Hydrobromide",
+    "slug": "ipratropium-bromide-fenoterol-hydrobromide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Daclatasvir",
+    "slug": "daclatasvir",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Azelaic Acid",
+    "slug": "azelaic-acid",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Brinzolamide + Timolol Malate",
+    "slug": "brinzolamide-timolol-malate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Rasagiline Tartrate",
+    "slug": "rasagiline-tartrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Brinzolamide",
+    "slug": "brinzolamide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Nitrofurazone",
+    "slug": "nitrofurazone",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sodium Chloride + Potassium Chloride + Calcium Chloride + Magnesium Chloride + Sodium Citrate + Sodium Actate",
+    "slug": "sodium-chloride-potassium-chloride-calcium-chloride-magnesium-chloride-sodium-citrate-sodium-actate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Zinc Oxide +Titanium Dioxide",
+    "slug": "zinc-oxide-titanium-dioxide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Beclometasone Dipropionate + Neomycin Sulfate",
+    "slug": "beclometasone-dipropionate-neomycin-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Belladonna Extract + Phenobarbitone",
+    "slug": "belladonna-extract-phenobarbitone",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Benzyl Benzoate",
+    "slug": "benzyl-benzoate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Borax + Sodium Bicarbonate + Alum + Chlorophyll Oil + Rose Oil",
+    "slug": "borax-sodium-bicarbonate-alum-chlorophyll-oil-rose-oil",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Praziquantel",
+    "slug": "praziquantel",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Bimatoprost",
+    "slug": "bimatoprost",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ibandronic Acid",
+    "slug": "ibandronic-acid",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Risedronate Sodium",
+    "slug": "risedronate-sodium",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Tobramycin Sulfate",
+    "slug": "tobramycin-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Silversulfadiazine",
+    "slug": "silversulfadiazine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Modafinil",
+    "slug": "modafinil",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ticagrelor",
+    "slug": "ticagrelor",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Dihydroergocristine Mesylate + Clopamide + Reserpine",
+    "slug": "dihydroergocristine-mesylate-clopamide-reserpine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Bromfenac",
+    "slug": "bromfenac",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Chlorphenamine + Ammonium Chloride",
+    "slug": "chlorphenamine-ammonium-chloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Diphenhydramine Hydrochloride + Dextromethorphan Hydrobromide + Ephedrine Hydrochloride + Guaiaphensin",
+    "slug": "diphenhydramine-hydrochloride-dextromethorphan-hydrobromide-ephedrine-hydrochloride-guaiaphensin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Brimonidine Tartrate + Timolol Maleate",
+    "slug": "brimonidine-tartrate-timolol-maleate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Miconazole Micronized",
+    "slug": "miconazole-micronized",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Busulfan",
+    "slug": "busulfan",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Calamine + Zinc Oxide",
+    "slug": "calamine-zinc-oxide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Calcium Carbonate",
+    "slug": "calcium-carbonate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Calcium Folinate",
+    "slug": "calcium-folinate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Candesartan Cilexetil + Hydrochlorothiazide",
+    "slug": "candesartan-cilexetil-hydrochlorothiazide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Clotrimazole + Beclometasone Dipropionate",
+    "slug": "clotrimazole-beclometasone-dipropionate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Levocarnitine",
+    "slug": "levocarnitine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Glucosamine Sulfate (2KCl) + Chondroitin Sulfate",
+    "slug": "glucosamine-sulfate-2kcl-chondroitin-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Castor Oil",
+    "slug": "castor-oil",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Diclofenac Resinate",
+    "slug": "diclofenac-resinate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Folinic Acid",
+    "slug": "folinic-acid",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Guaniphenesin",
+    "slug": "guaniphenesin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Chloroquine Phosphate",
+    "slug": "chloroquine-phosphate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Benazepril",
+    "slug": "benazepril",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Dill Oil + Caraway Oil + Fennel Oil + Potassium Citrate + Sodium Bicarbonate + Weak Ginger Tincture",
+    "slug": "dill-oil-caraway-oil-fennel-oil-potassium-citrate-sodium-bicarbonate-weak-ginger-tincture",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Imipenem + Cilastatin",
+    "slug": "imipenem-cilastatin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Acedia Sulfone + Cinchocaine Hydrochloride + Dihydroxymethyl Carbamide",
+    "slug": "acedia-sulfone-cinchocaine-hydrochloride-dihydroxymethyl-carbamide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ciprofloxacin Propantheline",
+    "slug": "ciprofloxacin-propantheline",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Chlorhexidine Digluconate",
+    "slug": "chlorhexidine-digluconate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ketotifen Hydrogen Fumarate",
+    "slug": "ketotifen-hydrogen-fumarate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Clindamycin Phosphate + Benzoyl Peroxide",
+    "slug": "clindamycin-phosphate-benzoyl-peroxide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Clobetasol Propionate + Neomycin Sulfate + Nystatin",
+    "slug": "clobetasol-propionate-neomycin-sulfate-nystatin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Tirofiban Hydrochloride",
+    "slug": "tirofiban-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Clopidogrel Besylate",
+    "slug": "clopidogrel-besylate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Zuclopenthixol Acetate",
+    "slug": "zuclopenthixol-acetate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Cloxacillin Sodium",
+    "slug": "cloxacillin-sodium",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sodium Benzoate + Ammonium Chloride + Potassium Citrate + Diphenhydramine Hydrochloride + Ephedrine Hydrochloridel + Tincture Ipecacuanha + Syrup Tolu",
+    "slug": "sodium-benzoate-ammonium-chloride-potassium-citrate-diphenhydramine-hydrochloride-ephedrine-hydrochloridel-tincture-ipecacuanha-syrup-tolu",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Chlorphenamine Maleate + Pseudoephedrine Hydrochloride + Dextromethorphan Hydrobromide + Glyceryl Gualiacolate",
+    "slug": "chlorphenamine-maleate-pseudoephedrine-hydrochloride-dextromethorphan-hydrobromide-glyceryl-gualiacolate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Nitrofurantoin",
+    "slug": "nitrofurantoin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Gentamicin Sulfate + Dexamethasone Sodium Phosphate + Tetrazolin Hydrochloride",
+    "slug": "gentamicin-sulfate-dexamethasone-sodium-phosphate-tetrazolin-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Polyethylene Glycol + Potassium Chloride + Sodium Bicarbonate + Sodium Chloride + Sodium Sulfate",
+    "slug": "polyethylene-glycol-potassium-chloride-sodium-bicarbonate-sodium-chloride-sodium-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Pyrantel Pamoate",
+    "slug": "pyrantel-pamoate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Digestive Enzymes + Bile Salts",
+    "slug": "digestive-enzymes-bile-salts",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sodium Lactate + Sodium Chloride + Potassium Chloride + Calcium Chloride Dihydrate",
+    "slug": "sodium-lactate-sodium-chloride-potassium-chloride-calcium-chloride-dihydrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sodium Chloride + Potassium Chloride + Calcium Chloride",
+    "slug": "sodium-chloride-potassium-chloride-calcium-chloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Cepae extract + Heparin Sodium + Allantoin",
+    "slug": "cepae-extract-heparin-sodium-allantoin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Clobetasol",
+    "slug": "clobetasol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Dorzolamide HCl + Timolol Maleate",
+    "slug": "dorzolamide-hcl-timolol-maleate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Perindopril Arginine + Indapamide",
+    "slug": "perindopril-arginine-indapamide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Cycloserine",
+    "slug": "cycloserine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Levodopa + Carbidopa",
+    "slug": "levodopa-carbidopa",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Pancreatin",
+    "slug": "pancreatin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Vincristine Sulfate",
+    "slug": "vincristine-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ascorbic Acid (Vitamin C) + Rutin",
+    "slug": "ascorbic-acid-vitamin-c-rutin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Cyclopentolate Hcl",
+    "slug": "cyclopentolate-hcl",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ganciclovir",
+    "slug": "ganciclovir",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Dextran 70 + Hypromellose",
+    "slug": "dextran-70-hypromellose",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Micronized Purified Flavonoid Fraction",
+    "slug": "micronized-purified-flavonoid-fraction",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Dantrolene Sodium",
+    "slug": "dantrolene-sodium",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Timolol Maleate + Dorzolamide Hydrochloride",
+    "slug": "timolol-maleate-dorzolamide-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Daunorubicin Hydrochloride",
+    "slug": "daunorubicin-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Flupentixol + Melitracen",
+    "slug": "flupentixol-melitracen",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Decarbazine",
+    "slug": "decarbazine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Xylometazoline HCl",
+    "slug": "xylometazoline-hcl",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Methyl Salicylate + Ethyl Salicylate + Methyl Nicotinate + 2-Hydroxyethyl Salicylate",
+    "slug": "methyl-salicylate-ethyl-salicylate-methyl-nicotinate-2-hydroxyethyl-salicylate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Menthol + Eucalyptus Oil + Methyl Salicylate + Turpentine Oil",
+    "slug": "menthol-eucalyptus-oil-methyl-salicylate-turpentine-oil",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ipratropium bromide + Salbutamol sulfate",
+    "slug": "ipratropium-bromide-salbutamol-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Tocopherol Acetate",
+    "slug": "tocopherol-acetate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Vincamine",
+    "slug": "vincamine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Desferrioxamine Mesilate",
+    "slug": "desferrioxamine-mesilate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Dexamethasone Sodium Phosphate + Chloramphenicol",
+    "slug": "dexamethasone-sodium-phosphate-chloramphenicol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "DEXAMETHASONE SODIUM PHOSPHATE",
+    "slug": "dexamethasone-sodium-phosphate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Dexamethasone Micronized + Polymyxin B Sulphate + Neomycin Sulfate Micronized",
+    "slug": "dexamethasone-micronized-polymyxin-b-sulphate-neomycin-sulfate-micronized",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Dexromethorphan Hydrobromide + Ephedrine Hydrochloride + Ammonium Chloride",
+    "slug": "dexromethorphan-hydrobromide-ephedrine-hydrochloride-ammonium-chloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Dextrose Anhydrous",
+    "slug": "dextrose-anhydrous",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ivy leaf Dried Extract + Thyme Dried Extract + Glycyrrhizic Acid (as Liquorice Dried Extract)",
+    "slug": "ivy-leaf-dried-extract-thyme-dried-extract-glycyrrhizic-acid-as-liquorice-dried-extract",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Cefdinir",
+    "slug": "cefdinir",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Metocarbamol + paracetamol",
+    "slug": "metocarbamol-paracetamol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Dobutamine",
+    "slug": "dobutamine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Valerian (Valeriana Officinalis) Extract",
+    "slug": "valerian-valeriana-officinalis-extract",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Glucosamine Sulfate + Ginkgo Biloba Leaf Extract.",
+    "slug": "glucosamine-sulfate-ginkgo-biloba-leaf-extract",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Cefadroxil Anhydrous",
+    "slug": "cefadroxil-anhydrous",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Paracetamol + Tramadol HCl",
+    "slug": "paracetamol-tramadol-hcl",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Travoprost + Timolol Malate",
+    "slug": "travoprost-timolol-malate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Fluorometholone + Tetryzoline",
+    "slug": "fluorometholone-tetryzoline",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Efavirenz",
+    "slug": "efavirenz",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Mometasone furoate + Miconazole nitrate",
+    "slug": "mometasone-furoate-miconazole-nitrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Aloe Extract + Tocopherol (Vitamin E)",
+    "slug": "aloe-extract-tocopherol-vitamin-e",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Disodium Phosphate + Monobasic Sodium  Phosphate + Sodium Benzoate",
+    "slug": "disodium-phosphate-monobasic-sodium-phosphate-sodium-benzoate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ephedrine",
+    "slug": "ephedrine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ephedrine Hydrochloride",
+    "slug": "ephedrine-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ceftriaxone Disodium",
+    "slug": "ceftriaxone-disodium",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ergometrine Maleate",
+    "slug": "ergometrine-maleate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ethanolamine Oleate",
+    "slug": "ethanolamine-oleate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Clobetasone Butyrate",
+    "slug": "clobetasone-butyrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Crotamiton",
+    "slug": "crotamiton",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Somatropin Recombinant",
+    "slug": "somatropin-recombinant",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "DL-Alpha-Tocopheryl Acetate",
+    "slug": "dl-alpha-tocopheryl-acetate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Levonorgestrel + Ethinylestradiol",
+    "slug": "levonorgestrel-ethinylestradiol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Pyrimethamine + Sulfadoxine",
+    "slug": "pyrimethamine-sulfadoxine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ammonium Chloride + Salbutamol",
+    "slug": "ammonium-chloride-salbutamol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Fulvestrant",
+    "slug": "fulvestrant",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Guava Extract + Thyme Extract + Anise Oil + Purified Honey",
+    "slug": "guava-extract-thyme-extract-anise-oil-purified-honey",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Fenofibrate",
+    "slug": "fenofibrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Iron (III) Hydroxide Sucrose Complex",
+    "slug": "iron-iii-hydroxide-sucrose-complex",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Iron (III) Hydroxide Polymaltose Complex + Folic Acid",
+    "slug": "iron-iii-hydroxide-polymaltose-complex-folic-acid",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Iron Protein Succinylate",
+    "slug": "iron-protein-succinylate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ferric Hydroxide Sucrose Complex",
+    "slug": "ferric-hydroxide-sucrose-complex",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Activated Dimethicone + Aerosil",
+    "slug": "activated-dimethicone-aerosil",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Cyclobenzaprine Hydrochloride",
+    "slug": "cyclobenzaprine-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Fluoxetine",
+    "slug": "fluoxetine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Silodosin",
+    "slug": "silodosin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Flupentixol Decanoate (Cis Z - Flupentixol Decanoate)",
+    "slug": "flupentixol-decanoate-cis-z-flupentixol-decanoate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Clioquinol + Fluocinolone Acetonide",
+    "slug": "clioquinol-fluocinolone-acetonide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Paracetamol + Pseudoephedrine Hydrochloride + Diphenhydramine Hydrochloride",
+    "slug": "paracetamol-pseudoephedrine-hydrochloride-diphenhydramine-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Pseudoephedrine Hydrochloride + Paracetamol",
+    "slug": "pseudoephedrine-hydrochloride-paracetamol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ferrous Fumarate + Folic Acid",
+    "slug": "ferrous-fumarate-folic-acid",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Recombinant Human Follitropin",
+    "slug": "recombinant-human-follitropin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Formoterol Fumarate",
+    "slug": "formoterol-fumarate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ceftazidime Pentahydrate + Sodium Carbonate",
+    "slug": "ceftazidime-pentahydrate-sodium-carbonate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sevelamer Hydrochloride",
+    "slug": "sevelamer-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Furosemide + Spironolactone",
+    "slug": "furosemide-spironolactone",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Azithromycin Dihydrate + Fluconazole + Secnidazole",
+    "slug": "azithromycin-dihydrate-fluconazole-secnidazole",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Fusidic Acid Anhydrous + Betamethasone Valerate",
+    "slug": "fusidic-acid-anhydrous-betamethasone-valerate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Vildagliptin + Metformin",
+    "slug": "vildagliptin-metformin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Garlic Oil",
+    "slug": "garlic-oil",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Gatifloxacin Sesquihydrate",
+    "slug": "gatifloxacin-sesquihydrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Succinylated Gelatin",
+    "slug": "succinylated-gelatin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sofosbuvir + Ledipasvir",
+    "slug": "sofosbuvir-ledipasvir",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sulpiride",
+    "slug": "sulpiride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ginseng",
+    "slug": "ginseng",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ginseng Extract",
+    "slug": "ginseng-extract",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Fish Roe + Ginkgo Biloba Leaf Extract",
+    "slug": "fish-roe-ginkgo-biloba-leaf-extract",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Glucosamine Sulfate + Chondroitin Sulfate + Calcium carbonate + Ascorbic Acid (Vitamin C)",
+    "slug": "glucosamine-sulfate-chondroitin-sulfate-calcium-carbonate-ascorbic-acid-vitamin-c",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ethinylestradiol + Cyproterone Acetate",
+    "slug": "ethinylestradiol-cyproterone-acetate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Royal Jelly + Ginseng Extract + Ginkgo Biloba Concentrate",
+    "slug": "royal-jelly-ginseng-extract-ginkgo-biloba-concentrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ginseng (Panax Ginseng) + Nigella Sativa Seeds + Bran",
+    "slug": "ginseng-panax-ginseng-nigella-sativa-seeds-bran",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Glucagon",
+    "slug": "glucagon",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Meglumine Antimoniate",
+    "slug": "meglumine-antimoniate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Acarbose",
+    "slug": "acarbose",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ferrous Gluconate",
+    "slug": "ferrous-gluconate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Glucosamine + Ascorbic Acid (Vitamin C)",
+    "slug": "glucosamine-ascorbic-acid-vitamin-c",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Glucose anhydrous",
+    "slug": "glucose-anhydrous",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Glucose Anhydrous",
+    "slug": "glucose-anhydrous",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Metformin Hydrochloride+ Glibenclamide",
+    "slug": "metformin-hydrochloride-glibenclamide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Amino Acetic Acid",
+    "slug": "amino-acetic-acid",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Terlipressin Acetate",
+    "slug": "terlipressin-acetate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Royal Yelly + Natural Micronutrients",
+    "slug": "royal-yelly-natural-micronutrients",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Lenograstim",
+    "slug": "lenograstim",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Econazole",
+    "slug": "econazole",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Gelatin + Glycine + Sodium Chloride + Potassium chloride + Calcium chloride",
+    "slug": "gelatin-glycine-sodium-chloride-potassium-chloride-calcium-chloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Clarithromycin + Pantoprazole Sodium + Tinidazole",
+    "slug": "clarithromycin-pantoprazole-sodium-tinidazole",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Pyrantel Embonate",
+    "slug": "pyrantel-embonate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Hepatitis B Vaccine",
+    "slug": "hepatitis-b-vaccine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Purified Hepatitis - B Surface Antigen",
+    "slug": "purified-hepatitis-b-surface-antigen",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Tocopheryl Nicotinate",
+    "slug": "tocopheryl-nicotinate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Hydrogen Peroxide",
+    "slug": "hydrogen-peroxide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Naphazoline Nitrate +Thonzylamine Hydrochloride",
+    "slug": "naphazoline-nitrate-thonzylamine-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Human Anti-D Immunoglobin",
+    "slug": "human-anti-d-immunoglobin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Inactivated Polio Vaccine",
+    "slug": "inactivated-polio-vaccine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Etonogestrel",
+    "slug": "etonogestrel",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Soyabean Oil",
+    "slug": "soyabean-oil",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Irinotecan HydrochlorideTrihydrate",
+    "slug": "irinotecan-hydrochloridetrihydrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ivermectin",
+    "slug": "ivermectin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Imipenem monohydrate + Cilastatin sodium",
+    "slug": "imipenem-monohydrate-cilastatin-sodium",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Kanamycin",
+    "slug": "kanamycin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Capreomycin Sulfate",
+    "slug": "capreomycin-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ferrous Sulfate",
+    "slug": "ferrous-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Khellin + Cymbopogon Proximus Dry Extract",
+    "slug": "khellin-cymbopogon-proximus-dry-extract",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Khellin + Cymbopogon Proximus liquid Extract",
+    "slug": "khellin-cymbopogon-proximus-liquid-extract",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Cilazapril",
+    "slug": "cilazapril",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Cilazapril Monohydrate + Hydrochlorothiazide",
+    "slug": "cilazapril-monohydrate-hydrochlorothiazide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Gensing + Royal Jelly Natural + Vitamin A Palmitate + Garlic Oil + Wheat Germ Oil",
+    "slug": "gensing-royal-jelly-natural-vitamin-a-palmitate-garlic-oil-wheat-germ-oil",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Dextromethorphan Hydrochloride + Diphenhydramine Hydrochloride",
+    "slug": "dextromethorphan-hydrochloride-diphenhydramine-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Diphenhydramine Hydrochloride + Sodium Citrate + Menthol",
+    "slug": "diphenhydramine-hydrochloride-sodium-citrate-menthol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sodium Phosphate + Monobasic Monohydrate + Heptahydrate",
+    "slug": "sodium-phosphate-monobasic-monohydrate-heptahydrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Labetalol Hydrochloride",
+    "slug": "labetalol-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sodium Lactate+Sodium Chloride+Potassium Chloride+Calcium Chloride",
+    "slug": "sodium-lactatesodium-chloridepotassium-chloridecalcium-chloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Clofazimine",
+    "slug": "clofazimine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Latanoprost + Timolol Maleate",
+    "slug": "latanoprost-timolol-maleate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Lactitol Monohydrate",
+    "slug": "lactitol-monohydrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Magnesium Hydroxide + Liquid Paraffin",
+    "slug": "magnesium-hydroxide-liquid-paraffin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Magnesium Hydroxide",
+    "slug": "magnesium-hydroxide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Silymarin",
+    "slug": "silymarin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sodium Bicarbonate + Citric Acid + Sodium Carbonate Anhydrous",
+    "slug": "sodium-bicarbonate-citric-acid-sodium-carbonate-anhydrous",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Fluvastatin",
+    "slug": "fluvastatin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Fluvastatin Sodium",
+    "slug": "fluvastatin-sodium",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Chlorambucil",
+    "slug": "chlorambucil",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Insulin Detemir",
+    "slug": "insulin-detemir",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Vardenafil",
+    "slug": "vardenafil",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Levofloxacin",
+    "slug": "levofloxacin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Lidocaine hydrochloride + Epinephrine (Adrenaline)",
+    "slug": "lidocaine-hydrochloride-epinephrine-adrenaline",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Lidocaine Hydrochloride Anhydrous",
+    "slug": "lidocaine-hydrochloride-anhydrous",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Lidocaine Hydrochloride Monohydrate",
+    "slug": "lidocaine-hydrochloride-monohydrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Lignocaine Hydrochloride (Lidocaine) + D-Panthenol",
+    "slug": "lignocaine-hydrochloride-lidocaine-d-panthenol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Lidocaine + Cetrimide",
+    "slug": "lidocaine-cetrimide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Lidocaine Hydrochloride + Adrenaline Tartrate",
+    "slug": "lidocaine-hydrochloride-adrenaline-tartrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Tibolone",
+    "slug": "tibolone",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Flumetasone",
+    "slug": "flumetasone",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Salicylic Acid + Flumethasone Pivalate",
+    "slug": "salicylic-acid-flumethasone-pivalate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Maprotyline",
+    "slug": "maprotyline",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Clarithromycin + Omeprazole + Tinidazole",
+    "slug": "clarithromycin-omeprazole-tinidazole",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Lidocaine Hydrochloride + Dextrose",
+    "slug": "lidocaine-hydrochloride-dextrose",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ofloxacin + Prednisolone Acetate + Tetrahydrozoline Hydrochloride",
+    "slug": "ofloxacin-prednisolone-acetate-tetrahydrozoline-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Lutropin Alfa",
+    "slug": "lutropin-alfa",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Teicoplanin",
+    "slug": "teicoplanin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Lormetazepam",
+    "slug": "lormetazepam",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Amlodipine Besilate + Benazepril Hydrochloride",
+    "slug": "amlodipine-besilate-benazepril-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Bupivacaine + Adrenaline",
+    "slug": "bupivacaine-adrenaline",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Cabergoline",
+    "slug": "cabergoline",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Beta Sitosterol",
+    "slug": "beta-sitosterol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Bromocriptine",
+    "slug": "bromocriptine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Cefditoren Pivoxil",
+    "slug": "cefditoren-pivoxil",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Acetic Acid (Dilute Acetic Acid)",
+    "slug": "acetic-acid-dilute-acetic-acid",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Meningococcal A polysaccharide Conjugated to Tetanus Toxoid Carrier Protein",
+    "slug": "meningococcal-a-polysaccharide-conjugated-to-tetanus-toxoid-carrier-protein",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Menthol + Camphor + Methyl Salicylate",
+    "slug": "menthol-camphor-methyl-salicylate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Mepivacaine Hydrochloride + Levonordefrin Hydrochloride",
+    "slug": "mepivacaine-hydrochloride-levonordefrin-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Mefloquine Hydrochloride",
+    "slug": "mefloquine-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Meropenem Anhydrous",
+    "slug": "meropenem-anhydrous",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Combination See Ingredients",
+    "slug": "combination-see-ingredients",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Methylergometrine Maleate",
+    "slug": "methylergometrine-maleate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Norgestamine + Ethinyl Estradiol",
+    "slug": "norgestamine-ethinyl-estradiol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Betahistine Hydrochloride",
+    "slug": "betahistine-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Almotriptan Malate",
+    "slug": "almotriptan-malate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Guava Extract + Black Seed Extract + Tilia Extract + Cinnamon Oil + Fennel Oil",
+    "slug": "guava-extract-black-seed-extract-tilia-extract-cinnamon-oil-fennel-oil",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Royal Jelly + Ginseng Extract",
+    "slug": "royal-jelly-ginseng-extract",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Misoprostol",
+    "slug": "misoprostol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Mucopolysaccharide Polysulfate + Suprarenal Extract + Salicylic Acid",
+    "slug": "mucopolysaccharide-polysulfate-suprarenal-extract-salicylic-acid",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Mometasone Furoate Monohydrate",
+    "slug": "mometasone-furoate-monohydrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Oleoresin Capsicum + Camphor + Menthol + Methyl Salicylate + Oil of Camphor",
+    "slug": "oleoresin-capsicum-camphor-menthol-methyl-salicylate-oil-of-camphor",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Simethicone + Aluminum Hydroxide + Magnesium Hydroxide",
+    "slug": "simethicone-aluminum-hydroxide-magnesium-hydroxide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Aluminium Hydroxide +Magnesium Hydroxide+ Oxethazaine",
+    "slug": "aluminium-hydroxide-magnesium-hydroxide-oxethazaine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Tolperisone Hydrochloride",
+    "slug": "tolperisone-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Tropicamide",
+    "slug": "tropicamide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Baclofen",
+    "slug": "baclofen",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Eperisone Hydrochloride",
+    "slug": "eperisone-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Neostigmine",
+    "slug": "neostigmine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Nalidixic Acid",
+    "slug": "nalidixic-acid",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Naloxone Hydrochloride",
+    "slug": "naloxone-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Etodolac",
+    "slug": "etodolac",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Cyanocobalamin",
+    "slug": "cyanocobalamin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Alizapride Hydrochloride",
+    "slug": "alizapride-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Tetrahydrozoline Hydrochloride",
+    "slug": "tetrahydrozoline-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Miconazole Tri Nitrate",
+    "slug": "miconazole-tri-nitrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Neomycin Sulfate + Hydrocortisone Acetate",
+    "slug": "neomycin-sulfate-hydrocortisone-acetate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Neomycin Sulfate + Dexamethasone Sodium Phosphate",
+    "slug": "neomycin-sulfate-dexamethasone-sodium-phosphate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Neomycin Sulfate + Polymyxin B Sulfate",
+    "slug": "neomycin-sulfate-polymyxin-b-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Prednisolone + Neomycin + Polymyxin B Sulfate",
+    "slug": "prednisolone-neomycin-polymyxin-b-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Neostigmine Methylsulfate + Glycopyrrolate",
+    "slug": "neostigmine-methylsulfate-glycopyrrolate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Vecuronium Bromide",
+    "slug": "vecuronium-bromide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Budesonide + Formoterol Fumarate Dihydrate",
+    "slug": "budesonide-formoterol-fumarate-dihydrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Filgrastim",
+    "slug": "filgrastim",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Thiamine Hydrochloride (Vitamin B1) + Riboflavin Sodium Phosphate (Vitamin B2) + Pyridoxine Hydrochloride (Vitamin B6) + Cyanocobalamine + Lidocaine Hydrochloride",
+    "slug": "thiamine-hydrochloride-vitamin-b1-riboflavin-sodium-phosphate-vitamin-b2-pyridoxine-hydrochloride-vitamin-b6-cyanocobalamine-lidocaine-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Nevirapine",
+    "slug": "nevirapine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Halothane Stabilized + Thymol",
+    "slug": "halothane-stabilized-thymol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Fosinopril Sodium",
+    "slug": "fosinopril-sodium",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Nicorandil",
+    "slug": "nicorandil",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Chlorphenamine + Paracetamol + Pseudoephedrine",
+    "slug": "chlorphenamine-paracetamol-pseudoephedrine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Nefopam Hydrochloride",
+    "slug": "nefopam-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Somatropin",
+    "slug": "somatropin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Biphasic Insulin Aspart",
+    "slug": "biphasic-insulin-aspart",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Insulin Aspart",
+    "slug": "insulin-aspart",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Cod Liver Oil",
+    "slug": "cod-liver-oil",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Glucose + Potassium Chloride + Sodium Chloride + Trisodium Citrate Dihydrate",
+    "slug": "glucose-potassium-chloride-sodium-chloride-trisodium-citrate-dihydrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Timolol maleate",
+    "slug": "timolol-maleate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Zinc Sulfate Heptahydrate",
+    "slug": "zinc-sulfate-heptahydrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Diphenhydramine + Naphazoline + Zinc Sulfate",
+    "slug": "diphenhydramine-naphazoline-zinc-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Pranoprofen",
+    "slug": "pranoprofen",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Olmesartan Medoxomil + Hydrochlorothiazide",
+    "slug": "olmesartan-medoxomil-hydrochlorothiazide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sertaconazole Nitrate",
+    "slug": "sertaconazole-nitrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ondansetron Hydrochloride",
+    "slug": "ondansetron-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Tetracycline Hydrochloride",
+    "slug": "tetracycline-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Polyvinyl Alcohol + Povidone",
+    "slug": "polyvinyl-alcohol-povidone",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sodium Chloride + Sodium Citrate + Potassium Chloride + Glucose (Anhydrous)",
+    "slug": "sodium-chloride-sodium-citrate-potassium-chloride-glucose-anhydrous",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Dichlorphenamide",
+    "slug": "dichlorphenamide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Atropine Sulphate",
+    "slug": "atropine-sulphate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Betamethsone Sodium Phosphate + Neomycin Sulfate",
+    "slug": "betamethsone-sodium-phosphate-neomycin-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Levobunolol Hydrochloride",
+    "slug": "levobunolol-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sodium Chloride + Epoclamide Sodium Citrate + Anhydrous Glucose + Potassium Chloride",
+    "slug": "sodium-chloride-epoclamide-sodium-citrate-anhydrous-glucose-potassium-chloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Raloxifene Hydrochloride",
+    "slug": "raloxifene-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Chloramphenicol + Benzocaine",
+    "slug": "chloramphenicol-benzocaine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Polymyxin B + Neomycin + Hydrocortisone",
+    "slug": "polymyxin-b-neomycin-hydrocortisone",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Permethrin",
+    "slug": "permethrin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Estriol",
+    "slug": "estriol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Choriogonadotropin Alfa",
+    "slug": "choriogonadotropin-alfa",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Carbetocin",
+    "slug": "carbetocin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Protamine Sulfate",
+    "slug": "protamine-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Paracetamol + Caffeine",
+    "slug": "paracetamol-caffeine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "D-Panthenol",
+    "slug": "d-panthenol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Paromomycin Sulfate",
+    "slug": "paromomycin-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Metoclopramide HCl",
+    "slug": "metoclopramide-hcl",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Cyclopentolate Hydrochloride",
+    "slug": "cyclopentolate-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Pumpkin Seed Oil",
+    "slug": "pumpkin-seed-oil",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Follitropin Alfa + Lutropin Alfa",
+    "slug": "follitropin-alfa-lutropin-alfa",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Silymarin + Chelidonine + Cynarin + Berberine + Taraxacin + Lecithin + Inositol",
+    "slug": "silymarin-chelidonine-cynarin-berberine-taraxacin-lecithin-inositol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Carbamide Peroxide",
+    "slug": "carbamide-peroxide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Pethidine",
+    "slug": "pethidine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Econazole Nitrate + Triamcinolone Acetonide",
+    "slug": "econazole-nitrate-triamcinolone-acetonide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Chloramphenicol + Dexamethasone",
+    "slug": "chloramphenicol-dexamethasone",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Phenobarbital",
+    "slug": "phenobarbital",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Diosmin",
+    "slug": "diosmin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Bromocriptine Mesilate",
+    "slug": "bromocriptine-mesilate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Polio Vaccine OPV (Oral Polio Vaccine) bivalent Type 1 & 3",
+    "slug": "polio-vaccine-opv-oral-polio-vaccine-bivalent-type-1-3",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Neomycin Sulfate + Polymyxin B Sulfate + Nystatin",
+    "slug": "neomycin-sulfate-polymyxin-b-sulfate-nystatin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Arginine Aspartate",
+    "slug": "arginine-aspartate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Vardenafil Hydrochloride Trihydrate",
+    "slug": "vardenafil-hydrochloride-trihydrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Prednisolone Sodium Phosphate",
+    "slug": "prednisolone-sodium-phosphate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Conjugated Oestrogens (equine)",
+    "slug": "conjugated-oestrogens-equine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Lithium Carbonate",
+    "slug": "lithium-carbonate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Lidocaine + Prilocaine",
+    "slug": "lidocaine-prilocaine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Hydroxyprogesterone Caproate",
+    "slug": "hydroxyprogesterone-caproate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Naphazoline Hydrochloride + Chlorpheniramine Maleate + Zinc Sulfate",
+    "slug": "naphazoline-hydrochloride-chlorpheniramine-maleate-zinc-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Betamethasone Sodium Phosphate + Neomycin Sulfate",
+    "slug": "betamethasone-sodium-phosphate-neomycin-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Esculin + Cinchocaine Hydrochloride + Framycetin sulfate + Hydrocortisone",
+    "slug": "esculin-cinchocaine-hydrochloride-framycetin-sulfate-hydrocortisone",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Estradiol",
+    "slug": "estradiol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Saw Palmetto + Pygeum + Zinc + Stinging Nettle Extract",
+    "slug": "saw-palmetto-pygeum-zinc-stinging-nettle-extract",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Strontium Ranelate",
+    "slug": "strontium-ranelate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Halfa Bar Extract (Proximadiol)",
+    "slug": "halfa-bar-extract-proximadiol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Halfa Bar Extract (Proximadiol) + Hexamine + Piprazine Citrate",
+    "slug": "halfa-bar-extract-proximadiol-hexamine-piprazine-citrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Calcipotriol Hydrate + Betamethasone Dipropionate",
+    "slug": "calcipotriol-hydrate-betamethasone-dipropionate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Chlorpheniramine Maleate + Ammonium Chloride + Phenylephrine  Hydrochloride + Syrup Tolu + Syrup Pectoral + Glyceryl Guaiacolate",
+    "slug": "chlorpheniramine-maleate-ammonium-chloride-phenylephrine-hydrochloride-syrup-tolu-syrup-pectoral-glyceryl-guaiacolate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Mercaptopurine",
+    "slug": "mercaptopurine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Salicylic Acid",
+    "slug": "salicylic-acid",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Quinine Dihydrochloride",
+    "slug": "quinine-dihydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Quinine Hydrochloride",
+    "slug": "quinine-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Nabumetone",
+    "slug": "nabumetone",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Interferon Beta -1a",
+    "slug": "interferon-beta-1a",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Vardenafil hydrochloride Trihydrate",
+    "slug": "vardenafil-hydrochloride-trihydrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Chlorzoxazone + Paracetamol",
+    "slug": "chlorzoxazone-paracetamol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sodium Polystyrene Sulfonate",
+    "slug": "sodium-polystyrene-sulfonate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Zidovudine",
+    "slug": "zidovudine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Eltrombopag Olamine",
+    "slug": "eltrombopag-olamine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Anti-D (Rh0) immunoglobulin",
+    "slug": "anti-d-rh0-immunoglobulin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Diethylamine Salicylate",
+    "slug": "diethylamine-salicylate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Rhophylac",
+    "slug": "rhophylac",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Methylphenidate hydrochloride",
+    "slug": "methylphenidate-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Calcium Chloride + Potassium Chloride + Sodium Chloride + Sodium Lactate",
+    "slug": "calcium-chloride-potassium-chloride-sodium-chloride-sodium-lactate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Interferon Alfa -2a",
+    "slug": "interferon-alfa-2a",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Alpha-Pinene + Beta-Pinene + Menthol + Menthone + Camphene + Borneol +Cineol",
+    "slug": "alpha-pinene-beta-pinene-menthol-menthone-camphene-borneol-cineol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Alpha-Pinene+ Anethol + Beta-Pinene + Borneol + Camphene + Cineol+Fenchone",
+    "slug": "alpha-pinene-anethol-beta-pinene-borneol-camphene-cineolfenchone",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Loxoprofen",
+    "slug": "loxoprofen",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Diethylamine Salicylate + Menthol + Chlorbutol",
+    "slug": "diethylamine-salicylate-menthol-chlorbutol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Insulin Degludec + Insulin Aspart",
+    "slug": "insulin-degludec-insulin-aspart",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Fluocinolone Acetonide + Salicylic Acid",
+    "slug": "fluocinolone-acetonide-salicylic-acid",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Telbivudine",
+    "slug": "telbivudine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Cinchocaine Hydrochloride + Hydrocortisone",
+    "slug": "cinchocaine-hydrochloride-hydrocortisone",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Glycopyrrolate",
+    "slug": "glycopyrrolate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sertraline",
+    "slug": "sertraline",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sevoflurane",
+    "slug": "sevoflurane",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Artemether",
+    "slug": "artemether",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Silver Sulphadiazine",
+    "slug": "silver-sulphadiazine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Brinzolamide + Brimonidine Tartrate",
+    "slug": "brinzolamide-brimonidine-tartrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Levosimendan",
+    "slug": "levosimendan",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Chlorphenamine + Phenylephrine Hydrochloride",
+    "slug": "chlorphenamine-phenylephrine-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sodium Bicarbonate",
+    "slug": "sodium-bicarbonate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sodium Chloride + Glucose Anhydrous",
+    "slug": "sodium-chloride-glucose-anhydrous",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sodium Stibogluconate",
+    "slug": "sodium-stibogluconate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Protein Free Haemodialysate of Calves’ Blood Chemically and Biologically Standardized",
+    "slug": "protein-free-haemodialysate-of-calves-blood-chemically-and-biologically-standardized",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Protein Free Haemodialysate of Calves’ Blood Chemically and Biologically Standardized + Polidocanol 600",
+    "slug": "protein-free-haemodialysate-of-calves-blood-chemically-and-biologically-standardized-polidocanol-600",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Isosorbide Mononitrate (Diluted Isosorbide Mononitrate)",
+    "slug": "isosorbide-mononitrate-diluted-isosorbide-mononitrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Trospium Chloride",
+    "slug": "trospium-chloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Otilonium Bromide",
+    "slug": "otilonium-bromide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Polymyxin B Sulfate + Neomycin Sulfate",
+    "slug": "polymyxin-b-sulfate-neomycin-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Prochlorperazine Maleate",
+    "slug": "prochlorperazine-maleate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Yellow Fever Vaccine",
+    "slug": "yellow-fever-vaccine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Stavudine",
+    "slug": "stavudine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sterile Water For Injection",
+    "slug": "sterile-water-for-injection",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Citicoline",
+    "slug": "citicoline",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Suxamethonium Chloride",
+    "slug": "suxamethonium-chloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sumatriptan Succinate",
+    "slug": "sumatriptan-succinate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sumatriptan Succinate + Naproxen Sodium",
+    "slug": "sumatriptan-succinate-naproxen-sodium",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Budesonide + Formoterol Fumarate Dihaydrate",
+    "slug": "budesonide-formoterol-fumarate-dihaydrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Formoterol fumerate + Budesonide",
+    "slug": "formoterol-fumerate-budesonide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Tacrolimus",
+    "slug": "tacrolimus",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sitagliptin Phosphate Dihydrate",
+    "slug": "sitagliptin-phosphate-dihydrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Emtricitabine 200mg +Tenofovir 300mg",
+    "slug": "emtricitabine-200mg-tenofovir-300mg",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Oxytetracycline Hydrochloride + Polymyxin B-Sulfate + Hydrocortisone Acetate",
+    "slug": "oxytetracycline-hydrochloride-polymyxin-b-sulfate-hydrocortisone-acetate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Tetanus Toxoid Vaccine",
+    "slug": "tetanus-toxoid-vaccine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Oxytetracycline Hydrochloride + Polymyxin B-Sulfate",
+    "slug": "oxytetracycline-hydrochloride-polymyxin-b-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Tetracaine",
+    "slug": "tetracaine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Tetracaine Hydrochloride",
+    "slug": "tetracaine-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Eprosartan Mesilate",
+    "slug": "eprosartan-mesilate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Eprosartan mesilate + Hydrochlorothiazide",
+    "slug": "eprosartan-mesilate-hydrochlorothiazide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Thiopental Sodium",
+    "slug": "thiopental-sodium",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Tirofiban",
+    "slug": "tirofiban",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Tolmetin",
+    "slug": "tolmetin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Topotecan Hydrochloride",
+    "slug": "topotecan-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Atosiban",
+    "slug": "atosiban",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Insulin Degludec",
+    "slug": "insulin-degludec",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Triprolidine Hydrochloride + Pseudoephedrine Hydrochloride + Paracetamol",
+    "slug": "triprolidine-hydrochloride-pseudoephedrine-hydrochloride-paracetamol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Pyridostigmine",
+    "slug": "pyridostigmine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Calcium Carbonate +Colecalciferol (Vitamin D3)",
+    "slug": "calcium-carbonate-colecalciferol-vitamin-d3",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Chlorphenamine Maleate + Dextromethorphan Hydrobromide + Ephedrine Hydrochloride + Guaifenesin",
+    "slug": "chlorphenamine-maleate-dextromethorphan-hydrobromide-ephedrine-hydrochloride-guaifenesin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Chlorphenamine Maleate + Phenylephrine Hydrochloride + Dextromethorphan Hydrobromide",
+    "slug": "chlorphenamine-maleate-phenylephrine-hydrochloride-dextromethorphan-hydrobromide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Lapatinib Ditosylate",
+    "slug": "lapatinib-ditosylate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Gatifloxacin",
+    "slug": "gatifloxacin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Indacaterol Maleate + Glycopyrronium Bromide",
+    "slug": "indacaterol-maleate-glycopyrronium-bromide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Triprolidine Hydrochloride + Pseudoephedrine + Dextromethorphan",
+    "slug": "triprolidine-hydrochloride-pseudoephedrine-dextromethorphan",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Tolterodine tartrate",
+    "slug": "tolterodine-tartrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Anethol + Borneol + Camphene + Cineole + Fenchone + Piene",
+    "slug": "anethol-borneol-camphene-cineole-fenchone-piene",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Mesna",
+    "slug": "mesna",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Alfuzosin Hydrochloride",
+    "slug": "alfuzosin-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Sodium Chloride + Borax + Sodium Bicarbonate + Menthol",
+    "slug": "sodium-chloride-borax-sodium-bicarbonate-menthol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Hidrosmin",
+    "slug": "hidrosmin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Cefepime Hydrochloride Monohydrate",
+    "slug": "cefepime-hydrochloride-monohydrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Fentanyl Cittrate",
+    "slug": "fentanyl-cittrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Morphine Sulfate",
+    "slug": "morphine-sulfate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Pethidine Hydrochloride",
+    "slug": "pethidine-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Doxycycline Monohydrate",
+    "slug": "doxycycline-monohydrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Liraglutide",
+    "slug": "liraglutide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Verteporfin",
+    "slug": "verteporfin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Thiamine Hydrochloride (Vitamin B1) + Riboflavin Sodium Phosphate (Vitamin B2) + Pyridoxine Hydrochloride (Vitamin B6) + Nicotinamide + Dexpanthenol",
+    "slug": "thiamine-hydrochloride-vitamin-b1-riboflavin-sodium-phosphate-vitamin-b2-pyridoxine-hydrochloride-vitamin-b6-nicotinamide-dexpanthenol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Prednisolone Sodium Metasulfobenzoate",
+    "slug": "prednisolone-sodium-metasulfobenzoate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Hydroxyethyl Starch + Sodium Chloride",
+    "slug": "hydroxyethyl-starch-sodium-chloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Doxylamine Succinate + Pyridoxine Hydrochloride",
+    "slug": "doxylamine-succinate-pyridoxine-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Pazopanib Hydrochloride",
+    "slug": "pazopanib-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Water for injections",
+    "slug": "water-for-injections",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Docusate Sodium",
+    "slug": "docusate-sodium",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Paroxetine",
+    "slug": "paroxetine",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Daptomycin",
+    "slug": "daptomycin",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Lidocaine Hydrochloride + Epinephrine Bitartrate (Adrenaline)",
+    "slug": "lidocaine-hydrochloride-epinephrine-bitartrate-adrenaline",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ezetimibe",
+    "slug": "ezetimibe",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Dorzolamide Hydrochloride+ Timolol Maleate",
+    "slug": "dorzolamide-hydrochloride-timolol-maleate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Niclosamide",
+    "slug": "niclosamide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Lercanidipine Hydrochloride",
+    "slug": "lercanidipine-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Caspofungin Acetate",
+    "slug": "caspofungin-acetate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Glycyrrhiza Glabra + Curcuma Longa + Adhatoda Vasica + Solanum Indicum + Inula Racemosa + Piper Cubeba + Terminalia Belerica + Aloe Barbadensis +Menthol",
+    "slug": "glycyrrhiza-glabra-curcuma-longa-adhatoda-vasica-solanum-indicum-inula-racemosa-piper-cubeba-terminalia-belerica-aloe-barbadensis-menthol",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Lisinopril + Hydrochlorothiazide",
+    "slug": "lisinopril-hydrochlorothiazide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Zinc Oxide",
+    "slug": "zinc-oxide",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Zoledronic Acid monohydrate",
+    "slug": "zoledronic-acid-monohydrate",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Zoledronic Acid Anhydrous",
+    "slug": "zoledronic-acid-anhydrous",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ciprofloxacin Hydrochloride + Dexamethasone",
+    "slug": "ciprofloxacin-hydrochloride-dexamethasone",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Pancreatin Special Grade ((Amylase + Protease + Lipase)) + Ox-Bile Extract + Pepsin (1 :10.000) + Dimethylpolysiloxane + Hemicellulase (5000 IU/g.) + Thiamine Hydrochloride",
+    "slug": "pancreatin-special-grade-amylase-protease-lipase-ox-bile-extract-pepsin-1-10000-dimethylpolysiloxane-hemicellulase-5000-iug-thiamine-hydrochloride",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Abiraterone Acetate",
+    "slug": "abiraterone-acetate",
+    "numberOfDrugs": 1
+  }
+]

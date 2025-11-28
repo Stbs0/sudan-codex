@@ -1,6 +1,3 @@
-import { type User } from "firebase/auth";
-import { Timestamp } from "firebase/firestore";
-
 export type Theme = "dark" | "light" | "system";
 
 export type Unit = {
