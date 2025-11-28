@@ -32,11 +32,12 @@ function InfiniteScrollComponent({ initialDrugs }: Props) {
               <p className='text-muted-foreground'>Loading more...</p>
             </div>
           }>
-          {drugList.pages.map((group) =>
-            group.data.map((drug) => (
+          {drugList.pages.map((group, groupIndex) =>
+            group.data.map((drug, drugIndex) => (
               <ListItem
                 key={drug.no}
                 drug={drug}
+                isFirst={groupIndex === 0 && drugIndex === 0}
               />
             ))
           )}
