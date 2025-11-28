@@ -15,7 +15,9 @@ export function useInfiniteServerScroll(initialDrugs: FetchedDrugs) {
     data: Drug[];
     nextCursor: number | null;
   }>({
-    initialData: { pages: [initialDrugs], pageParams: [1] },
+    initialData: !search
+      ? { pages: [initialDrugs], pageParams: [1] }
+      : undefined,
     queryKey: ["drugs", search || ""],
     queryFn: async ({ pageParam = 1 }) => {
       const res = await fetch(
