@@ -5,19 +5,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { PaginatedTable } from "@/components/ui/paginated-table";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import allDrugs from "@/data/drugData.json";
 import agents from "@/data/stats/agents.json";
 import { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
 type Props = {
@@ -68,12 +59,47 @@ export default async function AgentStatsPage({ params }: Props) {
     notFound();
   }
 
-  const agentDrugs = allDrugs.filter((drug) => drug.agentName === agent.name);
+  const agentDrugs = allDrugs
+    .filter((drug) => drug.agentName === agent.name)
+    .map((drug) => ({
+      ...drug,
+      brandSlug: slugify(drug.brandName),
+      companySlug: slugify(drug.companyName),
+    }));
+
   const associatedCompanies = [
     ...new Set(agentDrugs.map((drug) => drug.companyName)),
   ]
     .filter(Boolean)
     .map((name) => ({ name, slug: slugify(name) }));
+
+  const nameAndSlugColumns: Column<{ name: string; slug: string }>[] = [
+    {
+      header: "Name",
+      accessor: "name",
+      isLink: true,
+      slugAccessor: "slug",
+    },
+  ];
+
+  const drugColumns: Column<(typeof agentDrugs)[number]>[] = [
+    {
+      header: "Brand Name",
+      accessor: "brandName",
+      isLink: true,
+      basePath: "/stats/brand",
+      slugAccessor: "brandSlug",
+    },
+    {
+      header: "Company",
+      accessor: "companyName",
+      isLink: true,
+      basePath: "/stats/company",
+      slugAccessor: "companySlug",
+    },
+    { header: "Dosage Form", accessor: "dosageFormName" },
+    { header: "Strength", accessor: "strength" },
+  ];
 
   return (
     <div className='container mx-auto p-4'>
@@ -112,7 +138,12 @@ export default async function AgentStatsPage({ params }: Props) {
           <CardContent>
             <PaginatedTable
               items={associatedCompanies}
-              basePath='/stats/company'
+              columns={nameAndSlugColumns.map((c) => ({
+                ...c,
+                basePath: "/stats/company",
+              }))}
+              keyAccessor='slug'
+              paginate={false}
             />
           </CardContent>
         </Card>
@@ -125,34 +156,12 @@ export default async function AgentStatsPage({ params }: Props) {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Brand Name</TableHead>
-                  <TableHead>Company</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {agentDrugs.map((drug) => (
-                  <TableRow key={drug.no}>
-                    <TableCell>
-                      <Link
-                        href={`/stats/brand/${slugify(drug.brandName)}`}
-                        className='hover:underline'>
-                        {drug.brandName}
-                      </Link>
-                    </TableCell>
-                    <TableCell>
-                      <Link
-                        href={`/stats/company/${slugify(drug.companyName)}`}
-                        className='hover:underline'>
-                        {drug.companyName}
-                      </Link>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
+            <PaginatedTable
+              items={agentDrugs}
+              columns={drugColumns}
+              keyAccessor='no'
+              paginate={false}
+            />
           </CardContent>
         </Card>
       </div>

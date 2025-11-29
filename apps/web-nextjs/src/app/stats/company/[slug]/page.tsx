@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { PaginatedTable } from "@/components/ui/paginated-table";
+import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import allDrugs from "@/data/drugData.json";
 import companies from "@/data/stats/companies.json";
 import { Metadata } from "next";
@@ -75,6 +75,22 @@ export default async function CompanyStatsPage({ params }: Props) {
     .filter(Boolean)
     .map((name) => ({ name, slug: slugify(name) }));
 
+  const nameAndSlugColumns: Column<{ name: string; slug: string }>[] = [
+    {
+      header: "Name",
+      accessor: "name",
+      isLink: true,
+      slugAccessor: "slug",
+    },
+  ];
+
+  const drugColumns: Column<(typeof allDrugs)[number]>[] = [
+    { header: "Brand Name", accessor: "brandName" },
+    { header: "Generic Name", accessor: "genericName" },
+    { header: "Dosage Form", accessor: "dosageFormName" },
+    { header: "Strength", accessor: "strength" },
+  ];
+
   return (
     <div className='container mx-auto p-4'>
       <h1 className='mb-2 text-3xl font-bold'>{company.name}</h1>
@@ -116,6 +132,22 @@ export default async function CompanyStatsPage({ params }: Props) {
       <div className='space-y-8'>
         <Card>
           <CardHeader>
+            <CardTitle>Drug Products</CardTitle>
+            <CardDescription>
+              All drug products from this company.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <PaginatedTable
+              items={companyDrugs}
+              columns={drugColumns}
+              keyAccessor='no'
+              paginate={false}
+            />
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
             <CardTitle>Associated Agents</CardTitle>
             <CardDescription>
               Agents who are associated with this company.
@@ -124,7 +156,12 @@ export default async function CompanyStatsPage({ params }: Props) {
           <CardContent>
             <PaginatedTable
               items={agents}
-              basePath='/stats/agent'
+              columns={nameAndSlugColumns.map((c) => ({
+                ...c,
+                basePath: "/stats/agent",
+              }))}
+              keyAccessor='slug'
+              paginate={false}
             />
           </CardContent>
         </Card>
@@ -139,22 +176,12 @@ export default async function CompanyStatsPage({ params }: Props) {
           <CardContent>
             <PaginatedTable
               items={brandNames}
-              basePath='/stats/brand'
-            />
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Generic Names</CardTitle>
-            <CardDescription>
-              All generic names produced by this company.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <PaginatedTable
-              items={genericNames}
-              basePath='/stats/generic'
+              columns={nameAndSlugColumns.map((c) => ({
+                ...c,
+                basePath: "/stats/brand",
+              }))}
+              keyAccessor='slug'
+              paginate={false}
             />
           </CardContent>
         </Card>

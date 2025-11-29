@@ -98,7 +98,7 @@ export default async function StatsPage() {
           <CardContent>
             <Table>
               <TableHeader>
-                <TableRow>
+                <TableRow className='bg-secondary'>
                   <TableHead>Company</TableHead>
                   <TableHead className='text-right'>Brand Names</TableHead>
                 </TableRow>
@@ -133,7 +133,7 @@ export default async function StatsPage() {
           <CardContent>
             <Table>
               <TableHeader>
-                <TableRow>
+                <TableRow className='bg-secondary'>
                   <TableHead>Agent</TableHead>
                   <TableHead className='text-right'>Drugs</TableHead>
                 </TableRow>
@@ -172,7 +172,7 @@ export default async function StatsPage() {
           <CardContent>
             <Table>
               <TableHeader>
-                <TableRow>
+                <TableRow className='bg-secondary'>
                   <TableHead>Generic Name</TableHead>
                   <TableHead className='text-right'>Drugs</TableHead>
                 </TableRow>
@@ -210,7 +210,7 @@ export default async function StatsPage() {
           <CardContent>
             <Table>
               <TableHeader>
-                <TableRow>
+                <TableRow className='bg-secondary'>
                   <TableHead>Brand Name</TableHead>
                   <TableHead className='text-right'>Count</TableHead>
                 </TableRow>

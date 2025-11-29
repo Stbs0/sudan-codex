@@ -23,7 +23,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const brand = brands.find((b) => b.slug === params.slug);
+  const { slug } = await params;
+  const brand = brands.find((b) => b.slug === slug);
   if (!brand) {
     return { title: "Brand not found" };
   }
@@ -34,7 +35,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BrandNameStatsPage({ params }: Props) {
-  const brand = brands.find((b) => b.slug === params.slug);
+  const { slug } = await params;
+  const brand = brands.find((b) => b.slug === slug);
   if (!brand) {
     notFound();
   }
