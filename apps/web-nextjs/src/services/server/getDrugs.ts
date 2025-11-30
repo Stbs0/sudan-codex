@@ -8,11 +8,10 @@ export const getAllDrugs = cache(async (): Promise<Drug[]> => {
   return JSON.parse(await fs.readFile(filePath, "utf8"));
 });
 
-export const getDrugByNo = cache(async (no: string): Promise<Drug> => {
+export const getDrugByNo = cache(async (no: string): Promise<Drug | null> => {
   // You can even reuse the first function to keep caching efficient
   const data = await getAllDrugs();
-  const drug = data.find((d) => d.no === no);
+  const drug = data.find((d) => d.no === no) ?? null;
 
-  if (!drug) throw new Error("Drug not found");
   return drug;
 });
