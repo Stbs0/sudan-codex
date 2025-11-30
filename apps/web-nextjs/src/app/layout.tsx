@@ -92,7 +92,10 @@ export default function RootLayout({
                   <SidebarInset>
                     <Header />
                     <main className='flex-1'>{children}</main>
-                    <Toaster />
+                    <Toaster
+                      richColors
+                      closeButton
+                    />
                     <Footer />
                   </SidebarInset>
                 </SidebarProvider>
