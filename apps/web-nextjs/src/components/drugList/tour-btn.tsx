@@ -70,7 +70,7 @@ const driverConfig: Config = {
       popover: {
         title: "Agent Name",
         description:
-          "This is the agent name of the drug. it refers to the compony that pack the drug, not the manufacturing of the API.",
+          "This is the agent name of the drug. It refers to the company that packs the drug, not the manufacturer of the API.",
         side: "bottom",
         align: "center",
       },
@@ -118,7 +118,7 @@ function TourBtn() {
     startTour();
 
     return () => {};
-  }, [startTour]);
+  }, []);
 
   const onStartTourClick = () => {
     localStorage.setItem("hasVisited", "true");
