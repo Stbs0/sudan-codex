@@ -1,14 +1,28 @@
-import { DrugProperty } from "@/lib/types";
+import { paths } from "@/config/paths";
+import { Drug, DrugProperty } from "@/lib/types";
+import { Route } from "next";
+import Link from "next/link";
 
-type Props = { title: string; property: DrugProperty };
+type Props = { title: string; property: Drug[keyof Drug]; path?: string };
 
-const DrugPropertyDescription = ({ title, property }: Props) => {
-  return (
+const DrugPropertyDescription = ({ title, property, path }: Props) => {
+  const content = (
     <div className='flex flex-col gap-1 border-l-2 border-blue-400 p-2'>
       <dt className='font-medium text-gray-500'>{title}</dt>
-      <dd>{property}</dd>
+      <dd>{String(property)}</dd>
     </div>
   );
-};
 
+  if (path) {
+    return (
+      <Link
+        className='hover:underline'
+        href={path as Route}>
+        {content}
+      </Link>
+    );
+  }
+
+  return content;
+};
 export default DrugPropertyDescription;

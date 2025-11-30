@@ -1,11 +1,3 @@
-import summary from "@/data/stats/summary.json";
-import companies from "@/data/stats/companies.json";
-import agents from "@/data/stats/agents.json";
-import generics from "@/data/stats/generics.json";
-import brands from "@/data/stats/brands.json";
-import agentCompanyAssociations from "@/data/stats/agent-company-associations.json";
-import companyAgentAssociations from "@/data/stats/company-agent-associations.json";
-import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -21,8 +13,17 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
-import { Metadata } from "next";
+import agentCompanyAssociations from "@/data/stats/agent-company-associations.json";
+import agents from "@/data/stats/agents.json";
+import brands from "@/data/stats/brands.json";
+import companies from "@/data/stats/companies.json";
+import companyAgentAssociations from "@/data/stats/company-agent-associations.json";
+import generics from "@/data/stats/generics.json";
+import summary from "@/data/stats/summary.json";
+import { slugify } from "@/lib/utils";
+import { getAllDrugs } from "@/services/server/getDrugs";
+import { Metadata, Route } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Drug Statistics",
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
 };
 
 export default async function StatsPage() {
+  const allDrugs = await getAllDrugs();
   return (
     <div className='container mx-auto p-4'>
       <h1 className='mb-4 text-3xl font-bold'>Drug Statistics</h1>
@@ -37,7 +39,7 @@ export default async function StatsPage() {
       <div className='mb-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
         <Card>
           <CardHeader>
-            <CardTitle>Total Entries</CardTitle>
+            <CardTitle>Total Drugs</CardTitle>
           </CardHeader>
           <CardContent>
             <p className='text-2xl font-bold'>
@@ -219,11 +221,17 @@ export default async function StatsPage() {
                 {brands.slice(0, 10).map((brand) => (
                   <TableRow key={brand.name}>
                     <TableCell>
-                      <Link
-                        href={`/stats/brand/${brand.slug}`}
-                        className='hover:underline'>
-                        {brand.name}
-                      </Link>
+                      {brand.name ? (
+                        <Link
+                          href={
+                            `/drug-list/${allDrugs.find((drug) => drug)}` as Route
+                          }
+                          className='hover:underline'>
+                          {brand.name}
+                        </Link>
+                      ) : (
+                        "N/A"
+                      )}
                     </TableCell>
                     <TableCell className='text-right'>
                       {brand.numberOfDrugs}
@@ -245,22 +253,40 @@ export default async function StatsPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            {agentCompanyAssociations.slice(0, 10).map((association) => (
-              <div
-                key={association.agentName}
-                className='mb-4'>
-                <h3 className='font-semibold'>{association.agentName}</h3>
-                <div className='mt-1 flex flex-wrap gap-2'>
-                  {association.companies.map((company) => (
-                    <Badge
-                      key={company}
-                      variant='outline'>
-                      {company}
-                    </Badge>
+            <Table>
+              <TableHeader>
+                <TableRow className='bg-secondary'>
+                  <TableHead>Brand Name</TableHead>
+                  <TableHead className='text-right'>Count</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {agentCompanyAssociations
+                  .toSorted((a, b) => b.companies.length - a.companies.length)
+
+                  .slice(0, 10)
+                  .map((agent) => (
+                    <TableRow key={agent.agentName}>
+                      <TableCell>
+                        {agent.agentName ? (
+                          <Link
+                            href={
+                              `/stats/brand/${slugify(agent.agentName)}` as Route
+                            }
+                            className='hover:underline'>
+                            {agent.agentName}
+                          </Link>
+                        ) : (
+                          "N/A"
+                        )}
+                      </TableCell>
+                      <TableCell className='text-right'>
+                        {agent.companies.length}
+                      </TableCell>
+                    </TableRow>
                   ))}
-                </div>
-              </div>
-            ))}
+              </TableBody>
+            </Table>
           </CardContent>
         </Card>
 
@@ -273,22 +299,40 @@ export default async function StatsPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            {companyAgentAssociations.slice(0, 10).map((association) => (
-              <div
-                key={association.companyName}
-                className='mb-4'>
-                <h3 className='font-semibold'>{association.companyName}</h3>
-                <div className='mt-1 flex flex-wrap gap-2'>
-                  {association.agents.map((agent) => (
-                    <Badge
-                      key={agent}
-                      variant='outline'>
-                      {agent}
-                    </Badge>
+            <Table>
+              <TableHeader>
+                <TableRow className='bg-secondary'>
+                  <TableHead>Brand Name</TableHead>
+                  <TableHead className='text-right'>Count</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {companyAgentAssociations
+                  .toSorted((a, b) => b.agents.length - a.agents.length)
+
+                  .slice(0, 10)
+                  .map((company) => (
+                    <TableRow key={company.companyName}>
+                      <TableCell>
+                        {company.companyName ? (
+                          <Link
+                            href={
+                              `/stats/brand/${slugify(company.companyName)}` as Route
+                            }
+                            className='hover:underline'>
+                            {company.companyName}
+                          </Link>
+                        ) : (
+                          "N/A"
+                        )}
+                      </TableCell>
+                      <TableCell className='text-right'>
+                        {company.agents.length}
+                      </TableCell>
+                    </TableRow>
                   ))}
-                </div>
-              </div>
-            ))}
+              </TableBody>
+            </Table>
           </CardContent>
         </Card>
       </div>

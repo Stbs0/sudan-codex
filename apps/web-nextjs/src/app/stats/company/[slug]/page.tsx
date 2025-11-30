@@ -6,9 +6,18 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
-import allDrugs from "@/data/drugData.json";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import companies from "@/data/stats/companies.json";
-import { Metadata } from "next";
+import { getAllDrugs } from "@/services/server/getDrugs";
+import { Metadata, Route } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 type Props = {
@@ -52,6 +61,7 @@ export default async function CompanyStatsPage({ params }: Props) {
   const { slug } = await params;
 
   const company = companies.find((c) => c.slug === slug);
+  const allDrugs = await getAllDrugs();
 
   if (!company) {
     notFound();
@@ -85,10 +95,29 @@ export default async function CompanyStatsPage({ params }: Props) {
   ];
 
   const drugColumns: Column<(typeof allDrugs)[number]>[] = [
-    { header: "Brand Name", accessor: "brandName" },
-    { header: "Generic Name", accessor: "genericName" },
+    {
+      header: "Brand Name",
+      accessor: "brandName",
+      isLink: true,
+      basePath: "/drug-list/",
+      slugAccessor: "no",
+    },
+    {
+      header: "Generic Name",
+      accessor: "genericName",
+      isLink: true,
+      basePath: "/stats/generic",
+      slugAccessor: "genericName",
+    },
     { header: "Dosage Form", accessor: "dosageFormName" },
     { header: "Strength", accessor: "strength" },
+    {
+      header: "Agent Name",
+      accessor: "agentName",
+      isLink: true,
+      basePath: "/stats/agent",
+      slugAccessor: "agentName",
+    },
   ];
 
   return (
@@ -142,45 +171,6 @@ export default async function CompanyStatsPage({ params }: Props) {
               items={companyDrugs}
               columns={drugColumns}
               keyAccessor='no'
-              paginate={false}
-            />
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Associated Agents</CardTitle>
-            <CardDescription>
-              Agents who are associated with this company.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <PaginatedTable
-              items={agents}
-              columns={nameAndSlugColumns.map((c) => ({
-                ...c,
-                basePath: "/stats/agent",
-              }))}
-              keyAccessor='slug'
-              paginate={false}
-            />
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Brand Names</CardTitle>
-            <CardDescription>
-              All brand names from this company.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <PaginatedTable
-              items={brandNames}
-              columns={nameAndSlugColumns.map((c) => ({
-                ...c,
-                basePath: "/stats/brand",
-              }))}
-              keyAccessor='slug'
               paginate={false}
             />
           </CardContent>

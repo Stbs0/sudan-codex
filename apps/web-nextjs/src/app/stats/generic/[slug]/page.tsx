@@ -6,26 +6,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
-import allDrugs from "@/data/drugData.json";
 import generics from "@/data/stats/generics.json";
+import { slugify } from "@/lib/utils";
+import { getAllDrugs } from "@/services/server/getDrugs";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
-
-function slugify(text: string): string {
-  if (!text) return "";
-  return text
-    .toString()
-    .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^\w\-]+/g, "")
-    .replace(/\-\-+/g, "-")
-    .replace(/^-+/, "")
-    .replace(/-+$/, "");
-}
 
 export async function generateStaticParams() {
   return generics.map((g) => ({
@@ -48,6 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function GenericNameStatsPage({ params }: Props) {
   const { slug } = await params;
+  const allDrugs = await getAllDrugs();
 
   const generic = generics.find((g) => g.slug === slug);
   if (!generic) {
@@ -80,10 +70,29 @@ export default async function GenericNameStatsPage({ params }: Props) {
   ];
 
   const drugColumns: Column<(typeof allDrugs)[number]>[] = [
-    { header: "Brand Name", accessor: "brandName" },
+    {
+      header: "Brand Name",
+      accessor: "brandName",
+      isLink: true,
+      basePath: "/drug-list/",
+      slugAccessor: "no",
+    },
     { header: "Dosage Form", accessor: "dosageFormName" },
     { header: "Strength", accessor: "strength" },
-    { header: "Company", accessor: "companyName" },
+    {
+      header: "Company",
+      accessor: "companyName",
+      isLink: true,
+      basePath: "/stats/company/",
+      slugAccessor: "companyName",
+    },
+    {
+      header: "Agent",
+      accessor: "agentName",
+      isLink: true,
+      basePath: "/stats/agent/",
+      slugAccessor: "agentName",
+    },
   ];
 
   return (
@@ -129,45 +138,6 @@ export default async function GenericNameStatsPage({ params }: Props) {
               items={genericDrugs}
               columns={drugColumns}
               keyAccessor='no'
-              paginate={false}
-            />
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Associated Companies</CardTitle>
-            <CardDescription>
-              Companies that produce drugs with this generic name.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <PaginatedTable
-              items={associatedCompanies}
-              columns={nameAndSlugColumns.map((c) => ({
-                ...c,
-                basePath: "/stats/company",
-              }))}
-              keyAccessor='slug'
-              paginate={false}
-            />
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Associated Brand Names</CardTitle>
-            <CardDescription>
-              Brand names associated with this generic name.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <PaginatedTable
-              items={associatedBrandNames}
-              columns={nameAndSlugColumns.map((c) => ({
-                ...c,
-                basePath: "/stats/brand",
-              }))}
-              keyAccessor='slug'
               paginate={false}
             />
           </CardContent>

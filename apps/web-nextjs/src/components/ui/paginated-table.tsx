@@ -10,6 +10,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Drug } from "@/lib/types";
+import { slugify } from "@/lib/utils";
+import { Route } from "next";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -61,17 +63,15 @@ export function PaginatedTable<T extends Drug>({
           </TableHeader>
           <TableBody>
             {currentItems.map((item) => (
-              <TableRow key={item.no}>
-                {console.log(item.no) || null}
+              <TableRow key={String(item[keyAccessor])}>
                 {columns.map((column) => (
                   <TableCell key={column.header}>
-                    {console.log(column.header) || null}
                     {column.isLink && column.basePath && column.slugAccessor ? (
                       <Link
                         href={
-                          `${column.basePath}/${String(
-                            item[column.slugAccessor]
-                          )}` as string
+                          `${column.basePath}/${slugify(
+                            item[column.slugAccessor] as string
+                          )}` as Route
                         }
                         className='hover:underline'>
                         {String(item[column.accessor])}

@@ -1,6 +1,8 @@
 import { Drug } from "@/lib/types";
 import { CardTitle } from "../ui/card";
 import DrugPropertyDescription from "./DrugPropertyDescription";
+import { paths } from "@/config/paths";
+import { slugify } from "@/lib/utils";
 
 interface DrugCardProps {
   drug: Drug;
@@ -14,6 +16,7 @@ export function DrugDescriptions({ drug }: DrugCardProps) {
           <dl className='grid grid-cols-1 gap-2 sm:grid-cols-2'>
             <DrugPropertyDescription
               title='Generic Name'
+              path={paths.stats.generic.getHref(slugify(drug.genericName))}
               property={drug.genericName}
             />
             <DrugPropertyDescription
@@ -30,6 +33,7 @@ export function DrugDescriptions({ drug }: DrugCardProps) {
             />
             <DrugPropertyDescription
               title='Company'
+              path={paths.stats.company.getHref(slugify(drug.companyName))}
               property={drug.companyName}
             />
             <DrugPropertyDescription
@@ -38,6 +42,7 @@ export function DrugDescriptions({ drug }: DrugCardProps) {
             />
             <DrugPropertyDescription
               title='Agent'
+              path={paths.stats.agent.getHref(slugify(drug.agentName))}
               property={drug.agentName}
             />
           </dl>

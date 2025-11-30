@@ -1,6 +1,8 @@
 import { OPENFDA_SEARCH_URL } from "@/constants";
 import { clsx, type ClassValue } from "clsx";
+import { Route } from "next";
 import { twMerge } from "tailwind-merge";
+import z from "zod";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -23,3 +25,15 @@ export const getOpenFdaSearchUrl = (parsedGenericName: string) => {
 
   return fullQuery;
 };
+export function slugify<T extends string>(text: T) {
+  if (!text) return "";
+
+  const slug = text
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w\-]+/g, "")
+    .replace(/\-\-+/g, "-")
+    .replace(/^-+/, "")
+    .replace(/-+$/, "");
+  return slug;
+}

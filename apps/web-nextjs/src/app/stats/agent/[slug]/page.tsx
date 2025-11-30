@@ -6,26 +6,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
-import allDrugs from "@/data/drugData.json";
 import agents from "@/data/stats/agents.json";
+import { slugify } from "@/lib/utils";
+import { getAllDrugs } from "@/services/server/getDrugs";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
-
-function slugify(text: string): string {
-  if (!text) return "";
-  return text
-    .toString()
-    .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^\w\-]+/g, "")
-    .replace(/\-\-+/g, "-")
-    .replace(/^-+/, "")
-    .replace(/-+$/, "");
-}
 
 export async function generateStaticParams() {
   return agents.map((agent) => ({
@@ -50,6 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function AgentStatsPage({ params }: Props) {
   const { slug } = await params;
+  const allDrugs = await getAllDrugs();
   if (!slug) {
     notFound();
   }
@@ -87,18 +77,25 @@ export default async function AgentStatsPage({ params }: Props) {
       header: "Brand Name",
       accessor: "brandName",
       isLink: true,
-      basePath: "/stats/brand",
-      slugAccessor: "brandSlug",
+      basePath: "/drug-list/",
+      slugAccessor: "no",
     },
+    {
+      header: "Generic",
+      accessor: "genericName",
+      isLink: true,
+      basePath: "/stats/generic/",
+      slugAccessor: "genericName",
+    },
+    { header: "Dosage Form", accessor: "dosageFormName" },
+    { header: "Strength", accessor: "strength" },
     {
       header: "Company",
       accessor: "companyName",
       isLink: true,
       basePath: "/stats/company",
-      slugAccessor: "companySlug",
+      slugAccessor: "companyName",
     },
-    { header: "Dosage Form", accessor: "dosageFormName" },
-    { header: "Strength", accessor: "strength" },
   ];
 
   return (
@@ -130,24 +127,6 @@ export default async function AgentStatsPage({ params }: Props) {
       </div>
 
       <div className='space-y-8'>
-        <Card>
-          <CardHeader>
-            <CardTitle>Associated Companies</CardTitle>
-            <CardDescription>Companies this agent works with.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <PaginatedTable
-              items={associatedCompanies}
-              columns={nameAndSlugColumns.map((c) => ({
-                ...c,
-                basePath: "/stats/company",
-              }))}
-              keyAccessor='slug'
-              paginate={false}
-            />
-          </CardContent>
-        </Card>
-
         <Card>
           <CardHeader>
             <CardTitle>Drugs Represented</CardTitle>
