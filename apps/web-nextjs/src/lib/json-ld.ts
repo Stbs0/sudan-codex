@@ -1,6 +1,5 @@
 import type {
   ItemList,
-  MedicalEntity,
   MedicalWebPage,
   Person,
   WebSite,
@@ -50,6 +49,11 @@ export const generateDrugJsonLd = (
           "@type": "PropertyValue",
           name: "Dosage Form",
           value: drug.dosageFormName || "Unknown Dosage Form",
+        },
+        {
+          "@type": "PropertyValue",
+          name: "Strength",
+          value: drug.strength || "Unknown Strength",
         },
       ],
       dosageForm: drug.dosageFormName || "Unknown Dosage Form",
