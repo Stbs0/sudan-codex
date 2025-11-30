@@ -1,10 +1,18 @@
+import { Drug } from "@/lib/types";
+import fs from "fs/promises";
 import path from "path";
 import { cache } from "react";
-import fs from "fs/promises";
-import { Drug } from "@/lib/types";
 
-export const getDrugs = cache(async () => {
+export const getAllDrugs = cache(async (): Promise<Drug[]> => {
   const filePath = path.join(process.cwd(), "public/data/drugData.json");
-  const data: Drug[] = JSON.parse(await fs.readFile(filePath, "utf8"));
-  return data;
+  return JSON.parse(await fs.readFile(filePath, "utf8"));
+});
+
+export const getDrugByNo = cache(async (no: string): Promise<Drug> => {
+  // You can even reuse the first function to keep caching efficient
+  const data = await getAllDrugs();
+  const drug = data.find((d) => d.no === no);
+
+  if (!drug) throw new Error("Drug not found");
+  return drug;
 });

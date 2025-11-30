@@ -1,8 +1,8 @@
-import { getDrugs } from "@/services/server/getDrugs";
+import { getAllDrugs } from "@/services/server/getDrugs";
 import type { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const drugs = await getDrugs();
+  const drugs = await getAllDrugs();
   const today = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
 
   const pages: MetadataRoute.Sitemap = [

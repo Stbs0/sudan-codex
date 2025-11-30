@@ -14,7 +14,7 @@ export async function getDrugs(page = 1, q?: string) {
 
   url.searchParams.set("page", page.toString());
   if (q) url.searchParams.set("q", q);
-  const res = await fetch(url, { cache: "no-store" });
+  const res = await fetch(url);
   if (!res.ok) {
     throw new Error(`Failed to fetch drugs: ${res.status} ${res.statusText}`);
   }
