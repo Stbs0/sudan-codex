@@ -7,6 +7,7 @@ import DrugInfoC from "@/components/drugInfo/drug-info";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { generateDrugJsonLd } from "@/lib/json-ld";
+import { getDrugs } from "@/services/server/getDrugs";
 
 export async function generateStaticParams() {
   const drugs = await getDrugs();
