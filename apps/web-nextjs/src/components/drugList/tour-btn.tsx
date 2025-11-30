@@ -1,9 +1,9 @@
 "use client";
-import { useCallback, useEffect } from "react";
-import { Button } from "../ui/button";
-import { toast } from "sonner";
 import { Config, driver } from "driver.js";
 import "driver.js/dist/driver.css";
+import { useCallback, useEffect } from "react";
+import { toast } from "sonner";
+import { Button } from "../ui/button";
 const driverConfig: Config = {
   showProgress: true,
   allowClose: true,
@@ -115,10 +115,11 @@ function TourBtn() {
   useEffect(() => {
     const hasVisited = localStorage.getItem("hasVisited");
     if (hasVisited) return;
-    startTour();
+    const destroy = startTour();
+    localStorage.setItem("hasVisited", "true");
 
-    return () => {};
-  }, []);
+    return destroy;
+  }, [startTour]);
 
   const onStartTourClick = () => {
     localStorage.setItem("hasVisited", "true");
