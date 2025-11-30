@@ -16,7 +16,7 @@ const Logo = ({ className }: { className?: string }) => {
   return (
     <Button
       className={cn(
-        `flex items-center justify-center p-0 hover:bg-transparent`,
+        `flex cursor-pointer items-center justify-center p-0`,
         className
       )}
       variant={"ghost"}

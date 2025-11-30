@@ -1,10 +1,10 @@
-// app/api/drugs/route.ts
-import drugs from "@/data/drugData.json";
+import { getAllDrugs } from "@/services/server/getDrugs";
 
 export async function GET(req: Request) {
+  const drugs = await getAllDrugs();
   const { searchParams } = new URL(req.url);
 
- const page = Math.max(1, Number(searchParams.get("page") || 1));
+  const page = Math.max(1, Number(searchParams.get("page") || 1));
   const limit = Math.min(Number(searchParams.get("limit") || 20), 100);
   const q = decodeURIComponent(searchParams.get("q")?.toLowerCase() || "");
 
