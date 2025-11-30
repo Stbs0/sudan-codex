@@ -1,0 +1,832 @@
+[
+  {
+    "name": "Kambal International Co.Ltd",
+    "slug": "kambal-international-coltd",
+    "numberOfDrugs": 278
+  },
+  {
+    "name": "Pharma Trading Co",
+    "slug": "pharma-trading-co",
+    "numberOfDrugs": 246
+  },
+  {
+    "name": "Dal Medical Services Co. Ltd",
+    "slug": "dal-medical-services-co-ltd",
+    "numberOfDrugs": 211
+  },
+  {
+    "name": "Salmawit Pharmaceutical & Medical International Co.Ltd",
+    "slug": "salmawit-pharmaceutical-medical-international-coltd",
+    "numberOfDrugs": 175
+  },
+  {
+    "name": "Fast International Co.",
+    "slug": "fast-international-co",
+    "numberOfDrugs": 136
+  },
+  {
+    "name": "Marwaco Commercial Enterprises Ltd",
+    "slug": "marwaco-commercial-enterprises-ltd",
+    "numberOfDrugs": 129
+  },
+  {
+    "name": "Mathely Trading &amp; Drugs Enterprises",
+    "slug": "mathely-trading-amp-drugs-enterprises",
+    "numberOfDrugs": 124
+  },
+  {
+    "name": "Siho Trading Co.Ltd",
+    "slug": "siho-trading-coltd",
+    "numberOfDrugs": 101
+  },
+  {
+    "name": "Elwalief International for Multi Activites Co.Ltd",
+    "slug": "elwalief-international-for-multi-activites-coltd",
+    "numberOfDrugs": 99
+  },
+  {
+    "name": "Savana Pharmaceutical Industries Co.Ltd",
+    "slug": "savana-pharmaceutical-industries-coltd",
+    "numberOfDrugs": 96
+  },
+  {
+    "name": "Medica Import & Distribution Co.Ltd",
+    "slug": "medica-import-distribution-coltd",
+    "numberOfDrugs": 90
+  },
+  {
+    "name": "Raheeg Medical Co.Ltd",
+    "slug": "raheeg-medical-coltd",
+    "numberOfDrugs": 87
+  },
+  {
+    "name": "Dr. Nabil Pharmaceutical Co.Ltd",
+    "slug": "dr-nabil-pharmaceutical-coltd",
+    "numberOfDrugs": 87
+  },
+  {
+    "name": "Sudanese Medical Agencies",
+    "slug": "sudanese-medical-agencies",
+    "numberOfDrugs": 83
+  },
+  {
+    "name": "Swar Eldahab Medical Co.",
+    "slug": "swar-eldahab-medical-co",
+    "numberOfDrugs": 81
+  },
+  {
+    "name": "Abugarja Pharma for Medicins Co.Ltd",
+    "slug": "abugarja-pharma-for-medicins-coltd",
+    "numberOfDrugs": 80
+  },
+  {
+    "name": "Alwali Medical Enterprises",
+    "slug": "alwali-medical-enterprises",
+    "numberOfDrugs": 80
+  },
+  {
+    "name": "Lawis Trading Agencies Co .Ltd",
+    "slug": "lawis-trading-agencies-co-ltd",
+    "numberOfDrugs": 80
+  },
+  {
+    "name": "Shima Medical Co. Ltd.",
+    "slug": "shima-medical-co-ltd",
+    "numberOfDrugs": 71
+  },
+  {
+    "name": "Badr Drugs &amp; Chemical Co.Ltd",
+    "slug": "badr-drugs-amp-chemical-coltd",
+    "numberOfDrugs": 68
+  },
+  {
+    "name": "Alpha Medical Agencies Co. Ltd.",
+    "slug": "alpha-medical-agencies-co-ltd",
+    "numberOfDrugs": 64
+  },
+  {
+    "name": "Amipharma Lab. Ltd",
+    "slug": "amipharma-lab-ltd",
+    "numberOfDrugs": 62
+  },
+  {
+    "name": "Aldoma Pharma Co. Ltd",
+    "slug": "aldoma-pharma-co-ltd",
+    "numberOfDrugs": 57
+  },
+  {
+    "name": "Gomal For Trading & Investment Co Ltd",
+    "slug": "gomal-for-trading-investment-co-ltd",
+    "numberOfDrugs": 57
+  },
+  {
+    "name": "Queen Land Multi Activities Co. Ltd",
+    "slug": "queen-land-multi-activities-co-ltd",
+    "numberOfDrugs": 56
+  },
+  {
+    "name": "N.S.F Pharmaceutical Company Limited",
+    "slug": "nsf-pharmaceutical-company-limited",
+    "numberOfDrugs": 54
+  },
+  {
+    "name": "Cisuba Importer Of Pharmaceuticals",
+    "slug": "cisuba-importer-of-pharmaceuticals",
+    "numberOfDrugs": 54
+  },
+  {
+    "name": "Sudan Amco Ltd",
+    "slug": "sudan-amco-ltd",
+    "numberOfDrugs": 52
+  },
+  {
+    "name": "Omap For Multi Activities Co. Ltd",
+    "slug": "omap-for-multi-activities-co-ltd",
+    "numberOfDrugs": 52
+  },
+  {
+    "name": "Health Care Pharma Co. Ltd",
+    "slug": "health-care-pharma-co-ltd",
+    "numberOfDrugs": 51
+  },
+  {
+    "name": "Samasu Medical and Education service Co.Ltd",
+    "slug": "samasu-medical-and-education-service-coltd",
+    "numberOfDrugs": 49
+  },
+  {
+    "name": "Pharma med Multiactivities Co.Ltd",
+    "slug": "pharma-med-multiactivities-coltd",
+    "numberOfDrugs": 48
+  },
+  {
+    "name": "Isra Medical Enterprises",
+    "slug": "isra-medical-enterprises",
+    "numberOfDrugs": 47
+  },
+  {
+    "name": "Torque Pharmaceutical Services",
+    "slug": "torque-pharmaceutical-services",
+    "numberOfDrugs": 46
+  },
+  {
+    "name": "Kala-Pharma Medical Co.",
+    "slug": "kala-pharma-medical-co",
+    "numberOfDrugs": 45
+  },
+  {
+    "name": "Elshimalia Chemical & Medical Enterprises.",
+    "slug": "elshimalia-chemical-medical-enterprises",
+    "numberOfDrugs": 45
+  },
+  {
+    "name": "Bajafar Medical Company",
+    "slug": "bajafar-medical-company",
+    "numberOfDrugs": 43
+  },
+  {
+    "name": "Hiba Drug Co.",
+    "slug": "hiba-drug-co",
+    "numberOfDrugs": 43
+  },
+  {
+    "name": "Elhussein Commercial Agencies",
+    "slug": "elhussein-commercial-agencies",
+    "numberOfDrugs": 42
+  },
+  {
+    "name": "Omdurman Medical Agencies",
+    "slug": "omdurman-medical-agencies",
+    "numberOfDrugs": 39
+  },
+  {
+    "name": "K.A Bodourian & Co. Ltd",
+    "slug": "ka-bodourian-co-ltd",
+    "numberOfDrugs": 37
+  },
+  {
+    "name": "Abd Elmoneim Chemical &amp; Pharmaceutical Co.",
+    "slug": "abd-elmoneim-chemical-amp-pharmaceutical-co",
+    "numberOfDrugs": 35
+  },
+  {
+    "name": "Alpha Medical Agencies Co.Ltd",
+    "slug": "alpha-medical-agencies-coltd",
+    "numberOfDrugs": 34
+  },
+  {
+    "name": "ALmahgoub Pharmaceutical Company Limited",
+    "slug": "almahgoub-pharmaceutical-company-limited",
+    "numberOfDrugs": 33
+  },
+  {
+    "name": "Elbarbary Health Care Co. Ltd",
+    "slug": "elbarbary-health-care-co-ltd",
+    "numberOfDrugs": 33
+  },
+  {
+    "name": "Alhaitham Chemical &amp; Pharmaceuticals Co",
+    "slug": "alhaitham-chemical-amp-pharmaceuticals-co",
+    "numberOfDrugs": 32
+  },
+  {
+    "name": "Eva Smart Pharmaceutical Co.LTD",
+    "slug": "eva-smart-pharmaceutical-coltd",
+    "numberOfDrugs": 31
+  },
+  {
+    "name": "Shakak Pharma for Import & Export",
+    "slug": "shakak-pharma-for-import-export",
+    "numberOfDrugs": 30
+  },
+  {
+    "name": "Shaweesh International Co.Ltd",
+    "slug": "shaweesh-international-coltd",
+    "numberOfDrugs": 28
+  },
+  {
+    "name": "Dalimed Pharmaceuticals Co.Ltd",
+    "slug": "dalimed-pharmaceuticals-coltd",
+    "numberOfDrugs": 28
+  },
+  {
+    "name": "Tabasheer Medical Co. Ltd",
+    "slug": "tabasheer-medical-co-ltd",
+    "numberOfDrugs": 27
+  },
+  {
+    "name": "Almotatwira Import &amp; Export",
+    "slug": "almotatwira-import-amp-export",
+    "numberOfDrugs": 26
+  },
+  {
+    "name": "Rahma Pharmaceuticals& Investment Co.",
+    "slug": "rahma-pharmaceuticals-investment-co",
+    "numberOfDrugs": 24
+  },
+  {
+    "name": "Al Dammam Pharmaceutical Trading Co. Ltd.",
+    "slug": "al-dammam-pharmaceutical-trading-co-ltd",
+    "numberOfDrugs": 24
+  },
+  {
+    "name": "Pharmaland Pharmaceutical",
+    "slug": "pharmaland-pharmaceutical",
+    "numberOfDrugs": 24
+  },
+  {
+    "name": "Kirkisawe Brothers Group Trading & Investment Ltd.",
+    "slug": "kirkisawe-brothers-group-trading-investment-ltd",
+    "numberOfDrugs": 23
+  },
+  {
+    "name": "Elmabara Trading Agencies",
+    "slug": "elmabara-trading-agencies",
+    "numberOfDrugs": 21
+  },
+  {
+    "name": "Rawnag Medical Co. Ltd",
+    "slug": "rawnag-medical-co-ltd",
+    "numberOfDrugs": 21
+  },
+  {
+    "name": "Landmark International Company Ltd",
+    "slug": "landmark-international-company-ltd",
+    "numberOfDrugs": 21
+  },
+  {
+    "name": "Beyond Pharma Co. Ltd",
+    "slug": "beyond-pharma-co-ltd",
+    "numberOfDrugs": 20
+  },
+  {
+    "name": "Liliam Pharmaceuticals Industries",
+    "slug": "liliam-pharmaceuticals-industries",
+    "numberOfDrugs": 20
+  },
+  {
+    "name": "Agyal Medical Co. Ltd",
+    "slug": "agyal-medical-co-ltd",
+    "numberOfDrugs": 19
+  },
+  {
+    "name": "Tabuk Pharmaceutical Co Ltd",
+    "slug": "tabuk-pharmaceutical-co-ltd",
+    "numberOfDrugs": 19
+  },
+  {
+    "name": "Tomorrow'S World Enterprises Ltd",
+    "slug": "tomorrows-world-enterprises-ltd",
+    "numberOfDrugs": 18
+  },
+  {
+    "name": "SMB Pharma international Co Ltd",
+    "slug": "smb-pharma-international-co-ltd",
+    "numberOfDrugs": 18
+  },
+  {
+    "name": "Desert Star Medical Agencies",
+    "slug": "desert-star-medical-agencies",
+    "numberOfDrugs": 18
+  },
+  {
+    "name": "Wide Spectrum Medical System Co.Ltd",
+    "slug": "wide-spectrum-medical-system-coltd",
+    "numberOfDrugs": 17
+  },
+  {
+    "name": "Dew International Company For Invstment LTD",
+    "slug": "dew-international-company-for-invstment-ltd",
+    "numberOfDrugs": 17
+  },
+  {
+    "name": "Sigma Pharmaceutical Industries",
+    "slug": "sigma-pharmaceutical-industries",
+    "numberOfDrugs": 16
+  },
+  {
+    "name": "Alghadeer for Advanced Business Co.Ltd",
+    "slug": "alghadeer-for-advanced-business-coltd",
+    "numberOfDrugs": 16
+  },
+  {
+    "name": "Alwaad Co.Ltd",
+    "slug": "alwaad-coltd",
+    "numberOfDrugs": 15
+  },
+  {
+    "name": "Elrebooa Medical company Ltd",
+    "slug": "elrebooa-medical-company-ltd",
+    "numberOfDrugs": 15
+  },
+  {
+    "name": "Haleem Pharma Co. Ltd",
+    "slug": "haleem-pharma-co-ltd",
+    "numberOfDrugs": 15
+  },
+  {
+    "name": "Pharmacare Company Ltd.",
+    "slug": "pharmacare-company-ltd",
+    "numberOfDrugs": 14
+  },
+  {
+    "name": "Rotex for Drugs Services Co Ltd",
+    "slug": "rotex-for-drugs-services-co-ltd",
+    "numberOfDrugs": 14
+  },
+  {
+    "name": "Shibeika Pharmaceutical Co.",
+    "slug": "shibeika-pharmaceutical-co",
+    "numberOfDrugs": 13
+  },
+  {
+    "name": "Unipharma Company Ltd",
+    "slug": "unipharma-company-ltd",
+    "numberOfDrugs": 13
+  },
+  {
+    "name": "House Of Medicine & Investment",
+    "slug": "house-of-medicine-investment",
+    "numberOfDrugs": 13
+  },
+  {
+    "name": "Almethag For Import & Export",
+    "slug": "almethag-for-import-export",
+    "numberOfDrugs": 13
+  },
+  {
+    "name": "Almahdi Global Company",
+    "slug": "almahdi-global-company",
+    "numberOfDrugs": 12
+  },
+  {
+    "name": "Savana Pharmaceutical Industries Co. Ltd",
+    "slug": "savana-pharmaceutical-industries-co-ltd",
+    "numberOfDrugs": 12
+  },
+  {
+    "name": "Gamma Pharma Co. Ltd",
+    "slug": "gamma-pharma-co-ltd",
+    "numberOfDrugs": 12
+  },
+  {
+    "name": "M & M Pharma And Chemicals",
+    "slug": "m-m-pharma-and-chemicals",
+    "numberOfDrugs": 12
+  },
+  {
+    "name": "Total Care Co.Ltd",
+    "slug": "total-care-coltd",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Luqman Medical Company",
+    "slug": "luqman-medical-company",
+    "numberOfDrugs": 11
+  },
+  {
+    "name": "Africa Medical Co.",
+    "slug": "africa-medical-co",
+    "numberOfDrugs": 10
+  },
+  {
+    "name": "Arsalan For Medical & Chemical Co.Ltd",
+    "slug": "arsalan-for-medical-chemical-coltd",
+    "numberOfDrugs": 10
+  },
+  {
+    "name": "Wall Green Pharma For Investment Co.Ltd",
+    "slug": "wall-green-pharma-for-investment-coltd",
+    "numberOfDrugs": 10
+  },
+  {
+    "name": "Manasik Medical co. Ltd",
+    "slug": "manasik-medical-co-ltd",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "M&S For Human & Vetrinery Services",
+    "slug": "ms-for-human-vetrinery-services",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "El Bayti for Trading &amp; Medical Services Co.Ltd",
+    "slug": "el-bayti-for-trading-amp-medical-services-coltd",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Assut International for Services Ltd",
+    "slug": "assut-international-for-services-ltd",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "sobol medical company",
+    "slug": "sobol-medical-company",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "K.A.D.A for Multi Activities Co.Ltd",
+    "slug": "kada-for-multi-activities-coltd",
+    "numberOfDrugs": 9
+  },
+  {
+    "name": "Medica Import & Distribution Co.",
+    "slug": "medica-import-distribution-co",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Kingstone Pharmaceutical Factory",
+    "slug": "kingstone-pharmaceutical-factory",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Atlas Medical Co Ltd",
+    "slug": "atlas-medical-co-ltd",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "Atlal Medical Co. Ltd",
+    "slug": "atlal-medical-co-ltd",
+    "numberOfDrugs": 8
+  },
+  {
+    "name": "El Bheiry Medical Company Ltd",
+    "slug": "el-bheiry-medical-company-ltd",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Pharma Ixir Co. Ltd.",
+    "slug": "pharma-ixir-co-ltd",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Kirkisawe Brothers Grp Trading & Investment Ltd.",
+    "slug": "kirkisawe-brothers-grp-trading-investment-ltd",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Alrafiaa Medical Services Ltd",
+    "slug": "alrafiaa-medical-services-ltd",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Nasif Medical Investment &Construction Co.Ltd",
+    "slug": "nasif-medical-investment-construction-coltd",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "Wafra for Infrastructure Co.ltd",
+    "slug": "wafra-for-infrastructure-coltd",
+    "numberOfDrugs": 7
+  },
+  {
+    "name": "salmawit pharmaceutical & medical international co.ltd",
+    "slug": "salmawit-pharmaceutical-medical-international-coltd",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Shukrak for Advanced Business Company Ltd",
+    "slug": "shukrak-for-advanced-business-company-ltd",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Abu Yusuf Pharmaceuticals and Chemicals Co Ltd",
+    "slug": "abu-yusuf-pharmaceuticals-and-chemicals-co-ltd",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Hala phrma for drug and medical equipment and cosmetics",
+    "slug": "hala-phrma-for-drug-and-medical-equipment-and-cosmetics",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "RAK Pharmaceutical Co. Ltd.",
+    "slug": "rak-pharmaceutical-co-ltd",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "Shanghai-Sudan Pharmaceutical Co Ltd",
+    "slug": "shanghai-sudan-pharmaceutical-co-ltd",
+    "numberOfDrugs": 6
+  },
+  {
+    "name": "True Pharma Co.Ltd",
+    "slug": "true-pharma-coltd",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "kingstone Pharmaceutical Factory",
+    "slug": "kingstone-pharmaceutical-factory",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Rancy For Pharmaceutical Cosmatics And Medical Equ",
+    "slug": "rancy-for-pharmaceutical-cosmatics-and-medical-equ",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Dr.ali kambal medical company",
+    "slug": "drali-kambal-medical-company",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Elkanar Drugs & Chemicals Co. Ltd",
+    "slug": "elkanar-drugs-chemicals-co-ltd",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "First Monitor For Medical Enterprises",
+    "slug": "first-monitor-for-medical-enterprises",
+    "numberOfDrugs": 5
+  },
+  {
+    "name": "Serovet Trading Enterprises",
+    "slug": "serovet-trading-enterprises",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Perfect For Export & Distribution Drugs & Pharmaceutical Equipment Enterprises",
+    "slug": "perfect-for-export-distribution-drugs-pharmaceutical-equipment-enterprises",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Lavender International Co.Ltd",
+    "slug": "lavender-international-coltd",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Apico - Sudan Ltd",
+    "slug": "apico-sudan-ltd",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "General Medicines Company.Ltd",
+    "slug": "general-medicines-companyltd",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Atlantic International Medical Supplies Co.",
+    "slug": "atlantic-international-medical-supplies-co",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Daweena International",
+    "slug": "daweena-international",
+    "numberOfDrugs": 4
+  },
+  {
+    "name": "Ibaa Medical Co. Ltd",
+    "slug": "ibaa-medical-co-ltd",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Alwathba for Development Co. LTD.",
+    "slug": "alwathba-for-development-co-ltd",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Apico for Medical Develop",
+    "slug": "apico-for-medical-develop",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Shampani Pharma for marketing and import of medicine Co. ltd",
+    "slug": "shampani-pharma-for-marketing-and-import-of-medicine-co-ltd",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "CASANTA MEDICAL CO.LTD.",
+    "slug": "casanta-medical-coltd",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Rahma Pharmaceuticals& Investment Co",
+    "slug": "rahma-pharmaceuticals-investment-co",
+    "numberOfDrugs": 3
+  },
+  {
+    "name": "Madina Medicines, Medical Equipment & Supplies & Cosmetics",
+    "slug": "madina-medicines-medical-equipment-supplies-cosmetics",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Medical Development Enterprises",
+    "slug": "medical-development-enterprises",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Tabark for Drugs and Medical Equipment Co.Ltd",
+    "slug": "tabark-for-drugs-and-medical-equipment-coltd",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Hemedan Drug Industries Co.Ltd",
+    "slug": "hemedan-drug-industries-coltd",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Omasi Medicine Co. Ltd",
+    "slug": "omasi-medicine-co-ltd",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Ramdan Medical Co.Ltd",
+    "slug": "ramdan-medical-coltd",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Medpharm Drug Co.",
+    "slug": "medpharm-drug-co",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Mahdi International Investment & Services Co.",
+    "slug": "mahdi-international-investment-services-co",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Gingko Investment Co Ltd",
+    "slug": "gingko-investment-co-ltd",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Pharma Code Investment Co.Ltd",
+    "slug": "pharma-code-investment-coltd",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Lamichem Trading Co Ltd",
+    "slug": "lamichem-trading-co-ltd",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Rahma Pharmaceuticals& Investment Co.s",
+    "slug": "rahma-pharmaceuticals-investment-cos",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Partner for Multiactivities Co. Ltd.",
+    "slug": "partner-for-multiactivities-co-ltd",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Kima Drug Stores",
+    "slug": "kima-drug-stores",
+    "numberOfDrugs": 2
+  },
+  {
+    "name": "Gilas Pharma & Trading Co. Ltd",
+    "slug": "gilas-pharma-trading-co-ltd",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Enmaa Import & Export Co. Ltd.",
+    "slug": "enmaa-import-export-co-ltd",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Al Khalefa Investment Co. Ltd",
+    "slug": "al-khalefa-investment-co-ltd",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "ALLABANWIA FOR MULTIACTIVITES AND INVESTMENT CO.LTD",
+    "slug": "allabanwia-for-multiactivites-and-investment-coltd",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Rancy For Pharmaceutical Cosmatics And Medical Equ.",
+    "slug": "rancy-for-pharmaceutical-cosmatics-and-medical-equ",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Darwish Medical Company",
+    "slug": "darwish-medical-company",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Equipharma Medicines, Medical Equipment & Supplies and Cosmetics Importation",
+    "slug": "equipharma-medicines-medical-equipment-supplies-and-cosmetics-importation",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Tabuk pharmaceutical Co.Ltd",
+    "slug": "tabuk-pharmaceutical-coltd",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "M.D.S United Medical Co.ltd",
+    "slug": "mds-united-medical-coltd",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Alpha Medical Agencies Co. Ltd",
+    "slug": "alpha-medical-agencies-co-ltd",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Al-Jazira Drugs For Development And Invesment Ltd",
+    "slug": "al-jazira-drugs-for-development-and-invesment-ltd",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Lamease Medical Company",
+    "slug": "lamease-medical-company",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Pharma Max International Drugs co.ltd",
+    "slug": "pharma-max-international-drugs-coltd",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ideal Medical Co.Ltd",
+    "slug": "ideal-medical-coltd",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Dr. Nabil Pharmaceutical Co ltd",
+    "slug": "dr-nabil-pharmaceutical-co-ltd",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Optima United CO.LTD",
+    "slug": "optima-united-coltd",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Collation for Investment Trading & Services Co.Ltd",
+    "slug": "collation-for-investment-trading-services-coltd",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Tabasheer Medical Co. Ltd.",
+    "slug": "tabasheer-medical-co-ltd",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Minamas Co.Ltd",
+    "slug": "minamas-coltd",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Ahlam Pharma Co.Ltd",
+    "slug": "ahlam-pharma-coltd",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Shibeika Brothers Co.",
+    "slug": "shibeika-brothers-co",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Rizig Medical Co Ltd",
+    "slug": "rizig-medical-co-ltd",
+    "numberOfDrugs": 1
+  },
+  {
+    "name": "Shifak Trade & Services Co.",
+    "slug": "shifak-trade-services-co",
+    "numberOfDrugs": 1
+  }
+]

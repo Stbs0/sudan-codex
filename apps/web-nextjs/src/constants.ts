@@ -1,4 +1,4 @@
-import { Home, Pill } from "lucide-react";
+import { Home, Pill, BarChart } from "lucide-react";
 import { Unit } from "./lib/types";
 
 const DRUG_UNITS: Unit[] = [
@@ -716,6 +716,11 @@ export const NAV_ITEMS = [
     title: "Drug list",
     url: "/drug-list",
     icon: Pill,
+  },
+  {
+    title: "Stats",
+    url: "/stats",
+    icon: BarChart,
   },
 ] as const;
 
