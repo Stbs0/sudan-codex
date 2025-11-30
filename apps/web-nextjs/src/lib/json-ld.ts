@@ -113,9 +113,9 @@ export const drugListJsonLd = (
     description:
       "Browse and search through Sudan's complete drug index including brand names, generic names, and manufacturers.",
     url: SITE_URL + "/drug-list",
-    numberOfItems: drugs.length,
+    numberOfItems: drugs.length, // this is fine
     itemListOrder: "Ascending",
-    itemListElement: drugs.map((drug, index) => ({
+    itemListElement: drugs.slice(0, 3).map((drug, index) => ({
       "@type": "ListItem",
       position: index + 1,
       url: SITE_URL + `/drug-list/${drug.no}`,

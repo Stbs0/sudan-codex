@@ -5,7 +5,6 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { drugListJsonLd } from "@/lib/json-ld";
 import { getDrugs } from "@/services/server/getInitialInfiniteDrugs";
 import { Metadata } from "next";
-import drugs from "@/data/drugData.json";
 export const metadata: Metadata = {
   title: "Drug List | Sudan Codex",
   description:
@@ -22,7 +21,7 @@ export default async function DrugListPage() {
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(drugListJsonLd(drugs)).replace(
+          __html: JSON.stringify(drugListJsonLd(initialDrugs.data)).replace(
             /</g,
             "\\u003c"
           ),
