@@ -1,5 +1,6 @@
 import type {
   ItemList,
+  MedicalEntity,
   MedicalWebPage,
   Person,
   WebSite,
@@ -9,7 +10,6 @@ import type { Drug as LocalDrugType } from "./types";
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://www.sudancodex.app";
-
 export const generateDrugJsonLd = (
   drug: LocalDrugType
 ): WithContext<MedicalWebPage> => {
@@ -18,59 +18,55 @@ export const generateDrugJsonLd = (
     "@type": "MedicalWebPage",
     "@id": SITE_URL + `/drug-list/${drug.no}`,
     url: SITE_URL + `/drug-list/${drug.no}`,
-    name: `${drug.brandName} - Drug Information`,
-    description: `Detailed information about ${drug.brandName} (${drug.genericName}) available in Sudan.`,
+    name: `${drug.brandName || "Unknown Brand"} Information`,
+    description: `Medical information for ${drug.brandName || "Unknown Brand"} (${drug.genericName || "Unknown"}) - ${drug.dosageFormName || "Unknown"}.`,
 
-    // We tell Google: The "Main Entity" of this page is this Drug.
-    // This preserves your data but stops Google from asking for a Price Tag.
+    // We use "MedicalEntity" instead of "Drug".
+    // This allows you to list all the specs (Strength, Pack Size)
+    // WITHOUT Google asking for a Price or Review.
     mainEntity: {
-      "@type": "Drug",
+      "@type": "MedicalEntity",
       name: drug.brandName || "Unknown Brand",
-      nonProprietaryName: drug.genericName || "Unknown Generic Name",
-      activeIngredient: drug.genericName || "Unknown Active Ingredient",
+      alternateName: drug.genericName, // Maps to "Generic Name" in your UI
 
-      identifier: {
-        "@type": "PropertyValue",
-        name: "Drug ID",
-        value: drug.no,
-      },
+      // Use 'additionalProperty' for the specific fields in your screenshot
       additionalProperty: [
         {
           "@type": "PropertyValue",
-          name: "Pack Size",
-          value: drug.packSize || "Unknown Pack Size",
-        },
-        {
-          "@type": "PropertyValue",
-          name: "Agent",
-          value: drug.agentName || "Unknown Agent",
+          name: "Strength",
+          value: drug.strength || "Unknown", // Matches "500 mg/ 100 ml"
         },
         {
           "@type": "PropertyValue",
           name: "Dosage Form",
-          value: drug.dosageFormName || "Unknown Dosage Form",
+          value: drug.dosageFormName || "Unknown", // Matches "Solution for intravenous..."
         },
         {
           "@type": "PropertyValue",
-          name: "Strength",
-          value: drug.strength || "Unknown Strength",
+          name: "Pack Size",
+          value: drug.packSize || "Unknown", // Matches "100 Ml Glass Bottle"
+        },
+        {
+          "@type": "PropertyValue",
+          name: "Agent",
+          value: drug.agentName || "Unknown", // Matches "Alpha Medical Agencies..."
+        },
+        {
+          manufacturer: {
+            "@type": "Organization",
+            name: drug.companyName || "Unknown Manufacturer", // Matches "Qatar Pharma..."
+          },
+
+          // Country of origin is best placed here or in additionalProperty
+          countryOfOrigin: {
+            "@type": "Country",
+            name: drug.countryOfOrigin || "Unknown", // Matches "Qatar"
+          },
         },
       ],
-      dosageForm: drug.dosageFormName || "Unknown Dosage Form",
-      brand: {
-        "@type": "Brand",
-        name: drug.brandName || "Unknown Brand",
-      },
-      countryOfOrigin: {
-        "@type": "Country",
-        name: drug.countryOfOrigin || "Unknown Country",
-      },
-      proprietaryName: drug.brandName || "Unknown Brand",
-      manufacturer: {
-        "@type": "Organization",
-        name: drug.companyName || "Unknown Manufacturer",
-      },
-    },
+
+      // Manufacturer is supported in MedicalEntity
+    } as MedicalEntity,
   };
 };
 const authorInfo: WithContext<Person> = {
