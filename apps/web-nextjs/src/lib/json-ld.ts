@@ -3,7 +3,6 @@ import type {
   MedicalEntity,
   MedicalWebPage,
   Person,
-  Thing,
   WebSite,
   WithContext,
 } from "schema-dts";
@@ -19,8 +18,8 @@ export const generateDrugJsonLd = (
     "@type": "MedicalWebPage",
     "@id": SITE_URL + `/drug-list/${drug.no}`,
     url: SITE_URL + `/drug-list/${drug.no}`,
-    name: `${drug.brandName} Information`,
-    description: `Medical information for ${drug.brandName} (${drug.genericName}) - ${drug.dosageFormName}.`,
+    name: `${drug.brandName || "Unknown Brand"} Information`,
+    description: `Medical information for ${drug.brandName || "Unknown Brand"} (${drug.genericName || "Unknown"}) - ${drug.dosageFormName || "Unknown"}.`,
 
     // We use "MedicalEntity" instead of "Drug".
     // This allows you to list all the specs (Strength, Pack Size)
@@ -52,19 +51,21 @@ export const generateDrugJsonLd = (
           name: "Agent",
           value: drug.agentName || "Unknown", // Matches "Alpha Medical Agencies..."
         },
+        {
+          manufacturer: {
+            "@type": "Organization",
+            name: drug.companyName || "Unknown Manufacturer", // Matches "Qatar Pharma..."
+          },
+
+          // Country of origin is best placed here or in additionalProperty
+          countryOfOrigin: {
+            "@type": "Country",
+            name: drug.countryOfOrigin || "Unknown", // Matches "Qatar"
+          },
+        },
       ],
 
       // Manufacturer is supported in MedicalEntity
-      manufacturer: {
-        "@type": "Organization",
-        name: drug.companyName || "Unknown Manufacturer", // Matches "Qatar Pharma..."
-      },
-
-      // Country of origin is best placed here or in additionalProperty
-      countryOfOrigin: {
-        "@type": "Country",
-        name: drug.countryOfOrigin || "Unknown", // Matches "Qatar"
-      },
     } as MedicalEntity,
   };
 };
