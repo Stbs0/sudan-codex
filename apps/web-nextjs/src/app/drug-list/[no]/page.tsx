@@ -9,12 +9,7 @@ import { notFound } from "next/navigation";
 import { generateDrugJsonLd } from "@/lib/json-ld";
 import { getAllDrugs, getDrugByNo } from "@/services/server/getDrugs";
 
-export async function generateStaticParams() {
-  const drugs = await getAllDrugs();
-  return drugs.map((drug) => ({
-    no: drug.no,
-  }));
-}
+export const revalidate = false;
 
 export async function generateMetadata({
   params,
