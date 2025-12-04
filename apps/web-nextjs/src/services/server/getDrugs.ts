@@ -1,3 +1,6 @@
+"use server";
+import "server-only";
+
 import { client } from "@/lib/tursoDB";
 import { DrugWithSlugs } from "@/lib/types";
 import { cache } from "react";

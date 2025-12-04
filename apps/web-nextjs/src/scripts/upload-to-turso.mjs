@@ -17,8 +17,8 @@ async function main() {
 
   try {
     await client.execute(`
-      CREATE TABLE IF NOT EXISTS drugs (
-        no TEXT,
+      CREATE TABLE IF NOT EXISTS drugs_with_slug (
+        no TEXT PRIMARY KEY,
         brandName TEXT,
         genericName TEXT,
         dosageFormName TEXT,
@@ -33,17 +33,39 @@ async function main() {
         countryOfOriginSlug TEXT
       )
     `);
-    console.log('"drugs" table created or already exists.');
+    console.log('"drugs_with_slug" table created or already exists.');
 
-    // Clear the table before inserting new data
-    await client.execute('DELETE FROM drugs');
-    console.log('Cleared all records from the "drugs" table.');
+    await client.execute('CREATE INDEX IF NOT EXISTS idx_brandName ON drugs_with_slug(brandName);');
+    await client.execute('CREATE INDEX IF NOT EXISTS idx_genericName ON drugs_with_slug(genericName);');
+    await client.execute('CREATE INDEX IF NOT EXISTS idx_companyName ON drugs_with_slug(companyName);');
+    await client.execute('CREATE INDEX IF NOT EXISTS idx_agentName ON drugs_with_slug(agentName);');
+    await client.execute('CREATE INDEX IF NOT EXISTS idx_countryOfOrigin ON drugs_with_slug(countryOfOrigin);');
+    console.log('Indexes created for "drugs_with_slug".');
+
+    await client.execute(`
+      CREATE VIRTUAL TABLE IF NOT EXISTS drugs_fts USING fts5(
+        no,
+        brandName,
+        genericName,
+        companyName,
+        agentName,
+        countryOfOrigin,
+        tokenize = 'porter unicode61'
+      );
+    `);
+    console.log('FTS virtual table "drugs_fts" created.');
+
+    // Clear the tables before inserting new data
+    await client.execute('DELETE FROM drugs_with_slug');
+    console.log('Cleared all records from the "drugs_with_slug" table.');
+    await client.execute('DELETE FROM drugs_fts');
+    console.log('Cleared all records from the "drugs_fts" table.');
 
     const batchSize = 100;
     for (let i = 0; i < drugs.length; i += batchSize) {
       const batch = drugs.slice(i, i + batchSize);
       const statements = batch.map(drug => ({
-        sql: "INSERT INTO drugs (no, brandName, genericName, dosageFormName, strength, packSize, companyName, countryOfOrigin, agentName, genericNameSlug, companyNameSlug, agentNameSlug, countryOfOriginSlug) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        sql: "INSERT INTO drugs_with_slug (no, brandName, genericName, dosageFormName, strength, packSize, companyName, countryOfOrigin, agentName, genericNameSlug, companyNameSlug, agentNameSlug, countryOfOriginSlug) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         args: [
           drug.no,
           drug.brandName,
@@ -65,6 +87,13 @@ async function main() {
     }
 
     console.log('Successfully uploaded all drug data to Turso DB.');
+
+    await client.execute(`
+        INSERT INTO drugs_fts (no, brandName, genericName, companyName, agentName, countryOfOrigin)
+        SELECT no, brandName, genericName, companyName, agentName, countryOfOrigin FROM drugs_with_slug;
+    `);
+    console.log('Successfully populated FTS table "drugs_fts".');
+
   } catch (e) {
     console.error('Failed to upload data to Turso DB:');
     console.error(e);
