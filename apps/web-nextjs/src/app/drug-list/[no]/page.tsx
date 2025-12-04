@@ -4,10 +4,10 @@ import { Separator } from "@/components/ui/separator";
 
 import BackBtn from "@/components/drugInfo/back-btn";
 import DrugInfoC from "@/components/drugInfo/drug-info";
+import { generateDrugJsonLd } from "@/lib/json-ld";
+import { getDrugByNo } from "@/services/server/getDrugs";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { generateDrugJsonLd } from "@/lib/json-ld";
-import { getAllDrugs, getDrugByNo } from "@/services/server/getDrugs";
 
 export const revalidate = false;
 
@@ -59,7 +59,6 @@ export default async function DrugInfoPage({
   const { no } = await params;
   const drug = await getDrugByNo(no);
 
-  // TODO: add redirect to 404 page
   if (!drug) notFound();
 
   const jsonLd = generateDrugJsonLd(drug);

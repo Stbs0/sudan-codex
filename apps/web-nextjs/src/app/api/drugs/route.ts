@@ -1,31 +1,38 @@
-import { getAllDrugs } from "@/services/server/getDrugs";
+import { client } from "@/lib/tursoDB";
 
 export async function GET(req: Request) {
-  const drugs = await getAllDrugs();
   const { searchParams } = new URL(req.url);
-
   const page = Math.max(1, Number(searchParams.get("page") || 1));
-  const limit = Math.min(Number(searchParams.get("limit") || 20), 100);
-  const q = decodeURIComponent(searchParams.get("q")?.toLowerCase() || "");
+  const limit = Math.min(Number(searchParams.get("limit") || 20), 50);
+  const q = searchParams.get("q")?.toLowerCase() || "";
+  const offset = (page - 1) * limit;
+  const filterBy = searchParams.get("filterBy") || "";
+  const allowedColumns = [
+    "brandName",
+    "genericName",
+    "agentName",
+    "companyName",
+  ];
+  const column = allowedColumns.includes(filterBy) ? filterBy : "brandName";
 
   // search filtering
-  const filtered = q
-    ? drugs.filter(
-        (d) =>
-          d.brandName?.toLowerCase().includes(q) ||
-          d.genericName?.toLowerCase().includes(q) ||
-          d.companyName?.toLowerCase().includes(q)
-      )
-    : drugs;
+  const filtered = await client.execute({
+    sql: `SELECT * FROM drugs
+     WHERE LOWER(${column}) LIKE ?
+     ORDER BY ${column} ASC
+     LIMIT ? OFFSET ?;`,
+    // TODO: fix search by counrty with K.S.A not showing
+    args: [`%${q}%`, limit, offset],
+  });
 
-  const start = (page - 1) * limit;
-  const end = start + limit;
+  const rows = filtered.rows ?? [];
 
-  const pageData = filtered.slice(start, end);
+  const nextPage = rows.length === limit ? page + 1 : null;
+
   const res = {
-    data: pageData,
-
-    nextCursor: end < filtered.length ? page + 1 : null,
+    data: filtered.rows,
+    nextPage,
   };
+
   return Response.json(res);
 }

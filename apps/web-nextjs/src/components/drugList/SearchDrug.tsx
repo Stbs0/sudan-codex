@@ -1,23 +1,84 @@
 "use client";
 import { useSearchDrug } from "@/hooks/store/useSearch";
+import { Drug } from "@/lib/types";
 import { Input } from "../ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
 
 function SearchDrug() {
   const search = useSearchDrug((state) => state.search);
   const setSearch = useSearchDrug((state) => state.setSearch);
+  const setFilterBy = useSearchDrug((state) => state.setFilterBy);
+  const filterBy = useSearchDrug((state) => state.filterBy);
 
-  const handleSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
+  };
+  const onFilter = (val: keyof Drug) => {
+    setFilterBy(val);
   };
 
   return (
-    <Input
-      className='rounded-3xl shadow-md placeholder:text-xs'
-      placeholder='Search Generic, Brand, or Company Name'
-      value={search}
-      onChange={handleSearchInput}
-    />
+    <div className='relative'>
+      <Input
+        className='rounded-3xl pr-[160px] shadow-md placeholder:text-xs'
+        placeholder='Search and/or filter drugs...'
+        value={search}
+        onChange={onSearch}
+      />
+      <Select
+        value={filterBy}
+        onValueChange={onFilter}>
+        <SelectTrigger className='absolute top-0 right-0 w-fit border-none bg-transparent dark:bg-transparent'>
+          <SelectValue
+            placeholder='Filter By'
+            className='bg-transparent'
+          />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            <SelectLabel>Options</SelectLabel>
+            {options.map((option) => (
+              <SelectItem
+                key={option.value}
+                value={option.value}>
+                {option.label}
+              </SelectItem>
+            ))}
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+    </div>
   );
 }
 
+const options: { value: keyof Drug; label: string }[] = [
+  {
+    value: "brandName",
+    label: "Brand Name",
+  },
+  {
+    value: "agentName",
+    label: "Agent Name",
+  },
+  {
+    value: "companyName",
+    label: "Company Name",
+  },
+  {
+    value: "genericName",
+    label: "Generic Name",
+  },
+  {
+    value: "countryOfOrigin",
+    label: "Country of Origin",
+  },
+];
 export default SearchDrug;
