@@ -1,13 +1,6 @@
 import { client } from "@/lib/tursoDB";
-import { Drug, DrugWithSlugs } from "@/lib/types";
-import fs from "fs/promises";
-import path from "path";
+import { DrugWithSlugs } from "@/lib/types";
 import { cache } from "react";
-
-export const getAllDrugs = cache(async (): Promise<Drug[]> => {
-  const filePath = path.join(process.cwd(), "public/data/drugData.json");
-  return JSON.parse(await fs.readFile(filePath, "utf8"));
-});
 
 export const getDrugByNo = cache(
   async (no: string): Promise<DrugWithSlugs | null> => {

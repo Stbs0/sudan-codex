@@ -1,7 +1,6 @@
 import { DrugDescriptions } from "@/components/drugInfo/drug-descriptions";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-
 import BackBtn from "@/components/drugInfo/back-btn";
 import DrugInfoC from "@/components/drugInfo/drug-info";
 import { generateDrugJsonLd } from "@/lib/json-ld";

@@ -1,5 +1,9 @@
 "use client";
-import { useSearchDrug } from "@/hooks/store/useSearch";
+import {
+  DrugFilterState,
+  SearchDrugType,
+  useSearchDrug,
+} from "@/hooks/store/useSearch";
 import { Drug } from "@/lib/types";
 import { Input } from "../ui/input";
 import {
@@ -21,7 +25,7 @@ function SearchDrug() {
   const onSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
-  const onFilter = (val: keyof Drug) => {
+  const onFilter = (val: DrugFilterState["filterBy"]) => {
     setFilterBy(val);
   };
 

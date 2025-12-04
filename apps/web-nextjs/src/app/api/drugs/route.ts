@@ -2,8 +2,8 @@ import { client } from "@/lib/tursoDB";
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
-  const page = Math.max(1, Number(searchParams.get("page") || 1));
-  const limit = Math.min(Number(searchParams.get("limit") || 20), 50);
+  const page = Math.max(1, Number(searchParams.get("page")) || 1);
+  const limit = Math.min(Number(searchParams.get("limit")) || 20, 50);
   const q = searchParams.get("q")?.toLowerCase() || "";
   const offset = (page - 1) * limit;
   const filterBy = searchParams.get("filterBy") || "";
@@ -12,6 +12,7 @@ export async function GET(req: Request) {
     "genericName",
     "agentName",
     "companyName",
+    "countryOfOrigin",
   ];
   const column = allowedColumns.includes(filterBy) ? filterBy : "brandName";
 
@@ -21,7 +22,6 @@ export async function GET(req: Request) {
      WHERE LOWER(${column}) LIKE ?
      ORDER BY ${column} ASC
      LIMIT ? OFFSET ?;`,
-    // TODO: fix search by counrty with K.S.A not showing
     args: [`%${q}%`, limit, offset],
   });
 
@@ -30,7 +30,7 @@ export async function GET(req: Request) {
   const nextPage = rows.length === limit ? page + 1 : null;
 
   const res = {
-    data: filtered.rows,
+    data: rows,
     nextPage,
   };
 
