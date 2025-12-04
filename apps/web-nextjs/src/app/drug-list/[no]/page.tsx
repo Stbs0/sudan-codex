@@ -1,20 +1,14 @@
 import { DrugDescriptions } from "@/components/drugInfo/drug-descriptions";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-
 import BackBtn from "@/components/drugInfo/back-btn";
 import DrugInfoC from "@/components/drugInfo/drug-info";
+import { generateDrugJsonLd } from "@/lib/json-ld";
+import { getDrugByNo } from "@/services/server/getDrugs";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { generateDrugJsonLd } from "@/lib/json-ld";
-import { getAllDrugs, getDrugByNo } from "@/services/server/getDrugs";
 
-export async function generateStaticParams() {
-  const drugs = await getAllDrugs();
-  return drugs.map((drug) => ({
-    no: drug.no,
-  }));
-}
+export const revalidate = false;
 
 export async function generateMetadata({
   params,
@@ -64,7 +58,6 @@ export default async function DrugInfoPage({
   const { no } = await params;
   const drug = await getDrugByNo(no);
 
-  // TODO: add redirect to 404 page
   if (!drug) notFound();
 
   const jsonLd = generateDrugJsonLd(drug);

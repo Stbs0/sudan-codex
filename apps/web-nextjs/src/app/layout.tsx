@@ -8,8 +8,6 @@ import { PHProvider } from "@/providers/PHProvider";
 import TanstackQueryProvider from "@/providers/query-client";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import "./globals.css";
@@ -103,8 +101,6 @@ export default function RootLayout({
             </ThemeProvider>
           </TanstackQueryProvider>
         </PHProvider>
-        <SpeedInsights />
-        <Analytics />
       </body>
     </html>
   );
