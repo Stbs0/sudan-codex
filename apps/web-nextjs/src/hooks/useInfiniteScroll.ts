@@ -1,7 +1,7 @@
 "use client";
 import { DrugFilterState, useSearchDrug } from "@/hooks/store/useSearch";
 import { DrugWithSlugs } from "@/lib/types";
-import { FetchedDrugs } from "@/services/server/getInitialInfiniteDrugs";
+import type { FetchedDrugs } from "@/services/server/getInitialInfiniteDrugs";
 import { infiniteQueryOptions, useInfiniteQuery } from "@tanstack/react-query";
 interface InfiniteQueryType {
   data: DrugWithSlugs[];

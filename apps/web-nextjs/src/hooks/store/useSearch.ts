@@ -1,5 +1,5 @@
 "use client";
-import { DrugWithSlugs } from "@/lib/types";
+import type { DrugWithSlugs } from "@/lib/types";
 import { create } from "zustand";
 
 export type SearchDrugType = keyof Pick<

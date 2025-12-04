@@ -1,5 +1,5 @@
 "use client";
-import { FetchedDrugs } from "@/services/server/getInitialInfiniteDrugs";
+import type { FetchedDrugs } from "@/services/server/getInitialInfiniteDrugs";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useInfiniteServerScroll } from "../../hooks/useInfiniteScroll";
 import { Skeleton } from "../ui/skeleton";
