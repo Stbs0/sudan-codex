@@ -1,11 +1,12 @@
 "use client";
-import { Drug } from "@/lib/types";
+import { DrugWithSlugs } from "@/lib/types";
 import { create } from "zustand";
 
-export type SearchDrugType = keyof Omit<
-  Drug,
-  "packSize" | "strength" | "no" | "dosageFormName"
+export type SearchDrugType = keyof Pick<
+  DrugWithSlugs,
+  "agentName" | "brandName" | "companyName" | "genericName" | "countryOfOrigin"
 >;
+
 export interface DrugFilterState {
   search: string;
   setSearch: (value: string) => void;

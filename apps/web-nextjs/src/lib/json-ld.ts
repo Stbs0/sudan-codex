@@ -6,7 +6,7 @@ import type {
   WebSite,
   WithContext,
 } from "schema-dts";
-import type { Drug as LocalDrugType } from "./types";
+import type { DrugWithSlugs as LocalDrugType } from "./types";
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://www.sudancodex.app";

@@ -4,7 +4,6 @@ import {
   SearchDrugType,
   useSearchDrug,
 } from "@/hooks/store/useSearch";
-import { Drug } from "@/lib/types";
 import { Input } from "../ui/input";
 import {
   Select,
@@ -63,7 +62,7 @@ function SearchDrug() {
   );
 }
 
-const options: { value: keyof Drug; label: string }[] = [
+const options: { value: SearchDrugType; label: string }[] = [
   {
     value: "brandName",
     label: "Brand Name",

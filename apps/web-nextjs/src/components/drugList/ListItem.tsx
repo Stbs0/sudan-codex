@@ -1,11 +1,11 @@
-import type { Drug } from "@/lib/types";
+import type { DrugWithSlugs } from "@/lib/types";
 import { useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { Badge } from "../ui/badge";
 import { Card, CardContent } from "../ui/card";
 
 type Props = {
-  drug: Drug;
+  drug: DrugWithSlugs;
   isFirst?: boolean;
 };
 export const ListItem = ({ drug, isFirst }: Props) => {

@@ -1,10 +1,10 @@
 import type { MetadataRoute } from "next";
 
+import { DrugWithSlugs } from "@/lib/types";
 import fs from "fs/promises";
 import path from "path";
-import { Drug } from "@/lib/types";
 
-const getAllDrugs = async (): Promise<Drug[]> => {
+const getAllDrugs = async (): Promise<DrugWithSlugs[]> => {
   const filePath = path.join(process.cwd(), "public/data/drugData.json");
   return JSON.parse(await fs.readFile(filePath, "utf8"));
 };

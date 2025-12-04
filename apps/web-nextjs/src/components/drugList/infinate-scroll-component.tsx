@@ -1,10 +1,9 @@
 "use client";
+import { FetchedDrugs } from "@/services/server/getInitialInfiniteDrugs";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useInfiniteServerScroll } from "../../hooks/useInfiniteScroll";
 import { Skeleton } from "../ui/skeleton";
 import { ListItem } from "./ListItem";
-import { Drug } from "@/lib/types";
-import { FetchedDrugs } from "@/services/server/getInitialInfiniteDrugs";
 
 type Props = { initialDrugs: FetchedDrugs };
 function InfiniteScrollComponent({ initialDrugs }: Props) {
