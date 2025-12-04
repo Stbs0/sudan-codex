@@ -1,11 +1,11 @@
-import { Drug } from "@/lib/types";
+import { DrugWithSlugs } from "@/lib/types";
 import { CardTitle } from "../ui/card";
 import DrugPropertyDescription from "./DrugPropertyDescription";
 import { paths } from "@/config/paths";
 import { slugify } from "@/lib/utils";
 
 interface DrugCardProps {
-  drug: Drug;
+  drug: DrugWithSlugs;
 }
 
 export function DrugDescriptions({ drug }: DrugCardProps) {

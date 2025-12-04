@@ -16,7 +16,13 @@ export type Drug = {
   countryOfOrigin: string;
   agentName: string;
 };
-export type DrugProperty = Drug[keyof Drug];
+
+export type DrugWithSlugs = Drug & {
+  genericNameSlug: string;
+  companyNameSlug: string;
+  agentNameSlug: string;
+  countryOfOriginSlug: string;
+};
 
 export type SaveUserReturnTypes = {
   uid: string;

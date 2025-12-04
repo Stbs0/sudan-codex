@@ -1,4 +1,4 @@
-import { Drug } from "@/lib/types";
+import { DrugWithSlugs } from "@/lib/types";
 import "server-only";
 
 export async function getDrugs(page = 1, q?: string) {
@@ -12,8 +12,8 @@ export async function getDrugs(page = 1, q?: string) {
   }
   const url = new URL(`${baseUrl}/drugs`);
 
-  url.searchParams.set("page", page.toString());
   if (q) url.searchParams.set("q", q);
+  url.searchParams.set("page", page.toString());
   const res = await fetch(url);
   if (!res.ok) {
     throw new Error(`Failed to fetch drugs: ${res.status} ${res.statusText}`);
@@ -22,6 +22,6 @@ export async function getDrugs(page = 1, q?: string) {
   return data;
 }
 export type FetchedDrugs = {
-  data: Drug[];
-  nextCursor: number | null;
+  data: DrugWithSlugs[];
+  nextPage: number | null;
 };
