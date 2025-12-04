@@ -1,9 +1,9 @@
-import { Drug } from "@/lib/types";
+import { DrugWithSlugs } from "@/lib/types";
 import { CardTitle } from "../ui/card";
 import DrugPropertyDescription from "./DrugPropertyDescription";
 
 interface DrugCardProps {
-  drug: Drug;
+  drug: DrugWithSlugs;
 }
 
 export function DrugDescriptions({ drug }: DrugCardProps) {
