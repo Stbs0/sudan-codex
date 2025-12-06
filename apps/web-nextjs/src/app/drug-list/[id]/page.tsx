@@ -13,50 +13,50 @@ export const revalidate = false;
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ no: string }>;
+  params: Promise<{ id: string }>;
 }): Promise<Metadata> {
-  const { no } = await params;
-  const drug = await getDrugByNo(no);
+  const { id } = await params;
+  const drug = await getDrugByNo(Number(id));
 
   if (!drug) {
     return {
       title: "Drug Not Found | Drug Directory",
       description: "The requested drug could not be found in our database.",
       alternates: {
-        canonical: `/drug-list/${no}`,
+        canonical: `/drug-list/${id}`,
       },
       robots: "noindex",
     };
   }
 
-  const { brandName, genericName, agentName, companyName, countryOfOrigin } =
+  const { brand_name, generic_name, agent_name, company_name, country_name } =
     drug;
 
   return {
-    title: `${brandName} – Full Drug Information & Details`,
-    description: `${brandName} (${genericName}) from ${companyName}. Imported by ${agentName}. Origin: ${countryOfOrigin}. View full drug details, strengths, and indications.`,
+    title: `${brand_name} – Full Drug Information & Details`,
+    description: `${brand_name} (${generic_name}) from ${company_name}. Imported by ${agent_name}. Origin: ${country_name}. View full drug details, strengths, and indications.`,
     alternates: {
-      canonical: `/drug-list/${no}`,
+      canonical: `/drug-list/${id}`,
     },
     openGraph: {
-      title: `${brandName} – Drug Details`,
-      description: `${brandName} (${genericName}) complete information including company, agent, and origin.`,
+      title: `${brand_name} – Drug Details`,
+      description: `${brand_name} (${generic_name}) complete information including company, agent, and origin.`,
       type: "article",
     },
     twitter: {
       card: "summary",
-      title: `${brandName} – Drug Details`,
-      description: `${brandName} (${genericName}) full drug information.`,
+      title: `${brand_name} – Drug Details`,
+      description: `${brand_name} (${generic_name}) full drug information.`,
     },
   };
 }
 export default async function DrugInfoPage({
   params,
 }: {
-  params: Promise<{ no: string }>;
+  params: Promise<{ id: string }>;
 }) {
-  const { no } = await params;
-  const drug = await getDrugByNo(no);
+  const { id } = await params;
+  const drug = await getDrugByNo(Number(id));
 
   if (!drug) notFound();
 
@@ -73,7 +73,7 @@ export default async function DrugInfoPage({
       <div className='mb-6 flex items-center gap-3'>
         <BackBtn />
         <h1 className='text-xl font-semibold tracking-tight'>
-          {drug.brandName}
+          {drug.brand_name}
         </h1>
       </div>
 

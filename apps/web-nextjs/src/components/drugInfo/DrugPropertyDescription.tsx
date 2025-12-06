@@ -1,5 +1,4 @@
-import { paths } from "@/config/paths";
-import { Drug, DrugProperty } from "@/lib/types";
+import { Drug } from "@/db/schema";
 import { Route } from "next";
 import Link from "next/link";
 

@@ -1,10 +1,10 @@
 "use client";
-import type { DrugWithSlugs } from "@/lib/types";
+import { Drug } from "@/db/schema";
 import { create } from "zustand";
 
 export type SearchDrugType = keyof Pick<
-  DrugWithSlugs,
-  "agentName" | "brandName" | "companyName" | "genericName" | "countryOfOrigin"
+  Drug,
+  "agent_name" | "brand_name" | "company_name" | "generic_name" | "country_name"
 >;
 
 export interface DrugFilterState {

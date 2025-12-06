@@ -1,19 +1,25 @@
 "use server";
 import "server-only";
 
-import { client } from "@/lib/tursoDB";
-import { DrugWithSlugs } from "@/lib/types";
+import db from "@/db";
+import { eq } from "drizzle-orm";
 import { cache } from "react";
 
-export const getDrugByNo = cache(
-  async (no: string): Promise<DrugWithSlugs | null> => {
-    // You can even reuse the first function to keep caching efficient
-    const data = await client.execute({
-      sql: "SELECT * FROM drugs WHERE no = ?",
-      args: [no],
-    });
-    if (data.rows.length === 0) return null;
+export type DrugWithRelations = NonNullable<
+  Awaited<ReturnType<typeof getDrugByNo>>
+>;
 
-    return data.rows[0] as unknown as DrugWithSlugs;
-  }
-);
+export const getDrugByNo = cache(async (id: number) => {
+  // You can even reuse the first function to keep caching efficient
+  const data = await db.query.drugsTable.findFirst({
+    where: (table) => eq(table.id, id),
+    with: {
+      agent: true,
+      company: true,
+      generic: true,
+    },
+  });
+
+  if (!data) return null;
+  return data;
+});
