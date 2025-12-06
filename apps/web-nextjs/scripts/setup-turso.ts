@@ -93,6 +93,7 @@ async function seedData(
   ].map((name) => ({ name }));
   const companies = [
     ...new Map<string, { name: string; slug: string }>(
+      // @ts-expect-error ignore
       data
         .map((d) => [
           d.company_name,
@@ -103,6 +104,7 @@ async function seedData(
   ];
   const agents = [
     ...new Map<string, { name: string; slug: string }>(
+      // @ts-expect-error ignore
       data
         .map((d) => [
           d.agent_name,
@@ -113,6 +115,7 @@ async function seedData(
   ];
   const generics = [
     ...new Map<string, { name: string; slug: string }>(
+      // @ts-expect-error ignore
       data
         .map((d) => [
           d.generic_name,
