@@ -64,23 +64,23 @@ function SearchDrug() {
 
 const options: { value: SearchDrugType; label: string }[] = [
   {
-    value: "brandName",
+    value: "brand_name",
     label: "Brand Name",
   },
   {
-    value: "agentName",
+    value: "agent_name",
     label: "Agent Name",
   },
   {
-    value: "companyName",
+    value: "company_name",
     label: "Company Name",
   },
   {
-    value: "genericName",
+    value: "generic_name",
     label: "Generic Name",
   },
   {
-    value: "countryOfOrigin",
+    value: "country_name",
     label: "Country of Origin",
   },
 ];

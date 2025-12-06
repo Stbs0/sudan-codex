@@ -1,0 +1,3052 @@
+[
+  {
+    "name": "Remedica Ltd.",
+    "slug": "remedica-ltd",
+    "numberOfBrandNames": 98
+  },
+  {
+    "name": "Dar Al Dawa Development & Investment Co. Ltd.",
+    "slug": "dar-al-dawa-development-investment-co-ltd",
+    "numberOfBrandNames": 62
+  },
+  {
+    "name": "Gulf Pharmaceutical Industries (JULPHAR)",
+    "slug": "gulf-pharmaceutical-industries-julphar",
+    "numberOfBrandNames": 60
+  },
+  {
+    "name": "Hikma Pharmaceuticals",
+    "slug": "hikma-pharmaceuticals",
+    "numberOfBrandNames": 51
+  },
+  {
+    "name": "Micro Labs Ltd",
+    "slug": "micro-labs-ltd",
+    "numberOfBrandNames": 48
+  },
+  {
+    "name": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+    "slug": "egyptian-international-pharmaceutical-industries-co-eipico",
+    "numberOfBrandNames": 47
+  },
+  {
+    "name": "Cadila Healthcare Ltd.",
+    "slug": "cadila-healthcare-ltd",
+    "numberOfBrandNames": 46
+  },
+  {
+    "name": "Jamjoom Pharmaceuticals Company",
+    "slug": "jamjoom-pharmaceuticals-company",
+    "numberOfBrandNames": 42
+  },
+  {
+    "name": "Amman Pharmaceutical Industries Co.",
+    "slug": "amman-pharmaceutical-industries-co",
+    "numberOfBrandNames": 41
+  },
+  {
+    "name": "Pharaonia Pharmaceuticals (Pharo Pharma)",
+    "slug": "pharaonia-pharmaceuticals-pharo-pharma",
+    "numberOfBrandNames": 39
+  },
+  {
+    "name": "United Pharmaceuticals",
+    "slug": "united-pharmaceuticals",
+    "numberOfBrandNames": 38
+  },
+  {
+    "name": "Sun Pharmaceutical Industries Ltd.",
+    "slug": "sun-pharmaceutical-industries-ltd",
+    "numberOfBrandNames": 38
+  },
+  {
+    "name": "Cipla Ltd",
+    "slug": "cipla-ltd",
+    "numberOfBrandNames": 37
+  },
+  {
+    "name": "CCL Pharmaceuticals (Pvt.) Ltd.",
+    "slug": "ccl-pharmaceuticals-pvt-ltd",
+    "numberOfBrandNames": 37
+  },
+  {
+    "name": "Ram Pharmaceutical Industries Co. Ltd",
+    "slug": "ram-pharmaceutical-industries-co-ltd",
+    "numberOfBrandNames": 34
+  },
+  {
+    "name": "Tabuk Pharmaceutical Manufacturing Co.",
+    "slug": "tabuk-pharmaceutical-manufacturing-co",
+    "numberOfBrandNames": 33
+  },
+  {
+    "name": "Getz Pharma (PVT )Limited",
+    "slug": "getz-pharma-pvt-limited",
+    "numberOfBrandNames": 32
+  },
+  {
+    "name": "Pharco Pharmaceuticals",
+    "slug": "pharco-pharmaceuticals",
+    "numberOfBrandNames": 31
+  },
+  {
+    "name": "Marcyrl Pharmaceutical Industries",
+    "slug": "marcyrl-pharmaceutical-industries",
+    "numberOfBrandNames": 31
+  },
+  {
+    "name": "Atco Laboratories Ltd",
+    "slug": "atco-laboratories-ltd",
+    "numberOfBrandNames": 31
+  },
+  {
+    "name": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+    "slug": "saudi-pharmaceutical-industries-medical-appliance-corporation-spimaco",
+    "numberOfBrandNames": 29
+  },
+  {
+    "name": "Middle East Pharmaceutical Chemical Industries & Medical Appliances Co",
+    "slug": "middle-east-pharmaceutical-chemical-industries-medical-appliances-co",
+    "numberOfBrandNames": 28
+  },
+  {
+    "name": "Eva Pharma for Pharmaceuticals and Medical Appliances S.A.E",
+    "slug": "eva-pharma-for-pharmaceuticals-and-medical-appliances-sae",
+    "numberOfBrandNames": 28
+  },
+  {
+    "name": "Fresenius Kabi Oncology limited",
+    "slug": "fresenius-kabi-oncology-limited",
+    "numberOfBrandNames": 26
+  },
+  {
+    "name": "Medpharma Co. LLC",
+    "slug": "medpharma-co-llc",
+    "numberOfBrandNames": 26
+  },
+  {
+    "name": "Pharma International Company",
+    "slug": "pharma-international-company",
+    "numberOfBrandNames": 24
+  },
+  {
+    "name": "Chemical Industries Development Co. (CID)",
+    "slug": "chemical-industries-development-co-cid",
+    "numberOfBrandNames": 24
+  },
+  {
+    "name": "Chemipharm Pharmaceutical Industries",
+    "slug": "chemipharm-pharmaceutical-industries",
+    "numberOfBrandNames": 24
+  },
+  {
+    "name": "Intas Pharmaceuticals Ltd",
+    "slug": "intas-pharmaceuticals-ltd",
+    "numberOfBrandNames": 23
+  },
+  {
+    "name": "Lincoln Pharmaceuticals Ltd.",
+    "slug": "lincoln-pharmaceuticals-ltd",
+    "numberOfBrandNames": 23
+  },
+  {
+    "name": "Medochemie Ltd. (Factory B & Ampule Injectable Facility)",
+    "slug": "medochemie-ltd-factory-b-ampule-injectable-facility",
+    "numberOfBrandNames": 23
+  },
+  {
+    "name": "Pharmaceutical Solution Industry Ltd",
+    "slug": "pharmaceutical-solution-industry-ltd",
+    "numberOfBrandNames": 22
+  },
+  {
+    "name": "Bliss GVS Pharma Ltd",
+    "slug": "bliss-gvs-pharma-ltd",
+    "numberOfBrandNames": 22
+  },
+  {
+    "name": "Medico Labs for Pharmaceutical Product",
+    "slug": "medico-labs-for-pharmaceutical-product",
+    "numberOfBrandNames": 22
+  },
+  {
+    "name": "MS Pharma",
+    "slug": "ms-pharma",
+    "numberOfBrandNames": 22
+  },
+  {
+    "name": "Kahira Pharmaceutical & Chemical Industries",
+    "slug": "kahira-pharmaceutical-chemical-industries",
+    "numberOfBrandNames": 22
+  },
+  {
+    "name": "Glenmark Pharmaceuticals Ltd",
+    "slug": "glenmark-pharmaceuticals-ltd",
+    "numberOfBrandNames": 22
+  },
+  {
+    "name": "Hayat Pharmaceutical Industries.Co.PLC",
+    "slug": "hayat-pharmaceutical-industriescoplc",
+    "numberOfBrandNames": 19
+  },
+  {
+    "name": "Karnataka Antibiotics & Pharmaceuticals Limited",
+    "slug": "karnataka-antibiotics-pharmaceuticals-limited",
+    "numberOfBrandNames": 19
+  },
+  {
+    "name": "Jordanian Pharmaceutical Manufacturing (JPM)",
+    "slug": "jordanian-pharmaceutical-manufacturing-jpm",
+    "numberOfBrandNames": 19
+  },
+  {
+    "name": "Zafa Pharmaceutical Laboratories (Private) Limited",
+    "slug": "zafa-pharmaceutical-laboratories-private-limited",
+    "numberOfBrandNames": 19
+  },
+  {
+    "name": "Highnoon Laboratories Ltd.",
+    "slug": "highnoon-laboratories-ltd",
+    "numberOfBrandNames": 19
+  },
+  {
+    "name": "Alcon - Couvreur n.v",
+    "slug": "alcon-couvreur-nv",
+    "numberOfBrandNames": 19
+  },
+  {
+    "name": "Aristo pharmaceuticals PVT Ltd",
+    "slug": "aristo-pharmaceuticals-pvt-ltd",
+    "numberOfBrandNames": 18
+  },
+  {
+    "name": "Medical Union Pharmaceutical Co.",
+    "slug": "medical-union-pharmaceutical-co",
+    "numberOfBrandNames": 18
+  },
+  {
+    "name": "Pharco B International",
+    "slug": "pharco-b-international",
+    "numberOfBrandNames": 18
+  },
+  {
+    "name": "Laboratoire Renaudin",
+    "slug": "laboratoire-renaudin",
+    "numberOfBrandNames": 18
+  },
+  {
+    "name": "Universal Pharmaceutical Industries Co.(Unipharma)",
+    "slug": "universal-pharmaceutical-industries-counipharma",
+    "numberOfBrandNames": 18
+  },
+  {
+    "name": "Pharmaline S.A.L",
+    "slug": "pharmaline-sal",
+    "numberOfBrandNames": 18
+  },
+  {
+    "name": "United Pharmaceuticals - Jordan",
+    "slug": "united-pharmaceuticals-jordan",
+    "numberOfBrandNames": 18
+  },
+  {
+    "name": "Global Napi Pharmacetuticals",
+    "slug": "global-napi-pharmacetuticals",
+    "numberOfBrandNames": 18
+  },
+  {
+    "name": "Troikaa Pharmaceuticals Limited",
+    "slug": "troikaa-pharmaceuticals-limited",
+    "numberOfBrandNames": 18
+  },
+  {
+    "name": "Sandoz GmbH",
+    "slug": "sandoz-gmbh",
+    "numberOfBrandNames": 18
+  },
+  {
+    "name": "Square Pharmaceuticals Ltd",
+    "slug": "square-pharmaceuticals-ltd",
+    "numberOfBrandNames": 17
+  },
+  {
+    "name": "Lyka Labs. Ltd. Anklishwar, Gujarat",
+    "slug": "lyka-labs-ltd-anklishwar-gujarat",
+    "numberOfBrandNames": 17
+  },
+  {
+    "name": "Torrent Pharmaceuticals Ltd-",
+    "slug": "torrent-pharmaceuticals-ltd",
+    "numberOfBrandNames": 16
+  },
+  {
+    "name": "Coral Laboratories Ltd. (Dehradun)",
+    "slug": "coral-laboratories-ltd-dehradun",
+    "numberOfBrandNames": 16
+  },
+  {
+    "name": "Troikaa Pharmaceuticals Ltd.",
+    "slug": "troikaa-pharmaceuticals-ltd",
+    "numberOfBrandNames": 16
+  },
+  {
+    "name": "Qatar Pharma For Pharmaceutical Industries (Qatar Pharma )",
+    "slug": "qatar-pharma-for-pharmaceutical-industries-qatar-pharma",
+    "numberOfBrandNames": 15
+  },
+  {
+    "name": "KRKA,d.d.,Novo mesto",
+    "slug": "krkaddnovo-mesto",
+    "numberOfBrandNames": 15
+  },
+  {
+    "name": "Globalpharma Co.L.L.C",
+    "slug": "globalpharma-collc",
+    "numberOfBrandNames": 15
+  },
+  {
+    "name": "Hilton Pharma (Pvt) Ltd",
+    "slug": "hilton-pharma-pvt-ltd",
+    "numberOfBrandNames": 15
+  },
+  {
+    "name": "Egypt Otsuka Pharmaceutical Co. S.A.E",
+    "slug": "egypt-otsuka-pharmaceutical-co-sae",
+    "numberOfBrandNames": 14
+  },
+  {
+    "name": "Surge Laboratories (PVT) Ltd",
+    "slug": "surge-laboratories-pvt-ltd",
+    "numberOfBrandNames": 14
+  },
+  {
+    "name": "Alexandria Co.For Pharmaceuticals & Chemical Industries",
+    "slug": "alexandria-cofor-pharmaceuticals-chemical-industries",
+    "numberOfBrandNames": 14
+  },
+  {
+    "name": "Novartis Pharma S.P.A",
+    "slug": "novartis-pharma-spa",
+    "numberOfBrandNames": 14
+  },
+  {
+    "name": "Delta Pharma S.A.E",
+    "slug": "delta-pharma-sae",
+    "numberOfBrandNames": 14
+  },
+  {
+    "name": "Cadila Healthcare Limited (Moraiya site)",
+    "slug": "cadila-healthcare-limited-moraiya-site",
+    "numberOfBrandNames": 14
+  },
+  {
+    "name": "Macter International (Pvt) Ltd",
+    "slug": "macter-international-pvt-ltd",
+    "numberOfBrandNames": 14
+  },
+  {
+    "name": "Novo Nordisk A/S",
+    "slug": "novo-nordisk-as",
+    "numberOfBrandNames": 13
+  },
+  {
+    "name": "The Arab Drug Company",
+    "slug": "the-arab-drug-company",
+    "numberOfBrandNames": 13
+  },
+  {
+    "name": "Admac Lifesciences",
+    "slug": "admac-lifesciences",
+    "numberOfBrandNames": 13
+  },
+  {
+    "name": "Sanofi Egypt s.a.e",
+    "slug": "sanofi-egypt-sae",
+    "numberOfBrandNames": 13
+  },
+  {
+    "name": "Astrazeneca AB",
+    "slug": "astrazeneca-ab",
+    "numberOfBrandNames": 13
+  },
+  {
+    "name": "The Nile Co. For Pharmaceutical & Chemical Industries",
+    "slug": "the-nile-co-for-pharmaceutical-chemical-industries",
+    "numberOfBrandNames": 13
+  },
+  {
+    "name": "Pharmasyr Co.",
+    "slug": "pharmasyr-co",
+    "numberOfBrandNames": 13
+  },
+  {
+    "name": "H.Lundbeck A/S",
+    "slug": "hlundbeck-as",
+    "numberOfBrandNames": 13
+  },
+  {
+    "name": "N.V Organon",
+    "slug": "nv-organon",
+    "numberOfBrandNames": 13
+  },
+  {
+    "name": "Kilitch Drugs (India) Ltd",
+    "slug": "kilitch-drugs-india-ltd",
+    "numberOfBrandNames": 13
+  },
+  {
+    "name": "European Egyptian Pharmaceutical Industries Co",
+    "slug": "european-egyptian-pharmaceutical-industries-co",
+    "numberOfBrandNames": 13
+  },
+  {
+    "name": "Novartis Pharma Stein AG",
+    "slug": "novartis-pharma-stein-ag",
+    "numberOfBrandNames": 12
+  },
+  {
+    "name": "Sigma Pharmaceutical Industries",
+    "slug": "sigma-pharmaceutical-industries",
+    "numberOfBrandNames": 12
+  },
+  {
+    "name": "Aurobindo Pharma Limited, Unit VI Block D",
+    "slug": "aurobindo-pharma-limited-unit-vi-block-d",
+    "numberOfBrandNames": 12
+  },
+  {
+    "name": "Steril -Gene Life Sciences( P) Ltd.,",
+    "slug": "steril-gene-life-sciences-p-ltd",
+    "numberOfBrandNames": 12
+  },
+  {
+    "name": "Neon Laboratories Limited",
+    "slug": "neon-laboratories-limited",
+    "numberOfBrandNames": 12
+  },
+  {
+    "name": "Cilag Ltd",
+    "slug": "cilag-ltd",
+    "numberOfBrandNames": 12
+  },
+  {
+    "name": "The Arab Pharmaceutical Manufacturing PSC -(Sult)",
+    "slug": "the-arab-pharmaceutical-manufacturing-psc-sult",
+    "numberOfBrandNames": 11
+  },
+  {
+    "name": "South Egypt Drug Industries Co (Sedico)",
+    "slug": "south-egypt-drug-industries-co-sedico",
+    "numberOfBrandNames": 11
+  },
+  {
+    "name": "Star Laboratories (Pvt) Ltd",
+    "slug": "star-laboratories-pvt-ltd",
+    "numberOfBrandNames": 11
+  },
+  {
+    "name": "Amriya Pharmaceutical Industries Co.",
+    "slug": "amriya-pharmaceutical-industries-co",
+    "numberOfBrandNames": 11
+  },
+  {
+    "name": "The Jordanian Pharmaceutical Manufacturing Co. (JPM)",
+    "slug": "the-jordanian-pharmaceutical-manufacturing-co-jpm",
+    "numberOfBrandNames": 11
+  },
+  {
+    "name": "Macleods Pharmaceutical Ltd(Block N-2)",
+    "slug": "macleods-pharmaceutical-ltdblock-n-2",
+    "numberOfBrandNames": 11
+  },
+  {
+    "name": "Sanofi Winthrop Industrie",
+    "slug": "sanofi-winthrop-industrie",
+    "numberOfBrandNames": 11
+  },
+  {
+    "name": "Neo Pharma",
+    "slug": "neo-pharma",
+    "numberOfBrandNames": 11
+  },
+  {
+    "name": "Alfares Pharmaceuticals",
+    "slug": "alfares-pharmaceuticals",
+    "numberOfBrandNames": 11
+  },
+  {
+    "name": "Misr Co. For Pharmaceutical Industries.",
+    "slug": "misr-co-for-pharmaceutical-industries",
+    "numberOfBrandNames": 11
+  },
+  {
+    "name": "Aspen Bad Oldesloe GmbH",
+    "slug": "aspen-bad-oldesloe-gmbh",
+    "numberOfBrandNames": 11
+  },
+  {
+    "name": "Ipca Laboratories Ltd",
+    "slug": "ipca-laboratories-ltd",
+    "numberOfBrandNames": 11
+  },
+  {
+    "name": "Venus Remdies Limited",
+    "slug": "venus-remdies-limited",
+    "numberOfBrandNames": 11
+  },
+  {
+    "name": "Siegfried Barbera, S.L.",
+    "slug": "siegfried-barbera-sl",
+    "numberOfBrandNames": 11
+  },
+  {
+    "name": "The Tenth of Ramadan for Pharmaceutical Industries and Diagnostic Reagents S.A.E (Rameda)",
+    "slug": "the-tenth-of-ramadan-for-pharmaceutical-industries-and-diagnostic-reagents-sae-rameda",
+    "numberOfBrandNames": 11
+  },
+  {
+    "name": "Taha Pharma",
+    "slug": "taha-pharma",
+    "numberOfBrandNames": 10
+  },
+  {
+    "name": "Glaxo Smithkline(GSK) -(S.A.E)",
+    "slug": "glaxo-smithklinegsk-sae",
+    "numberOfBrandNames": 10
+  },
+  {
+    "name": "Medical And Cosmetics Products Company (Riyadh Pharma)",
+    "slug": "medical-and-cosmetics-products-company-riyadh-pharma",
+    "numberOfBrandNames": 10
+  },
+  {
+    "name": "Adelco Chromatourgia Athinon E.Colocotronis Bros S.A.",
+    "slug": "adelco-chromatourgia-athinon-ecolocotronis-bros-sa",
+    "numberOfBrandNames": 10
+  },
+  {
+    "name": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)",
+    "slug": "the-arab-pharmaceutical-manufacturing-psc-sahab",
+    "numberOfBrandNames": 10
+  },
+  {
+    "name": "Orchidia Pharmaceutical Industries",
+    "slug": "orchidia-pharmaceutical-industries",
+    "numberOfBrandNames": 10
+  },
+  {
+    "name": "Future Pharmaceutical Industries",
+    "slug": "future-pharmaceutical-industries",
+    "numberOfBrandNames": 10
+  },
+  {
+    "name": "Philadelphia Pharmaceuticals",
+    "slug": "philadelphia-pharmaceuticals",
+    "numberOfBrandNames": 10
+  },
+  {
+    "name": "Fourrts (India) Laboratories Pvt. Ltd.",
+    "slug": "fourrts-india-laboratories-pvt-ltd",
+    "numberOfBrandNames": 10
+  },
+  {
+    "name": "Ferozsons Laboratory Ltd",
+    "slug": "ferozsons-laboratory-ltd",
+    "numberOfBrandNames": 10
+  },
+  {
+    "name": "Unimed",
+    "slug": "unimed",
+    "numberOfBrandNames": 10
+  },
+  {
+    "name": "Cadila Healhcare Limited",
+    "slug": "cadila-healhcare-limited",
+    "numberOfBrandNames": 10
+  },
+  {
+    "name": "Janssen Pharmaceutica NV",
+    "slug": "janssen-pharmaceutica-nv",
+    "numberOfBrandNames": 10
+  },
+  {
+    "name": "Medochemie Ltd. (Factory C & AZ)",
+    "slug": "medochemie-ltd-factory-c-az",
+    "numberOfBrandNames": 9
+  },
+  {
+    "name": "L.B.S Laboratory Limited Partnership",
+    "slug": "lbs-laboratory-limited-partnership",
+    "numberOfBrandNames": 9
+  },
+  {
+    "name": "Verve Human Care Laboratories",
+    "slug": "verve-human-care-laboratories",
+    "numberOfBrandNames": 9
+  },
+  {
+    "name": "Oman Pharmaceutical Products Co.L.L.C.",
+    "slug": "oman-pharmaceutical-products-collc",
+    "numberOfBrandNames": 9
+  },
+  {
+    "name": "Allied Pharmaceutical Industries",
+    "slug": "allied-pharmaceutical-industries",
+    "numberOfBrandNames": 9
+  },
+  {
+    "name": "Nectar lifesciences Ltd.",
+    "slug": "nectar-lifesciences-ltd",
+    "numberOfBrandNames": 9
+  },
+  {
+    "name": "Novartis Pharma. AG Basle - Switzerland",
+    "slug": "novartis-pharma-ag-basle-switzerland",
+    "numberOfBrandNames": 9
+  },
+  {
+    "name": "Cipla Ltd. - Goa Unit (I, II, III, IV)",
+    "slug": "cipla-ltd-goa-unit-i-ii-iii-iv",
+    "numberOfBrandNames": 9
+  },
+  {
+    "name": "Kopran Ltd",
+    "slug": "kopran-ltd",
+    "numberOfBrandNames": 9
+  },
+  {
+    "name": "Genepharm S.A",
+    "slug": "genepharm-sa",
+    "numberOfBrandNames": 9
+  },
+  {
+    "name": "Jordan River Pharmaceutical Industries - Amman",
+    "slug": "jordan-river-pharmaceutical-industries-amman",
+    "numberOfBrandNames": 9
+  },
+  {
+    "name": "Les Laboratiores Servier Industrie",
+    "slug": "les-laboratiores-servier-industrie",
+    "numberOfBrandNames": 9
+  },
+  {
+    "name": "Ferring GmbH",
+    "slug": "ferring-gmbh",
+    "numberOfBrandNames": 9
+  },
+  {
+    "name": "Bal Pharma Ltd",
+    "slug": "bal-pharma-ltd",
+    "numberOfBrandNames": 9
+  },
+  {
+    "name": "MSN Laboratories Private LTD (Formulations Division)",
+    "slug": "msn-laboratories-private-ltd-formulations-division",
+    "numberOfBrandNames": 9
+  },
+  {
+    "name": "Les Laboratoires Medis",
+    "slug": "les-laboratoires-medis",
+    "numberOfBrandNames": 9
+  },
+  {
+    "name": "Sance Laboratories Pvt Ltd",
+    "slug": "sance-laboratories-pvt-ltd",
+    "numberOfBrandNames": 9
+  },
+  {
+    "name": "Euro-Med Laboratories Phil..Inc.",
+    "slug": "euro-med-laboratories-philinc",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "Ebewe Pharma Ges. m .b .h. Nfg .K G",
+    "slug": "ebewe-pharma-ges-m-b-h-nfg-k-g",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "Medley Pharmaceutical Ltd",
+    "slug": "medley-pharmaceutical-ltd",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "Memphis Co. For Pharmaceutical & Chemical Indust.",
+    "slug": "memphis-co-for-pharmaceutical-chemical-indust",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "Bell Sons & Co. (Druggists) Ltd.",
+    "slug": "bell-sons-co-druggists-ltd",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "Brookes Pharma (Pvt) Ltd",
+    "slug": "brookes-pharma-pvt-ltd",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "Sofarimex Industria Quimica e Farmaceutica S.A",
+    "slug": "sofarimex-industria-quimica-e-farmaceutica-sa",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "kingstone Pharmaceutical Factory",
+    "slug": "kingstone-pharmaceutical-factory",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "Baxter Pharmaceuticals India private Limited",
+    "slug": "baxter-pharmaceuticals-india-private-limited",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "Delpharm Huningue S.A.S",
+    "slug": "delpharm-huningue-sas",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "Alcon Cusi S.A",
+    "slug": "alcon-cusi-sa",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "Demo S.A. Pharmacutical Industry",
+    "slug": "demo-sa-pharmacutical-industry",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "Unique Pharmaceutical Labs.",
+    "slug": "unique-pharmaceutical-labs",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "Cadila Healthcare Limited Sarkhej",
+    "slug": "cadila-healthcare-limited-sarkhej",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "Pfizer Manufacturing Belgium NV",
+    "slug": "pfizer-manufacturing-belgium-nv",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "Scott-Edil Advance Research laboratories & Education Ltd",
+    "slug": "scott-edil-advance-research-laboratories-education-ltd",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "Novartis Consumer Health SA Nyon",
+    "slug": "novartis-consumer-health-sa-nyon",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "Lifepharma- Italfarmaco Group",
+    "slug": "lifepharma-italfarmaco-group",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "Rafarm S.A.,",
+    "slug": "rafarm-sa",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "Al-Taqaddom Pharmaceutical Industries",
+    "slug": "al-taqaddom-pharmaceutical-industries",
+    "numberOfBrandNames": 8
+  },
+  {
+    "name": "Greater Pharma Manufacturing Company Ltd",
+    "slug": "greater-pharma-manufacturing-company-ltd",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "Cadila Pharmaceuticals Ltd.",
+    "slug": "cadila-pharmaceuticals-ltd",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "Novo Nordisk Production SAS, 45, 45, Avenue d'Orleans, F- 28000 Chartres, France",
+    "slug": "novo-nordisk-production-sas-45-45-avenue-dorleans-f-28000-chartres-france",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "Duopharma (M) Sdn. Bhd.",
+    "slug": "duopharma-m-sdn-bhd",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "Bayer Bitterfeld GmbH",
+    "slug": "bayer-bitterfeld-gmbh",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "Bayer Weimer GmbH und Co.KG",
+    "slug": "bayer-weimer-gmbh-und-cokg",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "Hikma Pharma S.A.E",
+    "slug": "hikma-pharma-sae",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "Jerash Pharmaceuticals Ltd",
+    "slug": "jerash-pharmaceuticals-ltd",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "Glaxo Operations UK Ltd (Barnard Castle) Trading as Glaxo Wellcome Operations",
+    "slug": "glaxo-operations-uk-ltd-barnard-castle-trading-as-glaxo-wellcome-operations",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "Al-Andalous for Pharmaceutical Ind.",
+    "slug": "al-andalous-for-pharmaceutical-ind",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "Arab Company for Pharmaceuticals & Medicinal Plants",
+    "slug": "arab-company-for-pharmaceuticals-medicinal-plants",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "Novartis Saglik, Gida veTarim Urunleri San .ve Tic.A.S.",
+    "slug": "novartis-saglik-gida-vetarim-urunleri-san-ve-ticas",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "Global Pharmaceutical Industries",
+    "slug": "global-pharmaceutical-industries",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "Fareva Amboise",
+    "slug": "fareva-amboise",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "Arab Center For Pharmaceutical And Chemical Co.",
+    "slug": "arab-center-for-pharmaceutical-and-chemical-co",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "Nabiqasim Industries (Pvt) Ltd",
+    "slug": "nabiqasim-industries-pvt-ltd",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "Sanofi Aventis Deutschland GmbH",
+    "slug": "sanofi-aventis-deutschland-gmbh",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "Strides Shasun Limited",
+    "slug": "strides-shasun-limited",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "ONKO ILAC San. Ve Tic. A.S. Turkey",
+    "slug": "onko-ilac-san-ve-tic-as-turkey",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "Astra Zeneca UK Ltd",
+    "slug": "astra-zeneca-uk-ltd",
+    "numberOfBrandNames": 7
+  },
+  {
+    "name": "Napord Life Science Pvt Ltd (Neon lab)",
+    "slug": "napord-life-science-pvt-ltd-neon-lab",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "CSL Behring GmbH",
+    "slug": "csl-behring-gmbh",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "ILKO ILAC SAN.ve TIC.A.S.",
+    "slug": "ilko-ilac-sanve-ticas",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Cadila Healthcare Ltd",
+    "slug": "cadila-healthcare-ltd",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Jordan Sweden Medical & Sterilization Company (Joswe- Medical)",
+    "slug": "jordan-sweden-medical-sterilization-company-joswe-medical",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Mepro pharmaceuticals pvt. ltd.(unit-11)",
+    "slug": "mepro-pharmaceuticals-pvt-ltdunit-11",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Guilin Pharmaceuticals Co. Ltd",
+    "slug": "guilin-pharmaceuticals-co-ltd",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Aurobindo Pharma Limited, Unit XII",
+    "slug": "aurobindo-pharma-limited-unit-xii",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Kotra Pharma (M) SDN.BHD",
+    "slug": "kotra-pharma-m-sdnbhd",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Hoe Pharmaceutical Sdn Bhd",
+    "slug": "hoe-pharmaceutical-sdn-bhd",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "F. Hoffman La Roche Ltd (Basel site)",
+    "slug": "f-hoffman-la-roche-ltd-basel-site",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Y.S.P. Industries ( M ) Sdn. Bhd.",
+    "slug": "ysp-industries-m-sdn-bhd",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "October Pharma S.A.E",
+    "slug": "october-pharma-sae",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Bristol-Myers Squibb",
+    "slug": "bristol-myers-squibb",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Thymoorgan Pharmazie GmbH",
+    "slug": "thymoorgan-pharmazie-gmbh",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Copad Egypt for Trade and Pharmaceutical Industries",
+    "slug": "copad-egypt-for-trade-and-pharmaceutical-industries",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Bio Products Laboratory Limited",
+    "slug": "bio-products-laboratory-limited",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Baxter Healthcare S.A",
+    "slug": "baxter-healthcare-sa",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Savvy Pharma",
+    "slug": "savvy-pharma",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Serum Institute Of India PVT. LTD",
+    "slug": "serum-institute-of-india-pvt-ltd",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Abotte Biologicals B.V.",
+    "slug": "abotte-biologicals-bv",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Battarjee Pharmaceutical Factory",
+    "slug": "battarjee-pharmaceutical-factory",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Indus Pharma (PVT) LTD",
+    "slug": "indus-pharma-pvt-ltd",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Bilim Ilac San. ve Tic.A.S.",
+    "slug": "bilim-ilac-san-ve-ticas",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Acino Pharma AG",
+    "slug": "acino-pharma-ag",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Labesfal Laborations Almiro",
+    "slug": "labesfal-laborations-almiro",
+    "numberOfBrandNames": 6
+  },
+  {
+    "name": "Celon Laboratories Ltd",
+    "slug": "celon-laboratories-ltd",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Sigmatec Pharmaceutical Industries",
+    "slug": "sigmatec-pharmaceutical-industries",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Adwia -Egypt",
+    "slug": "adwia-egypt",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Pharmix Laboratories (Pvt) Ltd",
+    "slug": "pharmix-laboratories-pvt-ltd",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Jazeera Pharmaceutical Industries(JPI)",
+    "slug": "jazeera-pharmaceutical-industriesjpi",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Holding Company for Biological prodects and Vaccines",
+    "slug": "holding-company-for-biological-prodects-and-vaccines",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Ajanta Pharma limited",
+    "slug": "ajanta-pharma-limited",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Hikma Farmacêutica (Portugal), S.A",
+    "slug": "hikma-farmacutica-portugal-sa",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Alpha-Aleppo Pharmaceutical Industries",
+    "slug": "alpha-aleppo-pharmaceutical-industries",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Boehringer Ingelheim Pharma GmbH & Co. KG",
+    "slug": "boehringer-ingelheim-pharma-gmbh-co-kg",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "North China Pharmaceutical Group Corporation",
+    "slug": "north-china-pharmaceutical-group-corporation",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Mylan Laboratories SAS",
+    "slug": "mylan-laboratories-sas",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Kingstone Pharmaceutical Factory",
+    "slug": "kingstone-pharmaceutical-factory",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Remington Pharmaceuticals Industries Pvt. Ltd.",
+    "slug": "remington-pharmaceuticals-industries-pvt-ltd",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "IBSA Institute Biochimique SA",
+    "slug": "ibsa-institute-biochimique-sa",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Ferozsons Laboratories Ltd",
+    "slug": "ferozsons-laboratories-ltd",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Alkem Laboratories Ltd",
+    "slug": "alkem-laboratories-ltd",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Opalia Pharma",
+    "slug": "opalia-pharma",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Gulf Inject L.L.C",
+    "slug": "gulf-inject-llc",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "The Mentholatum Company Ltd",
+    "slug": "the-mentholatum-company-ltd",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Bushu PharmaceuticalsF Ltd. (Misato Plant)",
+    "slug": "bushu-pharmaceuticalsf-ltd-misato-plant",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Massoud Injectable Solution L.T.D",
+    "slug": "massoud-injectable-solution-ltd",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Medochemie Ltd. (Central Factory)",
+    "slug": "medochemie-ltd-central-factory",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Cenexi-France",
+    "slug": "cenexi-france",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Merck Healthcare KGaA",
+    "slug": "merck-healthcare-kgaa",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Amanta Healthcare Ltd.",
+    "slug": "amanta-healthcare-ltd",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Shanghai Pharmaceutical Industry Corp.(SPIC)",
+    "slug": "shanghai-pharmaceutical-industry-corpspic",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Merck Sante",
+    "slug": "merck-sante",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Albert David",
+    "slug": "albert-david",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "ROVI CONTRACT MANUFACTURING, S.L.",
+    "slug": "rovi-contract-manufacturing-sl",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "ACS Dobfar S.P.A",
+    "slug": "acs-dobfar-spa",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Diamond pharma",
+    "slug": "diamond-pharma",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Cosmas research lab ltd",
+    "slug": "cosmas-research-lab-ltd",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Swiss Parenterals Ltd.",
+    "slug": "swiss-parenterals-ltd",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "AstraZeneca Pharmaceutical Co.",
+    "slug": "astrazeneca-pharmaceutical-co",
+    "numberOfBrandNames": 5
+  },
+  {
+    "name": "Claris Injectables Limited (I)",
+    "slug": "claris-injectables-limited-i",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Astellas Ireland Co.Ltd",
+    "slug": "astellas-ireland-coltd",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "LABORATORIO PABLO CASSARA S.R.L (site 4)",
+    "slug": "laboratorio-pablo-cassara-srl-site-4",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Industrias Farmaceuticas Almirall,S.A",
+    "slug": "industrias-farmaceuticas-almirallsa",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Sanofi S.P.A",
+    "slug": "sanofi-spa",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Fresenius Kabi Austria GmbH",
+    "slug": "fresenius-kabi-austria-gmbh",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Midas Care Pharmaceuticals PVT LTD",
+    "slug": "midas-care-pharmaceuticals-pvt-ltd",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Amoun Pharmaceutical Industries Co Egypt",
+    "slug": "amoun-pharmaceutical-industries-co-egypt",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Meiji Pharma Spain, S.A.",
+    "slug": "meiji-pharma-spain-sa",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Jayson Pharmaceuticals",
+    "slug": "jayson-pharmaceuticals",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Glaxos Operations UK Limited (Barnard Castle) Trading as Glaxo Wellcome Operations",
+    "slug": "glaxos-operations-uk-limited-barnard-castle-trading-as-glaxo-wellcome-operations",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Aurobindo Pharma Limited, Unit III",
+    "slug": "aurobindo-pharma-limited-unit-iii",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Roch Diagnostics GmbH",
+    "slug": "roch-diagnostics-gmbh",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Beximco Pharmaceutical Ltd.",
+    "slug": "beximco-pharmaceutical-ltd",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Catalent Germany Eberbach GmbH",
+    "slug": "catalent-germany-eberbach-gmbh",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "LEK Pharmaceutical d.d",
+    "slug": "lek-pharmaceutical-dd",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Delpharm Milano, S.R.L",
+    "slug": "delpharm-milano-srl",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "The Arab Pharmaceutical Manufacturing PSC -(Sahab)",
+    "slug": "the-arab-pharmaceutical-manufacturing-psc-sahab",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Greenfield Pharmaceutical (JIANGSU) Co.Ltd",
+    "slug": "greenfield-pharmaceutical-jiangsu-coltd",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "COOPER S.A.",
+    "slug": "cooper-sa",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Ahlcon Parenterals limited",
+    "slug": "ahlcon-parenterals-limited",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "LEO Laboratories Ltd.",
+    "slug": "leo-laboratories-ltd",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Merck KGaA",
+    "slug": "merck-kgaa",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "FAES FARMA, S.A.",
+    "slug": "faes-farma-sa",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Avenzor For Pharmaceutical Industries",
+    "slug": "avenzor-for-pharmaceutical-industries",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Acme formulation PVT Ltd",
+    "slug": "acme-formulation-pvt-ltd",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Novartis Farmaceutica S.A.",
+    "slug": "novartis-farmaceutica-sa",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)",
+    "slug": "saudi-pharmaceutical-industries-medical-appliance-corporation-spimaco-addwaeh",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Saudi Arabian - Japanese Pharmaceutical co ltd -KSA",
+    "slug": "saudi-arabian-japanese-pharmaceutical-co-ltd-ksa",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Altan Pharmaceuticals,S.A",
+    "slug": "altan-pharmaceuticalssa",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Glenmark Pharmaceuticals Limited ( Unit 111 )",
+    "slug": "glenmark-pharmaceuticals-limited-unit-111",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "MERCK SERONO SA",
+    "slug": "merck-serono-sa",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Lusomedicamenta Sociedade Tecnica Farmaceutica S.A",
+    "slug": "lusomedicamenta-sociedade-tecnica-farmaceutica-sa",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Innothera Chouzy",
+    "slug": "innothera-chouzy",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Excella GmbH & Co. KG",
+    "slug": "excella-gmbh-co-kg",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Panpharma GmbH",
+    "slug": "panpharma-gmbh",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Glaxo Smithkline S.P.A",
+    "slug": "glaxo-smithkline-spa",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Indoco Remedies Limited",
+    "slug": "indoco-remedies-limited",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Maple Pharmaceutical",
+    "slug": "maple-pharmaceutical",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Cadila Healthcare Limited (Goa)",
+    "slug": "cadila-healthcare-limited-goa",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Macleods Pharmaceuticals Ltd",
+    "slug": "macleods-pharmaceuticals-ltd",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Menarini-Von Heyden GmbH",
+    "slug": "menarini-von-heyden-gmbh",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Laboratorio Reig Jofre, S.A.",
+    "slug": "laboratorio-reig-jofre-sa",
+    "numberOfBrandNames": 4
+  },
+  {
+    "name": "Mega Lifescience Public Company Ltd.",
+    "slug": "mega-lifescience-public-company-ltd",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Baxter Healthcare Corporation",
+    "slug": "baxter-healthcare-corporation",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Octapharma Pharmazeutika Produkionsges.m.b.H",
+    "slug": "octapharma-pharmazeutika-produkionsgesmbh",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Platinum Pharmaceuticals (PVT) Ltd",
+    "slug": "platinum-pharmaceuticals-pvt-ltd",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Cipla Kurkumbh",
+    "slug": "cipla-kurkumbh",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Pharma International Co",
+    "slug": "pharma-international-co",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "A.Menarini Manufacturing Logistics and Services S.R.L",
+    "slug": "amenarini-manufacturing-logistics-and-services-srl",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Medopharm Private Limited",
+    "slug": "medopharm-private-limited",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Jiangsu Pengyao Pharmaceutical Co. Ltd.",
+    "slug": "jiangsu-pengyao-pharmaceutical-co-ltd",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "F. Hoffmann - La Roche Ltd (Kaiseraugst site)",
+    "slug": "f-hoffmann-la-roche-ltd-kaiseraugst-site",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Bal Pharma Limited",
+    "slug": "bal-pharma-limited",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Pharmathen S. A",
+    "slug": "pharmathen-s-a",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Minapharm Pharmaceutical & chemical Industries Co.",
+    "slug": "minapharm-pharmaceutical-chemical-industries-co",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Astra Zeneca AB",
+    "slug": "astra-zeneca-ab",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Aesica Queenborough Ltd",
+    "slug": "aesica-queenborough-ltd",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Delpharm Reims",
+    "slug": "delpharm-reims",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Pfizer Manufacturing Deutschland GmbH (Freiburg Site)",
+    "slug": "pfizer-manufacturing-deutschland-gmbh-freiburg-site",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Shin Poong Pharmaceutical Co. Ltd",
+    "slug": "shin-poong-pharmaceutical-co-ltd",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "TUM EKIP ILAC A.S",
+    "slug": "tum-ekip-ilac-as",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Deef Pharmaceutical Industries",
+    "slug": "deef-pharmaceutical-industries",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Haupt Pharma Latina S.R.L",
+    "slug": "haupt-pharma-latina-srl",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Merck SL - Poligon Merck",
+    "slug": "merck-sl-poligon-merck",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Pharma 5",
+    "slug": "pharma-5",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Sun Pharmaceutical Industries Ltd",
+    "slug": "sun-pharmaceutical-industries-ltd",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Kusum Healthcare Pvt. Ltd.",
+    "slug": "kusum-healthcare-pvt-ltd",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Geofman pharmaceutical",
+    "slug": "geofman-pharmaceutical",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Allmed Middle East (S.A.E) - Egypt",
+    "slug": "allmed-middle-east-sae-egypt",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Legacy pharmaceuticals switzerland GmbH",
+    "slug": "legacy-pharmaceuticals-switzerland-gmbh",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Sichuan Huiyu Pharmaceutical Company Limited",
+    "slug": "sichuan-huiyu-pharmaceutical-company-limited",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Atlantic Pharma- Producoes Farmaceuticas",
+    "slug": "atlantic-pharma-producoes-farmaceuticas",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Zafa Pharmaceutical Laboratories (Pvt) Ltd",
+    "slug": "zafa-pharmaceutical-laboratories-pvt-ltd",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Baxter oncology -Gmbh",
+    "slug": "baxter-oncology-gmbh",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Sanofi Aventis, S.A",
+    "slug": "sanofi-aventis-sa",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "LG Chem, Ltd",
+    "slug": "lg-chem-ltd",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "LG Chem, Ltd (Iksan site)",
+    "slug": "lg-chem-ltd-iksan-site",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "GAP SA",
+    "slug": "gap-sa",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Bodene (PTY) limited",
+    "slug": "bodene-pty-limited",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Glaxo Wellcome S.A",
+    "slug": "glaxo-wellcome-sa",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Glaxo Wellcome Production",
+    "slug": "glaxo-wellcome-production",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Recipharm HC LIMITED",
+    "slug": "recipharm-hc-limited",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Novartis Pharma Produktion GmbH Wehr/Baden",
+    "slug": "novartis-pharma-produktion-gmbh-wehrbaden",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "B.Braun Melsungen AG",
+    "slug": "bbraun-melsungen-ag",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Parentral Drugs Of India",
+    "slug": "parentral-drugs-of-india",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Unique Pharmaceutical Laboratories (a division of J.B. Chemicals & Pharmaceuticals Ltd.)",
+    "slug": "unique-pharmaceutical-laboratories-a-division-of-jb-chemicals-pharmaceuticals-ltd",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Fresenius Kabi AB",
+    "slug": "fresenius-kabi-ab",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Medipak Limited",
+    "slug": "medipak-limited",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Rhone Poulenc Rorer International S.A",
+    "slug": "rhone-poulenc-rorer-international-sa",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Novartis Opthalmic",
+    "slug": "novartis-opthalmic",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Fresenius Kabi Deutschland GmbH",
+    "slug": "fresenius-kabi-deutschland-gmbh",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Ferring International Center",
+    "slug": "ferring-international-center",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Pharmascience Inc.",
+    "slug": "pharmascience-inc",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Janssen - Cilag S.P.A",
+    "slug": "janssen-cilag-spa",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Tablets Ltd",
+    "slug": "tablets-ltd",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Recipharma karlskoga AB",
+    "slug": "recipharma-karlskoga-ab",
+    "numberOfBrandNames": 3
+  },
+  {
+    "name": "Shijiazhuang no 4 Pharmaceutical Co. Ltd. Site (203-204)",
+    "slug": "shijiazhuang-no-4-pharmaceutical-co-ltd-site-203-204",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Berg Life Sciences",
+    "slug": "berg-life-sciences",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Takeda GmbH",
+    "slug": "takeda-gmbh",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "CSL Behring AG--Bern",
+    "slug": "csl-behring-ag-bern",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Pharma Developement - Corbigny",
+    "slug": "pharma-developement-corbigny",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Hovid SDN BHD (Ipoh Plant)",
+    "slug": "hovid-sdn-bhd-ipoh-plant",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "USV Ltd.",
+    "slug": "usv-ltd",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Pella Pharmaceuticals Co.Ltd",
+    "slug": "pella-pharmaceuticals-coltd",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "AstraZeneca Pharmaceuticals LP",
+    "slug": "astrazeneca-pharmaceuticals-lp",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "pierrel S.P.A",
+    "slug": "pierrel-spa",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Thornton & Ross",
+    "slug": "thornton-ross",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Asia Pharmaceutical Industries",
+    "slug": "asia-pharmaceutical-industries",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "AUG PHARMA",
+    "slug": "aug-pharma",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "IPCA Laboratories Limited",
+    "slug": "ipca-laboratories-limited",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Altan Pharmaceuticals.S.A",
+    "slug": "altan-pharmaceuticalssa",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Sun Pharmaceutical Industries Limited (Dewas)",
+    "slug": "sun-pharmaceutical-industries-limited-dewas",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Medisol life science private limited",
+    "slug": "medisol-life-science-private-limited",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Surge Laboratories (PVT) Ltd.",
+    "slug": "surge-laboratories-pvt-ltd",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Glenmark Pharmaceuticals Limited Baddi (Unit III)",
+    "slug": "glenmark-pharmaceuticals-limited-baddi-unit-iii",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Famar France, Orlens, France For Novartis Pharma",
+    "slug": "famar-france-orlens-france-for-novartis-pharma",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "National Company for Pharmaceutical Industry(NCPI)",
+    "slug": "national-company-for-pharmaceutical-industryncpi",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Medpharma pharma. & chem. Ind.'s (L.L.C)",
+    "slug": "medpharma-pharma-chem-inds-llc",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "LDP - Laboratorios Torlan SA",
+    "slug": "ldp-laboratorios-torlan-sa",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Medispray Laboratories PVT. Ltd (was Okasa Pharma)",
+    "slug": "medispray-laboratories-pvt-ltd-was-okasa-pharma",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Haupt Pharma Wolfratshausen GmbH",
+    "slug": "haupt-pharma-wolfratshausen-gmbh",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Lilly Del Caribe, Inc. & Lilly, S.A",
+    "slug": "lilly-del-caribe-inc-lilly-sa",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Patheon France",
+    "slug": "patheon-france",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Pacific Pharmaceuticals Ltd",
+    "slug": "pacific-pharmaceuticals-ltd",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Daiichi Sankyo Europe Gmbh",
+    "slug": "daiichi-sankyo-europe-gmbh",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Atlantic Pharma- Producoes Farmaceuticas S.A",
+    "slug": "atlantic-pharma-producoes-farmaceuticas-sa",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "DROGSAN İlaçları San. ve Tic. A.Ş",
+    "slug": "drogsan-ilalar-san-ve-tic-a",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Demo S.A Pharmacutical Industry",
+    "slug": "demo-sa-pharmacutical-industry",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Zafa Pharmaceutical Laboratories (Pvt) Ltd.",
+    "slug": "zafa-pharmaceutical-laboratories-pvt-ltd",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Unique Pharmaceutical Labs. (a Division of J.B. Chemicals & Pharmaceutical Ltd.)",
+    "slug": "unique-pharmaceutical-labs-a-division-of-jb-chemicals-pharmaceutical-ltd",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Liptis Pharmaceutical USA, Inc.",
+    "slug": "liptis-pharmaceutical-usa-inc",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "The Arab Pharmaceutical Manufactureing Co.Ltd (APM )",
+    "slug": "the-arab-pharmaceutical-manufactureing-coltd-apm",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "P&G Health Austria GmbH & Co. OG",
+    "slug": "pg-health-austria-gmbh-co-og",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Bristol Mayer'S Squibb",
+    "slug": "bristol-mayers-squibb",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Vifor International (Inc)",
+    "slug": "vifor-international-inc",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Reckitt Benckiser Healthcare (UK) Limited",
+    "slug": "reckitt-benckiser-healthcare-uk-limited",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "FAREVA Unterach GmbH",
+    "slug": "fareva-unterach-gmbh",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Liptis for Pharmaceuticals and Medical Products",
+    "slug": "liptis-for-pharmaceuticals-and-medical-products",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "NCPC Hebei Huamin Pharmaceutical Co. Ltd",
+    "slug": "ncpc-hebei-huamin-pharmaceutical-co-ltd",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Eli Lilly & Company",
+    "slug": "eli-lilly-company",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Borg Pharmaceutical Industries",
+    "slug": "borg-pharmaceutical-industries",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Inject Care Prenterals Pvt Limited",
+    "slug": "inject-care-prenterals-pvt-limited",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Aristo Pharmaceuticals PVT Ltd",
+    "slug": "aristo-pharmaceuticals-pvt-ltd",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Sanofi Pasteur (Marcy L'etoile site)",
+    "slug": "sanofi-pasteur-marcy-letoile-site",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "ONY Biotech Inc.",
+    "slug": "ony-biotech-inc",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Yangtze River pharmaceutical Co Ltd - China",
+    "slug": "yangtze-river-pharmaceutical-co-ltd-china",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "A.Menarini Manufacturing Logistics and services S.R.L",
+    "slug": "amenarini-manufacturing-logistics-and-services-srl",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Orion Corporation",
+    "slug": "orion-corporation",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "VIANEX S.A. Plant A",
+    "slug": "vianex-sa-plant-a",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Bayer Pharma AG",
+    "slug": "bayer-pharma-ag",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "PT. Novell Pharmaceutical Laboratories",
+    "slug": "pt-novell-pharmaceutical-laboratories",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Rafarm S.A",
+    "slug": "rafarm-sa",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Famar A.V.E. Alimos Plant",
+    "slug": "famar-ave-alimos-plant",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Famar A.V.E Avlon Plant",
+    "slug": "famar-ave-avlon-plant",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Micro Labs Limited-Bommasandra",
+    "slug": "micro-labs-limited-bommasandra",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Sunny Pharmaceutical",
+    "slug": "sunny-pharmaceutical",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "CSL Behring GmbH-USA",
+    "slug": "csl-behring-gmbh-usa",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Wyeth pharmaceuticals",
+    "slug": "wyeth-pharmaceuticals",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Berlin -Chemie AG (Glienicker Site)",
+    "slug": "berlin-chemie-ag-glienicker-site",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Ge Healthcare As",
+    "slug": "ge-healthcare-as",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "AROMA ILAC SAN. VE TIC.LTD",
+    "slug": "aroma-ilac-san-ve-ticltd",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Micro Labs Limited",
+    "slug": "micro-labs-limited",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Help S.A",
+    "slug": "help-sa",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Ovelle Limited",
+    "slug": "ovelle-limited",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Glaxosimthkline Dungarvan Ltd Knockback",
+    "slug": "glaxosimthkline-dungarvan-ltd-knockback",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Immacule Lifescience PVT. Ltd.",
+    "slug": "immacule-lifescience-pvt-ltd",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Medical Union Pharmaceuticals",
+    "slug": "medical-union-pharmaceuticals",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "VEM ILAC SAN.VE TIC.A.S.",
+    "slug": "vem-ilac-sanve-ticas",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "PharmaLand Pharmaceuticals Industries",
+    "slug": "pharmaland-pharmaceuticals-industries",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Polifarma İlaҫ San.ve Tic. A.Ş.",
+    "slug": "polifarma-ila-sanve-tic-a",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Hetero Labs Limited (Unit III)",
+    "slug": "hetero-labs-limited-unit-iii",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Recipharm Leganés S.L.U.",
+    "slug": "recipharm-legans-slu",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Rowa-Wagner",
+    "slug": "rowa-wagner",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "CSPC Zhongnuo Pharmaceutical ( Shijiazhuang ) Co., Ltd.",
+    "slug": "cspc-zhongnuo-pharmaceutical-shijiazhuang-co-ltd",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "The Arab Pharmaceutical Manufacturing PSC - (Sult)",
+    "slug": "the-arab-pharmaceutical-manufacturing-psc-sult",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "D B K Pharmaceutical Industry",
+    "slug": "d-b-k-pharmaceutical-industry",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Bioglan AB",
+    "slug": "bioglan-ab",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Alkem laboratoried limited Baddi",
+    "slug": "alkem-laboratoried-limited-baddi",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Acme Generic Private Limited",
+    "slug": "acme-generic-private-limited",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Glaxo Operations UK Ltd. (Trading as Glaxo Wellcome operations)",
+    "slug": "glaxo-operations-uk-ltd-trading-as-glaxo-wellcome-operations",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Farmaclair",
+    "slug": "farmaclair",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Aspen Port Elizabeth (Pty) Ltd",
+    "slug": "aspen-port-elizabeth-pty-ltd",
+    "numberOfBrandNames": 2
+  },
+  {
+    "name": "Recipharm Stockholm AB",
+    "slug": "recipharm-stockholm-ab",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Brooks Laboratories Limited",
+    "slug": "brooks-laboratories-limited",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Brooks laboratories limited",
+    "slug": "brooks-laboratories-limited",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Merck-Sharp & Dom, Holland",
+    "slug": "merck-sharp-dom-holland",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Surge Laboratories (Private) Ltd.",
+    "slug": "surge-laboratories-private-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "PIERRE FABRE MEDICAMENT PRODUCTION -IDRON",
+    "slug": "pierre-fabre-medicament-production-idron",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Medisol lifescience private limited",
+    "slug": "medisol-lifescience-private-limited",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Lincoln pharmaceutical Ltd--Gandhinagar",
+    "slug": "lincoln-pharmaceutical-ltd-gandhinagar",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "brooks laboratories limited --vadodara",
+    "slug": "brooks-laboratories-limited-vadodara",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Hikma Pharmaceuticals Co. Ltd",
+    "slug": "hikma-pharmaceuticals-co-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Bharat Serums And Vaccines Limited",
+    "slug": "bharat-serums-and-vaccines-limited",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Mustafa Nevzat Sanayii A.S",
+    "slug": "mustafa-nevzat-sanayii-as",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Catalent france beinheim S.A",
+    "slug": "catalent-france-beinheim-sa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Sanofi-Aventis Deutschland GmbH Frankfurt Biotechnik - Industriepark Höchst",
+    "slug": "sanofi-aventis-deutschland-gmbh-frankfurt-biotechnik-industriepark-hchst",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Apotex Inc Comda's Pharmaucital Company",
+    "slug": "apotex-inc-comdas-pharmaucital-company",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Aspen Notre Dame De Bondeville",
+    "slug": "aspen-notre-dame-de-bondeville",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Atco Laboratories Limited",
+    "slug": "atco-laboratories-limited",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Smith Kline Beecham Pharmaceuticals",
+    "slug": "smith-kline-beecham-pharmaceuticals",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "CSL Behring GmbH--Marburg",
+    "slug": "csl-behring-gmbh-marburg",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Csl Behring Gmbh",
+    "slug": "csl-behring-gmbh",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Hovid BHD (Ipoh Plant)-Malaysia",
+    "slug": "hovid-bhd-ipoh-plant-malaysia",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Bles Biochemicals Inc",
+    "slug": "bles-biochemicals-inc",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "FAMAR A.V.E ANTHOUSSA",
+    "slug": "famar-ave-anthoussa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Abbott S.P.A",
+    "slug": "abbott-spa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Medisol Lifescience Private Limited",
+    "slug": "medisol-lifescience-private-limited",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Laboratorio Aldo-Union SL",
+    "slug": "laboratorio-aldo-union-sl",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Corden Pharma GmbH",
+    "slug": "corden-pharma-gmbh",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Shin Poong Pharmacetical Co. Ltd.",
+    "slug": "shin-poong-pharmacetical-co-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "MS pharma -Amman",
+    "slug": "ms-pharma-amman",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Aristo Pharmaceuticals PVT LTD",
+    "slug": "aristo-pharmaceuticals-pvt-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Macleods Pharmaceuticals Limited(Baddi Site )",
+    "slug": "macleods-pharmaceuticals-limitedbaddi-site",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Hetero Labs Limited (Unit V)",
+    "slug": "hetero-labs-limited-unit-v",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Shiba Pharmaceutical And Chemicals Mfg Co Ltd",
+    "slug": "shiba-pharmaceutical-and-chemicals-mfg-co-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Novartis Pharma Inc",
+    "slug": "novartis-pharma-inc",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "ndustries Co. (EIPICO)",
+    "slug": "ndustries-co-eipico",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Ibn Hayyan Pharmaceuticals",
+    "slug": "ibn-hayyan-pharmaceuticals",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Square pharmaceuticals ltd",
+    "slug": "square-pharmaceuticals-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Kopran Ltd-Mumbai",
+    "slug": "kopran-ltd-mumbai",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Biochem Pharmaceutical Industries",
+    "slug": "biochem-pharmaceutical-industries",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "LFB Biomedicaments (Les Ulis Site)",
+    "slug": "lfb-biomedicaments-les-ulis-site",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Pharma international company--Amman",
+    "slug": "pharma-international-company-amman",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Hikma PharmaceuticalsPA",
+    "slug": "hikma-pharmaceuticalspa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Merz Pharma GmbH & Co. KGaA",
+    "slug": "merz-pharma-gmbh-co-kgaa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Mylan Laboratories Limited",
+    "slug": "mylan-laboratories-limited",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Fareva Mirabel",
+    "slug": "fareva-mirabel",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "WOCKHARDT UK LIMITED",
+    "slug": "wockhardt-uk-limited",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Abbott Laboratories GmbH",
+    "slug": "abbott-laboratories-gmbh",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "IPR Pharmaceuticals Incorporated",
+    "slug": "ipr-pharmaceuticals-incorporated",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Actavis -UK",
+    "slug": "actavis-uk",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Leo Laboratories Ltd.",
+    "slug": "leo-laboratories-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Hiba Drug Co. Ltd.",
+    "slug": "hiba-drug-co-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Kuwait Saudi Pharmaceutical Industries Co.",
+    "slug": "kuwait-saudi-pharmaceutical-industries-co",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Salutas Pharma Gmbh",
+    "slug": "salutas-pharma-gmbh",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Unique Pharmaceutical Laboratories (a Division of J.B Chemicals & Pharmaceuticals Ltd)",
+    "slug": "unique-pharmaceutical-laboratories-a-division-of-jb-chemicals-pharmaceuticals-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "FAES FARMA,S.A.",
+    "slug": "faes-farmasa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Laboratorios Rubio S.A.",
+    "slug": "laboratorios-rubio-sa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "LEK Pharmaceuticals d.d.",
+    "slug": "lek-pharmaceuticals-dd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Mega Lifesciences public company ltd",
+    "slug": "mega-lifesciences-public-company-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "KBN-Zhejiang pharmaceutical co.,Ltd.",
+    "slug": "kbn-zhejiang-pharmaceutical-coltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Rottendorf Pharma GmbH",
+    "slug": "rottendorf-pharma-gmbh",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Excelvision AG",
+    "slug": "excelvision-ag",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Meda Manufacturing",
+    "slug": "meda-manufacturing",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Q Pharma Ab",
+    "slug": "q-pharma-ab",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Sanofi Syntholabo Limited",
+    "slug": "sanofi-syntholabo-limited",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Unither Liquid Manufacturing",
+    "slug": "unither-liquid-manufacturing",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Abdi Ibrahim",
+    "slug": "abdi-ibrahim",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "F. Trenka chem.-pharm. Fabrik GmbH",
+    "slug": "f-trenka-chem-pharm-fabrik-gmbh",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "LTS Lohmann Therapie",
+    "slug": "lts-lohmann-therapie",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "F. Hoffman La Roche Ltd",
+    "slug": "f-hoffman-la-roche-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Vetter Pharma",
+    "slug": "vetter-pharma",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Medriech Limited Unit IV",
+    "slug": "medriech-limited-unit-iv",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Thornaton & Ross",
+    "slug": "thornaton-ross",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Delorbis Pharmaceuticals Ltd",
+    "slug": "delorbis-pharmaceuticals-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Laboratorio Pablo Cassara S.R.L.",
+    "slug": "laboratorio-pablo-cassara-srl",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Laboratorio Pablo Cassara S.R.L (site 4)",
+    "slug": "laboratorio-pablo-cassara-srl-site-4",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "The Arab Pharmaceutical Manufacturing Co. Ltd",
+    "slug": "the-arab-pharmaceutical-manufacturing-co-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "E.Merck Darmstadt",
+    "slug": "emerck-darmstadt",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Glaxo Wellcome S.P.A ViaA",
+    "slug": "glaxo-wellcome-spa-viaa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Emcure Pharmaceuticals Ltd",
+    "slug": "emcure-pharmaceuticals-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Rafarm S.A--Paiania Attiki",
+    "slug": "rafarm-sa-paiania-attiki",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "CCL Pharmaceutical (Pvt) Ltd",
+    "slug": "ccl-pharmaceutical-pvt-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Tabuk pharmaceutical Co.Ltd",
+    "slug": "tabuk-pharmaceutical-coltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Lilly France",
+    "slug": "lilly-france",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Nycomed Austria GmbH, Linz",
+    "slug": "nycomed-austria-gmbh-linz",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Berna Products,Swizerland",
+    "slug": "berna-productsswizerland",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Jazeera Pharmaceutical Industries",
+    "slug": "jazeera-pharmaceutical-industries",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Genentech Inc.",
+    "slug": "genentech-inc",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Eisai Co. Ltd",
+    "slug": "eisai-co-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "PANPHARMA - BEIGNON",
+    "slug": "panpharma-beignon",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Ursapharm Arzneimittel GmbH",
+    "slug": "ursapharm-arzneimittel-gmbh",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Tubilux Pharma Italy",
+    "slug": "tubilux-pharma-italy",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Kedrion S.P.A.",
+    "slug": "kedrion-spa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Leo Pharmaceutical product ltd.",
+    "slug": "leo-pharmaceutical-product-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Jedco International Pharmaceuticals Co.",
+    "slug": "jedco-international-pharmaceuticals-co",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Yung Shin Pharmaceutical Inudstries Co. Ltd.",
+    "slug": "yung-shin-pharmaceutical-inudstries-co-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "FAMAR L'AIGLE - SAINT REMY SUR AVRE",
+    "slug": "famar-laigle-saint-remy-sur-avre",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Al-Debeiky for Pharmaceutical Industries",
+    "slug": "al-debeiky-for-pharmaceutical-industries",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Smithkline Beecham Sa",
+    "slug": "smithkline-beecham-sa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "West Pharma",
+    "slug": "west-pharma",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "PRODUCTORY COMERCIALIZADORA ODONTOLOGICA NEW STETIC S.A",
+    "slug": "productory-comercializadora-odontologica-new-stetic-sa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Septodont - Ltd",
+    "slug": "septodont-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "merck sante",
+    "slug": "merck-sante",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Mega Lifescience Limited plant 2",
+    "slug": "mega-lifescience-limited-plant-2",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Gulf pharmaceutical industry",
+    "slug": "gulf-pharmaceutical-industry",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Sanofi Aventis",
+    "slug": "sanofi-aventis",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Pfizer Italia S.R.L.",
+    "slug": "pfizer-italia-srl",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "P.D.H. Pharmaceuticals (pvt.) Ltd",
+    "slug": "pdh-pharmaceuticals-pvt-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Jazeera Pharmaceutical Industries(JPI) by: Jazeera Pharmaceutical Industries For: Pharmaland Pharmaceutical",
+    "slug": "jazeera-pharmaceutical-industriesjpi-by-jazeera-pharmaceutical-industries-for-pharmaland-pharmaceutical",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "SSL International PLC-England",
+    "slug": "ssl-international-plc-england",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "India",
+    "slug": "india",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "VIANEX S.A. Plant D",
+    "slug": "vianex-sa-plant-d",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Pierrel S.P.A.",
+    "slug": "pierrel-spa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Eugia Pharma Specialities Limited",
+    "slug": "eugia-pharma-specialities-limited",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Zambon Switzerland Ltd",
+    "slug": "zambon-switzerland-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Novartis Pharma Produktion GmbH",
+    "slug": "novartis-pharma-produktion-gmbh",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Ebewe Pharma Ges.m.b.H. Nfg .KG",
+    "slug": "ebewe-pharma-gesmbh-nfg-kg",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Nipro Pharma Corporation (Ise Plant)",
+    "slug": "nipro-pharma-corporation-ise-plant",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Catalent UK Swindon Zydis Limited",
+    "slug": "catalent-uk-swindon-zydis-limited",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Boehringer Ingelheim Pharma GmbH & Co.K G",
+    "slug": "boehringer-ingelheim-pharma-gmbh-cok-g",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Emcure Pharmaceutical Ltd",
+    "slug": "emcure-pharmaceutical-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "M.J Biopharm Pvt Ltd",
+    "slug": "mj-biopharm-pvt-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "BIOLAB CO.LT.D.",
+    "slug": "biolab-coltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Medochemie Ltd.",
+    "slug": "medochemie-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Labatec Farmaceutica S.A.",
+    "slug": "labatec-farmaceutica-sa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Chong Kun Dang Pharmaceutical Corp.",
+    "slug": "chong-kun-dang-pharmaceutical-corp",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Cenexi",
+    "slug": "cenexi",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Haupt pharma Wulfing GmbH",
+    "slug": "haupt-pharma-wulfing-gmbh",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Vitabiotics Ltd.",
+    "slug": "vitabiotics-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Acme Formulation Pvt . Ltd.- India",
+    "slug": "acme-formulation-pvt-ltd-india",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Oubari & Radwan Co.",
+    "slug": "oubari-radwan-co",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Amanta Healtcare Ltd.",
+    "slug": "amanta-healtcare-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Jazeera Pharmaceuticals Industries",
+    "slug": "jazeera-pharmaceuticals-industries",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Haupt Pharma Wulfing GmbH",
+    "slug": "haupt-pharma-wulfing-gmbh",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Acino pharma AG",
+    "slug": "acino-pharma-ag",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Alcon Pharmaceutical Ltd",
+    "slug": "alcon-pharmaceutical-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Merck Serono SA,",
+    "slug": "merck-serono-sa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "BARD PHARMACEUTICALS LIMITED",
+    "slug": "bard-pharmaceuticals-limited",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Simthkline beecham( Dungarvan) Ltd",
+    "slug": "simthkline-beecham-dungarvan-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "B. Braun Medical, SA",
+    "slug": "b-braun-medical-sa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "B.Braun Medical S.A .",
+    "slug": "bbraun-medical-sa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "S.M. Farmaceutici S.R.L.",
+    "slug": "sm-farmaceutici-srl",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Gland Pharma limited",
+    "slug": "gland-pharma-limited",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "M & M PHARMA AND CHEMICALS",
+    "slug": "m-m-pharma-and-chemicals",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt",
+    "slug": "egyptian-international-pharmaceutical-industries-co-eipico-egypt",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Ferring Pharmaceutical Co. Ltd.",
+    "slug": "ferring-pharmaceutical-co-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Dongkook Pharmaceuticals,Co.,Ltd",
+    "slug": "dongkook-pharmaceuticalscoltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "KRKA,D.D., Novo mesto",
+    "slug": "krkadd-novo-mesto",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Pharmacia & Up John",
+    "slug": "pharmacia-up-john",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Sanico NV",
+    "slug": "sanico-nv",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "N.V Organon Netherlands",
+    "slug": "nv-organon-netherlands",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Pharma International company",
+    "slug": "pharma-international-company",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Octapharma AB",
+    "slug": "octapharma-ab",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "CSL behring AG-Bern",
+    "slug": "csl-behring-ag-bern",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Norgine Ltd",
+    "slug": "norgine-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Sandoz GmbH (Langkampfen site)",
+    "slug": "sandoz-gmbh-langkampfen-site",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Johnson & Johnson Pharma. Labs.",
+    "slug": "johnson-johnson-pharma-labs",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Sanochemia Pharmazeutika AG",
+    "slug": "sanochemia-pharmazeutika-ag",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Novartis Pharma Stein AG-Switzerland",
+    "slug": "novartis-pharma-stein-ag-switzerland",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "CSPC Ouyi Pharmaceutical Co. Ltd.",
+    "slug": "cspc-ouyi-pharmaceutical-co-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Shanghai Harvest Pharmaceuticals Co. Ltd",
+    "slug": "shanghai-harvest-pharmaceuticals-co-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Dr. Pfleger Chemische Fabrik GmbH",
+    "slug": "dr-pfleger-chemische-fabrik-gmbh",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Cibavision Laboratories Ltd",
+    "slug": "cibavision-laboratories-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Medochemie Ltd (Central Factory)",
+    "slug": "medochemie-ltd-central-factory",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Getz pharma",
+    "slug": "getz-pharma",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Pfizer S.A",
+    "slug": "pfizer-sa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "CSL BEHRING GMBH",
+    "slug": "csl-behring-gmbh",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Nanjing Baijingyu Pharmaceutical Co., Ltd",
+    "slug": "nanjing-baijingyu-pharmaceutical-co-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Sanofi - Aventis Deutschland GmbH",
+    "slug": "sanofi-aventis-deutschland-gmbh",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Hoechst Orient S.A.E",
+    "slug": "hoechst-orient-sae",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Novartis farma Torre",
+    "slug": "novartis-farma-torre",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Laboratorios Zeyco , S.A DE C.V",
+    "slug": "laboratorios-zeyco-sa-de-cv",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Cyndea Pharma S.L",
+    "slug": "cyndea-pharma-sl",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Ibn Al Haytham Pharmaceuticals Industries Co",
+    "slug": "ibn-al-haytham-pharmaceuticals-industries-co",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "West pharma - Produçoes de Especialidades Farmacêuticas, S.A",
+    "slug": "west-pharma-produoes-de-especialidades-farmacuticas-sa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "BSP PHARMACEUTICALS S. P. A.",
+    "slug": "bsp-pharmaceuticals-s-p-a",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "FAES FARMA, S.A",
+    "slug": "faes-farma-sa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Sanofi Pasteur (Val De Reuil site)",
+    "slug": "sanofi-pasteur-val-de-reuil-site",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Adams Healthcare",
+    "slug": "adams-healthcare",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "JHP Pharmaceuticals LLC",
+    "slug": "jhp-pharmaceuticals-llc",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "chemical industeries development co",
+    "slug": "chemical-industeries-development-co",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Mipharm S.P.A.",
+    "slug": "mipharm-spa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Mipharm S.p.A.",
+    "slug": "mipharm-spa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "VIANEX S.A. PLANT C",
+    "slug": "vianex-sa-plant-c",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Al Razi Pharma Industries Factory Ltd.",
+    "slug": "al-razi-pharma-industries-factory-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Laboratories INIBSA S.A",
+    "slug": "laboratories-inibsa-sa",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Merckle GmbH",
+    "slug": "merckle-gmbh",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Excelvision Laboratories Ltd",
+    "slug": "excelvision-laboratories-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Novartis Egypt (healthcare) SAE",
+    "slug": "novartis-egypt-healthcare-sae",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Domina Pharmaceutical & Cosmetics Industry",
+    "slug": "domina-pharmaceutical-cosmetics-industry",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Glaxo Smithkline",
+    "slug": "glaxo-smithkline",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "The Arab Pharmaceutical Manufacturing PSC",
+    "slug": "the-arab-pharmaceutical-manufacturing-psc",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "The Arab Pharmaceutical Manufacturing PSC Fresenius Kabi Austria GmbH, Secondary packaging site:",
+    "slug": "the-arab-pharmaceutical-manufacturing-psc-fresenius-kabi-austria-gmbh-secondary-packaging-site",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Novartis Pharma Stein AG Schaffhauserstrasse, 4332 Stein, Switzerland.",
+    "slug": "novartis-pharma-stein-ag-schaffhauserstrasse-4332-stein-switzerland",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "The wellcome Foundation Ltd",
+    "slug": "the-wellcome-foundation-ltd",
+    "numberOfBrandNames": 1
+  },
+  {
+    "name": "Wellcome",
+    "slug": "wellcome",
+    "numberOfBrandNames": 1
+  }
+]

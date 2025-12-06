@@ -1,0 +1,6095 @@
+[
+  {
+    "no": "1",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "5",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "6",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "7",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "8",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "9",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "10",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "11",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "14",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "16",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "19",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "36",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "37",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "38",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "39",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "40",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "41",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "44",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "45",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "76",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      }
+    }
+  },
+  {
+    "no": "77",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      }
+    }
+  },
+  {
+    "no": "81",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Brooks laboratories limited",
+        "cleaned": "Brooks Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "97",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "99",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "100",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Surge Laboratories (PVT) Ltd",
+        "cleaned": "Surge Laboratories (PVT) Ltd."
+      }
+    }
+  },
+  {
+    "no": "128",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "140",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "141",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "142",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "CSL Behring GmbH",
+        "cleaned": "CSL Behring GmbH-USA"
+      }
+    }
+  },
+  {
+    "no": "161",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Pharma International Co",
+        "cleaned": "Pharma International Company"
+      }
+    }
+  },
+  {
+    "no": "164",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "165",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "166",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "174",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "178",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Glaxo Operations UK Ltd (Barnard Castle) Trading as Glaxo Wellcome Operations",
+        "cleaned": "Glaxos Operations UK Limited (Barnard Castle) Trading as Glaxo Wellcome Operations"
+      }
+    }
+  },
+  {
+    "no": "194",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Medisol lifescience private limited",
+        "cleaned": "Medisol life science private limited"
+      }
+    }
+  },
+  {
+    "no": "212",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "244",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Cadila Healthcare Ltd",
+        "cleaned": "Cadila Healthcare Ltd."
+      }
+    }
+  },
+  {
+    "no": "247",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Cadila Healthcare Ltd",
+        "cleaned": "Cadila Healthcare Ltd."
+      }
+    }
+  },
+  {
+    "no": "254",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "255",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "256",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "257",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "258",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "259",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "260",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "286",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      }
+    }
+  },
+  {
+    "no": "289",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "295",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      },
+      "agentName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      }
+    }
+  },
+  {
+    "no": "297",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "313",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "314",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "315",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "316",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "331",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "345",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "415",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Thornton & Ross",
+        "cleaned": "Thornaton & Ross"
+      }
+    }
+  },
+  {
+    "no": "416",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Thornton & Ross",
+        "cleaned": "Thornaton & Ross"
+      }
+    }
+  },
+  {
+    "no": "422",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "425",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "426",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "427",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "428",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "429",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "433",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "452",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "453",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "454",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "455",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "467",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Aurobindo Pharma Limited, Unit III",
+        "cleaned": "Aurobindo Pharma Limited, Unit VI Block D"
+      }
+    }
+  },
+  {
+    "no": "468",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Aurobindo Pharma Limited, Unit III",
+        "cleaned": "Aurobindo Pharma Limited, Unit VI Block D"
+      }
+    }
+  },
+  {
+    "no": "472",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Aurobindo Pharma Limited, Unit XII",
+        "cleaned": "Aurobindo Pharma Limited, Unit VI Block D"
+      }
+    }
+  },
+  {
+    "no": "473",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Aurobindo Pharma Limited, Unit XII",
+        "cleaned": "Aurobindo Pharma Limited, Unit VI Block D"
+      }
+    }
+  },
+  {
+    "no": "526",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Medica Import & Distribution Co.",
+        "cleaned": "Medica Import & Distribution Co.Ltd"
+      }
+    }
+  },
+  {
+    "no": "532",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      },
+      "agentName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      }
+    }
+  },
+  {
+    "no": "533",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      },
+      "agentName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      }
+    }
+  },
+  {
+    "no": "536",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "556",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      },
+      "agentName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      }
+    }
+  },
+  {
+    "no": "570",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "CSL Behring GmbH",
+        "cleaned": "CSL Behring GmbH-USA"
+      }
+    }
+  },
+  {
+    "no": "574",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "575",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "582",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "583",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "585",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "586",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "589",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "591",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "598",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "599",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "600",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "626",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "628",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "632",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "633",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "634",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "635",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "636",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "644",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "645",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "647",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "649",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "652",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "655",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "656",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "657",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "660",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "664",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "675",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Medisol Lifescience Private Limited",
+        "cleaned": "Medisol life science private limited"
+      }
+    }
+  },
+  {
+    "no": "678",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "702",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Medica Import & Distribution Co.",
+        "cleaned": "Medica Import & Distribution Co.Ltd"
+      }
+    }
+  },
+  {
+    "no": "713",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "714",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "731",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Troikaa Pharmaceuticals Ltd.",
+        "cleaned": "Troikaa Pharmaceuticals Limited"
+      }
+    }
+  },
+  {
+    "no": "732",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Troikaa Pharmaceuticals Ltd.",
+        "cleaned": "Troikaa Pharmaceuticals Limited"
+      }
+    }
+  },
+  {
+    "no": "747",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Troikaa Pharmaceuticals Ltd.",
+        "cleaned": "Troikaa Pharmaceuticals Limited"
+      }
+    }
+  },
+  {
+    "no": "767",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Shin Poong Pharmacetical Co. Ltd.",
+        "cleaned": "Shin Poong Pharmaceutical Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "772",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "773",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "774",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "778",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "779",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "780",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "781",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "785",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Aristo Pharmaceuticals PVT LTD",
+        "cleaned": "Aristo pharmaceuticals PVT Ltd"
+      }
+    }
+  },
+  {
+    "no": "793",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "794",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "808",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "843",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "LEK Pharmaceutical d.d",
+        "cleaned": "LEK Pharmaceuticals d.d."
+      }
+    }
+  },
+  {
+    "no": "844",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "LEK Pharmaceutical d.d",
+        "cleaned": "LEK Pharmaceuticals d.d."
+      }
+    }
+  },
+  {
+    "no": "846",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hetero Labs Limited (Unit V)",
+        "cleaned": "Hetero Labs Limited (Unit III)"
+      }
+    }
+  },
+  {
+    "no": "849",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sahab)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "850",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sahab)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "867",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      },
+      "agentName": {
+        "original": "Rancy For Pharmaceutical Cosmatics And Medical Equ",
+        "cleaned": "Rancy For Pharmaceutical Cosmatics And Medical Equ."
+      }
+    }
+  },
+  {
+    "no": "868",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      },
+      "agentName": {
+        "original": "Rancy For Pharmaceutical Cosmatics And Medical Equ",
+        "cleaned": "Rancy For Pharmaceutical Cosmatics And Medical Equ."
+      }
+    }
+  },
+  {
+    "no": "875",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Troikaa Pharmaceuticals Ltd.",
+        "cleaned": "Troikaa Pharmaceuticals Limited"
+      }
+    }
+  },
+  {
+    "no": "901",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Ferozsons Laboratory Ltd",
+        "cleaned": "Ferozsons Laboratories Ltd"
+      }
+    }
+  },
+  {
+    "no": "905",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "906",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "910",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "911",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "922",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "923",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "924",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "925",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "927",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Square pharmaceuticals ltd",
+        "cleaned": "Square Pharmaceuticals Ltd"
+      }
+    }
+  },
+  {
+    "no": "928",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "929",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "990",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "991",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "996",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "997",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "998",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "1010",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "1015",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "1016",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "1017",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1028",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "1029",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "1051",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1057",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma PharmaceuticalsPA",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1060",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1061",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1067",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "1068",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "1072",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "1082",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      },
+      "agentName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      }
+    }
+  },
+  {
+    "no": "1105",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "1130",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "1131",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "1132",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sahab)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1133",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1134",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1140",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Glaxo Operations UK Ltd (Barnard Castle) Trading as Glaxo Wellcome Operations",
+        "cleaned": "Glaxos Operations UK Limited (Barnard Castle) Trading as Glaxo Wellcome Operations"
+      }
+    }
+  },
+  {
+    "no": "1141",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Glaxo Operations UK Ltd (Barnard Castle) Trading as Glaxo Wellcome Operations",
+        "cleaned": "Glaxos Operations UK Limited (Barnard Castle) Trading as Glaxo Wellcome Operations"
+      }
+    }
+  },
+  {
+    "no": "1143",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "1162",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Cadila Healhcare Limited",
+        "cleaned": "Cadila Healthcare Limited Sarkhej"
+      }
+    }
+  },
+  {
+    "no": "1163",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Cadila Healhcare Limited",
+        "cleaned": "Cadila Healthcare Limited Sarkhej"
+      }
+    }
+  },
+  {
+    "no": "1193",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "1206",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Medica Import & Distribution Co.",
+        "cleaned": "Medica Import & Distribution Co.Ltd"
+      }
+    }
+  },
+  {
+    "no": "1222",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sun Pharmaceutical Industries Ltd",
+        "cleaned": "Sun Pharmaceutical Industries Ltd."
+      }
+    }
+  },
+  {
+    "no": "1225",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Demo S.A Pharmacutical Industry",
+        "cleaned": "Demo S.A. Pharmacutical Industry"
+      }
+    }
+  },
+  {
+    "no": "1228",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "1252",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "1258",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1259",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      },
+      "agentName": {
+        "original": "Rancy For Pharmaceutical Cosmatics And Medical Equ",
+        "cleaned": "Rancy For Pharmaceutical Cosmatics And Medical Equ."
+      }
+    }
+  },
+  {
+    "no": "1260",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1285",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "1286",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "1300",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1316",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Unique Pharmaceutical Laboratories (a Division of J.B Chemicals & Pharmaceuticals Ltd)",
+        "cleaned": "Unique Pharmaceutical Laboratories (a division of J.B. Chemicals & Pharmaceuticals Ltd.)"
+      }
+    }
+  },
+  {
+    "no": "1325",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Unique Pharmaceutical Labs. (a Division of J.B. Chemicals & Pharmaceutical Ltd.)",
+        "cleaned": "Unique Pharmaceutical Laboratories (a division of J.B. Chemicals & Pharmaceuticals Ltd.)"
+      }
+    }
+  },
+  {
+    "no": "1328",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "1334",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1338",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sahab)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1344",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "FAES FARMA,S.A.",
+        "cleaned": "FAES FARMA, S.A."
+      }
+    }
+  },
+  {
+    "no": "1361",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1364",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1371",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atlantic Pharma- Producoes Farmaceuticas",
+        "cleaned": "Atlantic Pharma- Producoes Farmaceuticas S.A"
+      }
+    }
+  },
+  {
+    "no": "1372",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atlantic Pharma- Producoes Farmaceuticas",
+        "cleaned": "Atlantic Pharma- Producoes Farmaceuticas S.A"
+      }
+    }
+  },
+  {
+    "no": "1375",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Troikaa Pharmaceuticals Ltd.",
+        "cleaned": "Troikaa Pharmaceuticals Limited"
+      }
+    }
+  },
+  {
+    "no": "1382",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "LEK Pharmaceutical d.d",
+        "cleaned": "LEK Pharmaceuticals d.d."
+      }
+    }
+  },
+  {
+    "no": "1383",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1393",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "1398",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "1413",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1421",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1422",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1423",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      },
+      "agentName": {
+        "original": "Rancy For Pharmaceutical Cosmatics And Medical Equ",
+        "cleaned": "Rancy For Pharmaceutical Cosmatics And Medical Equ."
+      }
+    }
+  },
+  {
+    "no": "1427",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "1432",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Kirkisawe Brothers Grp Trading & Investment Ltd.",
+        "cleaned": "Kirkisawe Brothers Group Trading & Investment Ltd."
+      }
+    }
+  },
+  {
+    "no": "1433",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Kirkisawe Brothers Grp Trading & Investment Ltd.",
+        "cleaned": "Kirkisawe Brothers Group Trading & Investment Ltd."
+      }
+    }
+  },
+  {
+    "no": "1449",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sanofi Aventis Deutschland GmbH",
+        "cleaned": "Sanofi - Aventis Deutschland GmbH"
+      }
+    }
+  },
+  {
+    "no": "1450",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sanofi Aventis Deutschland GmbH",
+        "cleaned": "Sanofi - Aventis Deutschland GmbH"
+      }
+    }
+  },
+  {
+    "no": "1468",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Zafa Pharmaceutical Laboratories (Pvt) Ltd",
+        "cleaned": "Zafa Pharmaceutical Laboratories (Pvt) Ltd."
+      }
+    }
+  },
+  {
+    "no": "1487",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1488",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1489",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1490",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1491",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1492",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1497",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1498",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      },
+      "agentName": {
+        "original": "Rancy For Pharmaceutical Cosmatics And Medical Equ",
+        "cleaned": "Rancy For Pharmaceutical Cosmatics And Medical Equ."
+      }
+    }
+  },
+  {
+    "no": "1499",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1500",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1501",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1505",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1506",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1507",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1512",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1513",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1518",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1519",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1520",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1523",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1524",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "1542",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Ferozsons Laboratory Ltd",
+        "cleaned": "Ferozsons Laboratories Ltd"
+      }
+    }
+  },
+  {
+    "no": "1564",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1578",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Glaxo Operations UK Ltd (Barnard Castle) Trading as Glaxo Wellcome Operations",
+        "cleaned": "Glaxos Operations UK Limited (Barnard Castle) Trading as Glaxo Wellcome Operations"
+      }
+    }
+  },
+  {
+    "no": "1581",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Troikaa Pharmaceuticals Ltd.",
+        "cleaned": "Troikaa Pharmaceuticals Limited"
+      }
+    }
+  },
+  {
+    "no": "1582",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Troikaa Pharmaceuticals Ltd.",
+        "cleaned": "Troikaa Pharmaceuticals Limited"
+      }
+    }
+  },
+  {
+    "no": "1614",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "1615",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "1668",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1669",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1682",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "1683",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "1687",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1695",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Surge Laboratories (PVT) Ltd",
+        "cleaned": "Surge Laboratories (PVT) Ltd."
+      }
+    }
+  },
+  {
+    "no": "1703",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Aurobindo Pharma Limited, Unit III",
+        "cleaned": "Aurobindo Pharma Limited, Unit VI Block D"
+      }
+    }
+  },
+  {
+    "no": "1723",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Glaxo Wellcome S.A",
+        "cleaned": "Glaxo Wellcome S.P.A ViaA"
+      }
+    }
+  },
+  {
+    "no": "1731",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1732",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Ferozsons Laboratory Ltd",
+        "cleaned": "Ferozsons Laboratories Ltd"
+      }
+    }
+  },
+  {
+    "no": "1733",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "1734",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "1735",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "1736",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "1737",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "1742",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Altan Pharmaceuticals,S.A",
+        "cleaned": "Altan Pharmaceuticals.S.A"
+      }
+    }
+  },
+  {
+    "no": "1749",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1751",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Glenmark Pharmaceuticals Limited ( Unit 111 )",
+        "cleaned": "Glenmark Pharmaceuticals Limited Baddi (Unit III)"
+      }
+    }
+  },
+  {
+    "no": "1752",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "1753",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "1758",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Laboratorio Pablo Cassara S.R.L.",
+        "cleaned": "Laboratorio Pablo Cassara S.R.L (site 4)"
+      }
+    }
+  },
+  {
+    "no": "1775",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "1776",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "1781",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing Co. Ltd",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1829",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "1843",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1844",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1872",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "CCL Pharmaceutical (Pvt) Ltd",
+        "cleaned": "CCL Pharmaceuticals (Pvt.) Ltd."
+      }
+    }
+  },
+  {
+    "no": "1880",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "1881",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      }
+    }
+  },
+  {
+    "no": "1884",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Tabuk pharmaceutical Co.Ltd",
+        "cleaned": "Tabuk Pharmaceutical Co Ltd"
+      },
+      "agentName": {
+        "original": "Tabuk pharmaceutical Co.Ltd",
+        "cleaned": "Tabuk Pharmaceutical Co Ltd"
+      }
+    }
+  },
+  {
+    "no": "1895",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1896",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1899",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "1925",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Surge Laboratories (PVT) Ltd",
+        "cleaned": "Surge Laboratories (PVT) Ltd."
+      }
+    }
+  },
+  {
+    "no": "1936",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "1946",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "1948",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "1975",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Jazeera Pharmaceutical Industries",
+        "cleaned": "Jazeera Pharmaceutical Industries(JPI)"
+      }
+    }
+  },
+  {
+    "no": "1976",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Jazeera Pharmaceutical Industries",
+        "cleaned": "Jazeera Pharmaceutical Industries(JPI)"
+      }
+    }
+  },
+  {
+    "no": "1977",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Jazeera Pharmaceutical Industries",
+        "cleaned": "Jazeera Pharmaceutical Industries(JPI)"
+      }
+    }
+  },
+  {
+    "no": "1978",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co. Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "2002",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Medica Import & Distribution Co.",
+        "cleaned": "Medica Import & Distribution Co.Ltd"
+      }
+    }
+  },
+  {
+    "no": "2022",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "2023",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "2024",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Zafa Pharmaceutical Laboratories (Pvt) Ltd",
+        "cleaned": "Zafa Pharmaceutical Laboratories (Pvt) Ltd."
+      }
+    }
+  },
+  {
+    "no": "2026",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Medica Import & Distribution Co.",
+        "cleaned": "Medica Import & Distribution Co.Ltd"
+      }
+    }
+  },
+  {
+    "no": "2027",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "2050",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "CSL Behring GmbH",
+        "cleaned": "CSL Behring GmbH-USA"
+      }
+    }
+  },
+  {
+    "no": "2051",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "CSL Behring GmbH",
+        "cleaned": "CSL Behring GmbH-USA"
+      }
+    }
+  },
+  {
+    "no": "2052",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "CSL Behring GmbH",
+        "cleaned": "CSL Behring GmbH-USA"
+      }
+    }
+  },
+  {
+    "no": "2056",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "CSL Behring GmbH",
+        "cleaned": "CSL Behring GmbH-USA"
+      }
+    }
+  },
+  {
+    "no": "2074",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "2079",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Cadila Healthcare Ltd",
+        "cleaned": "Cadila Healthcare Ltd."
+      }
+    }
+  },
+  {
+    "no": "2118",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "2126",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Ferozsons Laboratory Ltd",
+        "cleaned": "Ferozsons Laboratories Ltd"
+      }
+    }
+  },
+  {
+    "no": "2139",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Aristo Pharmaceuticals PVT Ltd",
+        "cleaned": "Aristo pharmaceuticals PVT Ltd"
+      }
+    }
+  },
+  {
+    "no": "2173",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "2174",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "2177",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sanofi Aventis Deutschland GmbH",
+        "cleaned": "Sanofi - Aventis Deutschland GmbH"
+      }
+    }
+  },
+  {
+    "no": "2178",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sanofi Aventis Deutschland GmbH",
+        "cleaned": "Sanofi - Aventis Deutschland GmbH"
+      }
+    }
+  },
+  {
+    "no": "2179",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sanofi Aventis Deutschland GmbH",
+        "cleaned": "Sanofi - Aventis Deutschland GmbH"
+      }
+    }
+  },
+  {
+    "no": "2197",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "2198",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "2201",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "2202",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "2222",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "2280",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Medica Import & Distribution Co.",
+        "cleaned": "Medica Import & Distribution Co.Ltd"
+      }
+    }
+  },
+  {
+    "no": "2289",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "A.Menarini Manufacturing Logistics and services S.R.L",
+        "cleaned": "A.Menarini Manufacturing Logistics and Services S.R.L"
+      }
+    }
+  },
+  {
+    "no": "2322",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "2323",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "2324",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      },
+      "agentName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      }
+    }
+  },
+  {
+    "no": "2325",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "2326",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "2327",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "2328",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "2329",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "2330",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "2335",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Aurobindo Pharma Limited, Unit XII",
+        "cleaned": "Aurobindo Pharma Limited, Unit VI Block D"
+      }
+    }
+  },
+  {
+    "no": "2336",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Aurobindo Pharma Limited, Unit XII",
+        "cleaned": "Aurobindo Pharma Limited, Unit VI Block D"
+      }
+    }
+  },
+  {
+    "no": "2337",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Aurobindo Pharma Limited, Unit XII",
+        "cleaned": "Aurobindo Pharma Limited, Unit VI Block D"
+      }
+    }
+  },
+  {
+    "no": "2381",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sanofi Aventis Deutschland GmbH",
+        "cleaned": "Sanofi - Aventis Deutschland GmbH"
+      }
+    }
+  },
+  {
+    "no": "2382",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sanofi Aventis Deutschland GmbH",
+        "cleaned": "Sanofi - Aventis Deutschland GmbH"
+      }
+    }
+  },
+  {
+    "no": "2400",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "2402",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Troikaa Pharmaceuticals Ltd.",
+        "cleaned": "Troikaa Pharmaceuticals Limited"
+      }
+    }
+  },
+  {
+    "no": "2405",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "2406",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "2416",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sahab)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "2423",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "2424",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "2434",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sun Pharmaceutical Industries Ltd",
+        "cleaned": "Sun Pharmaceutical Industries Ltd."
+      }
+    }
+  },
+  {
+    "no": "2437",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Altan Pharmaceuticals,S.A",
+        "cleaned": "Altan Pharmaceuticals.S.A"
+      }
+    }
+  },
+  {
+    "no": "2462",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Rafarm S.A",
+        "cleaned": "Rafarm S.A.,"
+      }
+    }
+  },
+  {
+    "no": "2506",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Surge Laboratories (PVT) Ltd",
+        "cleaned": "Surge Laboratories (PVT) Ltd."
+      }
+    }
+  },
+  {
+    "no": "2538",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "2543",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Unique Pharmaceutical Labs. (a Division of J.B. Chemicals & Pharmaceutical Ltd.)",
+        "cleaned": "Unique Pharmaceutical Laboratories (a division of J.B. Chemicals & Pharmaceuticals Ltd.)"
+      }
+    }
+  },
+  {
+    "no": "2595",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "2599",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sanofi Aventis",
+        "cleaned": "Sanofi Aventis, S.A"
+      }
+    }
+  },
+  {
+    "no": "2604",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "2615",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "2617",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "2633",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "2634",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "2692",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Surge Laboratories (PVT) Ltd",
+        "cleaned": "Surge Laboratories (PVT) Ltd."
+      }
+    }
+  },
+  {
+    "no": "2697",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Pharma International Co",
+        "cleaned": "Pharma International Company"
+      }
+    }
+  },
+  {
+    "no": "2717",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "VIANEX S.A. Plant D",
+        "cleaned": "VIANEX S.A. Plant A"
+      }
+    }
+  },
+  {
+    "no": "2718",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "VIANEX S.A. Plant D",
+        "cleaned": "VIANEX S.A. Plant A"
+      }
+    }
+  },
+  {
+    "no": "2727",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "2728",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "2735",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Medica Import & Distribution Co.",
+        "cleaned": "Medica Import & Distribution Co.Ltd"
+      }
+    }
+  },
+  {
+    "no": "2736",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "2737",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "2741",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "LEK Pharmaceutical d.d",
+        "cleaned": "LEK Pharmaceuticals d.d."
+      }
+    }
+  },
+  {
+    "no": "2742",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Novartis Pharma Produktion GmbH",
+        "cleaned": "Novartis Pharma Produktion GmbH Wehr/Baden"
+      }
+    }
+  },
+  {
+    "no": "2747",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Ebewe Pharma Ges.m.b.H. Nfg .KG",
+        "cleaned": "Ebewe Pharma Ges. m .b .h. Nfg .K G"
+      }
+    }
+  },
+  {
+    "no": "2749",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Troikaa Pharmaceuticals Ltd.",
+        "cleaned": "Troikaa Pharmaceuticals Limited"
+      }
+    }
+  },
+  {
+    "no": "2750",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Troikaa Pharmaceuticals Ltd.",
+        "cleaned": "Troikaa Pharmaceuticals Limited"
+      }
+    }
+  },
+  {
+    "no": "2786",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "2787",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "2802",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Troikaa Pharmaceuticals Ltd.",
+        "cleaned": "Troikaa Pharmaceuticals Limited"
+      }
+    }
+  },
+  {
+    "no": "2805",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "2810",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Kirkisawe Brothers Grp Trading & Investment Ltd.",
+        "cleaned": "Kirkisawe Brothers Group Trading & Investment Ltd."
+      }
+    }
+  },
+  {
+    "no": "2811",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Kirkisawe Brothers Grp Trading & Investment Ltd.",
+        "cleaned": "Kirkisawe Brothers Group Trading & Investment Ltd."
+      }
+    }
+  },
+  {
+    "no": "2824",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      },
+      "agentName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      }
+    }
+  },
+  {
+    "no": "2831",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Boehringer Ingelheim Pharma GmbH & Co.K G",
+        "cleaned": "Boehringer Ingelheim Pharma GmbH & Co. KG"
+      }
+    }
+  },
+  {
+    "no": "2836",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "2837",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Emcure Pharmaceutical Ltd",
+        "cleaned": "Emcure Pharmaceuticals Ltd"
+      }
+    }
+  },
+  {
+    "no": "2876",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Ferozsons Laboratory Ltd",
+        "cleaned": "Ferozsons Laboratories Ltd"
+      }
+    }
+  },
+  {
+    "no": "2882",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "2896",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "2918",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "2949",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "2958",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "2959",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "2969",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "2970",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Ferozsons Laboratory Ltd",
+        "cleaned": "Ferozsons Laboratories Ltd"
+      }
+    }
+  },
+  {
+    "no": "2981",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "2982",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "2992",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Surge Laboratories (PVT) Ltd",
+        "cleaned": "Surge Laboratories (PVT) Ltd."
+      }
+    }
+  },
+  {
+    "no": "3016",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "3017",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "3018",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "3019",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3020",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Ferozsons Laboratory Ltd",
+        "cleaned": "Ferozsons Laboratories Ltd"
+      }
+    }
+  },
+  {
+    "no": "3022",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3023",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3033",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "3039",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3056",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "3059",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "3064",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "3083",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Cadila Healhcare Limited",
+        "cleaned": "Cadila Healthcare Limited Sarkhej"
+      }
+    }
+  },
+  {
+    "no": "3084",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Cadila Healhcare Limited",
+        "cleaned": "Cadila Healthcare Limited Sarkhej"
+      }
+    }
+  },
+  {
+    "no": "3085",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Cadila Healhcare Limited",
+        "cleaned": "Cadila Healthcare Limited Sarkhej"
+      }
+    }
+  },
+  {
+    "no": "3086",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Cadila Healhcare Limited",
+        "cleaned": "Cadila Healthcare Limited Sarkhej"
+      }
+    }
+  },
+  {
+    "no": "3088",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Cadila Healhcare Limited",
+        "cleaned": "Cadila Healthcare Limited Sarkhej"
+      }
+    }
+  },
+  {
+    "no": "3089",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Cadila Healhcare Limited",
+        "cleaned": "Cadila Healthcare Limited Sarkhej"
+      }
+    }
+  },
+  {
+    "no": "3099",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Amanta Healtcare Ltd.",
+        "cleaned": "Amanta Healthcare Ltd."
+      }
+    }
+  },
+  {
+    "no": "3103",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "3104",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "3105",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "3106",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "3114",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Jazeera Pharmaceuticals Industries",
+        "cleaned": "Jazeera Pharmaceutical Industries(JPI)"
+      }
+    }
+  },
+  {
+    "no": "3136",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Haupt Pharma Wulfing GmbH",
+        "cleaned": "Haupt pharma Wulfing GmbH"
+      }
+    }
+  },
+  {
+    "no": "3137",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Acino pharma AG",
+        "cleaned": "Acino Pharma AG"
+      }
+    }
+  },
+  {
+    "no": "3148",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Cadila Healhcare Limited",
+        "cleaned": "Cadila Healthcare Limited Sarkhej"
+      }
+    }
+  },
+  {
+    "no": "3173",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3174",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3204",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Pharma International Co",
+        "cleaned": "Pharma International Company"
+      }
+    }
+  },
+  {
+    "no": "3205",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Pharma International Co",
+        "cleaned": "Pharma International Company"
+      }
+    }
+  },
+  {
+    "no": "3216",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "3217",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "3236",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "3289",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sun Pharmaceutical Industries Ltd",
+        "cleaned": "Sun Pharmaceutical Industries Ltd."
+      }
+    }
+  },
+  {
+    "no": "3300",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Medical Union Pharmaceuticals",
+        "cleaned": "Medical Union Pharmaceutical Co."
+      }
+    }
+  },
+  {
+    "no": "3311",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Troikaa Pharmaceuticals Ltd.",
+        "cleaned": "Troikaa Pharmaceuticals Limited"
+      }
+    }
+  },
+  {
+    "no": "3324",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Altan Pharmaceuticals,S.A",
+        "cleaned": "Altan Pharmaceuticals.S.A"
+      }
+    }
+  },
+  {
+    "no": "3337",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "3367",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      },
+      "agentName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      }
+    }
+  },
+  {
+    "no": "3368",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      },
+      "agentName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      }
+    }
+  },
+  {
+    "no": "3397",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3407",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Surge Laboratories (PVT) Ltd",
+        "cleaned": "Surge Laboratories (PVT) Ltd."
+      }
+    }
+  },
+  {
+    "no": "3430",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "3445",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "3452",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "3457",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3461",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3463",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3464",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3511",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3512",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "3513",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "3516",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "3517",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "3522",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Dr. Nabil Pharmaceutical Co ltd",
+        "cleaned": "Dr. Nabil Pharmaceutical Co.Ltd"
+      }
+    }
+  },
+  {
+    "no": "3523",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "3527",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3528",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3529",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3532",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "3556",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "3566",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Surge Laboratories (PVT) Ltd",
+        "cleaned": "Surge Laboratories (PVT) Ltd."
+      }
+    }
+  },
+  {
+    "no": "3572",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "3573",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "3574",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "3575",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "3594",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "3612",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      },
+      "agentName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      }
+    }
+  },
+  {
+    "no": "3670",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Pharma International company",
+        "cleaned": "Pharma International Company"
+      }
+    }
+  },
+  {
+    "no": "3684",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3685",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3694",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Glaxo Wellcome S.A",
+        "cleaned": "Glaxo Wellcome S.P.A ViaA"
+      }
+    }
+  },
+  {
+    "no": "3704",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "3705",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "3709",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3710",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3727",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "3728",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "3729",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "3730",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "3742",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "3743",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "3745",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3758",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Ferozsons Laboratory Ltd",
+        "cleaned": "Ferozsons Laboratories Ltd"
+      }
+    }
+  },
+  {
+    "no": "3759",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Ferozsons Laboratory Ltd",
+        "cleaned": "Ferozsons Laboratories Ltd"
+      }
+    }
+  },
+  {
+    "no": "3783",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3784",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "3785",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "3786",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "3787",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Kirkisawe Brothers Grp Trading & Investment Ltd.",
+        "cleaned": "Kirkisawe Brothers Group Trading & Investment Ltd."
+      }
+    }
+  },
+  {
+    "no": "3788",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Kirkisawe Brothers Grp Trading & Investment Ltd.",
+        "cleaned": "Kirkisawe Brothers Group Trading & Investment Ltd."
+      }
+    }
+  },
+  {
+    "no": "3789",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Kirkisawe Brothers Grp Trading & Investment Ltd.",
+        "cleaned": "Kirkisawe Brothers Group Trading & Investment Ltd."
+      }
+    }
+  },
+  {
+    "no": "3791",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Glenmark Pharmaceuticals Limited ( Unit 111 )",
+        "cleaned": "Glenmark Pharmaceuticals Limited Baddi (Unit III)"
+      }
+    }
+  },
+  {
+    "no": "3801",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "3804",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "3810",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3811",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3812",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3813",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3814",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3815",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3833",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "3834",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "3835",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "3839",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "3866",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "3867",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "3873",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "3874",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "3875",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "3876",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Tabasheer Medical Co. Ltd",
+        "cleaned": "Tabasheer Medical Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "3878",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Glaxo Operations UK Ltd (Barnard Castle) Trading as Glaxo Wellcome Operations",
+        "cleaned": "Glaxos Operations UK Limited (Barnard Castle) Trading as Glaxo Wellcome Operations"
+      }
+    }
+  },
+  {
+    "no": "3879",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Glaxo Operations UK Ltd (Barnard Castle) Trading as Glaxo Wellcome Operations",
+        "cleaned": "Glaxos Operations UK Limited (Barnard Castle) Trading as Glaxo Wellcome Operations"
+      }
+    }
+  },
+  {
+    "no": "3880",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Surge Laboratories (PVT) Ltd",
+        "cleaned": "Surge Laboratories (PVT) Ltd."
+      }
+    }
+  },
+  {
+    "no": "3881",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Surge Laboratories (PVT) Ltd",
+        "cleaned": "Surge Laboratories (PVT) Ltd."
+      }
+    }
+  },
+  {
+    "no": "3882",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Surge Laboratories (PVT) Ltd",
+        "cleaned": "Surge Laboratories (PVT) Ltd."
+      }
+    }
+  },
+  {
+    "no": "3886",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "AstraZeneca Pharmaceutical Co.",
+        "cleaned": "AstraZeneca Pharmaceuticals LP"
+      }
+    }
+  },
+  {
+    "no": "3887",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "AstraZeneca Pharmaceutical Co.",
+        "cleaned": "AstraZeneca Pharmaceuticals LP"
+      }
+    }
+  },
+  {
+    "no": "3888",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atlantic Pharma- Producoes Farmaceuticas",
+        "cleaned": "Atlantic Pharma- Producoes Farmaceuticas S.A"
+      }
+    }
+  },
+  {
+    "no": "3896",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3897",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "3912",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      },
+      "agentName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      }
+    }
+  },
+  {
+    "no": "3915",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Medica Import & Distribution Co.",
+        "cleaned": "Medica Import & Distribution Co.Ltd"
+      }
+    }
+  },
+  {
+    "no": "3942",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Cadila Healthcare Ltd",
+        "cleaned": "Cadila Healthcare Ltd."
+      }
+    }
+  },
+  {
+    "no": "3972",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "3973",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC - (Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      }
+    }
+  },
+  {
+    "no": "3974",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC - (Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      }
+    }
+  },
+  {
+    "no": "3975",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC - (Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      }
+    }
+  },
+  {
+    "no": "3976",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC - (Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      }
+    }
+  },
+  {
+    "no": "3983",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "A.Menarini Manufacturing Logistics and services S.R.L",
+        "cleaned": "A.Menarini Manufacturing Logistics and Services S.R.L"
+      }
+    }
+  },
+  {
+    "no": "3998",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Ferozsons Laboratory Ltd",
+        "cleaned": "Ferozsons Laboratories Ltd"
+      }
+    }
+  },
+  {
+    "no": "4017",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "4018",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "4019",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "4036",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "4037",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "4038",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "4040",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Aurobindo Pharma Limited, Unit III",
+        "cleaned": "Aurobindo Pharma Limited, Unit VI Block D"
+      }
+    }
+  },
+  {
+    "no": "4041",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "4051",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4052",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4053",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4054",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4057",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Surge Laboratories (PVT) Ltd",
+        "cleaned": "Surge Laboratories (PVT) Ltd."
+      }
+    }
+  },
+  {
+    "no": "4063",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "4064",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "4065",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "4066",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "4067",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Astrazeneca AB",
+        "cleaned": "Astra Zeneca AB"
+      }
+    }
+  },
+  {
+    "no": "4071",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "4072",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "4091",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Medochemie Ltd (Central Factory)",
+        "cleaned": "Medochemie Ltd. (Central Factory)"
+      }
+    }
+  },
+  {
+    "no": "4098",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sanofi Aventis Deutschland GmbH",
+        "cleaned": "Sanofi - Aventis Deutschland GmbH"
+      }
+    }
+  },
+  {
+    "no": "4105",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sanofi Aventis Deutschland GmbH",
+        "cleaned": "Sanofi - Aventis Deutschland GmbH"
+      }
+    }
+  },
+  {
+    "no": "4106",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sanofi Aventis Deutschland GmbH",
+        "cleaned": "Sanofi - Aventis Deutschland GmbH"
+      }
+    }
+  },
+  {
+    "no": "4112",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4113",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4119",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4128",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "AstraZeneca Pharmaceutical Co.",
+        "cleaned": "AstraZeneca Pharmaceuticals LP"
+      }
+    }
+  },
+  {
+    "no": "4129",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "AstraZeneca Pharmaceutical Co.",
+        "cleaned": "AstraZeneca Pharmaceuticals LP"
+      }
+    }
+  },
+  {
+    "no": "4130",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "4133",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "4155",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "4169",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "4170",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "4175",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Altan Pharmaceuticals,S.A",
+        "cleaned": "Altan Pharmaceuticals.S.A"
+      }
+    }
+  },
+  {
+    "no": "4178",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "4188",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "4201",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "4202",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "4203",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "4213",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4225",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Aristo Pharmaceuticals PVT Ltd",
+        "cleaned": "Aristo pharmaceuticals PVT Ltd"
+      }
+    }
+  },
+  {
+    "no": "4230",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Rafarm S.A",
+        "cleaned": "Rafarm S.A.,"
+      }
+    }
+  },
+  {
+    "no": "4231",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "4253",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4254",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4271",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Troikaa Pharmaceuticals Ltd.",
+        "cleaned": "Troikaa Pharmaceuticals Limited"
+      }
+    }
+  },
+  {
+    "no": "4272",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Troikaa Pharmaceuticals Ltd.",
+        "cleaned": "Troikaa Pharmaceuticals Limited"
+      }
+    }
+  },
+  {
+    "no": "4275",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Troikaa Pharmaceuticals Ltd.",
+        "cleaned": "Troikaa Pharmaceuticals Limited"
+      }
+    }
+  },
+  {
+    "no": "4276",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Troikaa Pharmaceuticals Ltd.",
+        "cleaned": "Troikaa Pharmaceuticals Limited"
+      }
+    }
+  },
+  {
+    "no": "4278",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Troikaa Pharmaceuticals Ltd.",
+        "cleaned": "Troikaa Pharmaceuticals Limited"
+      }
+    }
+  },
+  {
+    "no": "4284",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Glaxo Operations UK Ltd. (Trading as Glaxo Wellcome operations)",
+        "cleaned": "Glaxos Operations UK Limited (Barnard Castle) Trading as Glaxo Wellcome Operations"
+      }
+    }
+  },
+  {
+    "no": "4287",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4294",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "4302",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "4303",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "4304",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "4307",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "4308",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "4309",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "4311",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "4312",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "4313",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "4314",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "United Pharmaceuticals",
+        "cleaned": "United Pharmaceuticals - Jordan"
+      }
+    }
+  },
+  {
+    "no": "4333",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "4334",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "4344",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Cadila Healhcare Limited",
+        "cleaned": "Cadila Healthcare Limited Sarkhej"
+      }
+    }
+  },
+  {
+    "no": "4355",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "4360",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4361",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4398",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "FAES FARMA, S.A",
+        "cleaned": "FAES FARMA, S.A."
+      }
+    }
+  },
+  {
+    "no": "4403",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Glaxo Operations UK Ltd (Barnard Castle) Trading as Glaxo Wellcome Operations",
+        "cleaned": "Glaxos Operations UK Limited (Barnard Castle) Trading as Glaxo Wellcome Operations"
+      }
+    }
+  },
+  {
+    "no": "4405",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Demo S.A Pharmacutical Industry",
+        "cleaned": "Demo S.A. Pharmacutical Industry"
+      }
+    }
+  },
+  {
+    "no": "4406",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Demo S.A Pharmacutical Industry",
+        "cleaned": "Demo S.A. Pharmacutical Industry"
+      }
+    }
+  },
+  {
+    "no": "4408",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "4429",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      },
+      "agentName": {
+        "original": "Sigma Pharmaceutical Industries",
+        "cleaned": "Sigmatec Pharmaceutical Industries"
+      }
+    }
+  },
+  {
+    "no": "4438",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Troikaa Pharmaceuticals Ltd.",
+        "cleaned": "Troikaa Pharmaceuticals Limited"
+      }
+    }
+  },
+  {
+    "no": "4439",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "4440",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Rahma Pharmaceuticals& Investment Co.",
+        "cleaned": "Rahma Pharmaceuticals& Investment Co.s"
+      }
+    }
+  },
+  {
+    "no": "4444",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4448",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Alpha Medical Agencies Co.Ltd",
+        "cleaned": "Alpha Medical Agencies Co. Ltd."
+      }
+    }
+  },
+  {
+    "no": "4460",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "LEK Pharmaceutical d.d",
+        "cleaned": "LEK Pharmaceuticals d.d."
+      }
+    }
+  },
+  {
+    "no": "4461",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "LEK Pharmaceutical d.d",
+        "cleaned": "LEK Pharmaceuticals d.d."
+      }
+    }
+  },
+  {
+    "no": "4473",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Mipharm S.p.A.",
+        "cleaned": "Mipharm S.P.A."
+      }
+    }
+  },
+  {
+    "no": "4479",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "4487",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Cadila Healthcare Ltd",
+        "cleaned": "Cadila Healthcare Ltd."
+      }
+    }
+  },
+  {
+    "no": "4491",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4492",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4493",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Glaxo Operations UK Ltd. (Trading as Glaxo Wellcome operations)",
+        "cleaned": "Glaxos Operations UK Limited (Barnard Castle) Trading as Glaxo Wellcome Operations"
+      }
+    }
+  },
+  {
+    "no": "4499",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Surge Laboratories (PVT) Ltd",
+        "cleaned": "Surge Laboratories (PVT) Ltd."
+      }
+    }
+  },
+  {
+    "no": "4511",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Egyptian International Pharmaceutical Industries Co. (EIPICO)",
+        "cleaned": "Egyptian International Pharmaceutical Industries Co. (EIPICO) Egypt"
+      }
+    }
+  },
+  {
+    "no": "4512",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Aurobindo Pharma Limited, Unit XII",
+        "cleaned": "Aurobindo Pharma Limited, Unit VI Block D"
+      }
+    }
+  },
+  {
+    "no": "4520",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Cadila Healthcare Ltd",
+        "cleaned": "Cadila Healthcare Ltd."
+      }
+    }
+  },
+  {
+    "no": "4525",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Glenmark Pharmaceuticals Limited ( Unit 111 )",
+        "cleaned": "Glenmark Pharmaceuticals Limited Baddi (Unit III)"
+      }
+    }
+  },
+  {
+    "no": "4526",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Glenmark Pharmaceuticals Limited ( Unit 111 )",
+        "cleaned": "Glenmark Pharmaceuticals Limited Baddi (Unit III)"
+      }
+    }
+  },
+  {
+    "no": "4531",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Medical Union Pharmaceuticals",
+        "cleaned": "Medical Union Pharmaceutical Co."
+      }
+    }
+  },
+  {
+    "no": "4536",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Surge Laboratories (PVT) Ltd",
+        "cleaned": "Surge Laboratories (PVT) Ltd."
+      }
+    }
+  },
+  {
+    "no": "4537",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Surge Laboratories (PVT) Ltd",
+        "cleaned": "Surge Laboratories (PVT) Ltd."
+      }
+    }
+  },
+  {
+    "no": "4567",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Glaxo Wellcome S.A",
+        "cleaned": "Glaxo Wellcome S.P.A ViaA"
+      }
+    }
+  },
+  {
+    "no": "4568",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Glaxo Wellcome S.A",
+        "cleaned": "Glaxo Wellcome S.P.A ViaA"
+      }
+    }
+  },
+  {
+    "no": "4569",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Glaxo Smithkline",
+        "cleaned": "Glaxo Smithkline S.P.A"
+      }
+    }
+  },
+  {
+    "no": "4577",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "4580",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Ferozsons Laboratory Ltd",
+        "cleaned": "Ferozsons Laboratories Ltd"
+      }
+    }
+  },
+  {
+    "no": "4581",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Ferozsons Laboratory Ltd",
+        "cleaned": "Ferozsons Laboratories Ltd"
+      }
+    }
+  },
+  {
+    "no": "4582",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Ferozsons Laboratory Ltd",
+        "cleaned": "Ferozsons Laboratories Ltd"
+      }
+    }
+  },
+  {
+    "no": "4597",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "AstraZeneca Pharmaceutical Co.",
+        "cleaned": "AstraZeneca Pharmaceuticals LP"
+      }
+    }
+  },
+  {
+    "no": "4598",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "AstraZeneca Pharmaceutical Co.",
+        "cleaned": "AstraZeneca Pharmaceuticals LP"
+      }
+    }
+  },
+  {
+    "no": "4599",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "AstraZeneca Pharmaceutical Co.",
+        "cleaned": "AstraZeneca Pharmaceuticals LP"
+      }
+    }
+  },
+  {
+    "no": "4600",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "AstraZeneca Pharmaceutical Co.",
+        "cleaned": "AstraZeneca Pharmaceuticals LP"
+      }
+    }
+  },
+  {
+    "no": "4616",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "4617",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "4620",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Atco Laboratories Ltd",
+        "cleaned": "Atco Laboratories Limited"
+      }
+    }
+  },
+  {
+    "no": "4624",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Glaxo Operations UK Ltd (Barnard Castle) Trading as Glaxo Wellcome Operations",
+        "cleaned": "Glaxos Operations UK Limited (Barnard Castle) Trading as Glaxo Wellcome Operations"
+      }
+    }
+  },
+  {
+    "no": "4625",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4626",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4627",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4641",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4642",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC -(Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      },
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4651",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4652",
+    "inconsistentProperties": {
+      "agentName": {
+        "original": "Savana Pharmaceutical Industries Co.Ltd",
+        "cleaned": "Savana Pharmaceutical Industries Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4656",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "4657",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO)",
+        "cleaned": "Saudi Pharmaceutical Industries & Medical Appliance Corporation (SPIMACO ADDWAEH)"
+      }
+    }
+  },
+  {
+    "no": "4661",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC - (Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      }
+    }
+  },
+  {
+    "no": "4662",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Hikma Pharmaceuticals",
+        "cleaned": "Hikma Pharmaceuticals Co. Ltd"
+      }
+    }
+  },
+  {
+    "no": "4663",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      }
+    }
+  },
+  {
+    "no": "4664",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "The Arab Pharmaceutical Manufacturing PSC - (Sult)",
+        "cleaned": "The Arab Pharmaceutical Manufacturing PSC - (Sahab)"
+      }
+    }
+  },
+  {
+    "no": "4670",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Zafa Pharmaceutical Laboratories (Pvt) Ltd",
+        "cleaned": "Zafa Pharmaceutical Laboratories (Pvt) Ltd."
+      }
+    }
+  },
+  {
+    "no": "4689",
+    "inconsistentProperties": {
+      "companyName": {
+        "original": "Troikaa Pharmaceuticals Ltd.",
+        "cleaned": "Troikaa Pharmaceuticals Limited"
+      }
+    }
+  }
+]

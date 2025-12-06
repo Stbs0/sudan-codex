@@ -5,24 +5,24 @@ export type Unit = {
   label: string;
 };
 
-export type Drug = {
-  no: string;
-  brandName: string;
-  genericName: string;
-  dosageFormName: string;
-  strength: string;
-  packSize: string;
-  companyName: string;
-  countryOfOrigin: string;
-  agentName: string;
-};
+// export type Drug = {
+//   no: string;
+//   brandName: string;
+//   genericName: string;
+//   dosageFormName: string;
+//   strength: string;
+//   packSize: string;
+//   companyName: string;
+//   countryOfOrigin: string;
+//   agentName: string;
+// };
 
-export type DrugWithSlugs = Drug & {
-  genericNameSlug: string;
-  companyNameSlug: string;
-  agentNameSlug: string;
-  countryOfOriginSlug: string;
-};
+// export type DrugWithSlugs = Drug & {
+//   genericNameSlug: string;
+//   companyNameSlug: string;
+//   agentNameSlug: string;
+//   countryOfOriginSlug: string;
+// };
 
 export type SaveUserReturnTypes = {
   uid: string;

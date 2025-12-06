@@ -34,7 +34,7 @@ function InfiniteScrollComponent({ initialDrugs }: Props) {
           {drugList.pages.map((group, groupIndex) =>
             group.data.map((drug, drugIndex) => (
               <ListItem
-                key={drug.no}
+                key={drug.id}
                 drug={drug}
                 isFirst={groupIndex === 0 && drugIndex === 0}
               />
