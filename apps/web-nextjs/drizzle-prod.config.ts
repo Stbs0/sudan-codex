@@ -1,8 +1,7 @@
 import { config } from "dotenv";
 import { defineConfig } from "drizzle-kit";
 
-config({ path: ".env.production.local", debug: true });
-console.log("ssssssssssssssssssssss", process.env.TURSO_DATABASE_URL);
+config({ path: ".env.prod.local" });
 export default defineConfig({
   out: "./drizzle",
   schema: "./src/db/schema.ts",

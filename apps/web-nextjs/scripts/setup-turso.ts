@@ -1,6 +1,13 @@
 import { config } from "dotenv";
 import { drizzle, type LibSQLDatabase } from "drizzle-orm/libsql";
-config({ path: path.join(process.cwd(), ".env.prod.local") });
+config({
+  path: path.join(
+    process.cwd(),
+    process.env.NODE_ENV === "production"
+      ? ".env.production.local"
+      : ".env.development.local"
+  ),
+});
 
 import * as schema from "@/db/schema";
 import fs from "fs/promises";
