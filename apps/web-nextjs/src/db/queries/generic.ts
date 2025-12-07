@@ -3,6 +3,9 @@ import { cache } from "react";
 import db from "..";
 import { drugsTable, genericsTable } from "../schema";
 
+export type GetGenericBySlugWithStatsReturnType = Awaited<
+  ReturnType<typeof getGenericBySlugWithStats>
+>;
 export const getGenericBySlugWithStats = cache(
   async (slug: string) =>
     await db.query.genericsTable.findFirst({

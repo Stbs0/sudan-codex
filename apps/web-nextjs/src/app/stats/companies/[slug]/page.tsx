@@ -7,17 +7,18 @@ import {
 } from "@/components/ui/card";
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import {
-  getAllCompanies,
   getAllDrugsRelatedToCompanyWithGenericAndAgents,
   getCompanyBySlug,
   getCompanyBySlugWithStats,
 } from "@/db/queries/company";
+import { generateCompanyJsonLd } from "@/lib/json-ld";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
+export const revalidate = false;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
@@ -32,11 +33,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description = `Explore detailed statistics for ${company.name}, a key player in Sudan's pharmaceutical landscape. Discover the total number of drugs they offer, the variety of unique generic names in their portfolio, and the agents who represent them. You can also browse a comprehensive, sortable list of all drug products from this company. This page is an essential resource for anyone interested in the activities and product offerings of specific pharmaceutical companies in Sudan.`;
 
   return {
-    title: `Statistics for Company: ${company.name}`,
+    title: `${company.name} | Pharmaceutical Company in Sudan | Sudan Codex`,
     description: description,
+    alternates: {
+      canonical: `/stats/companies/${slug}`,
+    },
     keywords: [
       company.name,
-      "pharmaceutical company",
+      "pharmaceutical company in Sudan",
       "drug manufacturer",
       "Sudan drug statistics",
       "drug products",
@@ -115,7 +119,16 @@ export default async function CompanyStatsPage({ params }: Props) {
 
   return (
     <div className='container mx-auto p-4'>
-      <h1 className='mb-2 text-3xl font-bold'>{company.name}</h1>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateCompanyJsonLd(company)).replace(
+            /</g,
+            "\\u003c"
+          ),
+        }}
+      />
+      <h1 className='mb-2 text-3xl font-bold'>{`${company.name} — Pharmaceutical Company`}</h1>
       <p className='text-muted-foreground mb-6 text-lg'>Company Statistics</p>
 
       <div className='mb-8 grid grid-cols-1 gap-4 md:grid-cols-2'>

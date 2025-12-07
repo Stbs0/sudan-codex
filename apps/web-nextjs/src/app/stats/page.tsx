@@ -23,14 +23,18 @@ import {
   genericsTable,
   genericStatsTable,
 } from "@/db/schema";
+import { generateStatsJsonLd } from "@/lib/json-ld";
 import { count, countDistinct, desc, eq, sql } from "drizzle-orm";
 import { Metadata } from "next";
 import Link from "next/link";
 
-export const revalidate = false; // Revalidate every hour
+export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: "Sudan Drug Index Statistics",
+  title: "Sudan Drug Index Statistics | Sudan Codex",
+  alternates: {
+    canonical: `/stats`,
+  },
   description:
     "Explore comprehensive statistics about the Sudan Drug Index. Discover insights into the total number of drugs, unique companies, brand names, generic names, and agents. View top-ranking companies, agents, and generics based on the number of associated drugs. Ideal for researchers, healthcare professionals, and anyone interested in the pharmaceutical landscape of Sudan.",
   keywords: [
@@ -172,7 +176,18 @@ export default async function StatsPage() {
   const summaryData = summaryDataArray[0];
   return (
     <div className='container mx-auto p-4'>
-      <h1 className='mb-4 text-3xl font-bold'>Drug Statistics</h1>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateStatsJsonLd()).replace(
+            /</g,
+            "\\u003c"
+          ),
+        }}
+      />
+      <h1 className='mb-4 text-3xl font-bold'>
+        Sudan Drug Index Statistics – Overview of Companies, Drugs & Agents
+      </h1>
 
       <div className='mb-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
         <Card>
