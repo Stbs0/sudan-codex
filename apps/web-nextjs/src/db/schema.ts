@@ -1,4 +1,4 @@
-import { relations } from "drizzle-orm";
+import { relations, DrizzleError } from "drizzle-orm";
 import { index, int, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
 export const countriesTable = sqliteTable("countries", {

@@ -19,12 +19,14 @@ import { DevTool } from "@hookform/devtools";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
+import { usePostHog } from "posthog-js/react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { Separator } from "../ui/separator";
 
 const UserInfoForm = () => {
   const { user, refetch } = useAuth();
+  const posthog = usePostHog();
   const { control, ...methods } = useForm<tellUsMoreSchemaType>({
     defaultValues: {
       age: "",
@@ -41,16 +43,25 @@ const UserInfoForm = () => {
     mutationFn: async (data: tellUsMoreSchemaType) => {
       await completeProfile({ ...data, profileComplete: true });
     },
-    onSuccess: async () => {
+    onSuccess: async (_, variables) => {
       if (user?.uid) {
         await queryClient.invalidateQueries({ queryKey: ["user", user.uid] });
       }
       refetch();
+      posthog.capture("user_profile_updated", {
+        occupation: variables.occupation,
+        phoneNumber: variables.phoneNumber,
+        age: variables.age,
+        university: variables.university,
+      });
       toast.success("Profile completed successfully!", {
         description: "Your profile has been updated.",
       });
     },
     onError: (error) => {
+      posthog.captureException(error, {
+        reason: "failed to complete user profile",
+      });
       toast.error("Error completing profile. Please try again.");
       console.error("Error completing profile:", error);
     },

@@ -46,9 +46,9 @@ const GoogleOAuth = ({ logInOrSignUp }: Props) => {
           });
           throw err;
         });
-        // posthog.capture("user_sign_up", {
-        //   via: "google",
-        // });
+        posthog.capture("user_sign_up", {
+          via: "google",
+        });
         router.push(
           "/user-info"
           // { replace: true, state: { userDesiredPage } }
