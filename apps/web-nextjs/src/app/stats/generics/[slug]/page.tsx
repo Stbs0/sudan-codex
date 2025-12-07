@@ -6,12 +6,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
+import db from "@/db";
 import {
-  getAllCompanies,
-  getAllDrugsRelatedToCompanyWithGenericAndAgents,
-  getCompanyBySlug,
-  getCompanyBySlugWithStats,
-} from "@/db/queries/company";
+  getAllDrugsRelatedToGenericWithAgentsAndCompanies,
+  getAllGenericSlugs,
+  getGenericBySlugWithStats,
+} from "@/db/queries/generic";
+import { drugsTable, genericsTable } from "@/db/schema";
+import { eq } from "drizzle-orm";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -20,45 +22,44 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  return await getAllCompanies();
+  return await getAllGenericSlugs();
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const company = await getCompanyBySlug(slug);
 
-  if (!company) {
-    return {
-      title: "Company not found",
-    };
+  const generic = await getGenericBySlugWithStats(slug);
+
+  if (!generic) {
+    return { title: "Generic name not found" };
   }
   return {
-    title: `Stats for ${company.name}`,
-    description: `Detailed statistics for ${company.name}, including brands, generic names, and associated agents.`,
+    title: `Stats for ${generic.name}`,
+    description: `Detailed statistics for generic name ${generic.name}, including associated companies and brand names.`,
   };
 }
 
-export default async function CompanyStatsPage({ params }: Props) {
+export default async function GenericNameStatsPage({ params }: Props) {
   const { slug } = await params;
 
-  const company = await getCompanyBySlugWithStats(slug);
+  const generic = await getGenericBySlugWithStats(slug);
 
-  if (!company) {
+  if (!generic) {
     notFound();
   }
 
-  const companyDrugsData =
-    await getAllDrugsRelatedToCompanyWithGenericAndAgents(company.id);
+  const genericDrugsData =
+    await getAllDrugsRelatedToGenericWithAgentsAndCompanies(generic.id);
 
-  const companyDrugs = companyDrugsData.map((drug) => ({
+  const genericDrugs = genericDrugsData.map((drug) => ({
     ...drug,
-    genericName: drug.generic?.name,
-    genericSlug: drug.generic?.slug,
+    companyName: drug.company?.name,
+    companySlug: drug.company?.slug,
     agentName: drug.agent?.name,
     agentSlug: drug.agent?.slug,
   }));
 
-  const drugColumns: Column<(typeof companyDrugs)[number]>[] = [
+  const drugColumns: Column<(typeof genericDrugs)[number]>[] = [
     {
       header: "Brand Name",
       accessor: "brand_name",
@@ -66,47 +67,49 @@ export default async function CompanyStatsPage({ params }: Props) {
       basePath: "/drug-list/",
       slugAccessor: "slug",
     },
-    {
-      header: "Generic Name",
-      accessor: "genericName",
-      isLink: true,
-      basePath: "/stats/generic/",
-      slugAccessor: "genericSlug",
-    },
     { header: "Dosage Form", accessor: "dosage_form" },
     { header: "Strength", accessor: "strength" },
     {
-      header: "Agent Name",
+      header: "Company",
+      accessor: "companyName",
+      isLink: true,
+      basePath: "/stats/companies/",
+      slugAccessor: "companySlug",
+    },
+    {
+      header: "Agent",
       accessor: "agentName",
       isLink: true,
-      basePath: "/stats/agent/",
+      basePath: "/stats/agents/",
       slugAccessor: "agentSlug",
     },
   ];
 
   return (
     <div className='container mx-auto p-4'>
-      <h1 className='mb-2 text-3xl font-bold'>{company.name}</h1>
-      <p className='text-muted-foreground mb-6 text-lg'>Company Statistics</p>
+      <h1 className='mb-2 text-3xl font-bold'>{generic.name}</h1>
+      <p className='text-muted-foreground mb-6 text-lg'>
+        Generic Name Statistics
+      </p>
 
       <div className='mb-8 grid grid-cols-1 gap-4 md:grid-cols-2'>
         <Card>
           <CardHeader>
-            <CardTitle>Total Drugs</CardTitle>
+            <CardTitle>Total Drug Entries</CardTitle>
           </CardHeader>
           <CardContent>
             <p className='text-2xl font-bold'>
-              {company.stats?.total_brands?.toLocaleString() ?? 0}
+              {generic.stats?.total_brands?.toLocaleString() ?? 0}
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle>Unique Generic Names</CardTitle>
+            <CardTitle>Unique Companies</CardTitle>
           </CardHeader>
           <CardContent>
             <p className='text-2xl font-bold'>
-              {company.stats?.related_generics?.toLocaleString() ?? 0}
+              {generic.stats?.related_companies?.toLocaleString() ?? 0}
             </p>
           </CardContent>
         </Card>
@@ -116,7 +119,7 @@ export default async function CompanyStatsPage({ params }: Props) {
           </CardHeader>
           <CardContent>
             <p className='text-2xl font-bold'>
-              {company.stats?.related_agents?.toLocaleString() ?? 0}
+              {generic.stats?.related_agents?.toLocaleString() ?? 0}
             </p>
           </CardContent>
         </Card>
@@ -127,12 +130,12 @@ export default async function CompanyStatsPage({ params }: Props) {
           <CardHeader>
             <CardTitle>Drug Products</CardTitle>
             <CardDescription>
-              All drug products from this company.
+              All drug products with this generic name.
             </CardDescription>
           </CardHeader>
           <CardContent>
             <PaginatedTable
-              items={companyDrugs}
+              items={genericDrugs}
               columns={drugColumns}
               keyAccessor='id'
               paginate={false}

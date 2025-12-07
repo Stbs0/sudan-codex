@@ -14,7 +14,7 @@ export function DrugDescriptions({ drug }: DrugCardProps) {
           <dl className='grid grid-cols-1 gap-2 sm:grid-cols-2'>
             <DrugPropertyDescription
               title='Generic Name'
-              path={"/stats/generic/" + drug.generic?.slug}
+              path={"/stats/generics/" + drug.generic?.slug}
               property={drug.generic_name}
             />
             <DrugPropertyDescription
@@ -31,7 +31,7 @@ export function DrugDescriptions({ drug }: DrugCardProps) {
             />
             <DrugPropertyDescription
               title='Company'
-              path={"/stats/company/" + drug.company?.slug}
+              path={"/stats/companies/" + drug.company?.slug}
               property={drug.company_name}
             />
             <DrugPropertyDescription
@@ -40,7 +40,7 @@ export function DrugDescriptions({ drug }: DrugCardProps) {
             />
             <DrugPropertyDescription
               title='Agent'
-              path={"/stats/agent/" + drug.agent?.slug}
+              path={"/stats/agents/" + drug.agent?.slug}
               property={drug.agent_name}
             />
           </dl>

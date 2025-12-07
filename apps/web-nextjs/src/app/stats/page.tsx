@@ -215,7 +215,7 @@ export default async function StatsPage() {
                   <TableRow key={company.slug}>
                     <TableCell>
                       <Link
-                        href={`/stats/company/${company.slug}`}
+                        href={`/stats/companies/${company.slug}`}
                         className='hover:underline'>
                         {company.name}
                       </Link>
@@ -251,7 +251,7 @@ export default async function StatsPage() {
                     <TableCell>
                       {agent.name ? (
                         <Link
-                          href={`/stats/agent/${agent.slug}`}
+                          href={`/stats/agents/${agent.slug}`}
                           className='hover:underline'>
                           {agent.name}
                         </Link>
@@ -288,7 +288,7 @@ export default async function StatsPage() {
                     <TableCell>
                       {generic.name ? (
                         <Link
-                          href={`/stats/generic/${generic.slug}`}
+                          href={`/stats/generics/${generic.slug}`}
                           className='hover:underline'>
                           {generic.name}
                         </Link>
@@ -365,7 +365,7 @@ export default async function StatsPage() {
                     <TableCell>
                       {agent.name ? (
                         <Link
-                          href={`/stats/agent/${agent.slug}`}
+                          href={`/stats/agents/${agent.slug}`}
                           className='hover:underline'>
                           {agent.name}
                         </Link>
