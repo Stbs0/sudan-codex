@@ -12,8 +12,8 @@ export const ListItem = ({ drug, isFirst }: Props) => {
   const router = useRouter();
   const queryClient = useQueryClient();
   const handleCardClick = () => {
-    queryClient.setQueryData(["drug", drug.id], () => [drug]);
-    router.push(`/drug-list/${drug.id}`);
+    queryClient.setQueryData(["drug", drug.slug], () => [drug]);
+    router.push(`/drug-list/${drug.slug}`);
   };
   return (
     <Card

@@ -10,7 +10,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Drug } from "@/db/schema";
-import { slugify } from "@/lib/utils";
 import { Route } from "next";
 import Link from "next/link";
 import { useState } from "react";

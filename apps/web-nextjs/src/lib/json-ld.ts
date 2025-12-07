@@ -17,8 +17,8 @@ export const generateDrugJsonLd = (
   return {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
-    "@id": SITE_URL + `/drug-list/${drug.id}`,
-    url: SITE_URL + `/drug-list/${drug.id}`,
+    "@id": SITE_URL + `/drug-list/${drug.slug}`,
+    url: SITE_URL + `/drug-list/${drug.slug}`,
     name: `${drug.brand_name || "Unknown Brand"} Information`,
     description: `Medical information for ${drug.brand_name || "Unknown Brand"} (${drug.generic_name || "Unknown"}) - ${drug.dosage_form || "Unknown"}.`,
 
@@ -113,7 +113,7 @@ export const drugListJsonLd = (drugs: Drug[]): WithContext<ItemList> => {
     itemListElement: drugs.slice(0, 3).map((drug, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      url: SITE_URL + `/drug-list/${drug.id}`,
+      url: SITE_URL + `/drug-list/${drug.slug}`,
       name: `${drug.brand_name || "Unknown Brand"} (${drug.generic_name || "Unknown Generic Name"})`,
     })),
   };

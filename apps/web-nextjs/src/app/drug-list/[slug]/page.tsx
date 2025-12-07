@@ -1,10 +1,10 @@
+import BackBtn from "@/components/drugInfo/back-btn";
 import { DrugDescriptions } from "@/components/drugInfo/drug-descriptions";
+import DrugInfoC from "@/components/drugInfo/drug-info";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import BackBtn from "@/components/drugInfo/back-btn";
-import DrugInfoC from "@/components/drugInfo/drug-info";
 import { generateDrugJsonLd } from "@/lib/json-ld";
-import { getDrugById } from "@/services/server/getDrugs";
+import { getDrugBySlug } from "@/services/server/getDrugs";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -13,18 +13,16 @@ export const revalidate = false;
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const { id } = await params;
-  const drug = await getDrugById(Number(id));
+  const { slug } = await params;
+  const drug = await getDrugBySlug(slug);
 
   if (!drug) {
     return {
       title: "Drug Not Found | Drug Directory",
       description: "The requested drug could not be found in our database.",
-      alternates: {
-        canonical: `/drug-list/${id}`,
-      },
+
       robots: "noindex",
     };
   }
@@ -36,7 +34,7 @@ export async function generateMetadata({
     title: `${brand_name} – Full Drug Information & Details`,
     description: `${brand_name} (${generic_name}) from ${company_name}. Imported by ${agent_name}. Origin: ${country_name}. View full drug details, strengths, and indications.`,
     alternates: {
-      canonical: `/drug-list/${id}`,
+      canonical: `/drug-list/${slug}`,
     },
     openGraph: {
       title: `${brand_name} – Drug Details`,
@@ -53,11 +51,11 @@ export async function generateMetadata({
 export default async function DrugInfoPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 }) {
-  const { id } = await params;
-  const drug = await getDrugById(Number(id));
-
+  const { slug } = await params;
+  const drug = await getDrugBySlug(slug);
+  console.log("drug", drug);
   if (!drug) notFound();
 
   const jsonLd = generateDrugJsonLd(drug);

@@ -1,7 +1,6 @@
 import { Drug } from "@/db/schema";
 import { Route } from "next";
 import Link from "next/link";
-
 type Props = { title: string; property: Drug[keyof Drug]; path?: string };
 
 const DrugPropertyDescription = ({ title, property, path }: Props) => {
