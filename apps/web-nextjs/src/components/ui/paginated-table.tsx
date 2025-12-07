@@ -69,9 +69,9 @@ export function PaginatedTable<T extends Drug>({
                     {column.isLink && column.basePath && column.slugAccessor ? (
                       <Link
                         href={
-                          `${column.basePath}${slugify(
+                          `${column.basePath}${
                             item[column.slugAccessor] as string
-                          )}` as Route
+                          }` as Route
                         }
                         className='hover:underline'>
                         {String(item[column.accessor])}

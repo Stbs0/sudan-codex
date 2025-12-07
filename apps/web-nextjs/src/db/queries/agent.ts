@@ -25,7 +25,7 @@ export const getAgentBySlugWithStats = cache(async (slug: string) =>
 export const getAllDrugsRelatedToAgentWithGenericAndCompanies = cache(
   async (agentId: number) =>
     await db.query.drugsTable.findMany({
-      where: eq(drugsTable.company_id, agentId),
+      where: eq(drugsTable.agent_id, agentId),
       with: {
         generic: {
           columns: {

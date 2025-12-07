@@ -6,13 +6,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
-import db from "@/db";
 import {
+  getAllCompanies,
   getAllDrugsRelatedToCompanyWithGenericAndAgents,
+  getCompanyBySlug,
   getCompanyBySlugWithStats,
 } from "@/db/queries/company";
-import { companiesTable } from "@/db/schema";
-import { eq } from "drizzle-orm";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -21,17 +20,12 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  const companies = await db
-    .select({ slug: companiesTable.slug })
-    .from(companiesTable);
-  return companies.filter((c) => c.slug);
+  return await getAllCompanies();
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const company = await db.query.companiesTable.findFirst({
-    where: eq(companiesTable.slug, slug),
-  });
+  const company = await getCompanyBySlug(slug);
 
   if (!company) {
     return {

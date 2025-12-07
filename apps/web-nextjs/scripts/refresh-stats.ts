@@ -1,7 +1,13 @@
+import { config } from "dotenv";
+config({
+  path: path.join(process.cwd(), `.env.${process.env.NODE_ENV}.local`),
+  debug: true,
+});
 import { createClient } from "@libsql/client";
 import { count, countDistinct, eq, isNotNull, isNull, sql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/libsql";
 import * as schema from "../src/db/schema";
+import path from "path";
 
 // Check for environment variables
 if (!process.env.TURSO_DATABASE_URL) {

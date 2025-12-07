@@ -15,13 +15,14 @@ export const getCompanyBySlug = cache(
     })
 );
 
-export const getCompanyBySlugWithStats = cache(async (slug: string) =>
-  db.query.companiesTable.findFirst({
-    where: eq(companiesTable.slug, slug),
-    with: {
-      stats: true,
-    },
-  })
+export const getCompanyBySlugWithStats = cache(
+  async (slug: string) =>
+    await db.query.companiesTable.findFirst({
+      where: eq(companiesTable.slug, slug),
+      with: {
+        stats: true,
+      },
+    })
 );
 export const getAllDrugsRelatedToCompanyWithGenericAndAgents = cache(
   async (companyId: number) =>
