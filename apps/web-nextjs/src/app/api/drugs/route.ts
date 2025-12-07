@@ -1,15 +1,19 @@
+import db from "@/db";
+import { drugsTable } from "@/db/schema";
 import { SearchDrugType } from "@/hooks/store/useSearch";
-import { client } from "@/lib/tursoDB";
+import { asc, like, sql } from "drizzle-orm";
 import { literal } from "zod";
 
 const searchSchema = literal([
-  "brandName",
-  "genericName",
-  "agentName",
-  "companyName",
-  "countryOfOrigin",
+  "brand_name",
+  "generic_name",
+  "agent_name",
+  "company_name",
+  "country_name",
 ]);
-
+function escapeLike(str: string): string {
+  return str.replace(/[%_\\]/g, "\\$&");
+}
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
 
@@ -20,35 +24,30 @@ export async function GET(req: Request) {
   const offset = (page - 1) * limit;
   const filterBy = searchParams.get("filterBy") || "";
 
-  const columnQueries: Record<SearchDrugType, string> = {
-    brandName:
-      "SELECT * FROM drugs WHERE LOWER(brandName) LIKE ? ORDER BY brandName ASC LIMIT ? OFFSET ?;",
-    genericName:
-      "SELECT * FROM drugs WHERE LOWER(genericName) LIKE ? ORDER BY genericName ASC LIMIT ? OFFSET ?;",
-    agentName:
-      "SELECT * FROM drugs WHERE LOWER(agentName) LIKE ? ORDER BY agentName ASC LIMIT ? OFFSET ?;",
-    companyName:
-      "SELECT * FROM drugs WHERE LOWER(companyName) LIKE ? ORDER BY companyName ASC LIMIT ? OFFSET ?;",
-    countryOfOrigin:
-      "SELECT * FROM drugs WHERE LOWER(countryOfOrigin) LIKE ? ORDER BY countryOfOrigin ASC LIMIT ? OFFSET ?;",
-  };
+  const columnMap: Record<SearchDrugType, (typeof drugsTable)[SearchDrugType]> =
+    {
+      brand_name: drugsTable.brand_name,
+      generic_name: drugsTable.generic_name,
+      agent_name: drugsTable.agent_name,
+      company_name: drugsTable.company_name,
+      country_name: drugsTable.country_name,
+    };
 
-  let sql = columnQueries.brandName;
   const column = searchSchema.safeParse(filterBy);
 
-  if (column.success) {
-    sql = columnQueries[column.data];
-  }
+  const filterColumn = column.success
+    ? columnMap[column.data]
+    : columnMap.brand_name;
 
-  const filtered = await client.execute({
-    sql,
-    args: [`%${q}%`, limit, offset],
-  });
-
-  const rows = filtered.rows ?? [];
+  const rows = await db
+    .select()
+    .from(drugsTable)
+    .where(like(sql`lower(${filterColumn})`, `%${escapeLike(q)}%`))
+    .orderBy(asc(filterColumn))
+    .limit(limit)
+    .offset(offset);
 
   const nextPage = rows.length === limit ? page + 1 : null;
-
   const res = {
     data: rows,
     nextPage,

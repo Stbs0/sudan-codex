@@ -1,12 +1,9 @@
 import type { MetadataRoute } from "next";
 
-import { DrugWithSlugs } from "@/lib/types";
-import fs from "fs/promises";
-import path from "path";
+import db from "@/db";
 
-const getAllDrugs = async (): Promise<DrugWithSlugs[]> => {
-  const filePath = path.join(process.cwd(), "public/data/drugData.json");
-  return JSON.parse(await fs.readFile(filePath, "utf8"));
+const getAllDrugs = async () => {
+  return await db.query.drugsTable.findMany({ columns: { id: true } });
 };
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -49,7 +46,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return pages.concat(
     drugs.map((drug) => ({
-      url: `https://www.sudancodex.app/drug-list/${drug.no}`,
+      url: `https://www.sudancodex.app/drug-list/${drug.id}`,
       lastModified: staticDate,
       changeFrequency: "monthly",
       priority: 0.8,

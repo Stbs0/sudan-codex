@@ -1,9 +1,9 @@
-import { DrugWithSlugs } from "@/lib/types";
+import { DrugWithRelations } from "@/services/server/getDrugs";
 import { CardTitle } from "../ui/card";
 import DrugPropertyDescription from "./DrugPropertyDescription";
 
 interface DrugCardProps {
-  drug: DrugWithSlugs;
+  drug: DrugWithRelations;
 }
 
 export function DrugDescriptions({ drug }: DrugCardProps) {
@@ -14,11 +14,12 @@ export function DrugDescriptions({ drug }: DrugCardProps) {
           <dl className='grid grid-cols-1 gap-2 sm:grid-cols-2'>
             <DrugPropertyDescription
               title='Generic Name'
-              property={drug.genericName}
+              path={drug.generic?.slug}
+              property={drug.generic_name}
             />
             <DrugPropertyDescription
               title='Dosage Form'
-              property={drug.dosageFormName}
+              property={drug.dosage_form}
             />
             <DrugPropertyDescription
               title='Strength'
@@ -26,19 +27,21 @@ export function DrugDescriptions({ drug }: DrugCardProps) {
             />
             <DrugPropertyDescription
               title='Pack Size'
-              property={drug.packSize}
+              property={drug.pack_size}
             />
             <DrugPropertyDescription
               title='Company'
-              property={drug.companyName}
+              path={drug.company?.slug}
+              property={drug.company_name}
             />
             <DrugPropertyDescription
               title='Country of Origin'
-              property={drug.countryOfOrigin}
+              property={drug.country_name}
             />
             <DrugPropertyDescription
               title='Agent'
-              property={drug.agentName}
+              path={drug.agent?.slug}
+              property={drug.agent_name}
             />
           </dl>
         </div>

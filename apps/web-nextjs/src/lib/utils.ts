@@ -23,3 +23,16 @@ export const getOpenFdaSearchUrl = (parsedGenericName: string) => {
 
   return fullQuery;
 };
+export function slugify<T extends string>(text: T) {
+  if (!text) return "";
+
+  const slug = text
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w\-]+/g, "")
+    .replace(/\-\-+/g, "-")
+    .replace(/^-+/, "")
+    .replace(/-+$/, "");
+  return slug;
+}

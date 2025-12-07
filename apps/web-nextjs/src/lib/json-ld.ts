@@ -1,3 +1,5 @@
+import { Drug } from "@/db/schema";
+import { DrugWithRelations as LocalDrugType } from "@/services/server/getDrugs";
 import type {
   ItemList,
   MedicalEntity,
@@ -6,7 +8,6 @@ import type {
   WebSite,
   WithContext,
 } from "schema-dts";
-import type { DrugWithSlugs as LocalDrugType } from "./types";
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://www.sudancodex.app";
@@ -16,18 +17,18 @@ export const generateDrugJsonLd = (
   return {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
-    "@id": SITE_URL + `/drug-list/${drug.no}`,
-    url: SITE_URL + `/drug-list/${drug.no}`,
-    name: `${drug.brandName || "Unknown Brand"} Information`,
-    description: `Medical information for ${drug.brandName || "Unknown Brand"} (${drug.genericName || "Unknown"}) - ${drug.dosageFormName || "Unknown"}.`,
+    "@id": SITE_URL + `/drug-list/${drug.id}`,
+    url: SITE_URL + `/drug-list/${drug.id}`,
+    name: `${drug.brand_name || "Unknown Brand"} Information`,
+    description: `Medical information for ${drug.brand_name || "Unknown Brand"} (${drug.generic_name || "Unknown"}) - ${drug.dosage_form || "Unknown"}.`,
 
     // We use "MedicalEntity" instead of "Drug".
     // This allows you to list all the specs (Strength, Pack Size)
     // WITHOUT Google asking for a Price or Review.
     mainEntity: {
       "@type": "MedicalEntity",
-      name: drug.brandName || "Unknown Brand",
-      alternateName: drug.genericName, // Maps to "Generic Name" in your UI
+      name: drug.brand_name || "Unknown Brand",
+      alternateName: drug.generic_name, // Maps to "Generic Name" in your UI
 
       // Use 'additionalProperty' for the specific fields in your screenshot
       additionalProperty: [
@@ -39,28 +40,28 @@ export const generateDrugJsonLd = (
         {
           "@type": "PropertyValue",
           name: "Dosage Form",
-          value: drug.dosageFormName || "Unknown", // Matches "Solution for intravenous..."
+          value: drug.dosage_form || "Unknown", // Matches "Solution for intravenous..."
         },
         {
           "@type": "PropertyValue",
           name: "Pack Size",
-          value: drug.packSize || "Unknown", // Matches "100 Ml Glass Bottle"
+          value: drug.pack_size || "Unknown", // Matches "100 Ml Glass Bottle"
         },
         {
           "@type": "PropertyValue",
           name: "Agent",
-          value: drug.agentName || "Unknown", // Matches "Alpha Medical Agencies..."
+          value: drug.agent_name || "Unknown", // Matches "Alpha Medical Agencies..."
         },
         {
           manufacturer: {
             "@type": "Organization",
-            name: drug.companyName || "Unknown Manufacturer", // Matches "Qatar Pharma..."
+            name: drug.company_name || "Unknown Manufacturer", // Matches "Qatar Pharma..."
           },
 
           // Country of origin is best placed here or in additionalProperty
           countryOfOrigin: {
             "@type": "Country",
-            name: drug.countryOfOrigin || "Unknown", // Matches "Qatar"
+            name: drug.country_name || "Unknown", // Matches "Qatar"
           },
         },
       ],
@@ -99,9 +100,7 @@ export const layoutJsonLd: WithContext<WebSite> = {
   copyrightYear: 2025,
 };
 
-export const drugListJsonLd = (
-  drugs: LocalDrugType[]
-): WithContext<ItemList> => {
+export const drugListJsonLd = (drugs: Drug[]): WithContext<ItemList> => {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -114,8 +113,8 @@ export const drugListJsonLd = (
     itemListElement: drugs.slice(0, 3).map((drug, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      url: SITE_URL + `/drug-list/${drug.no}`,
-      name: `${drug.brandName || "Unknown Brand"} (${drug.genericName || "Unknown Generic Name"})`,
+      url: SITE_URL + `/drug-list/${drug.id}`,
+      name: `${drug.brand_name || "Unknown Brand"} (${drug.generic_name || "Unknown Generic Name"})`,
     })),
   };
 };
