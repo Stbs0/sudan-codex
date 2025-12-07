@@ -16,7 +16,8 @@
     "db:push:dev": "NODE_ENV=development drizzle-kit push --config=drizzle-dev.config.ts",
     "db:drop": "NODE_ENV=production drizzle-kit drop --config=drizzle-prod.config.ts",
     "db:drop:dev": "NODE_ENV=development drizzle-kit drop --config=drizzle-dev.config.ts",
-    "db:seed": "NODE_ENV=development bun run scripts/setup-turso.ts",
+    "db:seed": "NODE_ENV=production bun run scripts/setup-turso.ts",
+    "db:seed:dev": "NODE_ENV=development bun run scripts/setup-turso.ts",
     "db:studio": "NODE_ENV=development drizzle-kit studio --config=drizzle-dev.config.ts"
   },
   "dependencies": {

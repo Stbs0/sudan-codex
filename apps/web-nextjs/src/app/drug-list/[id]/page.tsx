@@ -4,7 +4,7 @@ import { Separator } from "@/components/ui/separator";
 import BackBtn from "@/components/drugInfo/back-btn";
 import DrugInfoC from "@/components/drugInfo/drug-info";
 import { generateDrugJsonLd } from "@/lib/json-ld";
-import { getDrugByNo } from "@/services/server/getDrugs";
+import { getDrugById } from "@/services/server/getDrugs";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -16,7 +16,7 @@ export async function generateMetadata({
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
-  const drug = await getDrugByNo(Number(id));
+  const drug = await getDrugById(Number(id));
 
   if (!drug) {
     return {
@@ -56,7 +56,7 @@ export default async function DrugInfoPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const drug = await getDrugByNo(Number(id));
+  const drug = await getDrugById(Number(id));
 
   if (!drug) notFound();
 

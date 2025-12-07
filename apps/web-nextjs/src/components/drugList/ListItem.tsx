@@ -54,7 +54,7 @@ export const ListItem = ({ drug, isFirst }: Props) => {
           <p
             title={drug.generic_name || "No Generic Name"}
             id={isFirst ? "drugInfo-card-genericName" : undefined}>
-            {drug.generic_name}
+            {drug.generic_name || "No Generic Name"}
           </p>
         </div>
         <div className='flex justify-start font-bold text-blue-600 dark:text-blue-400'>

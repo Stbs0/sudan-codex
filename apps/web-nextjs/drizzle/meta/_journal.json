@@ -15,6 +15,20 @@
       "when": 1765036799380,
       "tag": "0001_jazzy_salo",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1765048130965,
+      "tag": "0002_woozy_jack_flag",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1765048294531,
+      "tag": "0003_silky_mongu",
+      "breakpoints": true
     }
   ]
 }

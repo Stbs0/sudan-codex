@@ -11,7 +11,9 @@ const searchSchema = literal([
   "company_name",
   "country_name",
 ]);
-
+function escapeLike(str: string): string {
+  return str.replace(/[%_\\]/g, "\\$&");
+}
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
 
@@ -40,7 +42,7 @@ export async function GET(req: Request) {
   const rows = await db
     .select()
     .from(drugsTable)
-    .where(like(sql`lower(${filterColumn})`, `%${q}%`))
+    .where(like(sql`lower(${filterColumn})`, `%${escapeLike(q)}%`))
     .orderBy(asc(filterColumn))
     .limit(limit)
     .offset(offset);

@@ -1,9 +1,6 @@
-import { paths } from "@/config/paths";
-import { Drug } from "@/db/schema";
-import { slugify } from "@/lib/utils";
+import { DrugWithRelations } from "@/services/server/getDrugs";
 import { CardTitle } from "../ui/card";
 import DrugPropertyDescription from "./DrugPropertyDescription";
-import { DrugWithRelations } from "@/services/server/getDrugs";
 
 interface DrugCardProps {
   drug: DrugWithRelations;

@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 import db from "@/db";
 
 const getAllDrugs = async () => {
-  return await db.query.drugsTable.findMany();
+  return await db.query.drugsTable.findMany({ columns: { id: true } });
 };
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
