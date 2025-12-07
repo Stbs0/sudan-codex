@@ -7,7 +7,11 @@ import {
 } from "@/components/ui/card";
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import db from "@/db";
-import { companiesTable, drugsTable } from "@/db/schema";
+import {
+  getAllDrugsRelatedToCompanyWithGenericAndAgents,
+  getCompanyBySlugWithStats,
+} from "@/db/queries/company";
+import { companiesTable } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -43,34 +47,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function CompanyStatsPage({ params }: Props) {
   const { slug } = await params;
 
-  const company = await db.query.companiesTable.findFirst({
-    where: eq(companiesTable.slug, slug),
-    with: {
-      stats: true,
-    },
-  });
+  const company = await getCompanyBySlugWithStats(slug);
 
   if (!company) {
     notFound();
   }
 
-  const companyDrugsData = await db.query.drugsTable.findMany({
-    where: eq(drugsTable.company_id, company.id),
-    with: {
-      generic: {
-        columns: {
-          name: true,
-          slug: true,
-        },
-      },
-      agent: {
-        columns: {
-          name: true,
-          slug: true,
-        },
-      },
-    },
-  });
+  const companyDrugsData =
+    await getAllDrugsRelatedToCompanyWithGenericAndAgents(company.id);
 
   const companyDrugs = companyDrugsData.map((drug) => ({
     ...drug,
@@ -109,7 +93,7 @@ export default async function CompanyStatsPage({ params }: Props) {
   return (
     <div className='container mx-auto p-4'>
       <h1 className='mb-2 text-3xl font-bold'>{company.name}</h1>
-      <p className='text-muted-foreground mb-6 text-lg'>Statistics</p>
+      <p className='text-muted-foreground mb-6 text-lg'>Company Statistics</p>
 
       <div className='mb-8 grid grid-cols-1 gap-4 md:grid-cols-2'>
         <Card>
@@ -129,6 +113,16 @@ export default async function CompanyStatsPage({ params }: Props) {
           <CardContent>
             <p className='text-2xl font-bold'>
               {company.stats?.related_generics?.toLocaleString() ?? 0}
+            </p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>Unique Agents</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className='text-2xl font-bold'>
+              {company.stats?.related_agents?.toLocaleString() ?? 0}
             </p>
           </CardContent>
         </Card>

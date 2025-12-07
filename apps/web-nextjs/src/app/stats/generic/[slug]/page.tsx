@@ -7,6 +7,11 @@ import {
 } from "@/components/ui/card";
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import db from "@/db";
+import {
+  getAllDrugsRelatedToGenericWithAgentsAndCompanies,
+  getAllGenericSlugs,
+  getGenericBySlugWithStats,
+} from "@/db/queries/generic";
 import { drugsTable, genericsTable } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { Metadata } from "next";
@@ -17,18 +22,13 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  const generics = await db
-    .select({ slug: genericsTable.slug })
-    .from(genericsTable);
-  return generics.filter((g) => g.slug);
+  return await getAllGenericSlugs();
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
 
-  const generic = await db.query.genericsTable.findFirst({
-    where: eq(genericsTable.slug, slug),
-  });
+  const generic = await getGenericBySlugWithStats(slug);
 
   if (!generic) {
     return { title: "Generic name not found" };
@@ -42,34 +42,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function GenericNameStatsPage({ params }: Props) {
   const { slug } = await params;
 
-  const generic = await db.query.genericsTable.findFirst({
-    where: eq(genericsTable.slug, slug),
-    with: {
-      stats: true,
-    },
-  });
+  const generic = await getGenericBySlugWithStats(slug);
 
   if (!generic) {
     notFound();
   }
 
-  const genericDrugsData = await db.query.drugsTable.findMany({
-    where: eq(drugsTable.generic_id, generic.id),
-    with: {
-      company: {
-        columns: {
-          name: true,
-          slug: true,
-        },
-      },
-      agent: {
-        columns: {
-          name: true,
-          slug: true,
-        },
-      },
-    },
-  });
+  const genericDrugsData =
+    await getAllDrugsRelatedToGenericWithAgentsAndCompanies(generic.id);
 
   const genericDrugs = genericDrugsData.map((drug) => ({
     ...drug,
@@ -130,6 +110,16 @@ export default async function GenericNameStatsPage({ params }: Props) {
           <CardContent>
             <p className='text-2xl font-bold'>
               {generic.stats?.related_companies?.toLocaleString() ?? 0}
+            </p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>Unique Agents</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className='text-2xl font-bold'>
+              {generic.stats?.related_agents?.toLocaleString() ?? 0}
             </p>
           </CardContent>
         </Card>

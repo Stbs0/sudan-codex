@@ -6,9 +6,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
-import db from "@/db";
-import { agentsTable, drugsTable } from "@/db/schema";
-import { eq } from "drizzle-orm";
+import {
+  getAgentBySlug,
+  getAgentBySlugWithStats,
+  getAllAgents,
+  getAllDrugsRelatedToAgentWithGenericAndCompanies,
+} from "@/db/queries/agent";
+
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -17,8 +21,7 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  const agents = await db.select({ slug: agentsTable.slug }).from(agentsTable);
-  return agents.filter((a) => a.slug);
+  return await getAllAgents();
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -26,9 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!slug) {
     return { title: "Agent not found" };
   }
-  const agent = await db.query.agentsTable.findFirst({
-    where: eq(agentsTable.slug, slug),
-  });
+  const agent = await getAgentBySlug(slug);
 
   if (!agent) {
     return { title: "Agent not found" };
@@ -45,34 +46,15 @@ export default async function AgentStatsPage({ params }: Props) {
     notFound();
   }
 
-  const agent = await db.query.agentsTable.findFirst({
-    where: eq(agentsTable.slug, slug),
-    with: {
-      stats: true,
-    },
-  });
+  const agent = await getAgentBySlugWithStats(slug);
 
   if (!agent) {
     notFound();
   }
 
-  const agentDrugsData = await db.query.drugsTable.findMany({
-    where: eq(drugsTable.agent_id, agent.id),
-    with: {
-      generic: {
-        columns: {
-          name: true,
-          slug: true,
-        },
-      },
-      company: {
-        columns: {
-          name: true,
-          slug: true,
-        },
-      },
-    },
-  });
+  const agentDrugsData = await getAllDrugsRelatedToAgentWithGenericAndCompanies(
+    agent.id
+  );
 
   const agentDrugs = agentDrugsData.map((drug) => ({
     ...drug,
@@ -131,6 +113,16 @@ export default async function AgentStatsPage({ params }: Props) {
           <CardContent>
             <p className='text-2xl font-bold'>
               {agent.stats?.related_companies?.toLocaleString() ?? 0}
+            </p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>Associated Generics Name</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className='text-2xl font-bold'>
+              {agent.stats?.related_generics?.toLocaleString() ?? 0}
             </p>
           </CardContent>
         </Card>
