@@ -34,9 +34,41 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!agent) {
     return { title: "Agent not found" };
   }
+  const description = `Explore detailed statistics for the pharmaceutical agent ${agent.name}. Discover the total number of drugs they represent, associated companies, and the variety of generic names in their portfolio. View a comprehensive list of all brand names represented by this agent, filterable and sortable for your convenience. This page is an essential resource for anyone interested in the activities of specific pharmaceutical agents within Sudan.`;
+
   return {
-    title: `Stats for ${agent.name}`,
-    description: `Detailed statistics for agent ${agent.name}, including associated companies and drugs.`,
+    title: `Statistics for Agent ${agent.name} in Sudan`,
+    description: description,
+    keywords: [
+      agent.name,
+      "pharmaceutical agent",
+      "drug representative",
+      "Sudan drug statistics",
+      "drug portfolio",
+      "Sudan Drug Index",
+    ],
+    openGraph: {
+      title: `Statistics for Agent: ${agent.name}`,
+      description: `Detailed statistics for agent ${agent.name}, including associated companies and drugs.`,
+      url: `https://www.sudan-codex.com/stats/agents/${slug}`,
+      siteName: "Sudan Codex",
+      images: [
+        {
+          url: "/opengraph-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: `Statistics for Agent: ${agent.name}`,
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `Statistics for Agent: ${agent.name}`,
+      description: `Detailed statistics for agent ${agent.name}, including associated companies and drugs.`,
+      images: ["/opengraph-image.jpg"],
+    },
   };
 }
 

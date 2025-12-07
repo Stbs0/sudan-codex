@@ -30,8 +30,41 @@ import Link from "next/link";
 export const revalidate = false; // Revalidate every hour
 
 export const metadata: Metadata = {
-  title: "Drug Statistics",
-  description: "Statistics about the drugs in the Sudan Drug Index.",
+  title: "Sudan Drug Index Statistics",
+  description:
+    "Explore comprehensive statistics about the Sudan Drug Index. Discover insights into the total number of drugs, unique companies, brand names, generic names, and agents. View top-ranking companies, agents, and generics based on the number of associated drugs. Ideal for researchers, healthcare professionals, and anyone interested in the pharmaceutical landscape of Sudan.",
+  keywords: [
+    "Sudan Drug Index",
+    "drug statistics",
+    "pharmaceutical data",
+    "drug companies Sudan",
+    "drug agents Sudan",
+    "generic drugs Sudan",
+  ],
+  openGraph: {
+    title: "Sudan Drug Index Statistics",
+    description:
+      "Comprehensive statistics on the Sudan Drug Index, including top companies, agents, and generics.",
+    url: "https://www.sudan-codex.com/stats",
+    siteName: "Sudan Codex",
+    images: [
+      {
+        url: "/opengraph-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Sudan Drug Index Statistics",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sudan Drug Index Statistics",
+    description:
+      "Comprehensive statistics on the Sudan Drug Index, including top companies, agents, and generics.",
+    images: ["/opengraph-image.jpg"],
+  },
 };
 
 export default async function StatsPage() {
@@ -402,7 +435,7 @@ export default async function StatsPage() {
                     <TableCell>
                       {company.name ? (
                         <Link
-                          href={`/stats/company/${company.slug}`}
+                          href={`/stats/companies/${company.slug}`}
                           className='hover:underline'>
                           {company.name}
                         </Link>

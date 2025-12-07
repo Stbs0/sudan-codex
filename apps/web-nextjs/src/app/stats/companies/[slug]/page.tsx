@@ -32,9 +32,42 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: "Company not found",
     };
   }
+
+  const description = `Explore detailed statistics for ${company.name}, a key player in Sudan's pharmaceutical landscape. Discover the total number of drugs they offer, the variety of unique generic names in their portfolio, and the agents who represent them. You can also browse a comprehensive, sortable list of all drug products from this company. This page is an essential resource for anyone interested in the activities and product offerings of specific pharmaceutical companies in Sudan.`;
+
   return {
-    title: `Stats for ${company.name}`,
-    description: `Detailed statistics for ${company.name}, including brands, generic names, and associated agents.`,
+    title: `Statistics for Company: ${company.name}`,
+    description: description,
+    keywords: [
+      company.name,
+      "pharmaceutical company",
+      "drug manufacturer",
+      "Sudan drug statistics",
+      "drug products",
+      "Sudan Drug Index",
+    ],
+    openGraph: {
+      title: `Statistics for Company ${company.name} in Sudan`,
+      description: `Detailed statistics for ${company.name}, including brands, generic names, and associated agents.`,
+      url: `https://www.sudan-codex.com/stats/companies/${slug}`,
+      siteName: "Sudan Codex",
+      images: [
+        {
+          url: "/opengraph-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: `Statistics for Company: ${company.name}`,
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `Statistics for Company: ${company.name}`,
+      description: `Detailed statistics for ${company.name}, including brands, generic names, and associated agents.`,
+      images: ["/opengraph-image.jpg"],
+    },
   };
 }
 
