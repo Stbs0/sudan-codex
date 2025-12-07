@@ -1,29 +1,23 @@
 import type { MetadataRoute } from "next";
 
 import db from "@/db";
+import { getAllAgents } from "@/db/queries/agent";
+import { getAllCompanies } from "@/db/queries/company";
+import { getAllGenericSlugs } from "@/db/queries/generic";
 
 const getAllDrugs = async () => {
   return await db.query.drugsTable.findMany({ columns: { slug: true } });
-};
-const getAllAgents = async () => {
-  return await db.query.agentsTable.findMany({ columns: { slug: true } });
-};
-const getAllCompanies = async () => {
-  return await db.query.companiesTable.findMany({ columns: { slug: true } });
-};
-const getAllGenerics = async () => {
-  return await db.query.genericsTable.findMany({ columns: { slug: true } });
 };
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [agents, companies, generics, drugs] = await Promise.all([
     getAllAgents(),
     getAllCompanies(),
-    getAllGenerics(),
+    getAllGenericSlugs(),
     getAllDrugs(),
   ]);
 
-  const staticDate = "2025-12-6";
+  const staticDate = "2025-12-06";
 
   const pages: MetadataRoute.Sitemap = [
     {

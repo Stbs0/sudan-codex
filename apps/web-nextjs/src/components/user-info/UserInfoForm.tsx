@@ -56,7 +56,7 @@ const UserInfoForm = () => {
     },
   });
 
-  const onSubmit = async (data: tellUsMoreSchemaType) => {
+  const onSubmit = (data: tellUsMoreSchemaType) => {
     mutation.mutate(data);
   };
 

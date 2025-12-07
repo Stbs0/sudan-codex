@@ -20,15 +20,9 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
-export async function generateStaticParams() {
-  return await getAllAgents();
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  if (!slug) {
-    return { title: "Agent not found" };
-  }
+
   const agent = await getAgentBySlug(slug);
 
   if (!agent) {
@@ -74,9 +68,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function AgentStatsPage({ params }: Props) {
   const { slug } = await params;
-  if (!slug) {
-    notFound();
-  }
 
   const agent = await getAgentBySlugWithStats(slug);
 
@@ -173,7 +164,7 @@ export default async function AgentStatsPage({ params }: Props) {
               items={agentDrugs}
               columns={drugColumns}
               keyAccessor='id'
-              paginate={false}
+              paginate={true}
             />
           </CardContent>
         </Card>

@@ -19,10 +19,6 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
-export async function generateStaticParams() {
-  return await getAllCompanies();
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const company = await getCompanyBySlug(slug);
@@ -168,7 +164,7 @@ export default async function CompanyStatsPage({ params }: Props) {
               items={companyDrugs}
               columns={drugColumns}
               keyAccessor='id'
-              paginate={false}
+              paginate={true}
             />
           </CardContent>
         </Card>
