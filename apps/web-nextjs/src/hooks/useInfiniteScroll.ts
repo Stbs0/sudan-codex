@@ -50,7 +50,7 @@ export function useInfiniteServerScroll(initialDrugs: FetchedDrugs) {
   const search = useSearchDrug((state) => state.search);
   const filterBy = useSearchDrug((state) => state.filterBy);
   const posthog = usePostHog();
-  const debounceTimeout = useRef<NodeJS.Timeout | null>(null);
+  const debounceTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(() => {
     if (debounceTimeout.current) clearTimeout(debounceTimeout.current);
     if (search) {

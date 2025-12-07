@@ -57,7 +57,6 @@ export async function GET(req: Request) {
     };
 
     posthog.capture({
-      distinctId: req.headers.get("x-forwarded-for") ?? "unidentified-user",
       event: "drug_search_api_success",
       properties: {
         query: q,

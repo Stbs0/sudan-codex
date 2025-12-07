@@ -50,9 +50,6 @@ const UserInfoForm = () => {
       refetch();
       posthog.capture("user_profile_updated", {
         occupation: variables.occupation,
-        phoneNumber: variables.phoneNumber,
-        age: variables.age,
-        university: variables.university,
       });
       toast.success("Profile completed successfully!", {
         description: "Your profile has been updated.",
