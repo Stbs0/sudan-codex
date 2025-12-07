@@ -1,0 +1,159 @@
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Column, PaginatedTable } from "@/components/ui/paginated-table";
+import db from "@/db";
+import { agentsTable, drugsTable } from "@/db/schema";
+import { eq } from "drizzle-orm";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateStaticParams() {
+  const agents = await db.select({ slug: agentsTable.slug }).from(agentsTable);
+  return agents.filter((a) => a.slug);
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  if (!slug) {
+    return { title: "Agent not found" };
+  }
+  const agent = await db.query.agentsTable.findFirst({
+    where: eq(agentsTable.slug, slug),
+  });
+
+  if (!agent) {
+    return { title: "Agent not found" };
+  }
+  return {
+    title: `Stats for ${agent.name}`,
+    description: `Detailed statistics for agent ${agent.name}, including associated companies and drugs.`,
+  };
+}
+
+export default async function AgentStatsPage({ params }: Props) {
+  const { slug } = await params;
+  if (!slug) {
+    notFound();
+  }
+
+  const agent = await db.query.agentsTable.findFirst({
+    where: eq(agentsTable.slug, slug),
+    with: {
+      stats: true,
+    },
+  });
+
+  if (!agent) {
+    notFound();
+  }
+
+  const agentDrugsData = await db.query.drugsTable.findMany({
+    where: eq(drugsTable.agent_id, agent.id),
+    with: {
+      generic: {
+        columns: {
+          name: true,
+          slug: true,
+        },
+      },
+      company: {
+        columns: {
+          name: true,
+          slug: true,
+        },
+      },
+    },
+  });
+
+  const agentDrugs = agentDrugsData.map((drug) => ({
+    ...drug,
+    genericName: drug.generic?.name,
+    genericSlug: drug.generic?.slug,
+    companyName: drug.company?.name,
+    companySlug: drug.company?.slug,
+  }));
+
+  const drugColumns: Column<(typeof agentDrugs)[number]>[] = [
+    {
+      header: "Brand Name",
+      accessor: "brand_name",
+      isLink: true,
+      basePath: "/drug-list/",
+      slugAccessor: "slug",
+    },
+    {
+      header: "Generic",
+      accessor: "genericName",
+      isLink: true,
+      basePath: "/stats/generic/",
+      slugAccessor: "genericSlug",
+    },
+    { header: "Dosage Form", accessor: "dosage_form" },
+    { header: "Strength", accessor: "strength" },
+    {
+      header: "Company",
+      accessor: "companyName",
+      isLink: true,
+      basePath: "/stats/company/",
+      slugAccessor: "companySlug",
+    },
+  ];
+
+  return (
+    <div className='container mx-auto p-4'>
+      <h1 className='mb-2 text-3xl font-bold'>{agent.name}</h1>
+      <p className='text-muted-foreground mb-6 text-lg'>Agent Statistics</p>
+
+      <div className='mb-8 grid grid-cols-1 gap-4 md:grid-cols-2'>
+        <Card>
+          <CardHeader>
+            <CardTitle>Total Drugs Represented</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className='text-2xl font-bold'>
+              {agent.stats?.total_brands?.toLocaleString() ?? 0}
+            </p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>Associated Companies</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className='text-2xl font-bold'>
+              {agent.stats?.related_companies?.toLocaleString() ?? 0}
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className='space-y-8'>
+        <Card>
+          <CardHeader>
+            <CardTitle>Drugs Represented</CardTitle>
+            <CardDescription>
+              All brand names represented by this agent.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <PaginatedTable
+              items={agentDrugs}
+              columns={drugColumns}
+              keyAccessor='id'
+              paginate={false}
+            />
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+}

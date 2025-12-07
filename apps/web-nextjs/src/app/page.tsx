@@ -1,12 +1,5 @@
 import { Hero } from "@/components/home/hero";
 import { layoutJsonLd } from "@/lib/json-ld";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "/",
-  },
-};
 
 const Home = () => {
   return (
