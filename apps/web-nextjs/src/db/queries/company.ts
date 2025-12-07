@@ -14,7 +14,9 @@ export const getCompanyBySlug = cache(
       where: eq(companiesTable.slug, slug),
     })
 );
-
+export type GetCompanyBySlugWithStatsReturnType = Awaited<
+  ReturnType<typeof getCompanyBySlugWithStats>
+>;
 export const getCompanyBySlugWithStats = cache(
   async (slug: string) =>
     await db.query.companiesTable.findFirst({

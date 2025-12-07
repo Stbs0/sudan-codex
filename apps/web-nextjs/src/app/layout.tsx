@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description:
     "Sudan Codex allows you to effortlessly search through Sudan's comprehensive drug index. Find drug information, generic names, and manufacturers quickly and accurately.",
   keywords:
-    "Sudan Codex, Sudan drug index, drug search, pharmacy, generic names, drug manufacturers, pharmaceutical registry, sudan, sudan pharmacy",
+    "Sudan drug list, pharmaceutical index Sudan, medicine search Sudan, generic drug Sudan, Sudan Drug Index",
   alternates: {
     canonical: "/",
   },

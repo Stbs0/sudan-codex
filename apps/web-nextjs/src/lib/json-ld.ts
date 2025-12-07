@@ -1,9 +1,14 @@
+import { GetAgentBySlugWithStatsReturnType } from "@/db/queries/agent";
+import { GetCompanyBySlugWithStatsReturnType } from "@/db/queries/company";
+import { GetGenericBySlugWithStatsReturnType } from "@/db/queries/generic";
 import { Drug } from "@/db/schema";
 import { DrugWithRelations as LocalDrugType } from "@/services/server/getDrugs";
 import type {
+  Dataset,
   ItemList,
   MedicalEntity,
   MedicalWebPage,
+  Organization,
   Person,
   WebSite,
   WithContext,
@@ -14,59 +19,60 @@ const SITE_URL =
 export const generateDrugJsonLd = (
   drug: LocalDrugType
 ): WithContext<MedicalWebPage> => {
+  const url = `${SITE_URL}/drug-list/${drug.slug}`;
+
   return {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
-    "@id": SITE_URL + `/drug-list/${drug.slug}`,
-    url: SITE_URL + `/drug-list/${drug.slug}`,
+    "@id": url,
+    url,
     name: `${drug.brand_name || "Unknown Brand"} Information`,
-    description: `Medical information for ${drug.brand_name || "Unknown Brand"} (${drug.generic_name || "Unknown"}) - ${drug.dosage_form || "Unknown"}.`,
+    description: `Medical information for ${drug.brand_name || "Unknown Brand"} (${drug.generic_name || "Unknown"}) – ${drug.dosage_form || "Unknown"}.`,
+    mainEntityOfPage: url,
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Sudan Codex",
+      url: SITE_URL,
+    },
+    dateModified: "2025-12-06",
 
-    // We use "MedicalEntity" instead of "Drug".
-    // This allows you to list all the specs (Strength, Pack Size)
-    // WITHOUT Google asking for a Price or Review.
     mainEntity: {
       "@type": "MedicalEntity",
       name: drug.brand_name || "Unknown Brand",
-      alternateName: drug.generic_name, // Maps to "Generic Name" in your UI
+      alternateName: drug.generic_name,
+      description: `Details on ${drug.brand_name || "Unknown"} including strength, dosage form, pack size, manufacturer and country of origin.`,
 
-      // Use 'additionalProperty' for the specific fields in your screenshot
+      manufacturer: {
+        "@type": "Organization",
+        name: drug.company_name || "Unknown Manufacturer",
+      },
+      countryOfOrigin: {
+        "@type": "Country",
+        name: drug.country_name || "Unknown",
+      },
+
       additionalProperty: [
         {
           "@type": "PropertyValue",
           name: "Strength",
-          value: drug.strength || "Unknown", // Matches "500 mg/ 100 ml"
+          value: drug.strength || "Unknown",
         },
         {
           "@type": "PropertyValue",
           name: "Dosage Form",
-          value: drug.dosage_form || "Unknown", // Matches "Solution for intravenous..."
+          value: drug.dosage_form || "Unknown",
         },
         {
           "@type": "PropertyValue",
           name: "Pack Size",
-          value: drug.pack_size || "Unknown", // Matches "100 Ml Glass Bottle"
+          value: drug.pack_size || "Unknown",
         },
         {
           "@type": "PropertyValue",
           name: "Agent",
-          value: drug.agent_name || "Unknown", // Matches "Alpha Medical Agencies..."
-        },
-        {
-          manufacturer: {
-            "@type": "Organization",
-            name: drug.company_name || "Unknown Manufacturer", // Matches "Qatar Pharma..."
-          },
-
-          // Country of origin is best placed here or in additionalProperty
-          countryOfOrigin: {
-            "@type": "Country",
-            name: drug.country_name || "Unknown", // Matches "Qatar"
-          },
+          value: drug.agent_name || "Unknown",
         },
       ],
-
-      // Manufacturer is supported in MedicalEntity
     } as MedicalEntity,
   };
 };
@@ -116,5 +122,189 @@ export const drugListJsonLd = (drugs: Drug[]): WithContext<ItemList> => {
       url: SITE_URL + `/drug-list/${drug.slug}`,
       name: `${drug.brand_name || "Unknown Brand"} (${drug.generic_name || "Unknown Generic Name"})`,
     })),
+  };
+};
+
+export const generateCompanyJsonLd = (
+  company: NonNullable<GetCompanyBySlugWithStatsReturnType>
+): WithContext<MedicalWebPage> => {
+  const url = `${SITE_URL}/stats/companies/${company.slug}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "@id": url,
+    url,
+    name: `${company.name} – Pharmaceutical Company in Sudan`,
+    description: `Statistical profile and list of drug products manufactured by ${company.name}. View number of drugs, unique generics, and associated agents in Sudan.`,
+
+    mainEntity: {
+      "@type": "MedicalBusiness",
+      name: company.name,
+      description: `${company.name} manufactures ${company.stats.total_brands} drug products across ${company.stats.related_generics} unique generics in Sudan.`,
+      url,
+      additionalProperty: [
+        {
+          "@type": "PropertyValue",
+          name: "Total Drugs",
+          value: company.stats.total_brands!,
+        },
+        {
+          "@type": "PropertyValue",
+          name: "Unique Generics",
+          value: company.stats.related_generics!,
+        },
+        {
+          "@type": "PropertyValue",
+          name: "Unique Agents",
+          value: company.stats.related_agents!,
+        },
+      ],
+    },
+  };
+};
+
+export const generateAgentJsonLd = (
+  agent: NonNullable<GetAgentBySlugWithStatsReturnType>
+): WithContext<MedicalWebPage> => {
+  const url = `${SITE_URL}/stats/agents/${agent.slug}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "@id": url,
+    url,
+    name: `${agent.name} – Pharmaceutical Agent in Sudan`,
+    description: `Comprehensive statistics for ${agent.name}, including the total drugs represented, associated companies, and unique generics in Sudan's pharmaceutical market.`,
+    mainEntity: {
+      "@type": "Organization",
+      name: agent.name,
+      description: `${agent.name} represents ${agent.stats.total_brands} drugs across ${agent.stats.related_companies} companies in Sudan.`,
+      url,
+
+      additionalProperty: [
+        {
+          "@type": "PropertyValue",
+          name: "Total Drugs Represented",
+          value: agent.stats.total_brands,
+        },
+        {
+          "@type": "PropertyValue",
+          name: "Associated Companies",
+          value: agent.stats.related_companies,
+        },
+        {
+          "@type": "PropertyValue",
+          name: "Associated Generic Names",
+          value: agent.stats.related_generics,
+        },
+      ],
+    } as Organization,
+  };
+};
+
+export const generateGenericJsonLd = (
+  generic: NonNullable<GetGenericBySlugWithStatsReturnType>
+): WithContext<MedicalWebPage> => {
+  const url = `${SITE_URL}/stats/generics/${generic.slug}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "@id": url,
+    url,
+    name: `${generic.name} – Generic Drug in Sudan`,
+    description: `Comprehensive statistics for the generic drug ${generic.name}. View number of drug entries, associated companies, and agents representing it in Sudan.`,
+    mainEntity: {
+      "@type": "MedicalEntity",
+      name: generic.name,
+      alternateName: `${generic.name} Generic Drug`,
+      description: `${generic.name} is a generic pharmaceutical compound used in multiple formulations. This page shows ${generic.stats.total_brands} registered drug entries from ${generic.stats.related_companies} companies and ${generic.stats.related_agents} agents in Sudan.`,
+      additionalProperty: [
+        {
+          "@type": "PropertyValue",
+          name: "Total Drug Entries",
+          value: generic.stats.total_brands,
+        },
+        {
+          "@type": "PropertyValue",
+          name: "Unique Companies",
+          value: generic.stats.related_companies,
+        },
+        {
+          "@type": "PropertyValue",
+          name: "Unique Agents",
+          value: generic.stats.related_agents,
+        },
+      ],
+      mainEntityOfPage: url,
+    } as MedicalEntity,
+  };
+};
+
+export const generateStatsJsonLd = (): WithContext<Dataset> => {
+  const url = `${SITE_URL}/stats`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": url,
+    url,
+    name: "Sudan Drug Index Statistics",
+    description:
+      "Comprehensive statistics from the Sudan Codex drug index, including total registered drugs, pharmaceutical companies, brand names, generic names, and agents operating in Sudan.",
+    creator: {
+      "@type": "Organization",
+      name: "Sudan Codex",
+      url: SITE_URL,
+      sameAs: ["https://www.sudancodex.app"],
+    },
+    keywords: [
+      "Sudan drug statistics",
+      "pharmaceutical data Sudan",
+      "drug index Sudan",
+      "pharma companies Sudan",
+      "Sudan Codex dataset",
+    ],
+    inLanguage: "en",
+    license: "https://creativecommons.org/licenses/by-nc/4.0/",
+    distribution: [
+      {
+        "@type": "DataDownload",
+        encodingFormat: "text/html",
+        contentUrl: url,
+      },
+    ],
+    measurementTechnique: [
+      "Pharmaceutical registration data analysis",
+      "Drug index aggregation",
+    ],
+    variableMeasured: [
+      {
+        "@type": "PropertyValue",
+        name: "Total Drugs",
+        value: 4661,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Unique Companies",
+        value: 536,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Unique Brand Names",
+        value: 3752,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Unique Generic Names",
+        value: 1098,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Unique Agents",
+        value: 154,
+      },
+    ],
   };
 };

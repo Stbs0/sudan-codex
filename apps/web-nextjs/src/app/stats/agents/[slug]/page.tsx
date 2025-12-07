@@ -9,12 +9,13 @@ import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import {
   getAgentBySlug,
   getAgentBySlugWithStats,
-  getAllAgents,
   getAllDrugsRelatedToAgentWithGenericAndCompanies,
 } from "@/db/queries/agent";
+import { generateAgentJsonLd } from "@/lib/json-ld";
 
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+export const revalidate = false;
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -31,11 +32,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description = `Explore detailed statistics for the pharmaceutical agent ${agent.name}. Discover the total number of drugs they represent, associated companies, and the variety of generic names in their portfolio. View a comprehensive list of all brand names represented by this agent, filterable and sortable for your convenience. This page is an essential resource for anyone interested in the activities of specific pharmaceutical agents within Sudan.`;
 
   return {
-    title: `Statistics for Agent ${agent.name} in Sudan`,
+    title: `${agent.name} | Pharmaceutical Agent in Sudan | Sudan Codex`,
     description: description,
+    alternates: {
+      canonical: `/stats/agents/${slug}`,
+    },
     keywords: [
       agent.name,
-      "pharmaceutical agent",
+      "pharmaceutical agent in Sudan",
       "drug representative",
       "Sudan drug statistics",
       "drug portfolio",
@@ -115,7 +119,16 @@ export default async function AgentStatsPage({ params }: Props) {
 
   return (
     <div className='container mx-auto p-4'>
-      <h1 className='mb-2 text-3xl font-bold'>{agent.name}</h1>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateAgentJsonLd(agent)).replace(
+            /</g,
+            "\\u003c"
+          ),
+        }}
+      />
+      <h1 className='mb-2 text-3xl font-bold'>{`${agent.name} — Pharmaceutical Agent`}</h1>
       <p className='text-muted-foreground mb-6 text-lg'>Agent Statistics</p>
 
       <div className='mb-8 grid grid-cols-1 gap-4 md:grid-cols-2'>

@@ -10,8 +10,10 @@ import {
   getAllDrugsRelatedToGenericWithAgentsAndCompanies,
   getGenericBySlugWithStats,
 } from "@/db/queries/generic";
+import { generateGenericJsonLd } from "@/lib/json-ld";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+export const revalidate = false;
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -27,11 +29,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const description = `Explore detailed statistics for the generic name ${generic.name}. Discover the total number of drug entries, unique companies that manufacture it, and the agents who represent it. You can also browse a comprehensive, sortable list of all drug products with this generic name. This page is an essential resource for anyone interested in the availability and distribution of specific generic drugs in Sudan.`;
   return {
-    title: `Statistics for Generic ${generic.name} in Sudan`,
+    title: `${generic.name} | Generic Drug Statistics in Sudan | Sudan Codex`,
     description,
+    alternates: {
+      canonical: `/stats/generics/${slug}`,
+    },
     keywords: [
       generic.name,
-      "generic drug",
+      "generic drug in sudan",
       "drug active ingredient",
       "Sudan drug statistics",
       "drug products",
@@ -110,7 +115,16 @@ export default async function GenericNameStatsPage({ params }: Props) {
 
   return (
     <div className='container mx-auto p-4'>
-      <h1 className='mb-2 text-3xl font-bold'>{generic.name}</h1>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateGenericJsonLd(generic)).replace(
+            /</g,
+            "\\u003c"
+          ),
+        }}
+      />
+      <h1 className='mb-2 text-3xl font-bold'>{`${generic.name} – Generic Drug Information & Statistics in Sudan`}</h1>
       <p className='text-muted-foreground mb-6 text-lg'>
         Generic Name Statistics
       </p>

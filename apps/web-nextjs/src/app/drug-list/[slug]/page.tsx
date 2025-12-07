@@ -33,6 +33,15 @@ export async function generateMetadata({
   return {
     title: `${brand_name} – Full Drug Information & Details`,
     description: `${brand_name} (${generic_name}) from ${company_name}. Imported by ${agent_name}. Origin: ${country_name}. View full drug details, strengths, and indications.`,
+    keywords: [
+      brand_name,
+      generic_name ?? "",
+      agent_name ?? "",
+      company_name ?? "",
+      country_name ?? "",
+      "Sudan Drug Index",
+      "Sudan medical database",
+    ],
     alternates: {
       canonical: `/drug-list/${slug}`,
     },
@@ -71,7 +80,7 @@ export default async function DrugInfoPage({
       <div className='mb-6 flex items-center gap-3'>
         <BackBtn />
         <h1 className='text-xl font-semibold tracking-tight'>
-          {drug.brand_name}
+          {`${drug.brand_name} (${drug.generic_name} - ${drug.dosage_form} ${drug.strength}) – Full Drug Info.`}
         </h1>
       </div>
 

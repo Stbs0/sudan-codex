@@ -13,7 +13,9 @@ export const getAgentBySlug = cache(
       where: eq(agentsTable.slug, slug),
     })
 );
-
+export type GetAgentBySlugWithStatsReturnType = Awaited<
+  ReturnType<typeof getAgentBySlugWithStats>
+>;
 export const getAgentBySlugWithStats = cache(async (slug: string) =>
   db.query.agentsTable.findFirst({
     where: eq(agentsTable.slug, slug),
