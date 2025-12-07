@@ -1,6 +1,7 @@
 import db from "@/db";
 import { drugsTable } from "@/db/schema";
 import { SearchDrugType } from "@/hooks/store/useSearch";
+import { getPostHogServer } from "@/lib/posthog-server";
 import { asc, like, sql } from "drizzle-orm";
 import { literal } from "zod";
 
@@ -21,9 +22,9 @@ export async function GET(req: Request) {
   const limit = Math.min(Number(searchParams.get("limit")) || 20, 50);
 
   const q = searchParams.get("q")?.toLowerCase() || "";
+
   const offset = (page - 1) * limit;
   const filterBy = searchParams.get("filterBy") || "";
-
   const columnMap: Record<SearchDrugType, (typeof drugsTable)[SearchDrugType]> =
     {
       brand_name: drugsTable.brand_name,
@@ -38,20 +39,42 @@ export async function GET(req: Request) {
   const filterColumn = column.success
     ? columnMap[column.data]
     : columnMap.brand_name;
+  const posthog = getPostHogServer();
 
-  const rows = await db
-    .select()
-    .from(drugsTable)
-    .where(like(sql`lower(${filterColumn})`, `%${escapeLike(q)}%`))
-    .orderBy(asc(filterColumn))
-    .limit(limit)
-    .offset(offset);
+  try {
+    const rows = await db
+      .select()
+      .from(drugsTable)
+      .where(like(sql`lower(${filterColumn})`, `%${escapeLike(q)}%`))
+      .orderBy(asc(filterColumn))
+      .limit(limit)
+      .offset(offset);
 
-  const nextPage = rows.length === limit ? page + 1 : null;
-  const res = {
-    data: rows,
-    nextPage,
-  };
+    const nextPage = rows.length === limit ? page + 1 : null;
+    const res = {
+      data: rows,
+      nextPage,
+    };
 
-  return Response.json(res);
+    posthog.capture({
+      event: "drug_search_api_success",
+      properties: {
+        query: q,
+        filter: filterBy,
+        page,
+        limit,
+      },
+    });
+
+    return Response.json(res);
+  } catch (error) {
+    posthog.captureException(error, "get_drugs_api_error", {
+      path: "/api/drugs",
+      query: searchParams.toString(),
+      column: column.data,
+    });
+    return Response.json({ error: "Internal Server Error" }, { status: 500 });
+  } finally {
+    await posthog.shutdown();
+  }
 }
