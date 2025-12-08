@@ -29,12 +29,15 @@ const GoogleOAuth = ({ logInOrSignUp }: Props) => {
       toast.error("An unexpected error occurred. Please try again.");
       console.error(error);
       posthog.captureException(error, { place: "google signin" });
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <Button
       variant='outline'
+      disabled={isLoading}
       className='flex w-full items-center justify-center gap-2'
       onClick={signInWithGoogle}>
       {logInOrSignUp} with Google
