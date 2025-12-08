@@ -78,7 +78,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     })),
     generics.map((generic) => ({
-      url: `https://www.sudancodex.app/agents/${generic.slug}`,
+      url: `https://www.sudancodex.app/generics/${generic.slug}`,
       lastModified: staticDate,
       changeFrequency: "monthly",
       priority: 0.8,
