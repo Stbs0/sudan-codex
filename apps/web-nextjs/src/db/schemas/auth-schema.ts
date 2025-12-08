@@ -1,6 +1,6 @@
-import { Occupations } from "@/lib/types";
+import { Occupation } from "@/lib/schemas";
 import { relations, sql } from "drizzle-orm";
-import { sqliteTable, text, integer, index } from "drizzle-orm/sqlite-core";
+import { index, integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
 export const users = sqliteTable("users", {
   id: text("id").primaryKey(),
@@ -23,7 +23,7 @@ export const users = sqliteTable("users", {
   age: integer("age"),
   phoneNumber: text("phone_number"),
   university: text("university"),
-  occupation: text("occupation").$type<Occupations>(),
+  occupation: text("occupation").$type<Occupation>(),
 });
 
 export const sessions = sqliteTable(

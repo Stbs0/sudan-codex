@@ -2,7 +2,11 @@ import db from "@/db";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { tellUsMoreSchema } from "./schemas";
-
+if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
+  throw new Error(
+    "Missing required Google OAuth environment variables: GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET"
+  );
+}
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
     provider: "sqlite",

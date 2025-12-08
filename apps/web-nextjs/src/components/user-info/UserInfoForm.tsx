@@ -47,6 +47,7 @@ const UserInfoForm = () => {
     });
     if (res.error) {
       posthog.captureException(res.error, { place: "user info form" });
+      toast.error("Failed to update profile. Please try again.");
     }
   };
   return (
@@ -127,6 +128,7 @@ const UserInfoForm = () => {
                 placeholder='Select your occupation'
               />
               <Button
+                disabled={methods.formState.isSubmitting}
                 className='mt-4'
                 type='submit'>
                 Save

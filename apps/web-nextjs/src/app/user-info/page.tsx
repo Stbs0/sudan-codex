@@ -1,5 +1,6 @@
 import UserInfoForm from "@/components/user-info/UserInfoForm";
 import { auth } from "@/lib/auth";
+import { Session } from "@/lib/auth-client";
 import { Metadata } from "next";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
@@ -17,7 +18,12 @@ export const metadata: Metadata = {
 };
 
 export default async function UserPersonalInfoPage() {
-  const session = await auth.api.getSession({ headers: await headers() });
+  let session: Session | null = null;
+  try {
+    session = await auth.api.getSession({ headers: await headers() });
+  } catch (_error) {
+    redirect("/log-in");
+  }
   if (!session) redirect("/log-in");
   if (session.user.isProfileComplete) redirect("/drug-list");
   return <UserInfoForm />;

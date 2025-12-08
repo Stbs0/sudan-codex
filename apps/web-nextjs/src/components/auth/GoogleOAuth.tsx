@@ -1,7 +1,7 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import { usePostHog } from "posthog-js/react";
-import type { SyntheticEvent } from "react";
+import { useState, type SyntheticEvent } from "react";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
 type Props = {
@@ -9,18 +9,26 @@ type Props = {
 };
 const GoogleOAuth = ({ logInOrSignUp }: Props) => {
   const posthog = usePostHog();
+  const [isLoading, setIsLoading] = useState(false);
 
   const signInWithGoogle = async (e: SyntheticEvent) => {
-    // TODO: add toast after logging in or sign up
-    const data = await authClient.signIn.social({
-      provider: "google",
-      callbackURL: "/drug-list",
-      newUserCallbackURL: "/user-info",
-    });
-    if (data.error) {
-      toast.error("Failed to sign in with Google. Please try again.");
-      console.error(data.error);
-      posthog.captureException(data.error, { place: "google signin" });
+    e.preventDefault();
+    try {
+      // TODO: add toast after logging in or sign up
+      const data = await authClient.signIn.social({
+        provider: "google",
+        callbackURL: "/drug-list",
+        newUserCallbackURL: "/user-info",
+      });
+      if (data.error) {
+        toast.error("Failed to sign in with Google. Please try again.");
+        console.error(data.error);
+        posthog.captureException(data.error, { place: "google signin" });
+      }
+    } catch (error) {
+      toast.error("An unexpected error occurred. Please try again.");
+      console.error(error);
+      posthog.captureException(error, { place: "google signin" });
     }
   };
 

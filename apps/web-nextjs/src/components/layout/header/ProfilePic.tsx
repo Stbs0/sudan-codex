@@ -14,7 +14,7 @@ type ProfilePicProps = {
 const ProfilePic = ({ user }: ProfilePicProps) => {
   const handleSignOut = async () => {
     await authClient.signOut();
-    toast.info(`Good Bye ${user?.name}`);
+    toast.info(`Good Bye ${user?.name || "User"}`);
   };
 
   return (
