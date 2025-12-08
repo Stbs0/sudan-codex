@@ -25,7 +25,7 @@ import { toast } from "sonner";
 import { Separator } from "../ui/separator";
 
 const UserInfoForm = () => {
-  const { user, refetch } = useAuth();
+  const { isPending, data } = useAuth();
   const posthog = usePostHog();
   const { control, ...methods } = useForm<tellUsMoreSchemaType>({
     defaultValues: {
@@ -37,17 +37,12 @@ const UserInfoForm = () => {
     mode: "all",
     resolver: zodResolver(tellUsMoreSchema),
   });
-  const queryClient = useQueryClient();
 
   const mutation = useMutation({
     mutationFn: async (data: tellUsMoreSchemaType) => {
       await completeProfile({ ...data, profileComplete: true });
     },
     onSuccess: async (_, variables) => {
-      if (user?.uid) {
-        await queryClient.invalidateQueries({ queryKey: ["user", user.uid] });
-      }
-      refetch();
       posthog.capture("user_profile_updated", {
         occupation: variables.occupation,
       });

@@ -5,11 +5,11 @@ import ProfilePic from "./ProfilePic";
 import SigninAndLogoutButton from "./SigninAndLogoutButton";
 
 export function SigninAndLogoutButtonOrProfilePic() {
-  const { user, authLoading } = useAuth();
+  const { data, isPending } = useAuth();
   const isMobile = useIsMobile();
-  if (authLoading) return null;
-  if (user) {
-    return <ProfilePic user={user} />;
+  if (isPending) return null;
+  if (data) {
+    return <ProfilePic user={data.user} />;
   } else {
     return isMobile ? null : <SigninAndLogoutButton />;
   }

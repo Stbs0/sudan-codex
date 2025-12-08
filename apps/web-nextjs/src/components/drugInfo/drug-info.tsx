@@ -9,13 +9,13 @@ import SearchDrugInfo from "./SearchDrugInfo";
 import { Separator } from "../ui/separator";
 
 export default function DrugInfo() {
-  const { user, authLoading } = useAuth();
+  const { data, isPending } = useAuth();
 
   return (
     <>
-      {authLoading ? (
+      {isPending ? (
         <div className='text-center'>Checking your session...</div>
-      ) : user ? (
+      ) : data ? (
         <>
           <SearchDrugInfo />
           <Separator className='w-full' />

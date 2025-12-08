@@ -1,7 +1,7 @@
 import { eq } from "drizzle-orm";
 import { cache } from "react";
 import db from "..";
-import { agentsTable, drugsTable } from "../schema";
+import { agentsTable, drugsTable } from "../schemas/schema";
 
 export const getAllAgents = cache(
   async () => await db.select({ slug: agentsTable.slug }).from(agentsTable)

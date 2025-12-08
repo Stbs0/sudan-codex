@@ -1,7 +1,7 @@
 import { GetAgentBySlugWithStatsReturnType } from "@/db/queries/agent";
 import { GetCompanyBySlugWithStatsReturnType } from "@/db/queries/company";
 import { GetGenericBySlugWithStatsReturnType } from "@/db/queries/generic";
-import { Drug } from "@/db/schema";
+import { Drug } from "@/db/schemas/schema";
 import { DrugWithRelations as LocalDrugType } from "@/services/server/getDrugs";
 import type {
   Dataset,

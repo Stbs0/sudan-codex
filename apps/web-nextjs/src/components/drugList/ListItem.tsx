@@ -1,4 +1,4 @@
-import { Drug } from "@/db/schema";
+import { Drug } from "@/db/schemas/schema";
 import { useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { Badge } from "../ui/badge";
