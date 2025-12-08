@@ -8,15 +8,6 @@ const nextConfig: NextConfig = {
   experimental: {
     typedEnv: true,
   },
-  async rewrites() {
-    const beforeFiles = [
-      {
-        source: "/__/auth/:path*",
-        destination: "https://sudan-codex.firebaseapp.com/__/auth/:path*",
-      },
-    ];
-    return { beforeFiles };
-  },
 };
 const posthogApiKey = process.env.POSTHOG_API_KEY;
 const posthogEnvId = process.env.POSTHOG_ENV_ID;

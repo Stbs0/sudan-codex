@@ -9,7 +9,6 @@
     "prepare": "husky"
   },
   "trustedDependencies": [
-    "@firebase/util",
     "core-js",
     "protobufjs",
     "unrs-resolver"
