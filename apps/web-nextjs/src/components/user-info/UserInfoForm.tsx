@@ -12,24 +12,24 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useAuth } from "@/hooks/useAuth";
 import { tellUsMoreSchema, tellUsMoreSchemaType } from "@/lib/schemas";
-import { completeProfile } from "@/services/usersServices";
 import { DevTool } from "@hookform/devtools";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 
+import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 import { usePostHog } from "posthog-js/react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { Separator } from "../ui/separator";
 
 const UserInfoForm = () => {
-  const { isPending, data } = useAuth();
   const posthog = usePostHog();
+  const router = useRouter();
+
   const { control, ...methods } = useForm<tellUsMoreSchemaType>({
     defaultValues: {
-      age: "",
+      age: 0,
       university: "",
       occupation: undefined,
       phoneNumber: "",
@@ -38,31 +38,17 @@ const UserInfoForm = () => {
     resolver: zodResolver(tellUsMoreSchema),
   });
 
-  const mutation = useMutation({
-    mutationFn: async (data: tellUsMoreSchemaType) => {
-      await completeProfile({ ...data, profileComplete: true });
-    },
-    onSuccess: async (_, variables) => {
-      posthog.capture("user_profile_updated", {
-        occupation: variables.occupation,
-      });
-      toast.success("Profile completed successfully!", {
-        description: "Your profile has been updated.",
-      });
-    },
-    onError: (error) => {
-      posthog.captureException(error, {
-        reason: "failed to complete user profile",
-      });
-      toast.error("Error completing profile. Please try again.");
-      console.error("Error completing profile:", error);
-    },
-  });
-
-  const onSubmit = (data: tellUsMoreSchemaType) => {
-    mutation.mutate(data);
+  const onSubmit = async (data: tellUsMoreSchemaType) => {
+    const res = await authClient.updateUser(data, {
+      onSuccess: (ctx) => {
+        router.replace("/drug-list");
+        toast.success("Profile updated successfully!");
+      },
+    });
+    if (res.error) {
+      posthog.captureException(res.error, { place: "user info form" });
+    }
   };
-
   return (
     <div className='mx-auto grid max-w-2xl items-center gap-4 px-3 py-4 dark:text-gray-100'>
       <Form
@@ -80,14 +66,15 @@ const UserInfoForm = () => {
               <FormField
                 control={control}
                 name='age'
-                render={({ field }) => (
+                render={({ field: { value, ...otherProps } }) => (
                   <FormItem>
                     <FormLabel>Age</FormLabel>
                     <FormControl>
                       <Input
                         placeholder='eg 20'
                         type='number'
-                        {...field}
+                        value={value === 0 ? "" : value}
+                        {...otherProps}
                       />
                     </FormControl>
                     <FormMessage />

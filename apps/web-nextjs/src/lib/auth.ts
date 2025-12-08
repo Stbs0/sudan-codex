@@ -1,6 +1,8 @@
 import db from "@/db";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { tellUsMoreSchema } from "./schemas";
+
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
     provider: "sqlite",
@@ -14,6 +16,19 @@ export const auth = betterAuth({
       prompt: "select_account consent",
     },
   },
+  databaseHooks: {
+    user: {
+      update: {
+        before: async (user) => {
+          const payload = tellUsMoreSchema.safeParse(user);
+          return payload.success
+            ? { data: { ...user, isProfileComplete: true } }
+            : false;
+        },
+      },
+    },
+  },
+
   user: {
     additionalFields: {
       isProfileComplete: {
