@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "Better Auth": {
+      "command": "https://mcp.chonkie.ai/better-auth/better-auth-builder/mcp",
+      "args": []
+    }
+  }
+}

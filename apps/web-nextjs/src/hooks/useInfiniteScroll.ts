@@ -1,5 +1,5 @@
 "use client";
-import { Drug } from "@/db/schema";
+import { Drug } from "@/db/schemas/schema";
 import { DrugFilterState, useSearchDrug } from "@/hooks/store/useSearch";
 import type { FetchedDrugs } from "@/services/server/getInitialInfiniteDrugs";
 import { infiniteQueryOptions, useInfiniteQuery } from "@tanstack/react-query";

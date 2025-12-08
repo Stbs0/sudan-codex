@@ -1,5 +1,5 @@
 "use client";
-import { Drug } from "@/db/schema";
+import { Drug } from "@/db/schemas/schema";
 import { create } from "zustand";
 
 export type SearchDrugType = keyof Pick<

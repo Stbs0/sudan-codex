@@ -2,7 +2,7 @@
 import "server-only";
 
 import db from "@/db";
-import { drugsTable } from "@/db/schema";
+import { drugsTable } from "@/db/schemas/schema";
 import { eq } from "drizzle-orm";
 import { cache } from "react";
 

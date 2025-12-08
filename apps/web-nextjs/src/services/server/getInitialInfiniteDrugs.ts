@@ -1,4 +1,4 @@
-import { Drug } from "@/db/schema";
+import { Drug } from "@/db/schemas/schema";
 import "server-only";
 
 export async function getDrugs(page = 1, q?: string) {

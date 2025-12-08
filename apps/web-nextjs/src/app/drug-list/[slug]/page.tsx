@@ -63,7 +63,6 @@ export default async function DrugInfoPage({
 }) {
   const { slug } = await params;
   const drug = await getDrugBySlug(slug);
-  console.log("drug", drug);
   if (!drug) notFound();
 
   const jsonLd = generateDrugJsonLd(drug);

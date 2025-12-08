@@ -13,7 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { occupationEnum } from "@/lib/schemas";
+import { occupationLiteral } from "@/lib/schemas";
 import React from "react";
 import { useFormContext } from "react-hook-form";
 
@@ -49,7 +49,7 @@ const SelectWithOther: React.FC<SelectWithOtherProps> = ({
                 </SelectTrigger>
               </FormControl>
               <SelectContent>
-                {occupationEnum.options.map((occupation) => (
+                {[...occupationLiteral.values].map((occupation) => (
                   <SelectItem
                     key={occupation}
                     value={occupation}>

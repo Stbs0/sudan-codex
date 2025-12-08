@@ -22,7 +22,7 @@ import {
   drugsTable,
   genericsTable,
   genericStatsTable,
-} from "@/db/schema";
+} from "@/db/schemas/schema";
 import { generateStatsJsonLd } from "@/lib/json-ld";
 import { count, countDistinct, desc, eq, sql } from "drizzle-orm";
 import { Metadata } from "next";

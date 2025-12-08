@@ -1,30 +1,20 @@
 "use client";
-import { SaveUserReturnTypes } from "@/lib/types";
+import { AuthContextType } from "@/hooks/useAuth";
+import { authClient } from "@/lib/auth-client";
 import { getInitials } from "@/lib/utils";
-import { logout } from "@/services/authServices";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
-import { useQueryClient } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar";
 import { Button } from "../../ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "../../ui/popover";
 import { Separator } from "../../ui/separator";
 type ProfilePicProps = {
-  user: SaveUserReturnTypes;
+  user: NonNullable<AuthContextType["data"]>["user"];
 };
 const ProfilePic = ({ user }: ProfilePicProps) => {
-  const router = useRouter();
-  const queryClient = useQueryClient();
-
   const handleSignOut = async () => {
-    await logout();
-    router.push("/log-in");
-    toast.success(`Good Bye ${user?.displayName}`);
-    await queryClient.invalidateQueries({
-      queryKey: ["user", user?.uid],
-      refetchType: "none",
-    });
+    await authClient.signOut();
+    toast.info(`Good Bye ${user?.name || "User"}`);
   };
 
   return (
@@ -32,12 +22,10 @@ const ProfilePic = ({ user }: ProfilePicProps) => {
       <PopoverTrigger className='flex items-center rounded-full'>
         <Avatar>
           <AvatarImage
-            src={user.photoURL}
+            src={user.image ?? undefined}
             alt='profile picture'
           />
-          <AvatarFallback>
-            {getInitials(user?.displayName || "User")}
-          </AvatarFallback>
+          <AvatarFallback>{getInitials(user?.name || "User")}</AvatarFallback>
         </Avatar>
       </PopoverTrigger>
       <PopoverContent

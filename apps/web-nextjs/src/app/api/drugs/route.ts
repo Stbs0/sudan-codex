@@ -1,5 +1,5 @@
 import db from "@/db";
-import { drugsTable } from "@/db/schema";
+import { drugsTable } from "@/db/schemas/schema";
 import { SearchDrugType } from "@/hooks/store/useSearch";
 import { getPostHogServer } from "@/lib/posthog-server";
 import { asc, like, sql } from "drizzle-orm";
