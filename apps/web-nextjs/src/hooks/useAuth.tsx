@@ -26,7 +26,6 @@ interface AuthProviderProps {
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const { data, isPending, error } = authClient.useSession();
-  console.log("user", data);
   return (
     <AuthContext value={{ data, isPending, error }}>{children}</AuthContext>
   );
