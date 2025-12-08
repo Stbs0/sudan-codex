@@ -37,3 +37,10 @@ export type SaveUserReturnTypes = {
 export type FetchedDrugInfo = {
   results: Array<Record<string, string[]>>;
 };
+
+export type Occupations =
+  | "Student"
+  | "Administrator"
+  | "Pharmacist"
+  | "Medical Representative"
+  | "Other";
