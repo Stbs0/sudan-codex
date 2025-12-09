@@ -1,0 +1,128 @@
+{
+  "about": {
+    "contactEmail": "البريد الإلكتروني: mohammedjrt+sudancodexsupport@gmail.com",
+    "contactTitle": "التواصل",
+    "dataSourceDescription": "تم استخراج بيانات دليل الأدوية السوداني من",
+    "dataSourceLinkText": "تقرير المجلس القومي للأدوية والسموم",
+    "dataSourceTitle": "مصادر البيانات",
+    "dataSourceYear": "لعام 2023.",
+    "developerDescription": "تم تطوير التطبيق بواسطة محمد محمود — صيدلي ومبرمج هاوٍ.",
+    "developerTitle": "المطور",
+    "privacyPolicy": "سياسة الخصوصية",
+    "purposeDescription": "يساعد هذا التطبيق الصيادلة ومقدمي الرعاية الصحية في السودان في معرفة العلامات التجارية المسجلة للأدوية، والأسماء العلمية، والشركات المصنعة — بهدف إنشاء سجل وطني قائم على المجتمع للأدوية.",
+    "purposeTitle": "الهدف",
+    "rightsReserved": "جميع الحقوق محفوظة.",
+    "title": "حول التطبيق",
+    "versionTitle": "الإصدار"
+  },
+  "auth": {
+    "title": "التسجيل أو تسجيل الدخول",
+    "welcome": "مرحباً!"
+  },
+  "completeProfile": {
+    "age": {
+      "placeholder": "أدخل عمرك",
+      "title": "العمر"
+    },
+    "description": "يرجى استكمال معلومات ملفك الشخصي.",
+    "occupation": {
+      "options": {
+        "administrator": "اداري",
+        "other": "أخرى",
+        "pharmacist": "صيدلي",
+        "student": "طالب"
+      },
+      "placeholder": "اختر المهنة",
+      "selectLabel": "اختر مهنتك",
+      "title": "المهنة"
+    },
+    "phoneNumber": {
+      "placeholder": "أدخل رقم هاتفك",
+      "title": "رقم الهاتف"
+    },
+    "submit": "إرسال",
+    "title": "إكمال الملف الشخصي",
+    "university": {
+      "placeholder": "أدخل اسم الجامعة",
+      "title": "الجامعة"
+    },
+    "updateError": "فشل في تحديث الملف الشخصي. يرجى المحاولة مرة أخرى."
+  },
+  "drugInfo": {
+    "accordion": {
+      "administration": "طريقة الاستعمال",
+      "adultDose": "جرعة البالغين",
+      "classification": "التصنيف",
+      "clinicalUse": "الاستخدام السريري",
+      "contraindications": "موانع الاستعمال",
+      "indications": "دواعي الاستعمال",
+      "majorInteractions": "تداخلات دوائية رئيسية",
+      "mechanismOfAction": "آلية العمل",
+      "minorInteractions": "تداخلات دوائية طفيفة",
+      "pediatricDose": "جرعة الأطفال",
+      "pregnancy": "الحمل",
+      "sideEffects": "الآثار الجانبية"
+    },
+    "agent": "الوكيل",
+    "companyName": "اسم الشركة",
+    "countryOfOrigin": "بلد المنشأ",
+    "disclaimer": "إخلاء المسؤولية",
+    "disclaimerDescription": "يوفر هذا التطبيق معلومات دوائية <1>للمرجعية فقط</1>. لا يُعد بديلاً عن التقدير المهني أو النشرات الرسمية للمنتجات. يُرجى دائماً التحقق من التفاصيل قبل وصف أو صرف الدواء.",
+    "dosageForm": "شكل الجرعة",
+    "errorLoading": "حدث خطأ أثناء تحميل البيانات",
+    "genericName": "الاسم العلمي",
+    "noDataAvailable": "لا توجد بيانات متاحة",
+    "noDetailsFound": "لا توجد تفاصيل متاحة لـ {{genericName}}",
+    "packSize": "حجم العبوة",
+    "strength": "التركيز",
+    "sudanDrugIndexNote": "ملاحظة: قد تحتوي بيانات دليل الأدوية السوداني على أخطاء في التنسيق أو بعض المعلومات غير الدقيقة. يرجى مراجعة التفاصيل أدناه بعناية. إذا كانت أي من المعلومات لا تتطابق مع سجلاتك، يرجى تجاهلها."
+  },
+  "drugList": {
+    "noMoreResults": "لا توجد نتائج إضافية",
+    "searchTerm": "كلمة البحث",
+    "title": "قائمة الأدوية"
+  },
+  "settings": {
+    "account": {
+      "alertMessage": "لا يمكن التراجع عن هذا الإجراء.",
+      "alertTitle": "هل أنت متأكد من حذف حسابك؟",
+      "cancelBtn": "الغاء",
+      "delete": "حذف الحساب",
+      "deleteBtn": "حذف",
+      "signOut": "تسجيل الخروج"
+    },
+    "cardInformation": "معلومات البطاقة",
+    "cardInformationDescription": "اضغط على النص لعرض المعلومات",
+    "changeLanguage": "تغيير اللغة",
+    "changeTheme": "تغيير المظهر",
+    "header": "الاعدادات",
+    "help": {
+      "whatsApp": {
+        "btn": "تريد مساعدة؟ تحدث معي على الواتس اب",
+        "message": "اشرح المشكلة و سوي سكريين شوت اذا امكن"
+      }
+    },
+    "languageChange": "تم تغيير اللغة إلى {{lang}}",
+    "restartNow": "إعادة التشغيل الآن",
+    "restartRequired": "يجب إعادة تشغيل التطبيق لتطبيق التغييرات",
+    "screens": {
+      "about": "نحن",
+      "account": "الحساب",
+      "appearanceAndLang": "المظهر و اللغة",
+      "help": "مساعدة"
+    },
+    "tooltips": {
+      "brandAndStrength": "هذا هو الاسم التجاري وتركيز الدواء",
+      "distributor": "هذا هو اسم الوكيل أو الموزع، مثل شركة أمي فارما",
+      "dosageForm": "هذا هو شكل الجرعة، مثل قرص، كبسولة، معلق، إلخ.",
+      "genericName": "هذا هو الاسم العلمي أو العام للدواء",
+      "manufacturer": "هذا هو اسم الشركة المصنعة",
+      "origin": "هذا هو بلد المنشأ",
+      "packSize": "هذا هو حجم العبوة، أي عدد الأقراص أو الوحدات في العلبة"
+    }
+  },
+  "tabs": {
+    "drugList": "قائمة الأدوية",
+    "settings": "الإعدادات"
+  }
+}
