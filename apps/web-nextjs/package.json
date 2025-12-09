@@ -18,7 +18,8 @@
     "db:drop:dev": "NODE_ENV=development drizzle-kit drop --config=drizzle-dev.config.ts",
     "db:seed": "NODE_ENV=production bun run scripts/setup-turso.ts",
     "db:seed:dev": "NODE_ENV=development bun run scripts/setup-turso.ts",
-    "db:studio": "NODE_ENV=development drizzle-kit studio --config=drizzle-dev.config.ts"
+    "db:studio": "NODE_ENV=development drizzle-kit studio --config=drizzle-dev.config.ts",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@hookform/devtools": "^4.4.0",

@@ -2,19 +2,17 @@
   "name": "sudan-codex",
   "version": "0.0.0",
   "devDependencies": {
-    "husky": "^9.1.7"
+    "husky": "^9.1.7",
+    "turbo": "^2.6.3"
   },
   "private": true,
   "scripts": {
     "prepare": "husky"
   },
-  "trustedDependencies": [
-    "core-js",
-    "protobufjs",
-    "unrs-resolver"
-  ],
+  "packageManager": "bun@1.3.1",
   "type": "module",
   "workspaces": [
+    "apps/mobile",
     "apps/web-nextjs"
   ]
 }
