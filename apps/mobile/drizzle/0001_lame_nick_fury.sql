@@ -1,0 +1,1 @@
+ALTER TABLE `drugs` RENAME TO `mytable`;
