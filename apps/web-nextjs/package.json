@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "starst": "next start",
     "lint": "eslint",
     "knip": "knip",
     "db:generate": "NODE_ENV=production drizzle-kit generate  --config=drizzle-prod.config.ts",
@@ -69,7 +69,7 @@
     "babel-plugin-react-compiler": "^1.0.0",
     "drizzle-kit": "^0.31.8",
     "eslint": "^9.39.1",
-    "eslint-config-next": "16.0.7",
+    "eslint-config-next": "16.0.3",
     "knip": "^5.71.0",
     "secretlint": "^11.2.5",
     "tailwindcss": "^4.1.17",

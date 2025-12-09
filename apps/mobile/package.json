@@ -3,8 +3,8 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
-    "start": "expo start",
-    "prebuild:android": "bunx expo prebuild --clean -p android",
+    "dev": "expo start",
+    "prebuild:android": "expo prebuild --clean -p android",
     "build:android": "bunx expo run:android",
     "ios": "expo run:ios",
     "test": "jest --watchAll",
