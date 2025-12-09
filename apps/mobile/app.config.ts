@@ -67,13 +67,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       },
     ],
     "expo-font",
-    "expo-web-browser",
-    [
-      "expo-asset",
-      {
-        assetPatterns: ["src/assets/data/**/*.db"],
-      },
-    ],
   ],
   experiments: {
     typedRoutes: true,
