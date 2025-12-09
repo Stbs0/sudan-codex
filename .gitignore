@@ -38,3 +38,6 @@ stats.html
 *Zone.Identifier
 .vercel
 .turbo
+*.db
+*-shm
+*-wal
