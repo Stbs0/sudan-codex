@@ -12,8 +12,8 @@
     "prepare": "husky",
     "dev": "turbo run dev",
     "start": "turbo run start",
-    "check-types": "turbo run check-types",
-    "lint": "turbo run lint",
+    "check-types": "turbo run check-types --continue",
+    "lint": "turbo run lint --continue",
     "clean": "rm -rf node_modules ./apps/*/node_modules bun.lock"
   },
   "packageManager": "bun@1.3.1",
