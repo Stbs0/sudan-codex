@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "starst": "next start",
+    "start": "next start",
     "lint": "eslint",
     "knip": "knip",
     "db:generate": "NODE_ENV=production drizzle-kit generate  --config=drizzle-prod.config.ts",
