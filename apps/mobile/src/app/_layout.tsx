@@ -96,13 +96,13 @@ function RootLayoutNav() {
     <ThemeProvider value={NAV_THEME[colorScheme === "dark" ? "dark" : "light"]}>
       <StatusBar />
       <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Protected guard={user?.profileComplete === true}>
-          <Stack.Screen name="(tabs)" />
-          <Stack.Screen
-            name="about"
-            options={{ title: "About", headerShown: true }}
-          />
-        </Stack.Protected>
+        {/* <Stack.Protected guard={user?.profileComplete === true}> */}
+        <Stack.Screen name="(tabs)" />
+        <Stack.Screen
+          name="about"
+          options={{ title: "About", headerShown: true }}
+        />
+        {/* </Stack.Protected> */}
         <Stack.Protected guard={user?.profileComplete === false}>
           <Stack.Screen name="complete-profile" />
         </Stack.Protected>
