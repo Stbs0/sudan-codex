@@ -1,64 +1,72 @@
+import { type DrugFilterState, useSearchDrug } from "@/hooks/store/useSearch";
 import type { Drug } from "@/types";
-import { useInfiniteQuery } from "@tanstack/react-query";
-import { useDeferredValue, useMemo, useState } from "react";
+import { infiniteQueryOptions, useInfiniteQuery } from "@tanstack/react-query";
+import { usePostHog } from "posthog-js/react";
+import { useEffect, useRef } from "react";
+interface InfiniteQueryType {
+  data: Drug[];
+  nextPage: number | null;
+}
+type QueryOptions = Omit<DrugFilterState, "setFilterBy" | "setSearch">;
 
-const PAGE_SIZE = 10;
+const getQueryOptions = ({
+  search,
+  filterBy,
 
-export const useInfiniteScroll = () => {
-  const [search, setSearch] = useState("");
-  const [searchBy, setSearchBy] = useState<keyof Drug>("genericName");
-  const deferredSearch = useDeferredValue(search);
-
-  const {
-    fetchNextPage,
-    isFetchingNextPage,
-    error,
-    isLoading,
-    hasNextPage,
-    data,
-  } = useInfiniteQuery({
-    queryKey: ["drugList", deferredSearch, searchBy],
-    queryFn: async ({ pageParam = 0 }) => {
-      const searchTerm = `%${deferredSearch}%`; // LIKE %term%
-
-      const query = `
-        SELECT *
-        FROM drugIndex
-        WHERE ${searchBy} LIKE $searchTerm
-        ORDER BY ${searchBy} ASC
-        LIMIT $PAGE_SIZE OFFSET $pageParam;
-      `;
-
-      const drugs = [];
-
-      return {
-        drugs,
-        nextPage:
-          drugs.length === PAGE_SIZE ? pageParam + PAGE_SIZE : undefined,
-      };
+  posthog,
+}: QueryOptions & { posthog: ReturnType<typeof usePostHog> }) =>
+  infiniteQueryOptions<InfiniteQueryType>({
+    queryKey: ["drugs", filterBy, search || ""],
+    queryFn: async ({ pageParam }) => {
+      try {
+        const params = new URLSearchParams();
+        if (search) params.set("q", search);
+        if (filterBy) params.set("filterBy", filterBy);
+        if (pageParam) params.set("page", pageParam.toString());
+        const res = await fetch(
+          process.env.EXPO_PUBLIC_BACKEND_URI +
+            `/api/drugs?${params.toString()}`
+        );
+        return res.json();
+      } catch (error) {
+        posthog.captureException(error, {
+          search,
+          filterBy,
+          pageParam,
+        });
+        throw error;
+      }
     },
-    initialPageParam: 0,
-    placeholderData: (prev) => prev,
     getNextPageParam: (lastPage) => lastPage.nextPage,
+    initialPageParam: 1,
+    placeholderData: (prev) => prev,
   });
+export function useInfiniteServerScroll() {
+  const search = useSearchDrug((state) => state.search);
+  const filterBy = useSearchDrug((state) => state.filterBy);
+  const posthog = usePostHog();
+  const debounceTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => {
+    if (debounceTimeout.current) clearTimeout(debounceTimeout.current);
+    if (search) {
+      debounceTimeout.current = setTimeout(() => {
+        posthog.capture("drug_searched", {
+          search,
+          filterBy,
+        });
+      }, 500);
+    }
+    return () => {
+      if (debounceTimeout.current) clearTimeout(debounceTimeout.current);
+    };
+  }, [search, filterBy, posthog]);
 
-  // Flatten all pages into a single list for convenience
-  const drugList = useMemo(
-    () => data?.pages.flatMap((page) => page.drugs) ?? [],
-    [data]
+  return useInfiniteQuery<InfiniteQueryType>(
+    getQueryOptions({
+      search,
+      filterBy,
+
+      posthog,
+    })
   );
-  return {
-    drugList,
-    search,
-    setSearch,
-    deferredSearch,
-    setSearchBy,
-    searchBy,
-    fetchNextPage,
-
-    isFetchingNextPage,
-    error,
-    isLoading,
-    hasNextPage,
-  };
-};
+}

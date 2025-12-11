@@ -5,7 +5,6 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
-import type { Drug } from "@/types";
 import { useQuery } from "@tanstack/react-query";
 import { useLocalSearchParams, useNavigation } from "expo-router";
 import { useColorScheme } from "nativewind";
@@ -17,7 +16,7 @@ import RenderHtml, {
 } from "react-native-render-html";
 const DrugInfo = () => {
   const { t } = useTranslation();
-  const drug = useLocalSearchParams() as Drug;
+  const { slug } = useLocalSearchParams<{ slug: string }>();
   const { width } = useWindowDimensions();
   const { colorScheme } = useColorScheme();
   const navigation = useNavigation();

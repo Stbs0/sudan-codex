@@ -7,64 +7,63 @@ const CardModal = () => {
   const { modalData, open, setOpen } = useModal();
   if (!modalData) return null;
   const {
-    agentName,
-    brandName,
-    companyName,
-    countryOfOrigin,
-    dosageFormName,
-    genericName,
-    packSize,
+    agent_name,
+    brand_name,
+    company_name,
+    country_name,
+
+    dosage_form,
+    generic_name,
+    pack_size,
     strength,
   } = modalData;
   return (
     <Modal
-      animationType="fade"
+      animationType='fade'
       visible={open}
       onRequestClose={() => setOpen(false)}
-      transparent
-    >
+      transparent>
       <Pressable
         onPress={() => setOpen(false)}
-        className="flex-1 items-center justify-center bg-black/80 mx-2"
-      >
-        <Card className=" py-2 rounded-none border-2 shadow-black shadow-md">
-          <CardContent className="gap-1">
-            <View className="gap-1   ">
-              <View className="flex-row ">
+        className='mx-2 flex-1 items-center justify-center bg-black/80'>
+        <Card className='rounded-none border-2 py-2 shadow-md shadow-black'>
+          <CardContent className='gap-1'>
+            <View className='gap-1'>
+              <View className='flex-row'>
                 <Text>
-                  <Text className=" font-extrabold text-neutral-700   dark:text-blue-200  ">
-                    {(brandName || "No Available Data") +
+                  <Text className='font-extrabold text-neutral-700 dark:text-blue-200'>
+                    {(brand_name || "No Available Data") +
                       " " +
                       (strength || "No Available Data")}
                   </Text>
-                  <Text className="font-bold"> — </Text>
-                  <Text className="dark:text-rose-400 text-rose-500">
-                    {packSize || "No Available Data"}
+                  <Text className='font-bold'> — </Text>
+                  <Text className='text-rose-500 dark:text-rose-400'>
+                    {pack_size || "No Available Data"}
                   </Text>
                 </Text>
               </View>
-              <View className=" gap-1 font-bold text-sm ">
+              <View className='gap-1 text-sm font-bold'>
                 <Text>
-                  <Text className="dark:text-green-400 text-green-500 font-extrabold">
-                    {genericName || "No Available Data"}
+                  <Text className='font-extrabold text-green-500 dark:text-green-400'>
+                    {generic_name || "No Available Data"}
                   </Text>
-                  <Text className="font-bold text-sm "> — </Text>
-                  <Text className="font-bold dark:text-blue-400 text-blue-700">
-                    {dosageFormName || "No Available Data"}
+                  <Text className='text-sm font-bold'> — </Text>
+                  <Text className='font-bold text-blue-700 dark:text-blue-400'>
+                    {dosage_form || "No Available Data"}
                   </Text>
                 </Text>
               </View>
             </View>
 
-            <View className="items-start gap-1 ">
-              <Text className="text-sm font-bold dark:text-pink-400 text-pink-700">
-                {companyName}
+            <View className='items-start gap-1'>
+              <Text className='text-sm font-bold text-pink-700 dark:text-pink-400'>
+                {company_name}
               </Text>
-              <Text className="text-sm font-bold dark:text-orange-400 text-orange-700">
-                {agentName}
+              <Text className='text-sm font-bold text-orange-700 dark:text-orange-400'>
+                {agent_name}
               </Text>
-              <Text className="text-sm font-bold dark:text-violet-400 text-violet-500">
-                {countryOfOrigin}
+              <Text className='text-sm font-bold text-violet-500 dark:text-violet-400'>
+                {country_name}
               </Text>
             </View>
           </CardContent>
