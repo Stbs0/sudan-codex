@@ -16,6 +16,6 @@ export interface DrugFilterState {
 export const useSearchDrug = create<DrugFilterState>((set) => ({
   search: "",
   setSearch: (value) => set({ search: value }),
-  filterBy: "",
+  filterBy: "brand_name",
   setFilterBy: (value) => set({ filterBy: value }),
 }));

@@ -16,7 +16,7 @@ const getQueryOptions = ({
   posthog,
 }: QueryOptions & { posthog: ReturnType<typeof usePostHog> }) =>
   infiniteQueryOptions<InfiniteQueryType>({
-    queryKey: ["drugs", filterBy, search || ""],
+    queryKey: ["drugs", filterBy, search],
     queryFn: async ({ pageParam }) => {
       try {
         const params = new URLSearchParams();
@@ -25,7 +25,8 @@ const getQueryOptions = ({
         if (pageParam) params.set("page", pageParam.toString());
         const res = await fetch(
           process.env.EXPO_PUBLIC_BACKEND_URI +
-            `/api/drugs?${params.toString()}`
+            `/api/drugs?${params.toString()}`,
+          { cache: "force-cache" }
         );
         return res.json();
       } catch (error) {

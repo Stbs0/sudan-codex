@@ -14,9 +14,9 @@ import {
   type DrugFilterState,
   type SearchDrugType,
 } from "@/hooks/store/useSearch";
-import { View } from "lucide-react-native";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { View } from "react-native";
 
 const options: { value: SearchDrugType; label: string }[] = [
   {
@@ -56,8 +56,8 @@ export default function SearchInput() {
   };
 
   const [width, setWidth] = React.useState(0);
-  const placeholder = options.find((item) => item.value === filterBy)?.label;
-
+  const placeholder =
+    options.find((item) => item.value === filterBy)?.label ?? "Brand Name";
   return (
     <View className='relative m-2 flex-row items-center'>
       <Input
