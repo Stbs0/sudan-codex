@@ -8,7 +8,7 @@ const config = getDefaultConfig(__dirname);
 config.resolver.sourceExts.push("cjs", "sql");
 // config.resolver.assetExts.push("db");
 
-config.resolver.unstable_enablePackageExports = false;
+config.resolver.unstable_enablePackageExports = true;
 
 module.exports = withNativeWind(config, {
   input: "./src/global.css",

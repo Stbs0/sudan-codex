@@ -3,7 +3,7 @@ import { View } from "react-native";
 
 export default function ModalScreen() {
   return (
-    <View className="items-center justify-center flex-1">
+    <View className='flex-1 items-center justify-center'>
       <SignUpForm />
     </View>
   );

@@ -1,43 +1,27 @@
 import { z } from "zod";
 
-export const occupationEnum = z.enum([
-  "Student",
-  "Administrator",
-  "Pharmacist",
-  "Other",
-]);
-export type OccupationEnumType = z.infer<typeof occupationEnum>;
-
-const phoneRegex = /^\+\d{1,3}\s?\d{7,12}$/;
-const englishOnlyRegex = /^[A-Za-z\s]+$/; // ✅ English letters and spaces only
-
+export const occupationLiteral = z.literal(
+  ["Student", "Administrator", "Pharmacist", "Medical Representative", "Other"],
+  { error: "Please select a valid occupation" }
+);
+export type Occupation = z.infer<typeof occupationLiteral>;
+const phoneRegex = new RegExp(
+  /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
+);
 export const tellUsMoreSchema = z.object({
-  age: z
-    .string()
-    .trim()
-    .regex(/^\d{1,3}$/, "Age must be 1 or 2 digits")
-    .refine((val) => {
-      const num = parseInt(val, 10);
-      return num >= 1 && num <= 120;
-    }, "Age must be between 1 and 120"),
-
+  age: z.coerce
+    .number<number>({ error: "Age must be a number" })
+    .min(15, { error: "You must be at least 15 years old" })
+    .max(100, { error: "You must be at most 100 years old" }),
   phoneNumber: z
     .string()
     .trim()
-    .min(10, "Phone number must be at least 10 digits")
-    .max(15, "Phone number must be at most 15 digits")
-    .regex(
-      phoneRegex,
-      "Phone number must begin with country code, e.g. +249912345678",
-    ),
+    .regex(phoneRegex, 'Must be like "+XXX"')
+    .nonempty({ error: "Phone number is required" }),
 
-  university: z
-    .string()
-    .trim()
-    .nonempty("University is required")
-    .regex(englishOnlyRegex, "University name must be in English only"),
-
-  occupation: occupationEnum,
+  university: z.string({ error: "University is required" }).trim().nonempty({
+    message: "Must not be empty",
+  }),
+  occupation: occupationLiteral,
 });
-
 export type tellUsMoreSchemaType = z.infer<typeof tellUsMoreSchema>;
