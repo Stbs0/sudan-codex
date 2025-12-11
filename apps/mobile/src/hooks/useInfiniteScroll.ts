@@ -1,12 +1,10 @@
 import type { Drug } from "@/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { useSQLiteContext } from "expo-sqlite";
 import { useDeferredValue, useMemo, useState } from "react";
 
 const PAGE_SIZE = 10;
 
 export const useInfiniteScroll = () => {
-  const db = useSQLiteContext();
   const [search, setSearch] = useState("");
   const [searchBy, setSearchBy] = useState<keyof Drug>("genericName");
   const deferredSearch = useDeferredValue(search);
@@ -31,11 +29,7 @@ export const useInfiniteScroll = () => {
         LIMIT $PAGE_SIZE OFFSET $pageParam;
       `;
 
-      const drugs = (await db.getAllAsync(query, {
-        $searchTerm: searchTerm,
-        $PAGE_SIZE: PAGE_SIZE,
-        $pageParam: pageParam,
-      })) as Drug[];
+      const drugs = [];
 
       return {
         drugs,
@@ -51,7 +45,7 @@ export const useInfiniteScroll = () => {
   // Flatten all pages into a single list for convenience
   const drugList = useMemo(
     () => data?.pages.flatMap((page) => page.drugs) ?? [],
-    [data],
+    [data]
   );
   return {
     drugList,

@@ -18,17 +18,18 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Text } from "@/components/ui/text";
+import { useAuth } from "@/hooks/useAuth";
+import { authClient } from "@/lib/auth-client";
 import { tellUsMoreSchema, type tellUsMoreSchemaType } from "@/lib/schemas";
 import { cn } from "@/lib/utils";
-import { completeProfile } from "@/services/usersServices";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { getAuth, signOut } from "@react-native-firebase/auth";
-import { useMutation } from "@tanstack/react-query";
+import { Redirect, useRouter } from "expo-router";
 import { usePostHog } from "posthog-react-native";
 import React from "react";
 import { Controller, useForm, type Control } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { View } from "react-native";
+import { toast } from "sonner-native";
 
 const SelectOccupation = ({
   control,
@@ -39,7 +40,7 @@ const SelectOccupation = ({
   return (
     <Controller
       control={control}
-      name="occupation"
+      name='occupation'
       render={({ field: { onChange, value }, fieldState: { error } }) => {
         const Occupation = [
           {
@@ -64,16 +65,14 @@ const SelectOccupation = ({
           <>
             <Select
               onValueChange={(option) => onChange(option?.value)}
-              value={options}
-            >
+              value={options}>
               <SelectTrigger
-                className={cn("w-[180px]", error && "border-red-500")}
-              >
+                className={cn("w-[180px]", error && "border-red-500")}>
                 <SelectValue
                   placeholder={t("completeProfile.occupation.placeholder")}
                 />
               </SelectTrigger>
-              <SelectContent className="w-[180px]">
+              <SelectContent className='w-[180px]'>
                 <SelectGroup>
                   <SelectLabel>
                     {t("completeProfile.occupation.selectLabel")}
@@ -82,8 +81,7 @@ const SelectOccupation = ({
                     <SelectItem
                       label={item.label}
                       key={item.value}
-                      value={item.value}
-                    >
+                      value={item.value}>
                       <Text>{item.label}</Text>
                     </SelectItem>
                   ))}
@@ -99,50 +97,54 @@ const SelectOccupation = ({
 };
 const FieldMessage = ({ message }: { message: string | undefined }) => {
   return !message ? null : (
-    <Text className="text-xs text-red-500">{message}</Text>
+    <Text className='text-xs text-red-500'>{message}</Text>
   );
 };
 
 const CompleteProfileScreen = () => {
+  const { data } = useAuth();
   const { t } = useTranslation();
   const posthog = usePostHog();
+  const router = useRouter();
   const form = useForm({
     mode: "onBlur",
     resolver: zodResolver(tellUsMoreSchema),
   });
+  if (data?.user?.isProfileComplete) {
+    console.log("profile compalte");
+    return <Redirect href='/drug-list' />;
+  }
 
-  const { mutate, status, error } = useMutation({
-    mutationKey: ["complete-profile"],
-    mutationFn: async (data: tellUsMoreSchemaType) => {
-      return await completeProfile({ ...data, profileComplete: true });
-    },
-    async onSuccess(_data, _variables, _onMutateResult, context) {
-      posthog.capture("complete_profile");
-      await context.client.cancelQueries({ queryKey: ["user"] });
-      await context.client.invalidateQueries({ queryKey: ["user"] });
-    },
-    onError(error) {
-      posthog.captureException(error, { label: "complete_profile_error" });
-    },
-  });
+  const onSubmit = async (data: tellUsMoreSchemaType) => {
+    const res = await authClient.updateUser(data, {
+      onSuccess: (ctx) => {
+        router.replace("/drug-list");
+        toast.success("Profile updated successfully!");
+      },
+    });
+    if (res.error) {
+      posthog.captureException(res.error, { place: "user info form" });
+      toast.error("Failed to update profile. Please try again.");
+    }
+  };
   // TODO: fix validation messages
   return (
-    <View className="pt-safe flex-1">
-      <Card className="m-4 ">
+    <View className='pt-safe flex-1'>
+      <Card className='m-4'>
         <CardHeader>
           <CardTitle>{t("completeProfile.title")}</CardTitle>
           <CardDescription>
-            <Text className="text-muted-foreground">
+            <Text className='text-muted-foreground'>
               {t("completeProfile.description")}
             </Text>
           </CardDescription>
         </CardHeader>
-        <CardContent className="gap-4">
+        <CardContent className='gap-4'>
           <View>
-            <Text className="mb-2">{t("completeProfile.age.title")}</Text>
+            <Text className='mb-2'>{t("completeProfile.age.title")}</Text>
             <Controller
               control={form.control}
-              name="age"
+              name='age'
               render={({
                 field: { onChange, onBlur, value },
                 fieldState: { error },
@@ -151,10 +153,10 @@ const CompleteProfileScreen = () => {
                   <Input
                     className={error ? "border-red-500" : ""}
                     placeholder={t("completeProfile.age.placeholder")}
-                    keyboardType="numeric"
+                    keyboardType='numeric'
                     onChangeText={onChange}
                     onBlur={onBlur}
-                    value={value}
+                    value={value ? value.toString() : ""}
                   />
                   {error && <FieldMessage message={error.message} />}
                 </>
@@ -162,12 +164,12 @@ const CompleteProfileScreen = () => {
             />
           </View>
           <View>
-            <Text className="mb-2">
+            <Text className='mb-2'>
               {t("completeProfile.phoneNumber.title")}
             </Text>
             <Controller
               control={form.control}
-              name="phoneNumber"
+              name='phoneNumber'
               render={({
                 field: { onChange, onBlur, value },
                 fieldState: { error },
@@ -176,7 +178,7 @@ const CompleteProfileScreen = () => {
                   <Input
                     className={error ? "border-red-500" : ""}
                     placeholder={t("completeProfile.phoneNumber.placeholder")}
-                    keyboardType="phone-pad"
+                    keyboardType='phone-pad'
                     onChangeText={onChange}
                     onBlur={onBlur}
                     value={value}
@@ -188,12 +190,12 @@ const CompleteProfileScreen = () => {
           </View>
 
           <View>
-            <Text className="mb-2">
+            <Text className='mb-2'>
               {t("completeProfile.university.title")}
             </Text>
             <Controller
               control={form.control}
-              name="university"
+              name='university'
               render={({
                 field: { onChange, onBlur, value },
                 fieldState: { error },
@@ -206,37 +208,32 @@ const CompleteProfileScreen = () => {
                     onBlur={onBlur}
                     value={value}
                   />
-
+                  {console.log(error) && null}
                   {error && <FieldMessage message={error.message} />}
                 </>
               )}
             />
           </View>
           <View>
-            <Text className="mb-2">
+            <Text className='mb-2'>
               {t("completeProfile.occupation.title")}
             </Text>
             <SelectOccupation control={form.control} />
           </View>
         </CardContent>
         <CardFooter>
-          {error && (
-            <Text className="text-red-500 text-sm">
-              {t("completeProfile.updateError")}
-            </Text>
-          )}
           <Button
-            disabled={status === "pending"}
-            className="w-full"
-            onPress={form.handleSubmit((data) => {
-              mutate(data);
-            })}
-          >
+            className='w-full'
+            onPress={form.handleSubmit(onSubmit)}>
             <Text>{t("completeProfile.submit")}</Text>
           </Button>
         </CardFooter>
       </Card>
-      <Button onPress={async () => signOut(getAuth())}>
+      <Button
+        onPress={async () => {
+          const data = await authClient.signOut();
+          console.log("signout", data);
+        }}>
         <Text>Sign out</Text>
       </Button>
     </View>

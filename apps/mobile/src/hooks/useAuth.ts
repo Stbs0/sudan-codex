@@ -1,14 +1,13 @@
-import type { SaveUserReturnTypes } from "@/types";
-import type { QueryObserverResult } from "@tanstack/react-query";
+import { type Session } from "@/lib/auth-client";
+import { BetterFetchError } from "better-auth/react";
 import { createContext, useContext } from "react";
 
-interface AuthContextType {
-  user: SaveUserReturnTypes | undefined;
-  isError: boolean;
-  error: unknown;
-  refetch?: () => Promise<QueryObserverResult<SaveUserReturnTypes, Error>>;
-
-  userLoading: boolean;
+export interface AuthContextType {
+  data: Session | null;
+  isPending: boolean;
+  error: BetterFetchError | null;
+  isSignedIn: boolean;
+  isProfileComplete: boolean | null | undefined;
 }
 
 export const AuthContext = createContext<AuthContextType | null>(null);
