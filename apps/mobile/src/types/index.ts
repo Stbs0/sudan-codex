@@ -32,18 +32,6 @@ export type UserInDb = Pick<
   "displayName" | "email" | "uid" | "photoURL" | "phoneNumber"
 >;
 
-export type Drug = {
-  no: string;
-  brandName: string;
-  genericName: string;
-  dosageFormName: string;
-  strength: string;
-  packSize: string;
-  companyName: string;
-  countryOfOrigin: string;
-  agentName: string;
-  drugInfoRef: string | null;
-};
 export type UserDataToSaveToFirebaseTypes = {
   displayName: string | null;
   email: string | null;
@@ -102,4 +90,26 @@ export type PrivateOutletTypes = {
 
 export type FetchedDrugInfo = {
   results: Record<string, string[]>[];
+};
+
+export type Drug = {
+  brand_name: string;
+  generic_name: string | null;
+  agent_name: string | null;
+  company_name: string | null;
+  country_name: string | null;
+  id: number;
+  slug: string;
+  dosage_form: string | null;
+  pack_size: string | null;
+  strength: string | null;
+  company_id: number | null;
+  agent_id: number | null;
+  generic_id: number | null;
+  country_id: number | null;
+};
+
+export type FetchedDrugs = {
+  data: Drug[];
+  nextPage: number | null;
 };

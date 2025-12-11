@@ -3,52 +3,73 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
+import DrugPropertyDescription from "@/screens/Drug-list/DrugCard/DrugPropertyDescription";
 import type { Drug } from "@/types";
 import { useQuery } from "@tanstack/react-query";
 import { useLocalSearchParams, useNavigation } from "expo-router";
-import { useColorScheme } from "nativewind";
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { ScrollView, useWindowDimensions } from "react-native";
+import { ActivityIndicator, ScrollView, View } from "react-native";
 import RenderHtml, {
   type MixedStyleDeclaration,
 } from "react-native-render-html";
 const DrugInfo = () => {
   const { t } = useTranslation();
-  const drug = useLocalSearchParams() as Drug;
-  const { width } = useWindowDimensions();
-  const { colorScheme } = useColorScheme();
+  const { slug } = useLocalSearchParams<{ slug: string }>();
+  // const { width } = useWindowDimensions();
+  // const { colorScheme } = useColorScheme();
   const navigation = useNavigation();
-  useEffect(() => {
-    navigation.setOptions({ title: drug.brandName });
-  }, [navigation, drug.brandName]);
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["drugInfo", drug.drugInfoRef],
+  const {
+    data: drug,
+    // isLoading,
+    isError,
+  } = useQuery<Drug>({
+    queryKey: ["drugInfo", slug],
 
     queryFn: async () => {
-      return [];
+      const res = await fetch(
+        process.env.EXPO_PUBLIC_BACKEND_URI + `/api/drugs/${slug}`
+      );
+      if (!res.ok) {
+        throw new Error(`Failed to fetch drug info: ${res.status}`);
+      }
+      return await res.json();
     },
   });
 
+  useEffect(() => {
+    if (!drug) return;
+    navigation.setOptions({ title: drug.brand_name });
+  }, [navigation, drug]);
+  if (isError)
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <Text className='text-destructive'>{t("drugInfo.errorLoading")}</Text>
+      </View>
+    );
+  if (!drug)
+    return (
+      <ActivityIndicator
+        size='large'
+        style={{ marginTop: 16 }}
+      />
+    );
   return (
     <ScrollView
       // style={{ flex: 1, gap: 2 }}
       contentContainerStyle={{ padding: 16 }}
       showsVerticalScrollIndicator={true}
       className='flex-1 gap-4'>
-      <Button>
-        <Text>Back</Text>
-      </Button>
-      {/* <Card className='mb-4 w-full py-4'>
-        <CardTitle className='text-center'>{drug.brandName}</CardTitle>
+      <Card className='mb-4 w-full py-4'>
+        <CardTitle className='text-center'>{drug.brand_name}</CardTitle>
         <CardContent className='w-full gap-2'>
           <View className='gap-2'>
             <DrugPropertyDescription
               title={t("drugInfo.genericName")}
               className='border-green-700 dark:border-green-400'
-              property={drug.genericName}
+              property={drug.generic_name}
             />
             <DrugPropertyDescription
               title={t("drugInfo.strength")}
@@ -58,39 +79,42 @@ const DrugInfo = () => {
             <DrugPropertyDescription
               title={t("drugInfo.packSize")}
               className='border-rose-700 dark:border-rose-400'
-              property={drug.packSize}
+              property={drug.pack_size}
             />
             <DrugPropertyDescription
               title={t("drugInfo.dosageForm")}
               className='border-blue-700 dark:border-blue-400'
-              property={drug.dosageFormName}
+              property={drug.dosage_form}
             />
             <DrugPropertyDescription
               title={t("drugInfo.companyName")}
               className='border-pink-700 dark:border-pink-400'
-              property={drug.companyName}
+              property={drug.company_name}
             />
             <DrugPropertyDescription
               title={t("drugInfo.agent")}
-              property={drug.agentName}
+              property={drug.agent_name}
               className='border-orange-700 dark:border-orange-400'
             />
             <DrugPropertyDescription
               title={t("drugInfo.countryOfOrigin")}
               className='border-violet-700 dark:border-violet-400'
-              property={drug.countryOfOrigin}
+              property={drug.country_name}
             />
           </View>
         </CardContent>
       </Card>
-      {isError ? (
+      {/* {isError ? (
         <Text className='text-red-500'>{t("drugInfo.errorLoading")}</Text>
       ) : isLoading ? (
         <ActivityIndicator
           size='large'
           style={{ marginTop: 16 }}
         />
-      ) : data ? (
+      )
+      :
+
+      drug ? (
         <View className='mt-4 gap-4'>
           <View>
             <Tooltip>
@@ -211,7 +235,7 @@ const DrugInfo = () => {
             {t("drugInfo.noDataAvailable")}
           </AlertTitle>
           <AlertDescription className='text-sm leading-5'>
-            {t("drugInfo.noDetailsFound", { genericName: drug.genericName })}
+            {t("drugInfo.noDetailsFound", { genericName: drug })}
           </AlertDescription>
         </Alert>
       )} */}

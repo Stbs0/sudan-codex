@@ -8,14 +8,20 @@ const Tour = ({
   tintColor?: string | undefined;
   canGoBack?: boolean | undefined;
 }) => {
-  return <Icon className="size-6 mr-4" color={tintColor} as={Info} />;
+  return (
+    <Icon
+      className='mr-4 size-6'
+      color={tintColor}
+      as={Info}
+    />
+  );
 };
 export default function DrugListLayout() {
   const { t } = useTranslation();
   return (
     <Stack>
       <Stack.Screen
-        name="index"
+        name='index'
         options={{
           headerRight: (props) => <Tour {...props} />,
 
@@ -23,7 +29,7 @@ export default function DrugListLayout() {
         }}
       />
       <Stack.Screen
-        name="[no]"
+        name='[slug]'
         options={{
           title: "",
           headerBackTitle: "Back",

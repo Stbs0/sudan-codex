@@ -64,7 +64,7 @@ function RootLayoutNav() {
 
     SplashScreen.hideAsync();
   }, [isPending]);
-  // console.log("isPending", isPending);
+  console.log("isPending", isPending);
   console.log("data", data);
   // console.log("gaurde complate", data === null);
   // console.log(

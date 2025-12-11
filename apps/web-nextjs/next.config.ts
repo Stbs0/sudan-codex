@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   typedRoutes: true,
   reactCompiler: true,
+  cacheComponents: true,
   experimental: {
     typedEnv: true,
   },

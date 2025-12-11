@@ -9,16 +9,20 @@ import { TouchableHighlight, View } from "react-native";
 
 const DrugCard = memo(
   ({
-    no,
-    brandName,
-    genericName,
-    dosageFormName,
+    brand_name,
+    generic_name,
+    agent_name,
+    company_name,
+    country_name,
+    id,
+    slug,
+    dosage_form,
+    pack_size,
     strength,
-    packSize,
-    companyName,
-    countryOfOrigin,
-    agentName,
-    drugInfoRef,
+    company_id,
+    agent_id,
+    generic_id,
+    country_id,
   }: Drug) => {
     // TODO: fix the rerender
     const { setOpen, setModalData } = useModal();
@@ -26,18 +30,9 @@ const DrugCard = memo(
 
     const onPress = () => {
       router.push({
-        pathname: "/drug-list/[no]",
+        pathname: "/drug-list/[slug]",
         params: {
-          no,
-          brandName,
-          genericName,
-          dosageFormName,
-          strength,
-          packSize,
-          companyName,
-          countryOfOrigin,
-          agentName,
-          drugInfoRef,
+          slug,
         },
       });
     };
@@ -45,16 +40,20 @@ const DrugCard = memo(
       Haptics.selectionAsync();
       setOpen(true);
       setModalData({
-        no,
-        brandName,
-        genericName,
-        dosageFormName,
+        brand_name,
+        generic_name,
+        agent_name,
+        company_name,
+        country_name,
+        id,
+        slug,
+        dosage_form,
+        pack_size,
         strength,
-        packSize,
-        companyName,
-        countryOfOrigin,
-        agentName,
-        drugInfoRef,
+        company_id,
+        agent_id,
+        generic_id,
+        country_id,
       });
     };
     return (
@@ -65,11 +64,11 @@ const DrugCard = memo(
       //     pathname: "/drug-list/[no]",
       //     params: {
       //       no,
-      //       brandName,
+      //       brand_name,
       //       genericName,
       //       dosageFormName,
       //       strength,
-      //       packSize,
+      //       pack_size,
       //       companyName,
       //       countryOfOrigin,
       //       agentName,
@@ -79,59 +78,61 @@ const DrugCard = memo(
       //   asChild
       //   push
       // >
-      <TouchableHighlight onPress={onPress} onLongPress={onLongPress}>
-        <Card className=" py-2 rounded-none border-2 shadow-black shadow-md ">
-          <CardContent className="gap-1">
-            <View className="gap-1   ">
-              <View className="flex-row ">
-                <Text numberOfLines={1} ellipsizeMode="tail">
-                  <Text className=" font-extrabold text-neutral-700   dark:text-blue-200  ">
-                    {(brandName || "NAD") + " " + (strength || "NAD")}
+      <TouchableHighlight
+        onPress={onPress}
+        onLongPress={onLongPress}>
+        <Card className='rounded-none border-2 py-2 shadow-md shadow-black'>
+          <CardContent className='gap-1'>
+            <View className='gap-1'>
+              <View className='flex-row'>
+                <Text
+                  numberOfLines={1}
+                  ellipsizeMode='tail'>
+                  <Text className='font-extrabold text-neutral-700 dark:text-blue-200'>
+                    {(brand_name || "NAD") + " " + (strength || "NAD")}
                   </Text>
-                  <Text className="font-bold"> — </Text>
+                  <Text className='font-bold'> — </Text>
                   <Text
-                    className="dark:text-rose-400 text-rose-700"
+                    className='text-rose-700 dark:text-rose-400'
                     numberOfLines={1}
-                    ellipsizeMode="tail"
-                  >
-                    {packSize || "NAD"}
+                    ellipsizeMode='tail'>
+                    {pack_size || "NAD"}
                   </Text>
                 </Text>
               </View>
-              <View className=" gap-1 font-bold text-sm ">
-                <Text numberOfLines={2} ellipsizeMode="tail">
-                  <Text className="dark:text-green-400 text-green-500 font-extrabold">
-                    {genericName || "NAD"}
+              <View className='gap-1 text-sm font-bold'>
+                <Text
+                  numberOfLines={2}
+                  ellipsizeMode='tail'>
+                  <Text className='font-extrabold text-green-500 dark:text-green-400'>
+                    {generic_name || "NAD"}
                   </Text>
-                  <Text className="font-bold text-sm "> — </Text>
-                  <Text className="font-bold dark:text-blue-400 text-blue-700">
-                    {dosageFormName || "NAD"}
+                  <Text className='text-sm font-bold'> — </Text>
+                  <Text className='font-bold text-blue-700 dark:text-blue-400'>
+                    {dosage_form || "NAD"}
                   </Text>
                 </Text>
               </View>
             </View>
 
-            <View className="items-start gap-1 ">
+            <View className='items-start gap-1'>
               <Text
-                className="text-sm font-bold dark:text-pink-400 text-pink-700"
+                className='text-sm font-bold text-pink-700 dark:text-pink-400'
                 numberOfLines={1}
-                ellipsizeMode="tail"
-              >
-                {companyName || "NAD"}
+                ellipsizeMode='tail'>
+                {company_name || "NAD"}
               </Text>
               <Text
-                className="text-sm font-bold dark:text-orange-400 text-orange-700"
+                className='text-sm font-bold text-orange-700 dark:text-orange-400'
                 numberOfLines={1}
-                ellipsizeMode="tail"
-              >
-                {agentName || "NAD"}
+                ellipsizeMode='tail'>
+                {agent_name || "NAD"}
               </Text>
               <Text
-                className="text-sm font-bold dark:text-violet-400 text-violet-500"
+                className='text-sm font-bold text-violet-500 dark:text-violet-400'
                 numberOfLines={1}
-                ellipsizeMode="tail"
-              >
-                {countryOfOrigin || "NAD"}
+                ellipsizeMode='tail'>
+                {country_name || "NAD"}
               </Text>
             </View>
           </CardContent>
@@ -139,7 +140,7 @@ const DrugCard = memo(
       </TouchableHighlight>
       // </Link>
     );
-  },
+  }
 );
 DrugCard.displayName = "DrugCard";
 
