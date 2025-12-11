@@ -60,12 +60,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         imageWidth: 200,
       },
     ],
-    [
-      "expo-sqlite",
-      {
-        enableFTS: true,
-      },
-    ],
     "expo-font",
   ],
   experiments: {
