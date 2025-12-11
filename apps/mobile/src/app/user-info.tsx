@@ -111,7 +111,6 @@ const CompleteProfileScreen = () => {
     resolver: zodResolver(tellUsMoreSchema),
   });
   if (data?.user?.isProfileComplete) {
-    console.log("profile compalte");
     return <Redirect href='/drug-list' />;
   }
 
@@ -232,7 +231,6 @@ const CompleteProfileScreen = () => {
       <Button
         onPress={async () => {
           const data = await authClient.signOut();
-          console.log("signout", data);
         }}>
         <Text>Sign out</Text>
       </Button>

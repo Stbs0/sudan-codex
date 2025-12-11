@@ -10,12 +10,11 @@ const useSignIn = () => {
   const signIn = async () => {
     setLoading(true);
     try {
-      console.log("first");
       const res = await authClient.signIn.social({
         provider: "google",
         callbackURL: "/(tabs)/drug-list",
+        newUserCallbackURL: "/user-info",
       });
-      console.log("res.data", res.data);
       if (res.error) {
         console.error(res.error);
         toast.error("Something went wrong");
