@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-interface DrugInfoStore {
+export interface DrugInfoStore {
   generic: string;
   refetch: boolean;
   route: string;

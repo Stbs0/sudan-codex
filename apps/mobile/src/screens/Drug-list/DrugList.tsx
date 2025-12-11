@@ -35,7 +35,7 @@ const DrugList = () => {
         style={{ marginTop: 16 }}
       />
     );
-  const drugList = data!.pages.flatMap((p) => p.data);
+  const drugList = data!.pages.flatMap((p) => p.data) ?? [];
   return (
     <ModalProvider>
       <LegendList

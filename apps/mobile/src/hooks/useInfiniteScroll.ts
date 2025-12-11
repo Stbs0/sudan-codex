@@ -9,34 +9,22 @@ interface InfiniteQueryType {
 }
 type QueryOptions = Omit<DrugFilterState, "setFilterBy" | "setSearch">;
 
-const getQueryOptions = ({
-  search,
-  filterBy,
-
-  posthog,
-}: QueryOptions & { posthog: ReturnType<typeof usePostHog> }) =>
+const getQueryOptions = ({ search, filterBy }: QueryOptions) =>
   infiniteQueryOptions<InfiniteQueryType>({
     queryKey: ["drugs", filterBy, search],
     queryFn: async ({ pageParam }) => {
-      try {
-        const params = new URLSearchParams();
-        if (search) params.set("q", search);
-        if (filterBy) params.set("filterBy", filterBy);
-        if (pageParam) params.set("page", pageParam.toString());
-        const res = await fetch(
-          process.env.EXPO_PUBLIC_BACKEND_URI +
-            `/api/drugs?${params.toString()}`,
-          { cache: "force-cache" }
-        );
-        return res.json();
-      } catch (error) {
-        posthog.captureException(error, {
-          search,
-          filterBy,
-          pageParam,
-        });
-        throw error;
+      const params = new URLSearchParams();
+      if (search) params.set("q", search);
+      if (filterBy) params.set("filterBy", filterBy);
+      if (pageParam) params.set("page", pageParam.toString());
+      const res = await fetch(
+        process.env.EXPO_PUBLIC_BACKEND_URI + `/api/drugs?${params.toString()}`,
+        { cache: "force-cache" }
+      );
+      if (!res.ok) {
+        throw new Error(`API error: ${res.status} ${res.statusText}`);
       }
+      return await res.json();
     },
     getNextPageParam: (lastPage) => lastPage.nextPage,
     initialPageParam: 1,
@@ -47,6 +35,17 @@ export function useInfiniteServerScroll() {
   const filterBy = useSearchDrug((state) => state.filterBy);
   const posthog = usePostHog();
   const debounceTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const query = useInfiniteQuery<InfiniteQueryType>(
+    getQueryOptions({
+      search,
+      filterBy,
+    })
+  );
+  useEffect(() => {
+    if (query.error) {
+      posthog.captureException(query.error, { search, filterBy });
+    }
+  }, [query.error, posthog, search, filterBy]);
   useEffect(() => {
     if (debounceTimeout.current) clearTimeout(debounceTimeout.current);
     if (search) {
@@ -61,13 +60,5 @@ export function useInfiniteServerScroll() {
       if (debounceTimeout.current) clearTimeout(debounceTimeout.current);
     };
   }, [search, filterBy, posthog]);
-
-  return useInfiniteQuery<InfiniteQueryType>(
-    getQueryOptions({
-      search,
-      filterBy,
-
-      posthog,
-    })
-  );
+  return query;
 }

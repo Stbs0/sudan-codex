@@ -24,7 +24,7 @@ const DrugInfo = () => {
   const {
     data: drug,
     // isLoading,
-    // isError,
+    isError,
   } = useQuery<Drug>({
     queryKey: ["drugInfo", slug],
 
@@ -32,18 +32,23 @@ const DrugInfo = () => {
       const res = await fetch(
         process.env.EXPO_PUBLIC_BACKEND_URI + `/api/drugs/${slug}`
       );
-      if (res.ok) {
-        const data = await res.json();
-        return data;
+      if (!res.ok) {
+        throw new Error(`Failed to fetch drug info: ${res.status}`);
       }
-      throw new Error("Failed to fetch drug info");
+      return await res.json();
     },
   });
+
   useEffect(() => {
     if (!drug) return;
     navigation.setOptions({ title: drug.brand_name });
   }, [navigation, drug]);
-
+  if (isError)
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <Text className='text-destructive'>{t("drugInfo.errorLoading")}</Text>
+      </View>
+    );
   if (!drug)
     return (
       <ActivityIndicator

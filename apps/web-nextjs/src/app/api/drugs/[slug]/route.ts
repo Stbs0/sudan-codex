@@ -6,8 +6,13 @@ export async function GET(
   ctx: RouteContext<"/api/drugs/[slug]">
 ) {
   const { slug } = await ctx.params;
-  if (!slug)
+  if (!slug) {
     return Response.json({ error: "No slug provided" }, { status: 400 });
-  const products = await getDrugBySlug(slug);
-  return Response.json(products);
+  }
+
+  const drug = await getDrugBySlug(slug);
+
+  if (!drug) {
+    return Response.json({ error: "Drug not found" }, { status: 404 });
+  }
 }

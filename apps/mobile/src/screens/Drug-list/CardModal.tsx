@@ -57,13 +57,13 @@ const CardModal = () => {
 
             <View className='items-start gap-1'>
               <Text className='text-sm font-bold text-pink-700 dark:text-pink-400'>
-                {company_name}
+                {company_name || "No Available Data"}
               </Text>
               <Text className='text-sm font-bold text-orange-700 dark:text-orange-400'>
-                {agent_name}
+                {agent_name || "No Available Data"}
               </Text>
               <Text className='text-sm font-bold text-violet-500 dark:text-violet-400'>
-                {country_name}
+                {country_name || "No Available Data"}
               </Text>
             </View>
           </CardContent>

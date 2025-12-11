@@ -14,7 +14,7 @@ import {
   type DrugFilterState,
   type SearchDrugType,
 } from "@/hooks/store/useSearch";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { View } from "react-native";
 
@@ -47,6 +47,7 @@ export default function SearchInput() {
   const setSearch = useSearchDrug((state) => state.setSearch);
   const setFilterBy = useSearchDrug((state) => state.setFilterBy);
   const filterBy = useSearchDrug((state) => state.filterBy);
+  const [width, setWidth] = useState(0);
 
   const onSearch = (text: string) => {
     setSearch(text);
@@ -55,9 +56,10 @@ export default function SearchInput() {
     setFilterBy(val);
   };
 
-  const [width, setWidth] = React.useState(0);
-  const placeholder =
-    options.find((item) => item.value === filterBy)?.label ?? "Brand Name";
+  const defaultOption = options.find((item) => item.value === filterBy) ?? {
+    value: "brand_name",
+    label: "Brand Name",
+  };
   return (
     <View className='relative m-2 flex-row items-center'>
       <Input
@@ -65,14 +67,14 @@ export default function SearchInput() {
         className={`w-full rounded-md border dark:bg-black`}
         style={{ paddingRight: width + 8 }}
         value={search}
-        placeholder={`Search by ${placeholder}...`}
+        placeholder={`Search by ${defaultOption.label}...`}
       />
 
       {/* Dropdown overlay on right side */}
       <View
         className='elevation-md absolute right-2 top-1/2 -translate-y-1/2'
         pointerEvents='box-none'>
-        <Select>
+        <Select value={defaultOption}>
           <SelectTrigger
             onLayout={(event) => {
               const { width } = event.nativeEvent.layout;
@@ -80,7 +82,7 @@ export default function SearchInput() {
             }}
             className='h-9 border-0 bg-transparent px-2 shadow-none'>
             <SelectValue
-              placeholder={placeholder || "Generic Name"}
+              placeholder={defaultOption.label}
               className='text-sm text-muted-foreground'
             />
           </SelectTrigger>
