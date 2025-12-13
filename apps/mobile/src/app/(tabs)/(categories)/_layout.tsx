@@ -12,7 +12,7 @@ export default function TabLayout() {
   const { bottom, ...safeAreaInsets } = useSafeAreaInsets();
   return (
     <Tabs
-      safeAreaInsets={{ ...safeAreaInsets, bottom: bottom / 4 }}
+      // safeAreaInsets={{ ...safeAreaInsets, bottom: bottom / 4 }}
       screenOptions={{
         // tabBarPosition: "top",
         headerShown: true,
