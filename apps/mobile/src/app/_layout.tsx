@@ -34,7 +34,7 @@ onlineManager.setEventListener((setOnline) => {
 
 export { ErrorBoundary } from "expo-router";
 export const unstable_settings = {
-  initialRouteName: "(tabs)/drug-list/index.tsx",
+  initialRouteName: "(tabs)/drug-list/index",
 };
 export default function RootLayout() {
   return (
@@ -82,30 +82,33 @@ function RootLayoutNav() {
   // //   return null;
   // //   return null;
   // // }
-
   return (
     <GestureHandlerRootView>
       <ThemeProvider
         value={NAV_THEME[colorScheme === "dark" ? "dark" : "light"]}>
         <StatusBar />
         <Stack screenOptions={{ headerShown: false }}>
-          {/* auth */}
+          {/* began auth */}
           <Stack.Protected guard={data === null}>
             <Stack.Screen name='auth' />
           </Stack.Protected>
-          {/* tabs  */}
-          <Stack.Protected
-            guard={data !== null && data?.user?.isProfileComplete === true}>
-            <Stack.Screen name='(tabs)' />
-            {/* check if complete profile */}
-            <Stack.Protected guard={data?.user?.isProfileComplete === false}>
-              <Stack.Screen name='complete-profile' />
-            </Stack.Protected>
+          {/* end auth */}
 
-            <Stack.Screen
-              name='about'
-              options={{ title: "About", headerShown: true }}
-            />
+          <Stack.Protected guard={data !== null}>
+            {/* began tabs  */}
+            <Stack.Protected guard={data?.user?.isProfileComplete === true}>
+              <Stack.Screen name='(tabs)' />
+              <Stack.Screen
+                name='about'
+                options={{ title: "About", headerShown: true }}
+              />
+            </Stack.Protected>
+            {/* began tabs  */}
+            {/* began check if complete profile */}
+            <Stack.Protected guard={data?.user?.isProfileComplete === false}>
+              <Stack.Screen name='user-info' />
+            </Stack.Protected>
+            {/* end check if complete profile */}
           </Stack.Protected>
         </Stack>
         <PortalHost />
