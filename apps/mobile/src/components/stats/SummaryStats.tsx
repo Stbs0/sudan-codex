@@ -1,4 +1,5 @@
 import { View } from "react-native";
+import { Card, CardContent, CardTitle } from "../ui/card";
 import { Text } from "../ui/text";
 
 interface SummaryData {
@@ -17,14 +18,12 @@ interface StatCardProps {
 
 function StatCard({ label, value, color }: StatCardProps) {
   return (
-    <View className={`rounded-lg border-l-4 bg-slate-800 p-6 ${color}`}>
-      <Text className="mb-3 text-xs uppercase tracking-wider text-slate-400">
-        {label}
-      </Text>
-      <Text className="text-3xl font-bold text-white">
-        {value.toLocaleString()}
-      </Text>
-    </View>
+    <Card className={`rounded-lg border-l-4 p-6 ${color}`}>
+      <CardTitle className="">{label}</CardTitle>
+      <CardContent className="pl-0">
+        <Text className="text-3xl font-bold">{value.toLocaleString()}</Text>
+      </CardContent>
+    </Card>
   );
 }
 
@@ -51,7 +50,7 @@ export default function SummaryStats({ data }: { data: SummaryData }) {
 
   return (
     <View className="mb-12 px-6">
-      <View className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5">
+      <View className="gap-4">
         {stats.map((stat, index) => (
           <StatCard
             key={index}
