@@ -33,7 +33,9 @@ onlineManager.setEventListener((setOnline) => {
 });
 
 export { ErrorBoundary } from "expo-router";
-
+export const unstable_settings = {
+  initialRouteName: "(tabs)/drug-list/index",
+};
 export default function RootLayout() {
   return (
     <PHProvider>
@@ -65,7 +67,7 @@ function RootLayoutNav() {
     SplashScreen.hideAsync();
   }, [isPending]);
   console.log("isPending", isPending);
-  console.log("data", data);
+  // console.log("data", data);
   // console.log("gaurde complate", data === null);
   // console.log(
   //   "gaurde auth",
@@ -80,27 +82,34 @@ function RootLayoutNav() {
   // //   return null;
   // //   return null;
   // // }
-
   return (
     <GestureHandlerRootView>
       <ThemeProvider
-        value={NAV_THEME[colorScheme === "dark" ? "dark" : "light"]}>
+        value={NAV_THEME[colorScheme === "dark" ? "dark" : "light"]}
+      >
         <StatusBar />
         <Stack screenOptions={{ headerShown: false }}>
+          {/* began auth */}
           <Stack.Protected guard={data === null}>
-            <Stack.Screen name='auth' />
+            <Stack.Screen name="auth" />
           </Stack.Protected>
-          <Stack.Protected
-            guard={data !== null && data.user?.isProfileComplete === false}>
-            <Stack.Screen name='complete-profile' />
-          </Stack.Protected>
-          <Stack.Protected
-            guard={data !== null && data.user?.isProfileComplete === true}>
-            <Stack.Screen name='(tabs)' />
-            <Stack.Screen
-              name='about'
-              options={{ title: "About", headerShown: true }}
-            />
+          {/* end auth */}
+
+          <Stack.Protected guard={data !== null}>
+            {/* began tabs  */}
+            <Stack.Protected guard={data?.user?.isProfileComplete === true}>
+              <Stack.Screen name="(tabs)" />
+              <Stack.Screen
+                name="about"
+                options={{ title: "About", headerShown: true }}
+              />
+            </Stack.Protected>
+            {/* began tabs  */}
+            {/* began check if complete profile */}
+            <Stack.Protected guard={data?.user?.isProfileComplete === false}>
+              <Stack.Screen name="user-info" />
+            </Stack.Protected>
+            {/* end check if complete profile */}
           </Stack.Protected>
         </Stack>
         <PortalHost />

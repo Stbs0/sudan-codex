@@ -15,4 +15,5 @@ export async function GET(
   if (!drug) {
     return Response.json({ error: "Drug not found" }, { status: 404 });
   }
+  return Response.json(drug);
 }

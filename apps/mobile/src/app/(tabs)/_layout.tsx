@@ -1,19 +1,41 @@
 import { Icon } from "@/components/ui/icon";
 import { Tabs } from "expo-router";
-import { List, Settings } from "lucide-react-native";
+import { List, ListTree, Settings } from "lucide-react-native";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 export default function TabLayout() {
   const { t } = useTranslation();
   return (
-    <Tabs screenOptions={{ headerShown: false }}>
+    <Tabs
+      screenOptions={({ route }) => ({
+        tabBarIcon: (props) => {
+          if (route.name === "drug-list") {
+            return <Icon as={List} {...props} />;
+          }
+          if (route.name === "(categories)") {
+            return <Icon as={ListTree} {...props} />;
+          }
+          if (route.name === "settings") {
+            return <Icon as={Settings} {...props} />;
+          }
+        },
+      })}
+    >
       <Tabs.Screen
         name="drug-list"
         options={{
           tabBarLabel: t("tabs.drugList"),
+          headerShown: false,
+        }}
+      />
 
-          tabBarIcon: (props) => <Icon as={List} {...props} />,
+      <Tabs.Screen
+        name="(categories)"
+        options={{
+          // title: t("tabs.settings"),
+          tabBarLabel: "Categories",
+          headerShown: false,
         }}
       />
       <Tabs.Screen
@@ -21,7 +43,6 @@ export default function TabLayout() {
         options={{
           title: t("tabs.settings"),
           tabBarLabel: t("tabs.settings"),
-          tabBarIcon: (props) => <Icon as={Settings} {...props} />,
         }}
       />
 

@@ -27,7 +27,7 @@ const Account = () => {
           text: t("settings.account.deleteBtn"),
           onPress: async () => {
             try {
-              await authClient.deleteUser({ callbackURL: "/auth" });
+              await authClient.deleteUser();
               posthog.capture("account deleted");
             } catch (error) {
               posthog.captureException(error, {
