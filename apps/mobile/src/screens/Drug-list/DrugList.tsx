@@ -26,15 +26,10 @@ const DrugList = () => {
   const renderItem = useCallback(({ item }: { item: Drug }) => {
     return <DrugCard {...item} />;
   }, []);
-  if (error) return <Text className='text-destructive'>{String(error)}</Text>;
+  if (error) return <Text className="text-destructive">{String(error)}</Text>;
 
   if (isLoading)
-    return (
-      <ActivityIndicator
-        size='large'
-        style={{ marginTop: 16 }}
-      />
-    );
+    return <ActivityIndicator size="large" style={{ marginTop: 16 }} />;
   const drugList = data!.pages.flatMap((p) => p.data) ?? [];
   return (
     <ModalProvider>
@@ -43,14 +38,14 @@ const DrugList = () => {
         data={drugList}
         ref={listRef}
         renderItem={renderItem}
-        className='pt-4'
+        className="pt-4"
         keyExtractor={(item) => item.id.toString()}
         ItemSeparatorComponent={() => <View style={{ height: 16 }} />}
         ListFooterComponent={() => {
-          if (isFetchingNextPage) return <ActivityIndicator size='large' />;
+          if (isFetchingNextPage) return <ActivityIndicator size="large" />;
           if (!hasNextPage && drugList.length > 0)
             return (
-              <Text className='py-2 text-center text-muted-foreground'>
+              <Text className="py-2 text-center text-muted-foreground">
                 {t("drugList.noMoreResults")}
               </Text>
             );
@@ -61,7 +56,7 @@ const DrugList = () => {
         onEndReached={() => {
           if (hasNextPage && !isFetchingNextPage) fetchNextPage();
         }}
-        keyboardShouldPersistTaps='always'
+        keyboardShouldPersistTaps="always"
       />
       <SearchInput />
       <CardModal />

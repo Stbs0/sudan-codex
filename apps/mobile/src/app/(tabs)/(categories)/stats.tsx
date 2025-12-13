@@ -11,9 +11,7 @@ import { ScrollView, StyleSheet, View } from "react-native";
 
 export default function App() {
   return (
-    <ScrollView
-      style={styles.container}
-      showsVerticalScrollIndicator={false}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <Header />
       <SummaryStats data={data.summaryData} />
       <TopCompanies companies={data.topCompanies} />

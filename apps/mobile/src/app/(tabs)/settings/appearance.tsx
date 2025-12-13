@@ -22,7 +22,7 @@ const Appearance = () => {
     toggleColorScheme();
   };
   return (
-    <View className="p-4 gap-4 flex-1">
+    <View className="flex-1 gap-4 p-4">
       <Card className="">
         <CardHeader>
           <CardTitle className="text-lg">{t("settings.changeTheme")}</CardTitle>

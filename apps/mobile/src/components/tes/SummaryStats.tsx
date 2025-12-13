@@ -18,10 +18,10 @@ interface StatCardProps {
 function StatCard({ label, value, color }: StatCardProps) {
   return (
     <View className={`rounded-lg border-l-4 bg-slate-800 p-6 ${color}`}>
-      <Text className='mb-3 text-xs uppercase tracking-wider text-slate-400'>
+      <Text className="mb-3 text-xs uppercase tracking-wider text-slate-400">
         {label}
       </Text>
-      <Text className='text-3xl font-bold text-white'>
+      <Text className="text-3xl font-bold text-white">
         {value.toLocaleString()}
       </Text>
     </View>
@@ -50,8 +50,8 @@ export default function SummaryStats({ data }: { data: SummaryData }) {
   ];
 
   return (
-    <View className='mb-12 px-6'>
-      <View className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5'>
+    <View className="mb-12 px-6">
+      <View className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5">
         {stats.map((stat, index) => (
           <StatCard
             key={index}

@@ -17,58 +17,39 @@ export default function TabLayout() {
         // tabBarPosition: "top",
         headerShown: true,
         headerSearchBarOptions: {},
-      }}>
+      }}
+    >
       <Tabs.Screen
-        name='stats'
+        name="stats"
         options={{
           title: "Statistics",
           tabBarLabel: "Statistics",
-          tabBarIcon: (props) => (
-            <Icon
-              as={ChartNoAxesColumn}
-              {...props}
-            />
-          ),
+          tabBarIcon: (props) => <Icon as={ChartNoAxesColumn} {...props} />,
         }}
       />
       <Tabs.Screen
-        name='companies/index'
+        name="companies/index"
         options={{
           tabBarLabel: "Companies",
           title: "Companies",
 
-          tabBarIcon: (props) => (
-            <Icon
-              as={Factory}
-              {...props}
-            />
-          ),
+          tabBarIcon: (props) => <Icon as={Factory} {...props} />,
         }}
       />
       <Tabs.Screen
-        name='generics/index'
+        name="generics/index"
         options={{
           title: "Generics",
           tabBarLabel: "Generics",
-          tabBarIcon: (props) => (
-            <Icon
-              as={Pill}
-              {...props}
-            />
-          ),
+          tabBarIcon: (props) => <Icon as={Pill} {...props} />,
         }}
       />
       <Tabs.Screen
-        name='agents/index'
+        name="agents/index"
         options={{
           title: "Agents",
           tabBarLabel: "Agents",
-          tabBarIcon: (props) => (
-            <Icon
-              as={Building2}
-              {...props}
-            />
-          ),
+          tabBarIcon: (props) => <Icon as={Building2} {...props} />,
         }}
       />
     </Tabs>

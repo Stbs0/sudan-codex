@@ -12,15 +12,12 @@ const DrugPropertyDescription = ({
 }: Props) => {
   return (
     <View
-      className={cn(
-        "flex flex-col  border-l-2 border-b-2  p-2 pt-0",
-        className,
-      )}
+      className={cn("flex flex-col border-b-2 border-l-2 p-2 pt-0", className)}
     >
-      <Text className="dark:text-white/30 font-bold text-xs text-black/20">
+      <Text className="text-xs font-bold text-black/20 dark:text-white/30">
         {String(title)}
       </Text>
-      <Text className="text-bold dark:text-white ">
+      <Text className="text-bold dark:text-white">
         {String(property || "No Available Data")}
       </Text>
     </View>

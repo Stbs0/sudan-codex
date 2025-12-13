@@ -13,38 +13,36 @@ const About = () => {
   const appVersion = Constants.expoConfig?.version || "1.0.0";
   const isDark = colorScheme === "dark";
   return (
-    <ScrollView className="flex-1   px-5 mb-safe mt-2">
+    <ScrollView className="mb-safe mt-2 flex-1 px-5">
       {/* Header */}
-      <Text className="text-2xl font-bold mb-4  ">{t("about.title")}</Text>
+      <Text className="mb-4 text-2xl font-bold">{t("about.title")}</Text>
 
       {/* Purpose */}
-      <Text className="text-lg font-semibold mt-3  ">
+      <Text className="mt-3 text-lg font-semibold">
         {t("about.purposeTitle")}
       </Text>
-      <Text className="text-base   mt-2">{t("about.purposeDescription")}</Text>
+      <Text className="mt-2 text-base">{t("about.purposeDescription")}</Text>
 
       {/* Developer */}
-      <Text className="text-lg font-semibold mt-6  ">
+      <Text className="mt-6 text-lg font-semibold">
         {t("about.developerTitle")}
       </Text>
-      <Text className="text-base   mt-2">
-        {t("about.developerDescription")}
-      </Text>
+      <Text className="mt-2 text-base">{t("about.developerDescription")}</Text>
 
       {/* Version */}
-      <Text className="text-lg font-semibold mt-6  ">
+      <Text className="mt-6 text-lg font-semibold">
         {t("about.versionTitle")}
       </Text>
-      <Text className="text-base   mt-2">{appVersion}</Text>
+      <Text className="mt-2 text-base">{appVersion}</Text>
 
       {/* Data Sources */}
-      <Text className="text-lg font-semibold mt-6  ">
+      <Text className="mt-6 text-lg font-semibold">
         {t("about.dataSourceTitle")}
       </Text>
-      <Text className="text-base   mt-2">
+      <Text className="mt-2 text-base">
         {t("about.dataSourceDescription")}{" "}
         <Text
-          className=" text-blue-600 dark:text-blue-400 underline"
+          className="text-blue-600 underline dark:text-blue-400"
           onPress={() =>
             Linking.openURL("https://www.nmpb.gov.sd/detailreport.php?id=7")
           }
@@ -55,33 +53,33 @@ const About = () => {
       </Text>
 
       {/* Contact */}
-      <Text className="text-lg font-semibold mt-6 ">
+      <Text className="mt-6 text-lg font-semibold">
         {t("about.contactTitle")}
       </Text>
 
       <Button
         variant="ghost"
-        className="justify-start pl-0 "
+        className="justify-start pl-0"
         onPress={() =>
           Linking.openURL("mailto:mohammedjrt+sudancodexsupport@gmail.com")
         }
       >
-        <Text className="  text-blue-600 dark:text-blue-400 underline">
+        <Text className="text-blue-600 underline dark:text-blue-400">
           Mohammedjrt+sudancodexsupport@gmail.com
         </Text>
       </Button>
 
       <Button
         variant="ghost"
-        className="justify-start pl-0 "
+        className="justify-start pl-0"
         onPress={() => Linking.openURL("https://sudancodex.app/privacy-policy")}
       >
-        <Text className=" text-blue-600 dark:text-blue-400 underline">
+        <Text className="text-blue-600 underline dark:text-blue-400">
           {t("about.privacyPolicy")}
         </Text>
       </Button>
       <View>
-        <Text className="text-lg font-semibold mt-6">Social</Text>
+        <Text className="mt-6 text-lg font-semibold">Social</Text>
         <View className="flex-row justify-around">
           <Button
             className="h-auto"
@@ -125,7 +123,7 @@ const About = () => {
       </View>
 
       {/* Footer */}
-      <Text className="text-center text-xs text-gray-400 dark:text-gray-500 mt-8 mb-4">
+      <Text className="mb-4 mt-8 text-center text-xs text-gray-400 dark:text-gray-500">
         © {new Date().getFullYear()} Mohammed Mahmoud.{" "}
         {t("about.rightsReserved")}
       </Text>
