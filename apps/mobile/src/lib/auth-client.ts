@@ -6,7 +6,7 @@ import Constants from "expo-constants";
 import * as SecureStore from "expo-secure-store";
 
 export const authClient = createAuthClient({
-  baseURL: "http://10.0.2.2:3000",
+  baseURL: process.env.EXPO_PUBLIC_BACKEND_URI,
   fetchOptions: { plugins: [logger()] },
   plugins: [
     expoClient({

@@ -11,7 +11,6 @@ export type DrugWithRelations = NonNullable<
 >;
 
 export const getDrugBySlug = cache(async (slug: string) => {
-  "use cache";
   return await db.query.drugsTable.findFirst({
     where: eq(drugsTable.slug, slug),
     with: {

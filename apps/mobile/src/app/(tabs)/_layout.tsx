@@ -7,49 +7,47 @@ import { useTranslation } from "react-i18next";
 export default function TabLayout() {
   const { t } = useTranslation();
   return (
-    <Tabs screenOptions={{ headerShown: false }}>
+    <Tabs
+      screenOptions={({ route }) => ({
+        tabBarIcon: (props) => {
+          if (route.name === "drug-list") {
+            return <Icon as={List} {...props} />;
+          }
+          if (route.name === "(categories)") {
+            return <Icon as={ListTree} {...props} />;
+          }
+          if (route.name === "settings") {
+            return <Icon as={Settings} {...props} />;
+          }
+        },
+      })}
+    >
       <Tabs.Screen
-        name='drug-list'
+        name="drug-list"
         options={{
           tabBarLabel: t("tabs.drugList"),
-
-          tabBarIcon: (props) => (
-            <Icon
-              as={List}
-              {...props}
-            />
-          ),
+          headerShown: false,
         }}
       />
+
       <Tabs.Screen
-        name='(tabs)'
+        name="(categories)"
         options={{
           // title: t("tabs.settings"),
           tabBarLabel: "Categories",
-          tabBarIcon: (props) => (
-            <Icon
-              as={ListTree}
-              {...props}
-            />
-          ),
+          headerShown: false,
         }}
       />
       <Tabs.Screen
-        name='settings'
+        name="settings"
         options={{
           title: t("tabs.settings"),
           tabBarLabel: t("tabs.settings"),
-          tabBarIcon: (props) => (
-            <Icon
-              as={Settings}
-              {...props}
-            />
-          ),
         }}
       />
 
       <Tabs.Screen
-        name='index'
+        name="index"
         options={{
           href: null,
         }}

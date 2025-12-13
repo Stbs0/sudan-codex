@@ -2,7 +2,7 @@
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*", "**/drizzle-*.config.ts"],
   "globalPassThroughEnv": ["ANDROID_HOME"],
-  "ui": "tui",
+
   "tasks": {
     "build": {
       "dependsOn": ["build"],

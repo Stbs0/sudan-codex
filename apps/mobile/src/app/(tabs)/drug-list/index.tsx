@@ -6,13 +6,12 @@ import Svg, { Defs, Pattern, Rect } from "react-native-svg";
 
 const DrugListScreen = () => {
   return (
-    <View
-      style={{ flex: 1 }}
-      className='bg-background'>
+    <View style={{ flex: 1 }} className="bg-background">
       <KeyboardAvoidingView
-        className='relative flex-1'
+        className="relative flex-1"
         keyboardVerticalOffset={100}
-        behavior='padding'>
+        behavior="padding"
+      >
         <GridBackground />
         <DrugList />
       </KeyboardAvoidingView>
@@ -31,33 +30,27 @@ function GridBackground() {
   return (
     <>
       {/* SVG Grid */}
-      <View className='absolute inset-0 flex-1'>
-        <Svg
-          height='100%'
-          width='100%'
-          style={{ position: "absolute" }}>
+      <View className="absolute inset-0 flex-1">
+        <Svg height="100%" width="100%" style={{ position: "absolute" }}>
           <Defs>
             <Pattern
-              id='smallGrid'
-              width='20'
-              height='20'
-              patternUnits='userSpaceOnUse'>
+              id="smallGrid"
+              width="20"
+              height="20"
+              patternUnits="userSpaceOnUse"
+            >
               <Rect
-                x='0'
-                y='0'
-                width='20'
-                height='20'
+                x="0"
+                y="0"
+                width="20"
+                height="20"
                 stroke={strokeColor}
-                strokeWidth='1'
-                fill='none'
+                strokeWidth="1"
+                fill="none"
               />
             </Pattern>
           </Defs>
-          <Rect
-            width='100%'
-            height='100%'
-            fill='url(#smallGrid)'
-          />
+          <Rect width="100%" height="100%" fill="url(#smallGrid)" />
         </Svg>
       </View>
 
