@@ -33,7 +33,9 @@ onlineManager.setEventListener((setOnline) => {
 });
 
 export { ErrorBoundary } from "expo-router";
-
+export const unstable_settings = {
+  initialRouteName: "(tabs)/drug-list/index.tsx",
+};
 export default function RootLayout() {
   return (
     <PHProvider>
@@ -65,7 +67,7 @@ function RootLayoutNav() {
     SplashScreen.hideAsync();
   }, [isPending]);
   console.log("isPending", isPending);
-  console.log("data", data);
+  // console.log("data", data);
   // console.log("gaurde complate", data === null);
   // console.log(
   //   "gaurde auth",
@@ -87,16 +89,19 @@ function RootLayoutNav() {
         value={NAV_THEME[colorScheme === "dark" ? "dark" : "light"]}>
         <StatusBar />
         <Stack screenOptions={{ headerShown: false }}>
+          {/* auth */}
           <Stack.Protected guard={data === null}>
             <Stack.Screen name='auth' />
           </Stack.Protected>
+          {/* tabs  */}
           <Stack.Protected
-            guard={data !== null && data.user?.isProfileComplete === false}>
-            <Stack.Screen name='complete-profile' />
-          </Stack.Protected>
-          <Stack.Protected
-            guard={data !== null && data.user?.isProfileComplete === true}>
+            guard={data !== null && data?.user?.isProfileComplete === true}>
             <Stack.Screen name='(tabs)' />
+            {/* check if complete profile */}
+            <Stack.Protected guard={data?.user?.isProfileComplete === false}>
+              <Stack.Screen name='complete-profile' />
+            </Stack.Protected>
+
             <Stack.Screen
               name='about'
               options={{ title: "About", headerShown: true }}

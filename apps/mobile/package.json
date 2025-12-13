@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@better-auth/expo": "^1.4.6",
+    "@better-fetch/logger": "^1.1.21",
     "@expo/vector-icons": "^15.0.2",
     "@hookform/resolvers": "^5.2.2",
     "@legendapp/list": "^2.0.9",
