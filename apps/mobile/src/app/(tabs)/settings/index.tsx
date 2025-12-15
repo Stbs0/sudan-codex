@@ -28,7 +28,13 @@ const SettingsScreen = () => {
           <Icon as={ChevronRightIcon} />
         </Button>
       </Link>
-
+      <Separator />
+      <Link href={"/(tabs)/settings/stats"} asChild>
+        <Button variant={"ghost"} className="justify-between border-none px-6">
+          <Text className="text-lg">Statistics</Text>
+          <Icon as={ChevronRightIcon} />
+        </Button>
+      </Link>
       <Separator />
       <Link href={"/settings/help"} asChild>
         <Button variant={"ghost"} className="justify-between border-none px-6">
@@ -37,7 +43,6 @@ const SettingsScreen = () => {
         </Button>
       </Link>
       <Separator />
-
       <Link href={"/about"} asChild>
         <Button variant={"ghost"} className="justify-between border-none px-6">
           <Text className="text-lg">{t("settings.screens.about")}</Text>
