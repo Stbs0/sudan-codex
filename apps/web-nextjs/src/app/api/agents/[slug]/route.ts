@@ -44,13 +44,14 @@ export async function GET(
       },
     },
   });
-
-  return Response.json({
+  const res = {
     stats: {
       total_brands: agent.stats.total_brands,
       related_generics: agent.stats.related_generics,
       related_companies: agent.stats.related_companies,
     },
     drugs: drugsWithAll,
-  });
+    name: agent.name,
+  };
+  return Response.json(res);
 }

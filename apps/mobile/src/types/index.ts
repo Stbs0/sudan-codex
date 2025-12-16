@@ -125,6 +125,29 @@ export type DrugWithSlugs = Drug & {
     slug: string;
   } | null;
 };
+export type AgentTypes = {
+  stats: {
+    total_brands: number | null;
+    related_generics: number | null;
+    related_companies: number | null;
+  };
+  drugs: AgentsDrugs[];
+  name: string;
+};
+export type AgentsDrugs = {
+  slug: string;
+  brand_name: string;
+  pack_size: string | null;
+  strength: string | null;
+  company_name: string | null;
+  generic_name: string | null;
+  company: {
+    slug: string;
+  } | null;
+  generic: {
+    slug: string;
+  } | null;
+};
 
 export type FetchedDrugs = {
   data: Drug[];
