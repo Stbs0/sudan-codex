@@ -38,7 +38,7 @@ const Account = () => {
           },
           style: "destructive",
         },
-      ]
+      ],
     );
   };
   const onSignOut = async () => {
@@ -53,18 +53,14 @@ const Account = () => {
     }
   };
   return (
-    <View className='gap-4 p-4'>
-      <Button
-        variant={"outline"}
-        onPress={onSignOut}>
-        <Text className='text-center font-bold'>
+    <View className="gap-4 p-4">
+      <Button variant={"outline"} onPress={onSignOut}>
+        <Text className="text-center font-bold">
           {t("settings.account.signOut")}
         </Text>
       </Button>
-      <Button
-        variant={"destructive"}
-        onPress={onDeletePress}>
-        <Text className='text-center font-bold text-white'>
+      <Button variant={"destructive"} onPress={onDeletePress}>
+        <Text className="text-center font-bold text-white">
           {t("settings.account.delete")}
         </Text>
       </Button>

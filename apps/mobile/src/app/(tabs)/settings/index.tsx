@@ -12,46 +12,39 @@ const SettingsScreen = () => {
   const { t } = useTranslation();
 
   return (
-    <View className="flex-1 p-4 gap-4">
+    <View className="flex-1 gap-4 p-4">
       <Link href={"/settings/account"} asChild>
-        <Button
-          variant={"ghost"}
-          className="border-none   justify-between px-6"
-        >
+        <Button variant={"ghost"} className="justify-between border-none px-6">
           <Text className="text-lg">{t("settings.screens.account")}</Text>
           <Icon as={ChevronRightIcon} />
         </Button>
       </Link>
       <Separator />
       <Link href={"/settings/appearance"} asChild>
-        <Button
-          variant={"ghost"}
-          className="border-none   justify-between px-6"
-        >
+        <Button variant={"ghost"} className="justify-between border-none px-6">
           <Text className="text-lg">
             {t("settings.screens.appearanceAndLang")}
           </Text>
           <Icon as={ChevronRightIcon} />
         </Button>
       </Link>
-
+      <Separator />
+      <Link href={"/(tabs)/settings/stats"} asChild>
+        <Button variant={"ghost"} className="justify-between border-none px-6">
+          <Text className="text-lg">Statistics</Text>
+          <Icon as={ChevronRightIcon} />
+        </Button>
+      </Link>
       <Separator />
       <Link href={"/settings/help"} asChild>
-        <Button
-          variant={"ghost"}
-          className="border-none   justify-between px-6"
-        >
+        <Button variant={"ghost"} className="justify-between border-none px-6">
           <Text className="text-lg">{t("settings.screens.help")}</Text>
           <Icon as={ChevronRightIcon} />
         </Button>
       </Link>
       <Separator />
-
       <Link href={"/about"} asChild>
-        <Button
-          variant={"ghost"}
-          className="border-none   justify-between px-6"
-        >
+        <Button variant={"ghost"} className="justify-between border-none px-6">
           <Text className="text-lg">{t("settings.screens.about")}</Text>
           <Icon as={ChevronRightIcon} />
         </Button>

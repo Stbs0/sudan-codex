@@ -40,7 +40,7 @@ const SelectOccupation = ({
   return (
     <Controller
       control={control}
-      name='occupation'
+      name="occupation"
       render={({ field: { onChange, value }, fieldState: { error } }) => {
         const Occupation = [
           {
@@ -65,14 +65,16 @@ const SelectOccupation = ({
           <>
             <Select
               onValueChange={(option) => onChange(option?.value)}
-              value={options}>
+              value={options}
+            >
               <SelectTrigger
-                className={cn("w-[180px]", error && "border-red-500")}>
+                className={cn("w-[180px]", error && "border-red-500")}
+              >
                 <SelectValue
                   placeholder={t("completeProfile.occupation.placeholder")}
                 />
               </SelectTrigger>
-              <SelectContent className='w-[180px]'>
+              <SelectContent className="w-[180px]">
                 <SelectGroup>
                   <SelectLabel>
                     {t("completeProfile.occupation.selectLabel")}
@@ -81,7 +83,8 @@ const SelectOccupation = ({
                     <SelectItem
                       label={item.label}
                       key={item.value}
-                      value={item.value}>
+                      value={item.value}
+                    >
                       <Text>{item.label}</Text>
                     </SelectItem>
                   ))}
@@ -97,7 +100,7 @@ const SelectOccupation = ({
 };
 const FieldMessage = ({ message }: { message: string | undefined }) => {
   return !message ? null : (
-    <Text className='text-xs text-red-500'>{message}</Text>
+    <Text className="text-xs text-red-500">{message}</Text>
   );
 };
 
@@ -111,7 +114,7 @@ const CompleteProfileScreen = () => {
     resolver: zodResolver(tellUsMoreSchema),
   });
   if (data?.user?.isProfileComplete) {
-    return <Redirect href='/drug-list' />;
+    return <Redirect href="/drug-list" />;
   }
 
   const onSubmit = async (data: tellUsMoreSchemaType) => {
@@ -128,22 +131,22 @@ const CompleteProfileScreen = () => {
   };
   // TODO: fix validation messages
   return (
-    <View className='pt-safe flex-1'>
-      <Card className='m-4'>
+    <View className="pt-safe flex-1">
+      <Card className="m-4">
         <CardHeader>
           <CardTitle>{t("completeProfile.title")}</CardTitle>
           <CardDescription>
-            <Text className='text-muted-foreground'>
+            <Text className="text-muted-foreground">
               {t("completeProfile.description")}
             </Text>
           </CardDescription>
         </CardHeader>
-        <CardContent className='gap-4'>
+        <CardContent className="gap-4">
           <View>
-            <Text className='mb-2'>{t("completeProfile.age.title")}</Text>
+            <Text className="mb-2">{t("completeProfile.age.title")}</Text>
             <Controller
               control={form.control}
-              name='age'
+              name="age"
               render={({
                 field: { onChange, onBlur, value },
                 fieldState: { error },
@@ -152,7 +155,7 @@ const CompleteProfileScreen = () => {
                   <Input
                     className={error ? "border-red-500" : ""}
                     placeholder={t("completeProfile.age.placeholder")}
-                    keyboardType='numeric'
+                    keyboardType="numeric"
                     onChangeText={onChange}
                     onBlur={onBlur}
                     value={value ? value.toString() : ""}
@@ -163,12 +166,12 @@ const CompleteProfileScreen = () => {
             />
           </View>
           <View>
-            <Text className='mb-2'>
+            <Text className="mb-2">
               {t("completeProfile.phoneNumber.title")}
             </Text>
             <Controller
               control={form.control}
-              name='phoneNumber'
+              name="phoneNumber"
               render={({
                 field: { onChange, onBlur, value },
                 fieldState: { error },
@@ -177,7 +180,7 @@ const CompleteProfileScreen = () => {
                   <Input
                     className={error ? "border-red-500" : ""}
                     placeholder={t("completeProfile.phoneNumber.placeholder")}
-                    keyboardType='phone-pad'
+                    keyboardType="phone-pad"
                     onChangeText={onChange}
                     onBlur={onBlur}
                     value={value}
@@ -189,12 +192,12 @@ const CompleteProfileScreen = () => {
           </View>
 
           <View>
-            <Text className='mb-2'>
+            <Text className="mb-2">
               {t("completeProfile.university.title")}
             </Text>
             <Controller
               control={form.control}
-              name='university'
+              name="university"
               render={({
                 field: { onChange, onBlur, value },
                 fieldState: { error },
@@ -214,16 +217,14 @@ const CompleteProfileScreen = () => {
             />
           </View>
           <View>
-            <Text className='mb-2'>
+            <Text className="mb-2">
               {t("completeProfile.occupation.title")}
             </Text>
             <SelectOccupation control={form.control} />
           </View>
         </CardContent>
         <CardFooter>
-          <Button
-            className='w-full'
-            onPress={form.handleSubmit(onSubmit)}>
+          <Button className="w-full" onPress={form.handleSubmit(onSubmit)}>
             <Text>{t("completeProfile.submit")}</Text>
           </Button>
         </CardFooter>
@@ -231,7 +232,8 @@ const CompleteProfileScreen = () => {
       <Button
         onPress={async () => {
           const data = await authClient.signOut();
-        }}>
+        }}
+      >
         <Text>Sign out</Text>
       </Button>
     </View>

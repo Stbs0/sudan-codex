@@ -19,7 +19,7 @@ const getQueryOptions = ({ search, filterBy }: QueryOptions) =>
       if (pageParam) params.set("page", pageParam.toString());
       const res = await fetch(
         process.env.EXPO_PUBLIC_BACKEND_URI + `/api/drugs?${params.toString()}`,
-        { cache: "force-cache" }
+        { cache: "force-cache" },
       );
       if (!res.ok) {
         throw new Error(`API error: ${res.status} ${res.statusText}`);
@@ -39,7 +39,7 @@ export function useInfiniteServerScroll() {
     getQueryOptions({
       search,
       filterBy,
-    })
+    }),
   );
   useEffect(() => {
     if (query.error) {

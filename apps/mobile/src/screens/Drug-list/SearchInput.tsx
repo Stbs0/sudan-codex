@@ -61,7 +61,7 @@ export default function SearchInput() {
     label: "Brand Name",
   };
   return (
-    <View className='relative m-2 flex-row items-center'>
+    <View className="relative m-2 flex-row items-center">
       <Input
         onChangeText={onSearch}
         className={`w-full rounded-md border dark:bg-black`}
@@ -72,22 +72,24 @@ export default function SearchInput() {
 
       {/* Dropdown overlay on right side */}
       <View
-        className='elevation-md absolute right-2 top-1/2 -translate-y-1/2'
-        pointerEvents='box-none'>
+        className="elevation-md absolute right-2 top-1/2 -translate-y-1/2"
+        pointerEvents="box-none"
+      >
         <Select value={defaultOption}>
           <SelectTrigger
             onLayout={(event) => {
               const { width } = event.nativeEvent.layout;
               setWidth(width);
             }}
-            className='h-9 border-0 bg-transparent px-2 shadow-none'>
+            className="h-9 border-0 bg-transparent px-2 shadow-none"
+          >
             <SelectValue
               placeholder={defaultOption.label}
-              className='text-sm text-muted-foreground'
+              className="text-sm text-muted-foreground"
             />
           </SelectTrigger>
 
-          <SelectContent side='top'>
+          <SelectContent side="top">
             <SelectLabel>
               <Text>{t("drugList.searchTerm")}</Text>
             </SelectLabel>
@@ -97,7 +99,8 @@ export default function SearchInput() {
                 key={item.value}
                 value={item.value}
                 label={item.label}
-                onPress={() => onFilter(item.value)}>
+                onPress={() => onFilter(item.value)}
+              >
                 {item.label}
               </SelectItem>
             ))}

@@ -12,7 +12,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const isProfileComplete = data?.user?.isProfileComplete;
   return (
     <AuthContext
-      value={{ data, isPending, error, isSignedIn, isProfileComplete }}>
+      value={{ data, isPending, error, isSignedIn, isProfileComplete }}
+    >
       {children}
     </AuthContext>
   );

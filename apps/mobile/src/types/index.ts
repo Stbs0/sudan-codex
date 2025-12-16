@@ -93,20 +93,60 @@ export type FetchedDrugInfo = {
 };
 
 export type Drug = {
-  brand_name: string;
-  generic_name: string | null;
-  agent_name: string | null;
-  company_name: string | null;
-  country_name: string | null;
   id: number;
   slug: string;
+  brand_name: string;
   dosage_form: string | null;
   pack_size: string | null;
   strength: string | null;
   company_id: number | null;
+  company_name: string | null;
   agent_id: number | null;
+  agent_name: string | null;
   generic_id: number | null;
+  generic_name: string | null;
   country_id: number | null;
+  country_name: string | null;
+};
+export type DrugWithSlugs = Drug & {
+  company: {
+    id: number;
+    name: string;
+    slug: string;
+  } | null;
+  agent: {
+    id: number;
+    name: string;
+    slug: string;
+  } | null;
+  generic: {
+    id: number;
+    name: string;
+    slug: string;
+  } | null;
+};
+export type AgentTypes = {
+  stats: {
+    total_brands: number | null;
+    related_generics: number | null;
+    related_companies: number | null;
+  };
+  drugs: AgentsDrugs[];
+  name: string;
+};
+export type AgentsDrugs = {
+  slug: string;
+  brand_name: string;
+  pack_size: string | null;
+  strength: string | null;
+  company_name: string | null;
+  generic_name: string | null;
+  company: {
+    slug: string;
+  } | null;
+  generic: {
+    slug: string;
+  } | null;
 };
 
 export type FetchedDrugs = {
