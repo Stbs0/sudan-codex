@@ -20,7 +20,9 @@ export async function generateMetadata({
   let drug;
   try {
     drug = await getDrugBySlug(slug);
-  } catch (error) {}
+  } catch (error) {
+    console.error(`Error fetching drug metadata for slug "${slug}":`, error);
+  }
 
   if (!drug) {
     return {
