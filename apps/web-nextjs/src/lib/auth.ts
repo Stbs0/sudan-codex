@@ -6,7 +6,7 @@ import { tellUsMoreSchema } from "./schemas";
 
 if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
   throw new Error(
-    "Missing required Google OAuth environment variables: GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET"
+    "Missing required Google OAuth environment variables: GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET",
   );
 }
 export const auth = betterAuth({
@@ -18,7 +18,8 @@ export const auth = betterAuth({
   },
   trustedOrigins: [
     process.env.NEXT_PUBLIC_EXPO_SCHEMA as string,
-    // `http://192.168.x.x:3000`,
+    process.env.NEXT_PUBLIC_SITE_URL as string,
+    ...(process.env.VERCEL_URL ? [`https://${process.env.VERCEL_URL}`] : []),
     ...(process.env.NODE_ENV === "development"
       ? [
           "exp://*/*",
@@ -28,7 +29,7 @@ export const auth = betterAuth({
           "exp://localhost:*/*", // Trust localhost
         ]
       : []),
-  ],
+  ].filter(Boolean),
   database: drizzleAdapter(db, {
     provider: "sqlite",
     usePlural: true,
