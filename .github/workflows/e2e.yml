@@ -76,7 +76,7 @@ jobs:
         run: npx playwright install chromium
 
       - name: Run Playwright tests
-        run: bun run test:e2e
+        run: cd apps/web-nextjs && bun run test:e2e
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
