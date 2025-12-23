@@ -1,28 +1,24 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Button } from "../../ui/button";
-import { useSidebar } from "../../ui/sidebar";
 
 const SigninAndLogoutButton = () => {
-  const router = useRouter();
   return (
     <>
       <Button
-        className='bg-purple-600 text-white hover:bg-purple-700'
+        asChild
+        className="bg-purple-600 text-white hover:bg-purple-700"
         variant={"link"}
-        onClick={() => {
-          router.push("/sign-up");
-        }}>
-        Sign Up
+      >
+        <Link href="/sign-up">Sign Up</Link>
       </Button>
       <Button
-        className='bg-purple-600 text-white hover:bg-purple-700'
+        asChild
+        className="bg-purple-600 text-white hover:bg-purple-700"
         variant={"link"}
-        onClick={() => {
-          router.push("/log-in");
-        }}>
-        Log In
+      >
+        <Link href="/log-in">Log In</Link>
       </Button>
     </>
   );

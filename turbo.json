@@ -1,11 +1,59 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*", "**/drizzle-*.config.ts"],
-  "globalPassThroughEnv": ["ANDROID_HOME"],
+  "globalPassThroughEnv": [
+    "ANDROID_HOME",
+    "NEXT_PUBLIC_API_URL",
+    "NEXT_PUBLIC_POSTHOG_HOST",
+    "NEXT_PUBLIC_POSTHOG_KEY",
+    "NEXT_PUBLIC_SITE_URL",
+    "NEXT_PUBLIC_WHATSAPP_NUMBER",
+    "TURSO_AUTH_TOKEN",
+    "TURSO_DATABASE_URL",
+    "VERCEL_OIDC_TOKEN",
+    "BETTER_AUTH_SECRET",
+    "BETTER_AUTH_URL",
+    "GOOGLE_CLIENT_ID",
+    "GOOGLE_CLIENT_SECRET",
+    "NEXT_PUBLIC_METICULOUS_RECORDING_TOKEN",
+    "NEXT_PUBLIC_EXPO_SCHEMA"
+  ],
 
   "tasks": {
     "build": {
-      "dependsOn": ["build"],
+      "dependsOn": ["^build"],
+      "env": [
+        "NEXT_PUBLIC_API_URL",
+        "NEXT_PUBLIC_POSTHOG_HOST",
+        "NEXT_PUBLIC_POSTHOG_KEY",
+        "NEXT_PUBLIC_SITE_URL",
+        "NEXT_PUBLIC_WHATSAPP_NUMBER",
+        "TURSO_AUTH_TOKEN",
+        "TURSO_DATABASE_URL",
+        "VERCEL_OIDC_TOKEN",
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL",
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "NEXT_PUBLIC_METICULOUS_RECORDING_TOKEN",
+        "NEXT_PUBLIC_EXPO_SCHEMA"
+      ],
+      "passThroughEnv": [
+        "NEXT_PUBLIC_API_URL",
+        "NEXT_PUBLIC_POSTHOG_HOST",
+        "NEXT_PUBLIC_POSTHOG_KEY",
+        "NEXT_PUBLIC_SITE_URL",
+        "NEXT_PUBLIC_WHATSAPP_NUMBER",
+        "TURSO_AUTH_TOKEN",
+        "TURSO_DATABASE_URL",
+        "VERCEL_OIDC_TOKEN",
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL",
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "NEXT_PUBLIC_METICULOUS_RECORDING_TOKEN",
+        "NEXT_PUBLIC_EXPO_SCHEMA"
+      ],
       "outputs": [".next/**", "dist/**", "!.next/cache/**"]
     },
     "lint": {
@@ -14,6 +62,11 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "test:e2e": {
+      "dependsOn": ["build"],
+
+      "cache": false
     },
 
     "check-types": {

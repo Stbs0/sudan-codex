@@ -1,0 +1,102 @@
+# Sudan Codex - Cursor Rules
+
+## Project Overview
+Sudan Codex is a monorepo containing a drug information platform for healthcare providers in Sudan.
+
+## Repository Structure
+- `apps/web-nextjs` - Next.js web application (main)
+- `apps/mobile` - React Native/Expo mobile application
+- `apps/legacy-vite-web` - Legacy Vite web application (deprecated)
+- `packages/` - Shared packages
+
+## Tech Stack
+- **Runtime:** Bun
+- **Monorepo:** Turborepo
+- **Web Framework:** Next.js with React and TypeScript
+- **Mobile:** React Native with Expo
+- **Styling:** Tailwind CSS with Shadcn UI components
+- **State Management:** Zustand (client), TanStack React Query (server)
+- **Database:** Drizzle ORM with LibSQL/Turso
+- **Auth:** Firebase Authentication
+- **Testing:** Vitest (unit), Playwright (E2E)
+
+## Development Guidelines
+
+### Package Manager
+- **ALWAYS use `bun`** instead of npm, yarn, or pnpm
+- Install: `bun install`
+- Add package: `bun add <package>`
+- Dev dependency: `bun add -d <package>`
+- Run script: `bun run <script>`
+
+### Code Style
+- Use TypeScript for all new code
+- Follow ESLint configuration
+- Use functional components with hooks
+- Prefer named exports over default exports
+- Use absolute imports with `@/` prefix
+
+### Component Guidelines
+- Place components in `src/components/<feature>/`
+- Use Shadcn UI components from `@/components/ui/`
+- Keep components small and focused
+- Co-locate tests with components in `__tests__/` folders
+
+### API Routes
+- Place API routes in `src/app/api/`
+- Use Route Handlers (Next.js App Router pattern)
+- Return proper HTTP status codes
+- Validate input with Zod
+
+### Database
+- Use Drizzle ORM for database operations
+- Place queries in `src/db/queries/`
+- Use prepared statements for performance
+- Run migrations: `bun run db:migrate`
+
+### Testing
+- Unit tests: Vitest with React Testing Library
+- E2E tests: Playwright
+- Run unit tests: `bun run test`
+- Run E2E tests: `bun run test:e2e`
+- Place unit tests in `__tests__/` directories
+- Place E2E tests in `e2e/` directory
+
+### Scripts (from root)
+- `bun run dev` - Start development server
+- `bun run build` - Build for production
+- `bun run lint` - Run ESLint
+- `bun run check-types` - TypeScript type checking
+
+## Code Generation Rules
+
+### When creating new components:
+1. Use TypeScript interfaces for props
+2. Include proper accessibility attributes
+3. Use semantic HTML elements
+4. Add error boundaries where appropriate
+
+### When creating API routes:
+1. Validate request body with Zod
+2. Handle errors gracefully
+3. Return consistent response format
+4. Use proper HTTP methods
+
+### When writing tests:
+1. Test user interactions, not implementation details
+2. Use `@testing-library/react` utilities
+3. Mock external dependencies
+4. Include both happy path and error cases
+
+## File Naming Conventions
+- Components: PascalCase (e.g., `DrugDetails.tsx`)
+- Utilities: camelCase (e.g., `formatDate.ts`)
+- Tests: `<name>.test.tsx` or `<name>.spec.ts`
+- Types: `types.ts` or `<feature>.types.ts`
+
+## Important Paths
+- Drug data: `src/data/`
+- Database schema: `src/db/schema/`
+- Hooks: `src/hooks/`
+- Services: `src/services/`
+- UI Components: `src/components/ui/`

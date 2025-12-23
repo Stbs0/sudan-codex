@@ -1,12 +1,38 @@
 import { expect, test } from "@playwright/test";
 
-test("navigates to drug list page", async ({ page }) => {
-  await page.goto("/");
-  // Assuming there's a way to navigate or just checking the route directly if we want to test that page isolated first
-  // But let's check if we can search and get directed to results or similar.
-  // The user said home is just a landing page.
+test.describe("Page Navigation", () => {
+  test("drug list page loads", async ({ page }) => {
+    await page.goto("/drug-list");
+    await expect(page).toHaveURL(/.*drug-list/);
+    // Expect some content specific to drug list, e.g., a list item or filter
+    // Since we know there is a SearchDrug component, let's check for it if possible,
+    // or just the heading if it exists.
+  });
 
-  // Let's verify we can visit specific pages
-  await page.goto("/drug-list");
-  await expect(page).toHaveURL(/.*drug-list/);
+  test("login page loads", async ({ page }) => {
+    await page.goto("/log-in");
+    await expect(page).toHaveURL(/.*log-in/);
+    // Check for email/password inputs or login button
+    await expect(
+      page.getByRole("button", { name: "Login with Google Google" }),
+    ).toBeVisible();
+  });
+
+  test("signup page loads", async ({ page }) => {
+    await page.goto("/sign-up");
+    await expect(page).toHaveURL(/.*sign-up/);
+    await expect(
+      page.getByRole("button", { name: "Sign up with Google Google" }),
+    ).toBeVisible();
+  });
+
+  test("stats page loads", async ({ page }) => {
+    await page.goto("/stats");
+    await expect(page).toHaveURL(/.*stats/);
+  });
+
+  test("privacy policy page loads", async ({ page }) => {
+    await page.goto("/privacy-policy");
+    await expect(page).toHaveURL(/.*privacy-policy/);
+  });
 });
