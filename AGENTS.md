@@ -49,7 +49,7 @@ bun run lint
 - **Styling:** Tailwind CSS + Shadcn UI
 - **State:** Zustand (client) + TanStack Query (server)
 - **Database:** Drizzle ORM + LibSQL/Turso
-- **Auth:** Firebase Authentication
+- **Auth:** Better Auth
 
 ### Mobile App (`apps/mobile`)
 
@@ -211,10 +211,7 @@ export async function GET(
 Required environment variables (create `.env.local`):
 
 ```env
-# Firebase
-NEXT_PUBLIC_FIREBASE_API_KEY=
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+
 
 # Database
 DATABASE_URL=

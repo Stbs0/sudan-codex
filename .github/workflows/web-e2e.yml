@@ -1,10 +1,14 @@
-name: E2E Tests & Deploy
+name: Web - E2E Tests & Deploy
 
 on:
   push:
     branches: [main]
+    paths:
+      - "apps/web-nextjs/**"
   pull_request:
     branches: [main]
+    paths:
+      - "apps/web-nextjs/**"
 
 # env:
 #   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -48,7 +52,6 @@ jobs:
       - name: Cache Next.js
         uses: actions/cache@v4
         with:
-
           path: |
             ~/.bun/install/cache
              ${{ github.workspace }}/apps/web-nextjs/.next/cache
