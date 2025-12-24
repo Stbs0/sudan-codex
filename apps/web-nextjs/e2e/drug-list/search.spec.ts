@@ -5,7 +5,7 @@ test.describe("Drug List Search and Filter", () => {
     await page.goto("/drug-list");
     // Skip tour if shown
     await page.getByText("Next").waitFor({ state: "visible", timeout: 3000 });
-    await page.getByText("Next").click({ clickCount: 9 });
+    await page.getByRole("button", { name: "Close" }).click();
   });
 
   test("search input accepts user input", async ({ page }) => {
