@@ -73,6 +73,8 @@ export async function GET(req: Request) {
       query: searchParams.toString(),
       column: column.data,
     });
+    console.error(error);
+
     return Response.json({ error: "Internal Server Error" }, { status: 500 });
   } finally {
     await posthog.shutdown();

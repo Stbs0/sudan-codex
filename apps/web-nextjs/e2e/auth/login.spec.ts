@@ -128,7 +128,7 @@ test.describe("Auth Navigation", () => {
     expect(count).toBeGreaterThanOrEqual(0); // May or may not be visible depending on auth state
   });
 
-  test("footer has login link", async ({ page }) => {
+  test("footer has content", async ({ page }) => {
     await page.goto("/");
 
     const footer = page.locator("footer");

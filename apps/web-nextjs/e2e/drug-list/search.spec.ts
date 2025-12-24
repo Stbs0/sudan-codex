@@ -3,7 +3,14 @@ import { expect, test } from "@playwright/test";
 test.describe("Drug List Search and Filter", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/drug-list");
-    // Skip tour if shown
+    //  TODO: might add this rather than the implement
+    //      try {
+    //    const closeButton = page.getByRole("button", { name: "Close" });
+    //    await closeButton.waitFor({ state: "visible", timeout: 3000 });
+    //    await closeButton.click();
+    //  } catch {
+    //    // Tour not shown, continue
+    //  }
     await page.getByText("Next").waitFor({ state: "visible", timeout: 3000 });
     await page.getByRole("button", { name: "Close" }).click();
   });
@@ -13,7 +20,6 @@ test.describe("Drug List Search and Filter", () => {
     await expect(searchInput).toBeVisible();
 
     await searchInput.fill("paracetamol");
-    await page.waitForTimeout(1000);
     await expect(searchInput).toHaveValue("paracetamol");
   });
 
@@ -100,20 +106,19 @@ test.describe("Drug List Search and Filter", () => {
 
   test("infinite scroll loads more drugs on scroll", async ({ page }) => {
     // Get initial count of drug cards (roughly)
-    const initialCards = await page.locator("[class*='Card']").count();
-
+    const initialCards = await page.getByTestId("drug-card").count();
     // Scroll to bottom
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
 
     // Wait for more content to load
-    await page.waitForTimeout(1000);
+    await page.waitForLoadState("networkidle");
 
     // Scroll again
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-    await page.waitForTimeout(1000);
+    await page.waitForLoadState("networkidle");
 
     // Should have more cards
-    const afterScrollCards = await page.locator("[class*='Card']").count();
+    const afterScrollCards = await page.getByTestId("drug-card").count();
     expect(afterScrollCards).toBeGreaterThanOrEqual(initialCards);
   });
 });

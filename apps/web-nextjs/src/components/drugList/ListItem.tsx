@@ -1,9 +1,8 @@
 import { Drug } from "@/db/schemas/schema";
 import { useQueryClient } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Badge } from "../ui/badge";
 import { Card, CardContent } from "../ui/card";
-import Link from "next/link";
 
 type Props = {
   drug: Drug;
@@ -15,7 +14,11 @@ export const ListItem = ({ drug, isFirst }: Props) => {
     queryClient.setQueryData(["drug", drug.slug], () => [drug]);
   };
   return (
-    <Link href={`/drug-list/${drug.slug}`} onClick={handleCardClick}>
+    <Link
+      href={`/drug-list/${drug.slug}`}
+      onClick={handleCardClick}
+      data-testid="drug-card"
+    >
       <Card
         id={isFirst ? "drugInfo-card" : undefined}
         className="rounded-none border-4 border-transparent border-l-indigo-700 py-2 shadow-md hover:bg-purple-100/90 dark:bg-purple-800/50 dark:hover:bg-purple-800/90"

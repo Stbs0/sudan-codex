@@ -16,7 +16,9 @@ export async function getDrugs(page = 1, q?: string) {
   url.searchParams.set("page", page.toString());
   const res = await fetch(url);
   if (!res.ok) {
-    throw new Error(`Failed to fetch drugs: ${res.status} ${res.statusText}`);
+    throw new Error(
+      `Failed to fetch drugs: ${res.status} ${res.statusText} ${url}`,
+    );
   }
   const data = (await res.json()) as FetchedDrugs;
   return data;

@@ -28,21 +28,17 @@ test.describe("Drug Details Page", () => {
     const backLink = page
       .getByRole("link", { name: /back/i })
       .or(page.locator("a[href='/drug-list']"));
-    console.log(page.url());
     if (await backLink.isVisible({ timeout: 2000 }).catch(() => false)) {
-      console.log(page.url());
       await backLink.click();
       await expect(page).toHaveURL(/\/drug-list$/);
     }
   });
 
   test("page shows drug information sections", async ({ page }) => {
-    // The drug detail page should show various drug properties
-    // These might be in an accordion or list format
-    const content = await page.content();
-
-    // At minimum, the page should have rendered
-    expect(content.length).toBeGreaterThan(1000);
+    // Verify key drug information sections are present
+    await expect(page.getByText(/generic name/i)).toBeVisible();
+    await expect(page.getByText(/dosage form/i)).toBeVisible();
+    await expect(page.getByText(/company/i)).toBeVisible();
   });
 });
 
