@@ -1,8 +1,9 @@
-import { Drug } from "@/db/schemas/schema";
-import { useQueryClient } from "@tanstack/react-query";
+import type { Drug } from "@/db/schemas/schema";
+// import Link from "next/link";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
 import { Card, CardContent } from "../ui/card";
+import { useQueryClient } from "@tanstack/react-query";
 
 type Props = {
   drug: Drug;
