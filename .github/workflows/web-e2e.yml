@@ -2,7 +2,6 @@ name: Web - E2E Tests & Deploy
 
 on:
   push:
-    branches: [main]
     paths:
       - "apps/web-nextjs/**"
   pull_request:
@@ -54,7 +53,7 @@ jobs:
         with:
           path: |
             ~/.bun/install/cache
-             ${{ github.workspace }}/apps/web-nextjs/.next/cache
+            ${{ github.workspace }}/apps/web-nextjs/.next/cache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lock') }}-${{ hashFiles('apps/web-nextjs/**/*.js', 'apps/web-nextjs/**/*.jsx', 'apps/web-nextjs/**/*.ts', 'apps/web-nextjs/**/*.tsx') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lock') }}-
