@@ -43,3 +43,5 @@ next-env.d.ts
 *.db
 *-wal
 *-shm
+/playwright-report
+/test-results

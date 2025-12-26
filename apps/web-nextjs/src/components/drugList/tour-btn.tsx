@@ -7,7 +7,7 @@ import { Button } from "../ui/button";
 const driverConfig: Config = {
   showProgress: true,
   allowClose: true,
-
+  showButtons: ["close", "next", "previous"],
   allowKeyboardControl: true,
   disableActiveInteraction: true,
   steps: [
@@ -126,10 +126,7 @@ function TourBtn() {
     startTour();
   };
   return (
-    <Button
-      variant={"outline"}
-      onClick={onStartTourClick}
-      className='w-fit'>
+    <Button variant={"outline"} onClick={onStartTourClick} className="w-fit">
       Guide me
     </Button>
   );
