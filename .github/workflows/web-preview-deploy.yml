@@ -16,8 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.workflow_run.head_sha }}
-          repository: ${{ github.event.workflow_run.head_repository.full_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2.0.2
         with:
