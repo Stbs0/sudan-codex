@@ -4,7 +4,7 @@
   "compilerOptions": {
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
-
+    "types": ["vitest/globals"],
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
