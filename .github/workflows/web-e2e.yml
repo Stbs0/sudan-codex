@@ -1,4 +1,4 @@
-name: Web - E2E Tests & Deploy
+name: Web - E2E Tests
 
 on:
   pull_request:
