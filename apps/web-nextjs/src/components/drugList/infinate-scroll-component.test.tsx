@@ -1,6 +1,5 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Wrapper } from "@/testing/test-utils";
 import { render, screen } from "@testing-library/react";
-import React from "react";
 import { describe, expect, it, vi } from "vitest";
 import InfiniteScrollComponent from "./infinate-scroll-component";
 
@@ -56,21 +55,6 @@ vi.mock("posthog-js/react", () => ({
   }),
 }));
 
-// Simple Wrapper for React Query
-const createWrapper = () => {
-  const queryClient = new QueryClient({
-    defaultOptions: {
-      queries: {
-        retry: false,
-      },
-    },
-  });
-  const Wrapper = ({ children }: { children: React.ReactNode }) => (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-  );
-  return Wrapper;
-};
-
 describe("InfiniteScrollComponent", () => {
   it("renders drug list correctly", async () => {
     render(
@@ -80,7 +64,7 @@ describe("InfiniteScrollComponent", () => {
           nextPage: null,
         }}
       />,
-      { wrapper: createWrapper() },
+      { wrapper: Wrapper },
     );
 
     // Verify drugs are rendered
@@ -89,7 +73,7 @@ describe("InfiniteScrollComponent", () => {
     expect(screen.getByText("Aspirin")).toBeInTheDocument();
   });
 
-  it("renders loading state when data is available", async () => {
+  it("renders the correct number of drug cards", async () => {
     // We mocked data to be present, so InfiniteScroll should render children
     render(
       <InfiniteScrollComponent
@@ -98,7 +82,7 @@ describe("InfiniteScrollComponent", () => {
           nextPage: null,
         }}
       />,
-      { wrapper: createWrapper() },
+      { wrapper: Wrapper },
     );
 
     // Check for unique elements

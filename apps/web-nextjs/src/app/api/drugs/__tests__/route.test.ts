@@ -1,10 +1,3 @@
-/**
- * Integration tests for /api/drugs route logic
- *
- * Tests query parameter parsing, pagination, and filtering logic.
- * Database interaction is tested via E2E tests.
- */
-
 import { describe, expect, it } from "vitest";
 
 // Test the escapeLike function logic
