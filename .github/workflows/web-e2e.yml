@@ -33,6 +33,9 @@ on:
 
 jobs:
   test:
+    defaults:
+      run:
+        working-directory: apps/web-nextjs
     name: Run E2E Tests
     runs-on: ubuntu-latest
     steps:
@@ -62,7 +65,7 @@ jobs:
         run: bun install
 
       - name: build Next.js app
-        run: cd apps/web-nextjs && bun run build
+        run: bun run build
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
@@ -86,7 +89,7 @@ jobs:
         run: npx playwright install chromium
 
       - name: Run Playwright tests
-        run: cd apps/web-nextjs && bun run test:e2e
+        run: bun run test:e2e
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
