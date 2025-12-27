@@ -9,28 +9,6 @@ on:
     paths:
       - "apps/web-nextjs/**"
 
-# env:
-#   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-#   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-#   POSTHOG_API_KEY: ${{ secrets.POSTHOG_API_KEY }}
-#   POSTHOG_ENV_ID: ${{ secrets.POSTHOG_ENV_ID }}
-#   # Created by Vercel CLI
-#   NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
-#   NEXT_PUBLIC_POSTHOG_HOST: ${{ secrets.NEXT_PUBLIC_POSTHOG_HOST }}
-#   NEXT_PUBLIC_POSTHOG_KEY: ${{ secrets.NEXT_PUBLIC_POSTHOG_KEY }}
-#   NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
-#   NEXT_PUBLIC_WHATSAPP_NUMBER: ${{ secrets.NEXT_PUBLIC_WHATSAPP_NUMBER }}
-#   TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
-#   TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
-#   VERCEL_OIDC_TOKEN: ${{ secrets.VERCEL_OIDC_TOKEN }}
-#   BETTER_AUTH_SECRET: ${{ secrets.BETTER_AUTH_SECRET }}
-#   BETTER_AUTH_URL: ${{ secrets.BETTER_AUTH_URL }}
-
-#   GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-#   GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-#   NEXT_PUBLIC_METICULOUS_RECORDING_TOKEN: ${{ secrets.NEXT_PUBLIC_METICULOUS_RECORDING_TOKEN }}
-#   NEXT_PUBLIC_EXPO_SCHEMA: ${{ secrets.NEXT_PUBLIC_EXPO_SCHEMA }}
-
 jobs:
   test:
     defaults:

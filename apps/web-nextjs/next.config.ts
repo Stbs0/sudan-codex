@@ -25,6 +25,7 @@ export default withPostHogConfig(nextConfig, {
   sourcemaps: {
     // (optional)
     enabled: process.env.NODE_ENV === "production", // (optional) Enable sourcemaps generation and upload, default to true on production builds
+    version: "1.0.0",
     project: "sudan-codex", // (optional) Project name, defaults to repository name
     deleteAfterUpload: true, // (optional) Delete sourcemaps after upload, defaults to true
   },
