@@ -1,10 +1,6 @@
 name: Web - E2E Tests & Deploy
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "apps/web-nextjs/**"
   pull_request:
     branches: [main]
     paths:
