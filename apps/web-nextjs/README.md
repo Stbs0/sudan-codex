@@ -1,3 +1,5 @@
+[![Web - E2E Tests](https://github.com/Stbs0/sudan-codex/actions/workflows/web-e2e.yml/badge.svg?branch=main)](https://github.com/Stbs0/sudan-codex/actions/workflows/web-e2e.yml) [![Web - Unit & Integration Tests](https://github.com/Stbs0/sudan-codex/actions/workflows/web-unit.yml/badge.svg)](https://github.com/Stbs0/sudan-codex/actions/workflows/web-unit.yml) ![Vercel Deploy](https://deploy-badge.vercel.app/vercel/sudan-codex-web)
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -5,13 +7,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
