@@ -1,36 +1,37 @@
 name: Web - Unit & Integration Tests
 
 on:
-    push:
-        paths:
-            - "apps/web-nextjs/**"
-            - ".github/workflows/web-unit.yml"
-    pull_request:
-        branches: [main]
-        paths:
-            - "apps/web-nextjs/**"
-            - ".github/workflows/web-unit.yml"
+  push:
+    branches: [main]
+    paths:
+      - "apps/web-nextjs/**"
+      - ".github/workflows/web-unit.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "apps/web-nextjs/**"
+      - ".github/workflows/web-unit.yml"
 
 jobs:
-    test-unit:
-        defaults:
-            run:
-                working-directory: apps/web-nextjs
-        name: Run Unit Tests
+  test-unit:
+    defaults:
+      run:
+        working-directory: apps/web-nextjs
+    name: Run Unit Tests
 
-        runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-            - name: Setup Bun
-              uses: oven-sh/setup-bun@v2.0.2
-              with:
-                  bun-version-file: package.json
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2.0.2
+        with:
+          bun-version-file: package.json
 
-            - name: Install dependencies
-              run: bun install
+      - name: Install dependencies
+        run: bun install
 
-            - name: Run Unit Tests
-              run: bun run test:unit
+      - name: Run Unit Tests
+        run: bun run test:unit
