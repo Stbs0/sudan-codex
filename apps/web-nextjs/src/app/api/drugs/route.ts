@@ -3,6 +3,7 @@ import { drugsTable } from "@/db/schemas/schema";
 import { SearchDrugType } from "@/hooks/store/useSearch";
 import { getPostHogServer } from "@/lib/posthog-server";
 import { asc, like, sql } from "drizzle-orm";
+import type { NextRequest } from "next/server";
 import { literal } from "zod";
 
 const searchSchema = literal([
@@ -15,7 +16,7 @@ const searchSchema = literal([
 function escapeLike(str: string): string {
   return str.replace(/[%_\\]/g, "\\$&");
 }
-export async function GET(req: Request) {
+export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
 
   const page = Math.max(1, Number(searchParams.get("page")) || 1);
@@ -39,7 +40,6 @@ export async function GET(req: Request) {
   const filterColumn = column.success
     ? columnMap[column.data]
     : columnMap.brand_name;
-  const posthog = getPostHogServer();
 
   try {
     const rows = await db
@@ -56,27 +56,30 @@ export async function GET(req: Request) {
       nextPage,
     };
 
-    posthog.capture({
-      event: "drug_search_api_success",
-      properties: {
-        query: q,
-        filter: filterBy,
-        page,
-        limit,
-      },
-    });
-
     return Response.json(res);
   } catch (error) {
+    const posthog = getPostHogServer();
+
+    const phCookie = req.cookies.get(
+      "ph_" + process.env.NEXT_PUBLIC_POSTHOG_KEY + "_posthog",
+    );
+    let distinctId: string | null = null;
+    try {
+      distinctId = JSON.parse(phCookie?.value || "")?.distinct_id || "";
+
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_) {
+      distinctId = null;
+    }
     posthog.captureException(error, "get_drugs_api_error", {
+      distinctId,
       path: "/api/drugs",
       query: searchParams.toString(),
       column: column.data,
     });
     console.error(error);
+    await posthog.shutdown();
 
     return Response.json({ error: "Internal Server Error" }, { status: 500 });
-  } finally {
-    await posthog.shutdown();
   }
 }

@@ -8,6 +8,7 @@ const SigninAndLogoutButton = () => {
     <>
       <Button
         asChild
+        data-analytics="header-sign-up"
         className="bg-purple-600 text-white hover:bg-purple-700"
         variant={"link"}
       >
@@ -15,6 +16,7 @@ const SigninAndLogoutButton = () => {
       </Button>
       <Button
         asChild
+        data-analytics="header-log-in"
         className="bg-purple-600 text-white hover:bg-purple-700"
         variant={"link"}
       >

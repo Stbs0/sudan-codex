@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import type { JSX } from "react";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Sudan Codex",
@@ -9,10 +10,10 @@ export const metadata: Metadata = {
   },
 };
 
-const Policy = () => {
+const Policy = (): JSX.Element => {
   return (
-    <div className='container mx-auto max-w-4xl px-4 py-8'>
-      <h1 className='mb-4 text-3xl font-bold'>Privacy Policy</h1>
+    <div className="container mx-auto max-w-4xl px-4 py-8">
+      <h1 className="mb-4 text-3xl font-bold">Privacy Policy</h1>
       <p>Last updated: November 18, 2025</p>
       <p>
         This Privacy Policy describes my policies and procedures on the
@@ -25,18 +26,18 @@ const Policy = () => {
         the Service, You agree to the collection and use of information in
         accordance with this Privacy Policy.
       </p>
-      <h2 className='mt-8 mb-4 text-2xl font-semibold'>
+      <h2 className="mt-8 mb-4 text-2xl font-semibold">
         Interpretation and Definitions
       </h2>
-      <h3>Interpretation</h3>
+      <h3 className="mb-2 text-xl font-semibold">Interpretation</h3>
       <p>
         Words with an initial capital letter have meanings defined under the
         following conditions. These definitions have the same meaning regardless
         of whether they appear in singular or plural form.
       </p>
-      <h3>Definitions</h3>
+      <h3 className="mb-2 text-xl font-semibold">Definitions</h3>
       <p>For the purposes of this Privacy Policy:</p>
-      <ul className='mb-6 list-disc space-y-4 pl-6'>
+      <ul className="mb-6 list-disc space-y-4 pl-6">
         <li>
           <p>
             <strong>Account</strong> means a unique account created for You to
@@ -99,9 +100,10 @@ const Policy = () => {
           <p>
             <strong>Website</strong> refers to Sudan Codex, accessible from{" "}
             <a
-              href=' https://sudancodex.app'
-              rel='external nofollow noopener noreferrer'
-              target='_blank'>
+              href="https://sudancodex.app"
+              rel="external nofollow noopener noreferrer"
+              target="_blank"
+            >
               https://sudancodex.app
             </a>
           </p>
@@ -113,26 +115,28 @@ const Policy = () => {
           </p>
         </li>
       </ul>
-      <h2 className='mt-8 mb-4 text-2xl font-semibold'>
+      <h2 className="mt-8 mb-4 text-2xl font-semibold">
         Collecting and Using Your Personal Data
       </h2>
-      <h3>Types of Data Collected</h3>
-      <h4>Personal Data</h4>
+      <h3 className="mb-2 text-xl font-semibold">Types of Data Collected</h3>
+      <h4 className="mb-2 text-lg font-semibold">Personal Data</h4>
       <p>
         While using My Service, I may ask You to provide certain personally
         identifiable information. This may include, but is not limited to:
       </p>
-      <ul className='mb-6 list-disc space-y-4 pl-6'>
+      <ul className="mb-6 list-disc space-y-4 pl-6">
         <li>Email address</li>
         <li>First name and last name</li>
         <li>Usage Data</li>
       </ul>
-      <h4>Information from Third-Party Social Media Services</h4>
+      <h4 className="mb-2 text-lg font-semibold">
+        Information from Third-Party Social Media Services
+      </h4>
       <p>
         I allow You to create an account and log in to use the Service through
         the following Third-party Social Media Services:
       </p>
-      <ul className='mb-6 list-disc space-y-4 pl-6'>
+      <ul className="mb-6 list-disc space-y-4 pl-6">
         <li>Google</li>
         <li>Facebook</li>
       </ul>
@@ -143,7 +147,7 @@ const Policy = () => {
         permission to use, share, and store this data in a manner consistent
         with this Privacy Policy.
       </p>
-      <h4>Usage Data & Analytics</h4>
+      <h4 className="mb-2 text-lg font-semibold">Usage Data & Analytics</h4>
       <p>Usage Data is collected automatically when using the Service.</p>
       <p>
         This data may include your Device&apos;s IP address, browser type,
@@ -151,26 +155,35 @@ const Policy = () => {
         of Your visit, time spent on pages, and other diagnostic data.
       </p>
       <p>
+        PostHog may process limited personal data such as user identifiers
+        (e.g., internal user ID or email address) to provide analytics services
+        on our behalf.
+      </p>
+      <p>
         To analyze this Usage Data and improve the Service, I use the following
         Service Provider:
       </p>
-      <ul className='mb-6 list-disc space-y-4 pl-6'>
+      <ul className="mb-6 list-disc space-y-4 pl-6">
         <li>
           <p>
             <strong>PostHog</strong>: I use PostHog for product analytics to
             understand user behavior and improve the Service. For more
             information on the privacy practices of PostHog, please visit the{" "}
             <a
-              href='https://posthog.com/privacy'
-              target='_blank'
-              rel='noopener noreferrer'>
+              className="underline"
+              href="https://posthog.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               PostHog Privacy Policy
             </a>
             .
           </p>
         </li>
       </ul>
-      <h4>Tracking Technologies and Cookies</h4>
+      <h4 className="mb-2 text-lg font-semibold">
+        Tracking Technologies and Cookies
+      </h4>
       <p>
         I use Cookies and similar tracking technologies to track activity on My
         Service and store certain information. You can instruct Your browser to
@@ -180,15 +193,15 @@ const Policy = () => {
       </p>
       {/* This section remains largely the same as it's standard cookie practice */}
       {/* ... [Rest of the policy from "Use of Your Personal Data" onwards] ... */}
-      <h3>Use of Your Personal Data</h3>{" "}
+      <h3 className="mb-2 text-xl font-semibold">Use of Your Personal Data</h3>{" "}
       <p>The Developer may use Personal Data for the following purposes: </p>{" "}
-      <ul className='mb-6 list-disc space-y-4 pl-6'>
+      <ul className="mb-6 list-disc space-y-4 pl-6">
         {" "}
         <li>
           {" "}
           <p>
             {" "}
-            <strong className='font-medium'>
+            <strong className="font-medium">
               To provide and maintain our Service{" "}
             </strong>
             , including to monitor the usage of our Service.{" "}
@@ -198,7 +211,7 @@ const Policy = () => {
           {" "}
           <p>
             {" "}
-            <strong className='font-medium'>To manage Your Account:</strong> to
+            <strong className="font-medium">To manage Your Account:</strong> to
             manage Your registration as a user of the Service. The Personal Data
             You provide can give You access to different functionalities of the
             Service that are available to You as a registered user.{" "}
@@ -208,7 +221,7 @@ const Policy = () => {
           {" "}
           <p>
             {" "}
-            <strong className='font-medium'>
+            <strong className="font-medium">
               For the performance of a contract:{" "}
             </strong>{" "}
             the development, compliance and undertaking of the purchase contract
@@ -219,7 +232,7 @@ const Policy = () => {
         <li>
           {" "}
           <p>
-            <strong className='font-medium'>To contact You:</strong> To contact
+            <strong className="font-medium">To contact You:</strong> To contact
             You by email, telephone calls, SMS, or other equivalent forms of
             electronic communication, such as a mobile application&apos;s push
             notifications regarding updates or informative communications
@@ -231,7 +244,7 @@ const Policy = () => {
         <li>
           {" "}
           <p>
-            <strong className='font-medium'>To provide You</strong> with news,
+            <strong className="font-medium">To provide You</strong> with news,
             special offers and general information about other goods, services
             and events which we offer that are similar to those that you have
             already purchased or enquired about unless You have opted not to
@@ -242,7 +255,7 @@ const Policy = () => {
           {" "}
           <p>
             {" "}
-            <strong className='font-medium'>To manage Your requests:</strong> To
+            <strong className="font-medium">To manage Your requests:</strong> To
             attend and manage Your requests to Me.{" "}
           </p>{" "}
         </li>{" "}
@@ -250,7 +263,7 @@ const Policy = () => {
           {" "}
           <p>
             {" "}
-            <strong className='font-medium'>For business transfers:</strong> We
+            <strong className="font-medium">For business transfers:</strong> We
             may use Your information to evaluate or conduct a merger,
             divestiture, restructuring, reorganization, dissolution, or other
             sale or transfer of some or all of My assets, whether as a going
@@ -263,7 +276,7 @@ const Policy = () => {
           {" "}
           <p>
             {" "}
-            <strong className='font-medium'>For other purposes</strong>: We may
+            <strong className="font-medium">For other purposes</strong>: We may
             use Your information for other purposes, such as data analysis,
             identifying usage trends, determining the effectiveness of our
             promotional campaigns and to evaluate and improve our Service,
@@ -274,24 +287,24 @@ const Policy = () => {
       <p>
         We may share Your personal information in the following situations:{" "}
       </p>{" "}
-      <ul className='mb-6 list-disc space-y-4 pl-6'>
+      <ul className="mb-6 list-disc space-y-4 pl-6">
         {" "}
         <li>
           {" "}
-          <strong className='font-medium'>With Service Providers:</strong> We
+          <strong className="font-medium">With Service Providers:</strong> We
           may share Your personal information with Service Providers to monitor
           and analyze the use of our Service, to contact You.{" "}
         </li>{" "}
         <li>
           {" "}
-          <strong className='font-medium'>For business transfers:</strong> We
+          <strong className="font-medium">For business transfers:</strong> We
           may share or transfer Your personal information in connection with, or
           during negotiations of, any merger, sale of Developer assets,
           financing, or acquisition of all or a portion of My business to
           another company.{" "}
         </li>{" "}
         <li>
-          <strong className='font-medium'>With Affiliates:</strong> We may share
+          <strong className="font-medium">With Affiliates:</strong> We may share
           Your information with My affiliates, in which case we will require
           those affiliates to honor this Privacy Policy. Affiliates include My
           parent company and any other subsidiaries, joint venture partners or
@@ -300,12 +313,12 @@ const Policy = () => {
         </li>{" "}
         <li>
           {" "}
-          <strong className='font-medium'>With business partners:</strong> We
+          <strong className="font-medium">With business partners:</strong> We
           may share Your information with My business partners to offer You
           certain products, services or promotions.{" "}
         </li>{" "}
         <li>
-          <strong className='font-medium'>With other users:</strong> when You
+          <strong className="font-medium">With other users:</strong> when You
           share personal information or otherwise interact in the public areas
           with other users, such information may be viewed by all users and may
           be publicly distributed outside. If You interact with other users or
@@ -316,12 +329,14 @@ const Policy = () => {
           and view Your profile.{" "}
         </li>{" "}
         <li>
-          <strong className='font-medium'>With Your consent</strong>: We may
+          <strong className="font-medium">With Your consent</strong>: We may
           disclose Your personal information for any other purpose with Your
           consent.{" "}
         </li>{" "}
       </ul>
-      <h3>Retention of Your Personal Data</h3>{" "}
+      <h3 className="mb-2 text-xl font-semibold">
+        Retention of Your Personal Data
+      </h3>{" "}
       <p>
         The Developer will retain Your Personal Data only for as long as is
         necessary for the purposes set out in this Privacy Policy. We will
@@ -337,7 +352,9 @@ const Policy = () => {
         the functionality of My Service, or We are legally obligated to retain
         this data for longer time periods.{" "}
       </p>
-      <h3>Transfer of Your Personal Data</h3>{" "}
+      <h3 className="mb-2 text-xl font-semibold">
+        Transfer of Your Personal Data
+      </h3>{" "}
       <p>
         Your information, including Personal Data, is processed at the
         Company&apos;s operating offices and in any other places where the
@@ -358,7 +375,7 @@ const Policy = () => {
         or a country unless there are adequate controls in place including the
         security of Your data and other personal information.{" "}
       </p>
-      <h3>Delete Your Personal Data</h3>{" "}
+      <h3 className="mb-2 text-xl font-semibold">Delete Your Personal Data</h3>{" "}
       <p>
         You have the right to delete or request that We assist in deleting the
         Personal Data that We have collected about You.{" "}
@@ -378,7 +395,10 @@ const Policy = () => {
         Please note, however, that We may need to retain certain information
         when we have a legal obligation or lawful basis to do so.{" "}
       </p>
-      <h3>Disclosure of Your Personal Data</h3> <h4>Business Transactions</h4>{" "}
+      <h3 className="mb-2 text-xl font-semibold">
+        Disclosure of Your Personal Data
+      </h3>{" "}
+      <h4 className="mb-2 text-xl font-semibold">Business Transactions</h4>{" "}
       <p>
         If the Developer is involved in a merger, acquisition or asset sale,
         Your Personal Data may be transferred. We will provide notice before
@@ -397,7 +417,7 @@ const Policy = () => {
         The Developer may disclose Your Personal Data in the good faith belief
         that such action is necessary to:{" "}
       </p>{" "}
-      <ul className='mb-6 list-disc space-y-4 pl-6'>
+      <ul className="mb-6 list-disc space-y-4 pl-6">
         <li>Comply with a legal obligation</li>{" "}
         <li>Protect and defend the rights or property of the Company</li>{" "}
         <li>
@@ -409,7 +429,9 @@ const Policy = () => {
         </li>
         <li>Protect against legal liability</li>{" "}
       </ul>
-      <h3>Security of Your Personal Data</h3>{" "}
+      <h3 className="mb-2 text-xl font-semibold">
+        Security of Your Personal Data
+      </h3>{" "}
       <p>
         The security of Your Personal Data is important to Me, but remember that
         no method of transmission over the Internet, or method of electronic
@@ -417,7 +439,7 @@ const Policy = () => {
         means to protect Your Personal Data, We cannot guarantee its absolute
         security.{" "}
       </p>{" "}
-      <h2 className='mt-8 mb-4 text-2xl font-semibold'>
+      <h2 className="mt-8 mb-4 text-2xl font-semibold">
         Children&apos;s Privacy
       </h2>{" "}
       <p>
@@ -435,7 +457,7 @@ const Policy = () => {
         require Your parent&apos;s consent before We collect and use that
         information.{" "}
       </p>{" "}
-      <h2 className='mt-8 mb-4 text-2xl font-semibold'>
+      <h2 className="mt-8 mb-4 text-2xl font-semibold">
         Links to Other Websites{" "}
       </h2>{" "}
       <p>
@@ -448,7 +470,7 @@ const Policy = () => {
         We have no control over and assume no responsibility for the content,
         privacy policies or practices of any third party sites or services.{" "}
       </p>{" "}
-      <h2 className='mt-8 mb-4 text-2xl font-semibold'>
+      <h2 className="mt-8 mb-4 text-2xl font-semibold">
         Changes to this Privacy Policy{" "}
       </h2>{" "}
       <p>
@@ -465,11 +487,11 @@ const Policy = () => {
         changes. Changes to this Privacy Policy are effective when they are
         posted on this page.{" "}
       </p>
-      <h2 className='mt-8 mb-4 text-2xl font-semibold'>Contact Me</h2>
+      <h2 className="mt-8 mb-4 text-2xl font-semibold">Contact Me</h2>
       <p>
         If you have any questions about this Privacy Policy, You can contact me:
       </p>
-      <ul className='mb-6 list-disc space-y-4 pl-6'>
+      <ul className="mb-6 list-disc space-y-4 pl-6">
         {/* TODO: Update this email to your professional contact email. */}
         <li>By email: mohammedjrt@gmail.com</li>
       </ul>

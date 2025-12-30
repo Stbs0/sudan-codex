@@ -66,10 +66,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang='en'
-      suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         {(process.env.NODE_ENV === "development" ||
           process.env.VERCEL_ENV === "preview") && (
           // eslint-disable-next-line @next/next/no-sync-scripts
@@ -77,8 +76,8 @@ export default function RootLayout({
             data-recording-token={
               process.env.NEXT_PUBLIC_METICULOUS_RECORDING_TOKEN
             }
-            data-is-production-environment='false'
-            src='https://snippet.meticulous.ai/v1/meticulous.js'
+            data-is-production-environment="false"
+            src="https://snippet.meticulous.ai/v1/meticulous.js"
           />
         )}
       </head>
@@ -93,20 +92,18 @@ export default function RootLayout({
               </Suspense>
             )}
             <ThemeProvider
-              attribute='class'
-              defaultTheme='system'
+              attribute="class"
+              defaultTheme="system"
               enableSystem
-              disableTransitionOnChange>
+              disableTransitionOnChange
+            >
               <AuthProvider>
                 <SidebarProvider defaultOpen={false}>
                   <AppSidebar />
                   <SidebarInset>
                     <Header />
-                    <main className='flex-1'>{children}</main>
-                    <Toaster
-                      richColors
-                      closeButton
-                    />
+                    <main className="flex-1">{children}</main>
+                    <Toaster richColors closeButton />
                     <Footer />
                   </SidebarInset>
                 </SidebarProvider>
