@@ -28,7 +28,7 @@ const GoogleOAuth = ({ logInOrSignUp }: Props) => {
     } catch (error) {
       toast.error("An unexpected error occurred. Please try again.");
       console.error(error);
-      posthog.captureException(error, { place: "unexpected error" });
+      posthog.captureException(error, { place: "google signin - unexpected" });
     } finally {
       setIsLoading(false);
     }

@@ -1,11 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { usePostHog } from "posthog-js/react";
 import { Button } from "../../ui/button";
 
 const SigninAndLogoutButton = () => {
-  const posthog = usePostHog();
   return (
     <>
       <Button

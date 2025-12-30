@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import type { JSX } from "react";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Sudan Codex",
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   },
 };
 
-const Policy = () => {
+const Policy = (): JSX.Element => {
   return (
     <div className="container mx-auto max-w-4xl px-4 py-8">
       <h1 className="mb-4 text-3xl font-bold">Privacy Policy</h1>
@@ -99,7 +100,7 @@ const Policy = () => {
           <p>
             <strong>Website</strong> refers to Sudan Codex, accessible from{" "}
             <a
-              href=" https://sudancodex.app"
+              href="https://sudancodex.app"
               rel="external nofollow noopener noreferrer"
               target="_blank"
             >

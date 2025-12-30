@@ -1,6 +1,5 @@
 import { getPostHogServer } from "@/lib/posthog-server";
 import { getDrugBySlug } from "@/services/server/getDrugs";
-import { notFound } from "next/navigation";
 import type { NextRequest } from "next/server";
 
 export async function GET(
@@ -8,7 +7,7 @@ export async function GET(
   { params }: RouteContext<"/api/drugs/[slug]">,
 ) {
   const { slug } = await params.catch(() => {
-    return notFound();
+    throw new Error("Invalid parameters");
   });
 
   if (!slug || slug.length > 120 || !/^[a-z0-9-]+$/.test(slug)) {
@@ -25,8 +24,18 @@ export async function GET(
     return Response.json(drug);
   } catch (err) {
     const posthog = getPostHogServer();
+    const phCookie = _req.cookies.get(
+      "ph_" + process.env.NEXT_PUBLIC_POSTHOG_KEY + "_posthog",
+    );
+    let distinctId: string | null = null;
+    try {
+      distinctId = JSON.parse(phCookie?.value || "")?.distinct_id || "";
+    } catch (_) {
+      distinctId = null;
+    }
     console.error(err);
     posthog.captureException(err, "get_drug_by_slug_api_error", {
+      distinctId,
       slug,
     });
     await posthog.shutdown();
