@@ -1,13 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import { usePostHog } from "posthog-js/react";
 import { Button } from "../../ui/button";
 
 const SigninAndLogoutButton = () => {
+  const posthog = usePostHog();
   return (
     <>
       <Button
         asChild
+        data-analytics="header-sign-up"
         className="bg-purple-600 text-white hover:bg-purple-700"
         variant={"link"}
       >
@@ -15,6 +18,7 @@ const SigninAndLogoutButton = () => {
       </Button>
       <Button
         asChild
+        data-analytics="header-log-in"
         className="bg-purple-600 text-white hover:bg-purple-700"
         variant={"link"}
       >

@@ -28,7 +28,7 @@ const GoogleOAuth = ({ logInOrSignUp }: Props) => {
     } catch (error) {
       toast.error("An unexpected error occurred. Please try again.");
       console.error(error);
-      posthog.captureException(error, { place: "google signin" });
+      posthog.captureException(error, { place: "unexpected error" });
     } finally {
       setIsLoading(false);
     }
@@ -36,17 +36,19 @@ const GoogleOAuth = ({ logInOrSignUp }: Props) => {
 
   return (
     <Button
-      variant='outline'
+      variant="outline"
       disabled={isLoading}
-      className='flex w-full items-center justify-center gap-2'
-      onClick={signInWithGoogle}>
+      className="flex w-full items-center justify-center gap-2"
+      onClick={signInWithGoogle}
+      data-analytics="google-sign-in"
+    >
       {logInOrSignUp} with Google
       <img
-        className='w-7'
+        className="w-7"
         src={"/icons/google.svg"}
-        alt='Google Logo'
-        loading='eager'
-        title='Google logo'
+        alt="Google Logo"
+        loading="eager"
+        title="Google logo"
       />
     </Button>
   );

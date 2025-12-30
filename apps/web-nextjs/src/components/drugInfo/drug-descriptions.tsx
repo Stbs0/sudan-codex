@@ -8,38 +8,41 @@ interface DrugCardProps {
 
 export function DrugDescriptions({ drug }: DrugCardProps) {
   return (
-    <CardTitle className='flex w-full flex-col gap-4'>
-      <div className='w-full border-none shadow-none'>
-        <div className='px-2 pt-2'>
-          <dl className='grid grid-cols-1 gap-2 sm:grid-cols-2'>
+    <CardTitle className="flex w-full flex-col gap-4">
+      <div className="w-full border-none shadow-none">
+        <div className="px-2 pt-2">
+          <dl className="grid grid-cols-1 gap-2 sm:grid-cols-2">
             <DrugPropertyDescription
-              title='Generic Name'
+              title="Generic Name"
               path={"/stats/generics/" + drug.generic?.slug}
               property={drug.generic_name}
+              data-analytics="generic_name_property"
             />
             <DrugPropertyDescription
-              title='Dosage Form'
+              title="Dosage Form"
               property={drug.dosage_form}
             />
             <DrugPropertyDescription
-              title='Strength'
+              title="Strength"
               property={drug.strength}
             />
             <DrugPropertyDescription
-              title='Pack Size'
+              title="Pack Size"
               property={drug.pack_size}
             />
             <DrugPropertyDescription
-              title='Company'
+              title="Company"
+              data-analytics="company_property"
               path={"/stats/companies/" + drug.company?.slug}
               property={drug.company_name}
             />
             <DrugPropertyDescription
-              title='Country of Origin'
+              title="Country of Origin"
               property={drug.country_name}
             />
             <DrugPropertyDescription
-              title='Agent'
+              title="Agent"
+              data-analytics="agent_property"
               path={"/stats/agents/" + drug.agent?.slug}
               property={drug.agent_name}
             />

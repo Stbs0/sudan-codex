@@ -17,16 +17,18 @@ const Logo = ({ className }: { className?: string }) => {
     <Button
       className={cn(
         `flex cursor-pointer items-center justify-center p-0`,
-        className
+        className,
       )}
       variant={"ghost"}
-      onClick={handleClick}>
+      data-analytics="header-logo"
+      onClick={handleClick}
+    >
       <img
-        className='object-contain'
+        className="object-contain"
         src={"/logo/pLogo-small.webp"}
-        alt='logo'
-        title='logo'
-        loading='eager'
+        alt="logo"
+        title="logo"
+        loading="eager"
       />
     </Button>
   );
