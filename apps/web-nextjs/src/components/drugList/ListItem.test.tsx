@@ -1,5 +1,5 @@
-import type { Drug } from "@/db/schemas/schema";
 import { Wrapper } from "@/testing/test-utils";
+import type { Drug } from "@sudan-codex/db";
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { ListItem } from "./ListItem";
@@ -79,13 +79,19 @@ describe("ListItem", () => {
 
   describe("isFirst prop", () => {
     it("should add IDs to elements when isFirst is true", async () => {
-      render(<ListItem drug={mockDrug} isFirst={true} />, { wrapper: Wrapper });
+      render(
+        <ListItem
+          drug={mockDrug}
+          isFirst={true}
+        />,
+        { wrapper: Wrapper }
+      );
 
       await screen.findByText("Panadol Extra");
 
       expect(document.getElementById("drugInfo-card")).toBeInTheDocument();
       expect(
-        document.getElementById("drugInfo-card-brandName"),
+        document.getElementById("drugInfo-card-brandName")
       ).toBeInTheDocument();
     });
 

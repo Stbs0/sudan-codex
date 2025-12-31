@@ -1,7 +1,7 @@
 "use client";
-import { Drug } from "@/db/schemas/schema";
 import { DrugFilterState, useSearchDrug } from "@/hooks/store/useSearch";
 import type { FetchedDrugs } from "@/services/server/getInitialInfiniteDrugs";
+import { Drug } from "@sudan-codex/db";
 import { infiniteQueryOptions, useInfiniteQuery } from "@tanstack/react-query";
 import { usePostHog } from "posthog-js/react";
 import { useEffect, useRef } from "react";
@@ -9,8 +9,10 @@ interface InfiniteQueryType {
   data: Drug[];
   nextPage: number | null;
 }
-interface QueryOptions
-  extends Omit<DrugFilterState, "setFilterBy" | "setSearch"> {
+interface QueryOptions extends Omit<
+  DrugFilterState,
+  "setFilterBy" | "setSearch"
+> {
   initialDrugs: FetchedDrugs;
 }
 

@@ -1,6 +1,6 @@
-import { Occupation } from "@/lib/schemas";
 import { relations, sql } from "drizzle-orm";
 import { index, integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import type { Occupation } from "@sudan-codex/types/schemas";
 
 export const users = sqliteTable("users", {
   id: text("id").primaryKey(),

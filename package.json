@@ -5,7 +5,7 @@
     "eslint": "^9.39.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.6",
-    "turbo": "^2.6.3",
+    "turbo": "^2.7.2",
     "@secretlint/secretlint-rule-preset-recommend": "^11.2.5",
     "secretlint": "^11.2.5",
     "syncpack": "^14.0.0-alpha.32"
@@ -14,18 +14,20 @@
   "scripts": {
     "prepare": "husky",
     "dev": "turbo run dev",
+    "test:unit": "turbo run test:unit",
     "start": "turbo run start",
     "check-types": "turbo run check-types --continue",
     "lint": "turbo run lint --continue",
     "test:e2e": "turbo run test:e2e",
-    "clean": "rm -rf node_modules ./apps/*/node_modules bun.lock",
+    "clean": "rm -rf node_modules ./apps/*/node_modules ./packages/*/node_modules bun.lock",
     "build": "turbo run build"
   },
   "packageManager": "bun@1.3.5",
   "type": "module",
   "workspaces": [
     "apps/mobile",
-    "apps/web-nextjs"
+    "apps/web-nextjs",
+    "packages/*"
   ],
   "overrides": {
     "eslint-plugin-react-hooks": "7.0.0",

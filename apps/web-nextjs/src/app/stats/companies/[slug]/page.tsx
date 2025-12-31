@@ -6,12 +6,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
+import { generateCompanyJsonLd } from "@/lib/json-ld";
 import {
   getAllDrugsRelatedToCompanyWithGenericAndAgents,
   getCompanyBySlug,
   getCompanyBySlugWithStats,
-} from "@/db/queries/company";
-import { generateCompanyJsonLd } from "@/lib/json-ld";
+} from "@sudan-codex/db";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 

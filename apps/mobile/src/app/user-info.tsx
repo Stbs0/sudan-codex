@@ -20,9 +20,12 @@ import {
 import { Text } from "@/components/ui/text";
 import { useAuth } from "@/hooks/useAuth";
 import { authClient } from "@/lib/auth-client";
-import { tellUsMoreSchema, type tellUsMoreSchemaType } from "@/lib/schemas";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  tellUsMoreSchema,
+  type tellUsMoreSchemaType,
+} from "@sudan-codex/types/schemas";
 import { Redirect, useRouter } from "expo-router";
 import { usePostHog } from "posthog-react-native";
 import React from "react";
@@ -30,7 +33,6 @@ import { Controller, useForm, type Control } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { View } from "react-native";
 import { toast } from "sonner-native";
-
 const SelectOccupation = ({
   control,
 }: {
@@ -207,7 +209,6 @@ const CompleteProfileScreen = () => {
                     onBlur={onBlur}
                     value={value}
                   />
-                  {console.log(error) && null}
                   {error && <FieldMessage message={error.message} />}
                 </>
               )}

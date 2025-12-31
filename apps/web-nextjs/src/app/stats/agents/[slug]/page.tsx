@@ -10,7 +10,7 @@ import {
   getAgentBySlug,
   getAgentBySlugWithStats,
   getAllDrugsRelatedToAgentWithGenericAndCompanies,
-} from "@/db/queries/agent";
+} from "@sudan-codex/db";
 import { generateAgentJsonLd } from "@/lib/json-ld";
 
 import { Metadata } from "next";

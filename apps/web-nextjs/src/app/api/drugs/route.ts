@@ -1,7 +1,6 @@
-import db from "@/db";
-import { drugsTable } from "@/db/schemas/schema";
 import { SearchDrugType } from "@/hooks/store/useSearch";
 import { getPostHogServer } from "@/lib/posthog-server";
+import { db, drugsTable } from "@sudan-codex/db";
 import { asc, like, sql } from "drizzle-orm";
 import type { NextRequest } from "next/server";
 import { literal } from "zod";
@@ -61,7 +60,7 @@ export async function GET(req: NextRequest) {
     const posthog = getPostHogServer();
 
     const phCookie = req.cookies.get(
-      "ph_" + process.env.NEXT_PUBLIC_POSTHOG_KEY + "_posthog",
+      "ph_" + process.env.NEXT_PUBLIC_POSTHOG_KEY + "_posthog"
     );
     let distinctId: string | null = null;
     try {

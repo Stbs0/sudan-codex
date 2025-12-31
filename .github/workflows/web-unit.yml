@@ -14,9 +14,6 @@ on:
 
 jobs:
   test-unit:
-    defaults:
-      run:
-        working-directory: apps/web-nextjs
     name: Run Unit Tests
 
     runs-on: ubuntu-latest
@@ -36,4 +33,4 @@ jobs:
         run: bun install
 
       - name: Run Unit Tests
-        run: bun run test:unit
+        run: bun run test:unit --filter=@sudan-codex/web

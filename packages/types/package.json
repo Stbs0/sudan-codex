@@ -1,0 +1,28 @@
+{
+  "name": "@sudan-codex/types",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./schemas": {
+      "types": "./dist/complete-profile-schema.d.ts",
+      "default": "./dist/complete-profile-schema.js"
+    },
+    "./constants": {
+      "types": "./dist/constants.d.ts",
+      "default": "./dist/constants.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "peerDependencies": {
+    "zod": "^4"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "zod": "^4.1.13"
+  }
+}
