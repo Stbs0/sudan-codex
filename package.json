@@ -14,6 +14,7 @@
   "scripts": {
     "prepare": "husky",
     "dev": "turbo run dev",
+    "test:unit": "turbo run test:unit",
     "start": "turbo run start",
     "check-types": "turbo run check-types --continue",
     "lint": "turbo run lint --continue",

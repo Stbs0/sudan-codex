@@ -209,7 +209,6 @@ const CompleteProfileScreen = () => {
                     onBlur={onBlur}
                     value={value}
                   />
-                  {/* {console.log(error) && null} */}
                   {error && <FieldMessage message={error.message} />}
                 </>
               )}

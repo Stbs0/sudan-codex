@@ -1,9 +1,16 @@
 {
   "name": "@sudan-codex/eslint-config",
   "type": "module",
+  "version": "0.0.0",
   "peerDependencies": {
-    "typescript": "^5"
+    "typescript": "^5",
+    "eslint": "^9.39.2"
   },
+  "files": [
+    "base.js",
+    "mobile.js",
+    "web.js"
+  ],
   "exports": {
     "./mobile": "./mobile.js",
     "./web": "./web.js",

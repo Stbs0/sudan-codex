@@ -24,7 +24,8 @@ export default withPostHogConfig(nextConfig, {
   host: process.env.NEXT_PUBLIC_POSTHOG_HOST, // (optional), defaults to https://us.posthog.com
   sourcemaps: {
     // (optional)
-    enabled: process.env.NODE_ENV === "production", // (optional) Enable sourcemaps generation and upload, default to true on production builds
+    enabled:
+      process.env.NODE_ENV === "production" && process.env.CI ? true : false, // (optional) Enable sourcemaps generation and upload, default to true on production builds
     project: "sudan-codex", // (optional) Project name, defaults to repository name
     deleteAfterUpload: true, // (optional) Delete sourcemaps after upload, defaults to true
   },
