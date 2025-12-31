@@ -1,9 +1,11 @@
 import type { MetadataRoute } from "next";
 
-import db from "@/db";
-import { getAllAgents } from "@/db/queries/agent";
-import { getAllCompanies } from "@/db/queries/company";
-import { getAllGenericSlugs } from "@/db/queries/generic";
+import {
+  db,
+  getAllAgents,
+  getAllCompanies,
+  getAllGenericSlugs,
+} from "@sudan-codex/db";
 
 const getAllDrugs = async () => {
   return await db.query.drugsTable.findMany({ columns: { slug: true } });
@@ -83,6 +85,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: NEWLY_MODIFIED,
       changeFrequency: "weekly",
       priority: 0.8,
-    })),
+    }))
   );
 }

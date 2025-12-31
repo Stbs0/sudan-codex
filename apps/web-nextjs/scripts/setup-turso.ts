@@ -9,7 +9,7 @@ config({
   ),
 });
 
-import * as schema from "@/db/schemas/schema";
+import * as schema from "@sudan-codex/db";
 import fs from "fs/promises";
 import path from "path";
 import z from "zod";

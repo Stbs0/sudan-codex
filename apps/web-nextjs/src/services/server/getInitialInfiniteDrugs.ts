@@ -1,4 +1,4 @@
-import { Drug } from "@/db/schemas/schema";
+import { Drug } from "@sudan-codex/db";
 import "server-only";
 
 export async function getDrugs(page = 1, q?: string) {
@@ -17,7 +17,7 @@ export async function getDrugs(page = 1, q?: string) {
   const res = await fetch(url);
   if (!res.ok) {
     throw new Error(
-      `Failed to fetch drugs: ${res.status} ${res.statusText} ${url}`,
+      `Failed to fetch drugs: ${res.status} ${res.statusText} ${url}`
     );
   }
   const data = (await res.json()) as FetchedDrugs;

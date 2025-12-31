@@ -96,7 +96,8 @@
     "tailwind-merge": "^3.4.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^4.1.13",
-    "@sudan-codex/types": "workspace:*"
+    "@sudan-codex/types": "workspace:*",
+    "@sudan-codex/db": "workspace:*"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

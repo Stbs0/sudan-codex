@@ -1,8 +1,7 @@
 "use server";
 import "server-only";
 
-import db from "@/db";
-import { drugsTable } from "@/db/schemas/schema";
+import { db, drugsTable } from "@sudan-codex/db";
 import { eq } from "drizzle-orm";
 import { cache } from "react";
 

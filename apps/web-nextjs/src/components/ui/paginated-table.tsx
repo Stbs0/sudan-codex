@@ -9,7 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Drug } from "@/db/schemas/schema";
+import { Drug } from "@sudan-codex/db";
 import { Route } from "next";
 import Link from "next/link";
 import { useState } from "react";

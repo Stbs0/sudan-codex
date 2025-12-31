@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { cache } from "react";
-import db from "..";
+import { db } from "../db";
 import { agentsTable, drugsTable } from "../schemas/schema";
 
 export const getAllAgents = cache(
