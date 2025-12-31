@@ -18,14 +18,15 @@
     "check-types": "turbo run check-types --continue",
     "lint": "turbo run lint --continue",
     "test:e2e": "turbo run test:e2e",
-    "clean": "rm -rf node_modules ./apps/*/node_modules bun.lock",
+    "clean": "rm -rf node_modules ./apps/*/node_modules ./packages/*/node_modules bun.lock",
     "build": "turbo run build"
   },
   "packageManager": "bun@1.3.5",
   "type": "module",
   "workspaces": [
     "apps/mobile",
-    "apps/web-nextjs"
+    "apps/web-nextjs",
+    "packages/*"
   ],
   "overrides": {
     "eslint-plugin-react-hooks": "7.0.0",

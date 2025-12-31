@@ -1,0 +1,20 @@
+{
+  "name": "@sudan-codex/eslint-config",
+  "type": "module",
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "exports": {
+    "./mobile": "./mobile.js",
+    "./web": "./web.js",
+    "./base": "./base.js"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.2",
+    "eslint-config-expo": "^10.0.0",
+    "eslint-config-next": "^16.1.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-react-compiler": "^19.1.0-rc.2"
+  }
+}
