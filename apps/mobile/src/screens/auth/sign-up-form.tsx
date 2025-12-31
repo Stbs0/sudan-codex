@@ -24,21 +24,26 @@ export function SignUpForm() {
     };
   }, []);
   return (
-    <View className="gap-6">
-      <Card className="border-border/0 shadow-none sm:border-border sm:shadow-sm sm:shadow-black/5">
+    <View className='gap-6'>
+      <Card className='border-border/0 shadow-none sm:border-border sm:shadow-sm sm:shadow-black/5'>
         <CardHeader>
-          <CardTitle className="text-center text-xl sm:text-left">
+          <CardTitle className='text-center text-xl sm:text-left'>
             {t("auth.title")}
           </CardTitle>
-          <CardDescription className="text-center sm:text-left">
+          <CardDescription className='text-center sm:text-left'>
             {t("auth.welcome")}
           </CardDescription>
         </CardHeader>
-        <CardContent className="gap-6">
-          <Button disabled={loading} onPress={async () => await signIn()}>
+        <CardContent className='gap-6'>
+          <Button
+            disabled={loading}
+            onPress={async () => await signIn()}>
             {loading && (
-              <View className="pointer-events-none animate-spin">
-                <Icon as={Loader2} className="text-primary-foreground" />
+              <View className='pointer-events-none animate-spin'>
+                <Icon
+                  as={Loader2}
+                  className='text-primary-foreground'
+                />
               </View>
             )}
             <Text>Google</Text>

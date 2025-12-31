@@ -63,7 +63,7 @@ describe("getDrugInfo", () => {
       });
 
       await expect(getDrugInfo("aspirin", "", false)).rejects.toThrow(
-        "Failed to fetch drug info",
+        "Failed to fetch drug info"
       );
     });
   });
@@ -78,10 +78,10 @@ describe("getDrugInfo", () => {
       await getDrugInfo("paracetamol", "", false);
 
       expect(global.fetch).toHaveBeenCalledWith(
-        expect.stringContaining("spl_product_data_elements"),
+        expect.stringContaining("spl_product_data_elements")
       );
       expect(global.fetch).toHaveBeenCalledWith(
-        expect.stringContaining("paracetamol"),
+        expect.stringContaining("paracetamol")
       );
     });
 
@@ -94,10 +94,10 @@ describe("getDrugInfo", () => {
       await getDrugInfo("aspirin", "ORAL", true);
 
       expect(global.fetch).toHaveBeenCalledWith(
-        expect.stringContaining("openfda.route"),
+        expect.stringContaining("openfda.route")
       );
       expect(global.fetch).toHaveBeenCalledWith(
-        expect.stringContaining("ORAL"),
+        expect.stringContaining("ORAL")
       );
     });
 

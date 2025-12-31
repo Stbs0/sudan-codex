@@ -28,8 +28,7 @@ function TooltipContent({
     <TooltipPrimitive.Portal hostName={portalHost}>
       <FullWindowOverlay>
         <TooltipPrimitive.Overlay
-          style={Platform.select({ native: StyleSheet.absoluteFill })}
-        >
+          style={Platform.select({ native: StyleSheet.absoluteFill })}>
           <NativeOnlyAnimatedView
             entering={
               side === "top"
@@ -40,23 +39,22 @@ function TooltipContent({
                     transform: [{ translateY: -5 }],
                   })
             }
-            exiting={FadeOut}
-          >
-            <TextClassContext.Provider value="text-xs text-primary-foreground">
+            exiting={FadeOut}>
+            <TextClassContext.Provider value='text-xs text-primary-foreground'>
               <TooltipPrimitive.Content
                 sideOffset={sideOffset}
                 className={cn(
-                  "bg-primary z-50 rounded-md px-3 py-2 sm:py-1.5",
+                  "z-50 rounded-md bg-primary px-3 py-2 sm:py-1.5",
                   Platform.select({
                     web: cn(
-                      "animate-in fade-in-0 zoom-in-95 origin-(--radix-tooltip-content-transform-origin) w-fit text-balance",
+                      "origin-(--radix-tooltip-content-transform-origin) w-fit text-balance animate-in fade-in-0 zoom-in-95",
                       side === "bottom" && "slide-in-from-top-2",
                       side === "left" && "slide-in-from-right-2",
                       side === "right" && "slide-in-from-left-2",
-                      side === "top" && "slide-in-from-bottom-2",
+                      side === "top" && "slide-in-from-bottom-2"
                     ),
                   }),
-                  className,
+                  className
                 )}
                 side={side}
                 {...props}

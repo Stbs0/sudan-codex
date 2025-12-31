@@ -8,7 +8,7 @@ test.describe("Stats Page", () => {
   test("should load the stats page correctly", async ({ page }) => {
     await expect(page).toHaveTitle(/Sudan Drug Index Statistics | Sudan Codex/);
     await expect(
-      page.getByRole("heading", { name: "Sudan Drug Index Statistics" }),
+      page.getByRole("heading", { name: "Sudan Drug Index Statistics" })
     ).toBeVisible();
   });
 
@@ -24,7 +24,7 @@ test.describe("Stats Page", () => {
     await expect(page.getByText("Top Companies by Brand Names")).toBeVisible();
     await expect(page.getByText("Top Agents by Drug Count")).toBeVisible();
     await expect(
-      page.getByText("Top Generic Names by Drug Count"),
+      page.getByText("Top Generic Names by Drug Count")
     ).toBeVisible();
     await expect(page.getByText("Most Frequent Brand Names")).toBeVisible();
   });

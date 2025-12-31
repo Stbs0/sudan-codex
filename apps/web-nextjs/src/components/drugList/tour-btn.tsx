@@ -129,7 +129,10 @@ function TourBtn() {
     posthog.capture("start_tour");
   };
   return (
-    <Button variant={"outline"} onClick={onStartTourClick} className="w-fit">
+    <Button
+      variant={"outline"}
+      onClick={onStartTourClick}
+      className='w-fit'>
       Guide me
     </Button>
   );

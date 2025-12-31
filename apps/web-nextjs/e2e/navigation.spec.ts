@@ -14,7 +14,7 @@ test.describe("Page Navigation", () => {
     await expect(page).toHaveURL(/.*log-in/);
     // Check for email/password inputs or login button
     await expect(
-      page.getByRole("button", { name: "Login with Google Google" }),
+      page.getByRole("button", { name: "Login with Google Google" })
     ).toBeVisible();
   });
 
@@ -22,7 +22,7 @@ test.describe("Page Navigation", () => {
     await page.goto("/sign-up");
     await expect(page).toHaveURL(/.*sign-up/);
     await expect(
-      page.getByRole("button", { name: "Sign up with Google Google" }),
+      page.getByRole("button", { name: "Sign up with Google Google" })
     ).toBeVisible();
   });
 

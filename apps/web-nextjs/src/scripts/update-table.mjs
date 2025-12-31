@@ -1,9 +1,9 @@
 import { createClient } from "@libsql/client";
-import fs from 'fs';
-import path from 'path';
-import dotenv from 'dotenv';
+import fs from "fs";
+import path from "path";
+import dotenv from "dotenv";
 
-dotenv.config({ path: '.env.local' });
+dotenv.config({ path: ".env.local" });
 
 const client = createClient({
   url: process.env.TURSO_DATABASE_URL || "",
@@ -11,14 +11,17 @@ const client = createClient({
 });
 
 async function main() {
-  const inputPath = path.join(process.cwd(), 'public/data/drugDataWithSlugs.json');
-  const data = fs.readFileSync(inputPath, 'utf8');
+  const inputPath = path.join(
+    process.cwd(),
+    "public/data/drugDataWithSlugs.json"
+  );
+  const data = fs.readFileSync(inputPath, "utf8");
   const drugs = JSON.parse(data);
 
   try {
-    console.log('Dropping existing tables if they exist...');
-    await client.execute('DROP TABLE IF EXISTS drugs');
-    await client.execute('DROP TABLE IF EXISTS drugs_fts');
+    console.log("Dropping existing tables if they exist...");
+    await client.execute("DROP TABLE IF EXISTS drugs");
+    await client.execute("DROP TABLE IF EXISTS drugs_fts");
 
     console.log('Creating "drugs" table with PRIMARY KEY on "no"...');
     await client.execute(`
@@ -57,7 +60,7 @@ async function main() {
     const batchSize = 100;
     for (let i = 0; i < drugs.length; i += batchSize) {
       const batch = drugs.slice(i, i + batchSize);
-      const statements = batch.map(drug => ({
+      const statements = batch.map((drug) => ({
         sql: "INSERT INTO drugs (no, brandName, genericName, dosageFormName, strength, packSize, companyName, countryOfOrigin, agentName, genericNameSlug, companyNameSlug, agentNameSlug, countryOfOriginSlug) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         args: [
           drug.no,
@@ -72,24 +75,23 @@ async function main() {
           drug.genericNameSlug,
           drug.companyNameSlug,
           drug.agentNameSlug,
-          drug.countryOfOriginSlug
-        ]
+          drug.countryOfOriginSlug,
+        ],
       }));
       await client.batch(statements);
       console.log(`Batch ${i / batchSize + 1} inserted into "drugs".`);
     }
     console.log('Successfully populated the "drugs" table.');
-    
-    console.log('Populating the FTS table...');
+
+    console.log("Populating the FTS table...");
     await client.execute(`
       INSERT INTO drugs_fts(drugs_fts) VALUES('rebuild')
     `);
-    console.log('Successfully populated the FTS table.');
+    console.log("Successfully populated the FTS table.");
 
-    console.log('Database schema updated and data re-uploaded successfully.');
-
+    console.log("Database schema updated and data re-uploaded successfully.");
   } catch (e) {
-    console.error('Failed to update schema and upload data:');
+    console.error("Failed to update schema and upload data:");
     console.error(e);
   }
 }

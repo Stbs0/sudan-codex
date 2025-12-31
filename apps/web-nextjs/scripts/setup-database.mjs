@@ -1,9 +1,8 @@
-
-import { client } from '../src/lib/tursoDB.js';
+import { client } from "../src/lib/tursoDB.js";
 
 async function setupDatabase() {
   try {
-    console.log('Starting database setup...');
+    console.log("Starting database setup...");
 
     // Create a table for countries of origin
     await client.execute(`
@@ -64,9 +63,9 @@ async function setupDatabase() {
     `);
     console.log('Table "drugs" created or already exists.');
 
-    console.log('Database setup completed successfully!');
+    console.log("Database setup completed successfully!");
   } catch (error) {
-    console.error('Error setting up the database:', error);
+    console.error("Error setting up the database:", error);
     process.exit(1);
   }
 }

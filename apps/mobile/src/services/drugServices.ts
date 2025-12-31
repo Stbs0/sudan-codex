@@ -1,12 +1,12 @@
-import { OPENFDA_SEARCH_URL } from "@/constants";
 import { getOpenFdaSearchUrl, parseQuery } from "@/lib/utils";
-import type { FetchedDrugInfo } from "@/types";
+import { type FetchedDrugInfo } from "@sudan-codex/types";
+import { OPENFDA_SEARCH_URL } from "@sudan-codex/types/constants";
 import axios from "axios";
 
 export const getDrugInfo = async (
   genericName: string,
   route: string,
-  refetch: boolean,
+  refetch: boolean
 ) => {
   try {
     const parsedGenericName = parseQuery(genericName);
@@ -15,7 +15,7 @@ export const getDrugInfo = async (
 
     const url = refetch
       ? encodeURI(
-          `${OPENFDA_SEARCH_URL}?search=(spl_product_data_elements:(*${parsedGenericName}*)${routeQuery})`,
+          `${OPENFDA_SEARCH_URL}?search=(spl_product_data_elements:(*${parsedGenericName}*)${routeQuery})`
         )
       : getOpenFdaSearchUrl(parsedGenericName);
     if (__DEV__) console.log("[getDrugInfo] url:", url);

@@ -37,7 +37,7 @@ test.describe("Agents Stats Page", () => {
       await firstAgentLink.click();
 
       await expect(page).toHaveURL(
-        new RegExp(href!.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")),
+        new RegExp(href!.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
       );
     }
   });
@@ -74,7 +74,7 @@ test.describe("Companies Stats Page", () => {
       await firstCompanyLink.click();
 
       await expect(page).toHaveURL(
-        new RegExp(href!.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")),
+        new RegExp(href!.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
       );
     }
   });
@@ -110,7 +110,7 @@ test.describe("Generics Stats Page", () => {
       await firstGenericLink.click();
 
       await expect(page).toHaveURL(
-        new RegExp(href!.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")),
+        new RegExp(href!.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
       );
     }
   });

@@ -78,17 +78,17 @@ describe("useInfiniteServerScroll Hook", () => {
   it("uses initial data when search is empty", () => {
     const { result } = renderHook(
       () => useInfiniteServerScroll(mockInitialDrugs),
-      { wrapper: Wrapper },
+      { wrapper: Wrapper }
     );
     expect(result.current.data?.pages[0].data[0].brand_name).toBe(
-      "Initial Drug",
+      "Initial Drug"
     );
   });
 
   it("fetches data when search term changes", async () => {
     const { result } = renderHook(
       () => useInfiniteServerScroll(mockInitialDrugs),
-      { wrapper: Wrapper },
+      { wrapper: Wrapper }
     );
 
     // Update search store
@@ -98,14 +98,14 @@ describe("useInfiniteServerScroll Hook", () => {
 
     await waitFor(() => {
       expect(global.fetch).toHaveBeenCalledWith(
-        expect.stringContaining("q=aspirin"),
+        expect.stringContaining("q=aspirin")
       );
     });
 
     // Check if new data is loaded (initial data should be disabled when searching)
     await waitFor(() => {
       expect(result.current.data?.pages[0].data[0].brand_name).toBe(
-        "Fetched Drug",
+        "Fetched Drug"
       );
     });
   });
@@ -121,7 +121,7 @@ describe("useInfiniteServerScroll Hook", () => {
 
     await waitFor(() => {
       expect(global.fetch).toHaveBeenCalledWith(
-        expect.stringContaining("filterBy=brand_name"),
+        expect.stringContaining("filterBy=brand_name")
       );
     });
   });

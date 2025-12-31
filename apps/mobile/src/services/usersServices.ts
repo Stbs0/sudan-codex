@@ -20,7 +20,7 @@ const docRef = (uid: string) => doc(db, "users", uid);
 
 export const SaveUserInFireStore = async (
   userData: UserDataToSaveToFirebaseTypes,
-  uid: string,
+  uid: string
 ) => {
   const userRef = docRef(uid);
 
@@ -47,7 +47,7 @@ export const getUser = async (uid: string) => {
 };
 
 export const completeProfile = async (
-  data: tellUsMoreSchemaType & { profileComplete: boolean },
+  data: tellUsMoreSchemaType & { profileComplete: boolean }
 ) => {
   if (!auth.currentUser) {
     return null;

@@ -11,19 +11,33 @@ export default function TabLayout() {
       screenOptions={({ route }) => ({
         tabBarIcon: (props) => {
           if (route.name === "drug-list") {
-            return <Icon as={List} {...props} />;
+            return (
+              <Icon
+                as={List}
+                {...props}
+              />
+            );
           }
           if (route.name === "(categories)") {
-            return <Icon as={ListTree} {...props} />;
+            return (
+              <Icon
+                as={ListTree}
+                {...props}
+              />
+            );
           }
           if (route.name === "settings") {
-            return <Icon as={Settings} {...props} />;
+            return (
+              <Icon
+                as={Settings}
+                {...props}
+              />
+            );
           }
         },
-      })}
-    >
+      })}>
       <Tabs.Screen
-        name="drug-list"
+        name='drug-list'
         options={{
           tabBarLabel: t("tabs.drugList"),
           headerShown: false,
@@ -31,7 +45,7 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="(categories)"
+        name='(categories)'
         options={{
           // title: t("tabs.settings"),
           tabBarLabel: "Categories",
@@ -39,7 +53,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="settings"
+        name='settings'
         options={{
           title: t("tabs.settings"),
           tabBarLabel: t("tabs.settings"),
@@ -47,7 +61,7 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="index"
+        name='index'
         options={{
           href: null,
         }}

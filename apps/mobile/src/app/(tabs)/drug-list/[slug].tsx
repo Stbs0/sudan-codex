@@ -30,7 +30,7 @@ const DrugInfo = () => {
 
     queryFn: async () => {
       const res = await fetch(
-        process.env.EXPO_PUBLIC_BACKEND_URI + `/api/drugs/${slug}`,
+        process.env.EXPO_PUBLIC_BACKEND_URI + `/api/drugs/${slug}`
       );
       if (!res.ok) {
         throw new Error(`Failed to fetch drug info: ${res.status}`);
@@ -46,11 +46,16 @@ const DrugInfo = () => {
   if (isError)
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text className="text-destructive">{t("drugInfo.errorLoading")}</Text>
+        <Text className='text-destructive'>{t("drugInfo.errorLoading")}</Text>
       </View>
     );
   if (!drug)
-    return <ActivityIndicator size="large" style={{ marginTop: 16 }} />;
+    return (
+      <ActivityIndicator
+        size='large'
+        style={{ marginTop: 16 }}
+      />
+    );
   return (
     <>
       <Stack.Screen options={{ title: drug.brand_name, headerShown: true }} />
@@ -58,45 +63,44 @@ const DrugInfo = () => {
         // style={{ flex: 1, gap: 2 }}
         contentContainerStyle={{ padding: 16 }}
         showsVerticalScrollIndicator={true}
-        className="flex-1 gap-4"
-      >
-        <Card className="mb-4 w-full py-4">
-          <CardTitle className="text-center">{drug.brand_name}</CardTitle>
-          <CardContent className="w-full gap-2">
-            <View className="gap-2">
+        className='flex-1 gap-4'>
+        <Card className='mb-4 w-full py-4'>
+          <CardTitle className='text-center'>{drug.brand_name}</CardTitle>
+          <CardContent className='w-full gap-2'>
+            <View className='gap-2'>
               <DrugPropertyDescription
                 title={t("drugInfo.genericName")}
-                className="border-green-700 dark:border-green-400"
+                className='border-green-700 dark:border-green-400'
                 property={drug.generic_name}
               />
               <DrugPropertyDescription
                 title={t("drugInfo.strength")}
-                className="border-yellow-400"
+                className='border-yellow-400'
                 property={drug.strength}
               />
               <DrugPropertyDescription
                 title={t("drugInfo.packSize")}
-                className="border-rose-700 dark:border-rose-400"
+                className='border-rose-700 dark:border-rose-400'
                 property={drug.pack_size}
               />
               <DrugPropertyDescription
                 title={t("drugInfo.dosageForm")}
-                className="border-blue-700 dark:border-blue-400"
+                className='border-blue-700 dark:border-blue-400'
                 property={drug.dosage_form}
               />
               <DrugPropertyDescription
                 title={t("drugInfo.companyName")}
-                className="border-pink-700 dark:border-pink-400"
+                className='border-pink-700 dark:border-pink-400'
                 property={drug.company_name}
               />
               <DrugPropertyDescription
                 title={t("drugInfo.agent")}
                 property={drug.agent_name}
-                className="border-orange-700 dark:border-orange-400"
+                className='border-orange-700 dark:border-orange-400'
               />
               <DrugPropertyDescription
                 title={t("drugInfo.countryOfOrigin")}
-                className="border-violet-700 dark:border-violet-400"
+                className='border-violet-700 dark:border-violet-400'
                 property={drug.country_name}
               />
             </View>
@@ -264,11 +268,13 @@ const DrugAccordion = ({
   const { t } = useTranslation();
   const html = content || `<p><i>${t("drugInfo.noDataAvailable")}</i></p>`;
   return (
-    <AccordionItem key={trigger} value={trigger}>
+    <AccordionItem
+      key={trigger}
+      value={trigger}>
       <AccordionTrigger>
         <Text>{trigger.toUpperCase()}</Text>
       </AccordionTrigger>
-      <AccordionContent className="">
+      <AccordionContent className=''>
         <RenderHtml
           tagsStyles={tagsStyles}
           enableExperimentalBRCollapsing={true}
