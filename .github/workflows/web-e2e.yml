@@ -32,7 +32,7 @@ jobs:
           path: |
             ~/.bun/install/cache
             ${{ github.workspace }}/apps/web-nextjs/.next/cache
-            ${{ github.workspace }}/node_modules/.cache/turbo
+            ${{ github.workspace }}/.turbo/cache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lock') }}-${{ hashFiles('apps/web-nextjs/**/*.js', 'apps/web-nextjs/**/*.jsx', 'apps/web-nextjs/**/*.ts', 'apps/web-nextjs/**/*.tsx') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lock') }}-
@@ -65,7 +65,7 @@ jobs:
         run: npx playwright install chromium
 
       - name: Run Playwright tests
-        run: bun run test:e2e  --filter=@sudan-codex/web
+        run: bun run test:e2e --filter=@sudan-codex/web
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
