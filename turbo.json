@@ -1,7 +1,7 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*", "**/drizzle-*.config.ts"],
-  
+
 
   "tasks": {
     "build": {
@@ -42,6 +42,7 @@
     },
     "lint": {
       "outputs": []
+      
     },
     "dev": {
       "cache": false,
