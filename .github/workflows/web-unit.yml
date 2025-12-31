@@ -14,9 +14,6 @@ on:
 
 jobs:
   test-unit:
-    defaults:
-      run:
-        working-directory: apps/web-nextjs
     name: Run Unit Tests
 
     runs-on: ubuntu-latest

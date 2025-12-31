@@ -8,9 +8,7 @@ on:
 
 jobs:
   test:
-    defaults:
-      run:
-        working-directory: apps/web-nextjs
+
     name: Run E2E Tests
     runs-on: ubuntu-latest
     steps:
@@ -34,6 +32,7 @@ jobs:
           path: |
             ~/.bun/install/cache
             ${{ github.workspace }}/apps/web-nextjs/.next/cache
+            ${{ github.workspace }}/node_modules/.cache/turbo
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lock') }}-${{ hashFiles('apps/web-nextjs/**/*.js', 'apps/web-nextjs/**/*.jsx', 'apps/web-nextjs/**/*.ts', 'apps/web-nextjs/**/*.tsx') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lock') }}-
