@@ -14,7 +14,7 @@
   "exports": {
     "./mobile": "./mobile.js",
     "./web": "./web.js",
-    "./base": "./base.js"
+    "./base": "./base.mjs"
   },
   "devDependencies": {
     "eslint": "^9.39.2",
