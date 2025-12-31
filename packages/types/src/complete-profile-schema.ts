@@ -4,7 +4,6 @@ export const occupationLiteral = z.literal(
   ["Student", "Administrator", "Pharmacist", "Medical Representative", "Other"],
   { error: "Please select a valid occupation" }
 );
-export type Occupation = z.infer<typeof occupationLiteral>;
 const phoneRegex = new RegExp(
   /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
 );
@@ -24,4 +23,6 @@ export const tellUsMoreSchema = z.object({
   }),
   occupation: occupationLiteral,
 });
+
+export type Occupation = z.infer<typeof occupationLiteral>;
 export type tellUsMoreSchemaType = z.infer<typeof tellUsMoreSchema>;

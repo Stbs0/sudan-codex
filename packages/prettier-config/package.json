@@ -1,6 +1,5 @@
 {
   "name": "@sudan-codex/prettier-config",
-  "module": "index.js",
   "type": "module",
   "exports": {
     ".": "./index.js"
@@ -9,8 +8,5 @@
     "@types/bun": "latest",
     "prettier": "^3.7.4",
     "prettier-plugin-tailwindcss": "^0.7.2"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
   }
 }

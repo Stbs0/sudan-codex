@@ -1,4 +1,6 @@
-import { type User } from "firebase/auth";
+// export type FetchedDrugInfo = {
+//   results: Array<Record<string, string[]>>;
+// };
 
 export type Theme = "dark" | "light" | "system";
 
@@ -26,11 +28,6 @@ export interface DosageForm {
   label: string;
   value: string;
 }
-
-export type UserInDb = Pick<
-  User,
-  "displayName" | "email" | "uid" | "photoURL" | "phoneNumber"
->;
 
 export type UserDataToSaveToFirebaseTypes = {
   displayName: string | null;
