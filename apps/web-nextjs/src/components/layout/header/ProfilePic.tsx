@@ -24,27 +24,27 @@ const ProfilePic = ({ user }: ProfilePicProps) => {
   return (
     <Popover>
       <PopoverTrigger
-        className="flex items-center rounded-full"
-        data-analytics="header-profile-pic"
-      >
+        className='flex items-center rounded-full'
+        data-analytics='header-profile-pic'>
         <Avatar>
-          <AvatarImage src={user.image ?? undefined} alt="profile picture" />
+          <AvatarImage
+            src={user.image ?? undefined}
+            alt='profile picture'
+          />
           <AvatarFallback>{getInitials(user?.name || "User")}</AvatarFallback>
         </Avatar>
       </PopoverTrigger>
       <PopoverContent
-        className="w-28 p-0"
-        onOpenAutoFocus={(e) => e.preventDefault()}
-      >
-        <div className="grid">
+        className='w-28 p-0'
+        onOpenAutoFocus={(e) => e.preventDefault()}>
+        <div className='grid'>
           <Separator />
 
           <Separator />
           <Button
             variant={"link"}
-            className="text-red-500"
-            onClick={handleSignOut}
-          >
+            className='text-red-500'
+            onClick={handleSignOut}>
             Sign Out
           </Button>
         </div>

@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 
 export async function GET(
   _req: NextRequest,
-  { params }: RouteContext<"/api/drugs/[slug]">,
+  { params }: RouteContext<"/api/drugs/[slug]">
 ) {
   const { slug } = await params.catch(() => {
     throw new Error("Invalid parameters");
@@ -25,7 +25,7 @@ export async function GET(
   } catch (err) {
     const posthog = getPostHogServer();
     const phCookie = _req.cookies.get(
-      "ph_" + process.env.NEXT_PUBLIC_POSTHOG_KEY + "_posthog",
+      "ph_" + process.env.NEXT_PUBLIC_POSTHOG_KEY + "_posthog"
     );
     let distinctId: string | null = null;
     try {

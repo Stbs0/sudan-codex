@@ -31,19 +31,19 @@ test.describe("Drug List Search and Filter", () => {
 
     // Check filter options appear
     await expect(
-      page.getByRole("option", { name: "Brand Name" }),
+      page.getByRole("option", { name: "Brand Name" })
     ).toBeVisible();
     await expect(
-      page.getByRole("option", { name: "Generic Name" }),
+      page.getByRole("option", { name: "Generic Name" })
     ).toBeVisible();
     await expect(
-      page.getByRole("option", { name: "Agent Name" }),
+      page.getByRole("option", { name: "Agent Name" })
     ).toBeVisible();
     await expect(
-      page.getByRole("option", { name: "Company Name" }),
+      page.getByRole("option", { name: "Company Name" })
     ).toBeVisible();
     await expect(
-      page.getByRole("option", { name: "Country of Origin" }),
+      page.getByRole("option", { name: "Country of Origin" })
     ).toBeVisible();
   });
 

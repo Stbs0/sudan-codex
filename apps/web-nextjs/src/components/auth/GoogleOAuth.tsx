@@ -36,19 +36,18 @@ const GoogleOAuth = ({ logInOrSignUp }: Props) => {
 
   return (
     <Button
-      variant="outline"
+      variant='outline'
       disabled={isLoading}
-      className="flex w-full items-center justify-center gap-2"
+      className='flex w-full items-center justify-center gap-2'
       onClick={signInWithGoogle}
-      data-analytics="google-sign-in"
-    >
+      data-analytics='google-sign-in'>
       {logInOrSignUp} with Google
       <img
-        className="w-7"
+        className='w-7'
         src={"/icons/google.svg"}
-        alt="Google Logo"
-        loading="eager"
-        title="Google logo"
+        alt='Google Logo'
+        loading='eager'
+        title='Google logo'
       />
     </Button>
   );

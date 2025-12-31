@@ -4,7 +4,7 @@ import React from "react";
 
 export function Wrapper({ children }: { children: React.ReactNode }) {
   const [queryClient] = React.useState(
-    () => new QueryClient({ defaultOptions: { queries: { retry: false } } }),
+    () => new QueryClient({ defaultOptions: { queries: { retry: false } } })
   );
   return (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>

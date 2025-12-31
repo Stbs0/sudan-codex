@@ -23,10 +23,10 @@ const Help = () => {
   const { t } = useTranslation();
 
   return (
-    <View className="p-4 gap-4 flex-1">
-      <Card className="">
+    <View className='flex-1 gap-4 p-4'>
+      <Card className=''>
         <CardHeader>
-          <CardTitle className="text-lg">
+          <CardTitle className='text-lg'>
             {t("settings.cardInformation")}
           </CardTitle>
           <CardDescription>
@@ -72,13 +72,16 @@ const WhatsAppBtn = () => {
   };
   return (
     <Button
-      className="bg-green-400 items-center justify-center"
-      onPress={openWhatsApp}
-    >
-      <Text className="text-white dark:text-white">
+      className='items-center justify-center bg-green-400'
+      onPress={openWhatsApp}>
+      <Text className='text-white dark:text-white'>
         {t("settings.help.whatsApp.btn")}
       </Text>
-      <FontAwesome6 name="whatsapp" size={24} color="#fff" />
+      <FontAwesome6
+        name='whatsapp'
+        size={24}
+        color='#fff'
+      />
     </Button>
   );
 };
@@ -117,61 +120,60 @@ const DrugCardSettings = ({
 }: Drug) => {
   const { t } = useTranslation();
   return (
-    <Card className="py-2 rounded-none border-2 shadow-black shadow-md">
-      <CardContent className="gap-1">
-        <View className="gap-1">
-          <View className="flex-row flex-nowrap">
+    <Card className='rounded-none border-2 py-2 shadow-md shadow-black'>
+      <CardContent className='gap-1'>
+        <View className='gap-1'>
+          <View className='flex-row flex-nowrap'>
             <TooltipText tooltip={t("settings.tooltips.brandAndStrength")}>
-              <Text className="font-extrabold text-neutral-700 underline decoration-rose-500 dark:text-blue-200">
+              <Text className='font-extrabold text-neutral-700 underline decoration-rose-500 dark:text-blue-200'>
                 {(brandName || "NAD") + " " + (strength || "NAD")}
               </Text>
             </TooltipText>
 
-            <Text className="font-bold"> — </Text>
+            <Text className='font-bold'> — </Text>
 
             <TooltipText tooltip={t("settings.tooltips.packSize")}>
               <Text
-                className="dark:text-rose-400 text-rose-500 underline decoration-rose-500"
+                className='text-rose-500 underline decoration-rose-500 dark:text-rose-400'
                 numberOfLines={1}
-                ellipsizeMode="tail"
-              >
+                ellipsizeMode='tail'>
                 {packSize || "NAD"}
               </Text>
             </TooltipText>
           </View>
 
-          <View className="flex-row gap-1">
+          <View className='flex-row gap-1'>
             <TooltipText tooltip={t("settings.tooltips.genericName")}>
-              <Text className="dark:text-green-400 text-green-500 font-extrabold underline decoration-rose-500">
+              <Text className='font-extrabold text-green-500 underline decoration-rose-500 dark:text-green-400'>
                 {genericName || "NAD"}
               </Text>
             </TooltipText>
 
-            <Text className="font-bold"> — </Text>
+            <Text className='font-bold'> — </Text>
 
             <TooltipText tooltip={t("settings.tooltips.dosageForm")}>
-              <Text className="font-bold dark:text-blue-400 text-blue-700 underline decoration-rose-500">
+              <Text className='font-bold text-blue-700 underline decoration-rose-500 dark:text-blue-400'>
                 {dosageFormName || "NAD"}
               </Text>
             </TooltipText>
           </View>
         </View>
 
-        <View className="items-start gap-1">
+        <View className='items-start gap-1'>
           <TooltipText tooltip={t("settings.tooltips.manufacturer")}>
-            <Text className="text-sm font-bold dark:text-pink-400 text-pink-700 underline decoration-rose-500">
+            <Text className='text-sm font-bold text-pink-700 underline decoration-rose-500 dark:text-pink-400'>
               {companyName || "NAD"}
             </Text>
           </TooltipText>
 
           <TooltipText tooltip={t("settings.tooltips.distributor")}>
-            <Text className="text-sm font-bold dark:text-orange-400 text-orange-700 underline decoration-rose-500">
+            <Text className='text-sm font-bold text-orange-700 underline decoration-rose-500 dark:text-orange-400'>
               {agentName || "NAD"}
             </Text>
           </TooltipText>
 
           <TooltipText tooltip={t("settings.tooltips.origin")}>
-            <Text className="text-sm font-bold dark:text-violet-400 text-violet-500 underline decoration-rose-500">
+            <Text className='text-sm font-bold text-violet-500 underline decoration-rose-500 dark:text-violet-400'>
               {countryOfOrigin || "NAD"}
             </Text>
           </TooltipText>

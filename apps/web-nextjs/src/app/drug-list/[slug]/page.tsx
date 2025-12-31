@@ -91,24 +91,24 @@ export default async function DrugInfoPage({
   const jsonLd = generateDrugJsonLd(drug);
 
   return (
-    <div className="container mx-auto max-w-5xl px-4 py-6">
+    <div className='container mx-auto max-w-5xl px-4 py-6'>
       <script
-        type="application/ld+json"
+        type='application/ld+json'
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="mb-6 flex items-center gap-3">
+      <div className='mb-6 flex items-center gap-3'>
         <BackBtn />
-        <h1 className="text-xl font-semibold tracking-tight">
+        <h1 className='text-xl font-semibold tracking-tight'>
           {`${drug.brand_name} (${drug.generic_name} - ${drug.dosage_form} ${drug.strength}) – Full Drug Info.`}
         </h1>
       </div>
 
-      <Card className="flex flex-col gap-6 p-6">
+      <Card className='flex flex-col gap-6 p-6'>
         <DrugDescriptions drug={drug} />
         <Separator />
-        <CardContent className="flex w-full flex-col gap-4 p-0">
+        <CardContent className='flex w-full flex-col gap-4 p-0'>
           <DrugInfoC />
         </CardContent>
       </Card>

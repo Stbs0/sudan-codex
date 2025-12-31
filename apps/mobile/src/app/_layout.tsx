@@ -85,29 +85,28 @@ function RootLayoutNav() {
   return (
     <GestureHandlerRootView>
       <ThemeProvider
-        value={NAV_THEME[colorScheme === "dark" ? "dark" : "light"]}
-      >
+        value={NAV_THEME[colorScheme === "dark" ? "dark" : "light"]}>
         <StatusBar />
         <Stack screenOptions={{ headerShown: false }}>
           {/* began auth */}
           <Stack.Protected guard={data === null}>
-            <Stack.Screen name="auth" />
+            <Stack.Screen name='auth' />
           </Stack.Protected>
           {/* end auth */}
 
           <Stack.Protected guard={data !== null}>
             {/* began tabs  */}
             <Stack.Protected guard={data?.user?.isProfileComplete === true}>
-              <Stack.Screen name="(tabs)" />
+              <Stack.Screen name='(tabs)' />
               <Stack.Screen
-                name="about"
+                name='about'
                 options={{ title: "About", headerShown: true }}
               />
             </Stack.Protected>
             {/* began tabs  */}
             {/* began check if complete profile */}
             <Stack.Protected guard={data?.user?.isProfileComplete === false}>
-              <Stack.Screen name="user-info" />
+              <Stack.Screen name='user-info' />
             </Stack.Protected>
             {/* end check if complete profile */}
           </Stack.Protected>

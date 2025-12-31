@@ -22,20 +22,26 @@ const Appearance = () => {
     toggleColorScheme();
   };
   return (
-    <View className="p-4 gap-4 flex-1">
-      <Card className="">
+    <View className='flex-1 gap-4 p-4'>
+      <Card className=''>
         <CardHeader>
-          <CardTitle className="text-lg">{t("settings.changeTheme")}</CardTitle>
+          <CardTitle className='text-lg'>{t("settings.changeTheme")}</CardTitle>
         </CardHeader>
-        <CardContent className="flex-row items-center justify-center gap-4">
-          <Icon as={Sun} size={20} />
+        <CardContent className='flex-row items-center justify-center gap-4'>
+          <Icon
+            as={Sun}
+            size={20}
+          />
           <Switch
-            nativeID="theme-switch"
-            className="scale-150"
+            nativeID='theme-switch'
+            className='scale-150'
             checked={isDark}
             onCheckedChange={switchTheme}
           />
-          <Icon as={Moon} size={20} />
+          <Icon
+            as={Moon}
+            size={20}
+          />
         </CardContent>
       </Card>
       <LanguageChangeCard />
@@ -93,7 +99,7 @@ const LanguageChangeCard = () => {
       //   ],
       // );
     },
-    [setLang, posthog],
+    [setLang, posthog]
   );
   function onLabelPress(lang: string) {
     return () => {
@@ -102,17 +108,24 @@ const LanguageChangeCard = () => {
     };
   }
   return (
-    <Card className="">
+    <Card className=''>
       <CardHeader>
-        <CardTitle className="text-lg">
+        <CardTitle className='text-lg'>
           {t("settings.changeLanguage")}
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <RadioGroup value={lang} onValueChange={switchLanguage}>
+        <RadioGroup
+          value={lang}
+          onValueChange={switchLanguage}>
           {LANGUAGE_OPTIONS.map(({ lang, label }) => (
-            <View key={lang} className="flex flex-row items-center gap-3">
-              <RadioGroupItem value={lang} id={lang} />
+            <View
+              key={lang}
+              className='flex flex-row items-center gap-3'>
+              <RadioGroupItem
+                value={lang}
+                id={lang}
+              />
               <Label onPress={onLabelPress(lang)}>{label}</Label>
             </View>
           ))}

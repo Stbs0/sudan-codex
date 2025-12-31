@@ -13,5 +13,5 @@ const client = createClient({
 const data = await client.execute("SELECT id, slug from drugs");
 console.log(data.rows);
 writeFile("matchDB.json", JSON.stringify(data.rows), "utf8", (err) =>
-  console.log(err),
+  console.log(err)
 );

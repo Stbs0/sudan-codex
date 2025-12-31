@@ -64,7 +64,7 @@ describe("InfiniteScrollComponent", () => {
           nextPage: null,
         }}
       />,
-      { wrapper: Wrapper },
+      { wrapper: Wrapper }
     );
 
     // Verify drugs are rendered
@@ -82,7 +82,7 @@ describe("InfiniteScrollComponent", () => {
           nextPage: null,
         }}
       />,
-      { wrapper: Wrapper },
+      { wrapper: Wrapper }
     );
 
     // Check for unique elements

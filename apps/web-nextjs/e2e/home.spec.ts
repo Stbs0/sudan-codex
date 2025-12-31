@@ -17,7 +17,7 @@ test.describe("Home Page Hero Section", () => {
 
   test("displays welcome heading", async ({ page }) => {
     await expect(
-      page.getByRole("heading", { name: /Welcome to Sudan Codex/i }),
+      page.getByRole("heading", { name: /Welcome to Sudan Codex/i })
     ).toBeVisible();
   });
 
@@ -164,12 +164,12 @@ test.describe("Home Page Responsive Design", () => {
 
     // Hero should still be visible
     await expect(
-      page.getByRole("heading", { name: /Welcome to Sudan Codex/i }),
+      page.getByRole("heading", { name: /Welcome to Sudan Codex/i })
     ).toBeVisible();
 
     // Explore button should still be visible
     await expect(
-      page.getByRole("link", { name: /Explore Now/i }),
+      page.getByRole("link", { name: /Explore Now/i })
     ).toBeVisible();
   });
 
@@ -178,7 +178,7 @@ test.describe("Home Page Responsive Design", () => {
     await page.goto("/");
 
     await expect(
-      page.getByRole("heading", { name: /Welcome to Sudan Codex/i }),
+      page.getByRole("heading", { name: /Welcome to Sudan Codex/i })
     ).toBeVisible();
   });
 
@@ -187,7 +187,7 @@ test.describe("Home Page Responsive Design", () => {
     await page.goto("/");
 
     await expect(
-      page.getByRole("heading", { name: /Welcome to Sudan Codex/i }),
+      page.getByRole("heading", { name: /Welcome to Sudan Codex/i })
     ).toBeVisible();
   });
 });
@@ -220,7 +220,7 @@ test.describe("Home Page Accessibility", () => {
       // This is a basic check to ensure we don't have images without any description
       expect(
         alt !== null || role === "presentation" || role === "none",
-        `Image at index ${i} missing alt text`,
+        `Image at index ${i} missing alt text`
       ).toBeTruthy();
     }
   });
