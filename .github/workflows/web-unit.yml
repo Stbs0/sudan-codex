@@ -33,4 +33,4 @@ jobs:
         run: bun install
 
       - name: Run Unit Tests
-        run: bun run test:unit
+        run: bun run test:unit --filter=@sudan-codex/web

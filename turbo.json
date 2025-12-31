@@ -5,7 +5,31 @@
   "tasks": {
     "test:unit": {
       "dependsOn": ["^build"],
-      "cache": false
+      "cache": false,
+      "inputs": ["$TURBO_DEFAULT$", ".env.development.local"],
+      "env": [
+        "NEXT_PUBLIC_API_URL",
+        "NEXT_PUBLIC_POSTHOG_HOST",
+        "NEXT_PUBLIC_POSTHOG_KEY",
+        "NODE_ENV",
+        "NEXT_PUBLIC_SITE_URL",
+        "NEXT_PUBLIC_WHATSAPP_NUMBER",
+        "TURSO_AUTH_TOKEN",
+        "TURSO_DATABASE_URL",
+        "VERCEL_OIDC_TOKEN",
+        "BETTER_AUTH_SECRET",
+        "VERCEL_ENV",
+        "POSTHOG_ENV_ID",
+        "BETTER_AUTH_URL",
+        "NEXT_RUNTIME",
+        "GOOGLE_CLIENT_ID",
+        "CI",
+        "POSTHOG_API_KEY",
+        "VERCEL_URL",
+        "GOOGLE_CLIENT_SECRET",
+        "NEXT_PUBLIC_METICULOUS_RECORDING_TOKEN",
+        "NEXT_PUBLIC_EXPO_SCHEMA"
+      ]
     },
     "build": {
       "dependsOn": ["^build"],
@@ -55,6 +79,7 @@
     "lint": {
       "outputs": []
     },
+
     "dev": {
       "cache": false,
       "inputs": ["$TURBO_DEFAULT$", ".env.development.local"],
@@ -84,10 +109,37 @@
 
       "persistent": true
     },
+    "start": {
+      "inputs": ["$TURBO_DEFAULT$", ".env.production.local"],
+      "env": [
+        "NEXT_PUBLIC_API_URL",
+        "NEXT_PUBLIC_POSTHOG_HOST",
+        "NEXT_PUBLIC_POSTHOG_KEY",
+        "NODE_ENV",
+        "NEXT_PUBLIC_SITE_URL",
+        "NEXT_PUBLIC_WHATSAPP_NUMBER",
+        "TURSO_AUTH_TOKEN",
+        "TURSO_DATABASE_URL",
+        "VERCEL_OIDC_TOKEN",
+        "BETTER_AUTH_SECRET",
+        "VERCEL_ENV",
+        "POSTHOG_ENV_ID",
+        "BETTER_AUTH_URL",
+        "NEXT_RUNTIME",
+        "GOOGLE_CLIENT_ID",
+        "CI",
+        "POSTHOG_API_KEY",
+        "VERCEL_URL",
+        "GOOGLE_CLIENT_SECRET",
+        "NEXT_PUBLIC_METICULOUS_RECORDING_TOKEN",
+        "NEXT_PUBLIC_EXPO_SCHEMA"
+      ],
+
+      "persistent": true
+    },
     "test:e2e": {
       "dependsOn": ["^build"],
-
-      "cache": true
+      "passThroughEnv": ["PLAYWRIGHT_*"]
     },
 
     "check-types": {
