@@ -16,7 +16,7 @@ const Header = () => {
 
       <div className='z-10 flex items-center space-x-3'>
         <ModeToggle />
-        <UserButton />
+        <UserButton size={"icon"} />
       </div>
     </header>
   );

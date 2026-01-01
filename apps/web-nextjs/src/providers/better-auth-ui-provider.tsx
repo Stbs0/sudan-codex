@@ -34,25 +34,25 @@ export function BetterAuthUIProvider({ children }: { children: ReactNode }) {
       additionalFields={{
         age: {
           type: "number",
-          required: false,
+          required: true,
           label: "Age",
           placeholder: "Enter your age",
         },
         phoneNumber: {
           type: "string",
-          required: false,
+          required: true,
           label: "Phone Number",
           placeholder: "Enter your phone number",
         },
         university: {
           type: "string",
-          required: false,
+          required: true,
           label: "University",
           placeholder: "Enter your university",
         },
         occupation: {
           type: "string",
-          required: false,
+          required: true,
           label: "Occupation",
           instructions: <Instructions />,
           validate: async (value) => {
