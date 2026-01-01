@@ -1,7 +1,7 @@
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import Logo from "./Logo";
 import { ModeToggle } from "./mode-toggle";
-import { SigninAndLogoutButtonOrProfilePic } from "./signin-and-logout-btn-or-profile-pic";
+import { UserButton } from "@daveyplate/better-auth-ui";
 
 const Header = () => {
   return (
@@ -16,7 +16,7 @@ const Header = () => {
 
       <div className='z-10 flex items-center space-x-3'>
         <ModeToggle />
-        <SigninAndLogoutButtonOrProfilePic />
+        <UserButton />
       </div>
     </header>
   );
