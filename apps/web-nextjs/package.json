@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@better-auth/expo": "^1.4.6",
+    "@daveyplate/better-auth-ui": "^3.3.10",
     "@hookform/devtools": "^4.4.0",
     "@hookform/resolvers": "^5.2.2",
     "@libsql/client": "^0.15.15",
@@ -39,6 +40,8 @@
     "@radix-ui/react-separator": "^1.1.8",
     "@radix-ui/react-slot": "^1.2.4",
     "@radix-ui/react-tooltip": "^1.2.8",
+    "@sudan-codex/db": "workspace:*",
+    "@sudan-codex/types": "workspace:*",
     "@tanstack/react-query": "^5.90.11",
     "@tanstack/react-query-devtools": "^5.91.1",
     "better-auth": "^1.4.6",
@@ -63,9 +66,7 @@
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.4.0",
     "zod": "^4.1.13",
-    "zustand": "^5.0.9",
-    "@sudan-codex/types": "workspace:*",
-    "@sudan-codex/db": "workspace:*"
+    "zustand": "^5.0.9"
   },
   "devDependencies": {
     "@playwright/test": "^1.57.0",
