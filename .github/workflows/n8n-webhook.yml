@@ -2,11 +2,11 @@ name: Send n8n Webhook on PR Merge
 
 on:
     pull_request:
-        types: [edited]
+        types: [closed]
 
 jobs:
     notify-n8n:
-        # if: github.event.pull_request.merged == true
+        if: github.event.pull_request.merged == true
         runs-on: ubuntu-latest
         steps:
             - name: Send Webhook
@@ -40,7 +40,7 @@ jobs:
                       merged_by: $merged_by,
                       repository: $repo,
                       timestamp: (now | todate)
-                    }')
+                      }')
 
                   # Send the webhook
                   curl -X POST -H "Content-Type: application/json" -H "x-auth-github: $WEBHOOK_SECRET" -d "$PAYLOAD" "$WEBHOOK_URL"
