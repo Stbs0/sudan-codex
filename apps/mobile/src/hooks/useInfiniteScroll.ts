@@ -1,5 +1,5 @@
 import { type DrugFilterState, useSearchDrug } from "@/hooks/store/useSearch";
-import type { Drug } from "@/types";
+import type { Drug } from "@sudan-codex/types";
 import { infiniteQueryOptions, useInfiniteQuery } from "@tanstack/react-query";
 import { usePostHog } from "posthog-js/react";
 import { useEffect, useRef } from "react";

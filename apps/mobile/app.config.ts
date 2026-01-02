@@ -23,8 +23,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       foregroundImage: "./src/assets/icons/adaptive-icon.png",
       backgroundColor: "#ffffff",
     },
-    googleServicesFile:
-      process.env.GOOGLE_SERVICES_JSON ?? "./google-services.json",
     edgeToEdgeEnabled: true,
     softwareKeyboardLayoutMode: "resize",
     package: "app.sudancodex.mobile",
@@ -36,9 +34,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   plugins: [
     "expo-router",
-    "@react-native-google-signin/google-signin",
-    "@react-native-firebase/app",
-    "@react-native-firebase/auth",
     [
       "expo-localization",
       {

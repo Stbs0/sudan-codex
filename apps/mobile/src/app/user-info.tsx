@@ -118,7 +118,7 @@ const CompleteProfileScreen = () => {
 
   const onSubmit = async (data: tellUsMoreSchemaType) => {
     const res = await authClient.updateUser(data, {
-      onSuccess: (ctx) => {
+      onSuccess: () => {
         router.replace("/drug-list");
         toast.success("Profile updated successfully!");
       },
@@ -231,7 +231,7 @@ const CompleteProfileScreen = () => {
       </Card>
       <Button
         onPress={async () => {
-          const data = await authClient.signOut();
+          await authClient.signOut();
         }}>
         <Text>Sign out</Text>
       </Button>

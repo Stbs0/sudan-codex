@@ -75,6 +75,7 @@ type BadgeProps = ViewProps &
 function Badge({ className, variant, asChild, ...props }: BadgeProps) {
   const Component = asChild ? Slot.View : View;
   return (
+    // @ts-expect-error i dont care
     <TextClassContext.Provider value={badgeTextVariants({ variant })}>
       <Component
         className={cn(badgeVariants({ variant }), className)}
