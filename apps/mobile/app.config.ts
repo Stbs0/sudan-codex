@@ -17,6 +17,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   ios: {
     supportsTablet: true,
+    bundleIdentifier: "app.sudancodex.mobile",
   },
   android: {
     adaptiveIcon: {
@@ -27,6 +28,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     softwareKeyboardLayoutMode: "resize",
     package: "app.sudancodex.mobile",
   },
+
   web: {
     bundler: "metro",
     output: "static",
