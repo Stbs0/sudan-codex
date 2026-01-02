@@ -1,6 +1,6 @@
 import { Text } from "@/components/ui/text";
 import { cn } from "@/lib/utils";
-import type { DrugProperty } from "@/types";
+import type { DrugProperty } from "@sudan-codex/types";
 import { View } from "react-native";
 
 type Props = { title: string; property: DrugProperty; className?: string };

@@ -50,7 +50,7 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   useAnalyticsPosthog();
-  const { data, isPending, isProfileComplete, isSignedIn } = useAuth();
+  const { data, isPending } = useAuth();
   const { colorScheme } = useColorScheme();
   // console.log(process.env);
   // useEffect(() => {

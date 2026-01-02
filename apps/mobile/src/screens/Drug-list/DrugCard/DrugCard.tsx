@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
 import { useModal } from "@/hooks/useModal";
-import type { Drug } from "@/types";
+import type { Drug } from "@sudan-codex/types";
 import * as Haptics from "expo-haptics";
 import { useRouter } from "expo-router";
 import React, { memo } from "react";

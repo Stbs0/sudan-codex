@@ -7,9 +7,7 @@ import {
   Pill,
 } from "lucide-react-native";
 import React from "react";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 export default function TabLayout() {
-  const { bottom, ...safeAreaInsets } = useSafeAreaInsets();
   return (
     <Tabs
       // safeAreaInsets={{ ...safeAreaInsets, bottom: bottom / 4 }}

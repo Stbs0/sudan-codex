@@ -1,5 +1,5 @@
 import { ModalContext } from "@/hooks/useModal";
-import type { Drug } from "@/types";
+import type { Drug } from "@sudan-codex/types";
 import React, { useState } from "react";
 
 const ModalProvider = ({ children }: { children: React.ReactNode }) => {

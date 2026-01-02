@@ -1,26 +1,18 @@
-import {
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
 import DrugPropertyDescription from "@/screens/Drug-list/DrugCard/DrugPropertyDescription";
-import type { Drug } from "@/types";
+import type { Drug } from "@sudan-codex/types";
 import { useQuery } from "@tanstack/react-query";
-import { Stack, useLocalSearchParams, useNavigation } from "expo-router";
+import { Stack, useLocalSearchParams } from "expo-router";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator, ScrollView, View } from "react-native";
-import RenderHtml, {
-  type MixedStyleDeclaration,
-} from "react-native-render-html";
 const DrugInfo = () => {
   const { t } = useTranslation();
   const { slug } = useLocalSearchParams<{ slug: string }>();
   // const { width } = useWindowDimensions();
   // const { colorScheme } = useColorScheme();
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
   const {
     data: drug,
     // isLoading,
@@ -245,47 +237,47 @@ const DrugInfo = () => {
 };
 export default DrugInfo;
 
-const tagsStyles: Readonly<Record<string, MixedStyleDeclaration>> = {
-  b: {
-    fontStyle: "normal",
-    fontWeight: "bold",
-  },
-  ul: { marginVertical: 8, paddingLeft: 20 },
-  li: { marginBottom: 4 },
-} as const;
+// const tagsStyles: Readonly<Record<string, MixedStyleDeclaration>> = {
+//   b: {
+//     fontStyle: "normal",
+//     fontWeight: "bold",
+//   },
+//   ul: { marginVertical: 8, paddingLeft: 20 },
+//   li: { marginBottom: 4 },
+// } as const;
 
-const DrugAccordion = ({
-  trigger,
-  content,
-  width,
-  colorSchema,
-}: {
-  trigger: string;
-  content: string;
-  width: number;
-  colorSchema: "light" | "dark" | undefined;
-}) => {
-  const { t } = useTranslation();
-  const html = content || `<p><i>${t("drugInfo.noDataAvailable")}</i></p>`;
-  return (
-    <AccordionItem
-      key={trigger}
-      value={trigger}>
-      <AccordionTrigger>
-        <Text>{trigger.toUpperCase()}</Text>
-      </AccordionTrigger>
-      <AccordionContent className=''>
-        <RenderHtml
-          tagsStyles={tagsStyles}
-          enableExperimentalBRCollapsing={true}
-          contentWidth={width}
-          source={{ html }}
-          // defaultTextProps={{
-          //   style: { color: "white" },
-          // }}
-          baseStyle={{ color: colorSchema === "dark" ? "white" : "black" }}
-        />
-      </AccordionContent>
-    </AccordionItem>
-  );
-};
+// const DrugAccordion = ({
+//   trigger,
+//   content,
+//   width,
+//   colorSchema,
+// }: {
+//   trigger: string;
+//   content: string;
+//   width: number;
+//   colorSchema: "light" | "dark" | undefined;
+// }) => {
+//   const { t } = useTranslation();
+//   const html = content || `<p><i>${t("drugInfo.noDataAvailable")}</i></p>`;
+//   return (
+//     <AccordionItem
+//       key={trigger}
+//       value={trigger}>
+//       <AccordionTrigger>
+//         <Text>{trigger.toUpperCase()}</Text>
+//       </AccordionTrigger>
+//       <AccordionContent className=''>
+//         <RenderHtml
+//           tagsStyles={tagsStyles}
+//           enableExperimentalBRCollapsing={true}
+//           contentWidth={width}
+//           source={{ html }}
+//           // defaultTextProps={{
+//           //   style: { color: "white" },
+//           // }}
+//           baseStyle={{ color: colorSchema === "dark" ? "white" : "black" }}
+//         />
+//       </AccordionContent>
+//     </AccordionItem>
+//   );
+// };

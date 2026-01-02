@@ -11,8 +11,8 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import type { Drug } from "@/types";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
+import type { Drug } from "@sudan-codex/types";
 import * as Linking from "expo-linking";
 import { usePostHog } from "posthog-react-native";
 import React from "react";
@@ -36,15 +36,14 @@ const Help = () => {
         <CardContent>
           <DrugCardSettings
             {...{
-              agentName: "Raheeg Medical Co.Ltd",
-              brandName: "Glucar",
-              companyName: "Glenmark Pharmaceuticals Ltd",
-              countryOfOrigin: "India",
-              dosageFormName: "Tablet",
-              drugInfoRef: "923394",
-              genericName: "Acarbose",
+              agent_name: "Raheeg Medical Co.Ltd",
+              brand_name: "Glucar",
+              company_name: "Glenmark Pharmaceuticals Ltd",
+              country_name: "India",
+              dosage_form: "Tablet",
+              generic_name: "Acarbose",
               no: "1974",
-              packSize: "100 Tablets",
+              pack_size: "100 Tablets",
               strength: "50 mg",
             }}
           />
@@ -108,16 +107,25 @@ export const TooltipText = ({
 );
 
 const DrugCardSettings = ({
-  no,
-  brandName,
-  genericName,
-  dosageFormName,
+  brand_name,
+  generic_name,
+  dosage_form,
   strength,
-  packSize,
-  companyName,
-  countryOfOrigin,
-  agentName,
-}: Drug) => {
+  pack_size,
+  company_name,
+  country_name,
+  agent_name,
+}: Pick<
+  Drug,
+  | "brand_name"
+  | "generic_name"
+  | "dosage_form"
+  | "strength"
+  | "pack_size"
+  | "company_name"
+  | "country_name"
+  | "agent_name"
+>) => {
   const { t } = useTranslation();
   return (
     <Card className='rounded-none border-2 py-2 shadow-md shadow-black'>
@@ -126,7 +134,7 @@ const DrugCardSettings = ({
           <View className='flex-row flex-nowrap'>
             <TooltipText tooltip={t("settings.tooltips.brandAndStrength")}>
               <Text className='font-extrabold text-neutral-700 underline decoration-rose-500 dark:text-blue-200'>
-                {(brandName || "NAD") + " " + (strength || "NAD")}
+                {(brand_name || "NAD") + " " + (strength || "NAD")}
               </Text>
             </TooltipText>
 
@@ -137,7 +145,7 @@ const DrugCardSettings = ({
                 className='text-rose-500 underline decoration-rose-500 dark:text-rose-400'
                 numberOfLines={1}
                 ellipsizeMode='tail'>
-                {packSize || "NAD"}
+                {pack_size || "NAD"}
               </Text>
             </TooltipText>
           </View>
@@ -145,7 +153,7 @@ const DrugCardSettings = ({
           <View className='flex-row gap-1'>
             <TooltipText tooltip={t("settings.tooltips.genericName")}>
               <Text className='font-extrabold text-green-500 underline decoration-rose-500 dark:text-green-400'>
-                {genericName || "NAD"}
+                {generic_name || "NAD"}
               </Text>
             </TooltipText>
 
@@ -153,7 +161,7 @@ const DrugCardSettings = ({
 
             <TooltipText tooltip={t("settings.tooltips.dosageForm")}>
               <Text className='font-bold text-blue-700 underline decoration-rose-500 dark:text-blue-400'>
-                {dosageFormName || "NAD"}
+                {dosage_form || "NAD"}
               </Text>
             </TooltipText>
           </View>
@@ -162,19 +170,19 @@ const DrugCardSettings = ({
         <View className='items-start gap-1'>
           <TooltipText tooltip={t("settings.tooltips.manufacturer")}>
             <Text className='text-sm font-bold text-pink-700 underline decoration-rose-500 dark:text-pink-400'>
-              {companyName || "NAD"}
+              {company_name || "NAD"}
             </Text>
           </TooltipText>
 
           <TooltipText tooltip={t("settings.tooltips.distributor")}>
             <Text className='text-sm font-bold text-orange-700 underline decoration-rose-500 dark:text-orange-400'>
-              {agentName || "NAD"}
+              {agent_name || "NAD"}
             </Text>
           </TooltipText>
 
           <TooltipText tooltip={t("settings.tooltips.origin")}>
             <Text className='text-sm font-bold text-violet-500 underline decoration-rose-500 dark:text-violet-400'>
-              {countryOfOrigin || "NAD"}
+              {country_name || "NAD"}
             </Text>
           </TooltipText>
         </View>
