@@ -1,11 +1,10 @@
-import db from "@/db";
-import { drugsTable, genericsTable } from "@/db/schemas/schema";
+import { db, drugsTable, genericsTable } from "@sudan-codex/db";
 import { eq } from "drizzle-orm";
 import { NextRequest } from "next/server";
 
 export async function GET(
   req: NextRequest,
-  ctx: RouteContext<"/api/generics/[slug]">,
+  ctx: RouteContext<"/api/generics/[slug]">
 ) {
   const { slug } = await ctx.params;
   if (!slug) {
