@@ -1,7 +1,8 @@
 "use client";
 import { authClient, Session } from "@/lib/auth-client";
 import { BetterFetchError } from "better-auth/react";
-import { createContext, type ReactNode, useContext } from "react";
+import { usePostHog } from "posthog-js/react";
+import { createContext, type ReactNode, useContext, useEffect } from "react";
 
 export interface AuthContextType {
   data: Session | null;
@@ -26,6 +27,15 @@ interface AuthProviderProps {
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const { data, isPending, error } = authClient.useSession();
+  const posthog = usePostHog();
+  useEffect(() => {
+    if (data?.user) {
+      posthog.identify(data.user.id, {
+        email: data.user.email,
+      });
+    }
+  }, [data, posthog]);
+
   return (
     <AuthContext value={{ data, isPending, error }}>{children}</AuthContext>
   );

@@ -4,6 +4,7 @@ import { AppSidebar } from "@/components/layout/side-bar/app-sidebar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { Toaster } from "@/components/ui/sonner";
 import { AuthProvider } from "@/hooks/useAuth";
+import { BetterAuthUIProvider } from "@/providers/better-auth-ui-provider";
 import { PHProvider } from "@/providers/PHProvider";
 import TanstackQueryProvider from "@/providers/query-client";
 import { ThemeProvider } from "@/providers/theme-provider";
@@ -70,17 +71,11 @@ export default function RootLayout({
       lang='en'
       suppressHydrationWarning>
       <head>
-        {(process.env.NODE_ENV === "development" ||
-          process.env.VERCEL_ENV === "preview") && (
-          // eslint-disable-next-line @next/next/no-sync-scripts
-          <script
-            data-recording-token={
-              process.env.NEXT_PUBLIC_METICULOUS_RECORDING_TOKEN
-            }
-            data-is-production-environment='false'
-            src='https://snippet.meticulous.ai/v1/meticulous.js'
-          />
-        )}
+        <link
+          rel='icon'
+          href='/favicon.ico'
+          type='image/x-icon'
+        />
       </head>
       <body
       // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -98,18 +93,20 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange>
               <AuthProvider>
-                <SidebarProvider defaultOpen={false}>
-                  <AppSidebar />
-                  <SidebarInset>
-                    <Header />
-                    <main className='flex-1'>{children}</main>
-                    <Toaster
-                      richColors
-                      closeButton
-                    />
-                    <Footer />
-                  </SidebarInset>
-                </SidebarProvider>
+                <BetterAuthUIProvider>
+                  <SidebarProvider defaultOpen={false}>
+                    <AppSidebar />
+                    <SidebarInset>
+                      <Header />
+                      <main className='flex-1'>{children}</main>
+                      <Toaster
+                        richColors
+                        closeButton
+                      />
+                      <Footer />
+                    </SidebarInset>
+                  </SidebarProvider>
+                </BetterAuthUIProvider>
               </AuthProvider>
             </ThemeProvider>
           </TanstackQueryProvider>

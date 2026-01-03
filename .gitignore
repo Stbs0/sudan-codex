@@ -41,3 +41,4 @@ stats.html
 *.db
 *-shm
 *-wal
+.secrets

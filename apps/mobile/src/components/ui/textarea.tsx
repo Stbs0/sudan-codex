@@ -16,12 +16,12 @@ function Textarea({
           web: "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive field-sizing-content resize-y outline-none transition-[color,box-shadow] placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed",
         }),
         props.editable === false && "opacity-50",
-        className,
+        className
       )}
       placeholderClassName={cn("text-muted-foreground", placeholderClassName)}
       multiline={multiline}
       numberOfLines={numberOfLines}
-      textAlignVertical="top"
+      textAlignVertical='top'
       {...props}
     />
   );

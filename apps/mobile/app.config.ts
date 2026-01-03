@@ -17,18 +17,18 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   ios: {
     supportsTablet: true,
+    bundleIdentifier: "app.sudancodex.mobile",
   },
   android: {
     adaptiveIcon: {
       foregroundImage: "./src/assets/icons/adaptive-icon.png",
       backgroundColor: "#ffffff",
     },
-    googleServicesFile:
-      process.env.GOOGLE_SERVICES_JSON ?? "./google-services.json",
     edgeToEdgeEnabled: true,
     softwareKeyboardLayoutMode: "resize",
     package: "app.sudancodex.mobile",
   },
+
   web: {
     bundler: "metro",
     output: "static",
@@ -36,9 +36,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   plugins: [
     "expo-router",
-    "@react-native-google-signin/google-signin",
-    "@react-native-firebase/app",
-    "@react-native-firebase/auth",
     [
       "expo-localization",
       {

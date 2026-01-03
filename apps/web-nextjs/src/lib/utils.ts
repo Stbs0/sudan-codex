@@ -1,4 +1,4 @@
-import { OPENFDA_SEARCH_URL } from "@/constants";
+import { OPENFDA_SEARCH_URL } from "@sudan-codex/types/constants";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 

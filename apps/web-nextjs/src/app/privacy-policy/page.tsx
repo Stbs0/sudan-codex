@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import type { JSX } from "react";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Sudan Codex",
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   },
 };
 
-const Policy = () => {
+const Policy = (): JSX.Element => {
   return (
     <div className='container mx-auto max-w-4xl px-4 py-8'>
       <h1 className='mb-4 text-3xl font-bold'>Privacy Policy</h1>
@@ -28,13 +29,13 @@ const Policy = () => {
       <h2 className='mt-8 mb-4 text-2xl font-semibold'>
         Interpretation and Definitions
       </h2>
-      <h3>Interpretation</h3>
+      <h3 className='mb-2 text-xl font-semibold'>Interpretation</h3>
       <p>
         Words with an initial capital letter have meanings defined under the
         following conditions. These definitions have the same meaning regardless
         of whether they appear in singular or plural form.
       </p>
-      <h3>Definitions</h3>
+      <h3 className='mb-2 text-xl font-semibold'>Definitions</h3>
       <p>For the purposes of this Privacy Policy:</p>
       <ul className='mb-6 list-disc space-y-4 pl-6'>
         <li>
@@ -99,7 +100,7 @@ const Policy = () => {
           <p>
             <strong>Website</strong> refers to Sudan Codex, accessible from{" "}
             <a
-              href=' https://sudancodex.app'
+              href='https://sudancodex.app'
               rel='external nofollow noopener noreferrer'
               target='_blank'>
               https://sudancodex.app
@@ -116,8 +117,8 @@ const Policy = () => {
       <h2 className='mt-8 mb-4 text-2xl font-semibold'>
         Collecting and Using Your Personal Data
       </h2>
-      <h3>Types of Data Collected</h3>
-      <h4>Personal Data</h4>
+      <h3 className='mb-2 text-xl font-semibold'>Types of Data Collected</h3>
+      <h4 className='mb-2 text-lg font-semibold'>Personal Data</h4>
       <p>
         While using My Service, I may ask You to provide certain personally
         identifiable information. This may include, but is not limited to:
@@ -127,7 +128,9 @@ const Policy = () => {
         <li>First name and last name</li>
         <li>Usage Data</li>
       </ul>
-      <h4>Information from Third-Party Social Media Services</h4>
+      <h4 className='mb-2 text-lg font-semibold'>
+        Information from Third-Party Social Media Services
+      </h4>
       <p>
         I allow You to create an account and log in to use the Service through
         the following Third-party Social Media Services:
@@ -143,12 +146,17 @@ const Policy = () => {
         permission to use, share, and store this data in a manner consistent
         with this Privacy Policy.
       </p>
-      <h4>Usage Data & Analytics</h4>
+      <h4 className='mb-2 text-lg font-semibold'>Usage Data & Analytics</h4>
       <p>Usage Data is collected automatically when using the Service.</p>
       <p>
         This data may include your Device&apos;s IP address, browser type,
         browser version, the pages of our Service You visit, the time and date
         of Your visit, time spent on pages, and other diagnostic data.
+      </p>
+      <p>
+        PostHog may process limited personal data such as user identifiers
+        (e.g., internal user ID or email address) to provide analytics services
+        on our behalf.
       </p>
       <p>
         To analyze this Usage Data and improve the Service, I use the following
@@ -161,6 +169,7 @@ const Policy = () => {
             understand user behavior and improve the Service. For more
             information on the privacy practices of PostHog, please visit the{" "}
             <a
+              className='underline'
               href='https://posthog.com/privacy'
               target='_blank'
               rel='noopener noreferrer'>
@@ -170,7 +179,9 @@ const Policy = () => {
           </p>
         </li>
       </ul>
-      <h4>Tracking Technologies and Cookies</h4>
+      <h4 className='mb-2 text-lg font-semibold'>
+        Tracking Technologies and Cookies
+      </h4>
       <p>
         I use Cookies and similar tracking technologies to track activity on My
         Service and store certain information. You can instruct Your browser to
@@ -180,7 +191,7 @@ const Policy = () => {
       </p>
       {/* This section remains largely the same as it's standard cookie practice */}
       {/* ... [Rest of the policy from "Use of Your Personal Data" onwards] ... */}
-      <h3>Use of Your Personal Data</h3>{" "}
+      <h3 className='mb-2 text-xl font-semibold'>Use of Your Personal Data</h3>{" "}
       <p>The Developer may use Personal Data for the following purposes: </p>{" "}
       <ul className='mb-6 list-disc space-y-4 pl-6'>
         {" "}
@@ -321,7 +332,9 @@ const Policy = () => {
           consent.{" "}
         </li>{" "}
       </ul>
-      <h3>Retention of Your Personal Data</h3>{" "}
+      <h3 className='mb-2 text-xl font-semibold'>
+        Retention of Your Personal Data
+      </h3>{" "}
       <p>
         The Developer will retain Your Personal Data only for as long as is
         necessary for the purposes set out in this Privacy Policy. We will
@@ -337,7 +350,9 @@ const Policy = () => {
         the functionality of My Service, or We are legally obligated to retain
         this data for longer time periods.{" "}
       </p>
-      <h3>Transfer of Your Personal Data</h3>{" "}
+      <h3 className='mb-2 text-xl font-semibold'>
+        Transfer of Your Personal Data
+      </h3>{" "}
       <p>
         Your information, including Personal Data, is processed at the
         Company&apos;s operating offices and in any other places where the
@@ -358,7 +373,7 @@ const Policy = () => {
         or a country unless there are adequate controls in place including the
         security of Your data and other personal information.{" "}
       </p>
-      <h3>Delete Your Personal Data</h3>{" "}
+      <h3 className='mb-2 text-xl font-semibold'>Delete Your Personal Data</h3>{" "}
       <p>
         You have the right to delete or request that We assist in deleting the
         Personal Data that We have collected about You.{" "}
@@ -378,7 +393,10 @@ const Policy = () => {
         Please note, however, that We may need to retain certain information
         when we have a legal obligation or lawful basis to do so.{" "}
       </p>
-      <h3>Disclosure of Your Personal Data</h3> <h4>Business Transactions</h4>{" "}
+      <h3 className='mb-2 text-xl font-semibold'>
+        Disclosure of Your Personal Data
+      </h3>{" "}
+      <h4 className='mb-2 text-xl font-semibold'>Business Transactions</h4>{" "}
       <p>
         If the Developer is involved in a merger, acquisition or asset sale,
         Your Personal Data may be transferred. We will provide notice before
@@ -409,7 +427,9 @@ const Policy = () => {
         </li>
         <li>Protect against legal liability</li>{" "}
       </ul>
-      <h3>Security of Your Personal Data</h3>{" "}
+      <h3 className='mb-2 text-xl font-semibold'>
+        Security of Your Personal Data
+      </h3>{" "}
       <p>
         The security of Your Personal Data is important to Me, but remember that
         no method of transmission over the Internet, or method of electronic

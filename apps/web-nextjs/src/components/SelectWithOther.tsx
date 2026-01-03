@@ -13,7 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { occupationLiteral } from "@/lib/schemas";
+import { occupationLiteral } from "@sudan-codex/types/schemas";
 import React from "react";
 import { useFormContext } from "react-hook-form";
 

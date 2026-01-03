@@ -1,69 +1,175 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*", "**/drizzle-*.config.ts"],
-  "globalPassThroughEnv": ["ANDROID_HOME"],
-  "ui": "tui",
+
   "tasks": {
+    "test:unit": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "inputs": ["$TURBO_DEFAULT$", ".env.development.local"],
+      "env": [
+        "NEXT_PUBLIC_API_URL",
+        "NEXT_PUBLIC_POSTHOG_HOST",
+        "NEXT_PUBLIC_POSTHOG_KEY",
+        "NODE_ENV",
+        "NEXT_PUBLIC_SITE_URL",
+        "NEXT_PUBLIC_WHATSAPP_NUMBER",
+        "TURSO_AUTH_TOKEN",
+        "TURSO_DATABASE_URL",
+        "VERCEL_OIDC_TOKEN",
+        "BETTER_AUTH_SECRET",
+        "VERCEL_ENV",
+        "POSTHOG_ENV_ID",
+        "BETTER_AUTH_URL",
+        "NEXT_RUNTIME",
+        "GOOGLE_CLIENT_ID",
+        "CI",
+        "POSTHOG_API_KEY",
+        "VERCEL_URL",
+        "GOOGLE_CLIENT_SECRET",
+        "NEXT_PUBLIC_METICULOUS_RECORDING_TOKEN",
+        "NEXT_PUBLIC_EXPO_SCHEMA"
+      ]
+    },
     "build": {
-      "dependsOn": ["build"],
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env.production.local", ".env.local"],
+      "env": [
+        "NEXT_PUBLIC_API_URL",
+        "NEXT_PUBLIC_POSTHOG_HOST",
+        "NEXT_PUBLIC_POSTHOG_KEY",
+        "NODE_ENV",
+        "NEXT_PUBLIC_SITE_URL",
+        "NEXT_PUBLIC_WHATSAPP_NUMBER",
+        "TURSO_AUTH_TOKEN",
+        "TURSO_DATABASE_URL",
+        "VERCEL_OIDC_TOKEN",
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL",
+        "VERCEL_URL",
+        "GOOGLE_CLIENT_ID",
+        "CI",
+        "POSTHOG_API_KEY",
+        "POSTHOG_ENV_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "NEXT_PUBLIC_METICULOUS_RECORDING_TOKEN",
+        "NEXT_PUBLIC_EXPO_SCHEMA",
+        "NEXT_RUNTIME",
+        "VERCEL_ENV"
+      ],
+      "passThroughEnv": [
+        "NEXT_PUBLIC_API_URL",
+        "NEXT_PUBLIC_POSTHOG_HOST",
+        "CI",
+        "NEXT_PUBLIC_POSTHOG_KEY",
+        "NEXT_PUBLIC_SITE_URL",
+        "NEXT_PUBLIC_WHATSAPP_NUMBER",
+        "TURSO_AUTH_TOKEN",
+        "TURSO_DATABASE_URL",
+        "VERCEL_OIDC_TOKEN",
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL",
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "NEXT_PUBLIC_METICULOUS_RECORDING_TOKEN",
+        "NEXT_PUBLIC_EXPO_SCHEMA"
+      ],
       "outputs": [".next/**", "dist/**", "!.next/cache/**"]
     },
     "lint": {
       "outputs": []
     },
+
     "dev": {
       "cache": false,
+      "inputs": ["$TURBO_DEFAULT$", ".env.development.local"],
+      "env": [
+        "NEXT_PUBLIC_API_URL",
+        "NEXT_PUBLIC_POSTHOG_HOST",
+        "NEXT_PUBLIC_POSTHOG_KEY",
+        "NODE_ENV",
+        "NEXT_PUBLIC_SITE_URL",
+        "NEXT_PUBLIC_WHATSAPP_NUMBER",
+        "TURSO_AUTH_TOKEN",
+        "TURSO_DATABASE_URL",
+        "VERCEL_OIDC_TOKEN",
+        "BETTER_AUTH_SECRET",
+        "VERCEL_ENV",
+        "POSTHOG_ENV_ID",
+        "BETTER_AUTH_URL",
+        "NEXT_RUNTIME",
+        "GOOGLE_CLIENT_ID",
+        "CI",
+        "POSTHOG_API_KEY",
+        "VERCEL_URL",
+        "GOOGLE_CLIENT_SECRET",
+        "NEXT_PUBLIC_METICULOUS_RECORDING_TOKEN",
+        "NEXT_PUBLIC_EXPO_SCHEMA"
+      ],
+
       "persistent": true
+    },
+    "start": {
+      "inputs": ["$TURBO_DEFAULT$", ".env.production.local"],
+      "env": [
+        "NEXT_PUBLIC_API_URL",
+        "NEXT_PUBLIC_POSTHOG_HOST",
+        "NEXT_PUBLIC_POSTHOG_KEY",
+        "NODE_ENV",
+        "NEXT_PUBLIC_SITE_URL",
+        "NEXT_PUBLIC_WHATSAPP_NUMBER",
+        "TURSO_AUTH_TOKEN",
+        "TURSO_DATABASE_URL",
+        "VERCEL_OIDC_TOKEN",
+        "BETTER_AUTH_SECRET",
+        "VERCEL_ENV",
+        "POSTHOG_ENV_ID",
+        "BETTER_AUTH_URL",
+        "NEXT_RUNTIME",
+        "GOOGLE_CLIENT_ID",
+        "CI",
+        "POSTHOG_API_KEY",
+        "VERCEL_URL",
+        "GOOGLE_CLIENT_SECRET",
+        "NEXT_PUBLIC_METICULOUS_RECORDING_TOKEN",
+        "NEXT_PUBLIC_EXPO_SCHEMA"
+      ],
+
+      "persistent": true
+    },
+    "test:e2e": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env.production.local", ".env.local"],
+      "env": [
+        "NEXT_PUBLIC_API_URL",
+        "NEXT_PUBLIC_POSTHOG_HOST",
+        "NEXT_PUBLIC_POSTHOG_KEY",
+        "NODE_ENV",
+        "NEXT_PUBLIC_SITE_URL",
+        "NEXT_PUBLIC_WHATSAPP_NUMBER",
+        "TURSO_AUTH_TOKEN",
+        "TURSO_DATABASE_URL",
+        "VERCEL_OIDC_TOKEN",
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL",
+        "VERCEL_URL",
+        "GOOGLE_CLIENT_ID",
+        "CI",
+        "POSTHOG_API_KEY",
+        "POSTHOG_ENV_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "NEXT_PUBLIC_METICULOUS_RECORDING_TOKEN",
+        "NEXT_PUBLIC_EXPO_SCHEMA",
+        "NEXT_RUNTIME",
+        "VERCEL_ENV"
+      ],
+
+      "passThroughEnv": ["PLAYWRIGHT_*"]
     },
 
     "check-types": {
       "dependsOn": ["^check-types"],
       "outputs": []
-    },
-    "ios": {
-      "cache": false
-    },
-    "android": {
-      "dependsOn": ["prebuild:android"],
-      "outputs": [".android/**"],
-      "cache": true
-    },
-    "prebuild:android": {
-      "outputs": []
-    },
-    "db:generate": {
-      "cache": false
-    },
-    "db:generate:dev": {
-      "cache": false
-    },
-    "db:migrate": {
-      "cache": false
-    },
-    "db:migrate:dev": {
-      "cache": false
-    },
-    "db:push": {
-      "cache": false
-    },
-    "db:push:dev": {
-      "cache": false
-    },
-    "db:drop": {
-      "cache": false
-    },
-    "db:drop:dev": {
-      "cache": false
-    },
-    "db:seed": {
-      "cache": false
-    },
-    "db:seed:dev": {
-      "cache": false
-    },
-    "db:studio": {
-      "cache": false,
-      "persistent": true
     }
   }
 }

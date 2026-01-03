@@ -4,9 +4,10 @@ import DrugInfoC from "@/components/drugInfo/drug-info";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { generateDrugJsonLd } from "@/lib/json-ld";
+import { getPostHogServer } from "@/lib/posthog-server";
 import { getDrugBySlug } from "@/services/server/getDrugs";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 
 export const revalidate = false;
 
@@ -16,7 +17,12 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const drug = await getDrugBySlug(slug);
+  let drug;
+  try {
+    drug = await getDrugBySlug(slug);
+  } catch (error) {
+    console.error(`Error fetching drug metadata for slug "${slug}":`, error);
+  }
 
   if (!drug) {
     return {
@@ -62,7 +68,24 @@ export default async function DrugInfoPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const drug = await getDrugBySlug(slug);
+  if (!slug) return notFound();
+  // This for the SEO and google index bc i changed the slug from numbers to real slugs
+  const isNumber = /^\d+$/.test(slug);
+  if (isNumber) {
+    const { default: matchDB } = await import("../../../data/matchDB.json");
+    const matchedSlug = matchDB.find((drug) => Number(slug) === drug.id);
+    if (!matchedSlug) return notFound();
+    return permanentRedirect(`/drug-list/${matchedSlug.slug}`);
+  }
+
+  let drug;
+  try {
+    drug = await getDrugBySlug(slug);
+  } catch (error) {
+    const posthog = getPostHogServer();
+    await posthog.captureExceptionImmediate(error);
+  }
+
   if (!drug) notFound();
 
   const jsonLd = generateDrugJsonLd(drug);

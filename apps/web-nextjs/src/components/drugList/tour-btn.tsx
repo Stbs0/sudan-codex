@@ -1,13 +1,14 @@
 "use client";
 import { Config, driver } from "driver.js";
 import "driver.js/dist/driver.css";
+import { usePostHog } from "posthog-js/react";
 import { useCallback, useEffect } from "react";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
 const driverConfig: Config = {
   showProgress: true,
   allowClose: true,
-
+  showButtons: ["close", "next", "previous"],
   allowKeyboardControl: true,
   disableActiveInteraction: true,
   steps: [
@@ -97,6 +98,7 @@ const driverConfig: Config = {
   ],
 };
 function TourBtn() {
+  const posthog = usePostHog();
   const startTour = useCallback(() => {
     // Check if the first card element exists before starting the tour
     const firstCardElement = document.querySelector("#drugInfo-card");
@@ -124,6 +126,7 @@ function TourBtn() {
   const onStartTourClick = () => {
     localStorage.setItem("hasVisited", "true");
     startTour();
+    posthog.capture("start_tour");
   };
   return (
     <Button

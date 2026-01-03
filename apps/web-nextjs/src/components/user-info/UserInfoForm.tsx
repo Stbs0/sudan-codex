@@ -12,9 +12,12 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { tellUsMoreSchema, tellUsMoreSchemaType } from "@/lib/schemas";
 import { DevTool } from "@hookform/devtools";
 import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  tellUsMoreSchema,
+  tellUsMoreSchemaType,
+} from "@sudan-codex/types/schemas";
 
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";

@@ -17,6 +17,7 @@ export function Hero() {
         </p>
         <Link href={"/drug-list"}>
           <Button
+            data-analytics='hero-explore-now'
             size='lg'
             className='bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg'>
             Explore Now

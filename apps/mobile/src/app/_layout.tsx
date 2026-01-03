@@ -51,7 +51,7 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   useAnalyticsPosthog();
-  const { data, isPending, isProfileComplete, isSignedIn } = useAuth();
+  const { data, isPending } = useAuth();
   const { colorScheme } = useColorScheme();
   const navigationRef = useNavigationContainerRef();
 
@@ -82,30 +82,29 @@ function RootLayoutNav() {
   return (
     <GestureHandlerRootView>
       <ThemeProvider
-        value={NAV_THEME[colorScheme === "dark" ? "dark" : "light"]}
-      >
+        value={NAV_THEME[colorScheme === "dark" ? "dark" : "light"]}>
         <StatusBar />
         <Stack screenOptions={{ headerShown: false }}>
           {/* began auth */}
           <Stack.Protected guard={data === null}>
-            <Stack.Screen name="auth" />
+            <Stack.Screen name='auth' />
           </Stack.Protected>
           {/* end auth */}
 
           <Stack.Protected guard={data !== null}>
             {/* began tabs  */}
             <Stack.Protected guard={data?.user?.isProfileComplete === true}>
-              <Stack.Screen name="(tabs)" />
+              <Stack.Screen name='(tabs)' />
               <Stack.Screen
-                name="about"
+                name='about'
                 options={{ title: "About", headerShown: true }}
               />
-              <Stack.Screen name="(categories)" />
+              <Stack.Screen name='(categories)' />
             </Stack.Protected>
             {/* began tabs  */}
             {/* began check if complete profile */}
             <Stack.Protected guard={data?.user?.isProfileComplete === false}>
-              <Stack.Screen name="user-info" />
+              <Stack.Screen name='user-info' />
             </Stack.Protected>
             {/* end check if complete profile */}
           </Stack.Protected>

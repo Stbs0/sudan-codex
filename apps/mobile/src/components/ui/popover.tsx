@@ -28,13 +28,11 @@ function PopoverContent({
     <PopoverPrimitive.Portal hostName={portalHost}>
       <FullWindowOverlay>
         <PopoverPrimitive.Overlay
-          style={Platform.select({ native: StyleSheet.absoluteFill })}
-        >
+          style={Platform.select({ native: StyleSheet.absoluteFill })}>
           <NativeOnlyAnimatedView
             entering={FadeIn.duration(200)}
-            exiting={FadeOut}
-          >
-            <TextClassContext.Provider value="text-popover-foreground">
+            exiting={FadeOut}>
+            <TextClassContext.Provider value='text-popover-foreground'>
               <PopoverPrimitive.Content
                 align={align}
                 sideOffset={sideOffset}
@@ -44,10 +42,10 @@ function PopoverContent({
                     web: cn(
                       "origin-(--radix-popover-content-transform-origin) cursor-auto animate-in fade-in-0 zoom-in-95",
                       props.side === "bottom" && "slide-in-from-top-2",
-                      props.side === "top" && "slide-in-from-bottom-2",
+                      props.side === "top" && "slide-in-from-bottom-2"
                     ),
                   }),
-                  className,
+                  className
                 )}
                 {...props}
               />

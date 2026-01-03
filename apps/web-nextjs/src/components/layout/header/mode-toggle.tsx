@@ -16,7 +16,9 @@ export function ModeToggle() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger
+        asChild
+        data-analytics='header-mode-toggle'>
         <Button
           variant='outline'
           size='icon'>

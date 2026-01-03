@@ -13,17 +13,17 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import db from "@/db";
+import { generateStatsJsonLd } from "@/lib/json-ld";
 import {
   agentsTable,
   agentStatsTable,
+  db,
   companiesTable,
   companyStatsTable,
   drugsTable,
   genericsTable,
   genericStatsTable,
-} from "@/db/schemas/schema";
-import { generateStatsJsonLd } from "@/lib/json-ld";
+} from "@sudan-codex/db";
 import { count, countDistinct, desc, eq, sql } from "drizzle-orm";
 import { Metadata } from "next";
 import Link from "next/link";

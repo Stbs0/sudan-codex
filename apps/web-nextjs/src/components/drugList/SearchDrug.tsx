@@ -34,11 +34,13 @@ function SearchDrug() {
         className='rounded-3xl pr-[160px] shadow-md placeholder:text-xs'
         placeholder='Search and/or filter drugs...'
         value={search}
+        data-testid='searchDrug'
         onChange={onSearch}
       />
       <Select
         value={filterBy}
-        onValueChange={onFilter}>
+        onValueChange={onFilter}
+        data-testid='filterDrug'>
         <SelectTrigger className='absolute top-0 right-0 w-fit border-none bg-transparent dark:bg-transparent'>
           <SelectValue
             placeholder='Filter By'

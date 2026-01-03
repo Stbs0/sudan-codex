@@ -20,6 +20,7 @@ const Logo = ({ className }: { className?: string }) => {
         className
       )}
       variant={"ghost"}
+      data-analytics='header-logo'
       onClick={handleClick}>
       <img
         className='object-contain'

@@ -1,5 +1,6 @@
 import { type DrugFilterState, useSearchDrug } from "@/hooks/store/useSearch";
-import type { Drug } from "@/types";
+import { api } from "@/lib/api-client";
+import type { Drug } from "@sudan-codex/types";
 import { infiniteQueryOptions, useInfiniteQuery } from "@tanstack/react-query";
 import { usePostHog } from "posthog-js/react";
 import { useEffect, useRef } from "react";
@@ -17,14 +18,11 @@ const getQueryOptions = ({ search, filterBy }: QueryOptions) =>
       if (search) params.set("q", search);
       if (filterBy) params.set("filterBy", filterBy);
       if (pageParam) params.set("page", pageParam.toString());
-      const res = await fetch(
-        process.env.EXPO_PUBLIC_BACKEND_URI + `/api/drugs?${params.toString()}`,
-        { cache: "force-cache" },
+      const res = await api.get(
+        process.env.EXPO_PUBLIC_BACKEND_URI + `/api/drugs?${params.toString()}`
       );
-      if (!res.ok) {
-        throw new Error(`API error: ${res.status} ${res.statusText}`);
-      }
-      return await res.json();
+
+      return res.data;
     },
     getNextPageParam: (lastPage) => lastPage.nextPage,
     initialPageParam: 1,
@@ -39,7 +37,7 @@ export function useInfiniteServerScroll() {
     getQueryOptions({
       search,
       filterBy,
-    }),
+    })
   );
   useEffect(() => {
     if (query.error) {

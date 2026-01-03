@@ -1,9 +1,10 @@
+import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 import { useInfiniteServerScroll } from "@/hooks/useInfiniteScroll";
 import ModalProvider from "@/providers/ModalProvider";
 import DrugCard from "@/screens/Drug-list/DrugCard/DrugCard";
-import type { Drug } from "@/types";
 import { LegendList, type LegendListRef } from "@legendapp/list";
+import type { Drug } from "@sudan-codex/types";
 import React, { useCallback, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator, View } from "react-native";
@@ -15,7 +16,7 @@ const DrugList = () => {
   const {
     data,
     fetchNextPage,
-
+    refetch,
     isFetchingNextPage,
     error,
     isLoading,
@@ -26,10 +27,25 @@ const DrugList = () => {
   const renderItem = useCallback(({ item }: { item: Drug }) => {
     return <DrugCard {...item} />;
   }, []);
-  if (error) return <Text className="text-destructive">{String(error)}</Text>;
+  if (error)
+    return (
+      <View className='flex-1 items-center justify-center'>
+        <Text>There was an error loading the drugs</Text>
+        <Button
+          variant='destructive'
+          onPress={async () => await refetch()}>
+          <Text>Retry</Text>
+        </Button>
+      </View>
+    );
 
   if (isLoading)
-    return <ActivityIndicator size="large" style={{ marginTop: 16 }} />;
+    return (
+      <ActivityIndicator
+        size='large'
+        style={{ marginTop: 16 }}
+      />
+    );
   const drugList = data!.pages.flatMap((p) => p.data) ?? [];
   return (
     <ModalProvider>
@@ -38,14 +54,14 @@ const DrugList = () => {
         data={drugList}
         ref={listRef}
         renderItem={renderItem}
-        className="pt-4"
+        className='pt-4'
         keyExtractor={(item) => item.id.toString()}
         ItemSeparatorComponent={() => <View style={{ height: 16 }} />}
         ListFooterComponent={() => {
-          if (isFetchingNextPage) return <ActivityIndicator size="large" />;
+          if (isFetchingNextPage) return <ActivityIndicator size='large' />;
           if (!hasNextPage && drugList.length > 0)
             return (
-              <Text className="py-2 text-center text-muted-foreground">
+              <Text className='py-2 text-center text-muted-foreground'>
                 {t("drugList.noMoreResults")}
               </Text>
             );
@@ -56,7 +72,7 @@ const DrugList = () => {
         onEndReached={() => {
           if (hasNextPage && !isFetchingNextPage) fetchNextPage();
         }}
-        keyboardShouldPersistTaps="always"
+        keyboardShouldPersistTaps='always'
       />
       <SearchInput />
       <CardModal />

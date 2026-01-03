@@ -35,19 +35,16 @@ function DialogOverlay({
           Platform.select({
             web: "fixed cursor-default animate-in fade-in-0 [&>*]:cursor-auto",
           }),
-          className,
+          className
         )}
         {...props}
-        asChild={Platform.OS !== "web"}
-      >
+        asChild={Platform.OS !== "web"}>
         <NativeOnlyAnimatedView
           entering={FadeIn.duration(200)}
-          exiting={FadeOut.duration(150)}
-        >
+          exiting={FadeOut.duration(150)}>
           <NativeOnlyAnimatedView
             entering={FadeIn.delay(50)}
-            exiting={FadeOut.duration(150)}
-          >
+            exiting={FadeOut.duration(150)}>
             <>{children}</>
           </NativeOnlyAnimatedView>
         </NativeOnlyAnimatedView>
@@ -73,27 +70,25 @@ function DialogContent({
             Platform.select({
               web: "duration-200 animate-in fade-in-0 zoom-in-95",
             }),
-            className,
+            className
           )}
-          {...props}
-        >
+          {...props}>
           <>{children}</>
           <DialogPrimitive.Close
             className={cn(
               "absolute right-4 top-4 rounded opacity-70 active:opacity-100",
               Platform.select({
                 web: "ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 data-[state=open]:bg-accent",
-              }),
+              })
             )}
-            hitSlop={12}
-          >
+            hitSlop={12}>
             <Icon
               as={X}
               className={cn(
-                "size-4 shrink-0 text-accent-foreground web:pointer-events-none",
+                "size-4 shrink-0 text-accent-foreground web:pointer-events-none"
               )}
             />
-            <Text className="sr-only">Close</Text>
+            <Text className='sr-only'>Close</Text>
           </DialogPrimitive.Close>
         </DialogPrimitive.Content>
       </DialogOverlay>
@@ -115,7 +110,7 @@ function DialogFooter({ className, ...props }: ViewProps) {
     <View
       className={cn(
         "flex flex-col-reverse gap-2 sm:flex-row sm:justify-end",
-        className,
+        className
       )}
       {...props}
     />
@@ -130,7 +125,7 @@ function DialogTitle({
     <DialogPrimitive.Title
       className={cn(
         "text-lg font-semibold leading-none text-foreground",
-        className,
+        className
       )}
       {...props}
     />

@@ -1,7 +1,8 @@
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
+import { api } from "@/lib/api-client";
 import DrugPropertyDescription from "@/screens/Drug-list/DrugCard/DrugPropertyDescription";
-import type { DrugWithSlugs } from "@/types";
+import type { Drug } from "@sudan-codex/types";
 import { useQuery } from "@tanstack/react-query";
 import { Stack, useLocalSearchParams } from "expo-router";
 import React from "react";
@@ -15,24 +16,25 @@ const DrugInfo = () => {
     queryKey: ["drugInfo", slug],
 
     queryFn: async () => {
-      const res = await fetch(
-        process.env.EXPO_PUBLIC_BACKEND_URI + `/api/drugs/${slug}`,
-      );
-      if (!res.ok) {
-        throw new Error(`Failed to fetch drug info: ${res.status}`);
-      }
-      return await res.json();
+      const res = await api.get<Drug>(`/api/drugs/${slug}`);
+
+      return res.data;
     },
   });
   console.log(drug);
   if (isError)
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text className="text-destructive">{t("drugInfo.errorLoading")}</Text>
+        <Text className='text-destructive'>{t("drugInfo.errorLoading")}</Text>
       </View>
     );
   if (!drug)
-    return <ActivityIndicator size="large" style={{ marginTop: 16 }} />;
+    return (
+      <ActivityIndicator
+        size='large'
+        style={{ marginTop: 16 }}
+      />
+    );
   return (
     <>
       <Stack.Screen options={{ title: drug.brand_name, headerShown: true }} />
@@ -40,15 +42,14 @@ const DrugInfo = () => {
         // style={{ flex: 1, gap: 2 }}
         contentContainerStyle={{ padding: 16 }}
         showsVerticalScrollIndicator={true}
-        className="flex-1 gap-4"
-      >
-        <Card className="mb-4 w-full py-4">
-          <CardTitle className="text-center">{drug.brand_name}</CardTitle>
-          <CardContent className="w-full gap-2">
-            <View className="gap-2">
+        className='flex-1 gap-4'>
+        <Card className='mb-4 w-full py-4'>
+          <CardTitle className='text-center'>{drug.brand_name}</CardTitle>
+          <CardContent className='w-full gap-2'>
+            <View className='gap-2'>
               <DrugPropertyDescription
                 title={t("drugInfo.genericName")}
-                className="border-green-700 dark:border-green-400"
+                className='border-green-700 dark:border-green-400'
                 property={drug.generic_name}
                 href={{
                   pathname: "/(categories)/generics/[slug]",
@@ -57,22 +58,22 @@ const DrugInfo = () => {
               />
               <DrugPropertyDescription
                 title={t("drugInfo.strength")}
-                className="border-yellow-400"
+                className='border-yellow-400'
                 property={drug.strength}
               />
               <DrugPropertyDescription
                 title={t("drugInfo.packSize")}
-                className="border-rose-700 dark:border-rose-400"
+                className='border-rose-700 dark:border-rose-400'
                 property={drug.pack_size}
               />
               <DrugPropertyDescription
                 title={t("drugInfo.dosageForm")}
-                className="border-blue-700 dark:border-blue-400"
+                className='border-blue-700 dark:border-blue-400'
                 property={drug.dosage_form}
               />
               <DrugPropertyDescription
                 title={t("drugInfo.companyName")}
-                className="border-pink-700 dark:border-pink-400"
+                className='border-pink-700 dark:border-pink-400'
                 property={drug.company_name}
                 href={{
                   pathname: "/(categories)/companies/[slug]",
@@ -82,7 +83,7 @@ const DrugInfo = () => {
               <DrugPropertyDescription
                 title={t("drugInfo.agent")}
                 property={drug.agent_name}
-                className="border-orange-700 dark:border-orange-400"
+                className='border-orange-700 dark:border-orange-400'
                 href={{
                   // FIXME: remove the ?? "" bc some drugs dosnt have a slug
                   pathname: "/(categories)/agents/[slug]",
@@ -91,7 +92,7 @@ const DrugInfo = () => {
               />
               <DrugPropertyDescription
                 title={t("drugInfo.countryOfOrigin")}
-                className="border-violet-700 dark:border-violet-400"
+                className='border-violet-700 dark:border-violet-400'
                 property={drug.country_name}
               />
             </View>
@@ -236,45 +237,47 @@ const DrugInfo = () => {
 };
 export default DrugInfo;
 
-// const tagsStyles: Readonly<Record<string, MixedStyleDeclaration>> = {
-//   b: {
-//     fontStyle: "normal",
-//     fontWeight: "bold",
-//   },
-//   ul: { marginVertical: 8, paddingLeft: 20 },
-//   li: { marginBottom: 4 },
-// } as const;
+// // const tagsStyles: Readonly<Record<string, MixedStyleDeclaration>> = {
+// //   b: {
+// //     fontStyle: "normal",
+// //     fontWeight: "bold",
+// //   },
+// //   ul: { marginVertical: 8, paddingLeft: 20 },
+// //   li: { marginBottom: 4 },
+// // } as const;
 
-// const DrugAccordion = ({
-//   trigger,
-//   content,
-//   width,
-//   colorSchema,
-// }: {
-//   trigger: string;
-//   content: string;
-//   width: number;
-//   colorSchema: "light" | "dark" | undefined;
-// }) => {
-//   const { t } = useTranslation();
-//   const html = content || `<p><i>${t("drugInfo.noDataAvailable")}</i></p>`;
-//   return (
-//     <AccordionItem key={trigger} value={trigger}>
-//       <AccordionTrigger>
-//         <Text>{trigger.toUpperCase()}</Text>
-//       </AccordionTrigger>
-//       <AccordionContent className="">
-//         <RenderHtml
-//           tagsStyles={tagsStyles}
-//           enableExperimentalBRCollapsing={true}
-//           contentWidth={width}
-//           source={{ html }}
-//           // defaultTextProps={{
-//           //   style: { color: "white" },
-//           // }}
-//           baseStyle={{ color: colorSchema === "dark" ? "white" : "black" }}
-//         />
-//       </AccordionContent>
-//     </AccordionItem>
-//   );
-// };
+// // const DrugAccordion = ({
+// //   trigger,
+// //   content,
+// //   width,
+// //   colorSchema,
+// // }: {
+// //   trigger: string;
+// //   content: string;
+// //   width: number;
+// //   colorSchema: "light" | "dark" | undefined;
+// // }) => {
+// //   const { t } = useTranslation();
+// //   const html = content || `<p><i>${t("drugInfo.noDataAvailable")}</i></p>`;
+// //   return (
+// //     <AccordionItem
+//       key={trigger}
+//       value={trigger}>
+// //       <AccordionTrigger>
+// //         <Text>{trigger.toUpperCase()}</Text>
+// //       </AccordionTrigger>
+// //       <AccordionContent className=''>
+// //         <RenderHtml
+// //           tagsStyles={tagsStyles}
+// //           enableExperimentalBRCollapsing={true}
+// //           contentWidth={width}
+// //           source={{ html }}
+// //           // defaultTextProps={{
+// //           //   style: { color: "white" },
+// //           // }}
+// //           baseStyle={{ color: colorSchema === "dark" ? "white" : "black" }}
+// //         />
+// //       </AccordionContent>
+// //     </AccordionItem>
+// //   );
+// // };

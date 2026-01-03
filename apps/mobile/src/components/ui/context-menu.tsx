@@ -47,9 +47,8 @@ function ContextMenuSubTrigger({
     <TextClassContext.Provider
       value={cn(
         "text-sm select-none group-active:text-accent-foreground",
-        open && "text-accent-foreground",
-      )}
-    >
+        open && "text-accent-foreground"
+      )}>
       <ContextMenuPrimitive.SubTrigger
         className={cn(
           "group flex flex-row items-center rounded-sm px-2 py-2 active:bg-accent sm:py-1.5",
@@ -57,16 +56,15 @@ function ContextMenuSubTrigger({
             web: "cursor-default outline-none focus:bg-accent focus:text-accent-foreground [&_svg]:pointer-events-none",
           }),
           open && cn("bg-accent", Platform.select({ native: "mb-1" })),
-          inset && "pl-8",
+          inset && "pl-8"
         )}
-        {...props}
-      >
+        {...props}>
         <>{children}</>
         <Icon
           as={icon}
           className={cn(
             "ml-auto size-4 shrink-0 text-foreground",
-            iconClassName,
+            iconClassName
           )}
         />
       </ContextMenuPrimitive.SubTrigger>
@@ -87,7 +85,7 @@ function ContextMenuSubContent({
           Platform.select({
             web: "origin-(--radix-context-menu-content-transform-origin) z-50 min-w-[8rem] animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
           }),
-          className,
+          className
         )}
         {...props}
       />
@@ -123,10 +121,9 @@ function ContextMenuContent({
                 ])
               : StyleSheet.absoluteFill,
           })}
-          className={overlayClassName}
-        >
+          className={overlayClassName}>
           <NativeOnlyAnimatedView entering={FadeIn}>
-            <TextClassContext.Provider value="text-popover-foreground">
+            <TextClassContext.Provider value='text-popover-foreground'>
               <ContextMenuPrimitive.Content
                 className={cn(
                   "min-w-[8rem] overflow-hidden rounded-md border border-border bg-popover p-1 shadow-lg shadow-black/5",
@@ -134,10 +131,10 @@ function ContextMenuContent({
                     web: cn(
                       "max-h-(--radix-context-menu-content-available-height) origin-(--radix-context-menu-content-transform-origin) z-50 cursor-default animate-in fade-in-0 zoom-in-95",
                       props.side === "bottom" && "slide-in-from-top-2",
-                      props.side === "top" && "slide-in-from-bottom-2",
+                      props.side === "top" && "slide-in-from-bottom-2"
                     ),
                   }),
-                  className,
+                  className
                 )}
                 {...props}
               />
@@ -165,9 +162,8 @@ function ContextMenuItem({
       value={cn(
         "select-none text-sm text-popover-foreground group-active:text-popover-foreground",
         variant === "destructive" &&
-          "text-destructive group-active:text-destructive",
-      )}
-    >
+          "text-destructive group-active:text-destructive"
+      )}>
       <ContextMenuPrimitive.Item
         className={cn(
           "group relative flex flex-row items-center gap-2 rounded-sm px-2 py-2 active:bg-accent sm:py-1.5",
@@ -175,14 +171,14 @@ function ContextMenuItem({
             web: cn(
               "cursor-default outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none",
               variant === "destructive" &&
-                "focus:bg-destructive/10 dark:focus:bg-destructive/20",
+                "focus:bg-destructive/10 dark:focus:bg-destructive/20"
             ),
           }),
           variant === "destructive" &&
             "active:bg-destructive/10 dark:active:bg-destructive/20",
           props.disabled && "opacity-50",
           inset && "pl-8",
-          className,
+          className
         )}
         {...props}
       />
@@ -199,7 +195,7 @@ function ContextMenuCheckboxItem({
     children?: React.ReactNode;
   }) {
   return (
-    <TextClassContext.Provider value="text-sm text-popover-foreground select-none group-active:text-accent-foreground">
+    <TextClassContext.Provider value='text-sm text-popover-foreground select-none group-active:text-accent-foreground'>
       <ContextMenuPrimitive.CheckboxItem
         className={cn(
           "group relative flex flex-row items-center gap-2 rounded-sm py-2 pl-8 pr-2 active:bg-accent sm:py-1.5",
@@ -207,17 +203,16 @@ function ContextMenuCheckboxItem({
             web: "cursor-default outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none",
           }),
           props.disabled && "opacity-50",
-          className,
+          className
         )}
-        {...props}
-      >
-        <View className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+        {...props}>
+        <View className='absolute left-2 flex h-3.5 w-3.5 items-center justify-center'>
           <ContextMenuPrimitive.ItemIndicator>
             <Icon
               as={Check}
               className={cn(
                 "size-4 text-foreground",
-                Platform.select({ web: "pointer-events-none" }),
+                Platform.select({ web: "pointer-events-none" })
               )}
             />
           </ContextMenuPrimitive.ItemIndicator>
@@ -237,7 +232,7 @@ function ContextMenuRadioItem({
     children?: React.ReactNode;
   }) {
   return (
-    <TextClassContext.Provider value="text-sm text-popover-foreground select-none group-active:text-accent-foreground">
+    <TextClassContext.Provider value='text-sm text-popover-foreground select-none group-active:text-accent-foreground'>
       <ContextMenuPrimitive.RadioItem
         className={cn(
           "group relative flex flex-row items-center gap-2 rounded-sm py-2 pl-8 pr-2 active:bg-accent sm:py-1.5",
@@ -245,13 +240,12 @@ function ContextMenuRadioItem({
             web: "cursor-default outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none",
           }),
           props.disabled && "opacity-50",
-          className,
+          className
         )}
-        {...props}
-      >
-        <View className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+        {...props}>
+        <View className='absolute left-2 flex h-3.5 w-3.5 items-center justify-center'>
           <ContextMenuPrimitive.ItemIndicator>
-            <View className="h-2 w-2 rounded-full bg-foreground" />
+            <View className='h-2 w-2 rounded-full bg-foreground' />
           </ContextMenuPrimitive.ItemIndicator>
         </View>
         <>{children}</>
@@ -274,7 +268,7 @@ function ContextMenuLabel({
       className={cn(
         "px-2 py-2 text-sm font-medium text-foreground sm:py-1.5",
         inset && "pl-8",
-        className,
+        className
       )}
       {...props}
     />
@@ -302,7 +296,7 @@ function ContextMenuShortcut({
     <Text
       className={cn(
         "ml-auto text-xs tracking-widest text-muted-foreground",
-        className,
+        className
       )}
       {...props}
     />

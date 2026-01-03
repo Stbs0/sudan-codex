@@ -35,7 +35,7 @@ function SelectValue({
       className={cn(
         "line-clamp-1 flex flex-row items-center gap-2 text-sm text-foreground",
         !value && "text-muted-foreground",
-        className,
+        className
       )}
       {...props}
     />
@@ -63,15 +63,14 @@ function SelectTrigger({
         }),
         props.disabled && "opacity-50",
         size === "sm" && "h-8 py-2 sm:py-1.5",
-        className,
+        className
       )}
-      {...props}
-    >
+      {...props}>
       <>{children}</>
       <Icon
         as={ChevronDown}
         aria-hidden={true}
-        className="size-4 text-muted-foreground"
+        className='size-4 text-muted-foreground'
       />
     </SelectPrimitive.Trigger>
   );
@@ -95,14 +94,12 @@ function SelectContent({
     <SelectPrimitive.Portal hostName={portalHost}>
       <FullWindowOverlay>
         <SelectPrimitive.Overlay
-          style={Platform.select({ native: StyleSheet.absoluteFill })}
-        >
-          <TextClassContext.Provider value="text-popover-foreground">
+          style={Platform.select({ native: StyleSheet.absoluteFill })}>
+          <TextClassContext.Provider value='text-popover-foreground'>
             <NativeOnlyAnimatedView
-              className="z-50"
+              className='z-50'
               entering={FadeIn}
-              exiting={FadeOut}
-            >
+              exiting={FadeOut}>
               <SelectPrimitive.Content
                 className={cn(
                   "relative z-50 min-w-[8rem] rounded-md border border-border bg-popover shadow-md shadow-black/5",
@@ -110,7 +107,7 @@ function SelectContent({
                     web: cn(
                       "origin-(--radix-select-content-transform-origin) max-h-52 overflow-y-auto overflow-x-hidden animate-in fade-in-0 zoom-in-95",
                       props.side === "bottom" && "slide-in-from-top-2",
-                      props.side === "top" && "slide-in-from-bottom-2",
+                      props.side === "top" && "slide-in-from-bottom-2"
                     ),
                     native: "p-1",
                   }),
@@ -118,14 +115,13 @@ function SelectContent({
                     Platform.select({
                       web: cn(
                         props.side === "bottom" && "translate-y-1",
-                        props.side === "top" && "-translate-y-1",
+                        props.side === "top" && "-translate-y-1"
                       ),
                     }),
-                  className,
+                  className
                 )}
                 position={position}
-                {...props}
-              >
+                {...props}>
                 <SelectScrollUpButton />
                 <SelectPrimitive.Viewport
                   className={cn(
@@ -135,10 +131,9 @@ function SelectContent({
                         "w-full",
                         Platform.select({
                           web: "h-[var(--radix-select-trigger-height)] min-w-[var(--radix-select-trigger-width)]",
-                        }),
-                      ),
-                  )}
-                >
+                        })
+                      )
+                  )}>
                   {children}
                 </SelectPrimitive.Viewport>
                 <SelectScrollDownButton />
@@ -159,7 +154,7 @@ function SelectLabel({
     <SelectPrimitive.Label
       className={cn(
         "px-2 py-2 text-xs text-muted-foreground sm:py-1.5",
-        className,
+        className
       )}
       {...props}
     />
@@ -179,16 +174,18 @@ function SelectItem({
           web: "*:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2 cursor-default outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none [&_svg]:pointer-events-none",
         }),
         props.disabled && "opacity-50",
-        className,
+        className
       )}
-      {...props}
-    >
-      <View className="absolute right-2 flex size-3.5 items-center justify-center">
+      {...props}>
+      <View className='absolute right-2 flex size-3.5 items-center justify-center'>
         <SelectPrimitive.ItemIndicator>
-          <Icon as={Check} className="size-4 shrink-0 text-muted-foreground" />
+          <Icon
+            as={Check}
+            className='size-4 shrink-0 text-muted-foreground'
+          />
         </SelectPrimitive.ItemIndicator>
       </View>
-      <SelectPrimitive.ItemText className="select-none text-sm text-foreground group-active:text-accent-foreground" />
+      <SelectPrimitive.ItemText className='select-none text-sm text-foreground group-active:text-accent-foreground' />
     </SelectPrimitive.Item>
   );
 }
@@ -203,7 +200,7 @@ function SelectSeparator({
       className={cn(
         "-mx-1 my-1 h-px bg-border",
         Platform.select({ web: "pointer-events-none" }),
-        className,
+        className
       )}
       {...props}
     />
@@ -225,11 +222,13 @@ function SelectScrollUpButton({
     <SelectPrimitive.ScrollUpButton
       className={cn(
         "flex cursor-default items-center justify-center py-1",
-        className,
+        className
       )}
-      {...props}
-    >
-      <Icon as={ChevronUpIcon} className="size-4" />
+      {...props}>
+      <Icon
+        as={ChevronUpIcon}
+        className='size-4'
+      />
     </SelectPrimitive.ScrollUpButton>
   );
 }
@@ -249,11 +248,13 @@ function SelectScrollDownButton({
     <SelectPrimitive.ScrollDownButton
       className={cn(
         "flex cursor-default items-center justify-center py-1",
-        className,
+        className
       )}
-      {...props}
-    >
-      <Icon as={ChevronDownIcon} className="size-4" />
+      {...props}>
+      <Icon
+        as={ChevronDownIcon}
+        className='size-4'
+      />
     </SelectPrimitive.ScrollDownButton>
   );
 }
@@ -269,7 +270,12 @@ function NativeSelectScrollView({
   if (Platform.OS === "web") {
     return <>{props.children}</>;
   }
-  return <ScrollView className={cn("max-h-52", className)} {...props} />;
+  return (
+    <ScrollView
+      className={cn("max-h-52", className)}
+      {...props}
+    />
+  );
 }
 
 export {

@@ -23,24 +23,22 @@ function Alert({
       value={cn(
         "text-sm text-foreground",
         variant === "destructive" && "text-destructive",
-        className,
-      )}
-    >
+        className
+      )}>
       <View
-        role="alert"
+        role='alert'
         className={cn(
           "relative w-full rounded-lg border border-border bg-card px-4 pb-2 pt-3.5",
-          className,
+          className
         )}
-        {...props}
-      >
-        <View className="absolute left-3.5 top-3">
+        {...props}>
+        <View className='absolute left-3.5 top-3'>
           <Icon
             as={icon}
             className={cn(
               "size-4",
               variant === "destructive" && "text-destructive",
-              iconClassName,
+              iconClassName
             )}
           />
         </View>
@@ -58,7 +56,7 @@ function AlertTitle({
     <Text
       className={cn(
         "mb-1 ml-0.5 min-h-4 pl-6 font-medium leading-none tracking-tight",
-        className,
+        className
       )}
       {...props}
     />
@@ -75,7 +73,7 @@ function AlertDescription({
       className={cn(
         "ml-0.5 pb-1.5 pl-6 text-sm leading-relaxed text-muted-foreground",
         textClass?.includes("text-destructive") && "text-destructive/90",
-        className,
+        className
       )}
       {...props}
     />

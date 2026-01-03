@@ -18,10 +18,14 @@ const DrugInfoAccordion = ({ data }: { data: Record<string, string[]> }) => {
     .sort((a, b) => a.localeCompare(b));
 
   return (
-    <Accordion type="multiple" className="w-full">
+    <Accordion
+      type='multiple'
+      className='w-full'>
       {keys.map((key, index) => {
         return (
-          <AccordionItem key={index} value={`item-${index}`}>
+          <AccordionItem
+            key={index}
+            value={`item-${index}`}>
             <AccordionTrigger>
               <Text>{key.replace(/_/g, " ").toUpperCase()}</Text>
             </AccordionTrigger>

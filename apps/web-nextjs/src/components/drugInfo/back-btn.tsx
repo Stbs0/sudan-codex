@@ -1,19 +1,19 @@
 "use client";
-import { useRouter } from "next/navigation";
-import { Button } from "../ui/button";
 import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
+import { Button } from "../ui/button";
 
 function BackBtn() {
-  const router = useRouter();
-
   return (
     <Button
-      onClick={() => router.back()}
       variant='outline'
       size='sm'
-      className='flex items-center gap-2'>
-      <ArrowLeft className='h-4 w-4' />
-      Back
+      className='flex items-center gap-2'
+      asChild>
+      <Link href='/drug-list'>
+        <ArrowLeft className='h-4 w-4' />
+        Back
+      </Link>
     </Button>
   );
 }

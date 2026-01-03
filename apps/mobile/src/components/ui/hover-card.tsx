@@ -25,10 +25,11 @@ function HoverCardContent({
     <HoverCardPrimitive.Portal>
       <FullWindowOverlay>
         <HoverCardPrimitive.Overlay
-          style={Platform.select({ native: StyleSheet.absoluteFill })}
-        >
-          <NativeOnlyAnimatedView entering={FadeIn} exiting={FadeOut}>
-            <TextClassContext.Provider value="text-popover-foreground">
+          style={Platform.select({ native: StyleSheet.absoluteFill })}>
+          <NativeOnlyAnimatedView
+            entering={FadeIn}
+            exiting={FadeOut}>
+            <TextClassContext.Provider value='text-popover-foreground'>
               <HoverCardPrimitive.Content
                 align={align}
                 sideOffset={sideOffset}
@@ -38,10 +39,10 @@ function HoverCardContent({
                     web: cn(
                       "origin-(--radix-hover-card-content-transform-origin) cursor-default animate-in fade-in-0 zoom-in-95 [&>*]:cursor-auto",
                       props.side === "bottom" && "slide-in-from-top-2",
-                      props.side === "top" && "slide-in-from-bottom-2",
+                      props.side === "top" && "slide-in-from-bottom-2"
                     ),
                   }),
-                  className,
+                  className
                 )}
                 {...props}
               />

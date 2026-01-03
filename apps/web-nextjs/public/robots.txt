@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
-
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /auth/
 Sitemap: https://www.sudancodex.app/sitemap.xml

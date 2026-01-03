@@ -1,6 +1,6 @@
 "use client";
-import { DRUG_ROUTES } from "@/constants";
 import { useDrugInfoSearch } from "@/hooks/store/useDrugInfoSearch";
+import { DRUG_ROUTES } from "@sudan-codex/types/constants";
 import { useQueryClient } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 import { AutoComplete } from "../ui/autocomplete";

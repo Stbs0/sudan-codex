@@ -11,17 +11,26 @@ export default function TabLayout() {
       screenOptions={({ route }) => ({
         tabBarIcon: (props) => {
           if (route.name === "drug-list") {
-            return <Icon as={List} {...props} />;
+            return (
+              <Icon
+                as={List}
+                {...props}
+              />
+            );
           }
 
           if (route.name === "settings") {
-            return <Icon as={Settings} {...props} />;
+            return (
+              <Icon
+                as={Settings}
+                {...props}
+              />
+            );
           }
         },
-      })}
-    >
+      })}>
       <Tabs.Screen
-        name="drug-list"
+        name='drug-list'
         options={{
           tabBarLabel: t("tabs.drugList"),
           headerShown: false,
@@ -29,7 +38,7 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="settings"
+        name='settings'
         options={{
           headerShown: false,
           title: t("tabs.settings"),
@@ -38,7 +47,7 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="index"
+        name='index'
         options={{
           href: null,
         }}

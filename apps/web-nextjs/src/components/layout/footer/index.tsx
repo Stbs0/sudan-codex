@@ -26,6 +26,7 @@ const Footer = () => {
             Privacy Policy
           </Link>
           <Button
+            data-analytics='footer-feedback'
             asChild
             variant='outline'
             size='default'

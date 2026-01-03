@@ -1,12 +1,26 @@
+import fs from "fs/promises";
+import path from "path";
 
-import fs from 'fs/promises';
-import path from 'path';
+const drugDataPath = path.join(
+  process.cwd(),
+  "public",
+  "data",
+  "drugDataWithSlugs.json"
+);
+const cleanedDrugDataPath = path.join(
+  process.cwd(),
+  "public",
+  "data",
+  "cleanedDrugData.json"
+);
+const inconsistentDataPath = path.join(
+  process.cwd(),
+  "public",
+  "data",
+  "inconsistentData.json"
+);
 
-const drugDataPath = path.join(process.cwd(), 'public', 'data', 'drugDataWithSlugs.json');
-const cleanedDrugDataPath = path.join(process.cwd(), 'public', 'data', 'cleanedDrugData.json');
-const inconsistentDataPath = path.join(process.cwd(), 'public', 'data', 'inconsistentData.json');
-
-import stringSimilarity from 'string-similarity';
+import stringSimilarity from "string-similarity";
 
 // Function to find similar names using string-similarity
 function findSimilarNames(names, threshold = 0.8) {
@@ -42,28 +56,34 @@ function findSimilarNames(names, threshold = 0.8) {
 
 async function main() {
   try {
-    const drugData = JSON.parse(await fs.readFile(drugDataPath, 'utf-8'));
+    const drugData = JSON.parse(await fs.readFile(drugDataPath, "utf-8"));
 
-    const agentNames = [...new Set(drugData.map(drug => drug.agentName).filter(name => name))];
-    const companyNames = [...new Set(drugData.map(drug => drug.companyName).filter(name => name))];
+    const agentNames = [
+      ...new Set(drugData.map((drug) => drug.agentName).filter((name) => name)),
+    ];
+    const companyNames = [
+      ...new Set(
+        drugData.map((drug) => drug.companyName).filter((name) => name)
+      ),
+    ];
 
     const similarAgentNames = findSimilarNames(agentNames);
     const similarCompanyNames = findSimilarNames(companyNames);
 
     const nameMapping = {};
 
-    similarAgentNames.forEach(group => {
+    similarAgentNames.forEach((group) => {
       const primaryName = group.sort((a, b) => b.length - a.length)[0];
-      group.forEach(name => {
+      group.forEach((name) => {
         if (name !== primaryName) {
           nameMapping[name] = primaryName;
         }
       });
     });
 
-    similarCompanyNames.forEach(group => {
+    similarCompanyNames.forEach((group) => {
       const primaryName = group.sort((a, b) => b.length - a.length)[0];
-      group.forEach(name => {
+      group.forEach((name) => {
         if (name !== primaryName) {
           nameMapping[name] = primaryName;
         }
@@ -91,20 +111,25 @@ async function main() {
       if (isModified) {
         inconsistentData.push({
           original: originalDrug,
-          cleaned: drug
+          cleaned: drug,
         });
       }
     }
 
-    await fs.writeFile(cleanedDrugDataPath, JSON.stringify(cleanedData, null, 2));
-    await fs.writeFile(inconsistentDataPath, JSON.stringify(inconsistentData, null, 2));
+    await fs.writeFile(
+      cleanedDrugDataPath,
+      JSON.stringify(cleanedData, null, 2)
+    );
+    await fs.writeFile(
+      inconsistentDataPath,
+      JSON.stringify(inconsistentData, null, 2)
+    );
 
-    console.log('Data cleaning complete.');
+    console.log("Data cleaning complete.");
     console.log(`Cleaned data saved to: ${cleanedDrugDataPath}`);
     console.log(`Inconsistent data saved to: ${inconsistentDataPath}`);
-
   } catch (error) {
-    console.error('Error processing data:', error);
+    console.error("Error processing data:", error);
   }
 }
 

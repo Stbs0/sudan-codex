@@ -11,10 +11,7 @@ const client = createClient({
 });
 
 async function main() {
-  const inputPath = path.join(
-    process.cwd(),
-    "public/data/newForm.json"
-  );
+  const inputPath = path.join(process.cwd(), "public/data/newForm.json");
   const data = fs.readFileSync(inputPath, "utf8");
   const drugs = JSON.parse(data);
 

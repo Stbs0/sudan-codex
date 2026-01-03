@@ -33,14 +33,12 @@ function AlertDialogOverlay({
           Platform.select({
             web: "fixed animate-in fade-in-0",
           }),
-          className,
+          className
         )}
-        {...props}
-      >
+        {...props}>
         <NativeOnlyAnimatedView
           entering={FadeIn.duration(200).delay(50)}
-          exiting={FadeOut.duration(150)}
-        >
+          exiting={FadeOut.duration(150)}>
           <>{children}</>
         </NativeOnlyAnimatedView>
       </AlertDialogPrimitive.Overlay>
@@ -65,7 +63,7 @@ function AlertDialogContent({
             Platform.select({
               web: "duration-200 animate-in fade-in-0 zoom-in-95",
             }),
-            className,
+            className
           )}
           {...props}
         />
@@ -76,8 +74,11 @@ function AlertDialogContent({
 
 function AlertDialogHeader({ className, ...props }: ViewProps) {
   return (
-    <TextClassContext.Provider value="text-center sm:text-left">
-      <View className={cn("flex flex-col gap-2", className)} {...props} />
+    <TextClassContext.Provider value='text-center sm:text-left'>
+      <View
+        className={cn("flex flex-col gap-2", className)}
+        {...props}
+      />
     </TextClassContext.Provider>
   );
 }
@@ -87,7 +88,7 @@ function AlertDialogFooter({ className, ...props }: ViewProps) {
     <View
       className={cn(
         "flex flex-col-reverse gap-2 sm:flex-row sm:justify-end",
-        className,
+        className
       )}
       {...props}
     />
@@ -142,8 +143,7 @@ function AlertDialogCancel({
   React.RefAttributes<AlertDialogPrimitive.CancelRef>) {
   return (
     <TextClassContext.Provider
-      value={buttonTextVariants({ className, variant: "outline" })}
-    >
+      value={buttonTextVariants({ className, variant: "outline" })}>
       <AlertDialogPrimitive.Cancel
         className={cn(buttonVariants({ variant: "outline" }), className)}
         {...props}

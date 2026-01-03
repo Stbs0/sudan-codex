@@ -1,1 +1,4 @@
-pnpm-lock.yaml
+android/**
+.expo/**
+.turbo/**
+drizzle/*
