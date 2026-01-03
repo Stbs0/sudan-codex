@@ -1,5 +1,6 @@
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
+import { api } from "@/lib/api-client";
 import DrugPropertyDescription from "@/screens/Drug-list/DrugCard/DrugPropertyDescription";
 import type { Drug } from "@sudan-codex/types";
 import { useQuery } from "@tanstack/react-query";
@@ -21,13 +22,9 @@ const DrugInfo = () => {
     queryKey: ["drugInfo", slug],
 
     queryFn: async () => {
-      const res = await fetch(
-        process.env.EXPO_PUBLIC_BACKEND_URI + `/api/drugs/${slug}`
-      );
-      if (!res.ok) {
-        throw new Error(`Failed to fetch drug info: ${res.status}`);
-      }
-      return await res.json();
+      const res = await api.get<Drug>(`/api/drugs/${slug}`);
+
+      return res.data;
     },
   });
   console.log(drug);

@@ -3,7 +3,6 @@ import { db } from "@sudan-codex/db";
 import { tellUsMoreSchema } from "@sudan-codex/types/schemas";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
-
 if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
   throw new Error(
     "Missing required Google OAuth environment variables: GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET"
@@ -11,6 +10,14 @@ if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
 }
 export const auth = betterAuth({
   plugins: [expo()],
+  session: {
+    cookieCache: {
+      strategy: "jwt",
+      enabled: true,
+      maxAge: 5 * 60, // Cache for 5 hours
+    },
+  },
+
   baseURL: process.env.BETTER_AUTH_URL,
   secret: process.env.BETTER_AUTH_SECRET,
   account: {

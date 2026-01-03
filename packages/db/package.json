@@ -9,16 +9,23 @@
   },
   "scripts": {
     "build": "tsc -b",
-    "db:generate": "drizzle-kit generate",
-    "db:push": "drizzle-kit push",
-    "db:studio": "drizzle-kit studio"
+    "db:generate": "NODE_ENV=production drizzle-kit generate  --config=drizzle-production.config.ts",
+    "db:generate:dev": "NODE_ENV=development drizzle-kit generate --config=drizzle-development.config.ts",
+    "db:migrate": "NODE_ENV=production drizzle-kit migrate --config=drizzle-production.config.ts",
+    "db:migrate:dev": "NODE_ENV=development drizzle-kit migrate --config=drizzle-development.config.ts",
+    "db:push": "NODE_ENV=production drizzle-kit push --config=drizzle-production.config.ts",
+    "db:push:dev": "NODE_ENV=development drizzle-kit push --config=drizzle-development.config.ts",
+    "db:drop": "NODE_ENV=production drizzle-kit drop --config=drizzle-production.config.ts",
+    "db:drop:dev": "NODE_ENV=development drizzle-kit drop --config=drizzle-development.config.ts",
+    "db:seed": "NODE_ENV=production bun run scripts/setup-turso.ts",
+    "db:seed:dev": "NODE_ENV=development bun run scripts/setup-turso.ts",
+    "db:studio": "NODE_ENV=development drizzle-kit studio --config=drizzle-development.config.ts"
   },
   "files": [
     "dist"
   ],
   "peerDependencies": {
     "typescript": "^5"
-
   },
   "dependencies": {
     "@libsql/client": "^0.15.15",

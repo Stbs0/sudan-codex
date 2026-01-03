@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 import { useInfiniteServerScroll } from "@/hooks/useInfiniteScroll";
 import ModalProvider from "@/providers/ModalProvider";
@@ -15,7 +16,7 @@ const DrugList = () => {
   const {
     data,
     fetchNextPage,
-
+    refetch,
     isFetchingNextPage,
     error,
     isLoading,
@@ -26,7 +27,17 @@ const DrugList = () => {
   const renderItem = useCallback(({ item }: { item: Drug }) => {
     return <DrugCard {...item} />;
   }, []);
-  if (error) return <Text className='text-destructive'>{String(error)}</Text>;
+  if (error)
+    return (
+      <View className='flex-1 items-center justify-center'>
+        <Text>There was an error loading the drugs</Text>
+        <Button
+          variant='destructive'
+          onPress={async () => await refetch()}>
+          <Text>Retry</Text>
+        </Button>
+      </View>
+    );
 
   if (isLoading)
     return (

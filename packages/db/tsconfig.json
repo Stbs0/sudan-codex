@@ -16,5 +16,5 @@
     "allowJs": true,
     "types": ["bun-types"]
   },
-  "include": ["src", "index.ts", "drizzle.config.ts"]
+  "include": ["src", "index.ts", "drizzle-production.config.ts","drizzle-development.config.ts"]
 }
