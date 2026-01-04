@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import type { DrugWithRelations } from "@sudan-codex/db";
 import { useRouter, type Href } from "expo-router";
 import { Info } from "lucide-react-native";
-import { Pressable, View, type GestureResponderEvent } from "react-native";
+import { Pressable, View } from "react-native";
 
 type Props = {
   title: string;
@@ -19,6 +19,14 @@ const DrugPropertyDescription = ({
   className = "",
   href,
 }: Props) => {
+  const router = useRouter();
+
+  const onPress =
+    typeof href === "object" && "params" in href && href.params
+      ? () => {
+          router.push(href);
+        }
+      : undefined;
   const descriptionComponent = (
     <View
       className={cn("flex flex-col border-b-2 border-l-2 p-2 pt-0", className)}>
@@ -33,24 +41,10 @@ const DrugPropertyDescription = ({
       </View>
     </View>
   );
-  if (href) {
-    return WithPressable({ descriptionComponent, href });
+  if (onPress) {
+    return <Pressable onPress={onPress}>{descriptionComponent}</Pressable>;
   }
   return descriptionComponent;
-};
-const WithPressable = ({
-  href,
-  descriptionComponent,
-}: {
-  href: Href;
-  descriptionComponent: React.ReactElement;
-}) => {
-  const router = useRouter();
-
-  const onPress = (_e: GestureResponderEvent) => {
-    router.push(href);
-  };
-  return <Pressable onPress={onPress}>{descriptionComponent}</Pressable>;
 };
 
 export default DrugPropertyDescription;

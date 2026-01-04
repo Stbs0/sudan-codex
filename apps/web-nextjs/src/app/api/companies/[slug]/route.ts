@@ -6,6 +6,7 @@ export async function GET(
   req: NextRequest,
   ctx: RouteContext<"/api/companies/[slug]">
 ) {
+  // TODO: Add error handiling
   const { slug } = await ctx.params;
   if (!slug) {
     return Response.json({ error: "No slug provided" }, { status: 400 });
@@ -25,7 +26,7 @@ export async function GET(
   });
 
   if (!company)
-    return Response.json({ error: "Drug not found" }, { status: 404 });
+    return Response.json({ error: "Company not found" }, { status: 404 });
   const drugsWithAll = await db.query.drugsTable.findMany({
     where: eq(drugsTable.company_id, company.id),
     columns: {
@@ -57,5 +58,6 @@ export async function GET(
       related_agents: company.stats.related_agents,
     },
     drugs: drugsWithAll,
+    name: company.name,
   });
 }

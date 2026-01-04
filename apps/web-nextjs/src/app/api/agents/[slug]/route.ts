@@ -6,6 +6,7 @@ export async function GET(
   req: NextRequest,
   ctx: RouteContext<"/api/agents/[slug]">
 ) {
+  // TODO: add error handling
   const { slug } = await ctx.params;
   if (!slug) {
     return Response.json({ error: "No slug provided" }, { status: 400 });
@@ -19,7 +20,7 @@ export async function GET(
   });
 
   if (!agent)
-    return Response.json({ error: "Drug not found" }, { status: 404 });
+    return Response.json({ error: "Agent not found" }, { status: 404 });
   const drugsWithAll = await db.query.drugsTable.findMany({
     where: eq(drugsTable.agent_id, agent.id),
     columns: {

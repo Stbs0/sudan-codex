@@ -4,5 +4,5 @@ export default {
   "**/*.{json,md,yaml}": "prettier --write",
 
   "*": ["bunx secretlint"],
-  "**/*.ts?(x)": () => "tsc -p tsconfig.json --noEmit",
+  "**/*.ts?(x)": () => "tsc -p ./tsconfig.json --noEmit",
 };

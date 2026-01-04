@@ -25,7 +25,7 @@ export async function GET(
   });
 
   if (!generic)
-    return Response.json({ error: "Drug not found" }, { status: 404 });
+    return Response.json({ error: "Generic not found" }, { status: 404 });
   const drugsWithAll = await db.query.drugsTable.findMany({
     where: eq(drugsTable.generic_id, generic.id),
     columns: {

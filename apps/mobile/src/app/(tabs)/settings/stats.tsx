@@ -1,5 +1,3 @@
-"use client";
-
 import Header from "@/components/stats/Header";
 import { data } from "@/components/stats/pharmaceuticalData";
 import SummaryStats from "@/components/stats/SummaryStats";
@@ -15,14 +13,14 @@ export default function App() {
     <ScrollView>
       <Header />
       <SummaryStats data={data.summaryData} />
-      <View className="space-y-8 px-6">
+      <View className='space-y-8 px-6'>
         {/* Added padding and spacing */}
         {/* TODO: remove the cards and add a proper table */}
-        <Text className="text-2xl font-semibold">Top Companies</Text>
+        <Text className='text-2xl font-semibold'>Top Companies</Text>
         <TopCompanies companies={data.topCompanies} />
-        <Text className="text-2xl font-semibold">Top Agents</Text>
+        <Text className='text-2xl font-semibold'>Top Agents</Text>
         <TopAgents agents={data.topAgents} />
-        <Text className="text-2xl font-semibold">Top Generic Medications</Text>
+        <Text className='text-2xl font-semibold'>Top Generic Medications</Text>
         <TopGenerics generics={data.topGenerics} />
       </View>
       <View style={{ height: 40 }} />

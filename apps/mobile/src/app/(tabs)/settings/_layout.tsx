@@ -30,6 +30,7 @@ export default function SettingsLayout() {
       <Stack.Screen
         name='stats'
         options={{
+          // t("settings.screens.statistics")
           title: "Statistics",
         }}
       />
