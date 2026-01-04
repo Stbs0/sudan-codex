@@ -6,6 +6,14 @@
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
+    },
+    "./schema": {
+      "types": "./dist/schemas/schema.d.ts",
+      "default": "./dist/schemas/schema.js"
+    },
+    "./auth-schema": {
+      "types": "./dist/schemas/auth-schema.d.ts",
+      "default": "./dist/schemas/auth-schema.js"
     }
   },
   "type": "module",
@@ -17,7 +25,7 @@
   "scripts": {
     "build": "bun run clean && tsc -b",
     "clean": "rm -rf ./dist ./tsconfig.tsbuildinfo",
-    "dev": "tsc -w ",
+    "dev": "tsc -b -w ",
     "db:generate": "NODE_ENV=production drizzle-kit generate  --config=drizzle-production.config.ts",
     "db:generate:dev": "NODE_ENV=development drizzle-kit generate --config=drizzle-development.config.ts",
     "db:migrate": "NODE_ENV=production drizzle-kit migrate --config=drizzle-production.config.ts",
