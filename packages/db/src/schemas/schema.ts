@@ -191,7 +191,7 @@ export const DrugWithRelationsSelectSchema = DrugSelectSchema.extend({
 export type DrugWithRelations = z.infer<typeof DrugWithRelationsSelectSchema>;
 
 export const AgentApiResponseSchema = z.object({
-  data: z.array(
+  drugs: z.array(
     DrugSelectSchema.pick({
       slug: true,
       brand_name: true,
@@ -200,8 +200,8 @@ export const AgentApiResponseSchema = z.object({
       pack_size: true,
       strength: true,
     }).extend({
-      company: CompanySelectSchema.nullable(),
-      generic: GenericSelectSchema.nullable(),
+      company: CompanySelectSchema.pick({ slug: true }).nullable(),
+      generic: GenericSelectSchema.pick({ slug: true }).nullable(),
     }),
   ),
   stats: AgentWithStatsSelectSchema.omit({ id: true, agent_id: true }),
