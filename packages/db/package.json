@@ -1,6 +1,21 @@
 {
   "name": "@sudan-codex/db",
-  "module": "index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./schema": {
+      "types": "./dist/schemas/schema.d.ts",
+      "default": "./dist/schemas/schema.js"
+    },
+    "./auth-schema": {
+      "types": "./dist/schemas/auth-schema.d.ts",
+      "default": "./dist/schemas/auth-schema.js"
+    }
+  },
   "type": "module",
   "version": "0.0.0",
   "devDependencies": {
@@ -8,7 +23,9 @@
     "drizzle-kit": "^0.30.1"
   },
   "scripts": {
-    "build": "tsc -b",
+    "build": "bun run clean && tsc -b",
+    "clean": "rm -rf ./dist ./tsconfig.tsbuildinfo",
+    "dev": "tsc -b -w ",
     "db:generate": "NODE_ENV=production drizzle-kit generate  --config=drizzle-production.config.ts",
     "db:generate:dev": "NODE_ENV=development drizzle-kit generate --config=drizzle-development.config.ts",
     "db:migrate": "NODE_ENV=production drizzle-kit migrate --config=drizzle-production.config.ts",
@@ -33,6 +50,8 @@
     "better-auth": "^1.4.10",
     "dotenv": "^17.2.3",
     "drizzle-orm": "^0.45.1",
-    "react": "^19.2.3"
+    "drizzle-zod": "^0.8.3",
+    "react": "^19.2.3",
+    "zod": "^4.3.4"
   }
 }

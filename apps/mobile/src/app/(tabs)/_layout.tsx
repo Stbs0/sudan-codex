@@ -1,6 +1,6 @@
 import { Icon } from "@/components/ui/icon";
 import { Tabs } from "expo-router";
-import { List, ListTree, Settings } from "lucide-react-native";
+import { List, Settings } from "lucide-react-native";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -18,14 +18,7 @@ export default function TabLayout() {
               />
             );
           }
-          if (route.name === "(categories)") {
-            return (
-              <Icon
-                as={ListTree}
-                {...props}
-              />
-            );
-          }
+
           if (route.name === "settings") {
             return (
               <Icon
@@ -45,16 +38,9 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name='(categories)'
-        options={{
-          // title: t("tabs.settings"),
-          tabBarLabel: "Categories",
-          headerShown: false,
-        }}
-      />
-      <Tabs.Screen
         name='settings'
         options={{
+          headerShown: false,
           title: t("tabs.settings"),
           tabBarLabel: t("tabs.settings"),
         }}

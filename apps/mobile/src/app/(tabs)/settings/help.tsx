@@ -12,7 +12,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-import type { Drug } from "@sudan-codex/types";
+import type { Drug } from "@sudan-codex/db";
 import * as Linking from "expo-linking";
 import { usePostHog } from "posthog-react-native";
 import React from "react";

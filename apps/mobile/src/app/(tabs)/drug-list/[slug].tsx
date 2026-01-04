@@ -2,7 +2,6 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
 import { api } from "@/lib/api-client";
 import DrugPropertyDescription from "@/screens/Drug-list/DrugCard/DrugPropertyDescription";
-import type { Drug } from "@sudan-codex/types";
 import { useQuery } from "@tanstack/react-query";
 import { Stack, useLocalSearchParams } from "expo-router";
 import React from "react";
@@ -11,27 +10,21 @@ import { ActivityIndicator, ScrollView, View } from "react-native";
 const DrugInfo = () => {
   const { t } = useTranslation();
   const { slug } = useLocalSearchParams<{ slug: string }>();
-  // const { width } = useWindowDimensions();
-  // const { colorScheme } = useColorScheme();
-  // const navigation = useNavigation();
-  const {
-    data: drug,
-    // isLoading,
-    isError,
-  } = useQuery<Drug>({
-    queryKey: ["drugInfo", slug],
 
+  const { data: drug, isError } = useQuery({
+    queryKey: ["drugInfo", slug],
     queryFn: async () => {
-      const res = await api.get<Drug>(`/api/drugs/${slug}`);
+      const res = await api(`/api/drugs/:slug`, {
+        params: { slug },
+      });
+      if (res.error) {
+        throw new Error(`Failed to fetch drug: ${res.error.message}`);
+      }
 
       return res.data;
     },
   });
   console.log(drug);
-  // useEffect(() => {
-  //   if (!drug) return;
-  //   navigation.setOptions({ title: drug.brand_name });
-  // }, [navigation, drug]);
   if (isError)
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -61,6 +54,10 @@ const DrugInfo = () => {
                 title={t("drugInfo.genericName")}
                 className='border-green-700 dark:border-green-400'
                 property={drug.generic_name}
+                href={{
+                  pathname: "/stats/generics/[slug]",
+                  params: { slug: drug.generic?.slug ?? "" },
+                }}
               />
               <DrugPropertyDescription
                 title={t("drugInfo.strength")}
@@ -81,11 +78,20 @@ const DrugInfo = () => {
                 title={t("drugInfo.companyName")}
                 className='border-pink-700 dark:border-pink-400'
                 property={drug.company_name}
+                href={{
+                  pathname: "/stats/companies/[slug]",
+                  params: { slug: drug.company?.slug ?? "" },
+                }}
               />
               <DrugPropertyDescription
                 title={t("drugInfo.agent")}
                 property={drug.agent_name}
                 className='border-orange-700 dark:border-orange-400'
+                href={{
+                  // FIXME: remove the ?? "" bc some drugs dosnt have a slug
+                  pathname: "/stats/agents/[slug]",
+                  params: { slug: drug.agent?.slug ?? "" },
+                }}
               />
               <DrugPropertyDescription
                 title={t("drugInfo.countryOfOrigin")}
@@ -234,47 +240,47 @@ const DrugInfo = () => {
 };
 export default DrugInfo;
 
-// const tagsStyles: Readonly<Record<string, MixedStyleDeclaration>> = {
-//   b: {
-//     fontStyle: "normal",
-//     fontWeight: "bold",
-//   },
-//   ul: { marginVertical: 8, paddingLeft: 20 },
-//   li: { marginBottom: 4 },
-// } as const;
+// // const tagsStyles: Readonly<Record<string, MixedStyleDeclaration>> = {
+// //   b: {
+// //     fontStyle: "normal",
+// //     fontWeight: "bold",
+// //   },
+// //   ul: { marginVertical: 8, paddingLeft: 20 },
+// //   li: { marginBottom: 4 },
+// // } as const;
 
-// const DrugAccordion = ({
-//   trigger,
-//   content,
-//   width,
-//   colorSchema,
-// }: {
-//   trigger: string;
-//   content: string;
-//   width: number;
-//   colorSchema: "light" | "dark" | undefined;
-// }) => {
-//   const { t } = useTranslation();
-//   const html = content || `<p><i>${t("drugInfo.noDataAvailable")}</i></p>`;
-//   return (
-//     <AccordionItem
+// // const DrugAccordion = ({
+// //   trigger,
+// //   content,
+// //   width,
+// //   colorSchema,
+// // }: {
+// //   trigger: string;
+// //   content: string;
+// //   width: number;
+// //   colorSchema: "light" | "dark" | undefined;
+// // }) => {
+// //   const { t } = useTranslation();
+// //   const html = content || `<p><i>${t("drugInfo.noDataAvailable")}</i></p>`;
+// //   return (
+// //     <AccordionItem
 //       key={trigger}
 //       value={trigger}>
-//       <AccordionTrigger>
-//         <Text>{trigger.toUpperCase()}</Text>
-//       </AccordionTrigger>
-//       <AccordionContent className=''>
-//         <RenderHtml
-//           tagsStyles={tagsStyles}
-//           enableExperimentalBRCollapsing={true}
-//           contentWidth={width}
-//           source={{ html }}
-//           // defaultTextProps={{
-//           //   style: { color: "white" },
-//           // }}
-//           baseStyle={{ color: colorSchema === "dark" ? "white" : "black" }}
-//         />
-//       </AccordionContent>
-//     </AccordionItem>
-//   );
-// };
+// //       <AccordionTrigger>
+// //         <Text>{trigger.toUpperCase()}</Text>
+// //       </AccordionTrigger>
+// //       <AccordionContent className=''>
+// //         <RenderHtml
+// //           tagsStyles={tagsStyles}
+// //           enableExperimentalBRCollapsing={true}
+// //           contentWidth={width}
+// //           source={{ html }}
+// //           // defaultTextProps={{
+// //           //   style: { color: "white" },
+// //           // }}
+// //           baseStyle={{ color: colorSchema === "dark" ? "white" : "black" }}
+// //         />
+// //       </AccordionContent>
+// //     </AccordionItem>
+// //   );
+// // };

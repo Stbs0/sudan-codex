@@ -1,44 +1,30 @@
-import axios, { type AxiosError } from "axios";
+import { createFetch, createSchema } from "@better-fetch/fetch";
+import { logger } from "@better-fetch/logger";
+import {
+  AgentApiResponseSchema,
+  DrugListApiResponseSchema,
+  DrugWithRelationsSelectSchema,
+} from "@sudan-codex/db/schema";
 import { toast } from "sonner-native";
+import z from "zod";
 
 // Constants
 const BASE_URL = process.env.EXPO_PUBLIC_BACKEND_URI;
 
 // Create Axios instance
-export const api = axios.create({
+export const api = createFetch({
   baseURL: BASE_URL,
-  headers: {
-    "Content-Type": "application/json",
+  retry: {
+    type: "linear",
+    attempts: 3,
+    delay: 1000,
   },
-});
-
-// Request Interceptor: Inject Auth Token
-// api.interceptors.request.use(
-//   async (config) => {
-//     try {
-//       const token = await SecureStore.getItemAsync(AUTH_TOKEN_KEY);
-//       if (token) {
-//         config.headers.Authorization = `Bearer ${token}`;
-//       }
-//     } catch (error) {
-//       console.error("Error retrieving auth token:", error);
-//     }
-//     return config;
-//   },
-//   (error) => {
-//     return Promise.reject(error);
-//   }
-// );
-
-// Response Interceptor: Handle Errors
-api.interceptors.response.use(
-  (response) => {
-    return response;
-  },
-  (error: AxiosError) => {
-    const status = error.response?.status;
+  defaultOutput: z.any(),
+  onError(context) {
+    const status = context.response?.status;
     const message =
-      (error.response?.data as { message?: string })?.message || error.message;
+      (context.error.response?.data as { message?: string })?.message ||
+      context.error.message;
 
     // Log error for debugging
     console.error(`API Error [${status}]:`, message);
@@ -58,10 +44,59 @@ api.interceptors.response.use(
         description: "Please check your internet connection.",
       });
     }
+  },
+  plugins: [
+    logger({
+      enabled: process.env.NODE_ENV === "development",
+      verbose: true,
+    }),
+  ],
+  schema: createSchema({
+    "/api/agents/:slug": {
+      output: AgentApiResponseSchema,
+      params: z.object({ slug: z.string() }),
+    },
+    "/api/auth/:all": {},
+    "/api/companies/:slug": {},
+    "/api/drugs": {
+      output: DrugListApiResponseSchema,
+      query: z.object({
+        page: z.number().optional(),
+        q: z.string().optional(),
+        filterBy: z
+          .enum([
+            "brand_name",
+            "company_name",
+            "agent_name",
+            "generic_name",
+            "country_name",
+          ])
+          .optional(),
+      }),
+    },
+    "/api/drugs/:slug": { output: DrugWithRelationsSelectSchema },
+    "/api/generics/:slug": {},
+  }),
+});
+// Request Interceptor: Inject Auth Token
+// api.interceptors.Request.use(
+//   async (config) => {
+//     try {
+//       const token = await SecureStore.getItemAsync(AUTH_TOKEN_KEY);
+//       if (token) {
+//         config.headers.Authorization = `Bearer ${token}`;
+//       }
+//     } catch (error) {
+//       console.error("Error retrieving auth token:", error);
+//     }
+//     return config;
+//   },
+//   (error) => {
+//     return Promise.reject(error);
+//   }
+// );
 
-    return Promise.reject(error);
-  }
-);
+// Response Interceptor: Handle Errors
 
 // // Generic API Helper functions for cleaner usage
 // export const apiClient = {

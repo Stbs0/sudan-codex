@@ -2,10 +2,10 @@
 
 import { authClient } from "@/lib/auth-client";
 import { AuthUIProvider } from "@daveyplate/better-auth-ui";
-import { occupationLiteral } from "@sudan-codex/types/schemas";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { ReactNode } from "react";
+import { occupationLiteral } from "@sudan-codex/types";
 
 export function BetterAuthUIProvider({ children }: { children: ReactNode }) {
   const router = useRouter();

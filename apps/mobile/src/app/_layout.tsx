@@ -2,6 +2,7 @@ import { useAnalyticsPosthog } from "@/hooks/analytics";
 import { useAuth } from "@/hooks/useAuth";
 import { NAV_THEME } from "@/lib/theme";
 import PHProvider from "@/providers/PHProvider";
+import { useReactNavigationDevTools } from "@dev-plugins/react-navigation";
 import { ThemeProvider } from "@react-navigation/native";
 import { PortalHost } from "@rn-primitives/portal";
 import {
@@ -10,7 +11,7 @@ import {
   QueryClientProvider,
 } from "@tanstack/react-query";
 import * as Network from "expo-network";
-import { SplashScreen, Stack } from "expo-router";
+import { SplashScreen, Stack, useNavigationContainerRef } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useColorScheme } from "nativewind";
 import React, { useEffect } from "react";
@@ -52,13 +53,9 @@ function RootLayoutNav() {
   useAnalyticsPosthog();
   const { data, isPending } = useAuth();
   const { colorScheme } = useColorScheme();
-  // console.log(process.env);
-  // useEffect(() => {
-  //   warmUpAsync();
-  //   return () => {
-  //     coolDownAsync();
-  //   };
-  // }, []);
+  const navigationRef = useNavigationContainerRef();
+
+  useReactNavigationDevTools(navigationRef);
   useEffect(() => {
     if (isPending) {
       return;
@@ -102,6 +99,7 @@ function RootLayoutNav() {
                 name='about'
                 options={{ title: "About", headerShown: true }}
               />
+              <Stack.Screen name='stats' />
             </Stack.Protected>
             {/* began tabs  */}
             {/* began check if complete profile */}
