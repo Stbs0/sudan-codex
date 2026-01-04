@@ -13,9 +13,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { occupationLiteral } from "@sudan-codex/types/schemas";
 import React from "react";
 import { useFormContext } from "react-hook-form";
+import { occupationLiteral } from "@sudan-codex/types";
 
 interface SelectWithOtherProps {
   name: string;

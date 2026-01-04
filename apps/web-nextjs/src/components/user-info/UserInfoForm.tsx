@@ -14,10 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { DevTool } from "@hookform/devtools";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  tellUsMoreSchema,
-  tellUsMoreSchemaType,
-} from "@sudan-codex/types/schemas";
+import { tellUsMoreSchema, tellUsMoreSchemaType } from "@sudan-codex/types";
 
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";

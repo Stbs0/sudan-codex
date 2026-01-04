@@ -1,14 +1,14 @@
 import { Icon } from "@/components/ui/icon";
 import { Text } from "@/components/ui/text";
 import { cn } from "@/lib/utils";
-import type { DrugProperty } from "@sudan-codex/types";
+import type { DrugWithRelations } from "@sudan-codex/db";
 import { useRouter, type Href } from "expo-router";
 import { Info } from "lucide-react-native";
 import { Pressable, View, type GestureResponderEvent } from "react-native";
 
 type Props = {
   title: string;
-  property: DrugProperty;
+  property: DrugWithRelations[keyof DrugWithRelations];
   className?: string;
   href?: Href;
 };
@@ -47,7 +47,7 @@ const WithPressable = ({
 }) => {
   const router = useRouter();
 
-  const onPress = (e: GestureResponderEvent) => {
+  const onPress = (_e: GestureResponderEvent) => {
     router.push(href);
   };
   return <Pressable onPress={onPress}>{descriptionComponent}</Pressable>;

@@ -99,7 +99,7 @@ function RootLayoutNav() {
                 name='about'
                 options={{ title: "About", headerShown: true }}
               />
-              <Stack.Screen name='(categories)' />
+              <Stack.Screen name='stats' />
             </Stack.Protected>
             {/* began tabs  */}
             {/* began check if complete profile */}

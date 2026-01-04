@@ -1,31 +1,20 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
-import { useModal } from "@/hooks/useModal";
-import type { Drug } from "@sudan-codex/db";
-import * as Haptics from "expo-haptics";
+import type { AgentApiResponseType } from "@sudan-codex/db";
 import { useRouter } from "expo-router";
 import React from "react";
 import { TouchableHighlight, View } from "react-native";
-type Props = Drug;
+type Props = AgentApiResponseType["drugs"][number];
 // FIXME: fix types here
-const DrugCard = ({
+const StatsDrugCard = ({
   brand_name,
   generic_name,
-  agent_name,
   company_name,
-  country_name,
-  id,
   slug,
-  dosage_form,
   pack_size,
   strength,
-  company_id,
-  agent_id,
-  generic_id,
-  country_id,
 }: Props) => {
   // TODO: fix the rerender
-  const { setOpen, setModalData } = useModal();
   const router = useRouter();
 
   const onPress = () => {
@@ -36,30 +25,9 @@ const DrugCard = ({
       },
     });
   };
-  const onLongPress = () => {
-    Haptics.selectionAsync();
-    setOpen(true);
-    setModalData({
-      brand_name,
-      generic_name,
-      agent_name,
-      company_name,
-      country_name,
-      id,
-      slug,
-      dosage_form,
-      pack_size,
-      strength,
-      company_id,
-      agent_id,
-      generic_id,
-      country_id,
-    });
-  };
+
   return (
-    <TouchableHighlight
-      onPress={onPress}
-      onLongPress={onLongPress}>
+    <TouchableHighlight onPress={onPress}>
       <Card className='rounded-none border-2 py-2 shadow-md shadow-black'>
         <CardContent className='gap-1'>
           <View className='gap-1'>
@@ -86,10 +54,6 @@ const DrugCard = ({
                 <Text className='font-extrabold text-green-500 dark:text-green-400'>
                   {generic_name || "NAD"}
                 </Text>
-                <Text className='text-sm font-bold'> — </Text>
-                <Text className='font-bold text-blue-700 dark:text-blue-400'>
-                  {dosage_form || "NAD"}
-                </Text>
               </Text>
             </View>
           </View>
@@ -101,18 +65,6 @@ const DrugCard = ({
               ellipsizeMode='tail'>
               {company_name || "NAD"}
             </Text>
-            <Text
-              className='text-sm font-bold text-orange-700 dark:text-orange-400'
-              numberOfLines={1}
-              ellipsizeMode='tail'>
-              {agent_name || "NAD"}
-            </Text>
-            <Text
-              className='text-sm font-bold text-violet-500 dark:text-violet-400'
-              numberOfLines={1}
-              ellipsizeMode='tail'>
-              {country_name || "NAD"}
-            </Text>
           </View>
         </CardContent>
       </Card>
@@ -121,4 +73,4 @@ const DrugCard = ({
   );
 };
 
-export default DrugCard;
+export default StatsDrugCard;

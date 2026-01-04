@@ -25,7 +25,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import {
   tellUsMoreSchema,
   type tellUsMoreSchemaType,
-} from "@sudan-codex/types/schemas";
+} from "@sudan-codex/types";
 import { Redirect, useRouter } from "expo-router";
 import { usePostHog } from "posthog-react-native";
 import React from "react";

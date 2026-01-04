@@ -71,7 +71,7 @@ export function useInfiniteServerScroll(initialDrugs: FetchedDrugs) {
     data,
     fetchNextPage: loadMore,
     hasNextPage: hasMore,
-  } = useInfiniteQuery<InfiniteQueryType>(
+  } = useInfiniteQuery(
     getQueryOptions({
       search,
       filterBy,

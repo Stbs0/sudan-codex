@@ -4,7 +4,7 @@ import { useInfiniteServerScroll } from "@/hooks/useInfiniteScroll";
 import ModalProvider from "@/providers/ModalProvider";
 import DrugCard from "@/screens/Drug-list/DrugCard/DrugCard";
 import { LegendList, type LegendListRef } from "@legendapp/list";
-import type { Drug } from "@sudan-codex/types";
+import type { Drug } from "@sudan-codex/db";
 import React, { useCallback, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator, View } from "react-native";
@@ -46,7 +46,8 @@ const DrugList = () => {
         style={{ marginTop: 16 }}
       />
     );
-  const drugList = data!.pages.flatMap((p) => p.data) ?? [];
+  if (!data) return null;
+  const drugList = data.pages.flatMap((p) => p.data) ?? [];
   return (
     <ModalProvider>
       <LegendList

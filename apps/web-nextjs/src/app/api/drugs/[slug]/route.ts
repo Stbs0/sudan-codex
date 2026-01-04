@@ -15,6 +15,7 @@ export async function GET(
   }
 
   try {
+    // TODO: Cache this and remove the unwanted fields
     const drug = await getDrugBySlug(slug);
 
     if (!drug) {

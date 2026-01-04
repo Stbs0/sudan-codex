@@ -1,4 +1,4 @@
-import { tellUsMoreSchema } from "@sudan-codex/types/schemas";
+import { tellUsMoreSchema } from "@sudan-codex/types";
 
 describe("tellUsMoreSchema", () => {
   const validData = {

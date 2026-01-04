@@ -1,7 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-import { OPENFDA_SEARCH_URL } from "@sudan-codex/types/constants";
+import { OPENFDA_SEARCH_URL } from "@sudan-codex/types";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

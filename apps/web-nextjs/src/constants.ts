@@ -1,5 +1,4 @@
 import { BarChart, Home, Pill } from "lucide-react";
-export * as constant from "@sudan-codex/types/constants";
 
 export const NAV_ITEMS = [
   {

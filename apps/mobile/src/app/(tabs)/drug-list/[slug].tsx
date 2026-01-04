@@ -2,7 +2,6 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
 import { api } from "@/lib/api-client";
 import DrugPropertyDescription from "@/screens/Drug-list/DrugCard/DrugPropertyDescription";
-import type { Drug } from "@sudan-codex/types";
 import { useQuery } from "@tanstack/react-query";
 import { Stack, useLocalSearchParams } from "expo-router";
 import React from "react";
@@ -12,11 +11,15 @@ const DrugInfo = () => {
   const { t } = useTranslation();
   const { slug } = useLocalSearchParams<{ slug: string }>();
 
-  const { data: drug, isError } = useQuery<DrugWithSlugs>({
+  const { data: drug, isError } = useQuery({
     queryKey: ["drugInfo", slug],
-
     queryFn: async () => {
-      const res = await api.get<Drug>(`/api/drugs/${slug}`);
+      const res = await api(`/api/drugs/:slug`, {
+        params: { slug },
+      });
+      if (res.error) {
+        throw new Error(`Failed to fetch drug: ${res.error.message}`);
+      }
 
       return res.data;
     },
@@ -52,7 +55,7 @@ const DrugInfo = () => {
                 className='border-green-700 dark:border-green-400'
                 property={drug.generic_name}
                 href={{
-                  pathname: "/(categories)/generics/[slug]",
+                  pathname: "/stats/generics/[slug]",
                   params: { slug: drug.generic?.slug ?? "" },
                 }}
               />
@@ -76,7 +79,7 @@ const DrugInfo = () => {
                 className='border-pink-700 dark:border-pink-400'
                 property={drug.company_name}
                 href={{
-                  pathname: "/(categories)/companies/[slug]",
+                  pathname: "/stats/companies/[slug]",
                   params: { slug: drug.company?.slug ?? "" },
                 }}
               />
@@ -86,7 +89,7 @@ const DrugInfo = () => {
                 className='border-orange-700 dark:border-orange-400'
                 href={{
                   // FIXME: remove the ?? "" bc some drugs dosnt have a slug
-                  pathname: "/(categories)/agents/[slug]",
+                  pathname: "/stats/agents/[slug]",
                   params: { slug: drug.agent?.slug ?? "" },
                 }}
               />
