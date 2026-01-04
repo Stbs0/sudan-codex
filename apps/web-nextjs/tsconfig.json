@@ -15,6 +15,7 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+    "composite": true,
     "plugins": [
       {
         "name": "next"
@@ -32,6 +33,10 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
+  ],
+  "references": [
+    { "path": "../../packages/db" },
+    { "path": "../../packages/types" }
   ],
   "exclude": ["node_modules"]
 }

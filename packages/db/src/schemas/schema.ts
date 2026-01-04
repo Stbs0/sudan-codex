@@ -1,5 +1,7 @@
 import { relations } from "drizzle-orm";
 import { index, int, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { createSelectSchema } from "drizzle-zod";
+import z from "zod";
 
 export const countriesTable = sqliteTable("countries", {
   id: int("id").primaryKey({ autoIncrement: true }),
@@ -48,36 +50,8 @@ export const drugsTable = sqliteTable(
     index("agent_name_idx").on(table.agent_name),
     index("generic_name_idx").on(table.generic_name),
     index("country_name_idx").on(table.country_name),
-  ]
+  ],
 );
-export const drugsRelations = relations(drugsTable, ({ one }) => ({
-  company: one(companiesTable, {
-    fields: [drugsTable.company_id],
-    references: [companiesTable.id],
-  }),
-  agent: one(agentsTable, {
-    fields: [drugsTable.agent_id],
-    references: [agentsTable.id],
-  }),
-  generic: one(genericsTable, {
-    fields: [drugsTable.generic_id],
-    references: [genericsTable.id],
-  }),
-  country: one(countriesTable, {
-    fields: [drugsTable.country_id],
-    references: [countriesTable.id],
-  }),
-  stats: one(drugStatsTable, {
-    fields: [drugsTable.id],
-    references: [drugStatsTable.drug_id],
-  }),
-}));
-
-export type Country = typeof countriesTable.$inferSelect;
-export type Company = typeof companiesTable.$inferSelect;
-export type Agent = typeof agentsTable.$inferSelect;
-export type Generic = typeof genericsTable.$inferSelect;
-export type Drug = typeof drugsTable.$inferSelect;
 
 // --- 1. Company Stats ---
 // "When viewing a Company, show me its footprint."
@@ -139,6 +113,29 @@ export const drugStatsTable = sqliteTable("drug_stats", {
   bookmark_count: int("bookmark_count").default(0),
 });
 
+export const drugsRelations = relations(drugsTable, ({ one }) => ({
+  company: one(companiesTable, {
+    fields: [drugsTable.company_id],
+    references: [companiesTable.id],
+  }),
+  agent: one(agentsTable, {
+    fields: [drugsTable.agent_id],
+    references: [agentsTable.id],
+  }),
+  generic: one(genericsTable, {
+    fields: [drugsTable.generic_id],
+    references: [genericsTable.id],
+  }),
+  country: one(countriesTable, {
+    fields: [drugsTable.country_id],
+    references: [countriesTable.id],
+  }),
+  stats: one(drugStatsTable, {
+    fields: [drugsTable.id],
+    references: [drugStatsTable.drug_id],
+  }),
+}));
+
 // Add these to your existing relations
 
 // 1. Link Companies to their Stats
@@ -164,5 +161,55 @@ export const genericsRelations = relations(genericsTable, ({ one }) => ({
     references: [genericStatsTable.generic_id],
   }),
 }));
-
+export type Country = typeof countriesTable.$inferSelect;
+export type Company = typeof companiesTable.$inferSelect;
+export type Agent = typeof agentsTable.$inferSelect;
+export type Generic = typeof genericsTable.$inferSelect;
+export type Drug = typeof drugsTable.$inferSelect;
+export type DrugStats = typeof drugStatsTable.$inferSelect;
+export type CompanyStats = typeof companyStatsTable.$inferSelect;
+export type AgentStats = typeof agentStatsTable.$inferSelect;
+export type GenericStats = typeof genericStatsTable.$inferSelect;
 // 4. Link Drugs to their Stats
+export const DrugSelectSchema = createSelectSchema(drugsTable);
+export const AgentSelectSchema = createSelectSchema(agentsTable);
+export const GenericSelectSchema = createSelectSchema(genericsTable);
+export const CompanySelectSchema = createSelectSchema(companiesTable);
+export const CountrySelectSchema = createSelectSchema(countriesTable);
+export const DrugWithStatsSelectSchema = createSelectSchema(drugStatsTable);
+export const CompanyWithStatsSelectSchema =
+  createSelectSchema(companyStatsTable);
+export const AgentWithStatsSelectSchema = createSelectSchema(agentStatsTable);
+export const GenericWithStatsSelectSchema =
+  createSelectSchema(genericStatsTable);
+
+export const DrugWithRelationsSelectSchema = DrugSelectSchema.extend({
+  company: CompanySelectSchema.nullable(),
+  agent: AgentSelectSchema.nullable(),
+  generic: GenericSelectSchema.nullable(),
+});
+export type DrugWithRelations = z.infer<typeof DrugWithRelationsSelectSchema>;
+
+export const AgentApiResponseSchema = z.object({
+  data: z.array(
+    DrugSelectSchema.pick({
+      slug: true,
+      brand_name: true,
+      company_name: true,
+      generic_name: true,
+      pack_size: true,
+      strength: true,
+    }).extend({
+      company: CompanySelectSchema.nullable(),
+      generic: GenericSelectSchema.nullable(),
+    }),
+  ),
+  stats: AgentWithStatsSelectSchema.omit({ id: true, agent_id: true }),
+  name: z.string(),
+});
+
+export type AgentApiResponseType = z.infer<typeof AgentApiResponseSchema>;
+export const DrugListApiResponseSchema = z.object({
+  data: z.array(DrugSelectSchema),
+  nextPage: z.number().nullable(),
+});

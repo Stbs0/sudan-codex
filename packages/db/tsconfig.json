@@ -1,20 +1,17 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "lib": ["ESNext"],
-    "module": "esnext",
-    "target": "esnext",
-    "moduleResolution": "bundler",
-    "moduleDetection": "force",
-    "allowImportingTsExtensions": true,
-    "noEmit": true,
+    "outDir": "dist",
+    "composite": true,
+    "rootDir": "src",
     "strict": true,
-    "downlevelIteration": true,
+    "declaration": true,
     "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowJs": true,
-    "types": ["bun-types"]
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "isolatedModules": true
   },
-  "include": ["src", "index.ts", "drizzle-production.config.ts","drizzle-development.config.ts"]
+  "references": [{ "path": "../../packages/types" }],
+  "include": ["src/**/*"],
+  "exclude": [ "drizzle-production.config.ts", "drizzle-development.config.ts"]
 }

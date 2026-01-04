@@ -9,10 +9,15 @@
     "erasableSyntaxOnly": true,
     "noImplicitAny": true,
     "baseUrl": ".",
+    "composite": true,
     "paths": {
       "@/*": ["src/*"]
     }
   },
+  "references": [
+    { "path": "../../packages/types" },
+    { "path": "../../packages/db" }
+  ],
   "include": [
     "**/*.ts",
     "**/*.tsx",
