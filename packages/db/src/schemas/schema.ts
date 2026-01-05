@@ -207,8 +207,46 @@ export const AgentApiResponseSchema = z.object({
   stats: AgentWithStatsSelectSchema.omit({ id: true, agent_id: true }),
   name: z.string(),
 });
+export const CompanyApiResponseSchema = z.object({
+  drugs: z.array(
+    DrugSelectSchema.pick({
+      slug: true,
+      brand_name: true,
+      generic_name: true,
+      agent_name: true,
+      pack_size: true,
+      strength: true,
+    }).extend({
+      agent: AgentSelectSchema.pick({ slug: true }).nullable(),
+      generic: GenericSelectSchema.pick({ slug: true }).nullable(),
+    }),
+  ),
+  stats: CompanyWithStatsSelectSchema.omit({ id: true, company_id: true }),
+  name: z.string(),
+});
+export const GenericApiResponseSchema = z.object({
+  drugs: z.array(
+    DrugSelectSchema.pick({
+      slug: true,
+      brand_name: true,
+      company_name: true,
+      agent_name: true,
+      pack_size: true,
+      strength: true,
+    }).extend({
+      agent: AgentSelectSchema.pick({ slug: true }).nullable(),
+      company: CompanySelectSchema.pick({ slug: true }).nullable(),
+    }),
+  ),
+  stats: GenericWithStatsSelectSchema.omit({ id: true, generic_id: true }),
+  name: z.string(),
+});
 
 export type AgentApiResponseType = z.infer<typeof AgentApiResponseSchema>;
+export type CompanyApiResponseType = z.infer<typeof CompanyApiResponseSchema>;
+export type GenericApiResponseType = z.infer<typeof GenericApiResponseSchema>;
+
+
 export const DrugListApiResponseSchema = z.object({
   data: z.array(DrugSelectSchema),
   nextPage: z.number().nullable(),

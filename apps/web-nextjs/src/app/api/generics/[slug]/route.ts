@@ -33,7 +33,7 @@ export async function GET(
       pack_size: true,
       slug: true,
       company_name: true,
-      generic_name: true,
+      agent_name: true,
       strength: true,
     },
     with: {
@@ -57,5 +57,6 @@ export async function GET(
       related_companies: generic.stats.related_companies,
     },
     drugs: drugsWithAll,
+    name: generic.name,
   });
 }

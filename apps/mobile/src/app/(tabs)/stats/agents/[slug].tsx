@@ -1,9 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Icon } from "@/components/ui/icon";
 import { Text } from "@/components/ui/text";
-import { api } from "@/lib/api-client";
+import { useStatsTable } from "@/hooks/useStatsTable";
 import type { AgentApiResponseType } from "@sudan-codex/db";
-import { useQuery } from "@tanstack/react-query";
 import {
   createColumnHelper,
   flexRender,
@@ -13,7 +12,6 @@ import {
   type Header,
   type HeaderGroup,
   type Row,
-  type SortingState,
 } from "@tanstack/react-table";
 import { Stack, useLocalSearchParams, useRouter } from "expo-router";
 import {
@@ -21,7 +19,7 @@ import {
   ArrowUpDown,
   ArrowUpNarrowWide,
 } from "lucide-react-native";
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import {
   ActivityIndicator,
   ScrollView,
@@ -35,21 +33,10 @@ const columnHelper = createColumnHelper<DrugData>();
 
 const AgentScreen = () => {
   const { slug } = useLocalSearchParams<{ slug: string }>();
-  const [sorting, setSorting] = useState<SortingState>([
-    { id: "brand_name", desc: false },
-  ]);
-
-  const { data, error, isFetching } = useQuery({
-    queryKey: ["drugInfo", slug],
-    queryFn: async () => {
-      const res = await api(`/api/agents/:slug`, {
-        params: { slug },
-      });
-      if (res.error) {
-        throw new Error("Failed to fetch drug info");
-      }
-      return res.data;
-    },
+  const { data, error, isFetching, sorting, setSorting } = useStatsTable({
+    url: "/api/agents/:slug",
+    qKey: "agents",
+    slug,
   });
 
   const columns = useMemo(

@@ -33,7 +33,7 @@ export async function GET(
       brand_name: true,
       pack_size: true,
       slug: true,
-      company_name: true,
+      agent_name: true,
       generic_name: true,
       strength: true,
     },
@@ -50,8 +50,7 @@ export async function GET(
       },
     },
   });
-
-  return Response.json({
+  const res = {
     stats: {
       total_brands: company.stats.total_brands,
       related_generics: company.stats.related_generics,
@@ -59,5 +58,6 @@ export async function GET(
     },
     drugs: drugsWithAll,
     name: company.name,
-  });
+  };
+  return Response.json(res);
 }

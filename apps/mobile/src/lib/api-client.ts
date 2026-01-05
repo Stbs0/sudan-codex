@@ -1,11 +1,12 @@
 import { createFetch, createSchema } from "@better-fetch/fetch";
 import {
   AgentApiResponseSchema,
+  CompanyApiResponseSchema,
   DrugListApiResponseSchema,
   DrugWithRelationsSelectSchema,
+  GenericApiResponseSchema,
 } from "@sudan-codex/db/schema";
-import { toast } from "sonner-native";
-import z from "zod";
+import { z } from "zod";
 
 // Constants
 const BASE_URL = process.env.EXPO_PUBLIC_BACKEND_URI;
@@ -19,31 +20,31 @@ export const api = createFetch({
     delay: 1000,
   },
   defaultOutput: z.any(),
-  onError(context) {
-    const status = context.response?.status;
-    const message =
-      (context.error.response?.data as { message?: string })?.message ||
-      context.error.message;
+  // onError(context) {
+  //   const status = context.response?.status;
+  //   const message =
+  //     (context.error.response?.data as { message?: string })?.message ||
+  //     context.error.message;
 
-    // Log error for debugging
-    console.error(`API Error [${status}]:`, message);
-    // Global Error Handling
-    if (status === 401) {
-      // Optional: Trigger logout or redirect to login
-      // For now, we just log it. The UI should handle 401 states.
-      console.warn("Unauthorized access. Token may be expired.");
-    } else if (status === 500) {
-      toast.error("Server Error", {
-        description:
-          "Something went wrong on the server. Please try again later.",
-      });
-    } else if (status === 0) {
-      // Network error
-      toast.error("Network Error", {
-        description: "Please check your internet connection.",
-      });
-    }
-  },
+  //   // Log error for debugging
+  //   console.error(`API Error [${status}]:`, message);
+  //   // Global Error Handling
+  //   if (status === 401) {
+  //     // Optional: Trigger logout or redirect to login
+  //     // For now, we just log it. The UI should handle 401 states.
+  //     console.warn("Unauthorized access. Token may be expired.");
+  //   } else if (status === 500) {
+  //     toast.error("Server Error", {
+  //       description:
+  //         "Something went wrong on the server. Please try again later.",
+  //     });
+  //   } else if (status === 0) {
+  //     // Network error
+  //     toast.error("Network Error", {
+  //       description: "Please check your internet connection.",
+  //     });
+  //   }
+  // },
   // plugins: [
   //   logger({
   //     enabled: process.env.NODE_ENV === "development",
@@ -55,7 +56,10 @@ export const api = createFetch({
       params: z.object({ slug: z.string() }),
     },
     "/api/auth/:all": {},
-    "/api/companies/:slug": {},
+    "/api/companies/:slug": {
+      output: CompanyApiResponseSchema,
+      params: z.object({ slug: z.string() }),
+    },
     "/api/drugs": {
       output: DrugListApiResponseSchema,
       query: z.object({
@@ -73,7 +77,10 @@ export const api = createFetch({
       }),
     },
     "/api/drugs/:slug": { output: DrugWithRelationsSelectSchema },
-    "/api/generics/:slug": {},
+    "/api/generics/:slug": {
+      output: GenericApiResponseSchema,
+      params: z.object({ slug: z.string() }),
+    },
   }),
 });
 // Request Interceptor: Inject Auth Token
