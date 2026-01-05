@@ -82,7 +82,7 @@
 
     "dev": {
       "cache": false,
-      "inputs": ["$TURBO_DEFAULT$", ".env.development.local"],
+      "inputs": ["$TURBO_DEFAULT$", ".env.development.local"],"passThroughEnv": ["ANDROID_HOME"],
       "env": [
         "NEXT_PUBLIC_API_URL",
         "NEXT_PUBLIC_POSTHOG_HOST",

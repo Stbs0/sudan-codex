@@ -4,7 +4,7 @@ import React from "react";
 export default function TabLayout() {
   // const { t } = useTranslation();
   return (
-    <Stack>
+    <Stack screenOptions={{ title: "loading..." }}>
       <Stack.Screen name='agents/[slug]' />
 
       <Stack.Screen

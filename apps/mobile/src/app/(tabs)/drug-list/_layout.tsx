@@ -13,13 +13,18 @@ import { Stack } from "expo-router";
 //     />
 //   );
 // };
+//
+
 export default function DrugListLayout() {
   // const { t } = useTranslation();
   return (
     <Stack>
       <Stack.Screen name='index' />
 
-      <Stack.Screen name='[slug]' />
+      <Stack.Screen
+        name='[slug]'
+        options={{ headerBackVisible: true }}
+      />
     </Stack>
   );
 }
