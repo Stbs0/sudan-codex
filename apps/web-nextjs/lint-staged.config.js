@@ -4,6 +4,6 @@ export default {
 
   "**/*.{json,md,yaml}": "prettier --write",
 
-  "*": ["bunx secretlint"],
+  "apps/web-nextjs/**": "secretlint",
   "**/*.ts?(x)": () => "tsc -p ./tsconfig.json --noEmit",
 };

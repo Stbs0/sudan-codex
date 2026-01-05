@@ -3,6 +3,6 @@ export default {
 
   "**/*.{json,md,yaml}": "prettier --write",
 
-  "*": ["bunx secretlint"],
+  "apps/mobile/**": [" secretlint"],
   "**/*.ts?(x)": () => "tsc -p ./tsconfig.json --noEmit",
 };

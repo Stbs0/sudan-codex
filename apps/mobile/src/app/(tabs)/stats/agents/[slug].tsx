@@ -132,10 +132,36 @@ const AgentScreen = () => {
     getSortedRowModel: getSortedRowModel(),
   });
 
-  if (isFetching) return <ActivityIndicator size='large' />;
-  if (error) return <Text>{error.message}</Text>;
-  if (!data) return <Text>No data found</Text>;
+  if (isFetching) {
+    return (
+      <View className='flex-1 items-center justify-center'>
+        <ActivityIndicator size='large' />
+        <Text className='mt-4 text-muted-foreground'>
+          Loading agent details...
+        </Text>
+      </View>
+    );
+  }
 
+  if (error) {
+    return (
+      <View className='flex-1 items-center justify-center p-4'>
+        <Text className='text-center text-destructive'>
+          Failed to load agent information. Please try again.
+        </Text>
+      </View>
+    );
+  }
+
+  if (!data) {
+    return (
+      <View className='flex-1 items-center justify-center p-4'>
+        <Text className='text-center text-muted-foreground'>
+          No agent data available for this entry.
+        </Text>
+      </View>
+    );
+  }
   const stats = data.stats;
 
   return (
@@ -226,7 +252,7 @@ type TableHeaderProps = {
   headerGroup: HeaderGroup<DrugData>;
 };
 const TableHeader = ({ header, index, headerGroup }: TableHeaderProps) => {
-  // eslint-disable-next-line react-compiler/react-compiler
+  // the sort icon will not render when clicked on the table head
   "use no memo";
 
   return (
