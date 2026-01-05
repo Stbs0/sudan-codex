@@ -1,5 +1,4 @@
 import { createFetch, createSchema } from "@better-fetch/fetch";
-import { logger } from "@better-fetch/logger";
 import {
   AgentApiResponseSchema,
   DrugListApiResponseSchema,
@@ -45,12 +44,11 @@ export const api = createFetch({
       });
     }
   },
-  plugins: [
-    logger({
-      enabled: process.env.NODE_ENV === "development",
-      verbose: true,
-    }),
-  ],
+  // plugins: [
+  //   logger({
+  //     enabled: process.env.NODE_ENV === "development",
+  //   }),
+  // ],
   schema: createSchema({
     "/api/agents/:slug": {
       output: AgentApiResponseSchema,

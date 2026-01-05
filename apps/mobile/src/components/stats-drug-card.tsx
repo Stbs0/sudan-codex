@@ -1,11 +1,11 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
 import type { AgentApiResponseType } from "@sudan-codex/db";
 import { useRouter } from "expo-router";
 import React from "react";
 import { TouchableHighlight, View } from "react-native";
+
 type Props = AgentApiResponseType["drugs"][number];
-// FIXME: fix types here
+
 const StatsDrugCard = ({
   brand_name,
   generic_name,
@@ -14,7 +14,6 @@ const StatsDrugCard = ({
   pack_size,
   strength,
 }: Props) => {
-  // TODO: fix the rerender
   const router = useRouter();
 
   const onPress = () => {
@@ -27,49 +26,49 @@ const StatsDrugCard = ({
   };
 
   return (
-    <TouchableHighlight onPress={onPress}>
-      <Card className='rounded-none border-2 py-2 shadow-md shadow-black'>
-        <CardContent className='gap-1'>
-          <View className='gap-1'>
-            <View className='flex-row'>
-              <Text
-                numberOfLines={1}
-                ellipsizeMode='tail'>
-                <Text className='font-extrabold text-neutral-700 dark:text-blue-200'>
-                  {(brand_name || "NAD") + " " + (strength || "NAD")}
-                </Text>
-                <Text className='font-bold'> — </Text>
-                <Text
-                  className='text-rose-700 dark:text-rose-400'
-                  numberOfLines={1}
-                  ellipsizeMode='tail'>
-                  {pack_size || "NAD"}
-                </Text>
-              </Text>
-            </View>
-            <View className='gap-1 text-sm font-bold'>
-              <Text
-                numberOfLines={2}
-                ellipsizeMode='tail'>
-                <Text className='font-extrabold text-green-500 dark:text-green-400'>
-                  {generic_name || "NAD"}
-                </Text>
-              </Text>
-            </View>
-          </View>
+    <TouchableHighlight
+      onPress={onPress}
+      underlayColor='rgba(0,0,0,0.05)'
+      className='rounded-lg'>
+      <View className='min-h-[60px] flex-row overflow-hidden rounded-lg border border-border bg-card'>
+        {/* Brand Name & Strength Column */}
+        <View className='w-[28%] justify-center border-r border-border p-2'>
+          <Text className='text-xs font-bold text-neutral-700 dark:text-blue-200'>
+            {brand_name || "NAD"}
+          </Text>
+          <Text className='mt-0.5 text-[10px] text-neutral-500 dark:text-neutral-400'>
+            {strength || "NAD"}
+          </Text>
+        </View>
 
-          <View className='items-start gap-1'>
-            <Text
-              className='text-sm font-bold text-pink-700 dark:text-pink-400'
-              numberOfLines={1}
-              ellipsizeMode='tail'>
-              {company_name || "NAD"}
-            </Text>
-          </View>
-        </CardContent>
-      </Card>
+        {/* Generic Name Column */}
+        <View className='w-[28%] justify-center border-r border-border p-2'>
+          <Text className='text-xs font-semibold text-green-600 dark:text-green-400'>
+            {generic_name || "NAD"}
+          </Text>
+        </View>
+
+        {/* Pack Size Column */}
+        <View className='w-[16%] justify-center border-r border-border p-2'>
+          <Text
+            className='text-[10px] text-rose-700 dark:text-rose-400'
+            numberOfLines={3}
+            ellipsizeMode='tail'>
+            {pack_size || "NAD"}
+          </Text>
+        </View>
+
+        {/* Company Column */}
+        <View className='w-[28%] justify-center p-2'>
+          <Text
+            className='text-[10px] font-medium text-pink-700 dark:text-pink-400'
+            numberOfLines={3}
+            ellipsizeMode='tail'>
+            {company_name || "NAD"}
+          </Text>
+        </View>
+      </View>
     </TouchableHighlight>
-    // </Link>
   );
 };
 

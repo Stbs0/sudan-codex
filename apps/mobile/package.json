@@ -51,6 +51,7 @@
     "@sudan-codex/db": "workspace:*",
     "@sudan-codex/types": "workspace:*",
     "@tanstack/react-query": "^5.90.11",
+    "@tanstack/react-table": "^8.21.3",
     "axios": "^1.11.0",
     "babel-plugin-inline-import": "^3.0.0",
     "better-auth": "^1.4.6",

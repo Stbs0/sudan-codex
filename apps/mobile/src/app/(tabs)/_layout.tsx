@@ -34,6 +34,14 @@ export default function TabLayout() {
         options={{
           tabBarLabel: t("tabs.drugList"),
           headerShown: false,
+          title: "loading...",
+        }}
+      />
+      <Tabs.Screen
+        name='stats'
+        options={{
+          href: null,
+          headerShown: false,
         }}
       />
 

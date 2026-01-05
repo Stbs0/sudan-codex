@@ -19,6 +19,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { Toaster } from "sonner-native";
 
 import { AuthProvider } from "@/providers/AuthProvider";
+import { ActivityIndicator, View } from "react-native";
 import "react-native-reanimated";
 import "../global.css";
 import "../lib/i18next";
@@ -34,9 +35,9 @@ onlineManager.setEventListener((setOnline) => {
 });
 
 export { ErrorBoundary } from "expo-router";
-export const unstable_settings = {
-  initialRouteName: "(tabs)/drug-list/index",
-};
+// export const unstable_settings = {
+//   initialRouteName: "(tabs)/drug-list/index",
+// };
 export default function RootLayout() {
   return (
     <PHProvider>
@@ -63,7 +64,16 @@ function RootLayoutNav() {
 
     SplashScreen.hideAsync();
   }, [isPending]);
-  console.log("isPending", isPending);
+
+  if (isPending) {
+    return (
+      <View className='flex-1 items-center justify-center'>
+        <ActivityIndicator size='large' />
+      </View>
+    );
+  }
+
+  // console.log("isPending", isPending);
   // console.log("data", data);
   // console.log("gaurde complate", data === null);
   // console.log(
@@ -99,7 +109,6 @@ function RootLayoutNav() {
                 name='about'
                 options={{ title: "About", headerShown: true }}
               />
-              <Stack.Screen name='stats' />
             </Stack.Protected>
             {/* began tabs  */}
             {/* began check if complete profile */}

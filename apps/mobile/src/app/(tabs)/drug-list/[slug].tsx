@@ -24,7 +24,6 @@ const DrugInfo = () => {
       return res.data;
     },
   });
-  console.log(drug);
   if (isError)
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
