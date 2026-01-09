@@ -27,8 +27,3 @@ export const getDrugInfo = async (
     throw error;
   }
 };
-
-export const fetchDrugList = async () => {
-  const { default: drugList } = await import("../assets/data/drugData.json");
-  return drugList;
-};

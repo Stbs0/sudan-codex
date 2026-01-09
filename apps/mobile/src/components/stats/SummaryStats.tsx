@@ -1,6 +1,14 @@
+import { Icon } from "@/components/ui/icon";
+import { Text } from "@/components/ui/text";
+import {
+  Building2,
+  FlaskConical,
+  Pill,
+  Tag,
+  UserCheck,
+} from "lucide-react-native";
 import { View } from "react-native";
-import { Card, CardContent, CardTitle } from "../ui/card";
-import { Text } from "../ui/text";
+import { Card, CardContent } from "../ui/card";
 
 interface SummaryData {
   totalDrugs: number;
@@ -13,15 +21,30 @@ interface SummaryData {
 interface StatCardProps {
   label: string;
   value: number;
+  icon: any;
   color: string;
+  bgColor: string;
 }
 
-function StatCard({ label, value, color }: StatCardProps) {
+function StatCard({ label, value, icon, color, bgColor }: StatCardProps) {
   return (
-    <Card className={`rounded-lg border-l-4 p-6 ${color}`}>
-      <CardTitle className="">{label}</CardTitle>
-      <CardContent className="pl-0">
-        <Text className="text-3xl font-bold">{value.toLocaleString()}</Text>
+    <Card className='flex-1 overflow-hidden border-none bg-card shadow-sm'>
+      <CardContent className='p-4'>
+        <View className='flex-row items-center justify-between'>
+          <View className={`rounded-xl p-2 ${bgColor}`}>
+            <Icon
+              as={icon}
+              size={24}
+              className={color}
+            />
+          </View>
+          <Text className='text-2xl font-bold text-foreground'>
+            {value.toLocaleString()}
+          </Text>
+        </View>
+        <Text className='mt-3 text-xs font-medium uppercase tracking-wider text-muted-foreground'>
+          {label}
+        </Text>
       </CardContent>
     </Card>
   );
@@ -29,35 +52,52 @@ function StatCard({ label, value, color }: StatCardProps) {
 
 export default function SummaryStats({ data }: { data: SummaryData }) {
   const stats = [
-    { label: "Total Drugs", value: data.totalDrugs, color: "border-cyan-500" },
+    {
+      label: "Total Drugs",
+      value: data.totalDrugs,
+      icon: Pill,
+      color: "text-blue-600 dark:text-blue-400",
+      bgColor: "bg-blue-100 dark:bg-blue-900/30",
+    },
     {
       label: "Companies",
       value: data.totalCompanies,
-      color: "border-blue-500",
+      icon: Building2,
+      color: "text-emerald-600 dark:text-emerald-400",
+      bgColor: "bg-emerald-100 dark:bg-emerald-900/30",
     },
     {
       label: "Brand Names",
       value: data.totalBrandNames,
-      color: "border-indigo-500",
+      icon: Tag,
+      color: "text-indigo-600 dark:text-indigo-400",
+      bgColor: "bg-indigo-100 dark:bg-indigo-900/30",
     },
     {
       label: "Generics",
       value: data.totalGenerics,
-      color: "border-purple-500",
+      icon: FlaskConical,
+      color: "text-purple-600 dark:text-purple-400",
+      bgColor: "bg-purple-100 dark:bg-purple-900/30",
     },
-    { label: "Agents", value: data.totalAgents, color: "border-fuchsia-500" },
+    {
+      label: "Agents",
+      value: data.totalAgents,
+      icon: UserCheck,
+      color: "text-rose-600 dark:text-rose-400",
+      bgColor: "bg-rose-100 dark:bg-rose-900/30",
+    },
   ];
 
   return (
-    <View className="mb-12 px-6">
-      <View className="gap-4">
+    <View className='mb-8 px-6'>
+      <View className='flex-row flex-wrap gap-4'>
         {stats.map((stat, index) => (
-          <StatCard
+          <View
             key={index}
-            label={stat.label}
-            value={stat.value}
-            color={stat.color}
-          />
+            className={index === 0 ? "w-full" : "w-[47%]"}>
+            <StatCard {...stat} />
+          </View>
         ))}
       </View>
     </View>

@@ -1,29 +1,54 @@
 import Header from "@/components/stats/Header";
 import { data } from "@/components/stats/pharmaceuticalData";
+import { StatTable } from "@/components/stats/StatTable";
 import SummaryStats from "@/components/stats/SummaryStats";
-import TopAgents from "@/components/stats/TopAgents";
-import TopCompanies from "@/components/stats/TopCompanies";
-import TopGenerics from "@/components/stats/TopGenerics";
-import { Text } from "@/components/ui/text"; // Import Text component for titles
+import { Text } from "@/components/ui/text";
 import React from "react";
 import { ScrollView, View } from "react-native";
 
 export default function App() {
   return (
-    <ScrollView>
+    <ScrollView
+      className='flex-1 bg-background'
+      showsVerticalScrollIndicator={false}>
       <Header />
-      <SummaryStats data={data.summaryData} />
-      <View className='space-y-8 px-6'>
-        {/* Added padding and spacing */}
-        {/* TODO: remove the cards and add a proper table */}
-        <Text className='text-2xl font-semibold'>Top Companies</Text>
-        <TopCompanies companies={data.topCompanies} />
-        <Text className='text-2xl font-semibold'>Top Agents</Text>
-        <TopAgents agents={data.topAgents} />
-        <Text className='text-2xl font-semibold'>Top Generic Medications</Text>
-        <TopGenerics generics={data.topGenerics} />
+      <View className=''>
+        <SummaryStats data={data.summaryData} />
       </View>
-      <View style={{ height: 40 }} />
+
+      <View className='space-y-2 px-6'>
+        <View className='mb-4'>
+          <Text className='text-xl font-bold text-foreground'>
+            Distribution & Rankings
+          </Text>
+          <Text className='text-sm text-muted-foreground'>
+            Detailed breakdown of market leaders across categories
+          </Text>
+        </View>
+
+        <StatTable
+          title='Top Companies'
+          data={data.topCompanies}
+          labelHeader='Company Name'
+          countHeader='Drugs'
+        />
+
+        <StatTable
+          title='Top Agents'
+          data={data.topAgents}
+          labelHeader='Agent Name'
+          countHeader='Represented'
+        />
+
+        <StatTable
+          title='Top Generic Medications'
+          data={data.topGenerics}
+          labelHeader='Generic Name'
+          countHeader='Variations'
+        />
+      </View>
+
+      <View style={{ height: 60 }} />
     </ScrollView>
   );
 }
