@@ -16,6 +16,7 @@ import {
 } from "@tanstack/react-table";
 import { Stack, useLocalSearchParams } from "expo-router";
 import React, { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { ActivityIndicator, ScrollView, View } from "react-native";
 
 const columnHelper =
@@ -23,6 +24,7 @@ const columnHelper =
 
 const AgentScreen = () => {
   const { slug } = useLocalSearchParams<{ slug: string }>();
+  const { t } = useTranslation();
   const { data, error, isFetching, sorting, setSorting } = useStatsTable({
     url: "/api/agents/:slug",
     qKey: "agents",
@@ -32,7 +34,7 @@ const AgentScreen = () => {
   const columns = useMemo(
     () => [
       columnHelper.accessor("brand_name", {
-        header: "Brand",
+        header: t("stats.table.headers.brand"),
         sortingFn: "alphanumeric",
         size: 150,
         cell: (info) => (
@@ -53,7 +55,7 @@ const AgentScreen = () => {
         ),
       }),
       columnHelper.accessor("generic_name", {
-        header: "Generic",
+        header: t("stats.table.headers.generic"),
         sortingFn: "alphanumeric",
         size: 180,
         cell: (info) => (
@@ -66,7 +68,7 @@ const AgentScreen = () => {
         ),
       }),
       columnHelper.accessor("pack_size", {
-        header: "Pack",
+        header: t("stats.table.headers.pack"),
         sortingFn: "alphanumeric",
         size: 100,
         cell: (info) => (
@@ -79,7 +81,7 @@ const AgentScreen = () => {
         ),
       }),
       columnHelper.accessor("company_name", {
-        header: "Company",
+        header: t("stats.table.headers.company"),
         sortingFn: "alphanumeric",
         size: 150,
         cell: (info) => (
@@ -92,7 +94,7 @@ const AgentScreen = () => {
         ),
       }),
     ],
-    []
+    [t]
   );
   // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
@@ -114,7 +116,7 @@ const AgentScreen = () => {
       <View className='flex-1 items-center justify-center'>
         <ActivityIndicator size='large' />
         <Text className='mt-4 text-muted-foreground'>
-          Loading agent details...
+          {t("stats.status.loadingAgent")}
         </Text>
       </View>
     );
@@ -124,7 +126,7 @@ const AgentScreen = () => {
     return (
       <View className='flex-1 items-center justify-center p-4'>
         <Text className='text-center text-destructive'>
-          Failed to load agent information. Please try again.
+          {t("stats.status.errorAgent")}
         </Text>
       </View>
     );
@@ -134,7 +136,7 @@ const AgentScreen = () => {
     return (
       <View className='flex-1 items-center justify-center p-4'>
         <Text className='text-center text-muted-foreground'>
-          No agent data available for this entry.
+          {t("stats.status.noDataAgent")}
         </Text>
       </View>
     );

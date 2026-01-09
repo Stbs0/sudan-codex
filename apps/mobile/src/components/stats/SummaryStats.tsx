@@ -7,6 +7,7 @@ import {
   Tag,
   UserCheck,
 } from "lucide-react-native";
+import { useTranslation } from "react-i18next";
 import { View } from "react-native";
 import { Card, CardContent } from "../ui/card";
 
@@ -51,37 +52,38 @@ function StatCard({ label, value, icon, color, bgColor }: StatCardProps) {
 }
 
 export default function SummaryStats({ data }: { data: SummaryData }) {
+  const { t } = useTranslation();
   const stats = [
     {
-      label: "Total Drugs",
+      label: t("stats.summary.totalDrugs"),
       value: data.totalDrugs,
       icon: Pill,
       color: "text-blue-600 dark:text-blue-400",
       bgColor: "bg-blue-100 dark:bg-blue-900/30",
     },
     {
-      label: "Companies",
+      label: t("stats.summary.companies"),
       value: data.totalCompanies,
       icon: Building2,
       color: "text-emerald-600 dark:text-emerald-400",
       bgColor: "bg-emerald-100 dark:bg-emerald-900/30",
     },
     {
-      label: "Brand Names",
+      label: t("stats.summary.brandNames"),
       value: data.totalBrandNames,
       icon: Tag,
       color: "text-indigo-600 dark:text-indigo-400",
       bgColor: "bg-indigo-100 dark:bg-indigo-900/30",
     },
     {
-      label: "Generics",
+      label: t("stats.summary.generics"),
       value: data.totalGenerics,
       icon: FlaskConical,
       color: "text-purple-600 dark:text-purple-400",
       bgColor: "bg-purple-100 dark:bg-purple-900/30",
     },
     {
-      label: "Agents",
+      label: t("stats.summary.agents"),
       value: data.totalAgents,
       icon: UserCheck,
       color: "text-rose-600 dark:text-rose-400",

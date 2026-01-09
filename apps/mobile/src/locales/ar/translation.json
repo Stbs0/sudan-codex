@@ -1,6 +1,5 @@
 {
   "about": {
-    "contactEmail": "البريد الإلكتروني: mohammedjrt+sudancodexsupport@gmail.com",
     "contactTitle": "التواصل",
     "dataSourceDescription": "تم استخراج بيانات دليل الأدوية السوداني من",
     "dataSourceLinkText": "تقرير المجلس القومي للأدوية والسموم",
@@ -45,8 +44,7 @@
     "university": {
       "placeholder": "أدخل اسم الجامعة",
       "title": "الجامعة"
-    },
-    "updateError": "فشل في تحديث الملف الشخصي. يرجى المحاولة مرة أخرى."
+    }
   },
   "drugInfo": {
     "accordion": {
@@ -67,7 +65,6 @@
     "companyName": "اسم الشركة",
     "countryOfOrigin": "بلد المنشأ",
     "disclaimer": "إخلاء المسؤولية",
-    "disclaimerDescription": "يوفر هذا التطبيق معلومات دوائية <1>للمرجعية فقط</1>. لا يُعد بديلاً عن التقدير المهني أو النشرات الرسمية للمنتجات. يُرجى دائماً التحقق من التفاصيل قبل وصف أو صرف الدواء.",
     "dosageForm": "شكل الجرعة",
     "errorLoading": "حدث خطأ أثناء تحميل البيانات",
     "genericName": "الاسم العلمي",
@@ -79,8 +76,7 @@
   },
   "drugList": {
     "noMoreResults": "لا توجد نتائج إضافية",
-    "searchTerm": "كلمة البحث",
-    "title": "قائمة الأدوية"
+    "searchTerm": "كلمة البحث"
   },
   "settings": {
     "account": {
@@ -109,7 +105,8 @@
       "about": "نحن",
       "account": "الحساب",
       "appearanceAndLang": "المظهر و اللغة",
-      "help": "مساعدة"
+      "help": "مساعدة",
+      "statistics": "الإحصائيات"
     },
     "tooltips": {
       "brandAndStrength": "هذا هو الاسم التجاري وتركيز الدواء",
@@ -119,6 +116,60 @@
       "manufacturer": "هذا هو اسم الشركة المصنعة",
       "origin": "هذا هو بلد المنشأ",
       "packSize": "هذا هو حجم العبوة، أي عدد الأقراص أو الوحدات في العلبة"
+    }
+  },
+  "stats": {
+    "associations": {
+      "agents": "الوكلاء",
+      "companies": "الشركات",
+      "generics": "الأدوية العلمية"
+    },
+    "header": {
+      "subtitle": "إحصائيات سودان كودكس",
+      "title": "إحصائيات دليل الأدوية"
+    },
+    "sections": {
+      "distributionSubtitle": "تحليل مفصل لقادة السوق عبر الفئات",
+      "distributionTitle": "التوزيع والتصنيفات",
+      "topAgents": "أفضل الوكلاء",
+      "topCompanies": "أفضل الشركات",
+      "topGenerics": "أفضل الأدوية العلمية"
+    },
+    "status": {
+      "errorAgent": "فشل تحميل معلومات الوكيل. يرجى المحاولة مرة أخرى.",
+      "errorCompany": "فشل تحميل معلومات الشركة. يرجى المحاولة مرة أخرى.",
+      "errorGeneric": "فشل تحميل معلومات الاسم العلمي. يرجى المحاولة مرة أخرى.",
+      "loadingAgent": "جاري تحميل تفاصيل الوكيل...",
+      "loadingCompany": "جاري تحميل تفاصيل الشركة...",
+      "loadingGeneric": "جاري تحميل تفاصيل الاسم العلمي...",
+      "noDataAgent": "لا توجد بيانات متاحة لهذا الوكيل.",
+      "noDataCompany": "لا توجد بيانات متاحة لهذه الشركة.",
+      "noDataGeneric": "لا توجد بيانات متاحة لهذا المدخل."
+    },
+    "summary": {
+      "agents": "الوكلاء",
+      "brandNames": "الأسماء التجارية",
+      "companies": "الشركات",
+      "generics": "الأدوية العلمية",
+      "totalDrugs": "إجمالي الأدوية"
+    },
+    "table": {
+      "associated": "‏{{association}} المرتبطة",
+      "headers": {
+        "agent": "الوكيل",
+        "brand": "الاسم التجاري",
+        "company": "الشركة",
+        "count": "العدد",
+        "drugs": "الأدوية",
+        "generic": "الاسم العلمي",
+        "name": "الاسم",
+        "pack": "العبوة",
+        "represented": "تمثيل",
+        "variations": "الاختلافات"
+      },
+      "metric": "المقياس",
+      "overview": "نظرة عامة على الإحصائيات",
+      "totalDrugsRepresented": "إجمالي الأدوية الممثلة"
     }
   },
   "tabs": {

@@ -1,6 +1,5 @@
 {
   "about": {
-    "contactEmail": "Email: mohammedjrt+sudancodexsupport@gmail.com",
     "contactTitle": "Contact",
     "dataSourceDescription": "The Sudan drug index data was extracted from the",
     "dataSourceLinkText": "National Medicines and Poisons Board report",
@@ -45,8 +44,7 @@
     "university": {
       "placeholder": "Enter your university",
       "title": "University"
-    },
-    "updateError": "Failed to update profile. Please try again."
+    }
   },
   "drugInfo": {
     "accordion": {
@@ -67,7 +65,6 @@
     "companyName": "Company Name",
     "countryOfOrigin": "Country of Origin",
     "disclaimer": "Disclaimer",
-    "disclaimerDescription": "This app provides drug information for <1>reference only</1>. It is not a substitute for professional judgment or official product literature. Always verify details before prescribing or dispensing.",
     "dosageForm": "Dosage Form",
     "errorLoading": "Error loading data",
     "genericName": "Generic Name",
@@ -79,8 +76,7 @@
   },
   "drugList": {
     "noMoreResults": "No more results",
-    "searchTerm": "Search Term",
-    "title": "Drug List"
+    "searchTerm": "Search Term"
   },
   "settings": {
     "account": {
@@ -109,7 +105,8 @@
       "about": "About",
       "account": "Account",
       "appearanceAndLang": "Appearance and Language",
-      "help": "Help"
+      "help": "Help",
+      "statistics": "Statistics"
     },
     "tooltips": {
       "brandAndStrength": "This is the brand/trade name and the concentration/strength",
@@ -119,6 +116,60 @@
       "manufacturer": "This is the company name, i.e. the manufacturer",
       "origin": "This is the country of origin",
       "packSize": "This is the pack size, i.e. the amount of tablet in the box"
+    }
+  },
+  "stats": {
+    "associations": {
+      "agents": "Agents",
+      "companies": "Companies",
+      "generics": "Generics"
+    },
+    "header": {
+      "subtitle": "Sudan Codex Stats",
+      "title": "Drug Index Statistics"
+    },
+    "sections": {
+      "distributionSubtitle": "Detailed breakdown of market leaders across categories",
+      "distributionTitle": "Distribution & Rankings",
+      "topAgents": "Top Agents",
+      "topCompanies": "Top Companies",
+      "topGenerics": "Top Generic Medications"
+    },
+    "status": {
+      "errorAgent": "Failed to load agent information. Please try again.",
+      "errorCompany": "Failed to load company information. Please try again.",
+      "errorGeneric": "Failed to load generic information. Please try again.",
+      "loadingAgent": "Loading agent details...",
+      "loadingCompany": "Loading company details...",
+      "loadingGeneric": "Loading generic details...",
+      "noDataAgent": "No agent data available for this entry.",
+      "noDataCompany": "No company data available for this entry.",
+      "noDataGeneric": "No generic data available for this entry."
+    },
+    "summary": {
+      "agents": "Agents",
+      "brandNames": "Brand Names",
+      "companies": "Companies",
+      "generics": "Generics",
+      "totalDrugs": "Total Drugs"
+    },
+    "table": {
+      "associated": "Associated {{association}}",
+      "headers": {
+        "agent": "Agent",
+        "brand": "Brand",
+        "company": "Company",
+        "count": "Count",
+        "drugs": "Drugs",
+        "generic": "Generic",
+        "name": "Name",
+        "pack": "Pack",
+        "represented": "Represented",
+        "variations": "Variations"
+      },
+      "metric": "Metric",
+      "overview": "Statistics Overview",
+      "totalDrugsRepresented": "Total Drugs Represented"
     }
   },
   "tabs": {

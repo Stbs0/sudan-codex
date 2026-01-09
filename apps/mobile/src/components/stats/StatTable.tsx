@@ -7,6 +7,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import React, { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { View } from "react-native";
 
 interface StatItem {
@@ -27,13 +28,18 @@ const columnHelper = createColumnHelper<StatItem>();
 export function StatTable({
   title,
   data,
-  labelHeader = "Name",
-  countHeader = "Count",
+  labelHeader,
+  countHeader,
 }: StatTableProps) {
+  const { t } = useTranslation();
+
+  const activeLabelHeader = labelHeader ?? t("stats.table.headers.name");
+  const activeCountHeader = countHeader ?? t("stats.table.headers.count");
+
   const columns = useMemo(
     () => [
       columnHelper.accessor("name", {
-        header: labelHeader,
+        header: activeLabelHeader,
         cell: (info) => (
           <Text
             className='text-sm'
@@ -43,7 +49,7 @@ export function StatTable({
         ),
       }),
       columnHelper.accessor("count", {
-        header: countHeader,
+        header: activeCountHeader,
         cell: (info) => (
           <Text className='text-right text-sm font-medium'>
             {info.getValue().toLocaleString()}
@@ -51,7 +57,7 @@ export function StatTable({
         ),
       }),
     ],
-    [labelHeader, countHeader]
+    [activeLabelHeader, activeCountHeader]
   );
 
   const table = useReactTable({

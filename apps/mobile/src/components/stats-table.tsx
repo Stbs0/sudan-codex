@@ -15,6 +15,7 @@ import {
   ArrowUpDown,
   ArrowUpNarrowWide,
 } from "lucide-react-native";
+import { useTranslation } from "react-i18next";
 import { TouchableOpacity, View } from "react-native";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Icon } from "./ui/icon";
@@ -104,62 +105,95 @@ export const StatsSummaryCard = ({
   secondStats,
   firstAssociation,
   secondAssociation,
-}: StatsCardProp) => (
-  <View className='mb-4 p-4'>
-    <Card>
-      <CardHeader>
-        <CardTitle>Statistics Overview</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <View className='overflow-hidden rounded-lg border border-border'>
-          {/* Table Header */}
-          <View className='flex-row border-b border-border bg-muted'>
-            <View className='flex-1 border-r border-border p-3'>
-              <Text className='text-sm font-semibold'>Metric</Text>
-            </View>
-            <View className='w-24 p-3'>
-              <Text className='text-right text-sm font-semibold'>Count</Text>
-            </View>
-          </View>
+}: StatsCardProp) => {
+  const { t } = useTranslation();
 
-          {/* Table Rows */}
-          <View className='flex-row border-b border-border bg-card'>
-            <View className='flex-1 border-r border-border p-3'>
-              <Text className='text-sm'>Total Drugs Represented</Text>
-            </View>
-            <View className='w-24 p-3'>
-              <Text className='text-right text-sm font-medium'>
-                {totalBrands?.toLocaleString() ?? 0}
-              </Text>
-            </View>
-          </View>
+  const getAssociationLabel = (
+    association: "Generics" | "Companies" | "Agents"
+  ) => {
+    switch (association) {
+      case "Generics":
+        return t("stats.associations.generics");
+      case "Companies":
+        return t("stats.associations.companies");
+      case "Agents":
+        return t("stats.associations.agents");
+      default:
+        return association;
+    }
+  };
 
-          <View className='flex-row border-b border-border bg-card'>
-            <View className='flex-1 border-r border-border p-3'>
-              <Text className='text-sm'>Associated {firstAssociation}</Text>
+  return (
+    <View className='mb-4 p-4'>
+      <Card>
+        <CardHeader>
+          <CardTitle>{t("stats.table.overview")}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <View className='overflow-hidden rounded-lg border border-border'>
+            {/* Table Header */}
+            <View className='flex-row border-b border-border bg-muted'>
+              <View className='flex-1 border-r border-border p-3'>
+                <Text className='text-sm font-semibold'>
+                  {t("stats.table.metric")}
+                </Text>
+              </View>
+              <View className='w-24 p-3'>
+                <Text className='text-right text-sm font-semibold'>
+                  {t("stats.table.headers.count")}
+                </Text>
+              </View>
             </View>
-            <View className='w-24 p-3'>
-              <Text className='text-right text-sm font-medium'>
-                {firstStats?.toLocaleString() ?? 0}
-              </Text>
-            </View>
-          </View>
 
-          <View className='flex-row bg-card'>
-            <View className='flex-1 border-r border-border p-3'>
-              <Text className='text-sm'>Associated {secondAssociation}</Text>
+            {/* Table Rows */}
+            <View className='flex-row border-b border-border bg-card'>
+              <View className='flex-1 border-r border-border p-3'>
+                <Text className='text-sm'>
+                  {t("stats.table.totalDrugsRepresented")}
+                </Text>
+              </View>
+              <View className='w-24 p-3'>
+                <Text className='text-right text-sm font-medium'>
+                  {totalBrands?.toLocaleString() ?? 0}
+                </Text>
+              </View>
             </View>
-            <View className='w-24 p-3'>
-              <Text className='text-right text-sm font-medium'>
-                {secondStats?.toLocaleString() ?? 0}
-              </Text>
+
+            <View className='flex-row border-b border-border bg-card'>
+              <View className='flex-1 border-r border-border p-3'>
+                <Text className='text-sm'>
+                  {t("stats.table.associated", {
+                    association: getAssociationLabel(firstAssociation),
+                  })}
+                </Text>
+              </View>
+              <View className='w-24 p-3'>
+                <Text className='text-right text-sm font-medium'>
+                  {firstStats?.toLocaleString() ?? 0}
+                </Text>
+              </View>
+            </View>
+
+            <View className='flex-row bg-card'>
+              <View className='flex-1 border-r border-border p-3'>
+                <Text className='text-sm'>
+                  {t("stats.table.associated", {
+                    association: getAssociationLabel(secondAssociation),
+                  })}
+                </Text>
+              </View>
+              <View className='w-24 p-3'>
+                <Text className='text-right text-sm font-medium'>
+                  {secondStats?.toLocaleString() ?? 0}
+                </Text>
+              </View>
             </View>
           </View>
-        </View>
-      </CardContent>
-    </Card>
-  </View>
-);
+        </CardContent>
+      </Card>
+    </View>
+  );
+};
 
 export type TableBodyProps<T> = {
   row: Row<DrugResponseType<T>>;

@@ -4,9 +4,12 @@ import { StatTable } from "@/components/stats/StatTable";
 import SummaryStats from "@/components/stats/SummaryStats";
 import { Text } from "@/components/ui/text";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { ScrollView, View } from "react-native";
 
 export default function App() {
+  const { t } = useTranslation();
+
   return (
     <ScrollView
       className='flex-1 bg-background'
@@ -19,32 +22,32 @@ export default function App() {
       <View className='space-y-2 px-6'>
         <View className='mb-4'>
           <Text className='text-xl font-bold text-foreground'>
-            Distribution & Rankings
+            {t("stats.sections.distributionTitle")}
           </Text>
           <Text className='text-sm text-muted-foreground'>
-            Detailed breakdown of market leaders across categories
+            {t("stats.sections.distributionSubtitle")}
           </Text>
         </View>
 
         <StatTable
-          title='Top Companies'
+          title={t("stats.sections.topCompanies")}
           data={data.topCompanies}
-          labelHeader='Company Name'
-          countHeader='Drugs'
+          labelHeader={t("stats.table.headers.company")}
+          countHeader={t("stats.table.headers.drugs")}
         />
 
         <StatTable
-          title='Top Agents'
+          title={t("stats.sections.topAgents")}
           data={data.topAgents}
-          labelHeader='Agent Name'
-          countHeader='Represented'
+          labelHeader={t("stats.table.headers.agent")}
+          countHeader={t("stats.table.headers.represented")}
         />
 
         <StatTable
-          title='Top Generic Medications'
+          title={t("stats.sections.topGenerics")}
           data={data.topGenerics}
-          labelHeader='Generic Name'
-          countHeader='Variations'
+          labelHeader={t("stats.table.headers.generic")}
+          countHeader={t("stats.table.headers.variations")}
         />
       </View>
 

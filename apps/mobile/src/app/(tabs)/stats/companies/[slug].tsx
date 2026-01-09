@@ -15,6 +15,7 @@ import {
 } from "@tanstack/react-table";
 import { Stack, useLocalSearchParams } from "expo-router";
 import React, { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { ActivityIndicator, ScrollView, View } from "react-native";
 
 const columnHelper =
@@ -22,6 +23,7 @@ const columnHelper =
 
 const CompanyScreen = () => {
   const { slug } = useLocalSearchParams<{ slug: string }>();
+  const { t } = useTranslation();
   const { data, error, isFetching, sorting, setSorting } = useStatsTable({
     url: "/api/companies/:slug",
     qKey: "companies",
@@ -31,7 +33,7 @@ const CompanyScreen = () => {
   const columns = useMemo(
     () => [
       columnHelper.accessor("brand_name", {
-        header: "Brand",
+        header: t("stats.table.headers.brand"),
         sortingFn: "alphanumeric",
         size: 150,
         cell: (info) => (
@@ -52,7 +54,7 @@ const CompanyScreen = () => {
         ),
       }),
       columnHelper.accessor("generic_name", {
-        header: "Generic",
+        header: t("stats.table.headers.generic"),
         sortingFn: "alphanumeric",
         size: 180,
         cell: (info) => (
@@ -65,7 +67,7 @@ const CompanyScreen = () => {
         ),
       }),
       columnHelper.accessor("pack_size", {
-        header: "Pack",
+        header: t("stats.table.headers.pack"),
         sortingFn: "alphanumeric",
         size: 100,
         cell: (info) => (
@@ -78,7 +80,7 @@ const CompanyScreen = () => {
         ),
       }),
       columnHelper.accessor("agent_name", {
-        header: "Agent",
+        header: t("stats.table.headers.agent"),
         sortingFn: "alphanumeric",
         size: 150,
         cell: (info) => (
@@ -91,7 +93,7 @@ const CompanyScreen = () => {
         ),
       }),
     ],
-    []
+    [t]
   );
   // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
@@ -113,7 +115,7 @@ const CompanyScreen = () => {
       <View className='flex-1 items-center justify-center'>
         <ActivityIndicator size='large' />
         <Text className='mt-4 text-muted-foreground'>
-          Loading company details...
+          {t("stats.status.loadingCompany")}
         </Text>
       </View>
     );
@@ -123,7 +125,7 @@ const CompanyScreen = () => {
     return (
       <View className='flex-1 items-center justify-center p-4'>
         <Text className='text-center text-destructive'>
-          Failed to load company information. Please try again.
+          {t("stats.status.errorCompany")}
         </Text>
       </View>
     );
@@ -133,7 +135,7 @@ const CompanyScreen = () => {
     return (
       <View className='flex-1 items-center justify-center p-4'>
         <Text className='text-center text-muted-foreground'>
-          No company data available for this entry.
+          {t("stats.status.noDataCompany")}
         </Text>
       </View>
     );
