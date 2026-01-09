@@ -10,7 +10,8 @@
     "test": "jest --watchAll",
     "lint": "expo lint",
     "check-types": "tsc --noEmit",
-    "android": "expo run:android"
+    "android": "expo run:android",
+    "postinstall": "cd ../../ && bun build:packages "
   },
   "jest": {
     "preset": "jest-expo"
