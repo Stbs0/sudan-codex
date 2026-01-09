@@ -243,6 +243,13 @@
       },
     },
   },
+  "trustedDependencies": [
+    "core-js",
+    "@sudan-codex/mobile",
+    "@posthog/cli",
+    "@swc/core",
+    "unrs-resolver",
+  ],
   "overrides": {
     "eslint-plugin-react-hooks": "7.0.0",
     "react": "^19.2.3",
