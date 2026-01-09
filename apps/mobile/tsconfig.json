@@ -9,7 +9,11 @@
     "erasableSyntaxOnly": true,
     "noImplicitAny": true,
     "baseUrl": ".",
+    "skipLibCheck": true,
     "composite": true,
+    "allowJs": false,
+    "incremental": true,
+    "lib": ["ESNext"],
     "paths": {
       "@/*": ["src/*"]
     }
@@ -17,6 +21,12 @@
   "references": [
     { "path": "../../packages/types" },
     { "path": "../../packages/db" }
+  ],
+  "exclude": [
+    "**/.next",
+    "node_modules/next",
+    "node_modules/react-dom",
+    "node_modules/@types/react-dom"
   ],
   "include": [
     "**/*.ts",

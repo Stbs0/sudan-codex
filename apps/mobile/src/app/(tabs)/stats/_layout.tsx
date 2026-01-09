@@ -1,18 +1,25 @@
 import { Stack } from "expo-router";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function TabLayout() {
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
   return (
-    <Stack screenOptions={{ title: "loading..." }}>
-      <Stack.Screen name='agents/[slug]' />
+    <Stack>
+      <Stack.Screen
+        name='agents/[slug]'
+        options={{ title: t("stats.status.loadingAgent") }}
+      />
 
       <Stack.Screen
         name='companies/[slug]'
-        options={{}}
+        options={{ title: t("stats.status.loadingCompany") }}
       />
 
-      <Stack.Screen name='generics/[slug]' />
+      <Stack.Screen
+        name='generics/[slug]'
+        options={{ title: t("stats.status.loadingGeneric") }}
+      />
     </Stack>
   );
 }
