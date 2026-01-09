@@ -10,6 +10,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { View } from "react-native";
 import { Card, CardContent } from "../ui/card";
+import type { LucideIcon } from "lucide-react-native";
 
 interface SummaryData {
   totalDrugs: number;
@@ -22,7 +23,7 @@ interface SummaryData {
 interface StatCardProps {
   label: string;
   value: number;
-  icon: any;
+  icon: LucideIcon;
   color: string;
   bgColor: string;
 }

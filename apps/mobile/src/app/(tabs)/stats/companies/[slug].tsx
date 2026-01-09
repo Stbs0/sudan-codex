@@ -120,7 +120,6 @@ const CompanyScreen = () => {
       </View>
     );
   }
-  console.log(error);
   if (error) {
     return (
       <View className='flex-1 items-center justify-center p-4'>

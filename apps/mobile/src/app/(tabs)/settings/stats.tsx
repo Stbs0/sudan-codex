@@ -7,7 +7,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { ScrollView, View } from "react-native";
 
-export default function App() {
+export default function StatsSettingsScreen() {
   const { t } = useTranslation();
 
   return (
@@ -51,7 +51,7 @@ export default function App() {
         />
       </View>
 
-      <View style={{ height: 60 }} />
+      <View className='h-[60px]' />
     </ScrollView>
   );
 }

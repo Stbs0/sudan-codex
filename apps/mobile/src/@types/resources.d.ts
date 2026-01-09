@@ -108,7 +108,7 @@ interface Resources {
         account: "Account";
         appearanceAndLang: "Appearance and Language";
         help: "Help";
-        statistics: "settings.screens.statistics";
+        statistics: "Statistics";
       };
       tooltips: {
         brandAndStrength: "This is the brand/trade name and the concentration/strength";
