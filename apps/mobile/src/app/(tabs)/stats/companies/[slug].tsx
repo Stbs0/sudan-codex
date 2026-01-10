@@ -114,7 +114,7 @@ const CompanyScreen = () => {
     return (
       <View className='flex-1 items-center justify-center'>
         <ActivityIndicator size='large' />
-        <Text className='mt-4 text-muted-foreground'>
+        <Text className='text-muted-foreground mt-4'>
           {t("stats.status.loadingCompany")}
         </Text>
       </View>
@@ -123,7 +123,7 @@ const CompanyScreen = () => {
   if (error) {
     return (
       <View className='flex-1 items-center justify-center p-4'>
-        <Text className='text-center text-destructive'>
+        <Text className='text-destructive text-center'>
           {t("stats.status.errorCompany")}
         </Text>
       </View>
@@ -133,7 +133,7 @@ const CompanyScreen = () => {
   if (!data) {
     return (
       <View className='flex-1 items-center justify-center p-4'>
-        <Text className='text-center text-muted-foreground'>
+        <Text className='text-muted-foreground text-center'>
           {t("stats.status.noDataCompany")}
         </Text>
       </View>
@@ -144,7 +144,7 @@ const CompanyScreen = () => {
   return (
     <>
       <Stack.Screen options={{ title: data.name }} />
-      <ScrollView className='flex-1 bg-background'>
+      <ScrollView className='bg-background flex-1'>
         {/* Stats Cards */}
         <StatsSummaryCard
           totalBrands={stats.total_brands}
@@ -160,10 +160,10 @@ const CompanyScreen = () => {
               <ScrollView
                 horizontal
                 showsHorizontalScrollIndicator={true}
-                className='border-t border-border pt-0'>
+                className='border-border border-t pt-0'>
                 <View className='min-w-full'>
                   {/* Table Header */}
-                  <View className='flex-row bg-accent bg-gradient-to-r from-muted to-muted/80 shadow-sm'>
+                  <View className='bg-accent from-muted to-muted/80 flex-row bg-linear-to-r shadow-xs'>
                     {table.getHeaderGroups().map((headerGroup) =>
                       headerGroup.headers.map((header, index) => (
                         <TableHeader

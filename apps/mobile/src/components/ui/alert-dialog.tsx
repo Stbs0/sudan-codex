@@ -29,9 +29,9 @@ function AlertDialogOverlay({
     <FullWindowOverlay>
       <AlertDialogPrimitive.Overlay
         className={cn(
-          "absolute bottom-0 left-0 right-0 top-0 z-50 flex items-center justify-center bg-black/50 p-2",
+          "absolute top-0 right-0 bottom-0 left-0 z-50 flex items-center justify-center bg-black/50 p-2",
           Platform.select({
-            web: "fixed animate-in fade-in-0",
+            web: "animate-in fade-in-0 fixed",
           }),
           className
         )}
@@ -59,9 +59,9 @@ function AlertDialogContent({
       <AlertDialogOverlay>
         <AlertDialogPrimitive.Content
           className={cn(
-            "z-50 flex w-full max-w-[calc(100%-2rem)] flex-col gap-4 rounded-lg border border-border bg-background p-6 shadow-lg shadow-black/5 sm:max-w-lg",
+            "bg-background border-border z-50 flex flex-col gap-4 rounded-lg border p-6 shadow-lg shadow-black/5 sm:max-w-lg",
             Platform.select({
-              web: "duration-200 animate-in fade-in-0 zoom-in-95",
+              web: "animate-in fade-in-0 zoom-in-95 web:max-w-[calc(100%-2rem)] duration-200",
             }),
             className
           )}
@@ -102,7 +102,7 @@ function AlertDialogTitle({
   React.RefAttributes<AlertDialogPrimitive.TitleRef>) {
   return (
     <AlertDialogPrimitive.Title
-      className={cn("text-lg font-semibold text-foreground", className)}
+      className={cn("text-foreground text-lg font-semibold", className)}
       {...props}
     />
   );
@@ -115,7 +115,7 @@ function AlertDialogDescription({
   React.RefAttributes<AlertDialogPrimitive.DescriptionRef>) {
   return (
     <AlertDialogPrimitive.Description
-      className={cn("text-sm text-muted-foreground", className)}
+      className={cn("text-muted-foreground text-sm", className)}
       {...props}
     />
   );

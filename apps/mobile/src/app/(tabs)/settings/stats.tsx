@@ -12,7 +12,7 @@ export default function StatsSettingsScreen() {
 
   return (
     <ScrollView
-      className='flex-1 bg-background'
+      className='bg-background flex-1'
       showsVerticalScrollIndicator={false}>
       <Header />
       <View className=''>
@@ -21,10 +21,10 @@ export default function StatsSettingsScreen() {
 
       <View className='space-y-2 px-6'>
         <View className='mb-4'>
-          <Text className='text-xl font-bold text-foreground'>
+          <Text className='text-foreground text-xl font-bold'>
             {t("stats.sections.distributionTitle")}
           </Text>
-          <Text className='text-sm text-muted-foreground'>
+          <Text className='text-muted-foreground text-sm'>
             {t("stats.sections.distributionSubtitle")}
           </Text>
         </View>

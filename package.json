@@ -2,13 +2,14 @@
   "name": "sudan-codex",
   "version": "0.0.0",
   "devDependencies": {
+    "@secretlint/secretlint-rule-preset-recommend": "^11.2.5",
     "eslint": "^9.39.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.6",
-    "turbo": "^2.7.2",
-    "@secretlint/secretlint-rule-preset-recommend": "^11.2.5",
     "secretlint": "^11.2.5",
-    "syncpack": "^14.0.0-alpha.32"
+    "syncpack": "^14.0.0-alpha.32",
+    "turbo": "^2.7.2"
+
   },
   "private": true,
   "scripts": {
@@ -20,7 +21,7 @@
     "lint": "turbo run lint --continue",
     "test:e2e": "turbo run test:e2e",
     "dev:packages": "turbo run dev --filter=./packages/*",
-    "clean": "rm -rf node_modules ./apps/*/node_modules ./packages/*/node_modules bun.lock",
+    "clean": "rm -rf node_modules ./apps/*/node_modules ./packages/*/node_modules bun.lock ./apps/mobile/.expo",
     "build": "turbo run build",
     "build:packages": "turbo run build --filter=./packages/* ",
     "postinstall": "bun build:packages"

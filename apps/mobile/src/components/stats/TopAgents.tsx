@@ -18,12 +18,12 @@ function AgentItem({
   index: number;
 }) {
   return (
-    <Card className="flex-row items-center p-4">
-      <Text className="w-8 text-lg font-bold">{index + 1}</Text>
-      <View className="flex-1">
-        <Text className="text-base font-semibold">{name}</Text>
+    <Card className='flex-row items-center p-4'>
+      <Text className='w-8 text-lg font-bold'>{index + 1}</Text>
+      <View className='flex-1'>
+        <Text className='text-base font-semibold'>{name}</Text>
       </View>
-      <Badge variant="default">
+      <Badge variant='default'>
         <Text>{count}</Text>
       </Badge>
     </Card>
@@ -32,7 +32,7 @@ function AgentItem({
 
 export default function TopAgents({ agents }: { agents: Agent[] }) {
   return (
-    <View className="space-y-3">
+    <View className='space-y-3'>
       {agents.map((agent, index) => (
         <AgentItem
           key={index}

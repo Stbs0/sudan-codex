@@ -6,7 +6,7 @@ import { Platform, View, type ViewProps } from "react-native";
 
 const badgeVariants = cva(
   cn(
-    "border-border group shrink-0 flex-row items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5",
+    "border-border group shrink-0 flex-row items-center justify-center gap-1 overflow-hidden rounded-full border px-2 py-0.5",
     Platform.select({
       web: "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive w-fit whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3",
     })
@@ -24,22 +24,6 @@ const badgeVariants = cva(
         ),
         destructive: cn(
           "bg-destructive border-transparent",
-          Platform.select({ web: "[a&]:hover:bg-destructive/90" })
-        ),
-        genericName: cn(
-          "bg-blue-400 border-transparent",
-          Platform.select({ web: "[a&]:hover:bg-destructive/90" })
-        ),
-        country: cn(
-          "bg-green-400 border-transparent",
-          Platform.select({ web: "[a&]:hover:bg-destructive/90" })
-        ),
-        company: cn(
-          "bg-purple-400 border-transparent",
-          Platform.select({ web: "[a&]:hover:bg-destructive/90" })
-        ),
-        agent: cn(
-          "bg-zinc-400 border-transparent",
           Platform.select({ web: "[a&]:hover:bg-destructive/90" })
         ),
         outline: Platform.select({
@@ -75,7 +59,6 @@ type BadgeProps = ViewProps &
 function Badge({ className, variant, asChild, ...props }: BadgeProps) {
   const Component = asChild ? Slot.View : View;
   return (
-    // @ts-expect-error i dont care
     <TextClassContext.Provider value={badgeTextVariants({ variant })}>
       <Component
         className={cn(badgeVariants({ variant }), className)}

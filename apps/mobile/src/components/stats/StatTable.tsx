@@ -73,18 +73,18 @@ export function StatTable({
           <CardTitle>{title}</CardTitle>
         </CardHeader>
         <CardContent className='px-2'>
-          <View className='overflow-hidden rounded-lg border border-border'>
+          <View className='border-border overflow-hidden rounded-lg border'>
             {/* Table Header */}
             {table.getHeaderGroups().map((headerGroup) => (
               <View
                 key={headerGroup.id}
-                className='flex-row border-b border-border bg-muted'>
+                className='border-border bg-muted flex-row border-b'>
                 {headerGroup.headers.map((header) => (
                   <View
                     key={header.id}
                     className={`flex-row items-center p-2 ${
                       header.id === "name"
-                        ? "flex-1 border-r border-border"
+                        ? "border-border flex-1 border-r"
                         : "w-24"
                     }`}>
                     <Text className='text-sm font-semibold'>
@@ -102,7 +102,7 @@ export function StatTable({
             {table.getRowModel().rows.map((row, index) => (
               <View
                 key={row.id}
-                className={`flex-row border-border bg-card ${
+                className={`border-border bg-card flex-row ${
                   index !== table.getRowModel().rows.length - 1
                     ? "border-b"
                     : ""
@@ -112,7 +112,7 @@ export function StatTable({
                     key={cell.id}
                     className={`p-3 ${
                       cell.column.id === "name"
-                        ? "flex-1 border-r border-border"
+                        ? "border-border flex-1 border-r"
                         : "w-24"
                     }`}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}

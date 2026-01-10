@@ -30,7 +30,7 @@ interface StatCardProps {
 
 function StatCard({ label, value, icon, color, bgColor }: StatCardProps) {
   return (
-    <Card className='flex-1 overflow-hidden border-none bg-card shadow-sm'>
+    <Card className='bg-card flex-1 overflow-hidden border-none shadow-xs'>
       <CardContent className='p-4'>
         <View className='flex-row items-center justify-between'>
           <View className={`rounded-xl p-2 ${bgColor}`}>
@@ -40,11 +40,11 @@ function StatCard({ label, value, icon, color, bgColor }: StatCardProps) {
               className={color}
             />
           </View>
-          <Text className='text-2xl font-bold text-foreground'>
+          <Text className='text-foreground text-2xl font-bold'>
             {value.toLocaleString()}
           </Text>
         </View>
-        <Text className='mt-3 text-xs font-medium uppercase tracking-wider text-muted-foreground'>
+        <Text className='text-muted-foreground mt-3 text-xs font-medium tracking-wider uppercase'>
           {label}
         </Text>
       </CardContent>

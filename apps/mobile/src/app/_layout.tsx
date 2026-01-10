@@ -13,7 +13,6 @@ import {
 import * as Network from "expo-network";
 import { SplashScreen, Stack, useNavigationContainerRef } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { useColorScheme } from "nativewind";
 import React, { useEffect } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { Toaster } from "sonner-native";
@@ -21,7 +20,8 @@ import { Toaster } from "sonner-native";
 import { AuthProvider } from "@/providers/AuthProvider";
 import { ActivityIndicator, View } from "react-native";
 import "react-native-reanimated";
-import "../global.css";
+import { useUniwind } from "uniwind";
+import "../../global.css";
 import "../lib/i18next";
 SplashScreen.preventAutoHideAsync();
 
@@ -53,9 +53,9 @@ export default function RootLayout() {
 function RootLayoutNav() {
   useAnalyticsPosthog();
   const { data, isPending } = useAuth();
-  const { colorScheme } = useColorScheme();
+  const { theme } = useUniwind();
   const navigationRef = useNavigationContainerRef();
-
+  console.log(theme);
   useReactNavigationDevTools(navigationRef);
   useEffect(() => {
     if (isPending) {
@@ -91,8 +91,7 @@ function RootLayoutNav() {
   // // }
   return (
     <GestureHandlerRootView>
-      <ThemeProvider
-        value={NAV_THEME[colorScheme === "dark" ? "dark" : "light"]}>
+      <ThemeProvider value={NAV_THEME[theme === "dark" ? "dark" : "light"]}>
         <StatusBar />
         <Stack screenOptions={{ headerShown: false }}>
           {/* began auth */}
