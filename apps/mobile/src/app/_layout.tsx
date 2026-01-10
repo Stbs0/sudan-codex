@@ -18,12 +18,35 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { Toaster } from "sonner-native";
 
 import { AuthProvider } from "@/providers/AuthProvider";
+import * as Sentry from "@sentry/react-native";
 import { ActivityIndicator, View } from "react-native";
 import "react-native-reanimated";
 import { useUniwind } from "uniwind";
 import "../../global.css";
 import "../lib/i18next";
 SplashScreen.preventAutoHideAsync();
+
+Sentry.init({
+  dsn: "https://928611eacb1e87f81ed7887fdab863bb@o4508473978191872.ingest.de.sentry.io/4510687592382544",
+
+  // Adds more context data to events (IP address, cookies, user, etc.)
+  // For more information, visit: https://docs.sentry.io/platforms/react-native/data-management/data-collected/
+  sendDefaultPii: true,
+
+  // Enable Logs
+  enableLogs: true,
+
+  // Configure Session Replay
+  replaysSessionSampleRate: 0.1,
+  replaysOnErrorSampleRate: 1,
+  integrations: [
+    Sentry.mobileReplayIntegration(),
+    Sentry.feedbackIntegration(),
+  ],
+
+  // uncomment the line below to enable Spotlight (https://spotlightjs.com)
+  // spotlight: __DEV__,
+});
 
 const queryClient = new QueryClient();
 
@@ -38,7 +61,7 @@ export { ErrorBoundary } from "expo-router";
 // export const unstable_settings = {
 //   initialRouteName: "(tabs)/drug-list/index",
 // };
-export default function RootLayout() {
+export function RootLayout() {
   return (
     <PHProvider>
       <QueryClientProvider client={queryClient}>
@@ -54,9 +77,10 @@ function RootLayoutNav() {
   useAnalyticsPosthog();
   const { data, isPending } = useAuth();
   const { theme } = useUniwind();
+
   const navigationRef = useNavigationContainerRef();
-  console.log(theme);
   useReactNavigationDevTools(navigationRef);
+
   useEffect(() => {
     if (isPending) {
       return;
@@ -123,3 +147,4 @@ function RootLayoutNav() {
     </GestureHandlerRootView>
   );
 }
+export default Sentry.wrap(RootLayout);

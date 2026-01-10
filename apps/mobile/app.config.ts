@@ -46,6 +46,14 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       },
     ],
     [
+      "@sentry/react-native/expo",
+      {
+        url: "https://sentry.io/",
+        project: "sudan-codex",
+        organization: "mohammed-ibrahim-mahmoud",
+      },
+    ],
+    [
       "expo-splash-screen",
       {
         backgroundColor: "#232323",

@@ -12,6 +12,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
+import { captureException } from "@sentry/react-native";
 import type { Drug } from "@sudan-codex/db";
 import * as Linking from "expo-linking";
 import { usePostHog } from "posthog-react-native";
@@ -64,7 +65,7 @@ const WhatsAppBtn = () => {
       await Linking.openURL(whatsappUrl);
       posthog.capture("whatsApp_btn_clicked");
     } catch (error) {
-      posthog.captureException(error, { label: "whatsApp_btn_error" });
+      captureException(error);
       console.error("Error opening WhatsApp:", error);
       Alert.alert("Error", "Failed to open WhatsApp.");
     }
