@@ -62,7 +62,7 @@ const DrugList = () => {
           if (isFetchingNextPage) return <ActivityIndicator size='large' />;
           if (!hasNextPage && drugList.length > 0)
             return (
-              <Text className='py-2 text-center text-muted-foreground'>
+              <Text className='text-muted-foreground py-2 text-center'>
                 {t("drugList.noMoreResults")}
               </Text>
             );

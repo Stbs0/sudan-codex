@@ -6,20 +6,20 @@ import { Switch } from "@/components/ui/switch";
 import i18n from "@/lib/i18next";
 import * as Haptics from "expo-haptics";
 import { Moon, Sun } from "lucide-react-native";
-import { useColorScheme } from "nativewind";
 import { usePostHog } from "posthog-react-native";
 import React, { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Alert, View } from "react-native";
 import { useMMKVString } from "react-native-mmkv";
+import { Uniwind, useUniwind } from "uniwind";
 
 const Appearance = () => {
-  const { colorScheme, toggleColorScheme } = useColorScheme();
+  const { theme } = useUniwind();
   const { t } = useTranslation();
-  const isDark = colorScheme === "dark";
+  const isDark = theme === "dark";
   const switchTheme = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-    toggleColorScheme();
+    Uniwind.setTheme(theme === "dark" ? "light" : "dark");
   };
   return (
     <View className='flex-1 gap-4 p-4'>

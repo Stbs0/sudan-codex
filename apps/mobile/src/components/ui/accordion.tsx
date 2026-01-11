@@ -41,7 +41,7 @@ function AccordionItem({
   return (
     <AccordionPrimitive.Item
       className={cn(
-        "border-b border-border",
+        "border-border border-b",
         Platform.select({ web: "last:border-b-0" }),
         className
       )}
@@ -91,12 +91,12 @@ function AccordionTrigger({
       <AccordionPrimitive.Header>
         <AccordionPrimitive.Trigger
           {...props}
-          asChild>
+          asChild={Platform.OS !== "web"}>
           <Trigger
             className={cn(
               "flex-row items-start justify-between gap-4 rounded-md py-4 disabled:opacity-50",
               Platform.select({
-                web: "flex flex-1 outline-none transition-all hover:underline focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none [&[data-state=open]>svg]:rotate-180",
+                web: "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none [&[data-state=open]>svg]:rotate-180",
               }),
               className
             )}>
@@ -106,7 +106,7 @@ function AccordionTrigger({
                 as={ChevronDown}
                 size={16}
                 className={cn(
-                  "shrink-0 text-muted-foreground",
+                  "text-muted-foreground shrink-0",
                   Platform.select({
                     web: "pointer-events-none translate-y-0.5 transition-transform duration-200",
                   })

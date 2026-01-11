@@ -30,9 +30,9 @@ const StatsDrugCard = ({
       onPress={onPress}
       underlayColor='rgba(0,0,0,0.05)'
       className='rounded-lg'>
-      <View className='min-h-[60px] flex-row overflow-hidden rounded-lg border border-border bg-card'>
+      <View className='border-border bg-card min-h-[60px] flex-row overflow-hidden rounded-lg border'>
         {/* Brand Name & Strength Column */}
-        <View className='w-[28%] justify-center border-r border-border p-2'>
+        <View className='border-border w-[28%] justify-center border-r p-2'>
           <Text className='text-xs font-bold text-neutral-700 dark:text-blue-200'>
             {brand_name || "NAD"}
           </Text>
@@ -42,14 +42,14 @@ const StatsDrugCard = ({
         </View>
 
         {/* Generic Name Column */}
-        <View className='w-[28%] justify-center border-r border-border p-2'>
+        <View className='border-border w-[28%] justify-center border-r p-2'>
           <Text className='text-xs font-semibold text-green-600 dark:text-green-400'>
             {generic_name || "NAD"}
           </Text>
         </View>
 
         {/* Pack Size Column */}
-        <View className='w-[16%] justify-center border-r border-border p-2'>
+        <View className='border-border w-[16%] justify-center border-r p-2'>
           <Text
             className='text-[10px] text-rose-700 dark:text-rose-400'
             numberOfLines={3}

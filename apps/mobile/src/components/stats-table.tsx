@@ -44,24 +44,24 @@ export const TableHeader = <T,>({
     <TouchableOpacity
       onPress={header.column.getToggleSortingHandler()}
       disabled={!header.column.getCanSort()}
-      className={`border-r p-3 active:bg-muted/50 ${
+      className={`active:bg-muted/50 border-r p-3 ${
         index === headerGroup.headers.length - 1
-          ? "border-r-0 border-border/50"
+          ? "border-border/50 border-r-0"
           : ""
       }`}
       style={{
         width: header.getSize(),
       }}>
       <View className='flex-row items-center gap-1.5'>
-        <Text className='text-xs font-extrabold uppercase tracking-wide text-foreground/90'>
+        <Text className='text-foreground/90 text-xs font-extrabold tracking-wide uppercase'>
           {header.isPlaceholder
             ? null
             : flexRender(header.column.columnDef.header, header.getContext())}
         </Text>
 
         {header.column.getIsSorted() ? (
-          <View className='rounded-full bg-primary/10'>
-            <Text className='text-xs font-bold text-primary'>
+          <View className='bg-primary/10 rounded-full'>
+            <Text className='text-primary text-xs font-bold'>
               {header.column.getIsSorted() === "asc" ? (
                 <Icon
                   as={ArrowUpNarrowWide}
@@ -130,10 +130,10 @@ export const StatsSummaryCard = ({
           <CardTitle>{t("stats.table.overview")}</CardTitle>
         </CardHeader>
         <CardContent>
-          <View className='overflow-hidden rounded-lg border border-border'>
+          <View className='border-border overflow-hidden rounded-lg border'>
             {/* Table Header */}
-            <View className='flex-row border-b border-border bg-muted'>
-              <View className='flex-1 border-r border-border p-3'>
+            <View className='border-border bg-muted flex-row border-b'>
+              <View className='border-border flex-1 border-r p-3'>
                 <Text className='text-sm font-semibold'>
                   {t("stats.table.metric")}
                 </Text>
@@ -146,8 +146,8 @@ export const StatsSummaryCard = ({
             </View>
 
             {/* Table Rows */}
-            <View className='flex-row border-b border-border bg-card'>
-              <View className='flex-1 border-r border-border p-3'>
+            <View className='border-border bg-card flex-row border-b'>
+              <View className='border-border flex-1 border-r p-3'>
                 <Text className='text-sm'>
                   {t("stats.table.totalDrugsRepresented")}
                 </Text>
@@ -159,8 +159,8 @@ export const StatsSummaryCard = ({
               </View>
             </View>
 
-            <View className='flex-row border-b border-border bg-card'>
-              <View className='flex-1 border-r border-border p-3'>
+            <View className='border-border bg-card flex-row border-b'>
+              <View className='border-border flex-1 border-r p-3'>
                 <Text className='text-sm'>
                   {t("stats.table.associated", {
                     association: getAssociationLabel(firstAssociation),
@@ -174,8 +174,8 @@ export const StatsSummaryCard = ({
               </View>
             </View>
 
-            <View className='flex-row bg-card'>
-              <View className='flex-1 border-r border-border p-3'>
+            <View className='bg-card flex-row'>
+              <View className='border-border flex-1 border-r p-3'>
                 <Text className='text-sm'>
                   {t("stats.table.associated", {
                     association: getAssociationLabel(secondAssociation),
@@ -211,7 +211,7 @@ export const TableBody = <T,>({ row, rowIndex }: TableBodyProps<T>) => {
           params: { slug: row.original.slug },
         });
       }}
-      className={`border-b border-border/30 active:bg-accent/30 ${
+      className={`border-border/30 active:bg-accent/30 border-b ${
         rowIndex % 2 === 0 ? "bg-card" : "bg-muted/20"
       }`}>
       <View className='min-h-[70px] flex-row'>
@@ -219,7 +219,7 @@ export const TableBody = <T,>({ row, rowIndex }: TableBodyProps<T>) => {
           <View
             key={cell.id}
             style={{ width: cell.column.getSize() }}
-            className={`justify-center border-r border-border/30 p-2 ${
+            className={`border-border/30 justify-center border-r p-2 ${
               cellIndex === row.getVisibleCells().length - 1 ? "border-r-0" : ""
             }`}>
             {flexRender(cell.column.columnDef.cell, cell.getContext())}

@@ -14,6 +14,10 @@
     "./auth-schema": {
       "types": "./dist/schemas/auth-schema.d.ts",
       "default": "./dist/schemas/auth-schema.js"
+    },
+    "./migrations": {
+      "types": "./src/migrations.d.ts",
+      "default": "./drizzle/migrations.js"
     }
   },
   "type": "module",

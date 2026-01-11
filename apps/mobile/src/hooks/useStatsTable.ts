@@ -1,4 +1,5 @@
 import { api } from "@/lib/api-client";
+import { captureException } from "@sentry/react-native";
 import {
   type AgentApiResponseType,
   type CompanyApiResponseType,
@@ -6,7 +7,6 @@ import {
 } from "@sudan-codex/db/schema";
 import { useQuery } from "@tanstack/react-query";
 import { type SortingState } from "@tanstack/react-table";
-import { usePostHog } from "posthog-react-native";
 import { useEffect, useState } from "react";
 import { toast } from "sonner-native";
 
@@ -33,7 +33,6 @@ export const useStatsTable = <TRoute extends StatsRoute>({
   const [sorting, setSorting] = useState<SortingState>(() => [
     { id: "brand_name", desc: false },
   ]);
-  const posthog = usePostHog();
   const { data, error, isFetching } = useQuery({
     queryKey: ["stats", qKey, slug],
     queryFn: async (): Promise<RouteOutputMap[TRoute]> => {
@@ -60,15 +59,8 @@ export const useStatsTable = <TRoute extends StatsRoute>({
     toast.error("Failed to fetch drug info");
     console.error(error);
 
-    posthog.captureException(error, {
-      properties: {
-        api: url,
-        tanstackQueryKey: qKey,
-        slug,
-      },
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [error, posthog]);
+    captureException(error);
+  }, [error]);
 
   return { data, error, isFetching, sorting, setSorting };
 };

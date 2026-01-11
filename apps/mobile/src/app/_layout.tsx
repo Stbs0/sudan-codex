@@ -1,10 +1,12 @@
 import { useAnalyticsPosthog } from "@/hooks/analytics";
 import { useAuth } from "@/hooks/useAuth";
 import { NAV_THEME } from "@/lib/theme";
+import { AuthProvider } from "@/providers/AuthProvider";
 import PHProvider from "@/providers/PHProvider";
 import { useReactNavigationDevTools } from "@dev-plugins/react-navigation";
 import { ThemeProvider } from "@react-navigation/native";
 import { PortalHost } from "@rn-primitives/portal";
+import * as Sentry from "@sentry/react-native";
 import {
   onlineManager,
   QueryClient,
@@ -13,20 +15,42 @@ import {
 import * as Network from "expo-network";
 import { SplashScreen, Stack, useNavigationContainerRef } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { useColorScheme } from "nativewind";
-import React, { useEffect } from "react";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { Toaster } from "sonner-native";
-
-import { AuthProvider } from "@/providers/AuthProvider";
+import React, { Suspense, useEffect } from "react";
 import { ActivityIndicator, View } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "react-native-reanimated";
-import "../global.css";
+import { Toaster } from "sonner-native";
+import { useUniwind } from "uniwind";
+import "../../global.css";
 import "../lib/i18next";
+
+import * as SQLite from "expo-sqlite";
 SplashScreen.preventAutoHideAsync();
 
-const queryClient = new QueryClient();
+Sentry.init({
+  dsn: process.env.EXPO_PUBLIC_SENTRY_DSN,
+  enabled: process.env.NODE_ENV === "production",
 
+  // Adds more context data to events (IP address, cookies, user, etc.)
+  // For more information, visit: https://docs.sentry.io/platforms/react-native/data-management/data-collected/
+  sendDefaultPii: true,
+
+  // Enable Logs
+  enableLogs: true,
+
+  // Configure Session Replay
+  replaysSessionSampleRate: 0.1,
+  replaysOnErrorSampleRate: 1,
+  integrations: [
+    Sentry.mobileReplayIntegration(),
+    Sentry.feedbackIntegration(),
+  ],
+
+  // uncomment the line below to enable Spotlight (https://spotlightjs.com)
+  // spotlight: __DEV__,
+});
+
+const queryClient = new QueryClient();
 onlineManager.setEventListener((setOnline) => {
   const eventSubscription = Network.addNetworkStateListener((state) => {
     setOnline(!!state.isConnected);
@@ -38,25 +62,37 @@ export { ErrorBoundary } from "expo-router";
 // export const unstable_settings = {
 //   initialRouteName: "(tabs)/drug-list/index",
 // };
-export default function RootLayout() {
+export function RootLayout() {
   return (
-    <PHProvider>
-      <QueryClientProvider client={queryClient}>
-        <AuthProvider>
-          <RootLayoutNav />
-        </AuthProvider>
-      </QueryClientProvider>
-    </PHProvider>
+    <Suspense fallback={<ActivityIndicator size='large' />}>
+      <SQLite.SQLiteProvider
+        databaseName={DATABASE_NAME}
+        options={{ enableChangeListener: true }}
+        assetSource={{
+          assetId: require("@/assets/data/dev.db"),
+        }}
+        useSuspense>
+        <PHProvider>
+          <QueryClientProvider client={queryClient}>
+            <AuthProvider>
+              <RootLayoutNav />
+            </AuthProvider>
+          </QueryClientProvider>
+        </PHProvider>
+      </SQLite.SQLiteProvider>
+    </Suspense>
   );
 }
+const DATABASE_NAME = "dev.db";
 
 function RootLayoutNav() {
   useAnalyticsPosthog();
-  const { data, isPending } = useAuth();
-  const { colorScheme } = useColorScheme();
-  const navigationRef = useNavigationContainerRef();
 
+  const { data, isPending } = useAuth();
+  const { theme } = useUniwind();
+  const navigationRef = useNavigationContainerRef();
   useReactNavigationDevTools(navigationRef);
+
   useEffect(() => {
     if (isPending) {
       return;
@@ -64,7 +100,6 @@ function RootLayoutNav() {
 
     SplashScreen.hideAsync();
   }, [isPending]);
-
   if (isPending) {
     return (
       <View className='flex-1 items-center justify-center'>
@@ -91,8 +126,7 @@ function RootLayoutNav() {
   // // }
   return (
     <GestureHandlerRootView>
-      <ThemeProvider
-        value={NAV_THEME[colorScheme === "dark" ? "dark" : "light"]}>
+      <ThemeProvider value={NAV_THEME[theme === "dark" ? "dark" : "light"]}>
         <StatusBar />
         <Stack screenOptions={{ headerShown: false }}>
           {/* began auth */}
@@ -124,3 +158,4 @@ function RootLayoutNav() {
     </GestureHandlerRootView>
   );
 }
+export default Sentry.wrap(RootLayout);

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 import { authClient } from "@/lib/auth-client";
+import { captureException } from "@sentry/react-native";
 import * as Haptics from "expo-haptics";
 import { usePostHog } from "posthog-react-native";
 import React from "react";
@@ -29,6 +30,7 @@ const Account = () => {
             try {
               await authClient.deleteUser();
               posthog.capture("account deleted");
+              posthog.reset();
             } catch (error) {
               posthog.captureException(error, {
                 label: "failed to delete account",
@@ -38,7 +40,7 @@ const Account = () => {
           },
           style: "destructive",
         },
-      ],
+      ]
     );
   };
   const onSignOut = async () => {
@@ -46,21 +48,26 @@ const Account = () => {
     try {
       await authClient.signOut();
       posthog.capture("signed out");
+      posthog.reset();
     } catch (error) {
-      posthog.captureException(error, { label: "failed to sign out" });
+      captureException(error);
 
       Alert.alert("Error", "Failed to sign out.");
     }
   };
   return (
-    <View className="gap-4 p-4">
-      <Button variant={"outline"} onPress={onSignOut}>
-        <Text className="text-center font-bold">
+    <View className='gap-4 p-4'>
+      <Button
+        variant={"outline"}
+        onPress={onSignOut}>
+        <Text className='text-center font-bold'>
           {t("settings.account.signOut")}
         </Text>
       </Button>
-      <Button variant={"destructive"} onPress={onDeletePress}>
-        <Text className="text-center font-bold text-white">
+      <Button
+        variant={"destructive"}
+        onPress={onDeletePress}>
+        <Text className='text-center font-bold text-white'>
           {t("settings.account.delete")}
         </Text>
       </Button>

@@ -1,9 +1,8 @@
 import DrugList from "@/screens/Drug-list/DrugList";
-import { useColorScheme } from "nativewind";
 import React from "react";
 import { KeyboardAvoidingView, View } from "react-native";
 import Svg, { Defs, Pattern, Rect } from "react-native-svg";
-
+import { useUniwind } from "uniwind";
 const DrugListScreen = () => {
   return (
     <View
@@ -23,10 +22,10 @@ const DrugListScreen = () => {
 export default DrugListScreen;
 
 function GridBackground() {
-  const { colorScheme } = useColorScheme(); // "light" | "dark"
+  const { theme } = useUniwind(); // "light" | "dark"
 
   // Change grid color depending on theme
-  const strokeColor = colorScheme === "dark" ? "#262626" : "#e0e0e0"; // gray-800 vs gray-200
+  const strokeColor = theme === "dark" ? "#262626" : "#e0e0e0"; // gray-800 vs gray-200
 
   return (
     <>

@@ -2,16 +2,16 @@ import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Constants from "expo-constants";
-import { useColorScheme } from "nativewind";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Linking, ScrollView, View } from "react-native";
+import { useUniwind } from "uniwind";
 
 const About = () => {
   const { t } = useTranslation();
-  const { colorScheme } = useColorScheme();
+  const { theme } = useUniwind();
   const appVersion = Constants.expoConfig?.version || "1.0.0";
-  const isDark = colorScheme === "dark";
+  const isDark = theme === "dark";
   return (
     <ScrollView className='mb-safe mt-2 flex-1 px-5'>
       {/* Header */}
@@ -119,7 +119,7 @@ const About = () => {
       </View>
 
       {/* Footer */}
-      <Text className='mb-4 mt-8 text-center text-xs text-gray-400 dark:text-gray-500'>
+      <Text className='mt-8 mb-4 text-center text-xs text-gray-400 dark:text-gray-500'>
         © {new Date().getFullYear()} Mohammed Mahmoud.{" "}
         {t("about.rightsReserved")}
       </Text>

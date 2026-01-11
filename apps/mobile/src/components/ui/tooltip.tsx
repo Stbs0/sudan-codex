@@ -44,10 +44,10 @@ function TooltipContent({
               <TooltipPrimitive.Content
                 sideOffset={sideOffset}
                 className={cn(
-                  "z-50 rounded-md bg-primary px-3 py-2 sm:py-1.5",
+                  "bg-primary z-50 rounded-md px-3 py-2 sm:py-1.5",
                   Platform.select({
                     web: cn(
-                      "origin-(--radix-tooltip-content-transform-origin) w-fit text-balance animate-in fade-in-0 zoom-in-95",
+                      "animate-in fade-in-0 zoom-in-95 w-fit origin-(--radix-tooltip-content-transform-origin) text-balance",
                       side === "bottom" && "slide-in-from-top-2",
                       side === "left" && "slide-in-from-right-2",
                       side === "right" && "slide-in-from-left-2",

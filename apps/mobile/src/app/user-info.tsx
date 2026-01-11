@@ -22,12 +22,12 @@ import { useAuth } from "@/hooks/useAuth";
 import { authClient } from "@/lib/auth-client";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { captureException } from "@sentry/react-native";
 import {
   tellUsMoreSchema,
   type tellUsMoreSchemaType,
 } from "@sudan-codex/types";
 import { Redirect, useRouter } from "expo-router";
-import { usePostHog } from "posthog-react-native";
 import React from "react";
 import { Controller, useForm, type Control } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -106,7 +106,6 @@ const FieldMessage = ({ message }: { message: string | undefined }) => {
 const CompleteProfileScreen = () => {
   const { data } = useAuth();
   const { t } = useTranslation();
-  const posthog = usePostHog();
   const router = useRouter();
   const form = useForm({
     mode: "onBlur",
@@ -124,7 +123,7 @@ const CompleteProfileScreen = () => {
       },
     });
     if (res.error) {
-      posthog.captureException(res.error, { place: "user info form" });
+      captureException(res.error, { tags: { screen: "user-info" } });
       toast.error("Failed to update profile. Please try again.");
     }
   };

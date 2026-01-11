@@ -34,10 +34,10 @@ function HoverCardContent({
                 align={align}
                 sideOffset={sideOffset}
                 className={cn(
-                  "outline-hidden z-50 w-64 rounded-md border border-border bg-popover p-4 shadow-md shadow-black/5",
+                  "bg-popover border-border z-50 w-64 rounded-md border p-4 shadow-md shadow-black/5 outline-hidden",
                   Platform.select({
                     web: cn(
-                      "origin-(--radix-hover-card-content-transform-origin) cursor-default animate-in fade-in-0 zoom-in-95 [&>*]:cursor-auto",
+                      "animate-in fade-in-0 zoom-in-95 origin-(--radix-hover-card-content-transform-origin) cursor-default [&>*]:cursor-auto",
                       props.side === "bottom" && "slide-in-from-top-2",
                       props.side === "top" && "slide-in-from-bottom-2"
                     ),

@@ -1,4 +1,0 @@
-ALTER TABLE `drugs` ALTER COLUMN "company_id" TO "company_id" integer REFERENCES companies(id) ON DELETE no action ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE `drugs` ALTER COLUMN "agent_id" TO "agent_id" integer REFERENCES agents(id) ON DELETE no action ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE `drugs` ALTER COLUMN "generic_id" TO "generic_id" integer REFERENCES generics(id) ON DELETE no action ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE `drugs` ALTER COLUMN "country_id" TO "country_id" integer REFERENCES countries(id) ON DELETE no action ON UPDATE no action;

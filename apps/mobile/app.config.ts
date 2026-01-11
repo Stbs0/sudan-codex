@@ -31,7 +31,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
 
   web: {
     bundler: "metro",
-    output: "static",
     favicon: "",
   },
   plugins: [
@@ -43,6 +42,15 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
           android: ["en", "ar"],
           ios: ["en", "ar"],
         },
+      },
+    ],
+    ["expo-sqlite"],
+    [
+      "@sentry/react-native/expo",
+      {
+        url: "https://sentry.io/",
+        project: process.env.EXPO_PUBLIC_SENTRY_PROJECT,
+        organization: process.env.EXPO_PUBLIC_SENTRY_ORG,
       },
     ],
     [
