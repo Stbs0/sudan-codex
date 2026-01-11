@@ -31,7 +31,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
 
   web: {
     bundler: "metro",
-    output: "static",
     favicon: "",
   },
   plugins: [
@@ -45,6 +44,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         },
       },
     ],
+    ["expo-sqlite"],
     [
       "@sentry/react-native/expo",
       {

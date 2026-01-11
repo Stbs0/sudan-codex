@@ -1,10 +1,12 @@
 import { useAnalyticsPosthog } from "@/hooks/analytics";
 import { useAuth } from "@/hooks/useAuth";
 import { NAV_THEME } from "@/lib/theme";
+import { AuthProvider } from "@/providers/AuthProvider";
 import PHProvider from "@/providers/PHProvider";
 import { useReactNavigationDevTools } from "@dev-plugins/react-navigation";
 import { ThemeProvider } from "@react-navigation/native";
 import { PortalHost } from "@rn-primitives/portal";
+import * as Sentry from "@sentry/react-native";
 import {
   onlineManager,
   QueryClient,
@@ -13,17 +15,16 @@ import {
 import * as Network from "expo-network";
 import { SplashScreen, Stack, useNavigationContainerRef } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import React, { useEffect } from "react";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { Toaster } from "sonner-native";
-
-import { AuthProvider } from "@/providers/AuthProvider";
-import * as Sentry from "@sentry/react-native";
+import React, { Suspense, useEffect } from "react";
 import { ActivityIndicator, View } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "react-native-reanimated";
+import { Toaster } from "sonner-native";
 import { useUniwind } from "uniwind";
 import "../../global.css";
 import "../lib/i18next";
+
+import * as SQLite from "expo-sqlite";
 SplashScreen.preventAutoHideAsync();
 
 Sentry.init({
@@ -49,7 +50,6 @@ Sentry.init({
 });
 
 const queryClient = new QueryClient();
-
 onlineManager.setEventListener((setOnline) => {
   const eventSubscription = Network.addNetworkStateListener((state) => {
     setOnline(!!state.isConnected);
@@ -63,21 +63,32 @@ export { ErrorBoundary } from "expo-router";
 // };
 export function RootLayout() {
   return (
-    <PHProvider>
-      <QueryClientProvider client={queryClient}>
-        <AuthProvider>
-          <RootLayoutNav />
-        </AuthProvider>
-      </QueryClientProvider>
-    </PHProvider>
+    <Suspense fallback={<ActivityIndicator size='large' />}>
+      <SQLite.SQLiteProvider
+        databaseName={DATABASE_NAME}
+        options={{ enableChangeListener: true }}
+        assetSource={{
+          assetId: require("@/assets/data/dev.db"),
+        }}
+        useSuspense>
+        <PHProvider>
+          <QueryClientProvider client={queryClient}>
+            <AuthProvider>
+              <RootLayoutNav />
+            </AuthProvider>
+          </QueryClientProvider>
+        </PHProvider>
+      </SQLite.SQLiteProvider>
+    </Suspense>
   );
 }
+const DATABASE_NAME = "dev.db";
 
 function RootLayoutNav() {
   useAnalyticsPosthog();
+
   const { data, isPending } = useAuth();
   const { theme } = useUniwind();
-
   const navigationRef = useNavigationContainerRef();
   useReactNavigationDevTools(navigationRef);
 
@@ -88,7 +99,6 @@ function RootLayoutNav() {
 
     SplashScreen.hideAsync();
   }, [isPending]);
-
   if (isPending) {
     return (
       <View className='flex-1 items-center justify-center'>

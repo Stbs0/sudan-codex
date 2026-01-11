@@ -1,1 +1,0 @@
-ALTER TABLE `drugs` ADD `pack_size` text;
