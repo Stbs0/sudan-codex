@@ -24,12 +24,13 @@ import { useUniwind } from "uniwind";
 import "../../global.css";
 import "../lib/i18next";
 
+import * as Constants from "expo-constants";
 import * as SQLite from "expo-sqlite";
-SplashScreen.preventAutoHideAsync();
+// SplashScreen.preventAutoHideAsync();
 
 Sentry.init({
   dsn: process.env.EXPO_PUBLIC_SENTRY_DSN,
-  enabled: process.env.NODE_ENV === "production",
+  // enabled: process.env.NODE_ENV === "production",
 
   // Adds more context data to events (IP address, cookies, user, etc.)
   // For more information, visit: https://docs.sentry.io/platforms/react-native/data-management/data-collected/
@@ -62,6 +63,7 @@ export { ErrorBoundary } from "expo-router";
 // export const unstable_settings = {
 //   initialRouteName: "(tabs)/drug-list/index",
 // };
+Sentry.captureMessage("constants", { extra: { constants: Constants } });
 export function RootLayout() {
   return (
     <Suspense fallback={<ActivityIndicator size='large' />}>
@@ -92,7 +94,12 @@ function RootLayoutNav() {
   const { theme } = useUniwind();
   const navigationRef = useNavigationContainerRef();
   useReactNavigationDevTools(navigationRef);
-
+  Sentry.captureMessage("isPending", { tags: { isPending } });
+  Sentry.captureMessage("data", {
+    extra: {
+      auth: data,
+    },
+  });
   useEffect(() => {
     if (isPending) {
       return;

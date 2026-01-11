@@ -1,5 +1,5 @@
 import { authClient } from "@/lib/auth-client";
-import { captureException } from "@sentry/react-native";
+import { captureException, captureMessage } from "@sentry/react-native";
 import { useState } from "react";
 import { toast } from "sonner-native";
 
@@ -15,13 +15,14 @@ const useSignIn = () => {
         newUserCallbackURL: "/user-info",
       });
       if (res.error) {
+        captureMessage("signIn error", { extra: { error: res.error } });
         console.error(res.error);
         toast.error("Something went wrong");
         captureException(res.error);
       }
     } catch (error) {
       console.error(error);
-
+      captureMessage("signIn error", { extra: { error } });
       captureException(error);
       toast.error("Something went wrong");
     } finally {
