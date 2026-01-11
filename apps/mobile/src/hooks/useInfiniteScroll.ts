@@ -48,7 +48,14 @@ export function useInfiniteServerScroll() {
 
   useEffect(() => {
     if (query.error) {
-      captureException(query.error);
+      captureException(query.error, {
+        contexts: {
+          query: {
+            search,
+            filterBy,
+          },
+        },
+      });
     }
   }, [query.error, posthog, search, filterBy]);
 

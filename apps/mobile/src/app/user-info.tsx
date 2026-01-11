@@ -123,7 +123,7 @@ const CompleteProfileScreen = () => {
       },
     });
     if (res.error) {
-      captureException(res.error);
+      captureException(res.error, { tags: { screen: "user-info" } });
       toast.error("Failed to update profile. Please try again.");
     }
   };

@@ -1,22 +1,9 @@
 import DrugList from "@/screens/Drug-list/DrugList";
-import * as schema from "@sudan-codex/db/schema";
-import { drizzle } from "drizzle-orm/expo-sqlite";
-import { useDrizzleStudio } from "expo-drizzle-studio-plugin";
-import { useSQLiteContext } from "expo-sqlite";
-import React, { useEffect } from "react";
+import React from "react";
 import { KeyboardAvoidingView, View } from "react-native";
 import Svg, { Defs, Pattern, Rect } from "react-native-svg";
 import { useUniwind } from "uniwind";
 const DrugListScreen = () => {
-  const db = useSQLiteContext();
-  useDrizzleStudio(db);
-  const mainDb = drizzle(db, { schema: schema });
-  useEffect(() => {
-    const fn = async () => {
-      return await mainDb.query.drugsTable.findMany();
-    };
-    console.log(fn());
-  }, []);
   return (
     <View
       style={{ flex: 1 }}

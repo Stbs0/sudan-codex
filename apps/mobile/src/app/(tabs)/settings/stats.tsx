@@ -15,7 +15,7 @@ export default function StatsSettingsScreen() {
       className='bg-background flex-1'
       showsVerticalScrollIndicator={false}>
       <Header />
-      <View className=''>
+      <View>
         <SummaryStats data={data.summaryData} />
       </View>
 

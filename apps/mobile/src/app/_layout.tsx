@@ -28,7 +28,8 @@ import * as SQLite from "expo-sqlite";
 SplashScreen.preventAutoHideAsync();
 
 Sentry.init({
-  dsn: "https://928611eacb1e87f81ed7887fdab863bb@o4508473978191872.ingest.de.sentry.io/4510687592382544",
+  dsn: process.env.EXPO_PUBLIC_SENTRY_DSN,
+  enabled: process.env.NODE_ENV === "production",
 
   // Adds more context data to events (IP address, cookies, user, etc.)
   // For more information, visit: https://docs.sentry.io/platforms/react-native/data-management/data-collected/
