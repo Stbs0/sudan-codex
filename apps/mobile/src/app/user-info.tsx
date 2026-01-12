@@ -22,7 +22,6 @@ import { useAuth } from "@/hooks/useAuth";
 import { authClient } from "@/lib/auth-client";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { captureException } from "@sentry/react-native";
 import {
   tellUsMoreSchema,
   type tellUsMoreSchemaType,
@@ -103,7 +102,7 @@ const FieldMessage = ({ message }: { message: string | undefined }) => {
   );
 };
 
-const CompleteProfileScreen = () => {
+export default function CompleteProfileScreen() {
   const { data } = useAuth();
   const { t } = useTranslation();
   const router = useRouter();
@@ -123,7 +122,6 @@ const CompleteProfileScreen = () => {
       },
     });
     if (res.error) {
-      captureException(res.error, { tags: { screen: "user-info" } });
       toast.error("Failed to update profile. Please try again.");
     }
   };
@@ -236,6 +234,4 @@ const CompleteProfileScreen = () => {
       </Button>
     </View>
   );
-};
-
-export default CompleteProfileScreen;
+}

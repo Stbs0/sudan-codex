@@ -6,8 +6,13 @@ import {
   DrugWithRelationsSelectSchema,
   GenericApiResponseSchema,
 } from "@sudan-codex/db/schema";
+import Constants from "expo-constants";
+import { Platform } from "react-native";
 import { z } from "zod";
 
+const APP_VERSION = Constants.expoConfig?.version ?? "dev";
+
+const USER_AGENT = `SudanCodex/${APP_VERSION} (${Platform.OS})`;
 // Constants
 const BASE_URL = process.env.EXPO_PUBLIC_BACKEND_URI;
 
@@ -18,6 +23,10 @@ export const api = createFetch({
     type: "linear",
     attempts: 3,
     delay: 1000,
+  },
+  headers: {
+    "User-Agent": USER_AGENT,
+    Accept: "application/json",
   },
   defaultOutput: z.any(),
   // onError(context) {

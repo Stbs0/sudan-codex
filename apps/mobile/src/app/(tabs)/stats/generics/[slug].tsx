@@ -21,7 +21,7 @@ import { ActivityIndicator, ScrollView, View } from "react-native";
 const columnHelper =
   createColumnHelper<GenericApiResponseType["drugs"][number]>();
 
-const GenericScreen = () => {
+export default function GenericScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const { t } = useTranslation();
 
@@ -193,5 +193,4 @@ const GenericScreen = () => {
       </ScrollView>
     </>
   );
-};
-export default GenericScreen;
+}

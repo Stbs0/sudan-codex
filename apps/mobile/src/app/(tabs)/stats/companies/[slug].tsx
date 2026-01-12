@@ -21,7 +21,7 @@ import { ActivityIndicator, ScrollView, View } from "react-native";
 const columnHelper =
   createColumnHelper<CompanyApiResponseType["drugs"][number]>();
 
-const CompanyScreen = () => {
+export default function CompanyScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const { t } = useTranslation();
   const { data, error, isFetching, sorting, setSorting } = useStatsTable({
@@ -192,6 +192,4 @@ const CompanyScreen = () => {
       </ScrollView>
     </>
   );
-};
-
-export default CompanyScreen;
+}

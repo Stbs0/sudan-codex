@@ -46,14 +46,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     ],
     ["expo-sqlite"],
     [
-      "@sentry/react-native/expo",
-      {
-        url: "https://de.sentry.io",
-        project: "sudan-codex",
-        organization: "mohammed-ibrahim-mahmoud",
-      },
-    ],
-    [
       "expo-splash-screen",
       {
         backgroundColor: "#232323",

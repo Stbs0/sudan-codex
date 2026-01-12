@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 import { authClient } from "@/lib/auth-client";
-import { captureException } from "@sentry/react-native";
 import * as Haptics from "expo-haptics";
 import { usePostHog } from "posthog-react-native";
 import React from "react";
@@ -50,8 +49,6 @@ const Account = () => {
       posthog.capture("signed out");
       posthog.reset();
     } catch (error) {
-      captureException(error);
-
       Alert.alert("Error", "Failed to sign out.");
     }
   };

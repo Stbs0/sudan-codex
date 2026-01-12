@@ -1,5 +1,4 @@
 import { api } from "@/lib/api-client";
-import { captureException } from "@sentry/react-native";
 import {
   type AgentApiResponseType,
   type CompanyApiResponseType,
@@ -58,8 +57,6 @@ export const useStatsTable = <TRoute extends StatsRoute>({
     if (!error) return;
     toast.error("Failed to fetch drug info");
     console.error(error);
-
-    captureException(error);
   }, [error]);
 
   return { data, error, isFetching, sorting, setSorting };
