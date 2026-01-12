@@ -38,6 +38,7 @@
         "NEXT_PUBLIC_API_URL",
         "NEXT_PUBLIC_POSTHOG_HOST",
         "NEXT_PUBLIC_POSTHOG_KEY",
+        "APP_VARIANT",
         "NODE_ENV",
         "NEXT_PUBLIC_SITE_URL",
         "NEXT_PUBLIC_WHATSAPP_NUMBER",
@@ -82,10 +83,13 @@
 
     "dev": {
       "cache": false,
-      "inputs": ["$TURBO_DEFAULT$", ".env.development.local"],"passThroughEnv": ["ANDROID_HOME"],
+      "inputs": ["$TURBO_DEFAULT$", ".env.development.local"],
+      "passThroughEnv": ["ANDROID_HOME"],
       "env": [
         "NEXT_PUBLIC_API_URL",
         "NEXT_PUBLIC_POSTHOG_HOST",
+        "APP_VARIANT",
+
         "NEXT_PUBLIC_POSTHOG_KEY",
         "NODE_ENV",
         "NEXT_PUBLIC_SITE_URL",

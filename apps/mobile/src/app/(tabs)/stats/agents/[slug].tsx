@@ -22,7 +22,7 @@ import { ActivityIndicator, ScrollView, View } from "react-native";
 const columnHelper =
   createColumnHelper<DrugResponseType<AgentApiResponseType>>();
 
-const AgentScreen = () => {
+export default function AgentScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const { t } = useTranslation();
   const { data, error, isFetching, sorting, setSorting } = useStatsTable({
@@ -194,6 +194,4 @@ const AgentScreen = () => {
       </ScrollView>
     </>
   );
-};
-
-export default AgentScreen;
+}

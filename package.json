@@ -9,7 +9,6 @@
     "secretlint": "^11.2.5",
     "syncpack": "^14.0.0-alpha.32",
     "turbo": "^2.7.2"
-
   },
   "private": true,
   "scripts": {
@@ -38,7 +37,6 @@
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
   },
-  "dependencies": {},
   "trustedDependencies": [
     "@posthog/cli",
     "@sudan-codex/mobile",

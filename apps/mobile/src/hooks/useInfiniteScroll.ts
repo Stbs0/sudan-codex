@@ -1,6 +1,5 @@
 import { type DrugFilterState, useSearchDrug } from "@/hooks/store/useSearch";
 import { api } from "@/lib/api-client";
-import { captureException } from "@sentry/react-native";
 import { infiniteQueryOptions, useInfiniteQuery } from "@tanstack/react-query";
 import { usePostHog } from "posthog-js/react";
 import { useEffect, useRef } from "react";
@@ -48,13 +47,11 @@ export function useInfiniteServerScroll() {
 
   useEffect(() => {
     if (query.error) {
-      captureException(query.error, {
-        contexts: {
-          query: {
-            search,
-            filterBy,
-          },
-        },
+      console.error("Error fetching drugs:", query.error);
+      posthog.capture("error_fetching_drugs", {
+        error: query.error,
+        search,
+        filterBy,
       });
     }
   }, [query.error, posthog, search, filterBy]);
@@ -62,12 +59,7 @@ export function useInfiniteServerScroll() {
   useEffect(() => {
     if (debounceTimeout.current) clearTimeout(debounceTimeout.current);
     if (search) {
-      debounceTimeout.current = setTimeout(() => {
-        posthog.capture("drug_searched", {
-          search,
-          filterBy,
-        });
-      }, 500);
+      debounceTimeout.current = setTimeout(() => {}, 500);
     }
     return () => {
       if (debounceTimeout.current) clearTimeout(debounceTimeout.current);

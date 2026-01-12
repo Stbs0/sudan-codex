@@ -6,7 +6,6 @@ import PHProvider from "@/providers/PHProvider";
 import { useReactNavigationDevTools } from "@dev-plugins/react-navigation";
 import { ThemeProvider } from "@react-navigation/native";
 import { PortalHost } from "@rn-primitives/portal";
-import * as Sentry from "@sentry/react-native";
 import {
   onlineManager,
   QueryClient,
@@ -15,7 +14,7 @@ import {
 import * as Network from "expo-network";
 import { SplashScreen, Stack, useNavigationContainerRef } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import React, { Suspense, useEffect } from "react";
+import { useEffect } from "react";
 import { ActivityIndicator, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "react-native-reanimated";
@@ -26,29 +25,6 @@ import "../lib/i18next";
 
 import * as SQLite from "expo-sqlite";
 SplashScreen.preventAutoHideAsync();
-
-Sentry.init({
-  dsn: process.env.EXPO_PUBLIC_SENTRY_DSN,
-  enabled: process.env.NODE_ENV === "production",
-
-  // Adds more context data to events (IP address, cookies, user, etc.)
-  // For more information, visit: https://docs.sentry.io/platforms/react-native/data-management/data-collected/
-  sendDefaultPii: true,
-
-  // Enable Logs
-  enableLogs: true,
-
-  // Configure Session Replay
-  replaysSessionSampleRate: 0.1,
-  replaysOnErrorSampleRate: 1,
-  integrations: [
-    Sentry.mobileReplayIntegration(),
-    Sentry.feedbackIntegration(),
-  ],
-
-  // uncomment the line below to enable Spotlight (https://spotlightjs.com)
-  // spotlight: __DEV__,
-});
 
 const queryClient = new QueryClient();
 onlineManager.setEventListener((setOnline) => {
@@ -62,28 +38,26 @@ export { ErrorBoundary } from "expo-router";
 // export const unstable_settings = {
 //   initialRouteName: "(tabs)/drug-list/index",
 // };
-export function RootLayout() {
+const DATABASE_NAME = "dev.db";
+
+export default function RootLayout() {
   return (
-    <Suspense fallback={<ActivityIndicator size='large' />}>
-      <SQLite.SQLiteProvider
-        databaseName={DATABASE_NAME}
-        options={{ enableChangeListener: true }}
-        assetSource={{
-          assetId: require("@/assets/data/dev.db"),
-        }}
-        useSuspense>
-        <PHProvider>
-          <QueryClientProvider client={queryClient}>
-            <AuthProvider>
-              <RootLayoutNav />
-            </AuthProvider>
-          </QueryClientProvider>
-        </PHProvider>
-      </SQLite.SQLiteProvider>
-    </Suspense>
+    <SQLite.SQLiteProvider
+      databaseName={DATABASE_NAME}
+      options={{ enableChangeListener: true }}
+      assetSource={{
+        assetId: require("@/assets/data/dev.db"),
+      }}>
+      <PHProvider>
+        <QueryClientProvider client={queryClient}>
+          <AuthProvider>
+            <RootLayoutNav />
+          </AuthProvider>
+        </QueryClientProvider>
+      </PHProvider>
+    </SQLite.SQLiteProvider>
   );
 }
-const DATABASE_NAME = "dev.db";
 
 function RootLayoutNav() {
   useAnalyticsPosthog();
@@ -100,6 +74,8 @@ function RootLayoutNav() {
 
     SplashScreen.hideAsync();
   }, [isPending]);
+  console.log("isPending", isPending);
+  console.log("data", data);
   if (isPending) {
     return (
       <View className='flex-1 items-center justify-center'>
@@ -158,4 +134,3 @@ function RootLayoutNav() {
     </GestureHandlerRootView>
   );
 }
-export default Sentry.wrap(RootLayout);
