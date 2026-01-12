@@ -62,6 +62,7 @@
     "expo": "^54.0.31",
     "expo-application": "~7.0.7",
     "expo-asset": "~12.0.9",
+    "expo-build-properties": "~1.0.10",
     "expo-constants": "~18.0.12",
     "expo-dev-client": "~6.0.13",
     "expo-device": "~8.0.9",
@@ -103,6 +104,7 @@
     "zod": "^4.3.4"
   },
   "devDependencies": {
+    "tsx": "^4.21.0",
     "@babel/core": "^7.28.5",
     "@sudan-codex/eslint-config": "workspace:*",
     "@sudan-codex/prettier-config": "workspace:*",

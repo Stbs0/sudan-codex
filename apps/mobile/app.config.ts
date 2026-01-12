@@ -1,5 +1,5 @@
+import "tsx/cjs";
 import type { ConfigContext, ExpoConfig } from "expo/config";
-
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
   name: "Sudan Codex",
@@ -34,6 +34,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     favicon: "",
   },
   plugins: [
+    ["./plugins/withNewHermsPath.ts"],
     "expo-router",
     [
       "expo-localization",
@@ -45,6 +46,16 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       },
     ],
     ["expo-sqlite"],
+    [
+      "expo-build-properties",
+      {
+        android: {
+          compileSdkVersion: 35,
+          targetSdkVersion: 35,
+          minSdkVersion: 28,
+        },
+      },
+    ],
     [
       "expo-splash-screen",
       {
