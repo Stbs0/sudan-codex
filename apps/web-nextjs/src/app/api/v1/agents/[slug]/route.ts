@@ -4,7 +4,7 @@ import { NextRequest } from "next/server";
 
 export async function GET(
   req: NextRequest,
-  ctx: RouteContext<"/api/agents/[slug]">
+  ctx: RouteContext<"/api/v1/agents/[slug]">
 ) {
   // TODO: add error handling
   const { slug } = await ctx.params;

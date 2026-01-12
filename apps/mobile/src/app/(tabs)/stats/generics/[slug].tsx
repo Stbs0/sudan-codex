@@ -26,7 +26,7 @@ export default function GenericScreen() {
   const { t } = useTranslation();
 
   const { data, error, isFetching, sorting, setSorting } = useStatsTable({
-    url: "/api/generics/:slug",
+    url: "/api/v1/generics/:slug",
     qKey: "generics",
     slug,
   });

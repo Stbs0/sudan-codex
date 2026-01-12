@@ -14,7 +14,7 @@ const DrugInfo = () => {
   const { data: drug, isError } = useQuery({
     queryKey: ["drugInfo", slug],
     queryFn: async () => {
-      const res = await api(`/api/drugs/:slug`, {
+      const res = await api(`/api/v1/drugs/:slug`, {
         params: { slug },
       });
       if (res.error) {

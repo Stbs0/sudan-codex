@@ -61,16 +61,16 @@ export const api = createFetch({
   //   }),
   // ],
   schema: createSchema({
-    "/api/agents/:slug": {
+    "/api/v1/agents/:slug": {
       output: AgentApiResponseSchema,
       params: z.object({ slug: z.string() }),
     },
     "/api/auth/:all": {},
-    "/api/companies/:slug": {
+    "/api/v1/companies/:slug": {
       output: CompanyApiResponseSchema,
       params: z.object({ slug: z.string() }),
     },
-    "/api/drugs": {
+    "/api/v1/drugs": {
       output: DrugListApiResponseSchema,
       query: z.object({
         page: z.number().optional(),
@@ -86,8 +86,8 @@ export const api = createFetch({
           .optional(),
       }),
     },
-    "/api/drugs/:slug": { output: DrugWithRelationsSelectSchema },
-    "/api/generics/:slug": {
+    "/api/v1/drugs/:slug": { output: DrugWithRelationsSelectSchema },
+    "/api/v1/generics/:slug": {
       output: GenericApiResponseSchema,
       params: z.object({ slug: z.string() }),
     },

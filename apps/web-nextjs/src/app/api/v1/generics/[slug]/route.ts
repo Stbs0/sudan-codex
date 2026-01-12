@@ -1,63 +1,62 @@
-import { companiesTable, db, drugsTable } from "@sudan-codex/db";
+import { db, drugsTable, genericsTable } from "@sudan-codex/db";
 import { eq } from "drizzle-orm";
 import { NextRequest } from "next/server";
 
 export async function GET(
   req: NextRequest,
-  ctx: RouteContext<"/api/companies/[slug]">
+  ctx: RouteContext<"/api/v1/generics/[slug]">
 ) {
-  // TODO: Add error handiling
   const { slug } = await ctx.params;
   if (!slug) {
     return Response.json({ error: "No slug provided" }, { status: 400 });
   }
 
-  const company = await db.query.companiesTable.findFirst({
-    where: eq(companiesTable.slug, slug),
+  const generic = await db.query.genericsTable.findFirst({
+    where: eq(genericsTable.slug, slug),
     with: {
       stats: {
         columns: {
           total_brands: true,
           related_agents: true,
-          related_generics: true,
+          related_companies: true,
         },
       },
     },
   });
 
-  if (!company)
-    return Response.json({ error: "Company not found" }, { status: 404 });
+  if (!generic)
+    return Response.json({ error: "Generic not found" }, { status: 404 });
   const drugsWithAll = await db.query.drugsTable.findMany({
-    where: eq(drugsTable.company_id, company.id),
+    where: eq(drugsTable.generic_id, generic.id),
     columns: {
       brand_name: true,
       pack_size: true,
       slug: true,
+      company_name: true,
       agent_name: true,
-      generic_name: true,
       strength: true,
     },
     with: {
-      generic: {
+      agent: {
         columns: {
           slug: true,
         },
       },
-      agent: {
+      company: {
         columns: {
           slug: true,
         },
       },
     },
   });
-  const res = {
+
+  return Response.json({
     stats: {
-      total_brands: company.stats.total_brands,
-      related_generics: company.stats.related_generics,
-      related_agents: company.stats.related_agents,
+      total_brands: generic.stats.total_brands,
+      related_agents: generic.stats.related_agents,
+      related_companies: generic.stats.related_companies,
     },
     drugs: drugsWithAll,
-    name: company.name,
-  };
-  return Response.json(res);
+    name: generic.name,
+  });
 }

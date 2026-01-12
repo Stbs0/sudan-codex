@@ -72,7 +72,7 @@ export async function GET(req: NextRequest) {
     }
     posthog.captureException(error, "get_drugs_api_error", {
       distinctId,
-      path: "/api/drugs",
+      path: "/api/v1/drugs",
       query: searchParams.toString(),
       column: column.data,
     });

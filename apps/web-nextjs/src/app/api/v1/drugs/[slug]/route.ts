@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 
 export async function GET(
   _req: NextRequest,
-  { params }: RouteContext<"/api/drugs/[slug]">
+  { params }: RouteContext<"/api/v1/drugs/[slug]">
 ) {
   const { slug } = await params.catch(() => {
     throw new Error("Invalid parameters");

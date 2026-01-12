@@ -5,7 +5,7 @@ function escapeLike(str: string): string {
   return str.replace(/[%_\\]/g, "\\$&");
 }
 
-describe("/api/drugs Route Logic", () => {
+describe("/api/v1/drugs Route Logic", () => {
   describe("escapeLike function", () => {
     it("escapes percent character", () => {
       expect(escapeLike("10%")).toBe("10\\%");
