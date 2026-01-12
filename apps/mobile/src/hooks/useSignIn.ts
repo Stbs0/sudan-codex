@@ -10,7 +10,7 @@ const useSignIn = () => {
     try {
       const res = await authClient.signIn.social({
         provider: "google",
-        callbackURL: "/(tabs)/drug-list",
+        // callbackURL: "/(tabs)/drug-list",
         newUserCallbackURL: "/user-info",
       });
       if (res.error) {

@@ -1,13 +1,52 @@
-import "tsx/cjs";
 import type { ConfigContext, ExpoConfig } from "expo/config";
+import "tsx/cjs";
+
+const IS_DEV = process.env.APP_VARIANT === "development";
+const IS_PREVIEW = process.env.APP_VARIANT === "preview";
+
+const getPackageIdentifier = () => {
+  if (IS_DEV) {
+    return "app.sudancodex.mobile.dev";
+  }
+
+  if (IS_PREVIEW) {
+    return "app.sudancodex.mobile.preview";
+  }
+
+  return "app.sudancodex.mobile";
+};
+const getAppName = () => {
+  if (IS_DEV) {
+    return "Sudan Codex (Dev)";
+  }
+
+  if (IS_PREVIEW) {
+    return "Sudan Codex (Preview)";
+  }
+
+  return "Sudan Codex";
+};
+
+const getScheme = () => {
+  if (IS_DEV) {
+    return "sudancodexmobile-dev";
+  }
+
+  if (IS_PREVIEW) {
+    return "sudancodexmobile-preview";
+  }
+
+  return "sudancodexmobile";
+};
+
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
-  name: "Sudan Codex",
+  name: getAppName(),
   slug: "sudancodex",
   version: "1.0.0",
   orientation: "portrait",
   icon: "./src/assets/icons/adaptive-icon.png",
-  scheme: "sudancodexmobile",
+  scheme: getScheme(),
   userInterfaceStyle: "automatic",
   newArchEnabled: true,
   splash: {
@@ -17,7 +56,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   ios: {
     supportsTablet: true,
-    bundleIdentifier: "app.sudancodex.mobile",
+    bundleIdentifier: getPackageIdentifier(),
   },
   android: {
     adaptiveIcon: {
@@ -26,7 +65,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     },
     edgeToEdgeEnabled: true,
     softwareKeyboardLayoutMode: "resize",
-    package: "app.sudancodex.mobile",
+    package: getPackageIdentifier(),
   },
 
   web: {
@@ -82,5 +121,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     eas: {
       projectId: "df521420-8fc5-4677-83b6-54c8171edc1e",
     },
+    apiUrl: process.env.EXPO_PUBLIC_BACKEND_URI,
   },
 });

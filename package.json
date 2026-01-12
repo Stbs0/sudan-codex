@@ -23,9 +23,7 @@
     "clean": "rm -rf node_modules ./apps/*/node_modules ./packages/*/node_modules bun.lock ./apps/mobile/.expo",
     "build": "turbo run build",
     "build:packages": "turbo run build --filter=./packages/* ",
-    "postinstall": "bun build:packages",
-    "android": "expo run:android",
-    "ios": "expo run:ios"
+    "postinstall": "bun build:packages"
   },
   "packageManager": "bun@1.3.5",
   "type": "module",

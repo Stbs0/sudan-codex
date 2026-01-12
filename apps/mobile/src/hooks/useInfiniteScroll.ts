@@ -48,18 +48,18 @@ export function useInfiniteServerScroll() {
   useEffect(() => {
     if (query.error) {
       console.error("Error fetching drugs:", query.error);
+      posthog.capture("error_fetching_drugs", {
+        error: query.error,
+        search,
+        filterBy,
+      });
     }
   }, [query.error, posthog, search, filterBy]);
 
   useEffect(() => {
     if (debounceTimeout.current) clearTimeout(debounceTimeout.current);
     if (search) {
-      debounceTimeout.current = setTimeout(() => {
-        posthog.capture("drug_searched", {
-          search,
-          filterBy,
-        });
-      }, 500);
+      debounceTimeout.current = setTimeout(() => {}, 500);
     }
     return () => {
       if (debounceTimeout.current) clearTimeout(debounceTimeout.current);

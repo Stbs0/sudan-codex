@@ -38,6 +38,8 @@ export { ErrorBoundary } from "expo-router";
 // export const unstable_settings = {
 //   initialRouteName: "(tabs)/drug-list/index",
 // };
+const DATABASE_NAME = "dev.db";
+
 export default function RootLayout() {
   return (
     <SQLite.SQLiteProvider
@@ -56,7 +58,6 @@ export default function RootLayout() {
     </SQLite.SQLiteProvider>
   );
 }
-const DATABASE_NAME = "dev.db";
 
 function RootLayoutNav() {
   useAnalyticsPosthog();
@@ -73,6 +74,8 @@ function RootLayoutNav() {
 
     SplashScreen.hideAsync();
   }, [isPending]);
+  console.log("isPending", isPending);
+  console.log("data", data);
   if (isPending) {
     return (
       <View className='flex-1 items-center justify-center'>
