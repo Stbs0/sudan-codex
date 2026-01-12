@@ -45,10 +45,5 @@
     "@swc/core",
     "core-js",
     "unrs-resolver"
-  ],
-  "dependencies": {
-    "expo": "~54.0.31",
-    "react": "19.1.0",
-    "react-native": "0.81.5"
-  }
+  ]
 }
