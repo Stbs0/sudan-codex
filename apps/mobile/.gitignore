@@ -48,3 +48,5 @@ google-services.json
 .eslintcache
 
 .env.local
+
+uniwind-types.d.ts

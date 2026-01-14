@@ -55,7 +55,7 @@ const DrugList = () => {
         data={drugList}
         ref={listRef}
         renderItem={renderItem}
-        className='pt-4'
+        style={{ paddingVertical: 16 }}
         keyExtractor={(item) => item.id.toString()}
         ItemSeparatorComponent={() => <View style={{ height: 16 }} />}
         ListFooterComponent={() => {

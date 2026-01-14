@@ -1,3 +1,4 @@
+import { Icon } from "@/components/ui/icon";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -14,6 +15,7 @@ import {
   type DrugFilterState,
   type SearchDrugType,
 } from "@/hooks/store/useSearch";
+import { SearchIcon } from "lucide-react-native";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { View } from "react-native";
@@ -61,11 +63,18 @@ export default function SearchInput() {
     label: "Brand Name",
   };
   return (
-    <View className='relative m-2 flex-row items-center'>
+    <View className='bg-input border-input relative m-2 flex-row items-center rounded-md'>
+      <View className='px-1'>
+        <Icon
+          as={SearchIcon}
+          size={24}
+        />
+      </View>
+      {/* FIXME: placeholder color when light or dark mode changes stays the same */}
       <Input
         onChangeText={onSearch}
-        className={`w-full rounded-md border dark:bg-black`}
-        style={{ paddingRight: width + 8 }}
+        className={`border-0 border-none bg-transparent pl-1 placeholder:text-black/50 dark:placeholder:text-white/50`}
+        style={{ paddingRight: width + 8 + 24 }}
         value={search}
         placeholder={`Search by ${defaultOption.label}...`}
       />
