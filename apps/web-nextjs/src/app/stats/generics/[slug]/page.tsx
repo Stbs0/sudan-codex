@@ -13,7 +13,8 @@ import {
 } from "@sudan-codex/db";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-export const revalidate = false;
+// export const revalidate = false;
+export const dynamic = "force-dynamic";
 
 type Props = {
   params: Promise<{ slug: string }>;
