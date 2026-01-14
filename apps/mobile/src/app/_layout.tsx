@@ -19,11 +19,12 @@ import { ActivityIndicator, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "react-native-reanimated";
 import { Toaster } from "sonner-native";
-import { useUniwind } from "uniwind";
+import { Uniwind, useUniwind } from "uniwind";
 import "../../global.css";
 import "../lib/i18next";
 
 import * as SQLite from "expo-sqlite";
+import { SafeAreaListener } from "react-native-safe-area-context";
 SplashScreen.preventAutoHideAsync();
 
 const queryClient = new QueryClient();
@@ -102,35 +103,40 @@ function RootLayoutNav() {
   // // }
   return (
     <GestureHandlerRootView>
-      <ThemeProvider value={NAV_THEME[theme === "dark" ? "dark" : "light"]}>
-        <StatusBar />
-        <Stack screenOptions={{ headerShown: false }}>
-          {/* began auth */}
-          <Stack.Protected guard={data === null}>
-            <Stack.Screen name='auth' />
-          </Stack.Protected>
-          {/* end auth */}
+      <SafeAreaListener
+        onChange={({ insets }) => {
+          Uniwind.updateInsets(insets);
+        }}>
+        <ThemeProvider value={NAV_THEME[theme === "dark" ? "dark" : "light"]}>
+          <StatusBar />
+          <Stack screenOptions={{ headerShown: false }}>
+            {/* began auth */}
+            <Stack.Protected guard={data === null}>
+              <Stack.Screen name='auth' />
+            </Stack.Protected>
+            {/* end auth */}
 
-          <Stack.Protected guard={data !== null}>
-            {/* began tabs  */}
-            <Stack.Protected guard={data?.user?.isProfileComplete === true}>
-              <Stack.Screen name='(tabs)' />
-              <Stack.Screen
-                name='about'
-                options={{ title: "About", headerShown: true }}
-              />
+            <Stack.Protected guard={data !== null}>
+              {/* began tabs  */}
+              <Stack.Protected guard={data?.user?.isProfileComplete === true}>
+                <Stack.Screen name='(tabs)' />
+                <Stack.Screen
+                  name='about'
+                  options={{ title: "About", headerShown: true }}
+                />
+              </Stack.Protected>
+              {/* began tabs  */}
+              {/* began check if complete profile */}
+              <Stack.Protected guard={data?.user?.isProfileComplete === false}>
+                <Stack.Screen name='user-info' />
+              </Stack.Protected>
+              {/* end check if complete profile */}
             </Stack.Protected>
-            {/* began tabs  */}
-            {/* began check if complete profile */}
-            <Stack.Protected guard={data?.user?.isProfileComplete === false}>
-              <Stack.Screen name='user-info' />
-            </Stack.Protected>
-            {/* end check if complete profile */}
-          </Stack.Protected>
-        </Stack>
-        <PortalHost />
-        <Toaster />
-      </ThemeProvider>
+          </Stack>
+          <PortalHost />
+          <Toaster />
+        </ThemeProvider>
+      </SafeAreaListener>
     </GestureHandlerRootView>
   );
 }
