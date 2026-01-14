@@ -18,8 +18,8 @@ import { notFound } from "next/navigation";
 type Props = {
   params: Promise<{ slug: string }>;
 };
-// export const revalidate = false;
-export const dynamic = "force-dynamic";
+export const revalidate = false;
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const company = await getCompanyBySlug(slug);

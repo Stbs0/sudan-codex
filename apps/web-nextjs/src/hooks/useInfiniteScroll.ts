@@ -34,6 +34,9 @@ const getQueryOptions = ({
         if (filterBy) params.set("filterBy", filterBy);
         if (pageParam) params.set("page", pageParam.toString());
         const res = await fetch(`/api/v1/drugs?${params.toString()}`);
+        if (!res.ok) {
+          throw new Error(`API error: ${res.status}`);
+        }
         return res.json();
       } catch (error) {
         posthog.captureException(error, {

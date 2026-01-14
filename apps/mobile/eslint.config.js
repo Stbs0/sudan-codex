@@ -1,5 +1,4 @@
 import config from "@sudan-codex/eslint-config/mobile";
-import { defineConfig } from "eslint/config";
 import testingLibrary from "eslint-plugin-testing-library";
 
 export default [
