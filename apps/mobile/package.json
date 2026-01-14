@@ -122,7 +122,7 @@
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
     "tailwindcss-animate": "^1.0.7",
-    "uniwind": "^1.2.3",
+    "uniwind": "1.2.3",
     "zod": "^4.3.4"
   },
   "devDependencies": {

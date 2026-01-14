@@ -1,0 +1,94 @@
+{
+  "expo": {
+    "slug": "sudancodex",
+    "name": "Sudan Codex",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "sudancodexmobile",
+    "icon": "./src/assets/icons/adaptive-icon.png",
+    "userInterfaceStyle": "automatic",
+    "developmentClient": { "silentLaunch": true },
+    "splash": {
+      "image": "./src/assets/icons/splash-icon-light.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#232323"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.sudancodex.mobile",
+      "infoPlist": {
+        "ExpoLocalization_supportsRTL": true,
+        "CFBundleLocalizations": ["en", "ar"]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/icons/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "softwareKeyboardLayoutMode": "resize",
+      "package": "com.sudancodex.mobile"
+    },
+    "web": {
+      "bundler": "metro",
+      "favicon": ""
+    },
+    "plugins": [
+      "./plugins/withNewHermsPath.ts",
+      "expo-router",
+      [
+        "expo-localization",
+        {
+          "supportedLocales": {
+            "android": ["en", "ar"],
+            "ios": ["en", "ar"]
+          }
+        }
+      ],
+      "expo-sqlite",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 35,
+            "targetSdkVersion": 35,
+            "minSdkVersion": 28
+          }
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#232323",
+          "image": "./src/assets/icons/splash-icon-light.png",
+          "dark": {
+            "image": "./src/assets/icons/splash-icon-dark.png",
+            "backgroundColor": "#000000"
+          },
+          "imageWidth": 200
+        }
+      ],
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true,
+      "autolinkingModuleResolution": true
+    },
+    "owner": "stbs0",
+    "extra": {
+      "router": {},
+      "supportsRTL": true,
+      "eas": {
+        "projectId": "df521420-8fc5-4677-83b6-54c8171edc1e"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/df521420-8fc5-4677-83b6-54c8171edc1e"
+    }
+  }
+}
