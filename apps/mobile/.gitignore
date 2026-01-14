@@ -50,3 +50,4 @@ google-services.json
 .env.local
 
 uniwind-types.d.ts
+coverage

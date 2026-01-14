@@ -31,6 +31,8 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
+    // there is an issue in expo where toHavePathname is not recognized by ts
+    "../../node_modules/expo-router/types/expect.d.ts",
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
     "uniwind-types.d.ts"

@@ -1,4 +1,6 @@
 {
-  "compilerOptions": {},
+  "compilerOptions": {
+    "skipLibCheck": true
+  },
   "exclude": ["node_modules", "apps/legacy-vite-web"]
 }
