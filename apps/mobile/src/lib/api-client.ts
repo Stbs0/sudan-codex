@@ -14,8 +14,7 @@ const APP_VERSION = Constants.expoConfig?.version ?? "dev";
 
 const USER_AGENT = `SudanCodex/${APP_VERSION} (${Platform.OS})`;
 // Constants
-const BASE_URL =
-  Constants.expoConfig?.extra?.apiUrl ?? process.env.EXPO_PUBLIC_BACKEND_URI;
+const BASE_URL = process.env.EXPO_PUBLIC_BACKEND_URI;
 
 // Create Axios instance
 export const api = createFetch({

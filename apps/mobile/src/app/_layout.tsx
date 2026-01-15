@@ -6,7 +6,6 @@ import PHProvider from "@/providers/PHProvider";
 import { useReactNavigationDevTools } from "@dev-plugins/react-navigation";
 import { ThemeProvider } from "@react-navigation/native";
 import { PortalHost } from "@rn-primitives/portal";
-import * as Sentry from "@sentry/react-native";
 import {
   onlineManager,
   QueryClient,
@@ -27,28 +26,6 @@ import "../../global.css";
 import "../lib/i18next";
 SplashScreen.preventAutoHideAsync();
 
-Sentry.init({
-  dsn: process.env.EXPO_PUBLIC_SENTRY_DSN,
-
-  // Adds more context data to events (IP address, cookies, user, etc.)
-  // For more information, visit: https://docs.sentry.io/platforms/react-native/data-management/data-collected/
-  sendDefaultPii: true,
-
-  // Enable Logs
-  enableLogs: true,
-
-  // Configure Session Replay
-  replaysSessionSampleRate: 0.1,
-  replaysOnErrorSampleRate: 1,
-  integrations: [
-    Sentry.mobileReplayIntegration(),
-    Sentry.feedbackIntegration(),
-  ],
-
-  // uncomment the line below to enable Spotlight (https://spotlightjs.com)
-  // spotlight: __DEV__,
-});
-
 const queryClient = new QueryClient();
 onlineManager.setEventListener((setOnline) => {
   const eventSubscription = Network.addNetworkStateListener((state) => {
@@ -63,7 +40,7 @@ export { ErrorBoundary } from "expo-router";
 // };
 const DATABASE_NAME = "dev.db";
 
-function RootLayout() {
+export default function RootLayout() {
   return (
     <SQLite.SQLiteProvider
       databaseName={DATABASE_NAME}
@@ -97,8 +74,7 @@ function RootLayoutNav() {
 
     SplashScreen.hideAsync();
   }, [isPending]);
-  console.log("isPending", isPending);
-  console.log("data", data);
+
   if (isPending) {
     return (
       <View className='flex-1 items-center justify-center'>
@@ -162,4 +138,3 @@ function RootLayoutNav() {
     </GestureHandlerRootView>
   );
 }
-export default Sentry.wrap(RootLayout);

@@ -71,15 +71,7 @@
           "imageWidth": 200
         }
       ],
-      "expo-font",
-      [
-        "@sentry/react-native/expo",
-        {
-          "url": "https://sentry.io/",
-          "project": "sudan-codex",
-          "organization": "mohammed-ibrahim-mahmoud"
-        }
-      ]
+      "expo-font"
     ],
     "experiments": {
       "typedRoutes": true,

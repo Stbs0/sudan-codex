@@ -50,7 +50,7 @@
         "@rn-primitives/toggle": "^1.2.0",
         "@rn-primitives/toggle-group": "^1.2.0",
         "@rn-primitives/tooltip": "^1.2.0",
-        "@sentry/react-native": "^7.4.0",
+        "@sentry/react-native": "^7.8.0",
         "@sudan-codex/db": "workspace:*",
         "@sudan-codex/types": "workspace:*",
         "@tanstack/react-query": "^5.90.11",

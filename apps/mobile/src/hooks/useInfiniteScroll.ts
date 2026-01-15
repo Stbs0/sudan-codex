@@ -25,6 +25,7 @@ const getQueryOptions = ({ search, filterBy }: QueryOptions) =>
         },
       });
       if (res.error) {
+        console.log("error fetching drugs:", res.error);
         throw new Error(res.error.message);
       }
       return res.data;
