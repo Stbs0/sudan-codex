@@ -7,7 +7,9 @@
     "scheme": "sudancodexmobile",
     "icon": "./src/assets/icons/adaptive-icon.png",
     "userInterfaceStyle": "automatic",
-    "developmentClient": { "silentLaunch": true },
+    "developmentClient": {
+      "silentLaunch": true
+    },
     "splash": {
       "image": "./src/assets/icons/splash-icon-light.png",
       "resizeMode": "contain",
@@ -69,7 +71,15 @@
           "imageWidth": 200
         }
       ],
-      "expo-font"
+      "expo-font",
+      [
+        "@sentry/react-native/expo",
+        {
+          "url": "https://sentry.io/",
+          "project": "sudan-codex",
+          "organization": "mohammed-ibrahim-mahmoud"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,

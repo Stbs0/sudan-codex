@@ -3,10 +3,10 @@ import { useAuth } from "@/hooks/useAuth";
 import { NAV_THEME } from "@/lib/theme";
 import { AuthProvider } from "@/providers/AuthProvider";
 import PHProvider from "@/providers/PHProvider";
-import { init, SessionStrategy } from "@bitdrift/react-native";
 import { useReactNavigationDevTools } from "@dev-plugins/react-navigation";
 import { ThemeProvider } from "@react-navigation/native";
 import { PortalHost } from "@rn-primitives/portal";
+import * as Sentry from "@sentry/react-native";
 import {
   onlineManager,
   QueryClient,
@@ -25,13 +25,30 @@ import { Toaster } from "sonner-native";
 import { Uniwind, useUniwind } from "uniwind";
 import "../../global.css";
 import "../lib/i18next";
-
 SplashScreen.preventAutoHideAsync();
 
-init(
-  "GiBfciDcw43RlaIhg80Imjcgy818IrvVWApESwKUAyOVOCILRUxaMUZnQUFEdm8orgI=",
-  SessionStrategy.Activity
-);
+Sentry.init({
+  dsn: process.env.EXPO_PUBLIC_SENTRY_DSN,
+
+  // Adds more context data to events (IP address, cookies, user, etc.)
+  // For more information, visit: https://docs.sentry.io/platforms/react-native/data-management/data-collected/
+  sendDefaultPii: true,
+
+  // Enable Logs
+  enableLogs: true,
+
+  // Configure Session Replay
+  replaysSessionSampleRate: 0.1,
+  replaysOnErrorSampleRate: 1,
+  integrations: [
+    Sentry.mobileReplayIntegration(),
+    Sentry.feedbackIntegration(),
+  ],
+
+  // uncomment the line below to enable Spotlight (https://spotlightjs.com)
+  // spotlight: __DEV__,
+});
+
 const queryClient = new QueryClient();
 onlineManager.setEventListener((setOnline) => {
   const eventSubscription = Network.addNetworkStateListener((state) => {
@@ -46,7 +63,7 @@ export { ErrorBoundary } from "expo-router";
 // };
 const DATABASE_NAME = "dev.db";
 
-export default function RootLayout() {
+function RootLayout() {
   return (
     <SQLite.SQLiteProvider
       databaseName={DATABASE_NAME}
@@ -145,3 +162,4 @@ function RootLayoutNav() {
     </GestureHandlerRootView>
   );
 }
+export default Sentry.wrap(RootLayout);

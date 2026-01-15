@@ -26,6 +26,17 @@ const getPackageIdentifier = () => {
 
   return "com.sudancodex.mobile";
 };
+const getSlug = () => {
+  if (IS_DEV) {
+    return "sudan-codex-dev";
+  }
+
+  if (IS_PREVIEW) {
+    return "sudan-codex-preview";
+  }
+
+  return "sudan-codex";
+};
 const getAppName = () => {
   if (IS_DEV) {
     return "Sudan Codex (Dev)";
@@ -52,7 +63,7 @@ const getScheme = () => {
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
-  slug: "sudancodex",
+  slug: getSlug(),
 
   name: getAppName(),
   scheme: getScheme(),
