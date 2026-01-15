@@ -3,6 +3,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { NAV_THEME } from "@/lib/theme";
 import { AuthProvider } from "@/providers/AuthProvider";
 import PHProvider from "@/providers/PHProvider";
+import { init, SessionStrategy } from "@bitdrift/react-native";
 import { useReactNavigationDevTools } from "@dev-plugins/react-navigation";
 import { ThemeProvider } from "@react-navigation/native";
 import { PortalHost } from "@rn-primitives/portal";
@@ -13,20 +14,24 @@ import {
 } from "@tanstack/react-query";
 import * as Network from "expo-network";
 import { SplashScreen, Stack, useNavigationContainerRef } from "expo-router";
+import * as SQLite from "expo-sqlite";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
 import { ActivityIndicator, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "react-native-reanimated";
+import { SafeAreaListener } from "react-native-safe-area-context";
 import { Toaster } from "sonner-native";
 import { Uniwind, useUniwind } from "uniwind";
 import "../../global.css";
 import "../lib/i18next";
 
-import * as SQLite from "expo-sqlite";
-import { SafeAreaListener } from "react-native-safe-area-context";
 SplashScreen.preventAutoHideAsync();
 
+init(
+  "GiBfciDcw43RlaIhg80Imjcgy818IrvVWApESwKUAyOVOCILRUxaMUZnQUFEdm8orgI=",
+  SessionStrategy.Activity
+);
 const queryClient = new QueryClient();
 onlineManager.setEventListener((setOnline) => {
   const eventSubscription = Network.addNetworkStateListener((state) => {

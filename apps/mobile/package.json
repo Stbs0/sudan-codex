@@ -42,6 +42,7 @@
     "@better-auth/expo": "^1.4.6",
     "@better-fetch/fetch": "^1.1.21",
     "@better-fetch/logger": "^1.1.21",
+    "@bitdrift/react-native": "^0.11.0",
     "@dev-plugins/react-navigation": "^0.4.0",
     "@expo/vector-icons": "^15.0.2",
     "@hookform/resolvers": "^5.2.2",
