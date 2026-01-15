@@ -10,14 +10,14 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner-native";
 
 type StatsRoute =
-  | "/api/agents/:slug"
-  | "/api/companies/:slug"
-  | "/api/generics/:slug";
+  | "/api/v1/agents/:slug"
+  | "/api/v1/companies/:slug"
+  | "/api/v1/generics/:slug";
 
 type RouteOutputMap = {
-  "/api/agents/:slug": AgentApiResponseType;
-  "/api/companies/:slug": CompanyApiResponseType;
-  "/api/generics/:slug": GenericApiResponseType;
+  "/api/v1/agents/:slug": AgentApiResponseType;
+  "/api/v1/companies/:slug": CompanyApiResponseType;
+  "/api/v1/generics/:slug": GenericApiResponseType;
 };
 
 export const useStatsTable = <TRoute extends StatsRoute>({
@@ -36,12 +36,12 @@ export const useStatsTable = <TRoute extends StatsRoute>({
     queryKey: ["stats", qKey, slug],
     queryFn: async (): Promise<RouteOutputMap[TRoute]> => {
       let res;
-      if (url === "/api/agents/:slug") {
-        res = await api("/api/agents/:slug", { params: { slug } });
-      } else if (url === "/api/companies/:slug") {
-        res = await api("/api/companies/:slug", { params: { slug } });
-      } else if (url === "/api/generics/:slug") {
-        res = await api("/api/generics/:slug", { params: { slug } });
+      if (url === "/api/v1/agents/:slug") {
+        res = await api("/api/v1/agents/:slug", { params: { slug } });
+      } else if (url === "/api/v1/companies/:slug") {
+        res = await api("/api/v1/companies/:slug", { params: { slug } });
+      } else if (url === "/api/v1/generics/:slug") {
+        res = await api("/api/v1/generics/:slug", { params: { slug } });
       } else {
         throw new Error("Invalid stats route");
       }

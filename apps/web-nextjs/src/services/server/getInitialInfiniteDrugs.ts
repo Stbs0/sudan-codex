@@ -10,7 +10,7 @@ export async function getDrugs(page = 1, q?: string) {
   if (!baseUrl) {
     throw new Error("NEXT_PUBLIC_API_URL is not configured");
   }
-  const url = new URL(`${baseUrl}/drugs`);
+  const url = new URL(`${baseUrl}/v1/drugs`);
 
   if (q) url.searchParams.set("q", q);
   url.searchParams.set("page", page.toString());

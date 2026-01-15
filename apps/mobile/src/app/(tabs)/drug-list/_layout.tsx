@@ -19,7 +19,10 @@ export default function DrugListLayout() {
   // const { t } = useTranslation();
   return (
     <Stack>
-      <Stack.Screen name='index' />
+      <Stack.Screen
+        name='index'
+        options={{ title: "Drug List" }}
+      />
 
       <Stack.Screen
         name='[slug]'

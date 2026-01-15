@@ -13,7 +13,6 @@ const PHProvider = ({ children }: { children: React.ReactNode }) => {
     <PostHogProvider
       client={posthog}
       autocapture={{
-        captureTouches: true,
         captureScreens: true,
 
         ignoreLabels: [], // Any labels here will be ignored from the stack in touch events

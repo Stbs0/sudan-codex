@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     canonical: "/drug-list",
   },
 };
+export const dynamic = "force-dynamic";
 
 export default async function DrugListPage() {
   const initialDrugs = await getDrugs(1);

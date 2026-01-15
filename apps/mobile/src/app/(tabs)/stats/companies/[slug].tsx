@@ -25,7 +25,7 @@ export default function CompanyScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const { t } = useTranslation();
   const { data, error, isFetching, sorting, setSorting } = useStatsTable({
-    url: "/api/companies/:slug",
+    url: "/api/v1/companies/:slug",
     qKey: "companies",
     slug,
   });

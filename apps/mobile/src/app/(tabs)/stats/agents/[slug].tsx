@@ -26,7 +26,7 @@ export default function AgentScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const { t } = useTranslation();
   const { data, error, isFetching, sorting, setSorting } = useStatsTable({
-    url: "/api/agents/:slug",
+    url: "/api/v1/agents/:slug",
     qKey: "agents",
     slug,
   });

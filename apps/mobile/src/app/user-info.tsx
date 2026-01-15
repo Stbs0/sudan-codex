@@ -30,77 +30,8 @@ import { Redirect, useRouter } from "expo-router";
 import React from "react";
 import { Controller, useForm, type Control } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { View } from "react-native";
+import { ActivityIndicator, View } from "react-native";
 import { toast } from "sonner-native";
-const SelectOccupation = ({
-  control,
-}: {
-  control: Control<tellUsMoreSchemaType>;
-}) => {
-  const { t } = useTranslation();
-  return (
-    <Controller
-      control={control}
-      name='occupation'
-      render={({ field: { onChange, value }, fieldState: { error } }) => {
-        const Occupation = [
-          {
-            label: t("completeProfile.occupation.options.student"),
-            value: "Student",
-          },
-          {
-            label: t("completeProfile.occupation.options.administrator"),
-            value: "Administrator",
-          },
-          {
-            label: t("completeProfile.occupation.options.pharmacist"),
-            value: "Pharmacist",
-          },
-          {
-            label: t("completeProfile.occupation.options.other"),
-            value: "Other",
-          },
-        ];
-        const options = Occupation.find((item) => item.value === value);
-        return (
-          <>
-            <Select
-              onValueChange={(option) => onChange(option?.value)}
-              value={options}>
-              <SelectTrigger
-                className={cn("w-[180px]", error && "border-red-500")}>
-                <SelectValue
-                  placeholder={t("completeProfile.occupation.placeholder")}
-                />
-              </SelectTrigger>
-              <SelectContent className='w-[180px]'>
-                <SelectGroup>
-                  <SelectLabel>
-                    {t("completeProfile.occupation.selectLabel")}
-                  </SelectLabel>
-                  {Occupation.map((item) => (
-                    <SelectItem
-                      label={item.label}
-                      key={item.value}
-                      value={item.value}>
-                      <Text>{item.label}</Text>
-                    </SelectItem>
-                  ))}
-                </SelectGroup>
-              </SelectContent>
-            </Select>
-            {error && <FieldMessage message={error.message} />}
-          </>
-        );
-      }}
-    />
-  );
-};
-const FieldMessage = ({ message }: { message: string | undefined }) => {
-  return !message ? null : (
-    <Text className='text-xs text-red-500'>{message}</Text>
-  );
-};
 
 export default function CompleteProfileScreen() {
   const { data } = useAuth();
@@ -127,7 +58,7 @@ export default function CompleteProfileScreen() {
   };
   // TODO: fix validation messages
   return (
-    <View className='pt-safe flex-1'>
+    <View className='p-safe flex-1'>
       <Card className='m-4'>
         <CardHeader>
           <CardTitle>{t("completeProfile.title")}</CardTitle>
@@ -215,23 +146,92 @@ export default function CompleteProfileScreen() {
             <Text className='mb-2'>
               {t("completeProfile.occupation.title")}
             </Text>
+            {/* FIXME: make the select visible when the keyboard is open */}
             <SelectOccupation control={form.control} />
           </View>
         </CardContent>
         <CardFooter>
           <Button
             className='w-full'
+            disabled={form.formState.isSubmitting}
             onPress={form.handleSubmit(onSubmit)}>
             <Text>{t("completeProfile.submit")}</Text>
+            {form.formState.isSubmitting && <ActivityIndicator />}
           </Button>
         </CardFooter>
       </Card>
-      <Button
-        onPress={async () => {
-          await authClient.signOut();
-        }}>
-        <Text>Sign out</Text>
-      </Button>
     </View>
   );
 }
+
+const SelectOccupation = ({
+  control,
+}: {
+  control: Control<tellUsMoreSchemaType>;
+}) => {
+  const { t } = useTranslation();
+  return (
+    <Controller
+      control={control}
+      name='occupation'
+      render={({ field: { onChange, value }, fieldState: { error } }) => {
+        const Occupation = [
+          {
+            label: t("completeProfile.occupation.options.student"),
+            value: "Student",
+          },
+          {
+            label: t("completeProfile.occupation.options.administrator"),
+            value: "Administrator",
+          },
+          {
+            label: t("completeProfile.occupation.options.pharmacist"),
+            value: "Pharmacist",
+          },
+          {
+            label: t("completeProfile.occupation.options.other"),
+            value: "Other",
+          },
+        ];
+        const options = Occupation.find((item) => item.value === value);
+        return (
+          <>
+            <Select
+              onValueChange={(option) => onChange(option?.value)}
+              value={options}>
+              <SelectTrigger
+                className={cn("w-[180px]", error && "border-red-500")}>
+                <SelectValue
+                  placeholder={t("completeProfile.occupation.placeholder")}
+                />
+              </SelectTrigger>
+              <SelectContent
+                className='w-[180px]'
+                side='top'>
+                <SelectGroup>
+                  <SelectLabel>
+                    {t("completeProfile.occupation.selectLabel")}
+                  </SelectLabel>
+                  {Occupation.map((item) => (
+                    <SelectItem
+                      label={item.label}
+                      key={item.value}
+                      value={item.value}>
+                      <Text>{item.label}</Text>
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+            {error && <FieldMessage message={error.message} />}
+          </>
+        );
+      }}
+    />
+  );
+};
+const FieldMessage = ({ message }: { message: string | undefined }) => {
+  return !message ? null : (
+    <Text className='text-xs text-red-500'>{message}</Text>
+  );
+};

@@ -17,7 +17,7 @@ const getQueryOptions = ({ search, filterBy }: QueryOptions) =>
       if (search) params.set("q", search);
       if (filterBy) params.set("filterBy", filterBy);
       if (pageParam) params.set("page", pageParam.toString());
-      const res = await api(`/api/drugs`, {
+      const res = await api(`/api/v1/drugs`, {
         query: {
           ...(filterBy ? { filterBy } : {}),
           q: encodeURIComponent(search),
@@ -25,6 +25,7 @@ const getQueryOptions = ({ search, filterBy }: QueryOptions) =>
         },
       });
       if (res.error) {
+        console.log("error fetching drugs:", res.error);
         throw new Error(res.error.message);
       }
       return res.data;
