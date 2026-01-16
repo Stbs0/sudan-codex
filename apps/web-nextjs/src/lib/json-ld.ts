@@ -1,4 +1,4 @@
-import { DrugWithRelations as LocalDrugType } from "@/services/server/getDrugs";
+import { GetDrugBySlugReturnType as LocalDrugType } from "@/services/server/getDrugs";
 import {
   Drug,
   GetAgentBySlugWithStatsReturnType,

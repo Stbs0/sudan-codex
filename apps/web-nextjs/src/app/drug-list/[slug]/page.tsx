@@ -1,13 +1,18 @@
 import BackBtn from "@/components/drugInfo/back-btn";
 import { DrugDescriptions } from "@/components/drugInfo/drug-descriptions";
-import DrugInfoC from "@/components/drugInfo/drug-info";
+import DrugInfoContent from "@/components/drugInfo/drug-info-content";
+import DrugContentErrorFallback from "@/components/drugInfo/error-boundary";
+import SearchDrugInfo from "@/components/drugInfo/SearchDrugInfo";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { Skeleton } from "@/components/ui/skeleton";
 import { generateDrugJsonLd } from "@/lib/json-ld";
-import { getPostHogServer } from "@/lib/posthog-server";
 import { getDrugBySlug } from "@/services/server/getDrugs";
+import { db } from "@sudan-codex/db";
 import { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
+import { Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 
 export const revalidate = false;
 
@@ -78,15 +83,12 @@ export default async function DrugInfoPage({
     return permanentRedirect(`/drug-list/${matchedSlug.slug}`);
   }
 
-  let drug;
-  try {
-    drug = await getDrugBySlug(slug);
-  } catch (error) {
-    const posthog = getPostHogServer();
-    await posthog.captureExceptionImmediate(error);
-  }
-
-  if (!drug) notFound();
+  const drug = await getDrugBySlug(slug);
+  if (!drug) return notFound();
+  const drugInfo = db.query.drugInfoTable.findFirst({
+    // this means if the drug_info_id is null, it will not find the drug info and return undefined
+    where: (drugInfo, { eq }) => eq(drugInfo.drug_id, drug?.drug_info_id ?? 0),
+  });
 
   const jsonLd = generateDrugJsonLd(drug);
 
@@ -109,7 +111,16 @@ export default async function DrugInfoPage({
         <DrugDescriptions drug={drug} />
         <Separator />
         <CardContent className='flex w-full flex-col gap-4 p-0'>
-          <DrugInfoC />
+          <SearchDrugInfo />
+          <Separator className='w-full' />
+          <ErrorBoundary fallback={<DrugContentErrorFallback />}>
+            <Suspense fallback={<Skeleton className='mb-4 h-12 w-full' />}>
+              <DrugInfoContent
+                info={drugInfo}
+                genericName={drug.generic_name || ""}
+              />
+            </Suspense>
+          </ErrorBoundary>
         </CardContent>
       </Card>
     </div>

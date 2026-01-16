@@ -1,9 +1,9 @@
-import { DrugWithRelations } from "@/services/server/getDrugs";
+import { GetDrugBySlugReturnType } from "@/services/server/getDrugs";
 import { CardTitle } from "../ui/card";
 import DrugPropertyDescription from "./DrugPropertyDescription";
 
 interface DrugCardProps {
-  drug: DrugWithRelations;
+  drug: GetDrugBySlugReturnType;
 }
 
 export function DrugDescriptions({ drug }: DrugCardProps) {
