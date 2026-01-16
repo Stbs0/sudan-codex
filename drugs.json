@@ -1,0 +1,26 @@
+[
+  {
+    "no": "3",
+    "brandName": "0.9% Sodium Chloride",
+    "genericName": "Sodium Chloride",
+    "dosageFormName": "Injection",
+    "strength": "0.90%",
+    "packSize": "500ml/bottle",
+    "company": "Egypt Otsuka Pharmaceutical Co. S.A.E",
+    "countryOfOrigin": "Egypt",
+    "agent_name": "Sudan Amco Ltd",
+    "drugInfoRef": "555890"
+  },
+  {
+    "no": "4",
+    "brandName": "0.9% w/v Sodium Chloride",
+    "genericName": "Sodium Chloride",
+    "dosageFormName": "Injection",
+    "strength": "0.9% W/V",
+    "packSize": "100 ml",
+    "company": "Pharmaceutical Solution Industry Ltd",
+    "countryOfOrigin": "K.S.A",
+    "agent_name": "Dal Medical Services Co. Ltd",
+    "drugInfoRef": "555890"
+  }
+]

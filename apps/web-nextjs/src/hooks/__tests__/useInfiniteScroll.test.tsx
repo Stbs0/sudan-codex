@@ -34,6 +34,7 @@ const mockInitialDrugs = {
       agent_id: 1,
       generic_id: 1,
       country_id: 1,
+      drug_info_id: 1,
     },
   ],
   nextPage: 2,

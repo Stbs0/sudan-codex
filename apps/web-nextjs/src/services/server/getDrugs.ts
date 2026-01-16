@@ -5,7 +5,7 @@ import { db, drugsTable } from "@sudan-codex/db";
 import { eq } from "drizzle-orm";
 import { cache } from "react";
 
-export type DrugWithRelations = NonNullable<
+export type GetDrugBySlugReturnType = NonNullable<
   Awaited<ReturnType<typeof getDrugBySlug>>
 >;
 

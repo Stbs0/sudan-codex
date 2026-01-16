@@ -33,11 +33,17 @@ export default defineConfig({
           command: "bun run start",
           url: "http://localhost:3000",
           reuseExistingServer: false,
+          env: {
+            DATABASE_URL: process.env.TURSO_DATABASE_URL!,
+          },
         }
       : {
           command: "bun run dev",
           url: "http://localhost:3000",
           reuseExistingServer: true,
+          env: {
+            DATABASE_URL: process.env.TURSO_DATABASE_URL!,
+          },
         },
   ],
 });
