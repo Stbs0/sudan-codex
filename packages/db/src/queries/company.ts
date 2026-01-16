@@ -5,14 +5,14 @@ import { companiesTable, drugsTable } from "../schemas/schema";
 
 export const getAllCompanies = cache(
   async () =>
-    await db.select({ slug: companiesTable.slug }).from(companiesTable)
+    await db.select({ slug: companiesTable.slug }).from(companiesTable),
 );
 
 export const getCompanyBySlug = cache(
   async (slug: string) =>
     await db.query.companiesTable.findFirst({
       where: eq(companiesTable.slug, slug),
-    })
+    }),
 );
 export type GetCompanyBySlugWithStatsReturnType = Awaited<
   ReturnType<typeof getCompanyBySlugWithStats>
@@ -24,7 +24,7 @@ export const getCompanyBySlugWithStats = cache(
       with: {
         stats: true,
       },
-    })
+    }),
 );
 export const getAllDrugsRelatedToCompanyWithGenericAndAgents = cache(
   async (companyId: number) =>
@@ -44,5 +44,5 @@ export const getAllDrugsRelatedToCompanyWithGenericAndAgents = cache(
           },
         },
       },
-    })
+    }),
 );

@@ -43,6 +43,7 @@ export const drugsTable = sqliteTable(
     generic_name: text("generic_name"),
     country_id: int("country_id").references(() => countriesTable.id),
     country_name: text("country_name"),
+    drug_info_id: int("drug_info_id").references(() => drugInfoTable.drug_id),
   },
   (table) => [
     index("brand_name_idx").on(table.brand_name),
@@ -134,7 +135,33 @@ export const drugsRelations = relations(drugsTable, ({ one }) => ({
     fields: [drugsTable.id],
     references: [drugStatsTable.drug_id],
   }),
+  info: one(drugInfoTable, {
+    fields: [drugsTable.drug_info_id],
+    references: [drugInfoTable.drug_id],
+  }),
 }));
+export const drugInfoTable = sqliteTable(
+  "drugInfo",
+  {
+    drug_id: int("drug_id").primaryKey().unique(),
+    title: text("title").default("null"),
+    ind: text("ind").default("null"),
+    adult: text("adult").default("null"),
+    ped: text("ped").default("null"),
+    side: text("side").default("null"),
+    prgnancy: text("prgnancy").default("null"),
+    intermajer: text("intermajer").default("null"),
+    clinical: text("clinical").default("null"),
+    admin: text("admin").default("null"),
+    interminor: text("interminor").default("null"),
+    contra: text("contra").default("null"),
+    clas: text("clas").default("null"),
+    mode: text("mode").default("null"),
+  },
+  (table) => [index("drug_info_pkey_idx").on(table.drug_id)],
+);
+
+export type DrugInfo = typeof drugInfoTable.$inferSelect;
 
 // Add these to your existing relations
 
@@ -182,11 +209,12 @@ export const CompanyWithStatsSelectSchema =
 export const AgentWithStatsSelectSchema = createSelectSchema(agentStatsTable);
 export const GenericWithStatsSelectSchema =
   createSelectSchema(genericStatsTable);
-
+export const DrugInfoSelectSchema = createSelectSchema(drugInfoTable);
 export const DrugWithRelationsSelectSchema = DrugSelectSchema.extend({
   company: CompanySelectSchema.nullable(),
   agent: AgentSelectSchema.nullable(),
   generic: GenericSelectSchema.nullable(),
+  info: DrugInfoSelectSchema,
 });
 export type DrugWithRelations = z.infer<typeof DrugWithRelationsSelectSchema>;
 
@@ -246,8 +274,8 @@ export type AgentApiResponseType = z.infer<typeof AgentApiResponseSchema>;
 export type CompanyApiResponseType = z.infer<typeof CompanyApiResponseSchema>;
 export type GenericApiResponseType = z.infer<typeof GenericApiResponseSchema>;
 
-
 export const DrugListApiResponseSchema = z.object({
   data: z.array(DrugSelectSchema),
   nextPage: z.number().nullable(),
 });
+
