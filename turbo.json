@@ -82,8 +82,10 @@
     },
 
     "dev": {
+      "dependsOn": ["^build"],
       "cache": false,
       "inputs": ["$TURBO_DEFAULT$", ".env.development.local"],
+
       "passThroughEnv": ["ANDROID_HOME"],
       "env": [
         "NEXT_PUBLIC_API_URL",
@@ -174,6 +176,10 @@
       "dependsOn": ["^check-types"],
       "outputs": [],
       "cache": false
+    },
+    "dev:db": {
+      "cache": false,
+      "persistent": true
     }
   }
 }
