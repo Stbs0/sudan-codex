@@ -11,7 +11,11 @@ const DrugInfo = () => {
   const { t } = useTranslation();
   const { slug } = useLocalSearchParams<{ slug: string }>();
 
-  const { data: drug, isError } = useQuery({
+  const {
+    data: drug,
+    isError,
+    error,
+  } = useQuery({
     queryKey: ["drugInfo", slug],
     queryFn: async () => {
       const res = await api(`/api/v1/drugs/:slug`, {
@@ -24,6 +28,7 @@ const DrugInfo = () => {
       return res.data;
     },
   });
+  console.log(error);
   if (isError)
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>

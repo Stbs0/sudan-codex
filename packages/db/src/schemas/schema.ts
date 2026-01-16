@@ -214,7 +214,6 @@ export const DrugWithRelationsSelectSchema = DrugSelectSchema.extend({
   company: CompanySelectSchema.nullable(),
   agent: AgentSelectSchema.nullable(),
   generic: GenericSelectSchema.nullable(),
-  info: DrugInfoSelectSchema,
 });
 export type DrugWithRelations = z.infer<typeof DrugWithRelationsSelectSchema>;
 

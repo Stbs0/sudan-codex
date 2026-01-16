@@ -33,15 +33,18 @@ const DrugPropertyDescription = ({
       <Text className='text-xs font-bold text-black/20 dark:text-white/30'>
         {String(title)}
       </Text>
-      <Text className='text-bold flex-row items-center dark:text-white'>
-        {String(property || "No Available Data")}
+      <View className='flex-row items-center gap-1'>
+        <Text className='text-bold dark:text-white'>
+          {String(property || "No Available Data")}
+        </Text>
         {href && (
           <Icon
             as={Info}
-            className='px-3'
+            className='inline-block'
+            size={16}
           />
         )}
-      </Text>
+      </View>
     </View>
   );
 
