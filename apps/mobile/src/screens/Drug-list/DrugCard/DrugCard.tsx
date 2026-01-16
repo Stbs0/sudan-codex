@@ -23,6 +23,7 @@ const DrugCard = ({
   agent_id,
   generic_id,
   country_id,
+  drug_info_id,
 }: Props) => {
   // TODO: fix the rerender
   const { setOpen, setModalData } = useModal();
@@ -54,6 +55,7 @@ const DrugCard = ({
       agent_id,
       generic_id,
       country_id,
+      drug_info_id,
     });
   };
   return (
