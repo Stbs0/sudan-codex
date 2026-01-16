@@ -20,28 +20,34 @@ export function DrugDescriptions({ drug }: DrugCardProps) {
             />
             <DrugPropertyDescription
               title='Dosage Form'
+              data-test='dosage_form_property'
               property={drug.dosage_form}
             />
             <DrugPropertyDescription
               title='Strength'
+              data-test='strength_property'
               property={drug.strength}
             />
             <DrugPropertyDescription
               title='Pack Size'
+              data-test='pack_size_property'
               property={drug.pack_size}
             />
             <DrugPropertyDescription
               title='Company'
+              data-test='company_property'
               data-analytics='company_property'
               path={"/stats/companies/" + drug.company?.slug}
               property={drug.company_name}
             />
             <DrugPropertyDescription
               title='Country of Origin'
+              data-test='country_of_origin_property'
               property={drug.country_name}
             />
             <DrugPropertyDescription
               title='Agent'
+              data-test='agent_property'
               data-analytics='agent_property'
               path={"/stats/agents/" + drug.agent?.slug}
               property={drug.agent_name}

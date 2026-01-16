@@ -18,28 +18,30 @@ export default function DrugInfoContent({
   genericName = "",
 }: {
   genericName: string;
-  info: SQLiteRelationalQuery<
-    "async",
-    | {
-        mode: string | null;
-        drug_id: number;
-        title: string | null;
-        ind: string | null;
-        adult: string | null;
-        ped: string | null;
-        side: string | null;
-        prgnancy: string | null;
-        intermajer: string | null;
-        clinical: string | null;
-        admin: string | null;
-        interminor: string | null;
-        contra: string | null;
-        clas: string | null;
-      }
-    | undefined
-  >;
+  info:
+    | SQLiteRelationalQuery<
+        "async",
+        | {
+            mode: string | null;
+            drug_id: number;
+            title: string | null;
+            ind: string | null;
+            adult: string | null;
+            ped: string | null;
+            side: string | null;
+            prgnancy: string | null;
+            intermajer: string | null;
+            clinical: string | null;
+            admin: string | null;
+            interminor: string | null;
+            contra: string | null;
+            clas: string | null;
+          }
+        | undefined
+      >
+    | undefined;
 }) {
-  const drugInfo = use(info);
+  const drugInfo = info ? use(info) : undefined;
   return (
     <div className='flex flex-col gap-4'>
       {drugInfo ? (
@@ -60,7 +62,6 @@ const propToDelete = [
 ];
 const FdaAccordion = ({ genericName }: { genericName: string }) => {
   const { generic, refetch, route } = useDrugInfoSearch();
-  console.log(genericName);
   const { data } = useSuspenseQuery({
     queryKey: ["drugInfo", generic, route, refetch],
     queryFn: async () => {

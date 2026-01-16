@@ -144,6 +144,7 @@
     },
     "test:e2e": {
       "dependsOn": ["^build"],
+      "with": ["dev:db"],
       "inputs": ["$TURBO_DEFAULT$", ".env.production.local", ".env.local"],
       "env": [
         "NEXT_PUBLIC_API_URL",

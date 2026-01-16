@@ -85,10 +85,11 @@ export default async function DrugInfoPage({
 
   const drug = await getDrugBySlug(slug);
   if (!drug) return notFound();
-  const drugInfo = db.query.drugInfoTable.findFirst({
-    // this means if the drug_info_id is null, it will not find the drug info and return undefined
-    where: (drugInfo, { eq }) => eq(drugInfo.drug_id, drug?.drug_info_id ?? 0),
-  });
+  const drugInfo = drug.drug_info_id
+    ? db.query.drugInfoTable.findFirst({
+        where: (drugInfo, { eq }) => eq(drugInfo.drug_id, drug.drug_info_id!),
+      })
+    : undefined;
 
   const jsonLd = generateDrugJsonLd(drug);
 

@@ -16,7 +16,6 @@ const DrugInfoAccordion = ({ data }: { data: DrugInfo }) => {
   // const keys = Object.keys(data)
   //   .filter((key) => Array.isArray(data[key]) && !propToDelete.includes(key))
   //   .sort((a, b) => a.localeCompare(b));
-  console.log("data", data);
   return (
     <Accordion
       type='multiple'
@@ -79,7 +78,8 @@ const DrugAccordion = ({
   trigger: string;
   content: string | undefined | null;
 }) => {
-  const html = content || `<p><i>No Data Available</i></p>`;
+  // TODO: sanitize the html
+  const rawHtml = content ?? "<p><i>No Data Available</i></p>";
   return (
     <AccordionItem
       key={trigger}
@@ -88,7 +88,7 @@ const DrugAccordion = ({
         <p>{trigger.toUpperCase()}</p>
       </AccordionTrigger>
       <AccordionContent className=''>
-        <p dangerouslySetInnerHTML={{ __html: html }} />
+        <div dangerouslySetInnerHTML={{ __html: rawHtml }} />
       </AccordionContent>
     </AccordionItem>
   );

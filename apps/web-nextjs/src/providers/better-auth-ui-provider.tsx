@@ -74,7 +74,7 @@ export function BetterAuthUIProvider({ children }: { children: ReactNode }) {
         // Clear router cache (protected routes)
         router.refresh();
       }}
-      // @ts-expect-error Link type error bc of typed route in nextjs
+      // @ts-expect-error Link type mismatch due to Next.js typed routes
       Link={Link}>
       {children}
     </AuthUIProvider>
