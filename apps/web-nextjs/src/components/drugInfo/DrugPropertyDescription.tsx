@@ -11,7 +11,7 @@ const DrugPropertyDescription = ({
   ...props
 }: Props) => {
   // FIXME: the icons arent aligned correcltty with the text
-  const content = <dd>{String(property)}</dd>;
+  const content = <dd data-testid={title}>{String(property)}</dd>;
 
   if (path) {
     return (

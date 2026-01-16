@@ -36,13 +36,13 @@ test.describe("Drug Details Page", () => {
 
   test("page shows drug information sections", async ({ page }) => {
     // Verify key drug information sections are present
-    await expect(page.getByTestId("generic_name_property")).toBeVisible();
-    await expect(page.getByTestId("dosage_form_property")).toBeVisible();
-    await expect(page.getByTestId("company_property")).toBeVisible();
-    await expect(page.getByTestId("agent_property")).toBeVisible();
-    await expect(page.getByTestId("country_of_origin_property")).toBeVisible();
-    await expect(page.getByTestId("strength_property")).toBeVisible();
-    await expect(page.getByTestId("pack_size_property")).toBeVisible();
+    await expect(page.getByTestId(/Generic Name/)).toBeVisible();
+    await expect(page.getByTestId(/Dosage Form/)).toBeVisible();
+    await expect(page.getByTestId(/Company/)).toBeVisible();
+    await expect(page.getByTestId(/Agent/)).toBeVisible();
+    await expect(page.getByTestId(/Country of Origin/)).toBeVisible();
+    await expect(page.getByTestId(/Strength/)).toBeVisible();
+    await expect(page.getByTestId(/Pack Size/)).toBeVisible();
   });
 });
 

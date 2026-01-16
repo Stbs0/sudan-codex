@@ -21,6 +21,10 @@ const DrugInfoAccordion = ({ data }: { data: DrugInfo }) => {
       type='multiple'
       className='w-full'>
       <DrugAccordion
+        trigger='Scientific Name'
+        content={data?.title}
+      />
+      <DrugAccordion
         trigger='Indications'
         content={data?.ind}
       />

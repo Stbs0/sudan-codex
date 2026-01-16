@@ -11,11 +11,12 @@ export function DrugDescriptions({ drug }: DrugCardProps) {
     <CardTitle className='flex w-full flex-col gap-4'>
       <div className='w-full border-none shadow-none'>
         <div className='px-2 pt-2'>
-          <dl className='grid grid-cols-1 gap-2 sm:grid-cols-2'>
+          <div className='grid grid-cols-1 gap-2 sm:grid-cols-2'>
             <DrugPropertyDescription
               title='Generic Name'
               path={"/stats/generics/" + drug.generic?.slug}
               property={drug.generic_name}
+              data-test='generic_name_property'
               data-analytics='generic_name_property'
             />
             <DrugPropertyDescription
@@ -52,7 +53,7 @@ export function DrugDescriptions({ drug }: DrugCardProps) {
               path={"/stats/agents/" + drug.agent?.slug}
               property={drug.agent_name}
             />
-          </dl>
+          </div>
         </div>
       </div>
     </CardTitle>
