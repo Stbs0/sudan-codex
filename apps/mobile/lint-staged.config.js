@@ -7,5 +7,5 @@ export default {
 
   "**/*.{json,md,yaml}": "prettier --write",
 
-  "apps/web-nextjs/**": "secretlint",
+  "apps/mobile/**": "secretlint",
 };
