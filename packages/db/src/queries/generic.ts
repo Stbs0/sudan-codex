@@ -1,7 +1,8 @@
 import { eq, not } from "drizzle-orm";
 import { cache } from "react";
 import { db } from "../db";
-import { drugsTable, genericsTable } from "../schemas/schema";
+import { drugsTable } from "../schemas/drugsSchema";
+import  { genericsTable } from "../schemas/genericSchema";
 
 export type GetGenericBySlugWithStatsReturnType = Awaited<
   ReturnType<typeof getGenericBySlugWithStats>

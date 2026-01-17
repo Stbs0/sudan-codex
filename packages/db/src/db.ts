@@ -1,7 +1,9 @@
 import { drizzle } from "drizzle-orm/libsql";
+import * as agentsSchema from "./schemas/agentsSchema";
 import * as authSchema from "./schemas/auth-schema";
-import * as schema from "./schemas/schema";
-
+import * as companySchema from "./schemas/companySchema";
+import * as drugsSchema from "./schemas/drugsSchema";
+import * as genericSchema from "./schemas/genericSchema";
 
 // import dotenv from "dotenv";
 // import path from "path";
@@ -20,5 +22,11 @@ export const db = drizzle({
     url: process.env.TURSO_DATABASE_URL,
     authToken: process.env.TURSO_AUTH_TOKEN,
   },
-  schema: { ...schema, ...authSchema },
+  schema: {
+    ...genericSchema,
+    ...authSchema,
+    ...agentsSchema,
+    ...drugsSchema,
+    ...companySchema,
+  },
 });
