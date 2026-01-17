@@ -14,7 +14,9 @@ import { Stack } from "expo-router";
 //   );
 // };
 //
-
+export const unstable_settings = {
+  initial: "index",
+};
 export default function DrugListLayout() {
   // const { t } = useTranslation();
   return (

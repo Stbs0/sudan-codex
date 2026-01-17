@@ -7,6 +7,7 @@ import { ChevronRightIcon } from "lucide-react-native";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { View } from "react-native";
+import MobileAds from "react-native-google-mobile-ads";
 
 const SettingsScreen = () => {
   const { t } = useTranslation();
@@ -61,6 +62,18 @@ const SettingsScreen = () => {
       <Separator />
 
       <Link
+        href={"/settings/advertise"}
+        asChild>
+        <Button
+          variant={"ghost"}
+          className='justify-between border-none px-6'>
+          <Text className='text-lg'>Advertise with Us</Text>
+          <Icon as={ChevronRightIcon} />
+        </Button>
+      </Link>
+      <Separator />
+
+      <Link
         href={"/about"}
         asChild>
         <Button
@@ -70,6 +83,17 @@ const SettingsScreen = () => {
           <Icon as={ChevronRightIcon} />
         </Button>
       </Link>
+      {__DEV__ && (
+        <Button
+          variant={"ghost"}
+          onPress={() => {
+            MobileAds().openDebugMenu(process.env.EXPO_PUBLIC_ADMOB_APP_ID!);
+          }}
+          className='justify-between border-none px-6'>
+          <Text className='text-lg'>test ads</Text>
+          <Icon as={ChevronRightIcon} />
+        </Button>
+      )}
       <Separator />
     </View>
   );

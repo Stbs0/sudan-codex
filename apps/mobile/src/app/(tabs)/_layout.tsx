@@ -3,7 +3,9 @@ import { Tabs } from "expo-router";
 import { List, Settings } from "lucide-react-native";
 import React from "react";
 import { useTranslation } from "react-i18next";
-
+export const unstable_settings = {
+  initial: "drug-list",
+};
 export default function TabLayout() {
   const { t } = useTranslation();
   return (

@@ -1,3 +1,4 @@
+import AdBanner from "@/components/ads/AdBanner";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
 import { api } from "@/lib/api-client";
@@ -6,7 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Stack, useLocalSearchParams } from "expo-router";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { ActivityIndicator, ScrollView, View } from "react-native";
+import { ActivityIndicator, View } from "react-native";
 const DrugInfo = () => {
   const { t } = useTranslation();
   const { slug } = useLocalSearchParams<{ slug: string }>();
@@ -45,12 +46,12 @@ const DrugInfo = () => {
   return (
     <>
       <Stack.Screen options={{ title: drug.brand_name, headerShown: true }} />
-      <ScrollView
+      <View
         // style={{ flex: 1, gap: 2 }}
-        contentContainerStyle={{ padding: 16 }}
-        showsVerticalScrollIndicator={true}
-        className='flex-1 gap-4'>
-        <Card className='mb-4 w-full py-4'>
+        // contentContainerStyle={{ padding: 16 }}
+        // showsVerticalScrollIndicator={true}
+        className='flex-1 gap-4 p-4'>
+        <Card className='w-full py-4'>
           <CardTitle className='text-center'>{drug.brand_name}</CardTitle>
           <CardContent className='w-full gap-2'>
             <View className='gap-2'>
@@ -105,6 +106,7 @@ const DrugInfo = () => {
             </View>
           </CardContent>
         </Card>
+
         {/* {isError ? (
           <Text className='text-red-500'>{t("drugInfo.errorLoading")}</Text>
         ) : isLoading ? (
@@ -238,7 +240,8 @@ const DrugInfo = () => {
             </AlertDescription>
           </Alert>
         )} */}
-      </ScrollView>
+      </View>
+      <AdBanner />
     </>
   );
 };

@@ -18,13 +18,16 @@ import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
 import { ActivityIndicator, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import mobileAds, { AppOpenAd, TestIds } from "react-native-google-mobile-ads";
 import "react-native-reanimated";
 import { SafeAreaListener } from "react-native-safe-area-context";
 import { Toaster } from "sonner-native";
 import { Uniwind, useUniwind } from "uniwind";
 import "../../global.css";
 import "../lib/i18next";
+
 SplashScreen.preventAutoHideAsync();
+AppOpenAd.createForAdRequest(TestIds.APP_OPEN);
 
 const queryClient = new QueryClient();
 onlineManager.setEventListener((setOnline) => {
@@ -74,6 +77,14 @@ function RootLayoutNav() {
 
     SplashScreen.hideAsync();
   }, [isPending]);
+
+  useEffect(() => {
+    mobileAds()
+      .initialize()
+      .then((_adapterStatuses) => {
+        // Initialization complete!
+      });
+  }, []);
 
   if (isPending) {
     return (

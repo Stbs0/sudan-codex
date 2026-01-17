@@ -1,6 +1,9 @@
 import { Stack } from "expo-router";
 import { useTranslation } from "react-i18next";
 
+export const unstable_settings = {
+  initial: "index",
+};
 export default function SettingsLayout() {
   const { t } = useTranslation();
   return (
