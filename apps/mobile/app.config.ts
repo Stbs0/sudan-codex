@@ -35,7 +35,7 @@ const getSlug = () => {
     return "sudan-codex-preview";
   }
 
-  return "sudan-codex";
+  return "sudancodex";
 };
 const getAppName = () => {
   if (IS_DEV) {

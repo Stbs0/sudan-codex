@@ -1,3 +1,4 @@
+import AdBanner from "@/components/ads/AdBanner";
 import {
   StatsSummaryCard,
   TableBody,
@@ -153,8 +154,10 @@ export default function CompanyScreen() {
           firstAssociation='Generics'
           secondAssociation='Agents'
         />
+        <AdBanner />
+
         {/* Table */}
-        <View className='px-4 pb-4'>
+        <View className='px-4 py-4'>
           <Card className='overflow-hidden border-t-0 pt-0'>
             <CardContent className='p-0'>
               <ScrollView
@@ -190,6 +193,7 @@ export default function CompanyScreen() {
           </Card>
         </View>
       </ScrollView>
+      <AdBanner />
     </>
   );
 }

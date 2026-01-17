@@ -1,3 +1,4 @@
+import AdBanner from "@/components/ads/AdBanner";
 import {
   StatsSummaryCard,
   TableBody,
@@ -17,6 +18,11 @@ import { Stack, useLocalSearchParams } from "expo-router";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator, ScrollView, View } from "react-native";
+import {
+  BannerAd,
+  BannerAdSize,
+  TestIds,
+} from "react-native-google-mobile-ads";
 
 const columnHelper =
   createColumnHelper<GenericApiResponseType["drugs"][number]>();
@@ -154,8 +160,12 @@ export default function GenericScreen() {
           firstAssociation='Companies'
           secondAssociation='Agents'
         />
+        <BannerAd
+          unitId={TestIds.ADAPTIVE_BANNER}
+          size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+        />
         {/* Table */}
-        <View className='px-4 pb-4'>
+        <View className='px-4 py-4'>
           <Card className='overflow-hidden border-t-0 pt-0'>
             <CardContent className='p-0'>
               <ScrollView
@@ -191,6 +201,7 @@ export default function GenericScreen() {
           </Card>
         </View>
       </ScrollView>
+      <AdBanner />
     </>
   );
 }
