@@ -13,7 +13,7 @@ if (!process.env.TURSO_AUTH_TOKEN) {
 }
 
 export default defineConfig({
-  out: "./drizzle",
+  out: "./drizzle-dev",
   schema: "./src/schemas/*",
   dialect: "turso",
   dbCredentials: {

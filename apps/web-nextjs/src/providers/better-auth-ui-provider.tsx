@@ -2,10 +2,10 @@
 
 import { authClient } from "@/lib/auth-client";
 import { AuthUIProvider } from "@daveyplate/better-auth-ui";
+import { updateUser } from "@sudan-codex/types";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { ReactNode } from "react";
-import { occupationLiteral } from "@sudan-codex/types";
 
 export function BetterAuthUIProvider({ children }: { children: ReactNode }) {
   const router = useRouter();
@@ -50,6 +50,18 @@ export function BetterAuthUIProvider({ children }: { children: ReactNode }) {
           label: "University",
           placeholder: "Enter your university",
         },
+        workPlace: {
+          type: "string",
+          required: true,
+          label: "Work Place",
+          placeholder: "Enter your work place",
+        },
+        specialty: {
+          type: "select",
+          required: true,
+          label: "Specialty",
+          placeholder: "Enter your specialty",
+        },
         occupation: {
           type: "string",
           required: true,
@@ -57,7 +69,7 @@ export function BetterAuthUIProvider({ children }: { children: ReactNode }) {
           instructions: <Instructions />,
           validate: async (value) => {
             if (!value) return false;
-            const result = occupationLiteral.safeParse(value);
+            const result = updateUser.shape.occupation.safeParse(value);
             if (!result.success) {
               return false;
             }
@@ -68,7 +80,15 @@ export function BetterAuthUIProvider({ children }: { children: ReactNode }) {
         },
       }}
       account={{
-        fields: ["name", "age", "phoneNumber", "university", "occupation"],
+        fields: [
+          "name",
+          "age",
+          "phoneNumber",
+          "university",
+          "occupation",
+          "workPlace",
+          "specialty",
+        ],
       }}
       onSessionChange={() => {
         // Clear router cache (protected routes)

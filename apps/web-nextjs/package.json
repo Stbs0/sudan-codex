@@ -10,7 +10,8 @@
     "knip": "knip",
     "check-types": "tsc --noEmit",
     "test:e2e": "playwright test",
-    "test:unit": "vitest"
+    "test:unit": "vitest",
+    "generate:auth-schema": "dotenv -e .env.development.local --  bun x @better-auth/cli@latest generate --output ../../packages/db/src/schemas/auth-schema.ts"
   },
   "dependencies": {
     "@better-auth/expo": "^1.4.6",
@@ -31,6 +32,10 @@
     "@radix-ui/react-tooltip": "^1.2.8",
     "@sudan-codex/db": "workspace:*",
     "@sudan-codex/types": "workspace:*",
+    "@tanstack/react-devtools": "^0.9.2",
+    "@tanstack/react-form": "^1.27.7",
+    "@tanstack/react-form-devtools": "^0.2.11",
+    "@tanstack/react-form-nextjs": "^1.27.7",
     "@tanstack/react-query": "^5.90.11",
     "@tanstack/react-query-devtools": "^5.91.1",
     "better-auth": "^1.4.6",

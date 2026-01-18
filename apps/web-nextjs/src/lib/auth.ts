@@ -1,8 +1,9 @@
 import { expo } from "@better-auth/expo";
 import { db } from "@sudan-codex/db";
+import { updateUser } from "@sudan-codex/types";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
-import { tellUsMoreSchema } from "@sudan-codex/types";
+import z from "zod/v3";
 if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
   throw new Error(
     "Missing required Google OAuth environment variables: GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET"
@@ -29,6 +30,7 @@ export const auth = betterAuth({
     ...(process.env.VERCEL_URL ? [`https://${process.env.VERCEL_URL}`] : []),
     ...(process.env.NODE_ENV === "development"
       ? [
+          "http://localhost:3000",
           "exp://*/*",
           "exp://10.0.0.*:*/*", // Trust 10.0.0.x IP range
           "exp://192.168.*.*:*/*", // Trust 192.168.x.x IP range
@@ -54,8 +56,10 @@ export const auth = betterAuth({
   databaseHooks: {
     user: {
       update: {
-        before: async (user) => {
-          const payload = tellUsMoreSchema.safeParse(user);
+        before: async (user, ctx) => {
+          console.log("body", ctx?.body);
+
+          const payload = updateUser.safeParse(ctx?.body);
           return payload.success
             ? { data: { ...user, isProfileComplete: true } }
             : false;
@@ -76,18 +80,56 @@ export const auth = betterAuth({
       age: {
         type: "number",
         required: false,
+        validator: {
+          input: z.number().min(1).max(120),
+        },
       },
       phoneNumber: {
         type: "string",
         required: false,
+        validator: {
+          input: z.string().min(1).max(18),
+        },
       },
       university: {
         type: "string",
         required: false,
+        validator: {
+          input: z.string().min(3).max(255),
+        },
       },
       occupation: {
         type: "string",
         required: false,
+        validator: {
+          input: z.string().min(3).max(255),
+        },
+      },
+      specialty: {
+        type: [
+          "Pharmacist",
+          "Doctor",
+          "Nurse",
+          "Allied health professionals",
+          "Other",
+        ],
+        required: false,
+        validator: {
+          input: z.enum([
+            "Pharmacist",
+            "Doctor",
+            "Nurse",
+            "Allied health professionals",
+            "Other",
+          ]),
+        },
+      },
+      workPlace: {
+        type: "string",
+        required: false,
+        validator: {
+          input: z.string().min(3).max(255),
+        },
       },
     },
   },

@@ -1,16 +1,18 @@
-import { tellUsMoreSchema } from "@sudan-codex/types";
+import { updateUser, type UpdateUserType } from "@sudan-codex/types";
 
 describe("tellUsMoreSchema", () => {
-  const validData = {
+  const validData: UpdateUserType = {
     age: 25,
     phoneNumber: "+249123456789",
     university: "University of Khartoum",
     occupation: "Student" as const,
+    specialty: "" as UpdateUserType["specialty"],
+    workPlace: "",
   };
 
   describe("valid input", () => {
     it("accepts valid complete data", () => {
-      const result = tellUsMoreSchema.safeParse(validData);
+      const result = updateUser.safeParse(validData);
       expect(result.success).toBe(true);
     });
 
@@ -24,7 +26,7 @@ describe("tellUsMoreSchema", () => {
       ] as const;
 
       occupations.forEach((occupation) => {
-        const result = tellUsMoreSchema.safeParse({
+        const result = updateUser.safeParse({
           ...validData,
           occupation,
         });
@@ -33,7 +35,7 @@ describe("tellUsMoreSchema", () => {
     });
 
     it("coerces string age to number", () => {
-      const result = tellUsMoreSchema.safeParse({
+      const result = updateUser.safeParse({
         ...validData,
         age: "30",
       });
@@ -46,7 +48,7 @@ describe("tellUsMoreSchema", () => {
 
   describe("age validation", () => {
     it("rejects age below 15", () => {
-      const result = tellUsMoreSchema.safeParse({
+      const result = updateUser.safeParse({
         ...validData,
         age: 14,
       });
@@ -54,7 +56,7 @@ describe("tellUsMoreSchema", () => {
     });
 
     it("accepts age of exactly 15", () => {
-      const result = tellUsMoreSchema.safeParse({
+      const result = updateUser.safeParse({
         ...validData,
         age: 15,
       });
@@ -62,7 +64,7 @@ describe("tellUsMoreSchema", () => {
     });
 
     it("rejects age above 100", () => {
-      const result = tellUsMoreSchema.safeParse({
+      const result = updateUser.safeParse({
         ...validData,
         age: 101,
       });
@@ -70,7 +72,7 @@ describe("tellUsMoreSchema", () => {
     });
 
     it("accepts age of exactly 100", () => {
-      const result = tellUsMoreSchema.safeParse({
+      const result = updateUser.safeParse({
         ...validData,
         age: 100,
       });
@@ -80,7 +82,7 @@ describe("tellUsMoreSchema", () => {
 
   describe("phoneNumber validation", () => {
     it("accepts phone with country code", () => {
-      const result = tellUsMoreSchema.safeParse({
+      const result = updateUser.safeParse({
         ...validData,
         phoneNumber: "+249912345678",
       });
@@ -88,7 +90,7 @@ describe("tellUsMoreSchema", () => {
     });
 
     it("accepts phone without country code", () => {
-      const result = tellUsMoreSchema.safeParse({
+      const result = updateUser.safeParse({
         ...validData,
         phoneNumber: "0912345678",
       });
@@ -96,7 +98,7 @@ describe("tellUsMoreSchema", () => {
     });
 
     it("rejects empty phone number", () => {
-      const result = tellUsMoreSchema.safeParse({
+      const result = updateUser.safeParse({
         ...validData,
         phoneNumber: "",
       });
@@ -104,7 +106,7 @@ describe("tellUsMoreSchema", () => {
     });
 
     it("trims whitespace from phone number", () => {
-      const result = tellUsMoreSchema.safeParse({
+      const result = updateUser.safeParse({
         ...validData,
         phoneNumber: "  +249912345678  ",
       });
@@ -114,7 +116,7 @@ describe("tellUsMoreSchema", () => {
 
   describe("university validation", () => {
     it("rejects empty university", () => {
-      const result = tellUsMoreSchema.safeParse({
+      const result = updateUser.safeParse({
         ...validData,
         university: "",
       });
@@ -122,7 +124,7 @@ describe("tellUsMoreSchema", () => {
     });
 
     it("rejects whitespace-only university", () => {
-      const result = tellUsMoreSchema.safeParse({
+      const result = updateUser.safeParse({
         ...validData,
         university: "   ",
       });
@@ -130,7 +132,7 @@ describe("tellUsMoreSchema", () => {
     });
 
     it("trims university name", () => {
-      const result = tellUsMoreSchema.safeParse({
+      const result = updateUser.safeParse({
         ...validData,
         university: "  Test University  ",
       });
@@ -143,7 +145,7 @@ describe("tellUsMoreSchema", () => {
 
   describe("occupation validation", () => {
     it("rejects invalid occupation", () => {
-      const result = tellUsMoreSchema.safeParse({
+      const result = updateUser.safeParse({
         ...validData,
         occupation: "InvalidOccupation",
       });
@@ -153,26 +155,26 @@ describe("tellUsMoreSchema", () => {
 
   describe("missing fields", () => {
     it("rejects missing age", () => {
-      const { age, ...dataWithoutAge } = validData;
-      const result = tellUsMoreSchema.safeParse(dataWithoutAge);
+      const { age: _, ...dataWithoutAge } = validData;
+      const result = updateUser.safeParse(dataWithoutAge);
       expect(result.success).toBe(false);
     });
 
     it("rejects missing phoneNumber", () => {
-      const { phoneNumber, ...dataWithoutPhone } = validData;
-      const result = tellUsMoreSchema.safeParse(dataWithoutPhone);
+      const { phoneNumber: _, ...dataWithoutPhone } = validData;
+      const result = updateUser.safeParse(dataWithoutPhone);
       expect(result.success).toBe(false);
     });
 
     it("rejects missing university", () => {
-      const { university, ...dataWithoutUniversity } = validData;
-      const result = tellUsMoreSchema.safeParse(dataWithoutUniversity);
+      const { university: _, ...dataWithoutUniversity } = validData;
+      const result = updateUser.safeParse(dataWithoutUniversity);
       expect(result.success).toBe(false);
     });
 
     it("rejects missing occupation", () => {
-      const { occupation, ...dataWithoutOccupation } = validData;
-      const result = tellUsMoreSchema.safeParse(dataWithoutOccupation);
+      const { occupation: _, ...dataWithoutOccupation } = validData;
+      const result = updateUser.safeParse(dataWithoutOccupation);
       expect(result.success).toBe(false);
     });
   });
