@@ -38,7 +38,7 @@ export default defineConfig({
           },
         }
       : {
-          command: "cd ../../ && bun run dev:web",
+          command: "bun run dev",
           url: "http://localhost:3000",
           reuseExistingServer: true,
           env: {

@@ -10,31 +10,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${baseUrl}/drug-list/sitemap.xml`,
-      lastModified: new Date(),
+      lastModified: new Date().toISOString(),
       changeFrequency: "daily",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/agents/sitemap.xml`,
-      lastModified: new Date(),
+      lastModified: new Date().toISOString(),
       changeFrequency: "weekly",
       priority: 0.7,
     },
     {
       url: `${baseUrl}/companies/sitemap.xml`,
-      lastModified: new Date(),
+      lastModified: new Date().toISOString(),
       changeFrequency: "weekly",
       priority: 0.7,
     },
     {
       url: `${baseUrl}/generics/sitemap.xml`,
-      lastModified: new Date(),
+      lastModified: new Date().toISOString(),
       changeFrequency: "weekly",
       priority: 0.7,
     },
     {
       url: `${baseUrl}/stats`,
-      lastModified: new Date(),
+      lastModified: new Date().toISOString(),
       changeFrequency: "weekly",
       priority: 0.7,
     },
