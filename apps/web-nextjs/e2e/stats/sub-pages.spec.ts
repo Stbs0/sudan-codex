@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 test.describe("Agents Stats Page", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/stats/agents");
+    await page.goto("/agents");
   });
 
   test("page loads correctly", async ({ page }) => {
@@ -28,7 +28,7 @@ test.describe("Agents Stats Page", () => {
     await page.waitForLoadState("networkidle");
 
     // Find first link in the agents list
-    const agentLinks = page.locator("a[href*='/stats/agents/']");
+    const agentLinks = page.locator("a[href*='s/']");
 
     if ((await agentLinks.count()) > 0) {
       const firstAgentLink = agentLinks.first();
@@ -45,7 +45,7 @@ test.describe("Agents Stats Page", () => {
 
 test.describe("Companies Stats Page", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/stats/companies");
+    await page.goto("/companies");
   });
 
   test("page loads correctly", async ({ page }) => {
@@ -65,7 +65,7 @@ test.describe("Companies Stats Page", () => {
   }) => {
     await page.waitForLoadState("networkidle");
 
-    const companyLinks = page.locator("a[href*='/stats/companies/']");
+    const companyLinks = page.locator("a[href*='/companies/']");
 
     if ((await companyLinks.count()) > 0) {
       const firstCompanyLink = companyLinks.first();
@@ -82,7 +82,7 @@ test.describe("Companies Stats Page", () => {
 
 test.describe("Generics Stats Page", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/stats/generics");
+    await page.goto("/generics");
   });
 
   test("page loads correctly", async ({ page }) => {
@@ -101,7 +101,7 @@ test.describe("Generics Stats Page", () => {
   }) => {
     await page.waitForLoadState("networkidle");
 
-    const genericLinks = page.locator("a[href*='/stats/generics/']");
+    const genericLinks = page.locator("a[href*='/generics/']");
 
     if ((await genericLinks.count()) > 0) {
       const firstGenericLink = genericLinks.first();

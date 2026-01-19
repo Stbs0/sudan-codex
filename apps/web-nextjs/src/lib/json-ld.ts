@@ -132,7 +132,7 @@ export const drugListJsonLd = (
 export const generateCompanyJsonLd = (
   company: NonNullable<GetCompanyBySlugWithStatsReturnType>
 ): WithContext<MedicalWebPage> => {
-  const url = `${SITE_URL}/stats/companies/${company.slug}`;
+  const url = `${SITE_URL}/companies/${company.slug}`;
 
   return {
     "@context": "https://schema.org",
@@ -171,7 +171,7 @@ export const generateCompanyJsonLd = (
 export const generateAgentJsonLd = (
   agent: NonNullable<GetAgentBySlugWithStatsReturnType>
 ): WithContext<MedicalWebPage> => {
-  const url = `${SITE_URL}/stats/agents/${agent.slug}`;
+  const url = `${SITE_URL}/agents/${agent.slug}`;
 
   return {
     "@context": "https://schema.org",
@@ -210,7 +210,7 @@ export const generateAgentJsonLd = (
 export const generateGenericJsonLd = (
   generic: NonNullable<GetGenericBySlugWithStatsReturnType>
 ): WithContext<MedicalWebPage> => {
-  const url = `${SITE_URL}/stats/generics/${generic.slug}`;
+  const url = `${SITE_URL}/generics/${generic.slug}`;
 
   return {
     "@context": "https://schema.org",

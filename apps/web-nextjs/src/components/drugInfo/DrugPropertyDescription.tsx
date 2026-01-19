@@ -11,22 +11,25 @@ const DrugPropertyDescription = ({
   ...props
 }: Props) => {
   // FIXME: the icons arent aligned correcltty with the text
-  const content = <dd data-testid={title}>{String(property)}</dd>;
 
   if (path) {
     return (
       <div className='flex flex-col gap-1 border-l-2 border-blue-400 p-2'>
         <dt className='flex font-medium text-gray-500'>{title}</dt>
-        <Link
-          {...props}
-          className='flex hover:underline'
-          href={path as Route}>
-          {content}
+        <dd
+          data-testid={title}
+          className='flex'>
+          <Link
+            {...props}
+            className='flex hover:underline'
+            href={path as Route}>
+            {String(property)}
+          </Link>
           <CircleAlert
             className='ml-2 inline-block'
             size={16}
           />
-        </Link>
+        </dd>
       </div>
     );
   }
@@ -35,7 +38,7 @@ const DrugPropertyDescription = ({
     <div className='flex flex-col gap-1 border-l-2 border-blue-400 p-2'>
       <dt className='font-medium text-gray-500'>{title}</dt>
 
-      {content}
+      <dd data-testid={title}>{String(property)}</dd>
     </div>
   );
 };

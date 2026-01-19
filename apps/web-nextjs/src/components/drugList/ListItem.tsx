@@ -59,7 +59,7 @@ export const ListItem = ({ drug, isFirst }: ListItemProps) => {
             id={isFirst ? "drugInfo-card-genericName" : undefined}>
             {drug.generic?.slug ? (
               <>
-                <Link href={`/stats/generics/${drug.generic?.slug}`}>
+                <Link href={`/generics/${drug.generic?.slug}`}>
                   {drug.generic_name || "No Generic Name"}
                 </Link>
                 <AlertCircle className='ml-2 inline-block h-4 w-4' />
@@ -76,7 +76,7 @@ export const ListItem = ({ drug, isFirst }: ListItemProps) => {
             id={isFirst ? "drugInfo-card-agentName" : undefined}>
             {drug.agent?.slug ? (
               <>
-                <Link href={`/stats/agents/${drug.agent?.slug}`}>
+                <Link href={`/agents/${drug.agent?.slug}`}>
                   {drug.agent_name}
                 </Link>
                 <AlertCircle className='ml-2 inline-block h-4 w-4' />
@@ -94,7 +94,7 @@ export const ListItem = ({ drug, isFirst }: ListItemProps) => {
             id={isFirst ? "drugInfo-card-companyName" : undefined}>
             {drug.company_name && drug.company?.slug ? (
               <>
-                <Link href={`/stats/companies/${drug.company?.slug}`}>
+                <Link href={`/companies/${drug.company?.slug}`}>
                   {drug.company_name}
                 </Link>
                 <AlertCircle className='ml-2 inline-block h-4 w-4' />

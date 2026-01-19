@@ -14,7 +14,7 @@ export function DrugDescriptions({ drug }: DrugCardProps) {
           <div className='grid grid-cols-1 gap-2 sm:grid-cols-2'>
             <DrugPropertyDescription
               title='Generic Name'
-              path={"/stats/generics/" + drug.generic?.slug}
+              path={"/generics/" + drug.generic?.slug}
               property={drug.generic_name}
               data-test='generic_name_property'
               data-analytics='generic_name_property'
@@ -38,7 +38,7 @@ export function DrugDescriptions({ drug }: DrugCardProps) {
               title='Company'
               data-test='company_property'
               data-analytics='company_property'
-              path={"/stats/companies/" + drug.company?.slug}
+              path={"/companies/" + drug.company?.slug}
               property={drug.company_name}
             />
             <DrugPropertyDescription
@@ -50,7 +50,7 @@ export function DrugDescriptions({ drug }: DrugCardProps) {
               title='Agent'
               data-test='agent_property'
               data-analytics='agent_property'
-              path={"/stats/agents/" + drug.agent?.slug}
+              path={"/agents/" + drug.agent?.slug}
               property={drug.agent_name}
             />
           </div>
