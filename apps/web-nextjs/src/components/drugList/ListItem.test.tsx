@@ -1,5 +1,6 @@
 import { Wrapper } from "@/testing/test-utils";
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 import { ListItem, type ListItemProps } from "./ListItem";
 
@@ -40,8 +41,47 @@ const mockDrugWithNullValues: ListItemProps["drug"] = {
   company: null,
   generic: null,
 };
+vi.mock("next/link", async () => {
+  const React = await import("react");
+
+  return {
+    default: ({
+      //@ts-expect-error i dont know
+      href,
+      children,
+      onClick,
+      ...props
+    }: React.HTMLAttributes<HTMLAnchorElement>) => (
+      <a
+        href={typeof href === "string" ? href : href.pathname}
+        onClick={onClick}
+        {...props}>
+        {children}
+      </a>
+    ),
+  };
+});
+
+export const pushMock = vi.fn();
+
+vi.mock("next/navigation", async () => {
+  const actual =
+    await vi.importActual<typeof import("next/navigation")>("next/navigation");
+
+  return {
+    ...actual,
+    useRouter: () => ({
+      push: pushMock,
+      replace: vi.fn(),
+      prefetch: vi.fn(),
+    }),
+  };
+});
 
 describe("ListItem", () => {
+  afterEach(() => {
+    pushMock.mockClear();
+  });
   describe("rendering", () => {
     it("should render drug information correctly", async () => {
       render(<ListItem drug={mockDrug} />, { wrapper: Wrapper });
@@ -71,12 +111,43 @@ describe("ListItem", () => {
       expect(screen.getByText("No Country of Origin")).toBeInTheDocument();
     });
 
-    it("should render as a link to the drug details page", async () => {
+    it("should navigate to the drug details page when clicked", async () => {
+      const user = userEvent.setup();
+
       render(<ListItem drug={mockDrug} />, { wrapper: Wrapper });
 
       // Wait for the link to be in the document
-      const link = await screen.findByTestId("drug-card");
-      expect(link).toHaveAttribute("href", "/drug-list/panadol-extra");
+      const card = await screen.findByTestId("drug-card");
+      await user.click(card);
+      expect(pushMock).toHaveBeenCalledWith("/drug-list/panadol-extra");
+    });
+    it("should navigate to the agent details page when clicked", async () => {
+      const user = userEvent.setup();
+
+      render(<ListItem drug={mockDrug} />, { wrapper: Wrapper });
+
+      const Link = await screen.findByTestId("drug-card-agentName");
+      await user.click(Link);
+      expect(Link).toHaveAttribute("href", "/agents/sudan-agent-co");
+    });
+    it("should navigate to the generic details page when clicked", async () => {
+      const user = userEvent.setup();
+
+      render(<ListItem drug={mockDrug} />, { wrapper: Wrapper });
+
+      const Link = await screen.findByTestId("drug-card-genericName");
+      await user.click(Link);
+      expect(Link).toHaveAttribute("href", "/generics/paracetamol");
+    });
+    it("should navigate to the company details page when clicked", async () => {
+      const user = userEvent.setup();
+
+      render(<ListItem drug={mockDrug} />, { wrapper: Wrapper });
+
+      // Wait for the link to be in the document
+      const Link = await screen.findByTestId("drug-card-companyName");
+      await user.click(Link);
+      expect(Link).toHaveAttribute("href", "/companies/gsk");
     });
   });
 

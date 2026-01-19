@@ -42,23 +42,23 @@ export const updateUser = z
           path: ["occupation"],
           message: "Occupation is required",
         });
-      if (!data.workPlace)
+      if (data.occupation === "Student") {
+        if (data.workPlace) {
+          ctx.addIssue({
+            code: "invalid_type",
+            expected: "undefined",
+            received: "string",
+            path: ["workPlace"],
+            message: "Work place is not required",
+          });
+        }
+      } else if (!data.workPlace) {
         ctx.addIssue({
           code: "invalid_type",
           expected: "string",
           received: "undefined",
           path: ["workPlace"],
           message: "Work place is required",
-        });
-    }
-    if (data.specialty === "Pharmacist" && data.occupation === "Student") {
-      if (data.workPlace) {
-        ctx.addIssue({
-          code: "invalid_type",
-          expected: "undefined",
-          received: "string",
-          path: ["workPlace"],
-          message: "Work place is not required",
         });
       }
     }
