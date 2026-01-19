@@ -22,6 +22,20 @@
       "when": 1768514705037,
       "tag": "0002_spotty_hercules",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1768839163498,
+      "tag": "0003_powerful_bushwacker",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1768839231244,
+      "tag": "0004_yielding_swarm",
+      "breakpoints": true
     }
   ]
 }

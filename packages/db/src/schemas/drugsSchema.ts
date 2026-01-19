@@ -1,11 +1,19 @@
-import { relations } from "drizzle-orm";
-import { index, int, sqliteTable, text } from "drizzle-orm/sqlite-core";
-import  { agentsTable } from "./agentsSchema";
-import  { companiesTable } from "./companySchema";
-import  { genericsTable } from "./genericSchema";
+import { relations, sql } from "drizzle-orm";
+import {
+  index,
+  int,
+  integer,
+  sqliteTable,
+  text,
+} from "drizzle-orm/sqlite-core";
+import { agentsTable } from "./agentsSchema";
+import { companiesTable } from "./companySchema";
+import { genericsTable } from "./genericSchema";
+import { timestamps } from "./utils";
 export const countriesTable = sqliteTable("countries", {
   id: int("id").primaryKey({ autoIncrement: true }),
   name: text("name").notNull().unique(),
+  ...timestamps,
 });
 export const drugsTable = sqliteTable(
   "drugs",
@@ -25,6 +33,7 @@ export const drugsTable = sqliteTable(
     country_id: int("country_id").references(() => countriesTable.id),
     country_name: text("country_name"),
     drug_info_id: int("drug_info_id").references(() => drugInfoTable.drug_id),
+    ...timestamps,
   },
   (table) => [
     index("brand_name_idx").on(table.brand_name),
@@ -41,7 +50,7 @@ export const drugStatsTable = sqliteTable("drug_stats", {
     .references(() => drugsTable.id, { onDelete: "cascade" })
     .notNull()
     .unique(),
-
+  ...timestamps,
   // Since a Drug row links to only 1 Company/Agent, counts aren't needed here.
   // Use this for engagement stats instead:
   view_count: int("view_count").default(0),
@@ -92,6 +101,7 @@ export const drugInfoTable = sqliteTable(
     contra: text("contra").default("null"),
     clas: text("clas").default("null"),
     mode: text("mode").default("null"),
+    ...timestamps,
   },
   (table) => [index("drug_info_pkey_idx").on(table.drug_id)],
 );

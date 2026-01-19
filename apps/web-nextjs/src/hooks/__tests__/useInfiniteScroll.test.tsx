@@ -4,6 +4,7 @@
  * Tests the full hook integration using renderHook and mocked dependencies.
  */
 import { useSearchDrug } from "@/hooks/store/useSearch";
+import type { FetchedDrugs } from "@/services/server/getInitialInfiniteDrugs";
 import { Wrapper } from "@/testing/test-utils";
 import { act, renderHook, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
@@ -17,7 +18,7 @@ vi.mock("posthog-js/react", () => ({
   }),
 }));
 
-const mockInitialDrugs = {
+const mockInitialDrugs: FetchedDrugs = {
   data: [
     {
       id: 1,
@@ -35,12 +36,14 @@ const mockInitialDrugs = {
       generic_id: 1,
       country_id: 1,
       drug_info_id: 1,
+      createdAt: new Date(),
+      updatedAt: new Date(),
     },
   ],
   nextPage: 2,
 };
 
-const mockFetchResponse = {
+const mockFetchResponse: FetchedDrugs = {
   data: [
     {
       id: 2,
@@ -57,6 +60,9 @@ const mockFetchResponse = {
       agent_id: 2,
       generic_id: 2,
       country_id: 2,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      drug_info_id: 2,
     },
   ],
   nextPage: null,

@@ -19,6 +19,8 @@ const mockDrug: Drug = {
   generic_name: "Paracetamol",
   country_id: 1,
   country_name: "UK",
+  createdAt: new Date(),
+  updatedAt: new Date(),
   drug_info_id: 1,
 };
 
@@ -38,6 +40,8 @@ const mockDrugWithNullValues: Drug = {
   country_id: null,
   country_name: null,
   drug_info_id: null,
+  createdAt: new Date(),
+  updatedAt: new Date(),
 };
 
 describe("ListItem", () => {
