@@ -208,7 +208,7 @@ const DrugInfo = () => {
               </Accordion>
             </View>
             <Alert
-              icon={AlertCircle}
+              icon={ExternalLink}
               className='border-yellow-500/50'
               iconClassName='text-yellow-500'>
               <AlertTitle className='font-semibold'>

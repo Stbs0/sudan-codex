@@ -57,8 +57,6 @@ export const auth = betterAuth({
     user: {
       update: {
         before: async (user, ctx) => {
-          console.log("body", ctx?.body);
-
           const payload = updateUser.safeParse(ctx?.body);
           return payload.success
             ? { data: { ...user, isProfileComplete: true } }

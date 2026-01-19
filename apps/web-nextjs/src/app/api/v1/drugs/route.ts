@@ -44,7 +44,6 @@ export async function GET(req: NextRequest) {
       filterColumn,
       limit,
       offset,
-      pageParam: page,
       q,
     });
     const nextPage = rows.length === limit ? page + 1 : null;
@@ -87,13 +86,11 @@ export type InfiniteDrugApiResponse = {
   nextPage: number | null;
 };
 const fetchInfiniteDrugs = async ({
-  pageParam,
   filterColumn,
   limit,
   offset,
   q,
 }: {
-  pageParam: number;
   filterColumn: (typeof drugsTable)[SearchDrugType];
   q: string;
   limit: number;

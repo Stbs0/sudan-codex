@@ -31,7 +31,6 @@ export const AccountSettingsCards = () => {
         }
         const additionalField = additionalFields?.[field];
         if (!additionalField) return null;
-        console.log("account", additionalField);
         const {
           label,
           description,

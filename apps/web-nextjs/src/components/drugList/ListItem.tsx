@@ -1,5 +1,5 @@
 import type { InfiniteDrugApiResponse } from "@/app/api/v1/drugs/route";
-import { AlertCircle } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Badge } from "../ui/badge";
@@ -64,7 +64,7 @@ export const ListItem = ({ drug, isFirst }: ListItemProps) => {
                   href={`/generics/${drug.generic?.slug}`}>
                   {drug.generic_name || "No Generic Name"}
                 </Link>
-                <AlertCircle className='ml-2 inline-block h-4 w-4' />
+                <ExternalLink className='ml-2 inline-block h-4 w-4' />
               </>
             ) : (
               drug.generic_name || "No Generic Name"
@@ -83,7 +83,7 @@ export const ListItem = ({ drug, isFirst }: ListItemProps) => {
                   href={`/agents/${drug.agent?.slug}`}>
                   {drug.agent_name}
                 </Link>
-                <AlertCircle className='ml-2 inline-block h-4 w-4' />
+                <ExternalLink className='ml-2 inline-block h-4 w-4' />
               </>
             ) : (
               drug.agent_name || "No Agent Name"
@@ -103,7 +103,7 @@ export const ListItem = ({ drug, isFirst }: ListItemProps) => {
                   href={`/companies/${drug.company?.slug}`}>
                   {drug.company_name}
                 </Link>
-                <AlertCircle className='ml-2 inline-block h-4 w-4' />
+                <ExternalLink className='ml-2 inline-block h-4 w-4' />
               </>
             ) : (
               drug.company_name || "No Company Name"
