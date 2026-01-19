@@ -22,9 +22,9 @@ export default async function UserPersonalInfoPage() {
   try {
     session = await auth.api.getSession({ headers: await headers() });
   } catch (_error) {
-    redirect("/log-in");
+    redirect("/auth/sign-in");
   }
-  if (!session) redirect("/log-in");
+  if (!session) redirect("/auth/sign-in");
   if (session.user.isProfileComplete) redirect("/drug-list");
   return <UserInfoForm />;
 }
