@@ -61,20 +61,43 @@ export function BetterAuthUIProvider({ children }: { children: ReactNode }) {
           required: true,
           label: "Specialty",
           placeholder: "Enter your specialty",
-        },
-        occupation: {
-          type: "string",
-          required: true,
-          label: "Occupation",
-          instructions: <Instructions />,
+          // @ts-expect-error Custom fields are not typed
+
+          options: [
+            { value: "Pharmacist", label: "Pharmacist" },
+            {
+              value: "Allied health professionals",
+              label: "Allied Health Professional",
+            },
+            { value: "Doctor", label: "Doctor" },
+            { value: "Nurse", label: "Nurse" },
+            { value: "Other", label: "Other" },
+          ],
           validate: async (value) => {
             if (!value) return false;
-            const result = updateUser.shape.occupation.safeParse(value);
+            const result = updateUser.shape.specialty.safeParse(value);
             if (!result.success) {
               return false;
             }
             return true;
           },
+        },
+        occupation: {
+          type: "select",
+          required: true,
+          label: "Occupation",
+          instructions: <Instructions />,
+          // @ts-expect-error Custom fields are not typed
+          options: [
+            { value: "Pharmacist", label: "Pharmacist" },
+            { value: "Student", label: "Student" },
+            { value: "Administrator", label: "Administrator" },
+            {
+              value: "Medical Representative",
+              label: "Medical Representative",
+            },
+            { value: "Other", label: "Other" },
+          ],
           placeholder:
             "Student, Administrator, Pharmacist, Medical Representative or Other",
         },
@@ -85,9 +108,9 @@ export function BetterAuthUIProvider({ children }: { children: ReactNode }) {
           "age",
           "phoneNumber",
           "university",
+          "specialty",
           "occupation",
           "workPlace",
-          "specialty",
         ],
       }}
       onSessionChange={() => {
