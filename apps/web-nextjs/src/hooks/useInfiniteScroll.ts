@@ -1,19 +1,21 @@
 "use client";
+import type {
+  InfiniteDrugApiResponse,
+  InfiniteDrugs,
+} from "@/app/api/v1/drugs/route";
 import { DrugFilterState, useSearchDrug } from "@/hooks/store/useSearch";
-import type { FetchedDrugs } from "@/services/server/getInitialInfiniteDrugs";
-import { Drug } from "@sudan-codex/db";
 import { infiniteQueryOptions, useInfiniteQuery } from "@tanstack/react-query";
 import { usePostHog } from "posthog-js/react";
 import { useEffect, useRef } from "react";
 interface InfiniteQueryType {
-  data: Drug[];
+  data: InfiniteDrugs;
   nextPage: number | null;
 }
 interface QueryOptions extends Omit<
   DrugFilterState,
   "setFilterBy" | "setSearch"
 > {
-  initialDrugs: FetchedDrugs;
+  initialDrugs: InfiniteDrugApiResponse;
 }
 
 const getQueryOptions = ({
@@ -51,7 +53,7 @@ const getQueryOptions = ({
     initialPageParam: 1,
     placeholderData: (prev) => prev,
   });
-export function useInfiniteServerScroll(initialDrugs: FetchedDrugs) {
+export function useInfiniteServerScroll(initialDrugs: InfiniteDrugApiResponse) {
   const search = useSearchDrug((state) => state.search);
   const filterBy = useSearchDrug((state) => state.filterBy);
   const posthog = usePostHog();

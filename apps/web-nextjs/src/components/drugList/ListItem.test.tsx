@@ -1,47 +1,44 @@
 import { Wrapper } from "@/testing/test-utils";
-import type { Drug } from "@sudan-codex/db";
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { ListItem } from "./ListItem";
+import { ListItem, type ListItemProps } from "./ListItem";
 
-const mockDrug: Drug = {
-  id: 1,
+const mockDrug: ListItemProps["drug"] = {
   brand_name: "Panadol Extra",
   slug: "panadol-extra",
   dosage_form: "Tablet",
   pack_size: "24 Tablets",
   strength: "500mg",
-  company_id: 1,
   company_name: "GSK",
-  agent_id: 1,
   agent_name: "Sudan Agent Co.",
-  generic_id: 1,
   generic_name: "Paracetamol",
-  country_id: 1,
   country_name: "UK",
-  createdAt: new Date(),
-  updatedAt: new Date(),
-  drug_info_id: 1,
+  id: 1,
+  agent: {
+    slug: "sudan-agent-co",
+  },
+  company: {
+    slug: "gsk",
+  },
+  generic: {
+    slug: "paracetamol",
+  },
 };
 
-const mockDrugWithNullValues: Drug = {
-  id: 2,
+const mockDrugWithNullValues: ListItemProps["drug"] = {
   brand_name: "",
   slug: "empty-drug",
   dosage_form: null,
   pack_size: null,
   strength: null,
-  company_id: null,
   company_name: null,
-  agent_id: null,
   agent_name: null,
-  generic_id: null,
   generic_name: null,
-  country_id: null,
   country_name: null,
-  drug_info_id: null,
-  createdAt: new Date(),
-  updatedAt: new Date(),
+  id: 1,
+  agent: null,
+  company: null,
+  generic: null,
 };
 
 describe("ListItem", () => {

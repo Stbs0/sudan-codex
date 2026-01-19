@@ -1,6 +1,6 @@
+import type { InfiniteDrugApiResponse } from "@/app/api/v1/drugs/route";
 import { GetDrugBySlugReturnType as LocalDrugType } from "@/services/server/getDrugs";
 import {
-  Drug,
   GetAgentBySlugWithStatsReturnType,
   GetCompanyBySlugWithStatsReturnType,
   GetGenericBySlugWithStatsReturnType,
@@ -108,7 +108,9 @@ export const layoutJsonLd: WithContext<WebSite> = {
   copyrightYear: 2025,
 };
 
-export const drugListJsonLd = (drugs: Drug[]): WithContext<ItemList> => {
+export const drugListJsonLd = (
+  drugs: InfiniteDrugApiResponse["data"]
+): WithContext<ItemList> => {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
