@@ -2,11 +2,11 @@ import { expect, test } from "@playwright/test";
 
 test.describe("Agents Stats Page", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/agents");
+    await page.goto("/agents/siho-trading-coltd");
   });
 
   test("page loads correctly", async ({ page }) => {
-    await expect(page).toHaveURL(/.*stats\/agents/);
+    await expect(page).toHaveURL(/.*siho-trading-coltd/);
   });
 
   test("displays page heading", async ({ page }) => {
@@ -45,11 +45,11 @@ test.describe("Agents Stats Page", () => {
 
 test.describe("Companies Stats Page", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/companies");
+    await page.goto("/companies/remedica-ltd");
   });
 
   test("page loads correctly", async ({ page }) => {
-    await expect(page).toHaveURL(/.*stats\/companies/);
+    await expect(page).toHaveURL(/.*remedica-ltd/);
   });
 
   test("displays company statistics", async ({ page }) => {
@@ -82,11 +82,11 @@ test.describe("Companies Stats Page", () => {
 
 test.describe("Generics Stats Page", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/generics");
+    await page.goto("/generics/acetazolamide");
   });
 
   test("page loads correctly", async ({ page }) => {
-    await expect(page).toHaveURL(/.*stats\/generics/);
+    await expect(page).toHaveURL(/.*acetazolamide/);
   });
 
   test("displays generic drug statistics", async ({ page }) => {
