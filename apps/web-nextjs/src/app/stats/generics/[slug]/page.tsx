@@ -1,3 +1,4 @@
+import ViewCount from "@/components/drugInfo/view-count";
 import {
   Card,
   CardContent,
@@ -8,6 +9,7 @@ import {
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import { generateGenericJsonLd } from "@/lib/json-ld";
 import {
+  genericStatsTable,
   getAllDrugsRelatedToGenericWithAgentsAndCompanies,
   getGenericBySlugWithStats,
 } from "@sudan-codex/db";
@@ -161,7 +163,12 @@ export default async function GenericNameStatsPage({ params }: Props) {
           </CardContent>
         </Card>
       </div>
-
+      <ViewCount
+        table={genericStatsTable}
+        id={generic.id}
+        createdAt={generic.createdAt}
+        updatedAt={generic.updatedAt}
+      />
       <div className='space-y-8'>
         <Card>
           <CardHeader>

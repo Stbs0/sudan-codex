@@ -3,12 +3,13 @@ import { DrugDescriptions } from "@/components/drugInfo/drug-descriptions";
 import DrugInfoContent from "@/components/drugInfo/drug-info-content";
 import DrugContentErrorFallback from "@/components/drugInfo/error-boundary";
 import SearchDrugInfo from "@/components/drugInfo/SearchDrugInfo";
+import ViewCount from "@/components/drugInfo/view-count";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 import { generateDrugJsonLd } from "@/lib/json-ld";
 import { getDrugBySlug } from "@/services/server/getDrugs";
-import { db } from "@sudan-codex/db";
+import { db, drugStatsTable } from "@sudan-codex/db";
 import { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import { Suspense } from "react";
@@ -110,6 +111,13 @@ export default async function DrugInfoPage({
 
       <Card className='flex flex-col gap-6 p-6'>
         <DrugDescriptions drug={drug} />
+        <ViewCount
+          table={drugStatsTable}
+          id={drug.id}
+          createdAt={drug.createdAt}
+          updatedAt={drug.updatedAt}
+        />
+
         <Separator />
         <CardContent className='flex w-full flex-col gap-4 p-0'>
           <SearchDrugInfo />

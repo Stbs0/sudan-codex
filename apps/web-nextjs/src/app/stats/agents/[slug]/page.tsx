@@ -6,13 +6,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
+import { generateAgentJsonLd } from "@/lib/json-ld";
 import {
+  agentStatsTable,
   getAgentBySlug,
   getAgentBySlugWithStats,
   getAllDrugsRelatedToAgentWithGenericAndCompanies,
 } from "@sudan-codex/db";
-import { generateAgentJsonLd } from "@/lib/json-ld";
 
+import ViewCount from "@/components/drugInfo/view-count";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 export const revalidate = false;
@@ -163,7 +165,12 @@ export default async function AgentStatsPage({ params }: Props) {
           </CardContent>
         </Card>
       </div>
-
+      <ViewCount
+        table={agentStatsTable}
+        id={agent.id}
+        createdAt={agent.createdAt}
+        updatedAt={agent.updatedAt}
+      />
       <div className='space-y-8'>
         <Card>
           <CardHeader>

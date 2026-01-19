@@ -16,6 +16,7 @@ export const getDrugBySlug = cache(async (slug: string) => {
       agent: true,
       company: true,
       generic: true,
+      stats: { columns: { view_count: true } },
     },
   });
 });

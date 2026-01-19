@@ -1,3 +1,4 @@
+import ViewCount from "@/components/drugInfo/view-count";
 import {
   Card,
   CardContent,
@@ -8,6 +9,7 @@ import {
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import { generateCompanyJsonLd } from "@/lib/json-ld";
 import {
+  companyStatsTable,
   getAllDrugsRelatedToCompanyWithGenericAndAgents,
   getCompanyBySlug,
   getCompanyBySlugWithStats,
@@ -163,7 +165,12 @@ export default async function CompanyStatsPage({ params }: Props) {
           </CardContent>
         </Card>
       </div>
-
+      <ViewCount
+        table={companyStatsTable}
+        id={company.id}
+        createdAt={company.createdAt}
+        updatedAt={company.updatedAt}
+      />
       <div className='space-y-8'>
         <Card>
           <CardHeader>
