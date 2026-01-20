@@ -19,7 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...generics.map((generic) => ({
       url: `${baseUrl}/generics/${generic.slug}`,
-      lastModified: generic.updatedAt.toISOString(),
+      lastModified: generic.updatedAt,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     })),
