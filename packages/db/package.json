@@ -8,8 +8,8 @@
       "default": "./dist/index.js"
     },
     "./schema": {
-      "types": "./dist/schemas/schema.d.ts",
-      "default": "./dist/schemas/schema.js"
+      "types": "./dist/schemas/index.d.ts",
+      "default": "./dist/schemas/index.js"
     },
     "./auth-schema": {
       "types": "./dist/schemas/auth-schema.d.ts",

@@ -1,143 +1,341 @@
 "use client";
-import SelectWithOther from "@/components/SelectWithOther";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Field,
+  FieldDescription,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+  FieldSet,
+} from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import { DevTool } from "@hookform/devtools";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { tellUsMoreSchema, tellUsMoreSchemaType } from "@sudan-codex/types";
+import { updateUser, type UpdateUserType } from "@sudan-codex/types";
 
 import { authClient } from "@/lib/auth-client";
+import { useForm } from "@tanstack/react-form";
 import { useRouter } from "next/navigation";
 import { usePostHog } from "posthog-js/react";
-import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
 import { Separator } from "../ui/separator";
 
+const defaultValues: UpdateUserType = {
+  age: 0,
+  university: "",
+  phoneNumber: "",
+  specialty: "" as UpdateUserType["specialty"],
+  occupation: undefined,
+  workPlace: "",
+};
 const UserInfoForm = () => {
   const posthog = usePostHog();
   const router = useRouter();
 
-  const { control, ...methods } = useForm<tellUsMoreSchemaType>({
-    defaultValues: {
-      age: 0,
-      university: "",
-      occupation: undefined,
-      phoneNumber: "",
+  const form = useForm({
+    defaultValues,
+    // validationLogic: revalidateLogic(),
+    validators: {
+      // onBlur: updateUser,
+      onChange: updateUser,
     },
-    mode: "all",
-    resolver: zodResolver(tellUsMoreSchema),
+    onSubmit: async ({ value }) => {
+      const res = await authClient.updateUser(value, {
+        onSuccess: () => {
+          router.replace("/drug-list");
+          toast.success("Profile updated successfully!");
+        },
+      });
+      if (res.error) {
+        posthog.captureException(res.error, { place: "user info form" });
+        toast.error("Failed to update profile. Please try again.");
+      }
+    },
   });
 
-  const onSubmit = async (data: tellUsMoreSchemaType) => {
-    const res = await authClient.updateUser(data, {
-      onSuccess: (ctx) => {
-        router.replace("/drug-list");
-        toast.success("Profile updated successfully!");
-      },
-    });
-    if (res.error) {
-      posthog.captureException(res.error, { place: "user info form" });
-      toast.error("Failed to update profile. Please try again.");
-    }
-  };
   return (
     <div className='mx-auto grid max-w-2xl items-center gap-4 px-3 py-4 dark:text-gray-100'>
-      <Form
-        control={control}
-        {...methods}>
-        <form onSubmit={methods.handleSubmit(onSubmit)}>
-          <div className='mb-2 space-y-1'>
-            <h1 className='text-center text-3xl font-bold'>
-              Complete Your Profile
-            </h1>
-            <p className='text-center text-lg'>Tell Us More About Yourself</p>
-          </div>
-          <Card>
-            <CardContent>
-              <FormField
-                control={control}
-                name='age'
-                render={({ field: { value, ...otherProps } }) => (
-                  <FormItem>
-                    <FormLabel>Age</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder='eg 20'
-                        type='number'
-                        value={value === 0 ? "" : value}
-                        {...otherProps}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                    <FormDescription>Write your age</FormDescription>
-                  </FormItem>
+      <Card>
+        <CardHeader className=''>
+          <CardTitle className='text-center text-3xl font-bold'>
+            Complete Your Profile
+          </CardTitle>
+          <CardDescription className='text-center text-lg'>
+            Tell Us More About Yourself
+          </CardDescription>
+        </CardHeader>
+        <CardContent className=''>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              form.handleSubmit();
+            }}
+            id='user-info-form'>
+            <FieldSet>
+              <FieldGroup>
+                <form.Field name='age'>
+                  {(field) => {
+                    const isInvalid =
+                      field.state.meta.isTouched && !field.state.meta.isValid;
+                    return (
+                      <Field data-invalid={isInvalid}>
+                        <FieldLabel htmlFor={field.name}>Age</FieldLabel>
+                        <Input
+                          id={field.name}
+                          name={field.name}
+                          value={
+                            field.state.value === 0 ? "" : field.state.value
+                          }
+                          onBlur={field.handleBlur}
+                          onChange={(e) =>
+                            field.handleChange(Number(e.target.value))
+                          }
+                          type='number'
+                          placeholder='eg 20'
+                          aria-invalid={isInvalid}
+                        />
+                        <FieldDescription>Write your age</FieldDescription>
+                        {isInvalid && (
+                          <FieldError errors={field.state.meta.errors} />
+                        )}
+                      </Field>
+                    );
+                  }}
+                </form.Field>
+
+                <Separator className='my-1' />
+
+                <form.Field name='phoneNumber'>
+                  {(field) => {
+                    const isInvalid =
+                      field.state.meta.isTouched && !field.state.meta.isValid;
+                    return (
+                      <Field data-invalid={isInvalid}>
+                        <FieldLabel htmlFor={field.name}>
+                          Phone Number
+                        </FieldLabel>
+                        <Input
+                          id={field.name}
+                          name={field.name}
+                          value={field.state.value}
+                          onBlur={field.handleBlur}
+                          onChange={(e) => field.handleChange(e.target.value)}
+                          type='tel'
+                          autoComplete='tel-country-code'
+                          placeholder='eg. +249123456789'
+                          aria-invalid={isInvalid}
+                        />
+                        <FieldDescription>
+                          Write your phone number
+                        </FieldDescription>
+                        {isInvalid && (
+                          <FieldError errors={field.state.meta.errors} />
+                        )}
+                      </Field>
+                    );
+                  }}
+                </form.Field>
+
+                <Separator className='my-1' />
+
+                <form.Field name='university'>
+                  {(field) => {
+                    const isInvalid =
+                      field.state.meta.isTouched && !field.state.meta.isValid;
+                    return (
+                      <Field data-invalid={isInvalid}>
+                        <FieldLabel htmlFor={field.name}>University</FieldLabel>
+                        <Input
+                          id={field.name}
+                          name={field.name}
+                          value={field.state.value}
+                          onBlur={field.handleBlur}
+                          onChange={(e) => field.handleChange(e.target.value)}
+                          placeholder='eg. University of Gezira'
+                          aria-invalid={isInvalid}
+                        />
+                        <FieldDescription>Your university</FieldDescription>
+                        {isInvalid && (
+                          <FieldError errors={field.state.meta.errors} />
+                        )}
+                      </Field>
+                    );
+                  }}
+                </form.Field>
+              </FieldGroup>
+              <Separator className='my-1' />
+
+              <form.Field name={"specialty"}>
+                {(field) => {
+                  const isInvalid =
+                    field.state.meta.isTouched && !field.state.meta.isValid;
+
+                  return (
+                    <Field data-invalid={isInvalid}>
+                      <FieldLabel htmlFor={field.name}>Specialty</FieldLabel>
+
+                      <Select
+                        name={field.name}
+                        value={
+                          field.state.meta.isTouched ? field.state.value : ""
+                        }
+                        onValueChange={(value) =>
+                          field.handleChange(
+                            value as UpdateUserType["specialty"]
+                          )
+                        }>
+                        <SelectTrigger id={field.name}>
+                          <SelectValue placeholder='Select your specialty' />
+                        </SelectTrigger>
+
+                        <SelectContent>
+                          <SelectItem value='auto'>Select</SelectItem>
+                          <SelectSeparator />
+                          {updateUser.shape[field.name].options.map(
+                            (option) => (
+                              <SelectItem
+                                key={option}
+                                value={option}>
+                                {option}
+                              </SelectItem>
+                            )
+                          )}
+                        </SelectContent>
+                      </Select>
+
+                      {isInvalid && (
+                        <FieldError errors={field.state.meta.errors} />
+                      )}
+                    </Field>
+                  );
+                }}
+              </form.Field>
+
+              <form.Subscribe selector={(state) => state.values.specialty}>
+                {(specialty) =>
+                  specialty === "Pharmacist" && (
+                    <form.Field name={"occupation"}>
+                      {(field) => {
+                        const isInvalid =
+                          field.state.meta.isTouched &&
+                          !field.state.meta.isValid;
+
+                        return (
+                          <Field data-invalid={isInvalid}>
+                            <FieldLabel htmlFor={field.name}>
+                              Occupation
+                            </FieldLabel>
+
+                            <Select
+                              name={field.name}
+                              value={
+                                (field.state.meta.isTouched
+                                  ? field.state.value
+                                  : "") as string
+                              }
+                              onValueChange={(value) =>
+                                field.handleChange(
+                                  value as UpdateUserType["occupation"]
+                                )
+                              }>
+                              <SelectTrigger id={field.name}>
+                                <SelectValue placeholder='Select your specialty' />
+                              </SelectTrigger>
+
+                              <SelectContent>
+                                {updateUser.shape[field.name]
+                                  .unwrap()
+                                  .options.map((option) => (
+                                    <SelectItem
+                                      key={option}
+                                      value={option}>
+                                      {option}
+                                    </SelectItem>
+                                  ))}
+                              </SelectContent>
+                            </Select>
+
+                            {isInvalid && (
+                              <FieldError
+                                errors={field.state.meta.errors.map((err) => ({
+                                  message: err?.toString(),
+                                }))}
+                              />
+                            )}
+                          </Field>
+                        );
+                      }}
+                    </form.Field>
+                  )
+                }
+              </form.Subscribe>
+
+              <form.Subscribe selector={(state) => state.values.occupation}>
+                {(occupation) =>
+                  occupation !== "Student" && (
+                    <form.Field name='workPlace'>
+                      {(field) => {
+                        const isInvalid =
+                          field.state.meta.isTouched &&
+                          !field.state.meta.isValid;
+                        return (
+                          <Field data-invalid={isInvalid}>
+                            <FieldLabel htmlFor={field.name}>
+                              Work Place
+                            </FieldLabel>
+                            <Input
+                              id={field.name}
+                              name={field.name}
+                              value={field.state.value}
+                              onBlur={field.handleBlur}
+                              onChange={(e) =>
+                                field.handleChange(e.target.value)
+                              }
+                              placeholder='eg. Hikma Pharmacy'
+                              aria-invalid={isInvalid}
+                            />
+                            <FieldDescription>Your work place</FieldDescription>
+                            {isInvalid && (
+                              <FieldError errors={field.state.meta.errors} />
+                            )}
+                          </Field>
+                        );
+                      }}
+                    </form.Field>
+                  )
+                }
+              </form.Subscribe>
+
+              <form.Subscribe
+                selector={(state) => state.canSubmit && !state.isSubmitting}>
+                {(canSubmit) => (
+                  <Button
+                    form='user-info-form'
+                    disabled={!canSubmit}
+                    className='mt-4 w-full'
+                    type='submit'>
+                    {form.state.isSubmitting ? "Saving..." : "Save"}
+                  </Button>
                 )}
-              />
-              <Separator className='my-4' />
-              <FormField
-                control={control}
-                name='phoneNumber'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Phone Number</FormLabel>
-                    <FormControl>
-                      <Input
-                        autoComplete='tel-country-code'
-                        placeholder='eg. +249123456789'
-                        type='tel'
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                    <FormDescription>Write your phone number</FormDescription>
-                  </FormItem>
-                )}
-              />{" "}
-              <Separator className='my-4' />
-              <FormField
-                control={control}
-                name='university'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>University</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder='eg. University of Gezira'
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                    <FormDescription>Your university</FormDescription>
-                  </FormItem>
-                )}
-              />{" "}
-              <Separator className='my-4' />
-              <SelectWithOther
-                name='occupation'
-                label='Occupation'
-                placeholder='Select your occupation'
-              />
-              <Button
-                disabled={methods.formState.isSubmitting}
-                className='mt-4'
-                type='submit'>
-                Save
-              </Button>
-            </CardContent>
-          </Card>
-        </form>
-      </Form>
-      {process.env.NODE_ENV === "development" && <DevTool control={control} />}
+              </form.Subscribe>
+            </FieldSet>
+          </form>
+        </CardContent>
+      </Card>
     </div>
   );
 };

@@ -12,7 +12,11 @@ import type { DrugInfo } from "@sudan-codex/db";
 //   "spl_product_data_elements",
 // ];
 
-const DrugInfoAccordion = ({ data }: { data: DrugInfo }) => {
+const DrugInfoAccordion = ({
+  data,
+}: {
+  data: Omit<DrugInfo, "createdAt" | "updatedAt">;
+}) => {
   // const keys = Object.keys(data)
   //   .filter((key) => Array.isArray(data[key]) && !propToDelete.includes(key))
   //   .sort((a, b) => a.localeCompare(b));

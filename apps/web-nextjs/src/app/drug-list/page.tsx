@@ -17,6 +17,9 @@ export const dynamic = "force-dynamic";
 
 export default async function DrugListPage() {
   const initialDrugs = await getDrugs(1);
+  if (!initialDrugs.data.length) {
+    return <div>No drugs found</div>;
+  }
   return (
     <div className='mx-auto grid w-full gap-4 px-3 md:max-w-2xl dark:text-gray-100'>
       <script

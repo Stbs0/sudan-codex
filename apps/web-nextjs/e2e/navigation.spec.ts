@@ -10,19 +10,19 @@ test.describe("Page Navigation", () => {
   });
 
   test("login page loads", async ({ page }) => {
-    await page.goto("/log-in");
-    await expect(page).toHaveURL(/.*log-in/);
+    await page.goto("/auth/sign-in");
+    await expect(page).toHaveURL(/.*sign-in/i);
     // Check for email/password inputs or login button
     await expect(
-      page.getByRole("button", { name: "Login with Google Google" })
+      page.getByRole("button", { name: "Sign in with Google" })
     ).toBeVisible();
   });
 
   test("signup page loads", async ({ page }) => {
-    await page.goto("/sign-up");
-    await expect(page).toHaveURL(/.*sign-up/);
+    await page.goto("/auth/sign-up");
+    await expect(page).toHaveURL(/.*sign-up/i);
     await expect(
-      page.getByRole("button", { name: "Sign up with Google Google" })
+      page.getByRole("button", { name: "Sign in with  Google" })
     ).toBeVisible();
   });
 

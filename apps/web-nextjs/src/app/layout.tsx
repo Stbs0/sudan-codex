@@ -8,9 +8,7 @@ import { BetterAuthUIProvider } from "@/providers/better-auth-ui-provider";
 import { PHProvider } from "@/providers/PHProvider";
 import TanstackQueryProvider from "@/providers/query-client";
 import { ThemeProvider } from "@/providers/theme-provider";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import "./globals.css";
 
 // const geistSans = Geist({
@@ -93,11 +91,6 @@ export default function RootLayout({
       >
         <PHProvider>
           <TanstackQueryProvider>
-            {process.env.NODE_ENV === "development" && (
-              <Suspense fallback={null}>
-                <ReactQueryDevtools initialIsOpen={false} />
-              </Suspense>
-            )}
             <ThemeProvider
               attribute='class'
               defaultTheme='system'

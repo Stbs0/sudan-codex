@@ -11,52 +11,60 @@ export async function GET(
     return Response.json({ error: "No slug provided" }, { status: 400 });
   }
 
-  const generic = await db.query.genericsTable.findFirst({
-    where: eq(genericsTable.slug, slug),
-    with: {
+  try {
+    const generic = await db.query.genericsTable.findFirst({
+      where: eq(genericsTable.slug, slug),
+      with: {
+        stats: {
+          columns: {
+            total_brands: true,
+            related_agents: true,
+            related_companies: true,
+          },
+        },
+      },
+    });
+
+    if (!generic)
+      return Response.json({ error: "Generic not found" }, { status: 404 });
+    const drugsWithAll = await db.query.drugsTable.findMany({
+      where: eq(drugsTable.generic_id, generic.id),
+      columns: {
+        brand_name: true,
+        pack_size: true,
+        slug: true,
+        company_name: true,
+        agent_name: true,
+        strength: true,
+      },
+      with: {
+        agent: {
+          columns: {
+            slug: true,
+          },
+        },
+        company: {
+          columns: {
+            slug: true,
+          },
+        },
+      },
+    });
+
+    return Response.json({
       stats: {
-        columns: {
-          total_brands: true,
-          related_agents: true,
-          related_companies: true,
-        },
+        total_brands: generic.stats?.total_brands ?? 0,
+        related_agents: generic.stats?.related_agents ?? 0,
+        related_companies: generic.stats?.related_companies ?? 0,
       },
-    },
-  });
-
-  if (!generic)
-    return Response.json({ error: "Generic not found" }, { status: 404 });
-  const drugsWithAll = await db.query.drugsTable.findMany({
-    where: eq(drugsTable.generic_id, generic.id),
-    columns: {
-      brand_name: true,
-      pack_size: true,
-      slug: true,
-      company_name: true,
-      agent_name: true,
-      strength: true,
-    },
-    with: {
-      agent: {
-        columns: {
-          slug: true,
-        },
-      },
-      company: {
-        columns: {
-          slug: true,
-        },
-      },
-    },
-  });
-
-  return Response.json({
-    stats: {
-      total_brands: generic.stats.total_brands,
-      related_agents: generic.stats.related_agents,
-      related_companies: generic.stats.related_companies,
-    },
-    drugs: drugsWithAll,
-    name: generic.name,
-  });
+      drugs: drugsWithAll,
+      name: generic.name,
+    });
+  } catch (error) {
+    console.error(`Error fetching generic details for slug "${slug}":`, error);
+    return Response.json(
+      { error: "Failed to fetch generic details" },
+      { status: 500 }
+    );
+  }
 }

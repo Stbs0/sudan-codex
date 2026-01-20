@@ -6,13 +6,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
+import { generateAgentJsonLd } from "@/lib/json-ld";
 import {
+  agentStatsTable,
   getAgentBySlug,
   getAgentBySlugWithStats,
   getAllDrugsRelatedToAgentWithGenericAndCompanies,
 } from "@sudan-codex/db";
-import { generateAgentJsonLd } from "@/lib/json-ld";
 
+import ViewCount from "@/components/drugInfo/view-count";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 export const revalidate = false;
@@ -35,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${agent.name} | Pharmaceutical Agent in Sudan | Sudan Codex`,
     description: description,
     alternates: {
-      canonical: `/stats/agents/${slug}`,
+      canonical: `/agents/${slug}`,
     },
     keywords: [
       agent.name,
@@ -48,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `Statistics for Agent: ${agent.name}`,
       description: `Detailed statistics for agent ${agent.name}, including associated companies and drugs.`,
-      url: `https://www.sudan-codex.com/stats/agents/${slug}`,
+      url: `https://www.sudan-codex.com/agents/${slug}`,
       siteName: "Sudan Codex",
       images: [
         {
@@ -103,7 +105,7 @@ export default async function AgentStatsPage({ params }: Props) {
       header: "Generic",
       accessor: "genericName",
       isLink: true,
-      basePath: "/stats/generics/",
+      basePath: "/generics/",
       slugAccessor: "genericSlug",
     },
     { header: "Dosage Form", accessor: "dosage_form" },
@@ -112,7 +114,7 @@ export default async function AgentStatsPage({ params }: Props) {
       header: "Company",
       accessor: "companyName",
       isLink: true,
-      basePath: "/stats/companies/",
+      basePath: "/companies/",
       slugAccessor: "companySlug",
     },
   ];
@@ -163,7 +165,12 @@ export default async function AgentStatsPage({ params }: Props) {
           </CardContent>
         </Card>
       </div>
-
+      <ViewCount
+        table={agentStatsTable}
+        id={agent.id}
+        createdAt={agent.createdAt}
+        updatedAt={agent.updatedAt}
+      />
       <div className='space-y-8'>
         <Card>
           <CardHeader>

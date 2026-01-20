@@ -3,6 +3,7 @@
  *
  * Tests the full hook integration using renderHook and mocked dependencies.
  */
+import type { InfiniteDrugApiResponse } from "@/app/api/v1/drugs/route";
 import { useSearchDrug } from "@/hooks/store/useSearch";
 import { Wrapper } from "@/testing/test-utils";
 import { act, renderHook, waitFor } from "@testing-library/react";
@@ -17,7 +18,7 @@ vi.mock("posthog-js/react", () => ({
   }),
 }));
 
-const mockInitialDrugs = {
+const mockInitialDrugs: InfiniteDrugApiResponse = {
   data: [
     {
       id: 1,
@@ -30,17 +31,21 @@ const mockInitialDrugs = {
       agent_name: "Agent",
       company_name: "Company",
       country_name: "Country",
-      company_id: 1,
-      agent_id: 1,
-      generic_id: 1,
-      country_id: 1,
-      drug_info_id: 1,
+      agent: {
+        slug: "agent",
+      },
+      company: {
+        slug: "company",
+      },
+      generic: {
+        slug: "generic",
+      },
     },
   ],
   nextPage: 2,
 };
 
-const mockFetchResponse = {
+const mockFetchResponse: InfiniteDrugApiResponse = {
   data: [
     {
       id: 2,
@@ -53,10 +58,16 @@ const mockFetchResponse = {
       agent_name: "Agent 2",
       company_name: "Company 2",
       country_name: "Country 2",
-      company_id: 2,
-      agent_id: 2,
-      generic_id: 2,
-      country_id: 2,
+
+      agent: {
+        slug: "agent-2",
+      },
+      company: {
+        slug: "company-2",
+      },
+      generic: {
+        slug: "generic-2",
+      },
     },
   ],
   nextPage: null,

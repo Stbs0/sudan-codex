@@ -1,7 +1,6 @@
 import { SearchDrugType } from "@/hooks/store/useSearch";
 import { getPostHogServer } from "@/lib/posthog-server";
 import { db, drugsTable } from "@sudan-codex/db";
-import { asc, like, sql } from "drizzle-orm";
 import type { NextRequest } from "next/server";
 import { literal } from "zod";
 
@@ -41,14 +40,12 @@ export async function GET(req: NextRequest) {
     : columnMap.brand_name;
 
   try {
-    const rows = await db
-      .select()
-      .from(drugsTable)
-      .where(like(sql`lower(${filterColumn})`, `%${escapeLike(q)}%`))
-      .orderBy(asc(filterColumn))
-      .limit(limit)
-      .offset(offset);
-
+    const rows = await fetchInfiniteDrugs({
+      filterColumn,
+      limit,
+      offset,
+      q,
+    });
     const nextPage = rows.length === limit ? page + 1 : null;
     const res = {
       data: rows,
@@ -82,3 +79,57 @@ export async function GET(req: NextRequest) {
     return Response.json({ error: "Internal Server Error" }, { status: 500 });
   }
 }
+export type InfiniteDrugs = Awaited<ReturnType<typeof fetchInfiniteDrugs>>;
+
+export type InfiniteDrugApiResponse = {
+  data: InfiniteDrugs;
+  nextPage: number | null;
+};
+const fetchInfiniteDrugs = async ({
+  filterColumn,
+  limit,
+  offset,
+  q,
+}: {
+  filterColumn: (typeof drugsTable)[SearchDrugType];
+  q: string;
+  limit: number;
+  offset: number;
+}) => {
+  return await db.query.drugsTable.findMany({
+    where: (drugs, { like, sql }) =>
+      like(sql`lower(${filterColumn})`, `%${escapeLike(q)}%`),
+    orderBy: (drugs, { asc }) => asc(filterColumn),
+    limit,
+    offset,
+    with: {
+      generic: {
+        columns: {
+          slug: true,
+        },
+      },
+      agent: {
+        columns: {
+          slug: true,
+        },
+      },
+      company: {
+        columns: {
+          slug: true,
+        },
+      },
+    },
+    columns: {
+      id: true,
+      slug: true,
+      brand_name: true,
+      generic_name: true,
+      agent_name: true,
+      company_name: true,
+      country_name: true,
+      strength: true,
+      dosage_form: true,
+      pack_size: true,
+    },
+  });
+};

@@ -23,6 +23,16 @@ export const users = sqliteTable("users", {
   phoneNumber: text("phone_number"),
   university: text("university"),
   occupation: text("occupation"),
+  specialty: text({
+    enum: [
+      "Pharmacist",
+      "Doctor",
+      "Nurse",
+      "Allied health professionals",
+      "Other",
+    ],
+  }),
+  workPlace: text("work_place"),
 });
 
 export const sessions = sqliteTable(

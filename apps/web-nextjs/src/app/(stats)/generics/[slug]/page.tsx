@@ -1,3 +1,4 @@
+import ViewCount from "@/components/drugInfo/view-count";
 import {
   Card,
   CardContent,
@@ -8,6 +9,7 @@ import {
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import { generateGenericJsonLd } from "@/lib/json-ld";
 import {
+  genericStatsTable,
   getAllDrugsRelatedToGenericWithAgentsAndCompanies,
   getGenericBySlugWithStats,
 } from "@sudan-codex/db";
@@ -32,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${generic.name} | Generic Drug Statistics in Sudan | Sudan Codex`,
     description,
     alternates: {
-      canonical: `/stats/generics/${slug}`,
+      canonical: `/generics/${slug}`,
     },
     keywords: [
       generic.name,
@@ -45,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `Statistics for Generic: ${generic.name}`,
       description: `Detailed statistics for generic name ${generic.name}, including associated companies and brand names.`,
-      url: `https://www.sudan-codex.com/stats/generics/${slug}`,
+      url: `https://www.sudan-codex.com/generics/${slug}`,
       siteName: "Sudan Codex",
       images: [
         {
@@ -101,14 +103,14 @@ export default async function GenericNameStatsPage({ params }: Props) {
       header: "Company",
       accessor: "companyName",
       isLink: true,
-      basePath: "/stats/companies/",
+      basePath: "/companies/",
       slugAccessor: "companySlug",
     },
     {
       header: "Agent",
       accessor: "agentName",
       isLink: true,
-      basePath: "/stats/agents/",
+      basePath: "/agents/",
       slugAccessor: "agentSlug",
     },
   ];
@@ -161,7 +163,12 @@ export default async function GenericNameStatsPage({ params }: Props) {
           </CardContent>
         </Card>
       </div>
-
+      <ViewCount
+        table={genericStatsTable}
+        id={generic.id}
+        createdAt={generic.createdAt}
+        updatedAt={generic.updatedAt}
+      />
       <div className='space-y-8'>
         <Card>
           <CardHeader>

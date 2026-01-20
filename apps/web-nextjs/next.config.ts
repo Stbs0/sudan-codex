@@ -11,6 +11,25 @@ const nextConfig: NextConfig = {
   experimental: {
     typedEnv: true,
   },
+  async redirects() {
+    return [
+      {
+        source: "/stats/agents/:path*",
+        destination: "/agents/:path*",
+        permanent: true,
+      },
+      {
+        source: "/stats/companies/:path*",
+        destination: "/companies/:path*",
+        permanent: true,
+      },
+      {
+        source: "/stats/generics/:path*",
+        destination: "/generics/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 const posthogApiKey = process.env.POSTHOG_API_KEY;
 const posthogEnvId = process.env.POSTHOG_ENV_ID;

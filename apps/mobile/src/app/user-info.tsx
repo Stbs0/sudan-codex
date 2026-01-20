@@ -22,10 +22,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { authClient } from "@/lib/auth-client";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  tellUsMoreSchema,
-  type tellUsMoreSchemaType,
-} from "@sudan-codex/types";
+import { updateUser, type UpdateUserType } from "@sudan-codex/types";
 import { Redirect, useRouter } from "expo-router";
 import React from "react";
 import { Controller, useForm, type Control } from "react-hook-form";
@@ -39,13 +36,13 @@ export default function CompleteProfileScreen() {
   const router = useRouter();
   const form = useForm({
     mode: "onBlur",
-    resolver: zodResolver(tellUsMoreSchema),
+    resolver: zodResolver(updateUser),
   });
   if (data?.user?.isProfileComplete) {
     return <Redirect href='/drug-list' />;
   }
 
-  const onSubmit = async (data: tellUsMoreSchemaType) => {
+  const onSubmit = async (data: UpdateUserType) => {
     const res = await authClient.updateUser(data, {
       onSuccess: () => {
         router.replace("/drug-list");
@@ -167,7 +164,7 @@ export default function CompleteProfileScreen() {
 const SelectOccupation = ({
   control,
 }: {
-  control: Control<tellUsMoreSchemaType>;
+  control: Control<UpdateUserType>;
 }) => {
   const { t } = useTranslation();
   return (

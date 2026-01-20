@@ -1,70 +1,70 @@
-import {
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import React from "react";
-import { useFormContext } from "react-hook-form";
-import { occupationLiteral } from "@sudan-codex/types";
+// import {
+//   Field,
+//   FieldDescription,
+//   FieldError,
+//   FieldLabel,
+// } from "@/components/ui/field";
+// import {
+//   Select,
+//   SelectContent,
+//   SelectItem,
+//   SelectTrigger,
+//   SelectValue,
+// } from "@/components/ui/select";
+// import { type UpdateUserType } from "@sudan-codex/types";
+// import { type ReactFormApi } from "@tanstack/react-form";
 
-interface SelectWithOtherProps {
-  name: string;
-  label: string;
-  placeholder: string;
-  description?: string;
-}
+// interface SelectWithOtherProps<T extends "specialty" | "occupation"> {
+//   form: ReactFormApi<UpdateUserType, any>;
+//   name: T;
+//   label: string;
+//   placeholder: string;
+//   description?: string;
+//   options: NonNullable<UpdateUserType[T]>[];
+// }
+// const SelectWithOther = <T extends "specialty" | "occupation">({
+//   form,
+//   name,
+//   label,
+//   placeholder,
+//   description,
+//   options,
+// }: SelectWithOtherProps<T>) => {
+//   return (
+//     <form.Field name={name}>
+//       {(field) => (
+//         <Field data-invalid={field.state.meta.errors.length > 0}>
+//           <FieldLabel htmlFor={name}>{label}</FieldLabel>
 
-const SelectWithOther: React.FC<SelectWithOtherProps> = ({
-  name,
-  label,
-  placeholder,
-  description,
-}) => {
-  const { control } = useFormContext();
-  return (
-    <FormField
-      control={control}
-      name={name}
-      render={({ field }) => (
-        <FormItem>
-          <FormLabel>{label}</FormLabel>
-          <div className='space-y-2'>
-            <Select
-              {...field}
-              value={field.value || ""}
-              onValueChange={field.onChange}>
-              <FormControl>
-                <SelectTrigger>
-                  <SelectValue placeholder={placeholder} />
-                </SelectTrigger>
-              </FormControl>
-              <SelectContent>
-                {[...occupationLiteral.values].map((occupation) => (
-                  <SelectItem
-                    key={occupation}
-                    value={occupation}>
-                    {occupation}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-          <FormMessage />
-          {description && <FormDescription>{description}</FormDescription>}
-        </FormItem>
-      )}
-    />
-  );
-};
+//           <Select
+//             name={field.name}
+//             value={(field.state.value as string) ?? ""}
+//             onValueChange={(value) => field.handleChange(value as any)}>
+//             <SelectTrigger id={name}>
+//               <SelectValue placeholder={placeholder} />
+//             </SelectTrigger>
 
-export default SelectWithOther;
+//             <SelectContent>
+//               {options.map((option) => (
+//                 <SelectItem
+//                   key={option}
+//                   value={option}>
+//                   {option}
+//                 </SelectItem>
+//               ))}
+//             </SelectContent>
+//           </Select>
+
+//           {description && <FieldDescription>{description}</FieldDescription>}
+//           <FieldError
+//             errors={field.state.meta.errors.map((err) => ({
+//               message: err?.toString(),
+//             }))}
+//           />
+//         </Field>
+//       )}
+//     </form.Field>
+//   );
+// };
+
+// export default SelectWithOther;

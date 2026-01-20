@@ -2,10 +2,10 @@
 
 import { authClient } from "@/lib/auth-client";
 import { AuthUIProvider } from "@daveyplate/better-auth-ui";
+import { updateUser } from "@sudan-codex/types";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { ReactNode } from "react";
-import { occupationLiteral } from "@sudan-codex/types";
 
 export function BetterAuthUIProvider({ children }: { children: ReactNode }) {
   const router = useRouter();
@@ -50,25 +50,68 @@ export function BetterAuthUIProvider({ children }: { children: ReactNode }) {
           label: "University",
           placeholder: "Enter your university",
         },
-        occupation: {
+        workPlace: {
           type: "string",
           required: true,
-          label: "Occupation",
-          instructions: <Instructions />,
+          label: "Work Place",
+          placeholder: "Enter your work place",
+        },
+        specialty: {
+          type: "select",
+          required: true,
+          label: "Specialty",
+          placeholder: "Enter your specialty",
+          // @ts-expect-error Custom fields are not typed
+
+          options: [
+            { value: "Pharmacist", label: "Pharmacist" },
+            {
+              value: "Allied health professionals",
+              label: "Allied Health Professional",
+            },
+            { value: "Doctor", label: "Doctor" },
+            { value: "Nurse", label: "Nurse" },
+            { value: "Other", label: "Other" },
+          ],
           validate: async (value) => {
             if (!value) return false;
-            const result = occupationLiteral.safeParse(value);
+            const result = updateUser.shape.specialty.safeParse(value);
             if (!result.success) {
               return false;
             }
             return true;
           },
+        },
+        occupation: {
+          type: "select",
+          required: true,
+          label: "Occupation",
+          instructions: <Instructions />,
+          // @ts-expect-error Custom fields are not typed
+          options: [
+            { value: "Pharmacist", label: "Pharmacist" },
+            { value: "Student", label: "Student" },
+            { value: "Administrator", label: "Administrator" },
+            {
+              value: "Medical Representative",
+              label: "Medical Representative",
+            },
+            { value: "Other", label: "Other" },
+          ],
           placeholder:
             "Student, Administrator, Pharmacist, Medical Representative or Other",
         },
       }}
       account={{
-        fields: ["name", "age", "phoneNumber", "university", "occupation"],
+        fields: [
+          "name",
+          "age",
+          "phoneNumber",
+          "university",
+          "specialty",
+          "occupation",
+          "workPlace",
+        ],
       }}
       onSessionChange={() => {
         // Clear router cache (protected routes)

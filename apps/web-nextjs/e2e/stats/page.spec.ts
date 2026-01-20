@@ -44,7 +44,7 @@ test.describe("Stats Page", () => {
     if ((await firstCompanyLink.count()) > 0) {
       await expect(firstCompanyLink).toBeVisible();
       const href = await firstCompanyLink.getAttribute("href");
-      expect(href).toMatch(/\/stats\/companies\/.*/);
+      expect(href).toMatch(/\/companies\/.*/);
     }
   });
 });

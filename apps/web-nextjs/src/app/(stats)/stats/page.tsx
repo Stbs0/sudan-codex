@@ -17,9 +17,9 @@ import { generateStatsJsonLd } from "@/lib/json-ld";
 import {
   agentsTable,
   agentStatsTable,
-  db,
   companiesTable,
   companyStatsTable,
+  db,
   drugsTable,
   genericsTable,
   genericStatsTable,
@@ -263,7 +263,7 @@ export default async function StatsPage() {
                   <TableRow key={company.slug}>
                     <TableCell>
                       <Link
-                        href={`/stats/companies/${company.slug}`}
+                        href={`/companies/${company.slug}`}
                         className='hover:underline'>
                         {company.name}
                       </Link>
@@ -299,7 +299,7 @@ export default async function StatsPage() {
                     <TableCell>
                       {agent.name ? (
                         <Link
-                          href={`/stats/agents/${agent.slug}`}
+                          href={`/agents/${agent.slug}`}
                           className='hover:underline'>
                           {agent.name}
                         </Link>
@@ -336,7 +336,7 @@ export default async function StatsPage() {
                     <TableCell>
                       {generic.name ? (
                         <Link
-                          href={`/stats/generics/${generic.slug}`}
+                          href={`/generics/${generic.slug}`}
                           className='hover:underline'>
                           {generic.name}
                         </Link>
@@ -413,7 +413,7 @@ export default async function StatsPage() {
                     <TableCell>
                       {agent.name ? (
                         <Link
-                          href={`/stats/agents/${agent.slug}`}
+                          href={`/agents/${agent.slug}`}
                           className='hover:underline'>
                           {agent.name}
                         </Link>
@@ -450,7 +450,7 @@ export default async function StatsPage() {
                     <TableCell>
                       {company.name ? (
                         <Link
-                          href={`/stats/companies/${company.slug}`}
+                          href={`/companies/${company.slug}`}
                           className='hover:underline'>
                           {company.name}
                         </Link>

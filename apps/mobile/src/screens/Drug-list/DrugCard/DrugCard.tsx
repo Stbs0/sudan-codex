@@ -23,6 +23,8 @@ const DrugCard = ({
   agent_id,
   generic_id,
   country_id,
+  createdAt,
+  updatedAt,
   drug_info_id,
 }: Props) => {
   // TODO: fix the rerender
@@ -56,6 +58,8 @@ const DrugCard = ({
       generic_id,
       country_id,
       drug_info_id,
+      createdAt,
+      updatedAt,
     });
   };
   return (

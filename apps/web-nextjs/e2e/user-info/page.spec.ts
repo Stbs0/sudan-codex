@@ -6,6 +6,6 @@ test.describe("User Info Page", () => {
     await page.goto("/user-info");
 
     // Should be redirected to /log-in
-    await expect(page).toHaveURL(/.*log-in/);
+    await expect(page).toHaveURL(/.*auth\/sign-in/);
   });
 });

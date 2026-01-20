@@ -1,3 +1,4 @@
+import type { InfiniteDrugApiResponse } from "@/app/api/v1/drugs/route";
 import { Drug } from "@sudan-codex/db";
 import "server-only";
 
@@ -20,7 +21,7 @@ export async function getDrugs(page = 1, q?: string) {
       `Failed to fetch drugs: ${res.status} ${res.statusText} ${url}`
     );
   }
-  const data = (await res.json()) as FetchedDrugs;
+  const data = (await res.json()) as InfiniteDrugApiResponse;
   return data;
 }
 export type FetchedDrugs = {

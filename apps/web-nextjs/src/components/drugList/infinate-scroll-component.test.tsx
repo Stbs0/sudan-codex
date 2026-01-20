@@ -39,7 +39,11 @@ const mockDrugData = {
   ],
   pageParams: [1],
 };
-
+vi.mock("next/navigation", () => ({
+  useRouter: () => ({
+    push: vi.fn(),
+  }),
+}));
 vi.mock("../../hooks/useInfiniteScroll", () => ({
   useInfiniteServerScroll: () => ({
     loadMore: mockLoadMore,

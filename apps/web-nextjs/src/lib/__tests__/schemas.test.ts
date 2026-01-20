@@ -1,179 +1,154 @@
-import { tellUsMoreSchema } from "@sudan-codex/types";
+import { updateUser, type UpdateUserType } from "@sudan-codex/types";
+import { describe, expect, it } from "vitest";
 
-describe("tellUsMoreSchema", () => {
-  const validData = {
+describe("updateUser Schema", () => {
+  const baseValidData: UpdateUserType = {
     age: 25,
     phoneNumber: "+249123456789",
     university: "University of Khartoum",
-    occupation: "Student" as const,
+    specialty: "Doctor", // Default to non-pharmacist for base
+    occupation: undefined,
+    workPlace: undefined,
   };
 
-  describe("valid input", () => {
-    it("accepts valid complete data", () => {
-      const result = tellUsMoreSchema.safeParse(validData);
+  describe("Base Fields Validation", () => {
+    it("validates correct base data", () => {
+      const result = updateUser.safeParse(baseValidData);
       expect(result.success).toBe(true);
     });
 
-    it("accepts all valid occupation types", () => {
-      const occupations = [
-        "Student",
-        "Administrator",
-        "Pharmacist",
-        "Medical Representative",
-        "Other",
-      ] as const;
-
-      occupations.forEach((occupation) => {
-        const result = tellUsMoreSchema.safeParse({
-          ...validData,
-          occupation,
-        });
-        expect(result.success).toBe(true);
-      });
+    it("requires age to be at least 15", () => {
+      const result = updateUser.safeParse({ ...baseValidData, age: 14 });
+      expect(result.success).toBe(false);
     });
 
-    it("coerces string age to number", () => {
-      const result = tellUsMoreSchema.safeParse({
-        ...validData,
-        age: "30",
-      });
-      expect(result.success).toBe(true);
-      if (result.success) {
-        expect(result.data.age).toBe(30);
-      }
+    it("requires age to be at most 100", () => {
+      const result = updateUser.safeParse({ ...baseValidData, age: 101 });
+      expect(result.success).toBe(false);
     });
-  });
 
-  describe("age validation", () => {
-    it("rejects age below 15", () => {
-      const result = tellUsMoreSchema.safeParse({
-        ...validData,
-        age: 14,
+    it("validates phone number format", () => {
+      const result = updateUser.safeParse({
+        ...baseValidData,
+        phoneNumber: "invalid",
       });
       expect(result.success).toBe(false);
     });
 
-    it("accepts age of exactly 15", () => {
-      const result = tellUsMoreSchema.safeParse({
-        ...validData,
-        age: 15,
-      });
-      expect(result.success).toBe(true);
-    });
-
-    it("rejects age above 100", () => {
-      const result = tellUsMoreSchema.safeParse({
-        ...validData,
-        age: 101,
-      });
-      expect(result.success).toBe(false);
-    });
-
-    it("accepts age of exactly 100", () => {
-      const result = tellUsMoreSchema.safeParse({
-        ...validData,
-        age: 100,
-      });
-      expect(result.success).toBe(true);
-    });
-  });
-
-  describe("phoneNumber validation", () => {
-    it("accepts phone with country code", () => {
-      const result = tellUsMoreSchema.safeParse({
-        ...validData,
-        phoneNumber: "+249912345678",
-      });
-      expect(result.success).toBe(true);
-    });
-
-    it("accepts phone without country code", () => {
-      const result = tellUsMoreSchema.safeParse({
-        ...validData,
-        phoneNumber: "0912345678",
-      });
-      expect(result.success).toBe(true);
-    });
-
-    it("rejects empty phone number", () => {
-      const result = tellUsMoreSchema.safeParse({
-        ...validData,
-        phoneNumber: "",
-      });
-      expect(result.success).toBe(false);
-    });
-
-    it("trims whitespace from phone number", () => {
-      const result = tellUsMoreSchema.safeParse({
-        ...validData,
-        phoneNumber: "  +249912345678  ",
-      });
-      expect(result.success).toBe(true);
-    });
-  });
-
-  describe("university validation", () => {
-    it("rejects empty university", () => {
-      const result = tellUsMoreSchema.safeParse({
-        ...validData,
+    it("requires university", () => {
+      const result = updateUser.safeParse({
+        ...baseValidData,
         university: "",
       });
       expect(result.success).toBe(false);
     });
+  });
 
-    it("rejects whitespace-only university", () => {
-      const result = tellUsMoreSchema.safeParse({
-        ...validData,
-        university: "   ",
-      });
+  describe("Pharmacist Specialty Logic", () => {
+    it("requires occupation if specialty is Pharmacist", () => {
+      const data = {
+        ...baseValidData,
+        specialty: "Pharmacist" as const,
+        occupation: undefined,
+      };
+      const result = updateUser.safeParse(data);
       expect(result.success).toBe(false);
-    });
-
-    it("trims university name", () => {
-      const result = tellUsMoreSchema.safeParse({
-        ...validData,
-        university: "  Test University  ",
-      });
-      expect(result.success).toBe(true);
-      if (result.success) {
-        expect(result.data.university).toBe("Test University");
+      if (!result.success) {
+        expect(result.error.flatten().fieldErrors.occupation).toContain(
+          "Occupation is required"
+        );
       }
     });
-  });
 
-  describe("occupation validation", () => {
-    it("rejects invalid occupation", () => {
-      const result = tellUsMoreSchema.safeParse({
-        ...validData,
-        occupation: "InvalidOccupation",
+    describe("Pharmacist - Student", () => {
+      const studentData = {
+        ...baseValidData,
+        specialty: "Pharmacist" as const,
+        occupation: "Student" as const,
+      };
+
+      it("validates successfully without workplace", () => {
+        const result = updateUser.safeParse({
+          ...studentData,
+          workPlace: undefined,
+        });
+        expect(result.success).toBe(true);
       });
-      expect(result.success).toBe(false);
+
+      it("fails if workplace is provided", () => {
+        const result = updateUser.safeParse({
+          ...studentData,
+          workPlace: "Some Pharmacy",
+        });
+        expect(result.success).toBe(false);
+        if (!result.success) {
+          expect(result.error.flatten().fieldErrors.workPlace).toContain(
+            "Work place is not required"
+          );
+        }
+      });
+    });
+
+    describe("Pharmacist - Working Professional", () => {
+      const professionalOccupations = [
+        "Pharmacist",
+        "Administrator",
+        "Medical Representative",
+      ] as const;
+
+      professionalOccupations.forEach((occupation) => {
+        describe(`Occupation: ${occupation}`, () => {
+          const proData = {
+            ...baseValidData,
+            specialty: "Pharmacist" as const,
+            occupation: occupation,
+          };
+
+          it("requires workplace", () => {
+            const result = updateUser.safeParse({
+              ...proData,
+              workPlace: undefined,
+            });
+            expect(result.success).toBe(false);
+            if (!result.success) {
+              expect(result.error.flatten().fieldErrors.workPlace).toContain(
+                "Work place is required"
+              );
+            }
+          });
+
+          it("validates successfully with workplace", () => {
+            const result = updateUser.safeParse({
+              ...proData,
+              workPlace: "Community Pharmacy",
+            });
+            expect(result.success).toBe(true);
+          });
+        });
+      });
     });
   });
 
-  describe("missing fields", () => {
-    it("rejects missing age", () => {
-      const { age, ...dataWithoutAge } = validData;
-      const result = tellUsMoreSchema.safeParse(dataWithoutAge);
-      expect(result.success).toBe(false);
+  describe("Non-Pharmacist Specialty Logic", () => {
+    it("does not require occupation for Doctor", () => {
+      const result = updateUser.safeParse({
+        ...baseValidData,
+        specialty: "Doctor",
+        occupation: undefined,
+      });
+      expect(result.success).toBe(true);
     });
 
-    it("rejects missing phoneNumber", () => {
-      const { phoneNumber, ...dataWithoutPhone } = validData;
-      const result = tellUsMoreSchema.safeParse(dataWithoutPhone);
-      expect(result.success).toBe(false);
-    });
-
-    it("rejects missing university", () => {
-      const { university, ...dataWithoutUniversity } = validData;
-      const result = tellUsMoreSchema.safeParse(dataWithoutUniversity);
-      expect(result.success).toBe(false);
-    });
-
-    it("rejects missing occupation", () => {
-      const { occupation, ...dataWithoutOccupation } = validData;
-      const result = tellUsMoreSchema.safeParse(dataWithoutOccupation);
-      expect(result.success).toBe(false);
+    it("does not require workplace for Doctor even if occupation is provided", () => {
+      // NOTE: Schema doesn't forbid workplace for others explicitly in superRefine,
+      // and it's optional in base object.
+      const result = updateUser.safeParse({
+        ...baseValidData,
+        specialty: "Doctor",
+        occupation: "Medical Representative", // Just as example
+        workPlace: undefined,
+      });
+      expect(result.success).toBe(true);
     });
   });
 });

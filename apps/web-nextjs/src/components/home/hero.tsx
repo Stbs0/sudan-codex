@@ -15,14 +15,12 @@ export function Hero() {
         <p className='mb-8 text-xl text-white/80 drop-shadow'>
           Search through Sudan drug index
         </p>
-        <Link href={"/drug-list"}>
-          <Button
-            data-analytics='hero-explore-now'
-            size='lg'
-            className='bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg'>
-            Explore Now
-          </Button>
-        </Link>
+        <Button
+          data-analytics='hero-explore-now'
+          size='lg'
+          className='bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg'>
+          <Link href={"/drug-list"}>Explore Now</Link>
+        </Button>
       </div>
     </section>
   );

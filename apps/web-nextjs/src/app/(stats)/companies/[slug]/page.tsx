@@ -1,3 +1,4 @@
+import ViewCount from "@/components/drugInfo/view-count";
 import {
   Card,
   CardContent,
@@ -8,6 +9,7 @@ import {
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import { generateCompanyJsonLd } from "@/lib/json-ld";
 import {
+  companyStatsTable,
   getAllDrugsRelatedToCompanyWithGenericAndAgents,
   getCompanyBySlug,
   getCompanyBySlugWithStats,
@@ -36,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${company.name} | Pharmaceutical Company in Sudan | Sudan Codex`,
     description: description,
     alternates: {
-      canonical: `/stats/companies/${slug}`,
+      canonical: `/companies/${slug}`,
     },
     keywords: [
       company.name,
@@ -49,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `Statistics for Company ${company.name} in Sudan`,
       description: `Detailed statistics for ${company.name}, including brands, generic names, and associated agents.`,
-      url: `https://www.sudan-codex.com/stats/companies/${slug}`,
+      url: `https://www.sudan-codex.com/companies/${slug}`,
       siteName: "Sudan Codex",
       images: [
         {
@@ -103,7 +105,7 @@ export default async function CompanyStatsPage({ params }: Props) {
       header: "Generic Name",
       accessor: "genericName",
       isLink: true,
-      basePath: "/stats/generics/",
+      basePath: "/generics/",
       slugAccessor: "genericSlug",
     },
     { header: "Dosage Form", accessor: "dosage_form" },
@@ -112,7 +114,7 @@ export default async function CompanyStatsPage({ params }: Props) {
       header: "Agent Name",
       accessor: "agentName",
       isLink: true,
-      basePath: "/stats/agents/",
+      basePath: "/agents/",
       slugAccessor: "agentSlug",
     },
   ];
@@ -163,7 +165,12 @@ export default async function CompanyStatsPage({ params }: Props) {
           </CardContent>
         </Card>
       </div>
-
+      <ViewCount
+        table={companyStatsTable}
+        id={company.id}
+        createdAt={company.createdAt}
+        updatedAt={company.updatedAt}
+      />
       <div className='space-y-8'>
         <Card>
           <CardHeader>

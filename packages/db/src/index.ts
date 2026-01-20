@@ -4,3 +4,7 @@ export * from "./queries/company";
 export * from "./queries/generic";
 export * from "./schemas/auth-schema";
 export * from "./schemas/schema";
+export * from "./schemas/genericSchema";
+export * from "./schemas/drugsSchema";
+export * from "./schemas/companySchema";
+export * from "./schemas/agentsSchema";

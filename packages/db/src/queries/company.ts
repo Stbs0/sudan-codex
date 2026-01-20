@@ -1,7 +1,8 @@
 import { eq } from "drizzle-orm";
 import { cache } from "react";
 import { db } from "../db";
-import { companiesTable, drugsTable } from "../schemas/schema";
+import  { companiesTable } from "../schemas/companySchema";
+import { drugsTable } from "../schemas/drugsSchema";
 
 export const getAllCompanies = cache(
   async () =>

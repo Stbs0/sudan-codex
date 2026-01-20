@@ -1,4 +1,4 @@
-import type { Drug } from "@sudan-codex/db/schema";
+import type { Drug } from "@sudan-codex/db";
 import { createContext, use } from "react";
 type ModalContextType = {
   open: boolean;

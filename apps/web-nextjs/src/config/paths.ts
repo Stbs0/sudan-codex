@@ -7,10 +7,10 @@ export const paths = {
     getHrefNo: (no: string) => `/drug-list/${no}`,
   },
   stats: {
-    root: { getHref: () => "/stats/" },
-    agent: { getHref: (slug: string) => `/stats/agent/${slug}` },
-    generic: { getHref: (slug: string) => `/stats/generic/${slug}` },
-    company: { getHref: (slug: string) => `/stats/company/${slug}` },
+    root: { getHref: () => "/" },
+    agent: { getHref: (slug: string) => `/agent/${slug}` },
+    generic: { getHref: (slug: string) => `/generic/${slug}` },
+    company: { getHref: (slug: string) => `/company/${slug}` },
   },
   privacyPolicy: {
     getHref: () => `/privacy-policy`,
