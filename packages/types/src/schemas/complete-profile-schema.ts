@@ -52,7 +52,7 @@ export const updateUser = z
             message: "Work place is not required",
           });
         }
-      } else if (!data.workPlace) {
+      } else if (data.occupation && !data.workPlace) {
         ctx.addIssue({
           code: "invalid_type",
           expected: "string",
