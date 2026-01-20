@@ -8,7 +8,6 @@ import {
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import { generateAgentJsonLd } from "@/lib/json-ld";
 import {
-  agentStatsTable,
   getAgentBySlug,
   getAgentBySlugWithStats,
   getAllDrugsRelatedToAgentWithGenericAndCompanies,
@@ -166,10 +165,11 @@ export default async function AgentStatsPage({ params }: Props) {
         </Card>
       </div>
       <ViewCount
-        table={agentStatsTable}
-        id={agent.id}
         createdAt={agent.createdAt}
         updatedAt={agent.updatedAt}
+        id={agent.id}
+        entity='agents'
+        slug={agent.slug}
       />
       <div className='space-y-8'>
         <Card>
