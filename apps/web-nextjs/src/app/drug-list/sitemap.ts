@@ -19,7 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...drugs.map((drug) => ({
       url: `${baseUrl}/drug-list/${drug.slug}`,
-      lastModified: new Date(drug.updatedAt ?? drug.createdAt ?? Date.now()),
+      lastModified: drug.updatedAt.toISOString(),
       changeFrequency: "weekly" as const,
       priority: 0.8,
     })),

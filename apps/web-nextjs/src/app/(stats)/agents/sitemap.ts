@@ -19,7 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...agents.map((agent) => ({
       url: `${baseUrl}/agents/${agent.slug}`,
-      lastModified: new Date(agent.updatedAt ?? agent.createdAt ?? Date.now()),
+      lastModified: agent.updatedAt ?? agent.createdAt,
       changeFrequency: "weekly" as const,
       priority: 0.8,
     })),
