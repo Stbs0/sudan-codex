@@ -9,7 +9,6 @@ import {
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import { generateGenericJsonLd } from "@/lib/json-ld";
 import {
-  genericStatsTable,
   getAllDrugsRelatedToGenericWithAgentsAndCompanies,
   getGenericBySlugWithStats,
 } from "@sudan-codex/db";
@@ -164,11 +163,11 @@ export default async function GenericNameStatsPage({ params }: Props) {
         </Card>
       </div>
       <ViewCount
-        table={genericStatsTable}
         id={generic.id}
         createdAt={generic.createdAt}
+        entity='generics'
         updatedAt={generic.updatedAt}
-        tableRef={genericStatsTable.generic_id}
+        slug={generic.slug}
       />
       <div className='space-y-8'>
         <Card>

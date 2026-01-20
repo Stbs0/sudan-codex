@@ -9,7 +9,6 @@ import {
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import { generateCompanyJsonLd } from "@/lib/json-ld";
 import {
-  companyStatsTable,
   getAllDrugsRelatedToCompanyWithGenericAndAgents,
   getCompanyBySlug,
   getCompanyBySlugWithStats,
@@ -166,11 +165,11 @@ export default async function CompanyStatsPage({ params }: Props) {
         </Card>
       </div>
       <ViewCount
-        table={companyStatsTable}
         id={company.id}
         createdAt={company.createdAt}
         updatedAt={company.updatedAt}
-        tableRef={companyStatsTable.company_id}
+        entity='companies'
+        slug={company.slug}
       />
       <div className='space-y-8'>
         <Card>

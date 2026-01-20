@@ -9,7 +9,7 @@ import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 import { generateDrugJsonLd } from "@/lib/json-ld";
 import { getDrugBySlug } from "@/services/server/getDrugs";
-import { db, drugStatsTable } from "@sudan-codex/db";
+import { db } from "@sudan-codex/db";
 import { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import { Suspense } from "react";
@@ -117,10 +117,10 @@ export default async function DrugInfoPage({
       <Card className='flex flex-col gap-6 p-6'>
         <DrugDescriptions drug={drug} />
         <ViewCount
-          table={drugStatsTable}
           id={drug.id}
           createdAt={drug.createdAt}
-          tableRef={drugStatsTable.drug_id}
+          entity='drugs'
+          slug={drug.slug}
           updatedAt={drug.updatedAt}
         />
 

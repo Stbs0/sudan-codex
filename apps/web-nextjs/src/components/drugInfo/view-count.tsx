@@ -1,36 +1,21 @@
 import type { GetDrugBySlugReturnType } from "@/services/server/getDrugs";
-import {
-  db,
-  type agentStatsTable,
-  type companyStatsTable,
-  type drugStatsTable,
-  type genericStatsTable,
-} from "@sudan-codex/db";
-import { eq, sql } from "drizzle-orm";
-import { Suspense } from "react";
+import { Suspense, use } from "react";
 import "server-only";
 import { Skeleton } from "../ui/skeleton";
 type ViewCountProps = {
-  table:
-    | typeof genericStatsTable
-    | typeof companyStatsTable
-    | typeof agentStatsTable
-    | typeof drugStatsTable;
-  tableRef:
-    | typeof genericStatsTable.generic_id
-    | typeof companyStatsTable.company_id
-    | typeof agentStatsTable.agent_id
-    | typeof drugStatsTable.drug_id;
   id: number;
   createdAt: GetDrugBySlugReturnType["createdAt"];
   updatedAt: GetDrugBySlugReturnType["updatedAt"];
+  entity: "agents" | "generics" | "companies" | "drugs";
+  slug: string;
 };
+
 const ViewCount = async ({
-  table,
   id,
   createdAt,
   updatedAt,
-  tableRef,
+  entity,
+  slug,
 }: ViewCountProps) => {
   return (
     <div className='flex items-center gap-2'>
@@ -42,30 +27,49 @@ const ViewCount = async ({
       </p>
       <Suspense fallback={<Skeleton className='h-4 w-24' />}>
         <Count
-          table={table}
           id={id}
-          tableRef={tableRef}
+          entity={entity}
+          slug={slug}
         />
       </Suspense>
     </div>
   );
 };
 
-const Count = async ({
-  table,
+const Count = ({
   id,
-  tableRef,
-}: Pick<ViewCountProps, "table" | "id" | "tableRef">) => {
-  const newViewCount = await db
-    .update(table)
-    .set({ view_count: sql`${table.view_count} + 1` })
-    .where(eq(tableRef, id))
-    .returning({ view_count: table.view_count });
+  entity,
+  slug,
+}: Pick<ViewCountProps, "id" | "entity" | "slug">) => {
+  const newView = use(fetchCount({ entity, id, slug }));
 
   return (
     <p className='text-muted-foreground text-sm'>
-      View count: {newViewCount?.[0]?.view_count}
+      View count: {newView.view_count}
     </p>
   );
 };
 export default ViewCount;
+
+const fetchCount = async ({
+  entity,
+  id,
+  slug,
+}: {
+  entity: ViewCountProps["entity"];
+  id: number;
+  slug: string;
+}) => {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  const res = await fetch(
+    `${baseUrl}/api/v1/${entity}/${slug}/${id.toString()}/view`,
+    {
+      cache: "no-store",
+    }
+  );
+  if (!res.ok) {
+    const error = await res.json();
+    throw Error("view count error" + res.status + " " + error.message);
+  }
+  return (await res.json()) as { view_count: null | number };
+};
