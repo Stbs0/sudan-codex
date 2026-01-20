@@ -1,4 +1,8 @@
+import { CTASection } from "@/components/home/cta-section";
+import { Features } from "@/components/home/features";
 import { Hero } from "@/components/home/hero";
+import { MostViewedEntities } from "@/components/home/most-viewed-sections";
+import { StatsSection } from "@/components/home/stats-section";
 import { layoutJsonLd } from "@/lib/json-ld";
 
 const Home = () => {
@@ -11,6 +15,10 @@ const Home = () => {
         }}
       />
       <Hero />
+      <StatsSection />
+      <Features />
+      <MostViewedEntities />
+      <CTASection />
     </div>
   );
 };

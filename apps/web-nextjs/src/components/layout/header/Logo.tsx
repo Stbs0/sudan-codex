@@ -1,11 +1,29 @@
 "use client";
-import { usePathname, useRouter } from "next/navigation";
-import { Button } from "../../ui/button";
 import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { Button } from "../../ui/button";
 
 const Logo = ({ className }: { className?: string }) => {
   const router = useRouter();
   const pathname = usePathname();
+  const { resolvedTheme } = useTheme();
+  const [logoSrc, setLogoSrc] = useState<
+    "/f-logo/lgthj-01.png" | "/f-logo/lgthj-02.png"
+  >("/f-logo/lgthj-02.png");
+
+  // Only render theme-specific logo after mounting
+  useEffect(() => {
+    const fn = () => {
+      if (resolvedTheme === "dark") {
+        setLogoSrc("/f-logo/lgthj-02.png");
+      } else {
+        setLogoSrc("/f-logo/lgthj-01.png");
+      }
+    };
+    fn();
+  }, [resolvedTheme]);
 
   const handleClick = () => {
     if (pathname !== "/") {
@@ -13,10 +31,17 @@ const Logo = ({ className }: { className?: string }) => {
     }
   };
 
+  // Default to light theme during SSR to match most cases
+  // const logoSrc = mounted
+  //   ? resolvedTheme === "dark"
+  //     ? "/f-logo/lgthj-02.png"
+  //     : "/f-logo/lgthj-01.png"
+  //   : "/f-logo/lgthj-01.png"; // Default for SSR
+
   return (
     <Button
       className={cn(
-        `flex cursor-pointer items-center justify-center p-0`,
+        `flex w-32 cursor-pointer items-center justify-center p-0`,
         className
       )}
       variant={"ghost"}
@@ -24,7 +49,7 @@ const Logo = ({ className }: { className?: string }) => {
       onClick={handleClick}>
       <img
         className='object-contain'
-        src={"/logo/pLogo-small.webp"}
+        src={logoSrc}
         alt='logo'
         title='logo'
         loading='eager'
