@@ -17,11 +17,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "daily",
       priority: 0.8,
     },
-    ...agents.map((agent) => ({
-      url: `${baseUrl}/agents/${agent.slug}`,
-      lastModified: agent.updatedAt ?? agent.createdAt,
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    })),
+    ...agents.map((agent) => {
+      const lastModified = agent.updatedAt || agent.createdAt || new Date();
+      return {
+        url: `${baseUrl}/agents/${agent.slug}`,
+        lastModified:
+          lastModified instanceof Date && !isNaN(lastModified.getTime())
+            ? lastModified
+            : new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.8,
+      };
+    }),
   ];
 }
