@@ -69,11 +69,6 @@ export default function RootLayout({
       lang='en'
       suppressHydrationWarning>
       <head>
-        <link
-          rel='icon'
-          href='/favicon.ico'
-          type='image/x-icon'
-        />
         {(process.env.NODE_ENV === "development" ||
           process.env.VERCEL_ENV === "preview") && (
           // eslint-disable-next-line @next/next/no-sync-scripts
