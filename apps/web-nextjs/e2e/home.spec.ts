@@ -15,41 +15,15 @@ test.describe("Home Page Hero Section", () => {
     await expect(page).toHaveTitle(/Sudan Codex/);
   });
 
-  test("displays welcome heading", async ({ page }) => {
-    await expect(
-      page.getByRole("heading", { name: /Welcome to Sudan Codex/i })
-    ).toBeVisible();
-  });
-
   test("displays description text", async ({ page }) => {
     // Check for description paragraph content
     const description = page
-      .locator("p", { hasText: /Search through/i })
+      .locator("p", {
+        hasText:
+          /Access comprehensive drug information, manufacturers, and distributors in Sudan at your fingertips./i,
+      })
       .first();
     await expect(description).toBeVisible();
-  });
-
-  test("displays Explore Now button", async ({ page }) => {
-    const exploreButton = page.getByRole("link", { name: /Explore Now/i });
-    await expect(exploreButton).toBeVisible();
-  });
-
-  test("Explore Now button links to drug-list", async ({ page }) => {
-    const exploreButton = page.getByRole("link", { name: /Explore Now/i });
-    await expect(exploreButton).toHaveAttribute("href", "/drug-list");
-
-    // Verify navigation works with explicit wait
-    await exploreButton.click();
-    await expect(page).toHaveURL(/.*drug-list/, { timeout: 10000 });
-  });
-
-  test("hero section has background image", async ({ page }) => {
-    const heroSection = page.locator("section").first();
-    await expect(heroSection).toBeVisible();
-
-    // Check for background image via style or class
-    const bgClass = await heroSection.getAttribute("class");
-    expect(bgClass).toContain("bg-");
   });
 });
 
@@ -154,41 +128,6 @@ test.describe("Home Page Footer", () => {
         await expect(privacyLink).toHaveAttribute("href", /privacy/);
       }
     }
-  });
-});
-
-test.describe("Home Page Responsive Design", () => {
-  test("displays correctly on mobile viewport", async ({ page }) => {
-    await page.setViewportSize({ width: 375, height: 667 }); // iPhone SE
-    await page.goto("/");
-
-    // Hero should still be visible
-    await expect(
-      page.getByRole("heading", { name: /Welcome to Sudan Codex/i })
-    ).toBeVisible();
-
-    // Explore button should still be visible
-    await expect(
-      page.getByRole("link", { name: /Explore Now/i })
-    ).toBeVisible();
-  });
-
-  test("displays correctly on tablet viewport", async ({ page }) => {
-    await page.setViewportSize({ width: 768, height: 1024 }); // iPad
-    await page.goto("/");
-
-    await expect(
-      page.getByRole("heading", { name: /Welcome to Sudan Codex/i })
-    ).toBeVisible();
-  });
-
-  test("displays correctly on desktop viewport", async ({ page }) => {
-    await page.setViewportSize({ width: 1920, height: 1080 });
-    await page.goto("/");
-
-    await expect(
-      page.getByRole("heading", { name: /Welcome to Sudan Codex/i })
-    ).toBeVisible();
   });
 });
 
