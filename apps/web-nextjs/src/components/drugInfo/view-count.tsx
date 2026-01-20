@@ -7,21 +7,31 @@ import {
   type genericStatsTable,
 } from "@sudan-codex/db";
 import { eq, sql } from "drizzle-orm";
-import { Suspense, use } from "react";
+import { Suspense } from "react";
+import "server-only";
 import { Skeleton } from "../ui/skeleton";
-
 type ViewCountProps = {
   table:
     | typeof genericStatsTable
     | typeof companyStatsTable
     | typeof agentStatsTable
     | typeof drugStatsTable;
-
+  tableRef:
+    | typeof genericStatsTable.generic_id
+    | typeof companyStatsTable.company_id
+    | typeof agentStatsTable.agent_id
+    | typeof drugStatsTable.drug_id;
   id: number;
   createdAt: GetDrugBySlugReturnType["createdAt"];
   updatedAt: GetDrugBySlugReturnType["updatedAt"];
 };
-const ViewCount = ({ table, id, createdAt, updatedAt }: ViewCountProps) => {
+const ViewCount = async ({
+  table,
+  id,
+  createdAt,
+  updatedAt,
+  tableRef,
+}: ViewCountProps) => {
   return (
     <div className='flex items-center gap-2'>
       <p className='text-muted-foreground text-sm'>
@@ -34,23 +44,27 @@ const ViewCount = ({ table, id, createdAt, updatedAt }: ViewCountProps) => {
         <Count
           table={table}
           id={id}
+          tableRef={tableRef}
         />
       </Suspense>
     </div>
   );
 };
 
-const Count = ({ table, id }: Pick<ViewCountProps, "table" | "id">) => {
-  const view_count = use(
-    db
-      .update(table)
-      .set({ view_count: sql`${table.view_count} + 1` })
-      .where(eq(table.id, id))
-      .returning({ view_count: table.view_count })
-  );
+const Count = async ({
+  table,
+  id,
+  tableRef,
+}: Pick<ViewCountProps, "table" | "id" | "tableRef">) => {
+  const newViewCount = await db
+    .update(table)
+    .set({ view_count: sql`${table.view_count} + 1` })
+    .where(eq(tableRef, id))
+    .returning({ view_count: table.view_count });
+
   return (
     <p className='text-muted-foreground text-sm'>
-      View count: {view_count?.[0]?.view_count || 0}
+      View count: {newViewCount?.[0]?.view_count}
     </p>
   );
 };

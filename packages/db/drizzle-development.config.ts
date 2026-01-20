@@ -1,5 +1,5 @@
-import { defineConfig } from "drizzle-kit";
 import dotenv from "dotenv";
+import { defineConfig } from "drizzle-kit";
 import path from "path";
 
 dotenv.config({
@@ -13,7 +13,7 @@ if (!process.env.TURSO_AUTH_TOKEN) {
 }
 
 export default defineConfig({
-  out: "./drizzle-dev",
+  out: "./drizzle",
   schema: "./src/schemas/*",
   dialect: "turso",
   dbCredentials: {

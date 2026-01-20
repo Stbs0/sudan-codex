@@ -168,6 +168,7 @@ export default async function GenericNameStatsPage({ params }: Props) {
         id={generic.id}
         createdAt={generic.createdAt}
         updatedAt={generic.updatedAt}
+        tableRef={genericStatsTable.generic_id}
       />
       <div className='space-y-8'>
         <Card>

@@ -170,6 +170,7 @@ export default async function CompanyStatsPage({ params }: Props) {
         id={company.id}
         createdAt={company.createdAt}
         updatedAt={company.updatedAt}
+        tableRef={companyStatsTable.company_id}
       />
       <div className='space-y-8'>
         <Card>

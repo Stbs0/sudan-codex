@@ -167,9 +167,10 @@ export default async function AgentStatsPage({ params }: Props) {
       </div>
       <ViewCount
         table={agentStatsTable}
-        id={agent.id}
         createdAt={agent.createdAt}
         updatedAt={agent.updatedAt}
+        id={agent.id}
+        tableRef={agentStatsTable.agent_id}
       />
       <div className='space-y-8'>
         <Card>

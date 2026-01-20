@@ -99,7 +99,6 @@ export default async function DrugInfoPage({
   }
 
   const jsonLd = generateDrugJsonLd(drug);
-
   return (
     <div className='container mx-auto max-w-5xl px-4 py-6'>
       <script
@@ -121,6 +120,7 @@ export default async function DrugInfoPage({
           table={drugStatsTable}
           id={drug.id}
           createdAt={drug.createdAt}
+          tableRef={drugStatsTable.drug_id}
           updatedAt={drug.updatedAt}
         />
 
