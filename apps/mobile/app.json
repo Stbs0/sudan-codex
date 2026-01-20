@@ -5,13 +5,13 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "scheme": "sudancodexmobile",
-    "icon": "./src/assets/icons/adaptive-icon.png",
+    "icon": "./src/assets/images/adaptive-icon.png",
     "userInterfaceStyle": "automatic",
     "developmentClient": {
       "silentLaunch": true
     },
     "splash": {
-      "image": "./src/assets/icons/splash-icon-light.png",
+      "image": "./src/assets/images/splash-icon-light.png",
       "resizeMode": "contain",
       "backgroundColor": "#232323"
     },
@@ -25,7 +25,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/icons/adaptive-icon.png",
+        "foregroundImage": "./src/assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
