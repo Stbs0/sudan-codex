@@ -50,7 +50,7 @@ const Count = ({ table, id }: Pick<ViewCountProps, "table" | "id">) => {
   );
   return (
     <p className='text-muted-foreground text-sm'>
-      View count: {view_count[0].view_count}
+      View count: {view_count?.[0]?.view_count || 0}
     </p>
   );
 };

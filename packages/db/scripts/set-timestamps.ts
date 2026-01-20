@@ -6,7 +6,7 @@ import path from "path";
 dotenv.config({
   path: path.resolve(
     __dirname,
-    "../../../apps/web-nextjs/.env.production.local",
+    "../../../apps/web-nextjs/.env.development.local",
   ),
 });
 
