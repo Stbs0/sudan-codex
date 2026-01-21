@@ -12,12 +12,23 @@ export type GetDrugBySlugReturnType = NonNullable<
 export const getDrugBySlug = cache(async (slug: string) => {
   try {
     return await db.query.drugsTable.findFirst({
+      columns: {
+        agent_id: false,
+        company_id: false,
+        generic_id: false,
+        country_id: false,
+      },
       where: eq(drugsTable.slug, slug),
       with: {
-        agent: true,
-        company: true,
-        generic: true,
-        stats: { columns: { view_count: true } },
+        agent: {
+          columns: { slug: true, name: true },
+        },
+        company: {
+          columns: { slug: true, name: true },
+        },
+        generic: {
+          columns: { slug: true, name: true },
+        },
       },
     });
   } catch (error) {

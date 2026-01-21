@@ -16,7 +16,6 @@ import { SplashScreen, Stack, useNavigationContainerRef } from "expo-router";
 import * as SQLite from "expo-sqlite";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
-import { ActivityIndicator, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import mobileAds, { AppOpenAd, TestIds } from "react-native-google-mobile-ads";
 import "react-native-reanimated";
@@ -25,6 +24,7 @@ import { Toaster } from "sonner-native";
 import { Uniwind, useUniwind } from "uniwind";
 import "../../global.css";
 import "../lib/i18next";
+import { useTranslation } from "react-i18next";
 
 SplashScreen.preventAutoHideAsync();
 AppOpenAd.createForAdRequest(TestIds.APP_OPEN);
@@ -69,6 +69,7 @@ function RootLayoutNav() {
   const { theme } = useUniwind();
   const navigationRef = useNavigationContainerRef();
   useReactNavigationDevTools(navigationRef);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (isPending) {
@@ -85,14 +86,6 @@ function RootLayoutNav() {
         // Initialization complete!
       });
   }, []);
-
-  if (isPending) {
-    return (
-      <View className='flex-1 items-center justify-center'>
-        <ActivityIndicator size='large' />
-      </View>
-    );
-  }
 
   // console.log("isPending", isPending);
   // console.log("data", data);
@@ -131,7 +124,7 @@ function RootLayoutNav() {
                 <Stack.Screen name='(tabs)' />
                 <Stack.Screen
                   name='about'
-                  options={{ title: "About", headerShown: true }}
+                  options={{ title: t("about.title"), headerShown: true }}
                 />
               </Stack.Protected>
               {/* began tabs  */}

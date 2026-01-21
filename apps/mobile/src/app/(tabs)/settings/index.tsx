@@ -67,7 +67,7 @@ const SettingsScreen = () => {
         <Button
           variant={"ghost"}
           className='justify-between border-none px-6'>
-          <Text className='text-lg'>Advertise with Us</Text>
+          <Text className='text-lg'>{t("settings.screens.advertise")}</Text>
           <Icon as={ChevronRightIcon} />
         </Button>
       </Link>

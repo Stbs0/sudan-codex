@@ -69,7 +69,7 @@ export function SignUpForm() {
               <View className='mr-2 animate-spin'>
                 <Icon
                   as={Loader2}
-                  className='text-primary-foreground'
+                  className='text-primary-foreground animate-spin'
                 />
               </View>
             ) : null}

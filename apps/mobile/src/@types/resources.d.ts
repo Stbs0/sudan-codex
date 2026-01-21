@@ -9,14 +9,19 @@ interface Resources {
       dataSourceYear: "from 2023.";
       developerDescription: "Developed by Mohammed Mahmoud — Pharmacist & hobbyist coder.";
       developerTitle: "Developer";
+      logoDesignerTitle: "Logo Designer";
+      logos: "Available App Logos";
+      nameofDesigner: "Fuad Obed";
       privacyPolicy: "Privacy Policy";
       purposeDescription: "This app helps pharmacists and healthcare professionals in Sudan is about registered drug brands, their generics, and manufacturers — creating a community-driven national drug registry.";
       purposeTitle: "Purpose";
       rightsReserved: "All rights reserved.";
+      socialTitle: "Social";
       title: "About This App";
       versionTitle: "Version";
     };
     auth: {
+      subtitle: "The comprehensive drug index for healthcare professionals";
       title: "Sign up or Log in";
       welcome: "Welcome!";
     };
@@ -67,6 +72,7 @@ interface Resources {
       companyName: "Company Name";
       countryOfOrigin: "Country of Origin";
       disclaimer: "Disclaimer";
+      disclaimerDescription: "This app provides drug information for<1> reference only</1>. It is not a substitute for professional judgment or official product literature. Always verify details before prescribing or dispensing.";
       dosageForm: "Dosage Form";
       errorLoading: "Error loading data";
       genericName: "Generic Name";
@@ -79,6 +85,7 @@ interface Resources {
     drugList: {
       noMoreResults: "No more results";
       searchTerm: "Search Term";
+      title: "Drug List";
     };
     settings: {
       account: {
@@ -106,6 +113,7 @@ interface Resources {
       screens: {
         about: "About";
         account: "Account";
+        advertise: "Advertise with us";
         appearanceAndLang: "Appearance and Language";
         help: "Help";
         statistics: "Statistics";
@@ -158,16 +166,19 @@ interface Resources {
       table: {
         associated: "Associated {{association}}";
         headers: {
+          addedOn: "Added On";
           agent: "Agent";
           brand: "Brand";
           company: "Company";
           count: "Count";
           drugs: "Drugs";
           generic: "Generic";
+          lastUpdated: "Last Updated";
           name: "Name";
           pack: "Pack";
           represented: "Represented";
           variations: "Variations";
+          viewCount: "View Count";
         };
         metric: "Metric";
         overview: "Statistics Overview";

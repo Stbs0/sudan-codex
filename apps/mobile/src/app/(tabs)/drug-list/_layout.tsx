@@ -1,4 +1,5 @@
 import { Stack } from "expo-router";
+import { useTranslation } from "react-i18next";
 // const Tour = ({
 //   tintColor,
 // }: {
@@ -18,12 +19,12 @@ export const unstable_settings = {
   initial: "index",
 };
 export default function DrugListLayout() {
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
   return (
     <Stack>
       <Stack.Screen
         name='index'
-        options={{ title: "Drug List" }}
+        options={{ title: t("drugList.title") }}
       />
 
       <Stack.Screen
