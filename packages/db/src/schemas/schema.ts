@@ -118,6 +118,9 @@ export const GenericApiResponseSchema = z.object({
 export type AgentApiResponseType = z.infer<typeof AgentApiResponseSchema>;
 export type CompanyApiResponseType = z.infer<typeof CompanyApiResponseSchema>;
 export type GenericApiResponseType = z.infer<typeof GenericApiResponseSchema>;
+
+
+
 const infiniteDrugSchema = DrugSelectSchema.pick({
   id: true,
   slug: true,

@@ -9,10 +9,14 @@ interface Resources {
       dataSourceYear: "from 2023.";
       developerDescription: "Developed by Mohammed Mahmoud — Pharmacist & hobbyist coder.";
       developerTitle: "Developer";
+      logoDesignerTitle: "Logo Designer";
+      logos: "Available App Logos";
+      nameofDesigner: "Fuad Obed";
       privacyPolicy: "Privacy Policy";
       purposeDescription: "This app helps pharmacists and healthcare professionals in Sudan is about registered drug brands, their generics, and manufacturers — creating a community-driven national drug registry.";
       purposeTitle: "Purpose";
       rightsReserved: "All rights reserved.";
+      socialTitle: "Social";
       title: "About This App";
       versionTitle: "Version";
     };
@@ -81,7 +85,7 @@ interface Resources {
     drugList: {
       noMoreResults: "No more results";
       searchTerm: "Search Term";
-      title: "drugList.title";
+      title: "Drug List";
     };
     settings: {
       account: {
@@ -109,7 +113,7 @@ interface Resources {
       screens: {
         about: "About";
         account: "Account";
-        advertise: "settings.screens.advertise";
+        advertise: "Advertise with us";
         appearanceAndLang: "Appearance and Language";
         help: "Help";
         statistics: "Statistics";
@@ -162,19 +166,19 @@ interface Resources {
       table: {
         associated: "Associated {{association}}";
         headers: {
-          addedOn: "stats.table.headers.addedOn";
+          addedOn: "Added On";
           agent: "Agent";
           brand: "Brand";
           company: "Company";
           count: "Count";
           drugs: "Drugs";
           generic: "Generic";
-          lastUpdated: "stats.table.headers.lastUpdated";
+          lastUpdated: "Last Updated";
           name: "Name";
           pack: "Pack";
           represented: "Represented";
           variations: "Variations";
-          viewCount: "stats.table.headers.viewCount";
+          viewCount: "View Count";
         };
         metric: "Metric";
         overview: "Statistics Overview";
