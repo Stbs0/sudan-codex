@@ -16,7 +16,13 @@ export async function GET(
     const agent = await db.query.agentsTable.findFirst({
       where: eq(agentsTable.slug, slug),
       with: {
-        stats: true,
+        stats: {
+          columns: {
+            total_brands: true,
+            related_generics: true,
+            related_companies: true,
+          },
+        },
       },
     });
 
@@ -46,13 +52,8 @@ export async function GET(
       },
     });
     const res = {
-      stats: {
-        total_brands: agent.stats?.total_brands ?? 0,
-        related_generics: agent.stats?.related_generics ?? 0,
-        related_companies: agent.stats?.related_companies ?? 0,
-      },
       drugs: drugsWithAll,
-      name: agent.name,
+      agent,
     };
     return Response.json(res);
   } catch (error) {

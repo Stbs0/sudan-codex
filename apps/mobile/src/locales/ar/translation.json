@@ -15,6 +15,7 @@
     "versionTitle": "الإصدار"
   },
   "auth": {
+    "subtitle": "دليل الأدوية الشامل للعاملين في مجال الرعاية الصحية",
     "title": "التسجيل أو تسجيل الدخول",
     "welcome": "مرحباً!"
   },
@@ -65,6 +66,7 @@
     "companyName": "اسم الشركة",
     "countryOfOrigin": "بلد المنشأ",
     "disclaimer": "إخلاء المسؤولية",
+    "disclaimerDescription": "يوفر هذا التطبيق معلومات الدواء كـ<1> مرجع فقط </1>. وليس بديلاً عن التقييم المهني أو النشرات الرسمية للمنتجات. تحقق دائماً من التفاصيل قبل الوصف أو الصرف.",
     "dosageForm": "شكل الجرعة",
     "errorLoading": "حدث خطأ أثناء تحميل البيانات",
     "genericName": "الاسم العلمي",
@@ -76,7 +78,8 @@
   },
   "drugList": {
     "noMoreResults": "لا توجد نتائج إضافية",
-    "searchTerm": "كلمة البحث"
+    "searchTerm": "كلمة البحث",
+    "title": "قائمة الأدوية"
   },
   "settings": {
     "account": {
@@ -104,6 +107,7 @@
     "screens": {
       "about": "نحن",
       "account": "الحساب",
+      "advertise": "أعلن معنا",
       "appearanceAndLang": "المظهر و اللغة",
       "help": "مساعدة",
       "statistics": "الإحصائيات"
@@ -156,16 +160,19 @@
     "table": {
       "associated": "‏{{association}} المرتبطة",
       "headers": {
+        "addedOn": "تاريخ الإضافة",
         "agent": "الوكيل",
         "brand": "الاسم التجاري",
         "company": "الشركة",
         "count": "العدد",
         "drugs": "الأدوية",
         "generic": "الاسم العلمي",
+        "lastUpdated": "آخر تحديث",
         "name": "الاسم",
         "pack": "العبوة",
         "represented": "تمثيل",
-        "variations": "الاختلافات"
+        "variations": "الاختلافات",
+        "viewCount": "عدد المشاهدات"
       },
       "metric": "المقياس",
       "overview": "نظرة عامة على الإحصائيات",

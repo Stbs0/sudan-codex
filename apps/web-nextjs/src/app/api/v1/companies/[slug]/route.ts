@@ -52,13 +52,8 @@ export async function GET(
       },
     });
     const res = {
-      stats: {
-        total_brands: company.stats?.total_brands ?? 0,
-        related_generics: company.stats?.related_generics ?? 0,
-        related_agents: company.stats?.related_agents ?? 0,
-      },
+      company,
       drugs: drugsWithAll,
-      name: company.name,
     };
     return Response.json(res);
   } catch (error) {

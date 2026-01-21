@@ -17,6 +17,7 @@ interface Resources {
       versionTitle: "Version";
     };
     auth: {
+      subtitle: "The comprehensive drug index for healthcare professionals";
       title: "Sign up or Log in";
       welcome: "Welcome!";
     };
@@ -67,6 +68,7 @@ interface Resources {
       companyName: "Company Name";
       countryOfOrigin: "Country of Origin";
       disclaimer: "Disclaimer";
+      disclaimerDescription: "This app provides drug information for<1> reference only</1>. It is not a substitute for professional judgment or official product literature. Always verify details before prescribing or dispensing.";
       dosageForm: "Dosage Form";
       errorLoading: "Error loading data";
       genericName: "Generic Name";
@@ -79,6 +81,7 @@ interface Resources {
     drugList: {
       noMoreResults: "No more results";
       searchTerm: "Search Term";
+      title: "drugList.title";
     };
     settings: {
       account: {
@@ -106,6 +109,7 @@ interface Resources {
       screens: {
         about: "About";
         account: "Account";
+        advertise: "settings.screens.advertise";
         appearanceAndLang: "Appearance and Language";
         help: "Help";
         statistics: "Statistics";
@@ -158,16 +162,19 @@ interface Resources {
       table: {
         associated: "Associated {{association}}";
         headers: {
+          addedOn: "stats.table.headers.addedOn";
           agent: "Agent";
           brand: "Brand";
           company: "Company";
           count: "Count";
           drugs: "Drugs";
           generic: "Generic";
+          lastUpdated: "stats.table.headers.lastUpdated";
           name: "Name";
           pack: "Pack";
           represented: "Represented";
           variations: "Variations";
+          viewCount: "stats.table.headers.viewCount";
         };
         metric: "Metric";
         overview: "Statistics Overview";

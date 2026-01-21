@@ -63,7 +63,7 @@ const DrugList = () => {
         </Button>
       </View>
     );
-
+  console.log(error);
   if (isLoading)
     return (
       <ActivityIndicator

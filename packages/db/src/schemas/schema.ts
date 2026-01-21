@@ -10,8 +10,11 @@ import {
 } from "./drugsSchema";
 import { genericsTable, genericStatsTable } from "./genericSchema";
 
-// 4. Link Drugs to their Stats
 export const DrugSelectSchema = createSelectSchema(drugsTable);
+export const DrugInfoSchema = createSelectSchema(drugInfoTable).extend({
+  updatedAt: z.string(),
+  createdAt: z.string(),
+});
 export const AgentSelectSchema = createSelectSchema(agentsTable);
 export const GenericSelectSchema = createSelectSchema(genericsTable);
 export const CompanySelectSchema = createSelectSchema(companiesTable);
@@ -23,12 +26,21 @@ export const AgentWithStatsSelectSchema = createSelectSchema(agentStatsTable);
 export const GenericWithStatsSelectSchema =
   createSelectSchema(genericStatsTable);
 export const DrugInfoSelectSchema = createSelectSchema(drugInfoTable);
-export const DrugWithRelationsSelectSchema = DrugSelectSchema.extend({
-  company: CompanySelectSchema.nullable(),
-  agent: AgentSelectSchema.nullable(),
-  generic: GenericSelectSchema.nullable(),
+export const GetDrugApiResponseSchema = DrugSelectSchema.omit({
+  agent_id: true,
+  company_id: true,
+  generic_id: true,
+  country_id: true,
+}).extend({
+  updatedAt: z.string(),
+  createdAt: z.string(),
+  company: CompanySelectSchema.pick({ slug: true, name: true }).nullable(),
+  agent: AgentSelectSchema.pick({ slug: true, name: true }).nullable(),
+  generic: GenericSelectSchema.pick({ slug: true, name: true }).nullable(),
 });
-export type DrugWithRelations = z.infer<typeof DrugWithRelationsSelectSchema>;
+
+export type GetDrugInfoApiResponseType = z.infer<typeof DrugInfoSchema>;
+export type GetDrugApiResponseType = z.infer<typeof GetDrugApiResponseSchema>;
 
 export const AgentApiResponseSchema = z.object({
   drugs: z.array(
@@ -44,8 +56,15 @@ export const AgentApiResponseSchema = z.object({
       generic: GenericSelectSchema.pick({ slug: true }).nullable(),
     }),
   ),
-  stats: AgentWithStatsSelectSchema.omit({ id: true, agent_id: true }),
-  name: z.string(),
+  agent: AgentSelectSchema.extend({
+    stats: AgentWithStatsSelectSchema.pick({
+      total_brands: true,
+      related_generics: true,
+      related_companies: true,
+    }),
+    updatedAt: z.string(),
+    createdAt: z.string(),
+  }),
 });
 export const CompanyApiResponseSchema = z.object({
   drugs: z.array(
@@ -61,8 +80,15 @@ export const CompanyApiResponseSchema = z.object({
       generic: GenericSelectSchema.pick({ slug: true }).nullable(),
     }),
   ),
-  stats: CompanyWithStatsSelectSchema.omit({ id: true, company_id: true }),
-  name: z.string(),
+  company: CompanySelectSchema.extend({
+    stats: CompanyWithStatsSelectSchema.pick({
+      total_brands: true,
+      related_generics: true,
+      related_agents: true,
+    }),
+    updatedAt: z.string(),
+    createdAt: z.string(),
+  }),
 });
 export const GenericApiResponseSchema = z.object({
   drugs: z.array(
@@ -78,15 +104,38 @@ export const GenericApiResponseSchema = z.object({
       company: CompanySelectSchema.pick({ slug: true }).nullable(),
     }),
   ),
-  stats: GenericWithStatsSelectSchema.omit({ id: true, generic_id: true }),
-  name: z.string(),
+  generic: GenericSelectSchema.extend({
+    stats: GenericWithStatsSelectSchema.pick({
+      total_brands: true,
+      related_agents: true,
+      related_companies: true,
+    }),
+    updatedAt: z.string(),
+    createdAt: z.string(),
+  }),
 });
 
 export type AgentApiResponseType = z.infer<typeof AgentApiResponseSchema>;
 export type CompanyApiResponseType = z.infer<typeof CompanyApiResponseSchema>;
 export type GenericApiResponseType = z.infer<typeof GenericApiResponseSchema>;
-
+const infiniteDrugSchema = DrugSelectSchema.pick({
+  id: true,
+  slug: true,
+  brand_name: true,
+  generic_name: true,
+  agent_name: true,
+  company_name: true,
+  country_name: true,
+  strength: true,
+  dosage_form: true,
+  pack_size: true,
+}).extend({
+  company: CompanySelectSchema.pick({ slug: true }).nullable(),
+  agent: AgentSelectSchema.pick({ slug: true }).nullable(),
+  generic: GenericSelectSchema.pick({ slug: true }).nullable(),
+});
 export const DrugListApiResponseSchema = z.object({
-  data: z.array(DrugSelectSchema),
+  data: z.array(infiniteDrugSchema),
   nextPage: z.number().nullable(),
 });
+export type DrugListApiResponseType = z.infer<typeof DrugListApiResponseSchema>;

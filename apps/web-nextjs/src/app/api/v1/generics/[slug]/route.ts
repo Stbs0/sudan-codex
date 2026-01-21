@@ -52,13 +52,8 @@ export async function GET(
     });
 
     return Response.json({
-      stats: {
-        total_brands: generic.stats?.total_brands ?? 0,
-        related_agents: generic.stats?.related_agents ?? 0,
-        related_companies: generic.stats?.related_companies ?? 0,
-      },
       drugs: drugsWithAll,
-      name: generic.name,
+      generic,
     });
   } catch (error) {
     console.error(`Error fetching generic details for slug "${slug}":`, error);

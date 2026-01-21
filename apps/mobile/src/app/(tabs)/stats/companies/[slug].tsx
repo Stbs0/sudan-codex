@@ -6,6 +6,7 @@ import {
 } from "@/components/stats-table";
 import { Card, CardContent } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
+import ViewCount from "@/components/view-count";
 import { useStatsTable } from "@/hooks/useStatsTable";
 import type { CompanyApiResponseType } from "@sudan-codex/db/schema";
 import {
@@ -140,11 +141,11 @@ export default function CompanyScreen() {
       </View>
     );
   }
-  const stats = data.stats;
+  const stats = data.company.stats;
 
   return (
     <>
-      <Stack.Screen options={{ title: data.name }} />
+      <Stack.Screen options={{ title: data.company.name }} />
       <ScrollView className='bg-background flex-1'>
         {/* Stats Cards */}
         <StatsSummaryCard
@@ -154,8 +155,16 @@ export default function CompanyScreen() {
           firstAssociation='Generics'
           secondAssociation='Agents'
         />
+        <View className='px-4 py-4'>
+          <ViewCount
+            createdAt={data.company.createdAt}
+            updatedAt={data.company.updatedAt}
+            url='/api/v1/companies/:slug/:id/view'
+            id={data.company.id}
+            slug={data.company.slug}
+          />
+        </View>
         <AdBanner />
-
         {/* Table */}
         <View className='px-4 py-4'>
           <Card className='overflow-hidden border-t-0 pt-0'>

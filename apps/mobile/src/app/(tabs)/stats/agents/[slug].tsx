@@ -7,6 +7,7 @@ import {
 } from "@/components/stats-table";
 import { Card, CardContent } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
+import ViewCount from "@/components/view-count";
 import { useStatsTable } from "@/hooks/useStatsTable";
 import type { AgentApiResponseType } from "@sudan-codex/db";
 import {
@@ -142,11 +143,11 @@ export default function AgentScreen() {
       </View>
     );
   }
-  const stats = data.stats;
+  const stats = data.agent.stats;
 
   return (
     <>
-      <Stack.Screen options={{ title: data.name }} />
+      <Stack.Screen options={{ title: data.agent.name }} />
       <ScrollView className='bg-background flex-1'>
         {/* Stats Cards */}
         <StatsSummaryCard
@@ -156,6 +157,15 @@ export default function AgentScreen() {
           firstAssociation='Generics'
           secondAssociation='Companies'
         />
+        <View className='px-4 py-4'>
+          <ViewCount
+            createdAt={data.agent.createdAt}
+            updatedAt={data.agent.updatedAt}
+            url='/api/v1/agents/:slug/:id/view'
+            id={data.agent.id}
+            slug={data.agent.slug}
+          />
+        </View>
         <AdBanner />
 
         {/* Table */}

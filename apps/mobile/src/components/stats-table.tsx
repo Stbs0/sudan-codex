@@ -85,17 +85,17 @@ export const TableHeader = <T,>({
 
 type StatsCardProp = {
   totalBrands:
-    | AgentApiResponseType["stats"]["total_brands"]
-    | CompanyApiResponseType["stats"]["total_brands"]
-    | GenericApiResponseType["stats"]["total_brands"];
+    | AgentApiResponseType["agent"]["stats"]["total_brands"]
+    | CompanyApiResponseType["company"]["stats"]["total_brands"]
+    | GenericApiResponseType["generic"]["stats"]["total_brands"];
   firstStats:
-    | AgentApiResponseType["stats"]["related_generics"]
-    | CompanyApiResponseType["stats"]["related_generics"]
-    | GenericApiResponseType["stats"]["related_agents"];
+    | AgentApiResponseType["agent"]["stats"]["related_generics"]
+    | CompanyApiResponseType["company"]["stats"]["related_generics"]
+    | GenericApiResponseType["generic"]["stats"]["related_agents"];
   secondStats:
-    | AgentApiResponseType["stats"]["related_companies"]
-    | CompanyApiResponseType["stats"]["related_agents"]
-    | GenericApiResponseType["stats"]["related_companies"];
+    | AgentApiResponseType["agent"]["stats"]["related_companies"]
+    | CompanyApiResponseType["company"]["stats"]["related_agents"]
+    | GenericApiResponseType["generic"]["stats"]["related_companies"];
   firstAssociation: "Generics" | "Companies" | "Agents";
   secondAssociation: "Generics" | "Companies" | "Agents";
 };
@@ -124,7 +124,7 @@ export const StatsSummaryCard = ({
   };
 
   return (
-    <View className='mb-4 p-4'>
+    <View className='p-4'>
       <Card>
         <CardHeader>
           <CardTitle>{t("stats.table.overview")}</CardTitle>
