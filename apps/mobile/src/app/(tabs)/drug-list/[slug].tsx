@@ -262,9 +262,7 @@ const DrugAccordionGroup = ({
         </Tooltip>
       </View>
       <View className='mt-4'>
-        <Accordion
-          type='multiple'
-          collapsible>
+        <Accordion type='multiple'>
           <DrugAccordion
             colorSchema={theme}
             width={width}

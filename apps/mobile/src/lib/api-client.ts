@@ -21,17 +21,29 @@ const agentsEndpoint: NonNullable<Parameters<typeof createSchema>[0]> = {
     output: AgentApiResponseSchema,
     params: z.object({ slug: z.string() }),
   },
+  "/api/v1/agents/:slug/:id/view": {
+    output: z.object({ view_count: z.number() }),
+    params: z.object({ slug: z.string(), id: z.string() }),
+  },
 };
 const companiesEndpoint: NonNullable<Parameters<typeof createSchema>[0]> = {
   "/api/v1/companies/:slug": {
     output: CompanyApiResponseSchema,
     params: z.object({ slug: z.string() }),
   },
+  "/api/v1/companies/:slug/:id/view": {
+    output: z.object({ view_count: z.number() }),
+    params: z.object({ slug: z.string(), id: z.string() }),
+  },
 };
 const genericsEndpoint: NonNullable<Parameters<typeof createSchema>[0]> = {
   "/api/v1/generics/:slug": {
     output: GenericApiResponseSchema,
     params: z.object({ slug: z.string() }),
+  },
+  "/api/v1/generics/:slug/:id/view": {
+    output: z.object({ view_count: z.number() }),
+    params: z.object({ slug: z.string(), id: z.string() }),
   },
 };
 const drugEndpoint: NonNullable<Parameters<typeof createSchema>[0]> = {
