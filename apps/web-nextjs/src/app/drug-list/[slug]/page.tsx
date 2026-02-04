@@ -110,7 +110,7 @@ export default async function DrugInfoPage({
       <div className='mb-6 flex items-center gap-3'>
         <BackBtn />
         <h1 className='text-xl font-semibold tracking-tight'>
-          {`${drug.brand_name} (${drug.generic_name} - ${drug.dosage_form} ${drug.strength}) – Full Drug Info.`}
+          {drug.brand_name}
         </h1>
       </div>
 

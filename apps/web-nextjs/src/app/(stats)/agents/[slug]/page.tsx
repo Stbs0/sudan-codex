@@ -129,7 +129,7 @@ export default async function AgentStatsPage({ params }: Props) {
           ),
         }}
       />
-      <h1 className='mb-2 text-3xl font-bold'>{`${agent.name} — Pharmaceutical Agent`}</h1>
+      <h1 className='mb-2 text-3xl font-bold'>{agent.name}</h1>
       <p className='text-muted-foreground mb-6 text-lg'>Agent Statistics</p>
 
       <div className='mb-8 grid grid-cols-1 gap-4 md:grid-cols-2'>

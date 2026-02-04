@@ -129,7 +129,7 @@ export default async function CompanyStatsPage({ params }: Props) {
           ),
         }}
       />
-      <h1 className='mb-2 text-3xl font-bold'>{`${company.name} — Pharmaceutical Company`}</h1>
+      <h1 className='mb-2 text-3xl font-bold'>{company.name}</h1>
       <p className='text-muted-foreground mb-6 text-lg'>Company Statistics</p>
 
       <div className='mb-8 grid grid-cols-1 gap-4 md:grid-cols-2'>
