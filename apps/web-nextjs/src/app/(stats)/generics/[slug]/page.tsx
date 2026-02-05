@@ -125,7 +125,7 @@ export default async function GenericNameStatsPage({ params }: Props) {
           ),
         }}
       />
-      <h1 className='mb-2 text-3xl font-bold'>{`${generic.name} – Generic Drug Information & Statistics in Sudan`}</h1>
+      <h1 className='mb-2 text-3xl font-bold'>{generic.name}</h1>
       <p className='text-muted-foreground mb-6 text-lg'>
         Generic Name Statistics
       </p>

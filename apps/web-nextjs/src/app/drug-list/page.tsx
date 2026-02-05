@@ -34,10 +34,7 @@ export default async function DrugListPage() {
 
       <div className='flex flex-col gap-4 py-2'>
         <div className='flex items-center justify-between'>
-          <h1 className='text-2xl font-semibold'>
-            Sudan Drug List – Search All Registered Drugs, Generics &
-            Manufacturers
-          </h1>
+          <h1 className='text-2xl font-semibold'>Search Drug</h1>
           <TourBtn />
         </div>
         <SearchDrug />
