@@ -17,6 +17,13 @@ import { Loader2, Pill } from "lucide-react-native";
 import * as React from "react";
 import { useTranslation } from "react-i18next";
 import { View } from "react-native";
+import Animated, {
+  Easing,
+  useAnimatedStyle,
+  useSharedValue,
+  withRepeat,
+  withTiming,
+} from "react-native-reanimated";
 
 export function SignUpForm() {
   const { loading, signIn } = useSignIn();
@@ -65,14 +72,7 @@ export function SignUpForm() {
             className='w-full'
             disabled={loading || isPending}
             onPress={async () => await signIn()}>
-            {loading || isPending ? (
-              <View className='mr-2 animate-spin'>
-                <Icon
-                  as={Loader2}
-                  className='text-primary-foreground animate-spin'
-                />
-              </View>
-            ) : null}
+            {loading || isPending ? <SpinLoader /> : null}
             <Text>Continue with Google</Text>
             <Ionicons
               name='logo-google'
@@ -94,3 +94,31 @@ export function SignUpForm() {
     </View>
   );
 }
+
+const SpinLoader = () => {
+  const rotation = useSharedValue(0);
+
+  React.useEffect(() => {
+    rotation.value = withRepeat(
+      withTiming(360, {
+        duration: 1000, // 1s
+        easing: Easing.linear,
+      }),
+      -1, // infinite
+      false
+    );
+  }, []);
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [{ rotate: `${rotation.value}deg` }],
+  }));
+
+  return (
+    <Animated.View style={[{ marginRight: 8 }, animatedStyle]}>
+      <Icon
+        as={Loader2}
+        color='black'
+      />
+    </Animated.View>
+  );
+};

@@ -8,7 +8,7 @@ export default defineConfig([
   ...turboConfig,
 
   eslintConfigPrettier,
-  eslintPluginPrettierRecommended,
+  // eslintPluginPrettierRecommended,
   globalIgnores(["**/dist/**", "**/.turbo/**"]),
   {
     plugins: {

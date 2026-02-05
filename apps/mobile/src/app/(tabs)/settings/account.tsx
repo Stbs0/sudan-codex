@@ -1,3 +1,4 @@
+import AccountInfoForm from "@/components/auth/AccountInfoForm";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 import { authClient } from "@/lib/auth-client";
@@ -5,7 +6,7 @@ import * as Haptics from "expo-haptics";
 import { usePostHog } from "posthog-react-native";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Alert, View } from "react-native";
+import { Alert, ScrollView, View } from "react-native";
 
 const Account = () => {
   const { t } = useTranslation();
@@ -18,7 +19,6 @@ const Account = () => {
       t("settings.account.alertMessage"),
       [
         {
-          // isPreferred: true,
           text: t("settings.account.cancelBtn"),
           onPress: () => {},
           style: "cancel",
@@ -48,27 +48,30 @@ const Account = () => {
       await authClient.signOut();
       posthog.capture("signed out");
       posthog.reset();
-    } catch (error) {
+    } catch {
       Alert.alert("Error", "Failed to sign out.");
     }
   };
   return (
-    <View className='gap-4 p-4'>
-      <Button
-        variant={"outline"}
-        onPress={onSignOut}>
-        <Text className='text-center font-bold'>
-          {t("settings.account.signOut")}
-        </Text>
-      </Button>
-      <Button
-        variant={"destructive"}
-        onPress={onDeletePress}>
-        <Text className='text-center font-bold text-white'>
-          {t("settings.account.delete")}
-        </Text>
-      </Button>
-    </View>
+    <ScrollView className='flex-1'>
+      <AccountInfoForm />
+      <View className='gap-4 p-4'>
+        <Button
+          variant={"outline"}
+          onPress={onSignOut}>
+          <Text className='text-center font-bold'>
+            {t("settings.account.signOut")}
+          </Text>
+        </Button>
+        <Button
+          variant={"destructive"}
+          onPress={onDeletePress}>
+          <Text className='text-center font-bold text-white'>
+            {t("settings.account.delete")}
+          </Text>
+        </Button>
+      </View>
+    </ScrollView>
   );
 };
 

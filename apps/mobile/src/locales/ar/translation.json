@@ -18,6 +18,10 @@
     "title": "عن التطبيق",
     "versionTitle": "الإصدار"
   },
+  "common": {
+    "error": "خطأ",
+    "success": "نجاح"
+  },
   "auth": {
     "subtitle": "دليل الأدوية الشامل للعاملين في مجال الرعاية الصحية",
     "title": "التسجيل أو تسجيل الدخول",
@@ -29,9 +33,14 @@
       "title": "العمر"
     },
     "description": "يرجى استكمال معلومات ملفك الشخصي.",
+    "name": {
+      "placeholder": "أدخل اسمك",
+      "title": "الاسم"
+    },
     "occupation": {
       "options": {
         "administrator": "اداري",
+        "medicalRep": "مندوب طبي",
         "other": "أخرى",
         "pharmacist": "صيدلي",
         "student": "طالب"
@@ -44,11 +53,27 @@
       "placeholder": "أدخل رقم هاتفك",
       "title": "رقم الهاتف"
     },
-    "submit": "إرسال",
-    "title": "إكمال الملف الشخصي",
+    "specialty": {
+      "options": {
+        "alliedHealth": "المهن الصحية المساعدة",
+        "doctor": "طبيب",
+        "nurse": "ممرض",
+        "other": "آخر",
+        "pharmacist": "صيدلي"
+      },
+      "placeholder": "اختر التخصص",
+      "selectLabel": "اختر تخصصك",
+      "title": "التخصص"
+    },
+    "submit": "حفظ التغييرات",
+    "title": "معلومات الحساب",
     "university": {
       "placeholder": "أدخل اسم الجامعة",
       "title": "الجامعة"
+    },
+    "workPlace": {
+      "placeholder": "أدخل مكان العمل",
+      "title": "مكان العمل"
     }
   },
   "drugInfo": {

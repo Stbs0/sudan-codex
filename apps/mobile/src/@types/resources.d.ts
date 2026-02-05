@@ -25,15 +25,24 @@ interface Resources {
       title: "Sign up or Log in";
       welcome: "Welcome!";
     };
+    common: {
+      error: "Error";
+      success: "Success";
+    };
     completeProfile: {
       age: {
         placeholder: "Enter your age";
         title: "Age";
       };
       description: "Please complete your profile information.";
+      name: {
+        placeholder: "Enter your name";
+        title: "Name";
+      };
       occupation: {
         options: {
           administrator: "Administrator";
+          medicalRep: "Medical Representative";
           other: "Other";
           pharmacist: "Pharmacist";
           student: "Student";
@@ -46,11 +55,27 @@ interface Resources {
         placeholder: "Enter your phone number";
         title: "Phone Number";
       };
-      submit: "Submit";
-      title: "Complete Profile";
+      specialty: {
+        options: {
+          alliedHealth: "Allied Health Professional";
+          doctor: "Doctor";
+          nurse: "Nurse";
+          other: "Other";
+          pharmacist: "Pharmacist";
+        };
+        placeholder: "Select specialty";
+        selectLabel: "Select your specialty";
+        title: "Specialty";
+      };
+      submit: "Save Changes";
+      title: "Account Information";
       university: {
         placeholder: "Enter your university";
         title: "University";
+      };
+      workPlace: {
+        placeholder: "Enter your work place";
+        title: "Work Place";
       };
     };
     drugInfo: {
