@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  "**/*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --write"],
+  "**/*.{js,jsx,ts,tsx}": ["oxlint --fix", "prettier --write"],
   "apps/web-nextjs/**/*.{js,jsx,ts,tsx}": () =>
     "tsc -p ./tsconfig.json --noEmit",
 

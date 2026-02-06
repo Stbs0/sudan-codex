@@ -1,5 +1,6 @@
-import * as AspectRatioPrimitive from "@rn-primitives/aspect-ratio";
+import {Root as AspectRatioPrimitive} from "@rn-primitives/aspect-ratio";
 
-const AspectRatio = AspectRatioPrimitive.Root;
+// oxlint-disable-next-line import/namespace
+const AspectRatio = AspectRatioPrimitive;
 
 export { AspectRatio };

@@ -6,7 +6,7 @@
     "dev": " next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
+    "lint": "oxlint",
     "knip": "knip",
     "check-types": "tsc --noEmit",
     "test:e2e": "playwright test",
@@ -64,7 +64,6 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.57.0",
-    "@sudan-codex/eslint-config": "workspace:*",
     "@sudan-codex/prettier-config": "workspace:*",
     "@tailwindcss/postcss": "^4.1.17",
     "@testing-library/dom": "^10.4.1",
