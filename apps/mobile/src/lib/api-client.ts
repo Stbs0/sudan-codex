@@ -16,7 +16,8 @@ const USER_AGENT = `SudanCodex/${APP_VERSION} (${Platform.OS})`;
 // Constants
 const BASE_URL = process.env.EXPO_PUBLIC_BACKEND_URI;
 
-const agentsEndpoint: NonNullable<Parameters<typeof createSchema>[0]> = {
+type Endpoints = Parameters<typeof createSchema>[0];
+const agentsEndpoint = {
   "/api/v1/agents/:slug": {
     output: AgentApiResponseSchema,
     params: z.object({ slug: z.string() }),
@@ -25,8 +26,8 @@ const agentsEndpoint: NonNullable<Parameters<typeof createSchema>[0]> = {
     output: z.object({ view_count: z.number() }),
     params: z.object({ slug: z.string(), id: z.string() }),
   },
-};
-const companiesEndpoint: NonNullable<Parameters<typeof createSchema>[0]> = {
+} satisfies Endpoints;
+const companiesEndpoint = {
   "/api/v1/companies/:slug": {
     output: CompanyApiResponseSchema,
     params: z.object({ slug: z.string() }),
@@ -35,8 +36,8 @@ const companiesEndpoint: NonNullable<Parameters<typeof createSchema>[0]> = {
     output: z.object({ view_count: z.number() }),
     params: z.object({ slug: z.string(), id: z.string() }),
   },
-};
-const genericsEndpoint: NonNullable<Parameters<typeof createSchema>[0]> = {
+} satisfies Endpoints;
+const genericsEndpoint = {
   "/api/v1/generics/:slug": {
     output: GenericApiResponseSchema,
     params: z.object({ slug: z.string() }),
@@ -45,8 +46,8 @@ const genericsEndpoint: NonNullable<Parameters<typeof createSchema>[0]> = {
     output: z.object({ view_count: z.number() }),
     params: z.object({ slug: z.string(), id: z.string() }),
   },
-};
-const drugEndpoint: NonNullable<Parameters<typeof createSchema>[0]> = {
+} satisfies Endpoints;
+const drugEndpoint = {
   "/api/v1/drugs": {
     output: DrugListApiResponseSchema,
     query: z.object({
@@ -75,7 +76,7 @@ const drugEndpoint: NonNullable<Parameters<typeof createSchema>[0]> = {
     output: z.object({ view_count: z.number() }),
     params: z.object({ slug: z.string(), id: z.string() }),
   },
-};
+} satisfies Endpoints;
 
 const schema = createSchema({
   "/api/auth/:all": {},

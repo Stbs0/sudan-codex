@@ -10,7 +10,6 @@ import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator, ScrollView, View } from "react-native";
 
-import AdBanner from "@/components/ads/AdBanner";
 import {
   StatsSummaryCard,
   TableBody,
@@ -165,7 +164,6 @@ export default function CompanyScreen() {
             slug={data.company.slug}
           />
         </View>
-        <AdBanner />
         {/* Table */}
         <View className='px-4 py-4'>
           <Card className='overflow-hidden border-t-0 pt-0'>
@@ -203,7 +201,6 @@ export default function CompanyScreen() {
           </Card>
         </View>
       </ScrollView>
-      <AdBanner />
     </>
   );
 }

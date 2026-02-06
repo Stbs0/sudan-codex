@@ -46,13 +46,7 @@
         }
       ],
       "expo-sqlite",
-      [
-        "react-native-google-mobile-ads",
-        {
-          "androidAppId": "ca-app-pub-7606412637462313~4150038461",
-          "iosAppId": "ca-app-pub-7606412637462313~4150038461"
-        }
-      ],
+
       [
         "expo-build-properties",
         {

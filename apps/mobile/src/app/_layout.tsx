@@ -17,7 +17,6 @@ import { StatusBar } from "expo-status-bar";
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import mobileAds, { AppOpenAd, TestIds } from "react-native-google-mobile-ads";
 import { KeyboardProvider } from "react-native-keyboard-controller";
 import { SafeAreaListener } from "react-native-safe-area-context";
 import { Toaster } from "sonner-native";
@@ -30,7 +29,6 @@ import { AuthProvider } from "@/providers/AuthProvider";
 import PHProvider from "@/providers/PHProvider";
 
 SplashScreen.preventAutoHideAsync();
-AppOpenAd.createForAdRequest(TestIds.APP_OPEN);
 
 const queryClient = new QueryClient();
 onlineManager.setEventListener((setOnline) => {
@@ -81,14 +79,6 @@ function RootLayoutNav() {
 
     SplashScreen.hideAsync();
   }, [isPending]);
-
-  useEffect(() => {
-    mobileAds()
-      .initialize()
-      .then((_adapterStatuses) => {
-        // Initialization complete!
-      });
-  }, []);
 
   // console.log("isPending", isPending);
   // console.log("data", data);
