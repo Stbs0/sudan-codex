@@ -2,20 +2,88 @@ import { createFetch, createSchema } from "@better-fetch/fetch";
 import {
   AgentApiResponseSchema,
   CompanyApiResponseSchema,
+  DrugInfoSchema,
   DrugListApiResponseSchema,
-  DrugWithRelationsSelectSchema,
   GenericApiResponseSchema,
+  GetDrugApiResponseSchema,
 } from "@sudan-codex/db/schema";
 import Constants from "expo-constants";
 import { Platform } from "react-native";
 import { z } from "zod";
-
 const APP_VERSION = Constants.expoConfig?.version ?? "dev";
 
 const USER_AGENT = `SudanCodex/${APP_VERSION} (${Platform.OS})`;
 // Constants
 const BASE_URL = process.env.EXPO_PUBLIC_BACKEND_URI;
 
+const agentsEndpoint: NonNullable<Parameters<typeof createSchema>[0]> = {
+  "/api/v1/agents/:slug": {
+    output: AgentApiResponseSchema,
+    params: z.object({ slug: z.string() }),
+  },
+  "/api/v1/agents/:slug/:id/view": {
+    output: z.object({ view_count: z.number() }),
+    params: z.object({ slug: z.string(), id: z.string() }),
+  },
+};
+const companiesEndpoint: NonNullable<Parameters<typeof createSchema>[0]> = {
+  "/api/v1/companies/:slug": {
+    output: CompanyApiResponseSchema,
+    params: z.object({ slug: z.string() }),
+  },
+  "/api/v1/companies/:slug/:id/view": {
+    output: z.object({ view_count: z.number() }),
+    params: z.object({ slug: z.string(), id: z.string() }),
+  },
+};
+const genericsEndpoint: NonNullable<Parameters<typeof createSchema>[0]> = {
+  "/api/v1/generics/:slug": {
+    output: GenericApiResponseSchema,
+    params: z.object({ slug: z.string() }),
+  },
+  "/api/v1/generics/:slug/:id/view": {
+    output: z.object({ view_count: z.number() }),
+    params: z.object({ slug: z.string(), id: z.string() }),
+  },
+};
+const drugEndpoint: NonNullable<Parameters<typeof createSchema>[0]> = {
+  "/api/v1/drugs": {
+    output: DrugListApiResponseSchema,
+    query: z.object({
+      page: z.number().optional(),
+      q: z.string().optional(),
+      filterBy: z
+        .enum([
+          "brand_name",
+          "company_name",
+          "agent_name",
+          "generic_name",
+          "country_name",
+        ])
+        .optional(),
+    }),
+  },
+  "/api/v1/drugs/:slug/:id/info": {
+    output: DrugInfoSchema,
+    params: z.object({ slug: z.string(), id: z.string() }),
+  },
+  "/api/v1/drugs/:slug": {
+    output: GetDrugApiResponseSchema,
+    params: z.object({ slug: z.string() }),
+  },
+  "/api/v1/drugs/:slug/:id/view": {
+    output: z.object({ view_count: z.number() }),
+    params: z.object({ slug: z.string(), id: z.string() }),
+  },
+};
+
+const schema = createSchema({
+  "/api/auth/:all": {},
+  ...agentsEndpoint,
+  ...companiesEndpoint,
+  ...genericsEndpoint,
+  ...drugEndpoint,
+});
 // Create Axios instance
 export const api = createFetch({
   baseURL: BASE_URL,
@@ -24,6 +92,7 @@ export const api = createFetch({
     attempts: 3,
     delay: 1000,
   },
+
   headers: {
     "User-Agent": USER_AGENT,
     Accept: "application/json",
@@ -59,73 +128,5 @@ export const api = createFetch({
   //     enabled: process.env.NODE_ENV === "development",
   //   }),
   // ],
-  schema: createSchema({
-    "/api/v1/agents/:slug": {
-      output: AgentApiResponseSchema,
-      params: z.object({ slug: z.string() }),
-    },
-    "/api/auth/:all": {},
-    "/api/v1/companies/:slug": {
-      output: CompanyApiResponseSchema,
-      params: z.object({ slug: z.string() }),
-    },
-    "/api/v1/drugs": {
-      output: DrugListApiResponseSchema,
-      query: z.object({
-        page: z.number().optional(),
-        q: z.string().optional(),
-        filterBy: z
-          .enum([
-            "brand_name",
-            "company_name",
-            "agent_name",
-            "generic_name",
-            "country_name",
-          ])
-          .optional(),
-      }),
-    },
-    "/api/v1/drugs/:slug": { output: DrugWithRelationsSelectSchema },
-    "/api/v1/generics/:slug": {
-      output: GenericApiResponseSchema,
-      params: z.object({ slug: z.string() }),
-    },
-  }),
+  schema,
 });
-// Request Interceptor: Inject Auth Token
-// api.interceptors.Request.use(
-//   async (config) => {
-//     try {
-//       const token = await SecureStore.getItemAsync(AUTH_TOKEN_KEY);
-//       if (token) {
-//         config.headers.Authorization = `Bearer ${token}`;
-//       }
-//     } catch (error) {
-//       console.error("Error retrieving auth token:", error);
-//     }
-//     return config;
-//   },
-//   (error) => {
-//     return Promise.reject(error);
-//   }
-// );
-
-// Response Interceptor: Handle Errors
-
-// // Generic API Helper functions for cleaner usage
-// export const apiClient = {
-//   get: <T>(url: string, config?: AxiosRequestConfig) =>
-//     api.get<T>(url, config).then((res) => res.data),
-
-//   post: <T>(url: string, data?: unknown, config?: AxiosRequestConfig) =>
-//     api.post<T>(url, data, config).then((res) => res.data),
-
-//   put: <T>(url: string, data?: unknown, config?: AxiosRequestConfig) =>
-//     api.put<T>(url, data, config).then((res) => res.data),
-
-//   patch: <T>(url: string, data?: unknown, config?: AxiosRequestConfig) =>
-//     api.patch<T>(url, data, config).then((res) => res.data),
-
-//   delete: <T>(url: string, config?: AxiosRequestConfig) =>
-//     api.delete<T>(url, config).then((res) => res.data),
-// } as const;

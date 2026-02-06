@@ -6,6 +6,7 @@ import {
 } from "@/components/stats-table";
 import { Card, CardContent } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
+import ViewCount from "@/components/view-count";
 import { useStatsTable } from "@/hooks/useStatsTable";
 import type { GenericApiResponseType } from "@sudan-codex/db/schema";
 import {
@@ -18,11 +19,6 @@ import { Stack, useLocalSearchParams } from "expo-router";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator, ScrollView, View } from "react-native";
-import {
-  BannerAd,
-  BannerAdSize,
-  TestIds,
-} from "react-native-google-mobile-ads";
 
 const columnHelper =
   createColumnHelper<GenericApiResponseType["drugs"][number]>();
@@ -146,11 +142,11 @@ export default function GenericScreen() {
       </View>
     );
   }
-  const stats = data.stats;
+  const stats = data.generic.stats;
 
   return (
     <>
-      <Stack.Screen options={{ title: data.name }} />
+      <Stack.Screen options={{ title: data.generic.name }} />
       <ScrollView className='bg-background flex-1'>
         {/* Stats Cards */}
         <StatsSummaryCard
@@ -160,10 +156,16 @@ export default function GenericScreen() {
           firstAssociation='Companies'
           secondAssociation='Agents'
         />
-        <BannerAd
-          unitId={TestIds.ADAPTIVE_BANNER}
-          size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-        />
+        <View className='px-4 py-4'>
+          <ViewCount
+            createdAt={data.generic.createdAt}
+            updatedAt={data.generic.updatedAt}
+            url='/api/v1/generics/:slug/:id/view'
+            id={data.generic.id}
+            slug={data.generic.slug}
+          />
+        </View>
+        <AdBanner />
         {/* Table */}
         <View className='px-4 py-4'>
           <Card className='overflow-hidden border-t-0 pt-0'>

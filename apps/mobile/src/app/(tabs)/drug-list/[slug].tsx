@@ -1,18 +1,42 @@
 import AdBanner from "@/components/ads/AdBanner";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { Icon } from "@/components/ui/icon";
 import { Text } from "@/components/ui/text";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import ViewCount from "@/components/view-count";
 import { api } from "@/lib/api-client";
 import DrugPropertyDescription from "@/screens/Drug-list/DrugCard/DrugPropertyDescription";
-import { useQuery } from "@tanstack/react-query";
+import RenderHtml, { type MixedStyleDeclaration } from "@native-html/render";
+import { useQuery, useSuspenseQuery } from "@tanstack/react-query";
 import { Stack, useLocalSearchParams } from "expo-router";
-import React from "react";
-import { useTranslation } from "react-i18next";
-import { ActivityIndicator, View } from "react-native";
+import { ExternalLink, FileX, Info } from "lucide-react-native";
+import React, { Suspense } from "react";
+import { Trans, useTranslation } from "react-i18next";
+import { ActivityIndicator, useWindowDimensions, View } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
+import { useUniwind } from "uniwind";
+
 const DrugInfo = () => {
   const { t } = useTranslation();
   const { slug } = useLocalSearchParams<{ slug: string }>();
 
-  const { data: drug, isError } = useQuery({
+  const {
+    data: drug,
+    isError,
+    error,
+    isLoading,
+  } = useQuery({
     queryKey: ["drugInfo", slug],
     queryFn: async () => {
       const res = await api(`/api/v1/drugs/:slug`, {
@@ -25,12 +49,14 @@ const DrugInfo = () => {
       return res.data;
     },
   });
-  if (isError)
+  if (isError) {
+    console.error(error);
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <Text className='text-destructive'>{t("drugInfo.errorLoading")}</Text>
       </View>
     );
+  }
   if (!drug)
     return (
       <ActivityIndicator
@@ -41,9 +67,9 @@ const DrugInfo = () => {
   return (
     <>
       <Stack.Screen options={{ title: drug.brand_name, headerShown: true }} />
-      <View
+      <ScrollView
         // style={{ flex: 1, gap: 2 }}
-        // contentContainerStyle={{ padding: 16 }}
+        contentContainerStyle={{ paddingBottom: 20 }}
         // showsVerticalScrollIndicator={true}
         className='flex-1 gap-4 p-4'>
         <Card className='w-full py-4'>
@@ -101,130 +127,28 @@ const DrugInfo = () => {
             </View>
           </CardContent>
         </Card>
-
-        {/* {isError ? (
+        <ViewCount
+          createdAt={drug.createdAt}
+          updatedAt={drug.updatedAt}
+          url='/api/v1/drugs/:slug/:id/view'
+          id={drug.id}
+          slug={drug.slug}
+        />
+        {isError ? (
           <Text className='text-red-500'>{t("drugInfo.errorLoading")}</Text>
         ) : isLoading ? (
           <ActivityIndicator
             size='large'
             style={{ marginTop: 16 }}
           />
-        )
-        :
-        drug ? (
-          <View className='mt-4 gap-4'>
-            <View>
-              <Tooltip>
-                <TooltipTrigger className='flex-row items-center justify-center gap-1 opacity-80 active:opacity-100'>
-                  <Icon
-                    as={Info}
-                    size={18}
-                  />
-                  <Text className='text-lg font-bold'>
-                    {drug.genericName} = {data.title}
-                  </Text>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <Text>{t("drugInfo.sudanDrugIndexNote")}</Text>
-                </TooltipContent>
-              </Tooltip>
-            </View>
-            <View className='mt-4'>
-              <Accordion
-                type='multiple'
-                collapsible>
-                <DrugAccordion
-                  colorSchema={colorScheme}
-                  width={width}
-                  trigger={t("drugInfo.accordion.indications")}
-                  content={data.ind}
-                />
-                <DrugAccordion
-                  colorSchema={colorScheme}
-                  width={width}
-                  trigger={t("drugInfo.accordion.classification")}
-                  content={data.clas}
-                />
-                <DrugAccordion
-                  colorSchema={colorScheme}
-                  width={width}
-                  trigger={t("drugInfo.accordion.mechanismOfAction")}
-                  content={data.mode}
-                />
-                <DrugAccordion
-                  colorSchema={colorScheme}
-                  width={width}
-                  trigger={t("drugInfo.accordion.clinicalUse")}
-                  content={data.clinical}
-                />
-                <DrugAccordion
-                  colorSchema={colorScheme}
-                  width={width}
-                  trigger={t("drugInfo.accordion.adultDose")}
-                  content={data.adult}
-                />
-                <DrugAccordion
-                  colorSchema={colorScheme}
-                  width={width}
-                  trigger={t("drugInfo.accordion.pediatricDose")}
-                  content={data.ped}
-                />
-                <DrugAccordion
-                  colorSchema={colorScheme}
-                  width={width}
-                  trigger={t("drugInfo.accordion.administration")}
-                  content={data.admin}
-                />
-                <DrugAccordion
-                  colorSchema={colorScheme}
-                  width={width}
-                  trigger={t("drugInfo.accordion.contraindications")}
-                  content={data.contra}
-                />
-                <DrugAccordion
-                  colorSchema={colorScheme}
-                  width={width}
-                  trigger={t("drugInfo.accordion.sideEffects")}
-                  content={data.side}
-                />
-                <DrugAccordion
-                  colorSchema={colorScheme}
-                  width={width}
-                  trigger={t("drugInfo.accordion.pregnancy")}
-                  content={data.prgnancy}
-                />
-                <DrugAccordion
-                  colorSchema={colorScheme}
-                  width={width}
-                  trigger={t("drugInfo.accordion.majorInteractions")}
-                  content={data.intermajer}
-                />
-                <DrugAccordion
-                  colorSchema={colorScheme}
-                  width={width}
-                  trigger={t("drugInfo.accordion.minorInteractions")}
-                  content={data.interminor}
-                />
-              </Accordion>
-            </View>
-            <Alert
-              icon={ExternalLink}
-              className='border-yellow-500/50'
-              iconClassName='text-yellow-500'>
-              <AlertTitle className='font-semibold'>
-                {t("drugInfo.disclaimer")}
-              </AlertTitle>
-              <AlertDescription className='text-sm leading-5'>
-                <Trans i18nKey='drugInfo.disclaimerDescription'>
-                  This app provides drug information for
-                  <Text className='font-semibold'> reference only</Text>. It is
-                  not a substitute for professional judgment or official product
-                  literature. Always verify details before prescribing or
-                  dispensing.
-                </Trans>
-              </AlertDescription>
-            </Alert>
-          </View>
+        ) : drug ? (
+          <Suspense fallback={<ActivityIndicator size='large' />}>
+            <DrugAccordionGroup
+              generic_name={drug.generic_name || ""}
+              slug={drug.slug}
+              id={String(drug.drug_info_id)}
+            />
+          </Suspense>
         ) : (
           <Alert icon={FileX}>
             <AlertTitle className='font-semibold'>
@@ -234,55 +158,201 @@ const DrugInfo = () => {
               {t("drugInfo.noDetailsFound", { genericName: drug })}
             </AlertDescription>
           </Alert>
-        )} */}
-      </View>
+        )}
+      </ScrollView>
       <AdBanner />
     </>
   );
 };
 export default DrugInfo;
 
-// // const tagsStyles: Readonly<Record<string, MixedStyleDeclaration>> = {
-// //   b: {
-// //     fontStyle: "normal",
-// //     fontWeight: "bold",
-// //   },
-// //   ul: { marginVertical: 8, paddingLeft: 20 },
-// //   li: { marginBottom: 4 },
-// // } as const;
+const tagsStyles: Readonly<Record<string, MixedStyleDeclaration>> = {
+  b: {
+    fontStyle: "normal",
+    fontWeight: "bold",
+  },
+  ul: { marginVertical: 8, paddingLeft: 20 },
+  li: { marginBottom: 4 },
+} as const;
 
-// // const DrugAccordion = ({
-// //   trigger,
-// //   content,
-// //   width,
-// //   colorSchema,
-// // }: {
-// //   trigger: string;
-// //   content: string;
-// //   width: number;
-// //   colorSchema: "light" | "dark" | undefined;
-// // }) => {
-// //   const { t } = useTranslation();
-// //   const html = content || `<p><i>${t("drugInfo.noDataAvailable")}</i></p>`;
-// //   return (
-// //     <AccordionItem
-//       key={trigger}
-//       value={trigger}>
-// //       <AccordionTrigger>
-// //         <Text>{trigger.toUpperCase()}</Text>
-// //       </AccordionTrigger>
-// //       <AccordionContent className=''>
-// //         <RenderHtml
-// //           tagsStyles={tagsStyles}
-// //           enableExperimentalBRCollapsing={true}
-// //           contentWidth={width}
-// //           source={{ html }}
-// //           // defaultTextProps={{
-// //           //   style: { color: "white" },
-// //           // }}
-// //           baseStyle={{ color: colorSchema === "dark" ? "white" : "black" }}
-// //         />
-// //       </AccordionContent>
-// //     </AccordionItem>
-// //   );
-// // };
+const DrugAccordion = ({
+  trigger,
+  content,
+  width,
+  colorSchema,
+}: {
+  trigger: string;
+  content: string | null;
+  width: number;
+  colorSchema: "light" | "dark" | undefined;
+}) => {
+  const { t } = useTranslation();
+  const html = content || `<p><i>${t("drugInfo.noDataAvailable")}</i></p>`;
+  return (
+    <AccordionItem
+      key={trigger}
+      value={trigger}>
+      <AccordionTrigger>
+        <Text>{trigger.toUpperCase()}</Text>
+      </AccordionTrigger>
+      <AccordionContent className=''>
+        <RenderHtml
+          tagsStyles={tagsStyles}
+          enableExperimentalBRCollapsing={true}
+          contentWidth={width}
+          source={{ html }}
+          defaultTextProps={{
+            style: { color: "white" },
+          }}
+          baseStyle={{ color: colorSchema === "dark" ? "white" : "black" }}
+        />
+      </AccordionContent>
+    </AccordionItem>
+  );
+};
+
+const DrugAccordionGroup = ({
+  slug,
+  id,
+  generic_name,
+}: {
+  generic_name: string;
+  slug: string;
+  id: string;
+}) => {
+  const { t } = useTranslation();
+  const { theme } = useUniwind();
+  const width = useWindowDimensions().width;
+  const { data } = useSuspenseQuery({
+    queryKey: ["drug-info", slug],
+    queryFn: () =>
+      api(`/api/v1/drugs/:slug/:id/info`, { params: { slug, id } }),
+  });
+  if (!data) return null;
+  if (data.error) {
+    console.error(data.error);
+    return (
+      <Alert icon={FileX}>
+        <AlertTitle className='font-semibold'>
+          {t("drugInfo.noDataAvailable")}
+        </AlertTitle>
+        <AlertDescription className='text-sm leading-5'>
+          {t("drugInfo.noDetailsFound", { genericName: generic_name })}
+        </AlertDescription>
+      </Alert>
+    );
+  }
+  const info = data.data;
+  return (
+    <View className='mt-4 gap-4'>
+      <View>
+        <Tooltip>
+          <TooltipTrigger className='flex-row items-center justify-center gap-1 opacity-80 active:opacity-100'>
+            <Icon
+              as={Info}
+              size={18}
+            />
+            <Text className='text-lg font-bold'>
+              {generic_name} = {info.title}
+            </Text>
+          </TooltipTrigger>
+          <TooltipContent>
+            <Text>{t("drugInfo.sudanDrugIndexNote")}</Text>
+          </TooltipContent>
+        </Tooltip>
+      </View>
+      <View className='mt-4'>
+        <Accordion type='multiple'>
+          <DrugAccordion
+            colorSchema={theme}
+            width={width}
+            trigger={t("drugInfo.accordion.indications")}
+            content={info.ind}
+          />
+          <DrugAccordion
+            colorSchema={theme}
+            width={width}
+            trigger={t("drugInfo.accordion.classification")}
+            content={info.clas}
+          />
+          <DrugAccordion
+            colorSchema={theme}
+            width={width}
+            trigger={t("drugInfo.accordion.mechanismOfAction")}
+            content={info.mode}
+          />
+          <DrugAccordion
+            colorSchema={theme}
+            width={width}
+            trigger={t("drugInfo.accordion.clinicalUse")}
+            content={info.clinical}
+          />
+          <DrugAccordion
+            colorSchema={theme}
+            width={width}
+            trigger={t("drugInfo.accordion.adultDose")}
+            content={info.adult}
+          />
+          <DrugAccordion
+            colorSchema={theme}
+            width={width}
+            trigger={t("drugInfo.accordion.pediatricDose")}
+            content={info.ped}
+          />
+          <DrugAccordion
+            colorSchema={theme}
+            width={width}
+            trigger={t("drugInfo.accordion.administration")}
+            content={info.admin}
+          />
+          <DrugAccordion
+            colorSchema={theme}
+            width={width}
+            trigger={t("drugInfo.accordion.contraindications")}
+            content={info.contra}
+          />
+          <DrugAccordion
+            colorSchema={theme}
+            width={width}
+            trigger={t("drugInfo.accordion.sideEffects")}
+            content={info.side}
+          />
+          <DrugAccordion
+            colorSchema={theme}
+            width={width}
+            trigger={t("drugInfo.accordion.pregnancy")}
+            content={info.prgnancy}
+          />
+          <DrugAccordion
+            colorSchema={theme}
+            width={width}
+            trigger={t("drugInfo.accordion.majorInteractions")}
+            content={info.intermajer}
+          />
+          <DrugAccordion
+            colorSchema={theme}
+            width={width}
+            trigger={t("drugInfo.accordion.minorInteractions")}
+            content={info.interminor}
+          />
+        </Accordion>
+      </View>
+      <Alert
+        icon={ExternalLink}
+        className='border-yellow-500/50'
+        iconClassName='text-yellow-500'>
+        <AlertTitle className='font-semibold'>
+          {t("drugInfo.disclaimer")}
+        </AlertTitle>
+        <AlertDescription className='text-sm leading-5'>
+          <Trans i18nKey='drugInfo.disclaimerDescription'>
+            This app provides drug information for
+            <Text className='font-semibold'> reference only</Text>. It is not a
+            substitute for professional judgment or official product literature.
+            Always verify details before prescribing or dispensing.
+          </Trans>
+        </AlertDescription>
+      </Alert>
+    </View>
+  );
+};

@@ -1,8 +1,7 @@
 {
   "name": "@sudan-codex/eslint-config",
   "version": "0.0.0",
-  "devDependencies": {
-    "eslint": "^9.39.2",
+  "dependencies": {
     "eslint-config-expo": "^10.0.0",
     "eslint-config-next": "^16.1.1",
     "eslint-config-prettier": "^10.1.8",
@@ -21,7 +20,7 @@
     "./base": "./base.mjs"
   },
   "files": [
-    "base.js",
+    "base.mjs",
     "mobile.js",
     "web.js"
   ],

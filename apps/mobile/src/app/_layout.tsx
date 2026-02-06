@@ -15,10 +15,11 @@ import * as Network from "expo-network";
 import { SplashScreen, Stack, useNavigationContainerRef } from "expo-router";
 import * as SQLite from "expo-sqlite";
 import { StatusBar } from "expo-status-bar";
-import { useEffect } from "react";
-import { ActivityIndicator, View } from "react-native";
+import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import mobileAds, { AppOpenAd, TestIds } from "react-native-google-mobile-ads";
+import { KeyboardProvider } from "react-native-keyboard-controller";
 import "react-native-reanimated";
 import { SafeAreaListener } from "react-native-safe-area-context";
 import { Toaster } from "sonner-native";
@@ -69,6 +70,7 @@ function RootLayoutNav() {
   const { theme } = useUniwind();
   const navigationRef = useNavigationContainerRef();
   useReactNavigationDevTools(navigationRef);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (isPending) {
@@ -85,14 +87,6 @@ function RootLayoutNav() {
         // Initialization complete!
       });
   }, []);
-
-  if (isPending) {
-    return (
-      <View className='flex-1 items-center justify-center'>
-        <ActivityIndicator size='large' />
-      </View>
-    );
-  }
 
   // console.log("isPending", isPending);
   // console.log("data", data);
@@ -112,40 +106,43 @@ function RootLayoutNav() {
   // // }
   return (
     <GestureHandlerRootView>
-      <SafeAreaListener
-        onChange={({ insets }) => {
-          Uniwind.updateInsets(insets);
-        }}>
-        <ThemeProvider value={NAV_THEME[theme === "dark" ? "dark" : "light"]}>
-          <StatusBar />
-          <Stack screenOptions={{ headerShown: false }}>
-            {/* began auth */}
-            <Stack.Protected guard={data === null}>
-              <Stack.Screen name='auth' />
-            </Stack.Protected>
-            {/* end auth */}
+      <KeyboardProvider>
+        <SafeAreaListener
+          onChange={({ insets }) => {
+            Uniwind.updateInsets(insets);
+          }}>
+          <ThemeProvider value={NAV_THEME[theme === "dark" ? "dark" : "light"]}>
+            <StatusBar />
+            <Stack screenOptions={{ headerShown: false }}>
+              {/* began auth */}
+              <Stack.Protected guard={data === null}>
+                <Stack.Screen name='auth' />
+              </Stack.Protected>
+              {/* end auth */}
 
-            <Stack.Protected guard={data !== null}>
-              {/* began tabs  */}
-              <Stack.Protected guard={data?.user?.isProfileComplete === true}>
-                <Stack.Screen name='(tabs)' />
-                <Stack.Screen
-                  name='about'
-                  options={{ title: "About", headerShown: true }}
-                />
+              <Stack.Protected guard={data !== null}>
+                {/* began tabs  */}
+                <Stack.Protected guard={data?.user?.isProfileComplete === true}>
+                  <Stack.Screen name='(tabs)' />
+                  <Stack.Screen
+                    name='about'
+                    options={{ title: t("about.title"), headerShown: true }}
+                  />
+                </Stack.Protected>
+                {/* began tabs  */}
+                {/* began check if complete profile */}
+                <Stack.Protected
+                  guard={data?.user?.isProfileComplete === false}>
+                  <Stack.Screen name='user-info' />
+                </Stack.Protected>
+                {/* end check if complete profile */}
               </Stack.Protected>
-              {/* began tabs  */}
-              {/* began check if complete profile */}
-              <Stack.Protected guard={data?.user?.isProfileComplete === false}>
-                <Stack.Screen name='user-info' />
-              </Stack.Protected>
-              {/* end check if complete profile */}
-            </Stack.Protected>
-          </Stack>
-          <PortalHost />
-          <Toaster />
-        </ThemeProvider>
-      </SafeAreaListener>
+            </Stack>
+            <Toaster />
+            <PortalHost />
+          </ThemeProvider>
+        </SafeAreaListener>
+      </KeyboardProvider>
     </GestureHandlerRootView>
   );
 }
