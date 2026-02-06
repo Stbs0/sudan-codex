@@ -1,4 +1,13 @@
 import {
+  getAgentBySlug,
+  getAgentBySlugWithStats,
+  getAllDrugsRelatedToAgentWithGenericAndCompanies,
+} from "@sudan-codex/db";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+
+import ViewCount from "@/components/drugInfo/view-count";
+import {
   Card,
   CardContent,
   CardDescription,
@@ -7,15 +16,6 @@ import {
 } from "@/components/ui/card";
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import { generateAgentJsonLd } from "@/lib/json-ld";
-import {
-  getAgentBySlug,
-  getAgentBySlugWithStats,
-  getAllDrugsRelatedToAgentWithGenericAndCompanies,
-} from "@sudan-codex/db";
-
-import ViewCount from "@/components/drugInfo/view-count";
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
 export const revalidate = false;
 
 type Props = {

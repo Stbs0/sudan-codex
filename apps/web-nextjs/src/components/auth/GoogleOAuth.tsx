@@ -1,8 +1,10 @@
 "use client";
-import { authClient } from "@/lib/auth-client";
 import { usePostHog } from "posthog-js/react";
 import { useState, type SyntheticEvent } from "react";
 import { toast } from "sonner";
+
+import { authClient } from "@/lib/auth-client";
+
 import { Button } from "../ui/button";
 type Props = {
   logInOrSignUp?: string;

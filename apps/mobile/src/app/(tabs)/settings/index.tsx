@@ -1,13 +1,14 @@
-import { Button } from "@/components/ui/button";
-import { Icon } from "@/components/ui/icon";
-import { Separator } from "@/components/ui/separator";
-import { Text } from "@/components/ui/text";
 import { Link } from "expo-router";
 import { ChevronRightIcon } from "lucide-react-native";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { View } from "react-native";
 import MobileAds from "react-native-google-mobile-ads";
+
+import { Button } from "@/components/ui/button";
+import { Icon } from "@/components/ui/icon";
+import { Separator } from "@/components/ui/separator";
+import { Text } from "@/components/ui/text";
 
 const SettingsScreen = () => {
   const { t } = useTranslation();

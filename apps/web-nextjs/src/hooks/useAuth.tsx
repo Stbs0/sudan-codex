@@ -1,8 +1,9 @@
 "use client";
-import { authClient, Session } from "@/lib/auth-client";
 import { BetterFetchError } from "better-auth/react";
 import { usePostHog } from "posthog-js/react";
 import { createContext, type ReactNode, useContext, useEffect } from "react";
+
+import { authClient, Session } from "@/lib/auth-client";
 
 export interface AuthContextType {
   data: Session | null;

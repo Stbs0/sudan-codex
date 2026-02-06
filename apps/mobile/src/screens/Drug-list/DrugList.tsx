@@ -1,14 +1,16 @@
+import { LegendList, type LegendListRef } from "@legendapp/list";
+import type { Drug } from "@sudan-codex/db";
+import React, { useCallback, useMemo, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { ActivityIndicator, View } from "react-native";
+
 import { NativeComponent } from "@/components/ads/NativeAd";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 import { useInfiniteServerScroll } from "@/hooks/useInfiniteScroll";
 import ModalProvider from "@/providers/ModalProvider";
 import DrugCard from "@/screens/Drug-list/DrugCard/DrugCard";
-import { LegendList, type LegendListRef } from "@legendapp/list";
-import type { Drug } from "@sudan-codex/db";
-import React, { useCallback, useMemo, useRef } from "react";
-import { useTranslation } from "react-i18next";
-import { ActivityIndicator, View } from "react-native";
+
 import CardModal from "./CardModal";
 import SearchInput from "./SearchInput";
 

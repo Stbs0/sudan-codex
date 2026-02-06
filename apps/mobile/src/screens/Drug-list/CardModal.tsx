@@ -1,7 +1,8 @@
+import { Modal, Pressable, View } from "react-native";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
 import { useModal } from "@/hooks/useModal";
-import { Modal, Pressable, View } from "react-native";
 
 const CardModal = () => {
   const { modalData, open, setOpen } = useModal();

@@ -1,3 +1,8 @@
+import { Redirect, useRouter } from "expo-router";
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
+
 import AccountInfoForm from "@/components/auth/AccountInfoForm";
 import {
   Card,
@@ -7,10 +12,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { useAuth } from "@/hooks/useAuth";
-import { Redirect, useRouter } from "expo-router";
-import React from "react";
-import { useTranslation } from "react-i18next";
-import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 
 export default function CompleteProfileScreen() {
   const { data } = useAuth();

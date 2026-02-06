@@ -1,5 +1,6 @@
 import { count, desc, eq } from "drizzle-orm";
 import { cache } from "react";
+
 import { db } from "../db";
 import { agentsTable, agentStatsTable } from "../schemas/agentsSchema";
 import { companiesTable, companyStatsTable } from "../schemas/companySchema";
@@ -46,7 +47,7 @@ export const getTopViewedCompanies = cache(async (limit = 6) => {
     .from(companiesTable)
     .innerJoin(
       companyStatsTable,
-      eq(companiesTable.id, companyStatsTable.company_id),
+      eq(companiesTable.id, companyStatsTable.company_id)
     )
 
     .orderBy(desc(companyStatsTable.view_count))
@@ -76,7 +77,7 @@ export const getTopViewedGenerics = cache(async (limit = 6) => {
     .from(genericsTable)
     .innerJoin(
       genericStatsTable,
-      eq(genericsTable.id, genericStatsTable.generic_id),
+      eq(genericsTable.id, genericStatsTable.generic_id)
     )
     .orderBy(desc(genericStatsTable.view_count))
     .limit(limit);

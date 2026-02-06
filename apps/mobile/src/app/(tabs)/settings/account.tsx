@@ -1,12 +1,13 @@
-import AccountInfoForm from "@/components/auth/AccountInfoForm";
-import { Button } from "@/components/ui/button";
-import { Text } from "@/components/ui/text";
-import { authClient } from "@/lib/auth-client";
 import * as Haptics from "expo-haptics";
 import { usePostHog } from "posthog-react-native";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Alert, ScrollView, View } from "react-native";
+
+import AccountInfoForm from "@/components/auth/AccountInfoForm";
+import { Button } from "@/components/ui/button";
+import { Text } from "@/components/ui/text";
+import { authClient } from "@/lib/auth-client";
 
 const Account = () => {
   const { t } = useTranslation();

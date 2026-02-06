@@ -1,7 +1,8 @@
-import { AuthContext } from "@/hooks/useAuth";
-import { authClient } from "@/lib/auth-client";
 import { usePostHog } from "posthog-react-native";
 import { useEffect, type ReactNode } from "react";
+
+import { AuthContext } from "@/hooks/useAuth";
+import { authClient } from "@/lib/auth-client";
 
 interface AuthProviderProps {
   children: ReactNode;

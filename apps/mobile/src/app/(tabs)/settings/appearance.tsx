@@ -1,9 +1,3 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Icon } from "@/components/ui/icon";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Switch } from "@/components/ui/switch";
-import i18n from "@/lib/i18next";
 import * as Haptics from "expo-haptics";
 import { Moon, Sun } from "lucide-react-native";
 import { usePostHog } from "posthog-react-native";
@@ -12,6 +6,13 @@ import { useTranslation } from "react-i18next";
 import { Alert, View } from "react-native";
 import { useMMKVString } from "react-native-mmkv";
 import { Uniwind, useUniwind } from "uniwind";
+
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Icon } from "@/components/ui/icon";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Switch } from "@/components/ui/switch";
+import i18n from "@/lib/i18next";
 
 const Appearance = () => {
   const { theme } = useUniwind();

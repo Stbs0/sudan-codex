@@ -3,9 +3,9 @@ import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import process from "node:process";
 
+import addFormats from "ajv-formats";
 // @ts-expect-error
 import Ajv2020 from "ajv/dist/2020.js";
-import addFormats from "ajv-formats";
 import yaml from "js-yaml";
 
 import { fetchCached } from "./fetch.js";

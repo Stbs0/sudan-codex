@@ -14,11 +14,11 @@
     "build": "bun run clean && tsc -b",
     "dev": "tsc -b -w"
   },
-  "peerDependencies": {
-    "zod": "^4"
-  },
   "devDependencies": {
     "typescript": "^5.9.3",
     "zod": "^4.1.13"
+  },
+  "peerDependencies": {
+    "zod": "^4"
   }
 }

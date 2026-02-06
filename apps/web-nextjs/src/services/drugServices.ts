@@ -1,5 +1,6 @@
-import { getOpenFdaSearchUrl, parseQuery } from "@/lib/utils";
 import { FetchedDrugInfo, OPENFDA_SEARCH_URL } from "@sudan-codex/types";
+
+import { getOpenFdaSearchUrl, parseQuery } from "@/lib/utils";
 export const getDrugInfo = async (
   genericName: string,
   route: string,

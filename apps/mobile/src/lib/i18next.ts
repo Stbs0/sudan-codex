@@ -6,6 +6,7 @@ import { initReactI18next } from "react-i18next";
 // Import your translations
 import ar from "../locales/ar/translation.json";
 import en from "../locales/en/translation.json";
+
 import { storage } from "./mmkv";
 
 const resources = {

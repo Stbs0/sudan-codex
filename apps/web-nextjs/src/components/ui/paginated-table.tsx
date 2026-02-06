@@ -1,5 +1,10 @@
 "use client";
 
+import { Drug } from "@sudan-codex/db";
+import { Route } from "next";
+import Link from "next/link";
+import { useState } from "react";
+
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -9,10 +14,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Drug } from "@sudan-codex/db";
-import { Route } from "next";
-import Link from "next/link";
-import { useState } from "react";
 
 // T is the type of the item in the items array.
 export interface Column<T> {

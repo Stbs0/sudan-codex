@@ -1,3 +1,10 @@
+import {
+  getAllDrugsRelatedToGenericWithAgentsAndCompanies,
+  getGenericBySlugWithStats,
+} from "@sudan-codex/db";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+
 import ViewCount from "@/components/drugInfo/view-count";
 import {
   Card,
@@ -8,12 +15,6 @@ import {
 } from "@/components/ui/card";
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import { generateGenericJsonLd } from "@/lib/json-ld";
-import {
-  getAllDrugsRelatedToGenericWithAgentsAndCompanies,
-  getGenericBySlugWithStats,
-} from "@sudan-codex/db";
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
 export const revalidate = false;
 
 type Props = {

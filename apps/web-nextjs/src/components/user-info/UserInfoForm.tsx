@@ -1,4 +1,10 @@
 "use client";
+import { updateUser, type UpdateUserType } from "@sudan-codex/types";
+import { useForm } from "@tanstack/react-form";
+import { useRouter } from "next/navigation";
+import { usePostHog } from "posthog-js/react";
+import { toast } from "sonner";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -16,13 +22,8 @@ import {
   FieldSet,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import { updateUser, type UpdateUserType } from "@sudan-codex/types";
-
 import { authClient } from "@/lib/auth-client";
-import { useForm } from "@tanstack/react-form";
-import { useRouter } from "next/navigation";
-import { usePostHog } from "posthog-js/react";
-import { toast } from "sonner";
+
 import {
   Select,
   SelectContent,

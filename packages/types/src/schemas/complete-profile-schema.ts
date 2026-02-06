@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 const phoneRegex = new RegExp(
-  /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/,
+  /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
 );
 export const updateUser = z
   .object({
@@ -17,7 +17,7 @@ export const updateUser = z
       .nonempty({ error: "Phone number is required" }),
     specialty: z.enum(
       ["Pharmacist", "Doctor", "Nurse", "Allied health professionals", "Other"],
-      { error: "Specialty is required" },
+      { error: "Specialty is required" }
     ),
     university: z.string({ error: "University is required" }).trim().nonempty({
       message: "Must not be empty",

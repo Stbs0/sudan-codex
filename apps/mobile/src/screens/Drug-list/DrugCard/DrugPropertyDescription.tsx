@@ -1,10 +1,11 @@
-import { Icon } from "@/components/ui/icon";
-import { Text } from "@/components/ui/text";
-import { cn } from "@/lib/utils";
 import type { Drug } from "@sudan-codex/db";
 import { useRouter, type Href } from "expo-router";
 import { Info } from "lucide-react-native";
 import { Pressable, View } from "react-native";
+
+import { Icon } from "@/components/ui/icon";
+import { Text } from "@/components/ui/text";
+import { cn } from "@/lib/utils";
 
 type Props = {
   title: string;

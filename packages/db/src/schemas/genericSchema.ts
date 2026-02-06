@@ -1,12 +1,13 @@
 import { relations, sql } from "drizzle-orm";
 import { int, integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+
 import { timestamps } from "./utils";
 
 export const genericsTable = sqliteTable("generics", {
   id: int("id").primaryKey({ autoIncrement: true }),
   name: text("name").notNull().unique(),
   slug: text("slug").notNull().unique(),
- ...timestamps,
+  ...timestamps,
 });
 
 export const genericStatsTable = sqliteTable("generic_stats", {
@@ -15,7 +16,7 @@ export const genericStatsTable = sqliteTable("generic_stats", {
     .references(() => genericsTable.id, { onDelete: "cascade" })
     .notNull()
     .unique(),
- ...timestamps,
+  ...timestamps,
   view_count: int("view_count").default(0),
   bookmark_count: int("bookmark_count").default(0),
 

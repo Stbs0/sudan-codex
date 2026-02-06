@@ -1,11 +1,12 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { ScrollView, View } from "react-native";
+
 import Header from "@/components/stats/Header";
 import { data } from "@/components/stats/pharmaceuticalData";
 import { StatTable } from "@/components/stats/StatTable";
 import SummaryStats from "@/components/stats/SummaryStats";
 import { Text } from "@/components/ui/text";
-import React from "react";
-import { useTranslation } from "react-i18next";
-import { ScrollView, View } from "react-native";
 
 export default function StatsSettingsScreen() {
   const { t } = useTranslation();

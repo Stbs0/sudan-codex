@@ -1,7 +1,3 @@
-import { Icon } from "@/components/ui/icon";
-import { NativeOnlyAnimatedView } from "@/components/ui/native-only-animated-view";
-import { TextClassContext } from "@/components/ui/text";
-import { cn } from "@/lib/utils";
 import * as MenubarPrimitive from "@rn-primitives/menubar";
 import { Portal } from "@rn-primitives/portal";
 import {
@@ -23,6 +19,11 @@ import {
 } from "react-native";
 import { FadeIn } from "react-native-reanimated";
 import { FullWindowOverlay as RNFullWindowOverlay } from "react-native-screens";
+
+import { Icon } from "@/components/ui/icon";
+import { NativeOnlyAnimatedView } from "@/components/ui/native-only-animated-view";
+import { TextClassContext } from "@/components/ui/text";
+import { cn } from "@/lib/utils";
 
 const MenubarMenu = MenubarPrimitive.Menu;
 
@@ -88,7 +89,7 @@ function MenubarTrigger({
   return (
     <TextClassContext.Provider
       value={cn(
-        "text-sm font-medium select-none group-active:text-accent-foreground",
+        "group-active:text-accent-foreground text-sm font-medium select-none",
         value === itemValue && "text-accent-foreground"
       )}>
       <MenubarPrimitive.Trigger
@@ -124,7 +125,7 @@ function MenubarSubTrigger({
   return (
     <TextClassContext.Provider
       value={cn(
-        "text-sm select-none group-active:text-accent-foreground",
+        "group-active:text-accent-foreground text-sm select-none",
         open && "text-accent-foreground"
       )}>
       <MenubarPrimitive.SubTrigger
@@ -229,7 +230,7 @@ function MenubarItem({
   return (
     <TextClassContext.Provider
       value={cn(
-        "select-none text-sm text-popover-foreground group-active:text-popover-foreground",
+        "text-popover-foreground group-active:text-popover-foreground text-sm select-none",
         variant === "destructive" &&
           "text-destructive group-active:text-destructive"
       )}>

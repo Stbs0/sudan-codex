@@ -1,3 +1,8 @@
+import { SearchIcon } from "lucide-react-native";
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { View } from "react-native";
+
 import { Icon } from "@/components/ui/icon";
 import { Input } from "@/components/ui/input";
 import {
@@ -15,10 +20,6 @@ import {
   type DrugFilterState,
   type SearchDrugType,
 } from "@/hooks/store/useSearch";
-import { SearchIcon } from "lucide-react-native";
-import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { View } from "react-native";
 
 const options: { value: SearchDrugType; label: string }[] = [
   {

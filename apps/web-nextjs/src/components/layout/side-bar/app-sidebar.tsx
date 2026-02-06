@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import {
   Sidebar,
   SidebarContent,
@@ -9,9 +11,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-
 import { NAV_ITEMS } from "@/constants";
-import Link from "next/link";
+
 import Logo from "../header/Logo";
 import MobileAuthBtns from "../header/MobileAuthBtns";
 

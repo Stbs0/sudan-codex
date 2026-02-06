@@ -1,13 +1,3 @@
-import AdBanner from "@/components/ads/AdBanner";
-import {
-  StatsSummaryCard,
-  TableBody,
-  TableHeader,
-} from "@/components/stats-table";
-import { Card, CardContent } from "@/components/ui/card";
-import { Text } from "@/components/ui/text";
-import ViewCount from "@/components/view-count";
-import { useStatsTable } from "@/hooks/useStatsTable";
 import type { CompanyApiResponseType } from "@sudan-codex/db/schema";
 import {
   createColumnHelper,
@@ -19,6 +9,17 @@ import { Stack, useLocalSearchParams } from "expo-router";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator, ScrollView, View } from "react-native";
+
+import AdBanner from "@/components/ads/AdBanner";
+import {
+  StatsSummaryCard,
+  TableBody,
+  TableHeader,
+} from "@/components/stats-table";
+import { Card, CardContent } from "@/components/ui/card";
+import { Text } from "@/components/ui/text";
+import ViewCount from "@/components/view-count";
+import { useStatsTable } from "@/hooks/useStatsTable";
 
 const columnHelper =
   createColumnHelper<CompanyApiResponseType["drugs"][number]>();

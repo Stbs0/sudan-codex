@@ -1,4 +1,18 @@
 import {
+  agentsTable,
+  agentStatsTable,
+  companiesTable,
+  companyStatsTable,
+  db,
+  drugsTable,
+  genericsTable,
+  genericStatsTable,
+} from "@sudan-codex/db";
+import { count, countDistinct, desc, eq, sql } from "drizzle-orm";
+import { Metadata } from "next";
+import Link from "next/link";
+
+import {
   Card,
   CardContent,
   CardDescription,
@@ -14,19 +28,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { generateStatsJsonLd } from "@/lib/json-ld";
-import {
-  agentsTable,
-  agentStatsTable,
-  companiesTable,
-  companyStatsTable,
-  db,
-  drugsTable,
-  genericsTable,
-  genericStatsTable,
-} from "@sudan-codex/db";
-import { count, countDistinct, desc, eq, sql } from "drizzle-orm";
-import { Metadata } from "next";
-import Link from "next/link";
 
 export const revalidate = false;
 

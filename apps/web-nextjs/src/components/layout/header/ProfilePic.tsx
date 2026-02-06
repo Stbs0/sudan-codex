@@ -1,10 +1,12 @@
 "use client";
-import { AuthContextType } from "@/hooks/useAuth";
-import { authClient } from "@/lib/auth-client";
-import { getInitials } from "@/lib/utils";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 import { usePostHog } from "posthog-js/react";
 import { toast } from "sonner";
+
+import { AuthContextType } from "@/hooks/useAuth";
+import { authClient } from "@/lib/auth-client";
+import { getInitials } from "@/lib/utils";
+
 import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar";
 import { Button } from "../../ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "../../ui/popover";

@@ -1,3 +1,12 @@
+import {
+  AuthLoading,
+  SecuritySettingsCards,
+  SignedIn,
+} from "@daveyplate/better-auth-ui";
+import { accountViewPaths } from "@daveyplate/better-auth-ui/server";
+import { MenuIcon } from "lucide-react";
+import Link from "next/link";
+
 import { AccountSettingsCards } from "@/components/auth/account-field-update";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -11,14 +20,6 @@ import {
 import { Label } from "@/components/ui/label";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
-import {
-  AuthLoading,
-  SecuritySettingsCards,
-  SignedIn,
-} from "@daveyplate/better-auth-ui";
-import { accountViewPaths } from "@daveyplate/better-auth-ui/server";
-import { MenuIcon } from "lucide-react";
-import Link from "next/link";
 
 export const dynamicParams = false;
 const validPaths = [accountViewPaths.SETTINGS, accountViewPaths.SECURITY];

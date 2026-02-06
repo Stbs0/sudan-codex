@@ -1,10 +1,10 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  "**/*.{js,jsx,ts,tsx}": ["oxlint --fix", "prettier --write"],
+  "**/*.{js,jsx,ts,tsx}": ["oxlint --fix", "oxfmt --write"],
   "apps/web-nextjs/**/*.{js,jsx,ts,tsx}": () =>
     "tsc -p ./tsconfig.json --noEmit",
 
-  "**/*.{json,md,yaml}": "prettier --write",
+  "**/*.{json,md,yaml}": "oxfmt --write",
 
   "apps/web-nextjs/**": "secretlint",
 };

@@ -1,4 +1,8 @@
 "use client";
+import { useSuspenseQuery } from "@tanstack/react-query";
+import type { SQLiteRelationalQuery } from "drizzle-orm/sqlite-core/query-builders/query";
+import { Suspense, use } from "react";
+
 import {
   Accordion,
   AccordionContent,
@@ -7,10 +11,9 @@ import {
 } from "@/components/ui/accordion";
 import { useDrugInfoSearch } from "@/hooks/store/useDrugInfoSearch";
 import { getDrugInfo } from "@/services/drugServices";
-import { useSuspenseQuery } from "@tanstack/react-query";
-import type { SQLiteRelationalQuery } from "drizzle-orm/sqlite-core/query-builders/query";
-import { Suspense, use } from "react";
+
 import { Skeleton } from "../ui/skeleton";
+
 import DrugInfoAccordion from "./DrugInfoAccordion";
 
 export default function DrugInfoContent({

@@ -1,6 +1,7 @@
-import { type Session } from "@/lib/auth-client";
 import { BetterFetchError } from "better-auth/react";
 import { createContext, useContext } from "react";
+
+import { type Session } from "@/lib/auth-client";
 
 export interface AuthContextType {
   data: Session | null;

@@ -1,3 +1,7 @@
+import "./globals.css";
+
+import type { Metadata } from "next";
+
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import { AppSidebar } from "@/components/layout/side-bar/app-sidebar";
@@ -8,8 +12,6 @@ import { BetterAuthUIProvider } from "@/providers/better-auth-ui-provider";
 import { PHProvider } from "@/providers/PHProvider";
 import TanstackQueryProvider from "@/providers/query-client";
 import { ThemeProvider } from "@/providers/theme-provider";
-import type { Metadata } from "next";
-import "./globals.css";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",

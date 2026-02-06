@@ -209,7 +209,9 @@ const Policy = (): JSX.Element => {
           {" "}
           <p>
             {" "}
-            <strong className='font-medium'>To manage Your Account:</strong> to
+            <strong className='font-medium'>
+              To manage Your Account:
+            </strong> to
             manage Your registration as a user of the Service. The Personal Data
             You provide can give You access to different functionalities of the
             Service that are available to You as a registered user.{" "}
@@ -253,7 +255,9 @@ const Policy = (): JSX.Element => {
           {" "}
           <p>
             {" "}
-            <strong className='font-medium'>To manage Your requests:</strong> To
+            <strong className='font-medium'>
+              To manage Your requests:
+            </strong> To
             attend and manage Your requests to Me.{" "}
           </p>{" "}
         </li>{" "}
@@ -261,7 +265,9 @@ const Policy = (): JSX.Element => {
           {" "}
           <p>
             {" "}
-            <strong className='font-medium'>For business transfers:</strong> We
+            <strong className='font-medium'>
+              For business transfers:
+            </strong> We
             may use Your information to evaluate or conduct a merger,
             divestiture, restructuring, reorganization, dissolution, or other
             sale or transfer of some or all of My assets, whether as a going

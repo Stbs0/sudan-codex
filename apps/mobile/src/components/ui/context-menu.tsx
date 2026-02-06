@@ -1,7 +1,3 @@
-import { Icon } from "@/components/ui/icon";
-import { NativeOnlyAnimatedView } from "@/components/ui/native-only-animated-view";
-import { TextClassContext } from "@/components/ui/text";
-import { cn } from "@/lib/utils";
 import * as ContextMenuPrimitive from "@rn-primitives/context-menu";
 import {
   Check,
@@ -21,6 +17,11 @@ import {
 } from "react-native";
 import { FadeIn } from "react-native-reanimated";
 import { FullWindowOverlay as RNFullWindowOverlay } from "react-native-screens";
+
+import { Icon } from "@/components/ui/icon";
+import { NativeOnlyAnimatedView } from "@/components/ui/native-only-animated-view";
+import { TextClassContext } from "@/components/ui/text";
+import { cn } from "@/lib/utils";
 
 const ContextMenu = ContextMenuPrimitive.Root;
 const ContextMenuTrigger = ContextMenuPrimitive.Trigger;
@@ -46,7 +47,7 @@ function ContextMenuSubTrigger({
   return (
     <TextClassContext.Provider
       value={cn(
-        "text-sm select-none group-active:text-accent-foreground",
+        "group-active:text-accent-foreground text-sm select-none",
         open && "text-accent-foreground"
       )}>
       <ContextMenuPrimitive.SubTrigger
@@ -157,7 +158,7 @@ function ContextMenuItem({
   return (
     <TextClassContext.Provider
       value={cn(
-        "select-none text-sm text-popover-foreground group-active:text-popover-foreground",
+        "text-popover-foreground group-active:text-popover-foreground text-sm select-none",
         variant === "destructive" &&
           "text-destructive group-active:text-destructive"
       )}>

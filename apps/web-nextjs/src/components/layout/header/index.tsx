@@ -1,7 +1,9 @@
+import { UserButton } from "@daveyplate/better-auth-ui";
+
 import { SidebarTrigger } from "@/components/ui/sidebar";
+
 import Logo from "./Logo";
 import { ModeToggle } from "./mode-toggle";
-import { UserButton } from "@daveyplate/better-auth-ui";
 
 const Header = () => {
   return (

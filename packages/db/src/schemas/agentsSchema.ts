@@ -1,12 +1,13 @@
 import { relations, sql } from "drizzle-orm";
 import { int, integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+
 import { timestamps } from "./utils";
 
 export const agentsTable = sqliteTable("agents", {
   id: int("id").primaryKey({ autoIncrement: true }),
   name: text("name").notNull().unique(),
   slug: text("slug").notNull().unique(),
- ...timestamps,
+  ...timestamps,
 });
 
 export const agentStatsTable = sqliteTable("agent_stats", {

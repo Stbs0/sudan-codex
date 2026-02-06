@@ -1,11 +1,12 @@
 "use client";
-import { authClient } from "@/lib/auth-client";
 import {
   AuthUIContext,
   UpdateFieldCard,
   UpdateNameCard,
 } from "@daveyplate/better-auth-ui";
 import { use } from "react";
+
+import { authClient } from "@/lib/auth-client";
 
 export const AccountSettingsCards = () => {
   const { additionalFields, account } = use(AuthUIContext);

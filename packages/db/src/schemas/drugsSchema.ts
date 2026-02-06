@@ -6,6 +6,7 @@ import {
   sqliteTable,
   text,
 } from "drizzle-orm/sqlite-core";
+
 import { agentsTable } from "./agentsSchema";
 import { companiesTable } from "./companySchema";
 import { genericsTable } from "./genericSchema";
@@ -41,7 +42,7 @@ export const drugsTable = sqliteTable(
     index("agent_name_idx").on(table.agent_name),
     index("generic_name_idx").on(table.generic_name),
     index("country_name_idx").on(table.country_name),
-  ],
+  ]
 );
 
 export const drugStatsTable = sqliteTable("drug_stats", {
@@ -103,7 +104,7 @@ export const drugInfoTable = sqliteTable(
     mode: text("mode").default("null"),
     ...timestamps,
   },
-  (table) => [index("drug_info_pkey_idx").on(table.drug_id)],
+  (table) => [index("drug_info_pkey_idx").on(table.drug_id)]
 );
 
 export type DrugInfo = typeof drugInfoTable.$inferSelect;

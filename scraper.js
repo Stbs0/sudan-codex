@@ -5,9 +5,10 @@
  * Requires TURSO_DATABASE_URL, TURSO_AUTH_TOKEN, and GEMINI_API_KEY in environment
  */
 
-import { createClient } from "@libsql/client";
 import { writeFileSync } from "fs";
 import https from "https";
+
+import { createClient } from "@libsql/client";
 
 // Configuration
 const LIMIT = process.env.SCRAPER_LIMIT || process.argv[2] || 2;
@@ -18,7 +19,7 @@ const TURSO_TOKEN = process.env.TURSO_AUTH_TOKEN;
 
 if (!GEMINI_API_KEY || !TURSO_URL || !TURSO_TOKEN) {
   console.error(
-    "Missing required environment variables (GEMINI_API_KEY, TURSO_DATABASE_URL, TURSO_AUTH_TOKEN)",
+    "Missing required environment variables (GEMINI_API_KEY, TURSO_DATABASE_URL, TURSO_AUTH_TOKEN)"
   );
   process.exit(1);
 }
@@ -65,7 +66,7 @@ class CompanyInfoScraper {
                 const wait = Math.pow(2, retryCount) * 10000;
                 this.log(
                   `Rate limited. Retrying in ${wait / 1000}s...`,
-                  "WARNING",
+                  "WARNING"
                 );
                 await new Promise((r) => setTimeout(r, wait));
                 return resolve(await this.callGemini(prompt, retryCount + 1));
@@ -87,7 +88,7 @@ class CompanyInfoScraper {
       });
 
       req.on("error", (error) =>
-        reject(new Error(`API request failed: ${error.message}`)),
+        reject(new Error(`API request failed: ${error.message}`))
       );
       req.write(data);
       req.end();

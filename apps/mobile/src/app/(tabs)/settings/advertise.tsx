@@ -1,13 +1,14 @@
-import { type DirectAdData, MedicalAd } from "@/components/ads/MedicalAd";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Text } from "@/components/ui/text";
 import { FontAwesome6 } from "@expo/vector-icons";
 import * as Linking from "expo-linking";
 import { Stack } from "expo-router";
 import { usePostHog } from "posthog-react-native";
 import React from "react";
 import { Alert, ScrollView, View } from "react-native";
+
+import { type DirectAdData, MedicalAd } from "@/components/ads/MedicalAd";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Text } from "@/components/ui/text";
 export default function AdvertiseScreen() {
   const brandAd: DirectAdData = {
     headline: "[OTC Product] (Natural Supplements)",

@@ -1,3 +1,11 @@
+import { updateUser } from "@sudan-codex/types";
+import { useForm } from "@tanstack/react-form";
+import { useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { ActivityIndicator, TextInput, View } from "react-native";
+import { toast } from "sonner-native";
+import { z } from "zod";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -12,13 +20,6 @@ import {
 import { Text } from "@/components/ui/text";
 import { authClient } from "@/lib/auth-client";
 import { cn } from "@/lib/utils";
-import { updateUser } from "@sudan-codex/types";
-import { useForm } from "@tanstack/react-form";
-import { useRef } from "react";
-import { useTranslation } from "react-i18next";
-import { ActivityIndicator, TextInput, View } from "react-native";
-import { toast } from "sonner-native";
-import { z } from "zod";
 
 // Extend the schema to include name
 const accountSchema = updateUser.extend({

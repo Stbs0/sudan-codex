@@ -1,7 +1,9 @@
-import type { InfiniteDrugApiResponse } from "@/app/api/v1/drugs/route";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+
+import type { InfiniteDrugApiResponse } from "@/app/api/v1/drugs/route";
+
 import { Badge } from "../ui/badge";
 import { Card, CardContent } from "../ui/card";
 

@@ -103,9 +103,7 @@
       "indexes": {
         "accounts_userId_idx": {
           "name": "accounts_userId_idx",
-          "columns": [
-            "user_id"
-          ],
+          "columns": ["user_id"],
           "isUnique": false
         }
       },
@@ -114,12 +112,8 @@
           "name": "accounts_user_id_users_id_fk",
           "tableFrom": "accounts",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -192,16 +186,12 @@
       "indexes": {
         "sessions_token_unique": {
           "name": "sessions_token_unique",
-          "columns": [
-            "token"
-          ],
+          "columns": ["token"],
           "isUnique": true
         },
         "sessions_userId_idx": {
           "name": "sessions_userId_idx",
-          "columns": [
-            "user_id"
-          ],
+          "columns": ["user_id"],
           "isUnique": false
         }
       },
@@ -210,12 +200,8 @@
           "name": "sessions_user_id_users_id_fk",
           "tableFrom": "sessions",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -319,9 +305,7 @@
       "indexes": {
         "users_email_unique": {
           "name": "users_email_unique",
-          "columns": [
-            "email"
-          ],
+          "columns": ["email"],
           "isUnique": true
         }
       },
@@ -381,9 +365,7 @@
       "indexes": {
         "verifications_identifier_idx": {
           "name": "verifications_identifier_idx",
-          "columns": [
-            "identifier"
-          ],
+          "columns": ["identifier"],
           "isUnique": false
         }
       },
@@ -437,9 +419,7 @@
       "indexes": {
         "agent_stats_agent_id_unique": {
           "name": "agent_stats_agent_id_unique",
-          "columns": [
-            "agent_id"
-          ],
+          "columns": ["agent_id"],
           "isUnique": true
         }
       },
@@ -448,12 +428,8 @@
           "name": "agent_stats_agent_id_agents_id_fk",
           "tableFrom": "agent_stats",
           "tableTo": "agents",
-          "columnsFrom": [
-            "agent_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["agent_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -490,16 +466,12 @@
       "indexes": {
         "agents_name_unique": {
           "name": "agents_name_unique",
-          "columns": [
-            "name"
-          ],
+          "columns": ["name"],
           "isUnique": true
         },
         "agents_slug_unique": {
           "name": "agents_slug_unique",
-          "columns": [
-            "slug"
-          ],
+          "columns": ["slug"],
           "isUnique": true
         }
       },
@@ -536,16 +508,12 @@
       "indexes": {
         "companies_name_unique": {
           "name": "companies_name_unique",
-          "columns": [
-            "name"
-          ],
+          "columns": ["name"],
           "isUnique": true
         },
         "companies_slug_unique": {
           "name": "companies_slug_unique",
-          "columns": [
-            "slug"
-          ],
+          "columns": ["slug"],
           "isUnique": true
         }
       },
@@ -599,9 +567,7 @@
       "indexes": {
         "company_stats_company_id_unique": {
           "name": "company_stats_company_id_unique",
-          "columns": [
-            "company_id"
-          ],
+          "columns": ["company_id"],
           "isUnique": true
         }
       },
@@ -610,12 +576,8 @@
           "name": "company_stats_company_id_companies_id_fk",
           "tableFrom": "company_stats",
           "tableTo": "companies",
-          "columnsFrom": [
-            "company_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["company_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -645,9 +607,7 @@
       "indexes": {
         "countries_name_unique": {
           "name": "countries_name_unique",
-          "columns": [
-            "name"
-          ],
+          "columns": ["name"],
           "isUnique": true
         }
       },
@@ -693,9 +653,7 @@
       "indexes": {
         "drug_stats_drug_id_unique": {
           "name": "drug_stats_drug_id_unique",
-          "columns": [
-            "drug_id"
-          ],
+          "columns": ["drug_id"],
           "isUnique": true
         }
       },
@@ -704,12 +662,8 @@
           "name": "drug_stats_drug_id_drugs_id_fk",
           "tableFrom": "drug_stats",
           "tableTo": "drugs",
-          "columnsFrom": [
-            "drug_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["drug_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -823,44 +777,32 @@
       "indexes": {
         "drugs_slug_unique": {
           "name": "drugs_slug_unique",
-          "columns": [
-            "slug"
-          ],
+          "columns": ["slug"],
           "isUnique": true
         },
         "brand_name_idx": {
           "name": "brand_name_idx",
-          "columns": [
-            "brand_name"
-          ],
+          "columns": ["brand_name"],
           "isUnique": false
         },
         "company_name_idx": {
           "name": "company_name_idx",
-          "columns": [
-            "company_name"
-          ],
+          "columns": ["company_name"],
           "isUnique": false
         },
         "agent_name_idx": {
           "name": "agent_name_idx",
-          "columns": [
-            "agent_name"
-          ],
+          "columns": ["agent_name"],
           "isUnique": false
         },
         "generic_name_idx": {
           "name": "generic_name_idx",
-          "columns": [
-            "generic_name"
-          ],
+          "columns": ["generic_name"],
           "isUnique": false
         },
         "country_name_idx": {
           "name": "country_name_idx",
-          "columns": [
-            "country_name"
-          ],
+          "columns": ["country_name"],
           "isUnique": false
         }
       },
@@ -869,12 +811,8 @@
           "name": "drugs_company_id_companies_id_fk",
           "tableFrom": "drugs",
           "tableTo": "companies",
-          "columnsFrom": [
-            "company_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["company_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -882,12 +820,8 @@
           "name": "drugs_agent_id_agents_id_fk",
           "tableFrom": "drugs",
           "tableTo": "agents",
-          "columnsFrom": [
-            "agent_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["agent_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -895,12 +829,8 @@
           "name": "drugs_generic_id_generics_id_fk",
           "tableFrom": "drugs",
           "tableTo": "generics",
-          "columnsFrom": [
-            "generic_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["generic_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -908,12 +838,8 @@
           "name": "drugs_country_id_countries_id_fk",
           "tableFrom": "drugs",
           "tableTo": "countries",
-          "columnsFrom": [
-            "country_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["country_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -967,9 +893,7 @@
       "indexes": {
         "generic_stats_generic_id_unique": {
           "name": "generic_stats_generic_id_unique",
-          "columns": [
-            "generic_id"
-          ],
+          "columns": ["generic_id"],
           "isUnique": true
         }
       },
@@ -978,12 +902,8 @@
           "name": "generic_stats_generic_id_generics_id_fk",
           "tableFrom": "generic_stats",
           "tableTo": "generics",
-          "columnsFrom": [
-            "generic_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["generic_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -1020,16 +940,12 @@
       "indexes": {
         "generics_name_unique": {
           "name": "generics_name_unique",
-          "columns": [
-            "name"
-          ],
+          "columns": ["name"],
           "isUnique": true
         },
         "generics_slug_unique": {
           "name": "generics_slug_unique",
-          "columns": [
-            "slug"
-          ],
+          "columns": ["slug"],
           "isUnique": true
         }
       },

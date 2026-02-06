@@ -1,7 +1,8 @@
-import { getPostHogServer } from "@/lib/posthog-server";
 import { db, drugInfoTable } from "@sudan-codex/db";
 import { eq } from "drizzle-orm";
 import type { NextRequest } from "next/server";
+
+import { getPostHogServer } from "@/lib/posthog-server";
 
 export async function GET(
   req: NextRequest,

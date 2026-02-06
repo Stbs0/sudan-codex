@@ -1,6 +1,7 @@
-import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
+
+import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;

@@ -1,6 +1,7 @@
 "use client";
 import { ArrowBigUp } from "lucide-react";
 import { useEffect, useState } from "react";
+
 import { Button } from "./ui/button";
 
 const ScrollToTopButton = () => {

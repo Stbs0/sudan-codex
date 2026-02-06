@@ -1,6 +1,8 @@
-import { Wrapper } from "@/testing/test-utils";
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
+
+import { Wrapper } from "@/testing/test-utils";
+
 import InfiniteScrollComponent from "./infinate-scroll-component";
 
 // Mock the hook that provides data
