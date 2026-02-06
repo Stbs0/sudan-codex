@@ -50,30 +50,21 @@ export default function AccountInfoForm({ onSuccess }: AccountInfoFormProps) {
   const form = useForm({
     defaultValues: user
       ? {
-          name: user?.name || "",
-          age: user?.age || 0,
-          university: user?.university || "",
-          phoneNumber: user?.phoneNumber || "",
-          specialty: user?.specialty || "",
-          occupation: user?.occupation || "",
-          workPlace: user?.workPlace || "",
+          name: user.name ?? undefined,
+          age: user.age ?? undefined,
+          university: user.university ?? undefined,
+          phoneNumber: user.phoneNumber ?? undefined,
+          specialty: user.specialty ?? undefined,
+          occupation: user.occupation ?? undefined,
+          workPlace: user.workPlace ?? undefined,
         }
       : defaultValues,
     validators: {
-      onChangeAsync: accountSchema,
+      onBlurAsync: accountSchema,
     },
     onSubmit: async ({ value }) => {
       try {
-        const { name, ...additionalFields } = value;
-
-        // Update basic info (name)
-        if (name !== user?.name) {
-          await authClient.updateUser({ name });
-        }
-
-        // Update additional fields
-        const res = await authClient.updateUser(additionalFields);
-
+        const res = await authClient.updateUser(value);
         if (res.error) {
           toast.error(t("common.error", "Failed to update profile"));
         } else {
