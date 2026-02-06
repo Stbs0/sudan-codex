@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react-native";
 import React from "react";
+
 import SearchInput from "../SearchInput";
 // Mock the hooks
 jest.mock("@/components/ui/icon", () => ({

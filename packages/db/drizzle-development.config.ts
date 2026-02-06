@@ -1,6 +1,7 @@
+import path from "path";
+
 import dotenv from "dotenv";
 import { defineConfig } from "drizzle-kit";
-import path from "path";
 
 dotenv.config({
   path: path.resolve(__dirname, `../../apps/web-nextjs/.env.development.local`),

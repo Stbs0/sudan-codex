@@ -17,6 +17,7 @@ import {
 } from "lucide-react-native";
 import { useTranslation } from "react-i18next";
 import { TouchableOpacity, View } from "react-native";
+
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Icon } from "./ui/icon";
 import { Text } from "./ui/text";

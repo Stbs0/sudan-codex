@@ -1,8 +1,10 @@
 "use client";
-import { useDrugInfoSearch } from "@/hooks/store/useDrugInfoSearch";
 import { DRUG_ROUTES } from "@sudan-codex/types";
 import { useQueryClient } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
+
+import { useDrugInfoSearch } from "@/hooks/store/useDrugInfoSearch";
+
 import { AutoComplete } from "../ui/autocomplete";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";

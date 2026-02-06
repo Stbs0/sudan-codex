@@ -1,8 +1,9 @@
-import { Text } from "@/components/ui/text";
 import type { AgentApiResponseType } from "@sudan-codex/db";
 import { useRouter } from "expo-router";
 import React from "react";
 import { TouchableHighlight, View } from "react-native";
+
+import { Text } from "@/components/ui/text";
 
 type Props = AgentApiResponseType["drugs"][number];
 

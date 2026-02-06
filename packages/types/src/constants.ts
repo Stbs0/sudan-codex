@@ -1,4 +1,3 @@
-
 export const OPENFDA_SEARCH_URL = "https://api.fda.gov/drug/label.json";
 
 export const DRUG_ROUTES = [

@@ -1,6 +1,7 @@
-import { authClient } from "@/lib/auth-client";
 import { useState } from "react";
 import { toast } from "sonner-native";
+
+import { authClient } from "@/lib/auth-client";
 
 const useSignIn = () => {
   const [loading, setLoading] = useState(false);

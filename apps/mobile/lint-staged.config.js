@@ -1,6 +1,6 @@
 export default {
-  "**/*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --write"],
-  "**/*.{json,md,yaml}": "prettier --write",
+  "**/*.{js,jsx,ts,tsx}": ["oxlint --fix", "oxfmt --write"],
+  "**/*.{json,md,yaml}": "oxfmt --write",
 
   "apps/mobile/**": "secretlint",
   "apps/mobile/**/*.{js,jsx,ts,tsx}": () =>

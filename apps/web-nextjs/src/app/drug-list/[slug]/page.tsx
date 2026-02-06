@@ -1,3 +1,9 @@
+import { db } from "@sudan-codex/db";
+import { Metadata } from "next";
+import { notFound, permanentRedirect } from "next/navigation";
+import { Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+
 import BackBtn from "@/components/drugInfo/back-btn";
 import { DrugDescriptions } from "@/components/drugInfo/drug-descriptions";
 import DrugInfoContent from "@/components/drugInfo/drug-info-content";
@@ -9,11 +15,6 @@ import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 import { generateDrugJsonLd } from "@/lib/json-ld";
 import { getDrugBySlug } from "@/services/server/getDrugs";
-import { db } from "@sudan-codex/db";
-import { Metadata } from "next";
-import { notFound, permanentRedirect } from "next/navigation";
-import { Suspense } from "react";
-import { ErrorBoundary } from "react-error-boundary";
 
 export const revalidate = false;
 

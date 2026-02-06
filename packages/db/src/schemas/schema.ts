@@ -1,5 +1,6 @@
 import { createSelectSchema } from "drizzle-zod";
 import z from "zod";
+
 import { agentsTable, agentStatsTable } from "./agentsSchema";
 import { companiesTable, companyStatsTable } from "./companySchema";
 import {
@@ -54,7 +55,7 @@ export const AgentApiResponseSchema = z.object({
     }).extend({
       company: CompanySelectSchema.pick({ slug: true }).nullable(),
       generic: GenericSelectSchema.pick({ slug: true }).nullable(),
-    }),
+    })
   ),
   agent: AgentSelectSchema.extend({
     stats: AgentWithStatsSelectSchema.pick({
@@ -78,7 +79,7 @@ export const CompanyApiResponseSchema = z.object({
     }).extend({
       agent: AgentSelectSchema.pick({ slug: true }).nullable(),
       generic: GenericSelectSchema.pick({ slug: true }).nullable(),
-    }),
+    })
   ),
   company: CompanySelectSchema.extend({
     stats: CompanyWithStatsSelectSchema.pick({
@@ -102,7 +103,7 @@ export const GenericApiResponseSchema = z.object({
     }).extend({
       agent: AgentSelectSchema.pick({ slug: true }).nullable(),
       company: CompanySelectSchema.pick({ slug: true }).nullable(),
-    }),
+    })
   ),
   generic: GenericSelectSchema.extend({
     stats: GenericWithStatsSelectSchema.pick({
@@ -118,8 +119,6 @@ export const GenericApiResponseSchema = z.object({
 export type AgentApiResponseType = z.infer<typeof AgentApiResponseSchema>;
 export type CompanyApiResponseType = z.infer<typeof CompanyApiResponseSchema>;
 export type GenericApiResponseType = z.infer<typeof GenericApiResponseSchema>;
-
-
 
 const infiniteDrugSchema = DrugSelectSchema.pick({
   id: true,

@@ -1,5 +1,7 @@
 import { GetDrugBySlugReturnType } from "@/services/server/getDrugs";
+
 import { CardTitle } from "../ui/card";
+
 import DrugPropertyDescription from "./DrugPropertyDescription";
 
 interface DrugCardProps {

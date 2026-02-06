@@ -1,6 +1,7 @@
+import type { NextRequest } from "next/server";
+
 import { getPostHogServer } from "@/lib/posthog-server";
 import { getDrugBySlug } from "@/services/server/getDrugs";
-import type { NextRequest } from "next/server";
 
 export async function GET(
   _req: NextRequest,

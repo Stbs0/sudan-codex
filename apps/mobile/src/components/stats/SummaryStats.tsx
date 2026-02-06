@@ -1,5 +1,3 @@
-import { Icon } from "@/components/ui/icon";
-import { Text } from "@/components/ui/text";
 import {
   Building2,
   FlaskConical,
@@ -7,10 +5,14 @@ import {
   Tag,
   UserCheck,
 } from "lucide-react-native";
+import type { LucideIcon } from "lucide-react-native";
 import { useTranslation } from "react-i18next";
 import { View } from "react-native";
+
+import { Icon } from "@/components/ui/icon";
+import { Text } from "@/components/ui/text";
+
 import { Card, CardContent } from "../ui/card";
-import type { LucideIcon } from "lucide-react-native";
 
 interface SummaryData {
   totalDrugs: number;

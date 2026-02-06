@@ -1,9 +1,11 @@
-import { Skeleton } from "@/components/ui/skeleton";
-import { api } from "@/lib/api-client";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import { View } from "react-native";
+
+import { Skeleton } from "@/components/ui/skeleton";
+import { api } from "@/lib/api-client";
+
 import { Text } from "./ui/text";
 type ViewCountProps = {
   id: number;

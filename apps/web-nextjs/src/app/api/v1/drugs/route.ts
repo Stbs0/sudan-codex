@@ -1,8 +1,9 @@
-import { SearchDrugType } from "@/hooks/store/useSearch";
-import { getPostHogServer } from "@/lib/posthog-server";
 import { db, drugsTable } from "@sudan-codex/db";
 import type { NextRequest } from "next/server";
 import { literal } from "zod";
+
+import { SearchDrugType } from "@/hooks/store/useSearch";
+import { getPostHogServer } from "@/lib/posthog-server";
 
 const searchSchema = literal([
   "brand_name",

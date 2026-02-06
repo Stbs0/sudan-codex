@@ -1,8 +1,9 @@
-import { Icon } from "@/components/ui/icon";
 import { Tabs } from "expo-router";
 import { List, Settings } from "lucide-react-native";
 import React from "react";
 import { useTranslation } from "react-i18next";
+
+import { Icon } from "@/components/ui/icon";
 export const unstable_settings = {
   initial: "drug-list",
 };

@@ -1,15 +1,3 @@
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Icon } from "@/components/ui/icon";
-import { Text } from "@/components/ui/text";
-import { useAuth } from "@/hooks/useAuth";
-import useSignIn from "@/hooks/useSignIn";
 import { Ionicons } from "@expo/vector-icons";
 import { openURL } from "expo-linking";
 import { coolDownAsync, warmUpAsync } from "expo-web-browser";
@@ -24,6 +12,19 @@ import Animated, {
   withRepeat,
   withTiming,
 } from "react-native-reanimated";
+
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Icon } from "@/components/ui/icon";
+import { Text } from "@/components/ui/text";
+import { useAuth } from "@/hooks/useAuth";
+import useSignIn from "@/hooks/useSignIn";
 
 export function SignUpForm() {
   const { loading, signIn } = useSignIn();

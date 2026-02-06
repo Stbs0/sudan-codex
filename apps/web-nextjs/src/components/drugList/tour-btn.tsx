@@ -1,9 +1,11 @@
 "use client";
-import { Config, driver } from "driver.js";
 import "driver.js/dist/driver.css";
+
+import { Config, driver } from "driver.js";
 import { usePostHog } from "posthog-js/react";
 import { useCallback, useEffect } from "react";
 import { toast } from "sonner";
+
 import { Button } from "../ui/button";
 const driverConfig: Config = {
   showProgress: true,

@@ -1,8 +1,9 @@
-import { type DrugFilterState, useSearchDrug } from "@/hooks/store/useSearch";
-import { api } from "@/lib/api-client";
 import { infiniteQueryOptions, useInfiniteQuery } from "@tanstack/react-query";
 import { usePostHog } from "posthog-js/react";
 import { useEffect, useRef } from "react";
+
+import { type DrugFilterState, useSearchDrug } from "@/hooks/store/useSearch";
+import { api } from "@/lib/api-client";
 // interface InfiniteQueryType {
 //   data: Drug[];
 //   nextPage: number | null;

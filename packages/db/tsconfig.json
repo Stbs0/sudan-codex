@@ -13,5 +13,5 @@
   },
   "references": [{ "path": "../../packages/types" }],
   "include": ["src/**/*"],
-  "exclude": [ "drizzle-production.config.ts", "drizzle-development.config.ts"]
+  "exclude": ["drizzle-production.config.ts", "drizzle-development.config.ts"]
 }

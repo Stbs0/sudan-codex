@@ -1,3 +1,6 @@
+import { act, renderHook, waitFor } from "@testing-library/react";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+
 /**
  * Integration tests for useInfiniteScroll hook
  *
@@ -6,8 +9,7 @@
 import type { InfiniteDrugApiResponse } from "@/app/api/v1/drugs/route";
 import { useSearchDrug } from "@/hooks/store/useSearch";
 import { Wrapper } from "@/testing/test-utils";
-import { act, renderHook, waitFor } from "@testing-library/react";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+
 import { useInfiniteServerScroll } from "../useInfiniteScroll";
 
 // Mock posthog

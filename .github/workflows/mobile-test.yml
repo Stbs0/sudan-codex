@@ -1,36 +1,36 @@
 name: Mobile - Unit Tests
 
 on:
-    push:
-        branches: [main]
-        paths:
-            - "apps/mobile/**"
-            - ".github/workflows/mobile-test.yml"
-    pull_request:
-        branches: [main]
-        paths:
-            - "apps/mobile/**"
-            - ".github/workflows/mobile-test.yml"
+  push:
+    branches: [main]
+    paths:
+      - "apps/mobile/**"
+      - ".github/workflows/mobile-test.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "apps/mobile/**"
+      - ".github/workflows/mobile-test.yml"
 
 jobs:
-    test:
-        name: Run Mobile Unit Tests
-        runs-on: ubuntu-latest
+  test:
+    name: Run Mobile Unit Tests
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v4
-              with:
-                  ref: ${{ github.sha }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
 
-            - name: Setup Bun
-              uses: oven-sh/setup-bun@v2.0.2
-              with:
-                  bun-version-file: package.json
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2.0.2
+        with:
+          bun-version-file: package.json
 
-            - name: Install dependencies
-              run: bun install
+      - name: Install dependencies
+        run: bun install
 
-            - name: Run Unit Tests
-              working-directory: apps/mobile
-              run: bun run testFinal
+      - name: Run Unit Tests
+        working-directory: apps/mobile
+        run: bun run testFinal

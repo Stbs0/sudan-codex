@@ -1,11 +1,12 @@
 "use client";
 
-import { authClient } from "@/lib/auth-client";
 import { AuthUIProvider } from "@daveyplate/better-auth-ui";
 import { updateUser } from "@sudan-codex/types";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { ReactNode } from "react";
+
+import { authClient } from "@/lib/auth-client";
 
 export function BetterAuthUIProvider({ children }: { children: ReactNode }) {
   const router = useRouter();

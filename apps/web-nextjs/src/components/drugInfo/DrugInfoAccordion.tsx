@@ -1,10 +1,11 @@
+import type { DrugInfo } from "@sudan-codex/db";
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import type { DrugInfo } from "@sudan-codex/db";
 // const propToDelete = [
 //   "spl_patient_package_insert",
 //   "spl_patient_package_insert_table",

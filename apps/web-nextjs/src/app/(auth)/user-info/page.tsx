@@ -1,9 +1,10 @@
-import UserInfoForm from "@/components/user-info/UserInfoForm";
-import { auth } from "@/lib/auth";
-import { Session } from "@/lib/auth-client";
 import { Metadata } from "next";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+
+import UserInfoForm from "@/components/user-info/UserInfoForm";
+import { auth } from "@/lib/auth";
+import { Session } from "@/lib/auth-client";
 
 export const metadata: Metadata = {
   title: "Complete Profile | Sudan Codex",

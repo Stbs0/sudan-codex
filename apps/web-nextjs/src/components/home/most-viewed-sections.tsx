@@ -6,6 +6,7 @@ import {
 } from "@sudan-codex/db";
 import { ChevronRight, Eye } from "lucide-react";
 import Link from "next/link";
+
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 export async function MostViewedEntities() {

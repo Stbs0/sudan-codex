@@ -1,4 +1,3 @@
-import { api } from "@/lib/api-client";
 import {
   type AgentApiResponseType,
   type CompanyApiResponseType,
@@ -8,6 +7,8 @@ import { useQuery } from "@tanstack/react-query";
 import { type SortingState } from "@tanstack/react-table";
 import { useEffect, useState } from "react";
 import { toast } from "sonner-native";
+
+import { api } from "@/lib/api-client";
 
 type StatsRoute =
   | "/api/v1/agents/:slug"

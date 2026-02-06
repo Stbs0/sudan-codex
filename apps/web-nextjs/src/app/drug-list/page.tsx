@@ -1,10 +1,11 @@
+import { Metadata } from "next";
+
 import InfiniteScrollComponent from "@/components/drugList/infinate-scroll-component";
 import SearchDrug from "@/components/drugList/SearchDrug";
 import TourBtn from "@/components/drugList/tour-btn";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { drugListJsonLd } from "@/lib/json-ld";
 import { getDrugs } from "@/services/server/getInitialInfiniteDrugs";
-import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Drug List | Sudan Codex",
   description:

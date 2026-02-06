@@ -1,6 +1,8 @@
-import type { InfiniteDrugApiResponse } from "@/app/api/v1/drugs/route";
-import { Drug } from "@sudan-codex/db";
 import "server-only";
+
+import { Drug } from "@sudan-codex/db";
+
+import type { InfiniteDrugApiResponse } from "@/app/api/v1/drugs/route";
 
 export async function getDrugs(page = 1, q?: string) {
   const baseUrl =

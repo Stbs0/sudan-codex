@@ -1,12 +1,13 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Text } from "@/components/ui/text";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Constants from "expo-constants";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Image, Linking, ScrollView, View } from "react-native";
 import { useUniwind } from "uniwind";
+
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Text } from "@/components/ui/text";
 
 const logos = [
   require("@/assets/images/f-logo/lgthj-01.png"),

@@ -1,12 +1,13 @@
 "use client";
+import { infiniteQueryOptions, useInfiniteQuery } from "@tanstack/react-query";
+import { usePostHog } from "posthog-js/react";
+import { useEffect, useRef } from "react";
+
 import type {
   InfiniteDrugApiResponse,
   InfiniteDrugs,
 } from "@/app/api/v1/drugs/route";
 import { DrugFilterState, useSearchDrug } from "@/hooks/store/useSearch";
-import { infiniteQueryOptions, useInfiniteQuery } from "@tanstack/react-query";
-import { usePostHog } from "posthog-js/react";
-import { useEffect, useRef } from "react";
 interface InfiniteQueryType {
   data: InfiniteDrugs;
   nextPage: number | null;

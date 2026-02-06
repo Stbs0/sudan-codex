@@ -1,5 +1,6 @@
-import { SignUpForm } from "@/screens/auth/sign-up-form";
 import { View } from "react-native";
+
+import { SignUpForm } from "@/screens/auth/sign-up-form";
 
 export default function ModalScreen() {
   return (

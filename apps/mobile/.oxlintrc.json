@@ -1,0 +1,52 @@
+{
+  "extends": ["../../.oxlintrc.json"],
+  "plugins": ["react"],
+  "env": {
+    "browser": true
+  },
+  "jsPlugins": ["eslint-plugin-expo"],
+  "rules": {
+    "import/namespace": "off",
+    "react/display-name": "error",
+    "react/jsx-key": "error",
+    "react/jsx-no-comment-textnodes": "error",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-undef": "error",
+    "react/no-children-prop": "error",
+    "react/no-danger-with-children": "error",
+    "react/no-direct-mutation-state": "error",
+    "react/no-find-dom-node": "error",
+    "react/no-is-mounted": "error",
+    "react/no-render-return-value": "error",
+    "react/no-string-refs": "error",
+    "react/no-unescaped-entities": "error",
+    "react/no-unknown-property": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/no-this-in-sfc": "warn"
+  },
+  "globals": {
+    "__DEV__": "readonly",
+    "ErrorUtils": "readonly",
+    "clearImmediate": "readonly",
+    "process": "readonly",
+    "setImmediate": "readonly",
+    "shared-node-browser": "writable"
+  },
+  "ignorePatterns": [
+    "android/app/build",
+    ".expo/**/*",
+    "node_modules/**/*",
+    "**/dist/**",
+    "**/.turbo/**",
+    "**/legacy-"
+  ],
+  "overrides": [
+    {
+      "files": ["**/metro.config.js"],
+      "env": {
+        "node": true
+      }
+    }
+  ]
+}

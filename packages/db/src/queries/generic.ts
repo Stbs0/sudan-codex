@@ -1,8 +1,9 @@
 import { eq, not } from "drizzle-orm";
 import { cache } from "react";
+
 import { db } from "../db";
 import { drugsTable } from "../schemas/drugsSchema";
-import  { genericsTable } from "../schemas/genericSchema";
+import { genericsTable } from "../schemas/genericSchema";
 
 export type GetGenericBySlugWithStatsReturnType = Awaited<
   ReturnType<typeof getGenericBySlugWithStats>
@@ -14,7 +15,7 @@ export const getGenericBySlugWithStats = cache(
       with: {
         stats: true,
       },
-    }),
+    })
 );
 
 export const getAllGenericSlugs = cache(
@@ -22,7 +23,7 @@ export const getAllGenericSlugs = cache(
     await db
       .select({ slug: genericsTable.slug })
       .from(genericsTable)
-      .where(not(eq(genericsTable.slug, ""))),
+      .where(not(eq(genericsTable.slug, "")))
 );
 
 export const getAllDrugsRelatedToGenericWithAgentsAndCompanies = cache(
@@ -44,5 +45,5 @@ export const getAllDrugsRelatedToGenericWithAgentsAndCompanies = cache(
           },
         },
       },
-    }),
+    })
 );

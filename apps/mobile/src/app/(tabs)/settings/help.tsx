@@ -1,3 +1,11 @@
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
+import type { Drug } from "@sudan-codex/db";
+import * as Linking from "expo-linking";
+import { usePostHog } from "posthog-react-native";
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { Alert, Text, View, type TextProps } from "react-native";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,13 +19,6 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-import type { Drug } from "@sudan-codex/db";
-import * as Linking from "expo-linking";
-import { usePostHog } from "posthog-react-native";
-import React from "react";
-import { useTranslation } from "react-i18next";
-import { Alert, Text, View, type TextProps } from "react-native";
 
 const Help = () => {
   const { t } = useTranslation();

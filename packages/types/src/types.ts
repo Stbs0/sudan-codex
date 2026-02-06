@@ -1,10 +1,4 @@
-
-
-
-
 export type Theme = "dark" | "light" | "system";
-
-
 
 export type Unit = {
   value: string;
@@ -78,8 +72,3 @@ export type PrivateOutletTypes = {
 export type FetchedDrugInfo = {
   results: Record<string, string[]>[];
 };
-
-
-
-
-

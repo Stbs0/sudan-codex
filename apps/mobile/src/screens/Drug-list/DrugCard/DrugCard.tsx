@@ -1,11 +1,12 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Text } from "@/components/ui/text";
-import { useModal } from "@/hooks/useModal";
 import type { Drug } from "@sudan-codex/db";
 import * as Haptics from "expo-haptics";
 import { useRouter } from "expo-router";
 import React from "react";
 import { TouchableHighlight, View } from "react-native";
+
+import { Card, CardContent } from "@/components/ui/card";
+import { Text } from "@/components/ui/text";
+import { useModal } from "@/hooks/useModal";
 type Props = Drug;
 // FIXME: fix types here
 const DrugCard = ({

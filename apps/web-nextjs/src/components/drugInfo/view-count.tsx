@@ -1,6 +1,9 @@
-import type { GetDrugBySlugReturnType } from "@/services/server/getDrugs";
-import { Suspense, use } from "react";
 import "server-only";
+
+import { Suspense, use } from "react";
+
+import type { GetDrugBySlugReturnType } from "@/services/server/getDrugs";
+
 import { Skeleton } from "../ui/skeleton";
 type ViewCountProps = {
   id: number;

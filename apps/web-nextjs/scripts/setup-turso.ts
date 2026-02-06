@@ -9,9 +9,10 @@ config({
   ),
 });
 
-import * as schema from "@sudan-codex/db";
 import fs from "fs/promises";
 import path from "path";
+
+import * as schema from "@sudan-codex/db";
 import z from "zod";
 
 // Replace with your Turso database URL and Auth Token

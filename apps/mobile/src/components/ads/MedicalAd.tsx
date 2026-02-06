@@ -1,5 +1,3 @@
-import { Card } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 import { Image, Pressable, View } from "react-native";
 import {
@@ -10,6 +8,10 @@ import {
   NativeAssetType,
   TestIds,
 } from "react-native-google-mobile-ads";
+
+import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+
 import { Text } from "../ui/text";
 
 export interface DirectAdData {

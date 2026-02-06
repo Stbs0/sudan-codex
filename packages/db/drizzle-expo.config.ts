@@ -4,5 +4,6 @@ export default defineConfig({
   schema: "./src/schemas/schema.ts",
   out: "./drizzle",
   dialect: "sqlite",
-  driver: "expo",migrations:{}
+  driver: "expo",
+  migrations: {},
 });

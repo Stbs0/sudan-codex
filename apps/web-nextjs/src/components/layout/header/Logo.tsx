@@ -1,8 +1,10 @@
 "use client";
-import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+
+import { cn } from "@/lib/utils";
+
 import { Button } from "../../ui/button";
 
 const Logo = ({ className }: { className?: string }) => {

@@ -1,3 +1,13 @@
+import RenderHtml, { type MixedStyleDeclaration } from "@native-html/render";
+import { useQuery, useSuspenseQuery } from "@tanstack/react-query";
+import { Stack, useLocalSearchParams } from "expo-router";
+import { ExternalLink, FileX, Info } from "lucide-react-native";
+import React, { Suspense } from "react";
+import { Trans, useTranslation } from "react-i18next";
+import { ActivityIndicator, useWindowDimensions, View } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
+import { useUniwind } from "uniwind";
+
 import AdBanner from "@/components/ads/AdBanner";
 import {
   Accordion,
@@ -17,15 +27,6 @@ import {
 import ViewCount from "@/components/view-count";
 import { api } from "@/lib/api-client";
 import DrugPropertyDescription from "@/screens/Drug-list/DrugCard/DrugPropertyDescription";
-import RenderHtml, { type MixedStyleDeclaration } from "@native-html/render";
-import { useQuery, useSuspenseQuery } from "@tanstack/react-query";
-import { Stack, useLocalSearchParams } from "expo-router";
-import { ExternalLink, FileX, Info } from "lucide-react-native";
-import React, { Suspense } from "react";
-import { Trans, useTranslation } from "react-i18next";
-import { ActivityIndicator, useWindowDimensions, View } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
-import { useUniwind } from "uniwind";
 
 const DrugInfo = () => {
   const { t } = useTranslation();

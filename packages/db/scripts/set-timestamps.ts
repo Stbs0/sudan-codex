@@ -1,12 +1,13 @@
+import path from "path";
+
 import { createClient } from "@libsql/client";
 import dotenv from "dotenv";
-import path from "path";
 
 // Load environment variables from the web app's production env
 dotenv.config({
   path: path.resolve(
     __dirname,
-    "../../../apps/web-nextjs/.env.development.local",
+    "../../../apps/web-nextjs/.env.development.local"
   ),
 });
 
@@ -15,7 +16,7 @@ const TURSO_TOKEN = process.env.TURSO_AUTH_TOKEN;
 
 if (!TURSO_URL || !TURSO_TOKEN) {
   console.error(
-    "Missing TURSO_DATABASE_URL or TURSO_AUTH_TOKEN in environment",
+    "Missing TURSO_DATABASE_URL or TURSO_AUTH_TOKEN in environment"
   );
   process.exit(1);
 }
@@ -47,7 +48,7 @@ async function setTimestamps() {
     try {
       // Update all records where createdAt is NULL using SQLite's unixepoch
       const result = await client.execute(
-        `UPDATE ${table} SET created_at = (cast(unixepoch('subsecond') * 1000 as integer)), updated_at = (cast(unixepoch('subsecond') * 1000 as integer)) WHERE created_at IS NULL`,
+        `UPDATE ${table} SET created_at = (cast(unixepoch('subsecond') * 1000 as integer)), updated_at = (cast(unixepoch('subsecond') * 1000 as integer)) WHERE created_at IS NULL`
       );
 
       console.log(`✓ Updated ${result.rowsAffected} rows in '${table}'`);

@@ -1,7 +1,9 @@
-import { Wrapper } from "@/testing/test-utils";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
+
+import { Wrapper } from "@/testing/test-utils";
+
 import { ListItem, type ListItemProps } from "./ListItem";
 
 const mockDrug: ListItemProps["drug"] = {

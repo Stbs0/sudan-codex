@@ -1,8 +1,9 @@
-import DrugList from "@/screens/Drug-list/DrugList";
 import React from "react";
 import { KeyboardAvoidingView, View } from "react-native";
 import Svg, { Defs, Pattern, Rect } from "react-native-svg";
 import { useUniwind } from "uniwind";
+
+import DrugList from "@/screens/Drug-list/DrugList";
 const DrugListScreen = () => {
   return (
     <View

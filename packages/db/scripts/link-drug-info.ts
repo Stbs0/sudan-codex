@@ -1,13 +1,14 @@
-import { createClient } from "@libsql/client";
-import dotenv from "dotenv";
 import fs from "fs";
 import path from "path";
+
+import { createClient } from "@libsql/client";
+import dotenv from "dotenv";
 
 // Load environment variables from the web app's production env
 dotenv.config({
   path: path.resolve(
     __dirname,
-    "../../../apps/web-nextjs/.env.production.local",
+    "../../../apps/web-nextjs/.env.production.local"
   ),
 });
 
@@ -16,7 +17,7 @@ const TURSO_TOKEN = process.env.TURSO_AUTH_TOKEN;
 
 if (!TURSO_URL || !TURSO_TOKEN) {
   console.error(
-    "Missing TURSO_DATABASE_URL or TURSO_AUTH_TOKEN in environment",
+    "Missing TURSO_DATABASE_URL or TURSO_AUTH_TOKEN in environment"
   );
   process.exit(1);
 }
@@ -54,7 +55,7 @@ async function link() {
     try {
       await client.batch(statements, "write");
       console.log(
-        `Updated batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(mappings.length / BATCH_SIZE)}`,
+        `Updated batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(mappings.length / BATCH_SIZE)}`
       );
     } catch (e) {
       console.error(`Error in batch starting at index ${i}:`, e);

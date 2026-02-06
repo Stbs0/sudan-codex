@@ -1,5 +1,6 @@
 import { relations, sql } from "drizzle-orm";
 import { int, integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+
 import { timestamps } from "./utils";
 
 export const companiesTable = sqliteTable("companies", {

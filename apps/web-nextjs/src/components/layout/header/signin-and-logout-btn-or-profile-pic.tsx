@@ -1,6 +1,7 @@
 "use client";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useAuth } from "@/hooks/useAuth";
+
 import ProfilePic from "./ProfilePic";
 import SigninAndLogoutButton from "./SigninAndLogoutButton";
 

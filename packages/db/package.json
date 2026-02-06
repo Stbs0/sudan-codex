@@ -1,5 +1,10 @@
 {
   "name": "@sudan-codex/db",
+  "version": "0.0.0",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -20,12 +25,6 @@
       "default": "./drizzle/migrations.js"
     }
   },
-  "type": "module",
-  "version": "0.0.0",
-  "devDependencies": {
-    "@types/bun": "latest",
-    "drizzle-kit": "^0.30.1"
-  },
   "scripts": {
     "build": "bun run clean && tsc -b",
     "clean": "rm -rf ./dist ./tsconfig.tsbuildinfo",
@@ -43,12 +42,6 @@
     "db:seed:dev": "NODE_ENV=development bun run scripts/setup-turso.ts",
     "db:studio": "NODE_ENV=development drizzle-kit studio --config=drizzle-development.config.ts"
   },
-  "files": [
-    "dist"
-  ],
-  "peerDependencies": {
-    "typescript": "^5"
-  },
   "dependencies": {
     "@libsql/client": "^0.15.15",
     "@sudan-codex/types": "workspace:*",
@@ -58,5 +51,12 @@
     "drizzle-zod": "^0.8.3",
     "react": "^19.2.3",
     "zod": "^4.3.4"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "drizzle-kit": "^0.30.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
   }
 }

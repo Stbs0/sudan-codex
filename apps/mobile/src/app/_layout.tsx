@@ -1,8 +1,7 @@
-import { useAnalyticsPosthog } from "@/hooks/analytics";
-import { useAuth } from "@/hooks/useAuth";
-import { NAV_THEME } from "@/lib/theme";
-import { AuthProvider } from "@/providers/AuthProvider";
-import PHProvider from "@/providers/PHProvider";
+import "react-native-reanimated";
+import "../../global.css";
+import "../lib/i18next";
+
 import { useReactNavigationDevTools } from "@dev-plugins/react-navigation";
 import { ThemeProvider } from "@react-navigation/native";
 import { PortalHost } from "@rn-primitives/portal";
@@ -20,12 +19,15 @@ import { useTranslation } from "react-i18next";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import mobileAds, { AppOpenAd, TestIds } from "react-native-google-mobile-ads";
 import { KeyboardProvider } from "react-native-keyboard-controller";
-import "react-native-reanimated";
 import { SafeAreaListener } from "react-native-safe-area-context";
 import { Toaster } from "sonner-native";
 import { Uniwind, useUniwind } from "uniwind";
-import "../../global.css";
-import "../lib/i18next";
+
+import { useAnalyticsPosthog } from "@/hooks/analytics";
+import { useAuth } from "@/hooks/useAuth";
+import { NAV_THEME } from "@/lib/theme";
+import { AuthProvider } from "@/providers/AuthProvider";
+import PHProvider from "@/providers/PHProvider";
 
 SplashScreen.preventAutoHideAsync();
 AppOpenAd.createForAdRequest(TestIds.APP_OPEN);

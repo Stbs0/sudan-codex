@@ -1,0 +1,217 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": [
+    "import",
+    "react",
+    "unicorn"
+  ],
+  "categories": {
+    "correctness": "off"
+  },
+  "env": {
+    "builtin": true,
+    "es2022": true,
+    "browser": true
+  },
+  "rules": {
+    "import/namespace": "error",
+    "import/no-named-as-default": "warn",
+    "import/no-named-as-default-member": "warn",
+    "import/no-duplicates": "warn",
+    "eqeqeq": [
+      "warn",
+      "smart"
+    ],
+    "no-dupe-class-members": "error",
+    "no-dupe-keys": "error",
+    "no-duplicate-case": "error",
+    "no-empty-character-class": "warn",
+    "no-empty-pattern": "warn",
+    "no-extend-native": "warn",
+    "no-extra-bind": "warn",
+    "no-redeclare": "warn",
+    "no-unsafe-negation": "warn",
+    "no-unused-expressions": [
+      "warn",
+      {
+        "allowShortCircuit": true,
+        "enforceForJSX": true
+      }
+    ],
+    "no-unused-labels": "warn",
+    "no-with": "warn",
+    "unicode-bom": [
+      "warn",
+      "never"
+    ],
+    "use-isnan": "error",
+    "valid-typeof": "error",
+    "import/first": "warn",
+    "no-var": "error",
+    "react/display-name": "error",
+    "react/jsx-key": "error",
+    "react/jsx-no-comment-textnodes": "error",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-undef": "error",
+    "react/no-children-prop": "error",
+    "react/no-danger-with-children": "error",
+    "react/no-direct-mutation-state": "error",
+    "react/no-find-dom-node": "error",
+    "react/no-is-mounted": "error",
+    "react/no-render-return-value": "error",
+    "react/no-string-refs": "error",
+    "react/no-unescaped-entities": "error",
+    "react/no-unknown-property": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/no-this-in-sfc": "warn",
+    "expo/use-dom-exports": [
+      "error"
+    ],
+    "expo/no-env-var-destructuring": [
+      "error"
+    ],
+    "expo/no-dynamic-env-var": [
+      "error"
+    ],
+    "turbo/no-undeclared-env-vars": "error",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  },
+  "globals": {
+    "exports": "readonly",
+    "global": "readonly",
+    "module": "readonly",
+    "require": "readonly",
+    "AudioWorkletGlobalScope": "readonly",
+    "AudioWorkletProcessor": "readonly",
+    "currentFrame": "readonly",
+    "currentTime": "readonly",
+    "registerProcessor": "readonly",
+    "sampleRate": "readonly",
+    "WorkletGlobalScope": "readonly",
+    "__DEV__": "readonly",
+    "ErrorUtils": "readonly",
+    "clearImmediate": "readonly",
+    "process": "readonly",
+    "setImmediate": "readonly",
+    "shared-node-browser": "writable"
+  },
+  "ignorePatterns": [
+    "android/app/build",
+    ".expo/**/*",
+    "node_modules/**/*",
+    "**/dist/**",
+    "**/.turbo/**"
+  ],
+  "jsPlugins": [
+    "eslint-plugin-expo",
+    "eslint-plugin-turbo",
+    "eslint-plugin-unused-imports"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/metro.config.js"
+      ],
+      "env": {
+        "node": true
+      }
+    },
+    {
+      "files": [
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.d.ts"
+      ],
+      "rules": {
+        "@typescript-eslint/array-type": [
+          "warn",
+          {
+            "default": "array"
+          }
+        ],
+        "@typescript-eslint/no-empty-object-type": "warn",
+        "@typescript-eslint/no-wrapper-object-types": "warn",
+        "@typescript-eslint/no-extra-non-null-assertion": "warn",
+        "no-unused-vars": [
+          "warn",
+          {
+            "vars": "all",
+            "args": "none",
+            "ignoreRestSiblings": true,
+            "caughtErrors": "all"
+          }
+        ],
+        "no-useless-constructor": "warn",
+        "@typescript-eslint/no-require-imports": [
+          "warn",
+          {
+            "allow": [
+              "\\.(aac|aiff|avif|bmp|caf|db|gif|heic|html|jpeg|jpg|json|m4a|m4v|mov|mp3|mp4|mpeg|mpg|otf|pdf|png|psd|svg|ttf|wav|webm|webp|xml|yaml|yml|zip)$"
+            ]
+          }
+        ]
+      },
+      "plugins": [
+        "typescript"
+      ]
+    },
+    {
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "rules": {
+        "testing-library/await-async-events": [
+          "error",
+          {
+            "eventModule": "userEvent"
+          }
+        ],
+        "testing-library/await-async-queries": "error",
+        "testing-library/await-async-utils": "error",
+        "testing-library/no-await-sync-events": [
+          "error",
+          {
+            "eventModules": [
+              "fire-event"
+            ]
+          }
+        ],
+        "testing-library/no-await-sync-queries": "error",
+        "testing-library/no-container": "error",
+        "testing-library/no-debugging-utils": "warn",
+        "testing-library/no-dom-import": [
+          "error",
+          "react"
+        ],
+        "testing-library/no-global-regexp-flag-in-query": "error",
+        "testing-library/no-manual-cleanup": "error",
+        "testing-library/no-node-access": "error",
+        "testing-library/no-promise-in-fire-event": "error",
+        "testing-library/no-render-in-lifecycle": "error",
+        "testing-library/no-unnecessary-act": "error",
+        "testing-library/no-wait-for-multiple-assertions": "error",
+        "testing-library/no-wait-for-side-effects": "error",
+        "testing-library/no-wait-for-snapshot": "error",
+        "testing-library/prefer-find-by": "error",
+        "testing-library/prefer-presence-queries": "error",
+        "testing-library/prefer-query-by-disappearance": "error",
+        "testing-library/prefer-screen-queries": "error",
+        "testing-library/render-result-naming-convention": "error"
+      },
+      "jsPlugins": [
+        "eslint-plugin-testing-library"
+      ]
+    }
+  ]
+}

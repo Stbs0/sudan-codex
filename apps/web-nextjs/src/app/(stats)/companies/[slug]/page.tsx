@@ -1,3 +1,11 @@
+import {
+  getAllDrugsRelatedToCompanyWithGenericAndAgents,
+  getCompanyBySlug,
+  getCompanyBySlugWithStats,
+} from "@sudan-codex/db";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+
 import ViewCount from "@/components/drugInfo/view-count";
 import {
   Card,
@@ -8,13 +16,6 @@ import {
 } from "@/components/ui/card";
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import { generateCompanyJsonLd } from "@/lib/json-ld";
-import {
-  getAllDrugsRelatedToCompanyWithGenericAndAgents,
-  getCompanyBySlug,
-  getCompanyBySlugWithStats,
-} from "@sudan-codex/db";
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
 
 type Props = {
   params: Promise<{ slug: string }>;

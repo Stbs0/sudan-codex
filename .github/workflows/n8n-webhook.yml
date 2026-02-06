@@ -1,46 +1,46 @@
 name: Send n8n Webhook on PR Merge
 
 on:
-    pull_request:
-        types: [closed]
+  pull_request:
+    types: [closed]
 
 jobs:
-    notify-n8n:
-        if: github.event.pull_request.merged == true
-        runs-on: ubuntu-latest
-        steps:
-            - name: Send Webhook
-              env:
-                  WEBHOOK_URL: ${{ secrets.N8N_WEBHOOK_URL }}
-                  WEBHOOK_SECRET: ${{ secrets.N8N_WEBHOOK_SECRET }}
-                  PR_TITLE: ${{ github.event.pull_request.title }}
-                  PR_NUMBER: ${{ github.event.pull_request.number }}
-                  PR_URL: ${{ github.event.pull_request.html_url }}
-                  PR_AUTHOR: ${{ github.event.pull_request.user.login }}
-                  PR_BODY: ${{ github.event.pull_request.body }}
-                  MERGED_BY: ${{ github.event.pull_request.merged_by.login }}
-                  REPO_NAME: ${{ github.repository }}
-              run: |
-                  # Use jq to safely construct the JSON payload
-                  PAYLOAD=$(jq -n \
-                    --arg title "$PR_TITLE" \
-                    --arg number "$PR_NUMBER" \
-                    --arg url "$PR_URL" \
-                    --arg author "$PR_AUTHOR" \
-                    --arg body "$PR_BODY" \
-                    --arg merged_by "$MERGED_BY" \
-                    --arg repo "$REPO_NAME" \
-                    '{
-                      event: "pr_merged",
-                      title: $title,
-                      number: $number,
-                      url: $url,
-                      author: $author,
-                      body: $body,
-                      merged_by: $merged_by,
-                      repository: $repo,
-                      timestamp: (now | todate)
-                      }')
+  notify-n8n:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Webhook
+        env:
+          WEBHOOK_URL: ${{ secrets.N8N_WEBHOOK_URL }}
+          WEBHOOK_SECRET: ${{ secrets.N8N_WEBHOOK_SECRET }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          MERGED_BY: ${{ github.event.pull_request.merged_by.login }}
+          REPO_NAME: ${{ github.repository }}
+        run: |
+          # Use jq to safely construct the JSON payload
+          PAYLOAD=$(jq -n \
+            --arg title "$PR_TITLE" \
+            --arg number "$PR_NUMBER" \
+            --arg url "$PR_URL" \
+            --arg author "$PR_AUTHOR" \
+            --arg body "$PR_BODY" \
+            --arg merged_by "$MERGED_BY" \
+            --arg repo "$REPO_NAME" \
+            '{
+              event: "pr_merged",
+              title: $title,
+              number: $number,
+              url: $url,
+              author: $author,
+              body: $body,
+              merged_by: $merged_by,
+              repository: $repo,
+              timestamp: (now | todate)
+              }')
 
-                  # Send the webhook
-                  curl -X POST -H "Content-Type: application/json" -H "x-auth-github: $WEBHOOK_SECRET" -d "$PAYLOAD" "$WEBHOOK_URL"
+          # Send the webhook
+          curl -X POST -H "Content-Type: application/json" -H "x-auth-github: $WEBHOOK_SECRET" -d "$PAYLOAD" "$WEBHOOK_URL"
