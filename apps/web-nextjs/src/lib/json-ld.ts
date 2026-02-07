@@ -313,3 +313,23 @@ export const generateStatsJsonLd = (): WithContext<Dataset> => {
     ],
   };
 };
+
+export const generateMobileAppJsonLd = () => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    name: "Sudan Codex",
+    operatingSystem: "Android",
+    applicationCategory: "HealthApplication",
+    description:
+      "Access Sudan's most complete drug database offline. Search through brand names, generic names, and manufacturers tailored for healthcare providers.",
+    downloadUrl: "https://download.sudancodex.app/sudancodexv1.apk",
+    softwareVersion: "1.0.0",
+
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+  };
+};

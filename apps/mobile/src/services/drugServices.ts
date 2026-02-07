@@ -1,30 +1,30 @@
-import { OPENFDA_SEARCH_URL, type FetchedDrugInfo } from "@sudan-codex/types";
-import axios from "axios";
+// import { OPENFDA_SEARCH_URL, type FetchedDrugInfo } from "@sudan-codex/types";
+// import axios from "axios";
 
-import { getOpenFdaSearchUrl, parseQuery } from "@/lib/utils";
+// import { getOpenFdaSearchUrl, parseQuery } from "@/lib/utils";
 
-export const getDrugInfo = async (
-  genericName: string,
-  route: string,
-  refetch: boolean
-) => {
-  try {
-    const parsedGenericName = parseQuery(genericName);
+// export const getDrugInfo = async (
+//   genericName: string,
+//   route: string,
+//   refetch: boolean
+// ) => {
+//   try {
+//     const parsedGenericName = parseQuery(genericName);
 
-    const routeQuery = route ? `+AND+(openfda.route:"${route}")` : "";
+//     const routeQuery = route ? `+AND+(openfda.route:"${route}")` : "";
 
-    const url = refetch
-      ? encodeURI(
-          `${OPENFDA_SEARCH_URL}?search=(spl_product_data_elements:(*${parsedGenericName}*)${routeQuery})`
-        )
-      : getOpenFdaSearchUrl(parsedGenericName);
-    if (__DEV__) console.log("[getDrugInfo] url:", url);
-    const { data } = await axios.get<FetchedDrugInfo>(url);
+//     const url = refetch
+//       ? encodeURI(
+//           `${OPENFDA_SEARCH_URL}?search=(spl_product_data_elements:(*${parsedGenericName}*)${routeQuery})`
+//         )
+//       : getOpenFdaSearchUrl(parsedGenericName);
+//     if (__DEV__) console.log("[getDrugInfo] url:", url);
+//     const { data } = await axios.get<FetchedDrugInfo>(url);
 
-    return data.results?.[0];
-  } catch (error) {
-    console.log(error);
+//     return data.results?.[0];
+//   } catch (error) {
+//     console.log(error);
 
-    throw error;
-  }
-};
+//     throw error;
+//   }
+// };

@@ -1,4 +1,4 @@
-import type { AgentApiResponseType } from "@sudan-codex/db";
+import type { AgentApiResponseType } from "@sudan-codex/db/schema";
 import { useRouter } from "expo-router";
 import React from "react";
 import { TouchableHighlight, View } from "react-native";

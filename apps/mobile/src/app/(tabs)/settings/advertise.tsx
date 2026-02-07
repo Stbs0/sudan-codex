@@ -57,20 +57,14 @@ export default function AdvertiseScreen() {
                 <Text className='text-muted-foreground text-sm font-bold tracking-wider uppercase'>
                   Brand Advertisement
                 </Text>
-                <MedicalAd
-                  type='direct'
-                  directData={brandAd}
-                />
+                <MedicalAd directData={brandAd} />
               </View>
 
               <View className='gap-2'>
                 <Text className='text-muted-foreground text-sm font-bold tracking-wider uppercase'>
                   Pharmacy / Service Ad
                 </Text>
-                <MedicalAd
-                  type='direct'
-                  directData={pharmacyAd}
-                />
+                <MedicalAd directData={pharmacyAd} />
               </View>
             </View>
           </View>

@@ -1,4 +1,4 @@
-import type { Drug } from "@sudan-codex/db";
+import type { Drug } from "@sudan-codex/db/schema";
 import { useRouter, type Href } from "expo-router";
 import { Info } from "lucide-react-native";
 import { Pressable, View } from "react-native";

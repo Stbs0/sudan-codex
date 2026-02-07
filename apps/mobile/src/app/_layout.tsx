@@ -12,12 +12,10 @@ import {
 } from "@tanstack/react-query";
 import * as Network from "expo-network";
 import { SplashScreen, Stack, useNavigationContainerRef } from "expo-router";
-import * as SQLite from "expo-sqlite";
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import mobileAds, { AppOpenAd, TestIds } from "react-native-google-mobile-ads";
 import { KeyboardProvider } from "react-native-keyboard-controller";
 import { SafeAreaListener } from "react-native-safe-area-context";
 import { Toaster } from "sonner-native";
@@ -30,7 +28,6 @@ import { AuthProvider } from "@/providers/AuthProvider";
 import PHProvider from "@/providers/PHProvider";
 
 SplashScreen.preventAutoHideAsync();
-AppOpenAd.createForAdRequest(TestIds.APP_OPEN);
 
 const queryClient = new QueryClient();
 onlineManager.setEventListener((setOnline) => {
@@ -44,24 +41,24 @@ export { ErrorBoundary } from "expo-router";
 // export const unstable_settings = {
 //   initialRouteName: "(tabs)/drug-list/index",
 // };
-const DATABASE_NAME = "dev.db";
+// const DATABASE_NAME = "dev.db";
 
 export default function RootLayout() {
   return (
-    <SQLite.SQLiteProvider
-      databaseName={DATABASE_NAME}
-      options={{ enableChangeListener: true }}
-      assetSource={{
-        assetId: require("@/assets/data/dev.db"),
-      }}>
-      <PHProvider>
-        <QueryClientProvider client={queryClient}>
-          <AuthProvider>
-            <RootLayoutNav />
-          </AuthProvider>
-        </QueryClientProvider>
-      </PHProvider>
-    </SQLite.SQLiteProvider>
+    // <SQLite.SQLiteProvider
+    //   databaseName={DATABASE_NAME}
+    //   options={{ enableChangeListener: true }}
+    //   assetSource={{
+    //     assetId: require("@/assets/data/dev.db"),
+    //   }}>
+    <PHProvider>
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          <RootLayoutNav />
+        </AuthProvider>
+      </QueryClientProvider>
+    </PHProvider>
+    // </SQLite.SQLiteProvider>
   );
 }
 
@@ -81,14 +78,6 @@ function RootLayoutNav() {
 
     SplashScreen.hideAsync();
   }, [isPending]);
-
-  useEffect(() => {
-    mobileAds()
-      .initialize()
-      .then((_adapterStatuses) => {
-        // Initialization complete!
-      });
-  }, []);
 
   // console.log("isPending", isPending);
   // console.log("data", data);

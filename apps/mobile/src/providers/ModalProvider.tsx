@@ -1,11 +1,13 @@
-import type { Drug } from "@sudan-codex/db";
+import type { DrugListApiResponseType } from "@sudan-codex/db/schema";
 import React, { useState } from "react";
 
 import { ModalContext } from "@/hooks/useModal";
 
 const ModalProvider = ({ children }: { children: React.ReactNode }) => {
   const [open, setOpen] = useState(false);
-  const [modalData, setModalData] = useState<Drug | null>(null);
+  const [modalData, setModalData] = useState<
+    DrugListApiResponseType["data"][number] | null
+  >(null);
 
   return (
     <ModalContext value={{ modalData, setModalData, open, setOpen }}>

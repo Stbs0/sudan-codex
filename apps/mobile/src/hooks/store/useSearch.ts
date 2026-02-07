@@ -1,4 +1,4 @@
-import type { Drug } from "@sudan-codex/db";
+import type { Drug } from "@sudan-codex/db/schema";
 import { create } from "zustand";
 
 export type SearchDrugType = keyof Pick<

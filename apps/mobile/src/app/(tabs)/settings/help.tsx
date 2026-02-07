@@ -1,5 +1,5 @@
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-import type { Drug } from "@sudan-codex/db";
+import type { Drug } from "@sudan-codex/db/schema";
 import * as Linking from "expo-linking";
 import { usePostHog } from "posthog-react-native";
 import React from "react";

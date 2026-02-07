@@ -8,7 +8,6 @@ import { ActivityIndicator, useWindowDimensions, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { useUniwind } from "uniwind";
 
-import AdBanner from "@/components/ads/AdBanner";
 import {
   Accordion,
   AccordionContent,
@@ -161,7 +160,6 @@ const DrugInfo = () => {
           </Alert>
         )}
       </ScrollView>
-      <AdBanner />
     </>
   );
 };
@@ -219,19 +217,20 @@ const DrugAccordionGroup = ({
 }: {
   generic_name: string;
   slug: string;
-  id: string;
+  id: string | null;
 }) => {
   const { t } = useTranslation();
   const { theme } = useUniwind();
   const width = useWindowDimensions().width;
   const { data } = useSuspenseQuery({
     queryKey: ["drug-info", slug],
-    queryFn: () =>
-      api(`/api/v1/drugs/:slug/:id/info`, { params: { slug, id } }),
+    queryFn: () => {
+      if (!id) return null;
+      return api(`/api/v1/drugs/:slug/:id/info`, { params: { slug, id } });
+    },
   });
-  if (!data) return null;
-  if (data.error) {
-    console.error(data.error);
+
+  if (!data || data.error) {
     return (
       <Alert icon={FileX}>
         <AlertTitle className='font-semibold'>

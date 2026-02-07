@@ -1,4 +1,4 @@
-import type { AgentApiResponseType } from "@sudan-codex/db";
+import type { AgentApiResponseType } from "@sudan-codex/db/schema";
 import {
   createColumnHelper,
   getCoreRowModel,
@@ -10,7 +10,6 @@ import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator, ScrollView, View } from "react-native";
 
-import AdBanner from "@/components/ads/AdBanner";
 import {
   StatsSummaryCard,
   TableBody,
@@ -167,7 +166,6 @@ export default function AgentScreen() {
             slug={data.agent.slug}
           />
         </View>
-        <AdBanner />
 
         {/* Table */}
         <View className='px-4 py-4'>
@@ -206,7 +204,6 @@ export default function AgentScreen() {
           </Card>
         </View>
       </ScrollView>
-      <AdBanner />
     </>
   );
 }

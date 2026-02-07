@@ -1,4 +1,5 @@
 import { Github, Linkedin, Twitter } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -26,6 +27,13 @@ const Footer = () => {
             className='hover:text-primary underline-offset-4 hover:underline'>
             Privacy Policy
           </Link>
+          <a
+            href='https://download.sudancodex.app/sudancodexv1.apk'
+            download='sudancodex.apk'
+            title='Download Sudan Codex Android App (APK)'
+            className='hover:text-primary underline-offset-4 hover:underline'>
+            Download App
+          </a>
           <Button
             data-analytics='footer-feedback'
             asChild
@@ -38,10 +46,12 @@ const Footer = () => {
               target='_blank'
               rel='noopener noreferrer'
               href={url}>
-              <img
+              <Image
                 className='size-6'
                 src='/icons/whats-app-icon.svg'
                 alt='Chat on WhatsApp'
+                width={24}
+                height={24}
               />
               Feedback or a Problem
             </a>
