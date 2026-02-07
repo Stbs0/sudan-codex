@@ -325,11 +325,7 @@ export const generateMobileAppJsonLd = () => {
       "Access Sudan's most complete drug database offline. Search through brand names, generic names, and manufacturers tailored for healthcare providers.",
     downloadUrl: "https://download.sudancodex.app/sudancodexv1.apk",
     softwareVersion: "1.0.0",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      ratingCount: "120",
-    },
+
     offers: {
       "@type": "Offer",
       price: "0",
