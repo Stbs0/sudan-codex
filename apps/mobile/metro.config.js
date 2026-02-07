@@ -1,10 +1,9 @@
 const { withUniwindConfig } = require("uniwind/metro");
-const { getSentryExpoConfig } = require("@sentry/react-native/metro");
+const { getDefaultConfig } = require("expo/metro-config");
 
 /** @type {import('expo/metro-config').MetroConfig} */
-const config = getSentryExpoConfig(__dirname);
-config.resolver.sourceExts.push("sql");
-config.resolver.assetExts.push("db");
+const config = getDefaultConfig(__dirname);
+
 config.resolver.unstable_enablePackageExports = true;
 
 module.exports = withUniwindConfig(config, {

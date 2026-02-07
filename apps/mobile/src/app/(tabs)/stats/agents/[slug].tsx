@@ -1,4 +1,4 @@
-import type { AgentApiResponseType } from "@sudan-codex/db";
+import type { AgentApiResponseType } from "@sudan-codex/db/schema";
 import {
   createColumnHelper,
   getCoreRowModel,

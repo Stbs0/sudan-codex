@@ -28,10 +28,6 @@
       "softwareKeyboardLayoutMode": "resize",
       "package": "com.sudancodex.mobile"
     },
-    "web": {
-      "bundler": "metro",
-      "favicon": ""
-    },
     "plugins": [
       "./plugins/withNewHermsPath.ts",
       "expo-router",
@@ -45,7 +41,6 @@
           }
         }
       ],
-      "expo-sqlite",
 
       [
         "expo-build-properties",

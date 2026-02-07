@@ -1,6 +1,6 @@
 import { LegendList, type LegendListRef } from "@legendapp/list";
-import type { Drug } from "@sudan-codex/db";
-import React, { useCallback, useMemo, useRef } from "react";
+import type { DrugListApiResponseType } from "@sudan-codex/db/schema";
+import React, { useCallback, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator, View } from "react-native";
 
@@ -13,7 +13,7 @@ import DrugCard from "@/screens/Drug-list/DrugCard/DrugCard";
 import CardModal from "./CardModal";
 import SearchInput from "./SearchInput";
 
-type ListItem = Drug | { id: string; isAd: true };
+type ListItem = DrugListApiResponseType["data"][number];
 
 const DrugList = () => {
   const { t } = useTranslation();
@@ -33,7 +33,7 @@ const DrugList = () => {
   const drugList = data?.pages.flatMap((p) => p.data) ?? [];
 
   const renderItem = useCallback(({ item }: { item: ListItem }) => {
-    return <DrugCard {...(item as Drug)} />;
+    return <DrugCard {...item} />;
   }, []);
 
   if (error)
@@ -47,7 +47,6 @@ const DrugList = () => {
         </Button>
       </View>
     );
-  console.log(error);
   if (isLoading)
     return (
       <ActivityIndicator
@@ -66,7 +65,7 @@ const DrugList = () => {
         renderItem={renderItem}
         style={{ paddingVertical: 16 }}
         keyExtractor={(item) => {
-          return (item as Drug).id.toString();
+          return item.id.toString();
         }}
         ItemSeparatorComponent={() => <View style={{ height: 16 }} />}
         ListFooterComponent={() => {

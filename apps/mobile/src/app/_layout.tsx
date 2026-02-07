@@ -12,7 +12,6 @@ import {
 } from "@tanstack/react-query";
 import * as Network from "expo-network";
 import { SplashScreen, Stack, useNavigationContainerRef } from "expo-router";
-import * as SQLite from "expo-sqlite";
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -42,24 +41,24 @@ export { ErrorBoundary } from "expo-router";
 // export const unstable_settings = {
 //   initialRouteName: "(tabs)/drug-list/index",
 // };
-const DATABASE_NAME = "dev.db";
+// const DATABASE_NAME = "dev.db";
 
 export default function RootLayout() {
   return (
-    <SQLite.SQLiteProvider
-      databaseName={DATABASE_NAME}
-      options={{ enableChangeListener: true }}
-      assetSource={{
-        assetId: require("@/assets/data/dev.db"),
-      }}>
-      <PHProvider>
-        <QueryClientProvider client={queryClient}>
-          <AuthProvider>
-            <RootLayoutNav />
-          </AuthProvider>
-        </QueryClientProvider>
-      </PHProvider>
-    </SQLite.SQLiteProvider>
+    // <SQLite.SQLiteProvider
+    //   databaseName={DATABASE_NAME}
+    //   options={{ enableChangeListener: true }}
+    //   assetSource={{
+    //     assetId: require("@/assets/data/dev.db"),
+    //   }}>
+    <PHProvider>
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          <RootLayoutNav />
+        </AuthProvider>
+      </QueryClientProvider>
+    </PHProvider>
+    // </SQLite.SQLiteProvider>
   );
 }
 

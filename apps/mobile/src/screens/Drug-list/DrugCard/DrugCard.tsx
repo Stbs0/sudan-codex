@@ -1,4 +1,4 @@
-import type { Drug } from "@sudan-codex/db";
+import type { DrugListApiResponseType } from "@sudan-codex/db/schema";
 import * as Haptics from "expo-haptics";
 import { useRouter } from "expo-router";
 import React from "react";
@@ -7,7 +7,7 @@ import { TouchableHighlight, View } from "react-native";
 import { Card, CardContent } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
 import { useModal } from "@/hooks/useModal";
-type Props = Drug;
+type Props = DrugListApiResponseType["data"][number];
 // FIXME: fix types here
 const DrugCard = ({
   brand_name,
@@ -20,13 +20,9 @@ const DrugCard = ({
   dosage_form,
   pack_size,
   strength,
-  company_id,
-  agent_id,
-  generic_id,
-  country_id,
-  createdAt,
-  updatedAt,
-  drug_info_id,
+  agent,
+  company,
+  generic,
 }: Props) => {
   // TODO: fix the rerender
   const { setOpen, setModalData } = useModal();
@@ -54,13 +50,9 @@ const DrugCard = ({
       dosage_form,
       pack_size,
       strength,
-      company_id,
-      agent_id,
-      generic_id,
-      country_id,
-      drug_info_id,
-      createdAt,
-      updatedAt,
+      agent,
+      company,
+      generic,
     });
   };
   return (

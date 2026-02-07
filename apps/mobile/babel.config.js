@@ -2,6 +2,6 @@ module.exports = function (api) {
   api.cache(true);
   return {
     presets: ["babel-preset-expo"],
-    plugins: [["inline-import", { extensions: [".sql"] }]], // Enable importing SQL migration files
+    // plugins: [["inline-import", { extensions: [".sql"] }]],  Enable importing SQL migration files
   };
 };
