@@ -1,4 +1,5 @@
 import { ArrowRight, Download, Smartphone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -46,52 +47,57 @@ export function CTASection() {
                   href='/drug-list'
                   title='Explore our drug directory'
                   aria-label='Explore our drug directory'>
-                  <Download className='mr-2 h-6 w-6' />
                   Explore Directory
                 </Link>
               </Button>
             </div>
           </div>
 
-          <div className='relative hidden justify-center lg:flex lg:w-1/2'>
-            {/* Mockup */}
-            <div className='relative h-[600px] w-[300px] rotate-3 transform overflow-hidden rounded-[3rem] border-8 border-slate-800 bg-slate-900 shadow-2xl transition-transform duration-500 hover:rotate-0'>
-              <div className='absolute top-0 flex h-8 w-full items-end justify-center bg-slate-800 pb-1'>
-                <div className='h-4 w-20 rounded-full bg-slate-900' />
-              </div>
-              <div className='p-6 pt-12'>
-                <div className='flex items-center justify-between'>
-                  <div className='bg-primary/20 h-5 w-24 rounded-full' />
-                  <div className='bg-primary/20 h-5 w-5 rounded-full' />
+          <div className='relative flex flex-1 items-center justify-center lg:w-1/2'>
+            {/* Responsive App Showcase - Non-stacked */}
+            <div className='flex items-center justify-center gap-4 lg:gap-8'>
+              {/* Secondary Screen 1 - Hidden on small mobile */}
+              <div className='hidden xl:block'>
+                <div className='relative w-[220px] overflow-hidden rounded-4xl border-4 border-slate-800 bg-slate-900 shadow-xl transition-transform duration-500 hover:-translate-y-2'>
+                  <Image
+                    src='/pic/02.png'
+                    alt='Sudan Codex App Interface - Categories'
+                    width={220}
+                    height={440}
+                    className='h-auto w-full object-cover'
+                  />
                 </div>
-                <div className='mt-8 space-y-4'>
-                  <div className='bg-primary/10 border-primary/5 flex h-10 w-full items-center rounded-xl border px-3'>
-                    <div className='bg-primary/20 h-3 w-32 rounded-full' />
-                  </div>
-                  <div className='bg-card border-border h-64 w-full rounded-2xl border p-4 shadow-sm'>
-                    <div className='mb-4 flex items-center gap-3'>
-                      <div className='bg-primary/10 h-10 w-10 rounded-lg' />
-                      <div className='space-y-2'>
-                        <div className='bg-primary/20 h-3 w-20 rounded-full' />
-                        <div className='bg-primary/10 h-2 w-12 rounded-full' />
-                      </div>
-                    </div>
-                    <div className='mb-6 space-y-2'>
-                      <div className='bg-muted h-2 w-full rounded-full' />
-                      <div className='bg-muted h-2 w-full rounded-full' />
-                      <div className='bg-muted h-2 w-2/3 rounded-full' />
-                    </div>
-                    <div className='grid grid-cols-2 gap-2'>
-                      <div className='bg-primary/10 h-14 rounded-xl' />
-                      <div className='bg-primary/10 h-14 rounded-xl' />
-                    </div>
-                  </div>
-                  <div className='bg-primary/5 border-primary/5 h-20 w-full rounded-xl border' />
+              </div>
+
+              {/* Main Focus Screen - Always visible and largest */}
+              <div className='relative z-20'>
+                <div className='w-[240px] overflow-hidden rounded-[2.5rem] border-4 border-slate-900 bg-slate-900 shadow-2xl transition-all duration-500 hover:scale-[1.02] sm:w-[280px] md:w-xs md:border-8'>
+                  <Image
+                    src='/pic/01.png'
+                    alt='Sudan Codex App Interface - Home'
+                    width={320}
+                    height={640}
+                    className='h-auto w-full object-cover'
+                    priority
+                  />
+                  {/* Subtle Glow behind main phone */}
+                  <div className='bg-primary/20 pointer-events-none absolute inset-0 -z-10 blur-3xl' />
+                </div>
+              </div>
+
+              {/* Secondary Screen 2 - Visible on larger mobile/tablet */}
+              <div className='hidden md:block'>
+                <div className='relative w-[220px] overflow-hidden rounded-4xl border-4 border-slate-800 bg-slate-900 shadow-xl transition-transform duration-500 hover:-translate-y-2 lg:w-[240px] xl:w-[260px]'>
+                  <Image
+                    src='/pic/03.png'
+                    alt='Sudan Codex App Interface - Search Result'
+                    width={260}
+                    height={520}
+                    className='h-auto w-full object-cover'
+                  />
                 </div>
               </div>
             </div>
-            {/* Second phone mockup */}
-            <div className='absolute -right-4 -bottom-10 -z-10 hidden h-[560px] w-[280px] -rotate-6 transform rounded-[3rem] border-8 border-slate-700 bg-slate-800 shadow-2xl xl:block' />
           </div>
         </div>
       </div>
