@@ -23,9 +23,9 @@ export async function GET(
 
     return Response.json(newViewCount[0]);
   } catch (error) {
-    console.error(`Error fetching agent details for slug "${slug}":`, error);
+    console.error(`Error updating view count for drug slug "${slug}":`, error);
     return Response.json(
-      { error: "Failed to fetch agent details" },
+      { error: "Failed to update view count" },
       { status: 500 }
     );
   }

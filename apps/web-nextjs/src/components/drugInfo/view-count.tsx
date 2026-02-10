@@ -1,6 +1,7 @@
 import "server-only";
 
 import { Suspense, use } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 
 import type { GetDrugBySlugReturnType } from "@/services/server/getDrugs";
 
@@ -28,13 +29,15 @@ const ViewCount = async ({
       <p className='text-muted-foreground text-sm'>
         Last updated: {updatedAt?.toISOString().split("T")[0]}
       </p>
-      <Suspense fallback={<Skeleton className='h-4 w-24' />}>
-        <Count
-          id={id}
-          entity={entity}
-          slug={slug}
-        />
-      </Suspense>
+      <ErrorBoundary fallback={<p>Error loading view count</p>}>
+        <Suspense fallback={<Skeleton className='h-4 w-24' />}>
+          <Count
+            id={id}
+            entity={entity}
+            slug={slug}
+          />
+        </Suspense>
+      </ErrorBoundary>
     </div>
   );
 };
