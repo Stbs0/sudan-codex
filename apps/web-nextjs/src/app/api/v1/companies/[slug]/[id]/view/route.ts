@@ -1,5 +1,4 @@
-import { companyStatsTable, db } from "@sudan-codex/db";
-import { eq, sql } from "drizzle-orm";
+import { updateViewCount } from "@sudan-codex/db";
 import { NextRequest } from "next/server";
 
 export async function GET(
@@ -15,17 +14,15 @@ export async function GET(
   }
 
   try {
-    const newViewCount = await db
-      .update(companyStatsTable)
-      .set({ view_count: sql`${companyStatsTable.view_count} + 1` })
-      .where(eq(companyStatsTable.company_id, Number(id)))
-      .returning({ view_count: companyStatsTable.view_count });
-
-    return Response.json(newViewCount[0]);
+    const result = await updateViewCount("companies", Number(id));
+    return Response.json(result);
   } catch (error) {
-    console.error(`Error fetching company details for slug "${slug}":`, error);
+    console.error(
+      `Error updating view count for company slug "${slug}":`,
+      error
+    );
     return Response.json(
-      { error: "Failed to fetch company details" },
+      { error: "Failed to update view count" },
       { status: 500 }
     );
   }

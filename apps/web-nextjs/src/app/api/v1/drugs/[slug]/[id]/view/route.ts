@@ -1,5 +1,4 @@
-import { db, drugStatsTable } from "@sudan-codex/db";
-import { eq, sql } from "drizzle-orm";
+import { updateViewCount } from "@sudan-codex/db";
 import { NextRequest } from "next/server";
 
 export async function GET(
@@ -15,17 +14,12 @@ export async function GET(
   }
 
   try {
-    const newViewCount = await db
-      .update(drugStatsTable)
-      .set({ view_count: sql`${drugStatsTable.view_count} + 1` })
-      .where(eq(drugStatsTable.drug_id, Number(id)))
-      .returning({ view_count: drugStatsTable.view_count });
-
-    return Response.json(newViewCount[0]);
+    const result = await updateViewCount("drugs", Number(id));
+    return Response.json(result);
   } catch (error) {
-    console.error(`Error fetching agent details for slug "${slug}":`, error);
+    console.error(`Error updating view count for drug slug "${slug}":`, error);
     return Response.json(
-      { error: "Failed to fetch agent details" },
+      { error: "Failed to update view count" },
       { status: 500 }
     );
   }

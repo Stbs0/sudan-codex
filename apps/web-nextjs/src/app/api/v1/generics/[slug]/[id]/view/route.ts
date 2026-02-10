@@ -1,5 +1,4 @@
-import { db, genericStatsTable } from "@sudan-codex/db";
-import { eq, sql } from "drizzle-orm";
+import { updateViewCount } from "@sudan-codex/db";
 import { NextRequest } from "next/server";
 
 export async function GET(
@@ -15,17 +14,15 @@ export async function GET(
   }
 
   try {
-    const newViewCount = await db
-      .update(genericStatsTable)
-      .set({ view_count: sql`${genericStatsTable.view_count} + 1` })
-      .where(eq(genericStatsTable.generic_id, Number(id)))
-      .returning({ view_count: genericStatsTable.view_count });
-
-    return Response.json(newViewCount[0]);
+    const result = await updateViewCount("generics", Number(id));
+    return Response.json(result);
   } catch (error) {
-    console.error(`Error fetching generic details for slug "${slug}":`, error);
+    console.error(
+      `Error updating view count for generic slug "${slug}":`,
+      error
+    );
     return Response.json(
-      { error: "Failed to fetch generic details" },
+      { error: "Failed to update view count" },
       { status: 500 }
     );
   }
