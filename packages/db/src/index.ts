@@ -3,6 +3,7 @@ export * from "./queries/agent";
 export * from "./queries/company";
 export * from "./queries/generic";
 export * from "./queries/landingPage";
+export * from "./queries/view-count";
 export * from "./schemas/agentsSchema";
 export * from "./schemas/auth-schema";
 export * from "./schemas/companySchema";
