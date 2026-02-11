@@ -22,6 +22,10 @@ const ViewCount = async ({
   updatedAt,
   entity,
 }: ViewCountProps) => {
+  const newView = await updateViewCount(entity, id).catch((error) => {
+    console.error(error);
+    return { view_count: 0 };
+  });
   return (
     <div className='flex items-center gap-2'>
       <p className='text-muted-foreground text-sm'>
@@ -30,24 +34,20 @@ const ViewCount = async ({
       <p className='text-muted-foreground text-sm'>
         Last updated: {updatedAt?.toISOString().split("T")[0]}
       </p>
-      <ErrorBoundary fallback={<p>Error loading view count</p>}>
-        <Suspense fallback={<Skeleton className='h-4 w-24' />}>
-          <Count
-            id={id}
-            entity={entity}
-          />
-        </Suspense>
-      </ErrorBoundary>
+
+      <Count newView={newView} />
     </div>
   );
 };
 
-const Count = ({ id, entity }: Pick<ViewCountProps, "id" | "entity">) => {
-  const newView = use(updateViewCount(entity, id));
-
+const Count = async ({
+  newView,
+}: {
+  newView: { view_count: number | null };
+}) => {
   return (
     <p className='text-muted-foreground text-sm'>
-      View count: {newView?.view_count ?? 0}
+      View count: {newView.view_count ?? 0}
     </p>
   );
 };

@@ -9,6 +9,9 @@ import { genericStatsTable } from "../schemas/genericSchema";
 export type EntityType = "agents" | "generics" | "companies" | "drugs";
 
 export async function updateViewCount(entity: EntityType, id: number) {
+  if (!Number.isFinite(id)) {
+    throw new Error(`Invalid id: ${id}`);
+  }
   const tables = {
     agents: { table: agentStatsTable, column: agentStatsTable.agent_id },
     generics: {
@@ -33,5 +36,8 @@ export async function updateViewCount(entity: EntityType, id: number) {
     .where(eq(column, id))
     .returning({ view_count: table.view_count });
 
-  return result[0] || { view_count: 0 };
+  if (!result[0]) {
+    throw new Error(`No stats row found for ${entity} with id ${id}`);
+  }
+  return result[0];
 }
