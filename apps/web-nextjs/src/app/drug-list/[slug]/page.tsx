@@ -60,12 +60,24 @@ export async function generateMetadata({
     openGraph: {
       title: `${brand_name} – Drug Details`,
       description: `${brand_name} (${generic_name}) complete information including company, agent, and origin.`,
+      url: `/drug-list/${slug}`,
+      siteName: "Sudan Codex",
+      images: [
+        {
+          url: "/opengraph-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: `${brand_name} – Drug Details`,
+        },
+      ],
+      locale: "en_US",
       type: "article",
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: `${brand_name} – Drug Details`,
       description: `${brand_name} (${generic_name}) full drug information.`,
+      images: ["/opengraph-image.jpg"],
     },
   };
 }

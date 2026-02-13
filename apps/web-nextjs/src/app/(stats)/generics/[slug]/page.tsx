@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `Statistics for Generic: ${generic.name}`,
       description: `Detailed statistics for generic name ${generic.name}, including associated companies and brand names.`,
-      url: `https://www.sudan-codex.com/generics/${slug}`,
+      url: `/generics/${slug}`,
       siteName: "Sudan Codex",
       images: [
         {
