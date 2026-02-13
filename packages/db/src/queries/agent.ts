@@ -5,6 +5,19 @@ import { db } from "../db";
 import { agentsTable } from "../schemas/agentsSchema";
 import { drugsTable } from "../schemas/drugsSchema";
 
+export const getAllAgentsData = cache(
+  async () =>
+    await db
+      .select({
+        id: agentsTable.id,
+        name: agentsTable.name,
+        slug: agentsTable.slug,
+      })
+      .from(agentsTable)
+      .orderBy(agentsTable.name)
+      .limit(2000)
+);
+
 export const getAllAgents = cache(
   async () => await db.select({ slug: agentsTable.slug }).from(agentsTable)
 );

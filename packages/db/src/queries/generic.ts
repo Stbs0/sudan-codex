@@ -18,6 +18,19 @@ export const getGenericBySlugWithStats = cache(
     })
 );
 
+export const getAllGenericsData = cache(
+  async () =>
+    await db
+      .select({
+        id: genericsTable.id,
+        name: genericsTable.name,
+        slug: genericsTable.slug,
+      })
+      .from(genericsTable)
+      .orderBy(genericsTable.name)
+      .limit(2000)
+);
+
 export const getAllGenericSlugs = cache(
   async () =>
     await db

@@ -277,6 +277,13 @@ export default async function StatsPage() {
               </TableBody>
             </Table>
           </CardContent>
+          <div className='flex justify-end p-4 pt-0'>
+            <Link
+              href='/companies'
+              className='text-sm font-medium text-blue-600 hover:underline'>
+              View all companies →
+            </Link>
+          </div>
         </Card>
 
         <Card>
@@ -314,6 +321,13 @@ export default async function StatsPage() {
               </TableBody>
             </Table>
           </CardContent>
+          <div className='flex justify-end p-4 pt-0'>
+            <Link
+              href='/agents'
+              className='text-sm font-medium text-blue-600 hover:underline'>
+              View all agents →
+            </Link>
+          </div>
         </Card>
 
         <Card>
@@ -353,6 +367,13 @@ export default async function StatsPage() {
               </TableBody>
             </Table>
           </CardContent>
+          <div className='flex justify-end p-4 pt-0'>
+            <Link
+              href='/generics'
+              className='text-sm font-medium text-blue-600 hover:underline'>
+              View all generics →
+            </Link>
+          </div>
         </Card>
         <Card>
           <CardHeader>

@@ -72,6 +72,21 @@ const Footer = () => {
             className='hover:text-primary underline-offset-4 hover:underline'>
             Statistics
           </Link>
+          <Link
+            href='/agents'
+            className='hover:text-primary underline-offset-4 hover:underline'>
+            Agents
+          </Link>
+          <Link
+            href='/companies'
+            className='hover:text-primary underline-offset-4 hover:underline'>
+            Companies
+          </Link>
+          <Link
+            href='/generics'
+            className='hover:text-primary underline-offset-4 hover:underline'>
+            Generics
+          </Link>
         </nav>
 
         {/* Right Side: Social Icons */}

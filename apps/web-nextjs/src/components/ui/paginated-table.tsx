@@ -1,6 +1,5 @@
 "use client";
 
-import { Drug } from "@sudan-codex/db";
 import { Route } from "next";
 import Link from "next/link";
 import { useState } from "react";
@@ -31,22 +30,21 @@ interface PaginatedTableProps<T> {
   paginate?: boolean;
 }
 
-const ITEMS_PER_PAGE = 10;
-
-export function PaginatedTable<T extends Drug>({
+export function PaginatedTable<T extends Record<string, any>>({
   items,
   columns,
   keyAccessor,
   paginate = true,
-}: PaginatedTableProps<T>) {
+  itemsPerPage = 10,
+}: PaginatedTableProps<T> & { itemsPerPage?: number }) {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(items.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(items.length / itemsPerPage);
   const currentItems =
-    paginate && items.length > ITEMS_PER_PAGE
+    paginate && items.length > itemsPerPage
       ? items.slice(
-          (currentPage - 1) * ITEMS_PER_PAGE,
-          currentPage * ITEMS_PER_PAGE
+          (currentPage - 1) * itemsPerPage,
+          currentPage * itemsPerPage
         )
       : items;
 
@@ -86,7 +84,7 @@ export function PaginatedTable<T extends Drug>({
           </TableBody>
         </Table>
       </div>
-      {paginate && items.length > ITEMS_PER_PAGE && (
+      {paginate && items.length > itemsPerPage && (
         <div className='flex items-center justify-end space-x-2 py-4'>
           <Button
             variant='outline'
