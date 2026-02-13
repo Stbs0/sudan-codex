@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "Sudan Drug Index Statistics",
     description:
       "Comprehensive statistics on the Sudan Drug Index, including top companies, agents, and generics.",
-    url: "https://www.sudan-codex.com/stats",
+    url: "/stats",
     siteName: "Sudan Codex",
     images: [
       {

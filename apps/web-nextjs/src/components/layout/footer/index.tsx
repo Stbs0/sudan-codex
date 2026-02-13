@@ -16,7 +16,7 @@ const Footer = () => {
 
   return (
     <footer className='bg-background border-t'>
-      <div className='container mx-auto flex flex-col items-center justify-between gap-6 px-4 py-2 sm:flex-row'>
+      <div className='container mx-auto flex flex-col items-center justify-between gap-6 px-4 py-4 sm:flex-row sm:flex-wrap'>
         {/* Left Side: Links */}
         <div className='text-muted-foreground flex flex-col items-center gap-4 text-sm sm:flex-row'>
           <p>
@@ -57,6 +57,22 @@ const Footer = () => {
             </a>
           </Button>
         </div>
+
+        {/* Quick Links for SEO */}
+        <nav
+          aria-label='Quick Links'
+          className='text-muted-foreground flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm'>
+          <Link
+            href='/drug-list'
+            className='hover:text-primary underline-offset-4 hover:underline'>
+            Drug List
+          </Link>
+          <Link
+            href='/stats'
+            className='hover:text-primary underline-offset-4 hover:underline'>
+            Statistics
+          </Link>
+        </nav>
 
         {/* Right Side: Social Icons */}
         <div className='flex items-center gap-4'>

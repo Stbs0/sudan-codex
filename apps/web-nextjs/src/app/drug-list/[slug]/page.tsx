@@ -8,6 +8,7 @@ import BackBtn from "@/components/drugInfo/back-btn";
 import { DrugDescriptions } from "@/components/drugInfo/drug-descriptions";
 import DrugInfoContent from "@/components/drugInfo/drug-info-content";
 import DrugContentErrorFallback from "@/components/drugInfo/error-boundary";
+import { RelatedDrugs } from "@/components/drugInfo/related-drugs";
 import SearchDrugInfo from "@/components/drugInfo/SearchDrugInfo";
 import ViewCount from "@/components/drugInfo/view-count";
 import { Card, CardContent } from "@/components/ui/card";
@@ -151,6 +152,14 @@ export default async function DrugInfoPage({
           </ErrorBoundary>
         </CardContent>
       </Card>
+
+      <Suspense fallback={<Skeleton className='mt-6 h-48 w-full' />}>
+        <RelatedDrugs
+          genericSlug={drug.generic?.slug}
+          currentDrugId={drug.id}
+          genericName={drug.generic_name ?? undefined}
+        />
+      </Suspense>
     </div>
   );
 }
