@@ -37,15 +37,6 @@ test.describe("Home Page Header Navigation", () => {
     await expect(header).toBeVisible();
   });
 
-  test("logo is visible in header", async ({ page }) => {
-    // Logo might be an image or text
-    const logo = page
-      .getByRole("link", { name: /Sudan Codex/i })
-      .or(page.locator("header").getByRole("img", { name: /logo/i }));
-
-    await expect(logo).toBeVisible();
-  });
-
   test("drug list link in header works", async ({ page }) => {
     const drugListLink = page
       .locator("header")

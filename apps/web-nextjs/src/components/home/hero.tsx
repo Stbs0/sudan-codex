@@ -1,4 +1,5 @@
 import { Pill } from "lucide-react";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -30,6 +31,13 @@ export function Hero() {
           Access comprehensive drug information, manufacturers, and distributors
           in Sudan at your fingertips.
         </p>
+
+        <Link
+          href='/drug-list'
+          className='bg-primary hover:bg-primary/90 animate-in fade-in slide-in-from-bottom-16 inline-flex items-center gap-2 rounded-full px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all delay-500 duration-1000 hover:shadow-xl'>
+          Browse Drug List
+          <Pill className='size-5' />
+        </Link>
         {/* TODO: add search implementation */}
         {/* <div className='animate-in fade-in slide-in-from-bottom-16 mx-auto mb-8 w-full max-w-2xl delay-500 duration-1000'>
           <div className='group relative rounded-[2.5rem] border border-white/20 bg-white/10 p-2 shadow-2xl backdrop-blur-md transition-all hover:bg-white/15'>

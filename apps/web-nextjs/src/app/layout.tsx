@@ -44,7 +44,6 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-
   openGraph: {
     title: "Sudan Codex | Search Through Sudan Drug Index",
     description:

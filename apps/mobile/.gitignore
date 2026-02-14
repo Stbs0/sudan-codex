@@ -54,3 +54,8 @@ coverage
 .env.local
 
 rnsec*
+
+# Database files
+*.db
+*-wal
+*-shm
