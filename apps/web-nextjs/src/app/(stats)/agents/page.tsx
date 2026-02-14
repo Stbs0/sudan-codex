@@ -17,7 +17,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-export const revalidate = false;
+export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "All Pharmaceutical Agents | Sudan Codex",
