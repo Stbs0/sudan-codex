@@ -1,4 +1,5 @@
 import {
+  db,
   getAllDrugsRelatedToCompanyWithGenericAndAgents,
   getCompanyBySlug,
   getCompanyBySlugWithStats,
@@ -21,6 +22,16 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 export const revalidate = false;
+
+export async function generateStaticParams() {
+  const companies = await db.query.companiesTable.findMany({
+    columns: { slug: true },
+  });
+
+  return companies.map((comp) => ({
+    slug: comp.slug,
+  }));
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;

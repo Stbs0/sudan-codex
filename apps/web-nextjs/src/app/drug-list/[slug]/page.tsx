@@ -19,6 +19,16 @@ import { getDrugBySlug } from "@/services/server/getDrugs";
 
 export const revalidate = false;
 
+export async function generateStaticParams() {
+  const drugs = await db.query.drugsTable.findMany({
+    columns: { slug: true },
+  });
+
+  return drugs.map((drug) => ({
+    slug: drug.slug,
+  }));
+}
+
 export async function generateMetadata({
   params,
 }: {
