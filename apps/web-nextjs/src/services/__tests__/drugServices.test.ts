@@ -57,15 +57,14 @@ describe("getDrugInfo", () => {
   });
 
   describe("error handling", () => {
-    it("throws error when fetch fails", async () => {
+    it("it should return null", async () => {
       global.fetch = vi.fn().mockResolvedValue({
         ok: false,
         status: 500,
       });
 
-      await expect(getDrugInfo("aspirin", "", false)).rejects.toThrow(
-        "Failed to fetch drug info"
-      );
+      const result = await getDrugInfo("aspirin", "", false);
+      expect(result).toBeNull();
     });
   });
 
