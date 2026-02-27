@@ -1,5 +1,4 @@
 import {
-  db,
   getAllDrugsRelatedToGenericWithAgentsAndCompanies,
   getGenericBySlugWithStats,
 } from "@sudan-codex/db";
@@ -18,13 +17,9 @@ import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import { generateGenericJsonLd } from "@/lib/json-ld";
 
 export async function generateStaticParams() {
-  const generics = await db.query.genericsTable.findMany({
-    columns: { slug: true },
-  });
-
-  return generics.map((gen) => ({
-    slug: gen.slug,
-  }));
+  const { default: slugs } =
+    await import("../../../../data/generic-slugs.json");
+  return (slugs as string[]).map((slug) => ({ slug }));
 }
 
 type Props = {

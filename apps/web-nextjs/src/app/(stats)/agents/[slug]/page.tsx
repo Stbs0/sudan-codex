@@ -1,5 +1,4 @@
 import {
-  db,
   getAgentBySlug,
   getAgentBySlugWithStats,
   getAllDrugsRelatedToAgentWithGenericAndCompanies,
@@ -19,13 +18,8 @@ import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import { generateAgentJsonLd } from "@/lib/json-ld";
 
 export async function generateStaticParams() {
-  const agents = await db.query.agentsTable.findMany({
-    columns: { slug: true },
-  });
-
-  return agents.map((agent) => ({
-    slug: agent.slug,
-  }));
+  const { default: slugs } = await import("../../../../data/agent-slugs.json");
+  return (slugs as string[]).map((slug) => ({ slug }));
 }
 
 type Props = {

@@ -18,13 +18,8 @@ import { generateDrugJsonLd } from "@/lib/json-ld";
 import { getDrugBySlug } from "@/services/server/getDrugs";
 
 export async function generateStaticParams() {
-  const drugs = await db.query.drugsTable.findMany({
-    columns: { slug: true },
-  });
-
-  return drugs.map((drug) => ({
-    slug: drug.slug,
-  }));
+  const { default: slugs } = await import("../../../data/drug-slugs.json");
+  return (slugs as string[]).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
