@@ -17,7 +17,7 @@ export const getDrugInfo = async (
     : getOpenFdaSearchUrl(parsedGenericName);
   const res = await fetch(url);
   if (!res.ok) {
-    throw new Error("Failed to fetch drug info");
+    return null;
   }
   const data = (await res.json()) as FetchedDrugInfo;
   return data.results?.[0] || null;
