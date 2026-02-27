@@ -17,7 +17,6 @@ import {
 } from "@/components/ui/card";
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import { generateAgentJsonLd } from "@/lib/json-ld";
-export const revalidate = false;
 
 export async function generateStaticParams() {
   const agents = await db.query.agentsTable.findMany({

@@ -16,7 +16,6 @@ import {
 } from "@/components/ui/card";
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import { generateGenericJsonLd } from "@/lib/json-ld";
-export const revalidate = false;
 
 export async function generateStaticParams() {
   const generics = await db.query.genericsTable.findMany({

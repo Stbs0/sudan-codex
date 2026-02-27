@@ -17,8 +17,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { generateDrugJsonLd } from "@/lib/json-ld";
 import { getDrugBySlug } from "@/services/server/getDrugs";
 
-export const revalidate = false;
-
 export async function generateStaticParams() {
   const drugs = await db.query.drugsTable.findMany({
     columns: { slug: true },
