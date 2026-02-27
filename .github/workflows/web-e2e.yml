@@ -40,7 +40,7 @@ jobs:
         run: bun install
 
       - name: build Next.js app
-        run: bun run build --filter=@sudan-codex/web
+        run: bun run build --affected
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
