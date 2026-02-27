@@ -44,7 +44,7 @@ export default function FdaAccordion({ genericName }: { genericName: string }) {
             {key.replace(/_/g, " ").toUpperCase()}
           </AccordionTrigger>
           <AccordionContent>
-            <p>{JSON.stringify(rest[key])}</p>
+            <p>{rest[key].join(", ")}</p>
           </AccordionContent>
         </AccordionItem>
       ))}

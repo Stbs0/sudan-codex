@@ -1,5 +1,6 @@
 import type { SQLiteRelationalQuery } from "drizzle-orm/sqlite-core/query-builders/query";
 import { Suspense, use } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 
 import { Skeleton } from "../ui/skeleton";
 
@@ -40,9 +41,11 @@ export default function DrugInfoContent({
       {drugInfo ? (
         <DrugInfoAccordion data={drugInfo} />
       ) : (
-        <Suspense fallback={<Skeleton className='h-[200px]' />}>
-          <FdaAccordion genericName={genericName} />
-        </Suspense>
+        <ErrorBoundary fallback={<p>Error loading drug info</p>}>
+          <Suspense fallback={<Skeleton className='h-[200px]' />}>
+            <FdaAccordion genericName={genericName} />
+          </Suspense>
+        </ErrorBoundary>
       )}
     </div>
   );
