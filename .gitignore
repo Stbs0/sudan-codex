@@ -40,8 +40,3 @@ stats.html
 .turbo
 
 .secrets
-
-# Database files
-*.db
-*-wal
-*-shm

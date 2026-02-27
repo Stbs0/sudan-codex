@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": " next dev",
-    "build": "next build",
+    "build": "TURSO_DATABASE_URL=file:../../packages/db/dev.db TURSO_AUTH_TOKEN=build-only next build",
     "start": "next start",
     "lint": "oxlint",
     "knip": "knip",
