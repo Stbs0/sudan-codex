@@ -26,8 +26,7 @@
     }
   },
   "scripts": {
-    "build": "bun run clean && tsc -b",
-    "clean": "rm -rf ./dist ./tsconfig.tsbuildinfo",
+    "build": "tsc -b",
     "dev": "tsc -b -w",
     "dev:db": "turso dev --db-file dev.db",
     "db:generate": "NODE_ENV=production drizzle-kit generate  --config=drizzle-production.config.ts",
