@@ -15,10 +15,12 @@ export const getDrugInfo = async (
         `${OPENFDA_SEARCH_URL}?search=(spl_product_data_elements:(*${parsedGenericName}*)${routeQuery})`
       )
     : getOpenFdaSearchUrl(parsedGenericName);
-  const res = await fetch(url);
-  if (!res.ok) {
-    throw new Error("Failed to fetch drug info");
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    const data = (await res.json()) as FetchedDrugInfo;
+    return data.results?.[0] || null;
+  } catch {
+    return null;
   }
-  const data = (await res.json()) as FetchedDrugInfo;
-  return data.results?.[0] || null;
 };

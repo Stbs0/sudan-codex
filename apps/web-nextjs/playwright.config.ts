@@ -9,7 +9,12 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: "html",
   use: {
-    baseURL: "http://localhost:3000",
+    extraHTTPHeaders: {
+      "x-vercel-protection-bypass":
+        process.env.VERCEL_AUTOMATION_BYPASS_SECRET!,
+      "x-vercel-set-bypass-cookie": "true",
+    },
+    baseURL: process.env.PLAYWRIGHT_TEST_BASE_URL || "http://localhost:3000",
 
     trace: "on-first-retry",
   },
@@ -27,23 +32,25 @@ export default defineConfig({
   ],
 
   /* Run your local dev server before starting the tests */
-  webServer: [
-    process.env.CI
-      ? {
-          command: "bun run start",
-          url: "http://localhost:3000",
-          reuseExistingServer: false,
-          env: {
-            DATABASE_URL: process.env.TURSO_DATABASE_URL!,
-          },
-        }
-      : {
-          command: "bun run dev",
-          url: "http://localhost:3000",
-          reuseExistingServer: true,
-          env: {
-            DATABASE_URL: process.env.TURSO_DATABASE_URL!,
-          },
-        },
-  ],
+  webServer: process.env.PLAYWRIGHT_TEST_BASE_URL
+    ? undefined
+    : [
+        process.env.CI
+          ? {
+              command: "bun run start",
+              url: "http://localhost:3000",
+              reuseExistingServer: false,
+              env: {
+                DATABASE_URL: process.env.TURSO_DATABASE_URL!,
+              },
+            }
+          : {
+              command: "bun run dev",
+              url: "http://localhost:3000",
+              reuseExistingServer: true,
+              env: {
+                DATABASE_URL: process.env.TURSO_DATABASE_URL!,
+              },
+            },
+      ],
 });

@@ -20,6 +20,7 @@ import { generateCompanyJsonLd } from "@/lib/json-ld";
 type Props = {
   params: Promise<{ slug: string }>;
 };
+
 export const revalidate = false;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

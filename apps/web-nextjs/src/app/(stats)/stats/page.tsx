@@ -29,8 +29,6 @@ import {
 } from "@/components/ui/table";
 import { generateStatsJsonLd } from "@/lib/json-ld";
 
-export const revalidate = false;
-
 export const metadata: Metadata = {
   title: "Sudan Drug Index Statistics | Sudan Codex",
   alternates: {

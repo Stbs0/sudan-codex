@@ -75,7 +75,7 @@
         "NEXT_PUBLIC_METICULOUS_RECORDING_TOKEN",
         "NEXT_PUBLIC_EXPO_SCHEMA"
       ],
-      "outputs": [".next/**", "dist/**", "!.next/cache/**"]
+      "outputs": [".next/**", "dist/**", "!.next/cache/**", "tsconfig.tsbuildinfo"]
     },
     "lint": {
       "outputs": []

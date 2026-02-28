@@ -16,8 +16,8 @@ import {
 } from "@/components/ui/card";
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import { generateAgentJsonLd } from "@/lib/json-ld";
-export const revalidate = false;
 
+export const revalidate = false;
 type Props = {
   params: Promise<{ slug: string }>;
 };

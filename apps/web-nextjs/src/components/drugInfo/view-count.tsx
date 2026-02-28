@@ -1,12 +1,15 @@
-import "server-only";
+"use client";
 
-import { Suspense, use } from "react";
+import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
 import type { GetDrugBySlugReturnType } from "@/services/server/getDrugs";
 
 import { Skeleton } from "../ui/skeleton";
-type ViewCountProps = {
+
+import { Count } from "./count";
+
+export type ViewCountProps = {
   id: number;
   createdAt: GetDrugBySlugReturnType["createdAt"];
   updatedAt: GetDrugBySlugReturnType["updatedAt"];
@@ -14,7 +17,7 @@ type ViewCountProps = {
   slug: string;
 };
 
-const ViewCount = async ({
+const ViewCount = ({
   id,
   createdAt,
   updatedAt,
@@ -29,7 +32,10 @@ const ViewCount = async ({
       <p className='text-muted-foreground text-sm'>
         Last updated: {updatedAt?.toISOString().split("T")[0]}
       </p>
-      <ErrorBoundary fallback={<p>Error loading view count</p>}>
+      <ErrorBoundary
+        fallback={
+          <p className='text-muted-foreground text-sm'>View count: N/A</p>
+        }>
         <Suspense fallback={<Skeleton className='h-4 w-24' />}>
           <Count
             id={id}
@@ -42,40 +48,4 @@ const ViewCount = async ({
   );
 };
 
-const Count = ({
-  id,
-  entity,
-  slug,
-}: Pick<ViewCountProps, "id" | "entity" | "slug">) => {
-  const newView = use(fetchCount({ entity, id, slug }));
-
-  return (
-    <p className='text-muted-foreground text-sm'>
-      View count: {newView.view_count}
-    </p>
-  );
-};
 export default ViewCount;
-
-const fetchCount = async ({
-  entity,
-  id,
-  slug,
-}: {
-  entity: ViewCountProps["entity"];
-  id: number;
-  slug: string;
-}) => {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
-  const res = await fetch(
-    `${baseUrl}/api/v1/${entity}/${slug}/${id.toString()}/view`,
-    {
-      cache: "no-store",
-    }
-  );
-  if (!res.ok) {
-    const error = await res.json();
-    throw Error("view count error" + res.status + " " + error.message);
-  }
-  return (await res.json()) as { view_count: null | number };
-};
