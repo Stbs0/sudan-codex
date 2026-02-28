@@ -17,10 +17,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { generateDrugJsonLd } from "@/lib/json-ld";
 import { getDrugBySlug } from "@/services/server/getDrugs";
 
-export async function generateStaticParams() {
-  const { default: slugs } = await import("../../../data/drug-slugs.json");
-  return (slugs as string[]).map((slug) => ({ slug }));
-}
+export const revalidate = false;
 
 export async function generateMetadata({
   params,

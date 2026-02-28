@@ -21,11 +21,7 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
-export async function generateStaticParams() {
-  const { default: slugs } =
-    await import("../../../../data/company-slugs.json");
-  return (slugs as string[]).map((slug) => ({ slug }));
-}
+export const revalidate = false;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;

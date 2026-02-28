@@ -17,11 +17,7 @@ import {
 import { Column, PaginatedTable } from "@/components/ui/paginated-table";
 import { generateAgentJsonLd } from "@/lib/json-ld";
 
-export async function generateStaticParams() {
-  const { default: slugs } = await import("../../../../data/agent-slugs.json");
-  return (slugs as string[]).map((slug) => ({ slug }));
-}
-
+export const revalidate = false;
 type Props = {
   params: Promise<{ slug: string }>;
 };
