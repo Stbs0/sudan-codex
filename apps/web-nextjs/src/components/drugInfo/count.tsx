@@ -33,8 +33,7 @@ const fetchCount = async ({
     `${baseUrl}/api/v1/${entity}/${slug}/${id.toString()}/view`
   );
   if (!res.ok) {
-    const error = await res.json();
-    throw new Error("view count error " + res.status + " " + error.message);
+    throw new Error("view count error " + res.status);
   }
   return (await res.json()) as { view_count: null | number };
 };

@@ -1,6 +1,7 @@
 "use client";
 
 import { Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 
 import type { GetDrugBySlugReturnType } from "@/services/server/getDrugs";
 
@@ -31,13 +32,18 @@ const ViewCount = ({
       <p className='text-muted-foreground text-sm'>
         Last updated: {updatedAt?.toISOString().split("T")[0]}
       </p>
-      <Suspense fallback={<Skeleton className='h-4 w-24' />}>
-        <Count
-          id={id}
-          entity={entity}
-          slug={slug}
-        />
-      </Suspense>
+      <ErrorBoundary
+        fallback={
+          <p className='text-muted-foreground text-sm'>View count: N/A</p>
+        }>
+        <Suspense fallback={<Skeleton className='h-4 w-24' />}>
+          <Count
+            id={id}
+            entity={entity}
+            slug={slug}
+          />
+        </Suspense>
+      </ErrorBoundary>
     </div>
   );
 };
